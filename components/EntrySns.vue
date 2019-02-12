@@ -1,8 +1,6 @@
 <template>
   <section class="entry-sns__wrap">
-    <h3 class="entry-sns__title u-text-left">
-      share <br>ー
-    </h3>
+    <Title2>share <br>ー</Title2>
     <ul class="entry-sns">
       <li class="entry-sns__item">
         <a class="entry-sns__target entry-sns__target--twitter" :href="`http://twitter.com/intent/tweet?url=${$store.state.domain}${article.slug}&text=${article.title}t&via=uto_ao&related=uto_ao`" onclick="window.open(this.href, 'TWwindow', 'width=600, height=400, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank">
@@ -42,9 +40,13 @@
     </ul>
   </section>
 </template>
+
 <script>
+import Title2 from '~/components/Title2'
+
 export default {
   name: 'EntrySns',
+  components: { Title2 },
   props: {
     article: {
       type: Object,

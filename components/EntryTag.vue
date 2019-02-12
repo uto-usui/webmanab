@@ -1,55 +1,19 @@
 <template>
   <section class="entry-tag">
-    <h3 class="entry-tag_title u-text-left">
-      tag <br>ー
-    </h3>
-    <ul class="entry-tag_list">
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
-      </li>
-      <li class="entry-tag_item">
-        <a href="" class="entry-tag_target">
-          tagtag
-        </a>
+    <Title2>tag <br>ー</Title2>
+    <ul class="entry-tag__list">
+      <li v-for="(item, index) in article.terms[`${article.type}s`]" :key="index" class="entry-tag__item">
+        <nuxt-link :to="`/${article.type}/${item.slug}`" class="entry-tag__target" v-html="item.name" />
       </li>
     </ul>
   </section>
 </template>
 <script>
+import Title2 from '~/components/Title2'
+
 export default {
   name: 'EntryTag',
+  components: { Title2 },
   props: {
     article: {
       type: Object,
@@ -67,30 +31,16 @@ export default {
   }
 }
 
-.entry-tag_title {
-  padding-left: 0.2rem;
-  font-size: 1.25rem;
-  font-style: italic;
-  color: $glay;
-  letter-spacing: 0.1em;
-  //
-  @include tablet {
-    padding-left: 0.4rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-}
-
-.entry-tag_list {
+.entry-tag__list {
   display: flex;
   flex-flow: wrap;
 }
 
-.entry-tag_item {
+.entry-tag__item {
   margin-right: 1.5rem;
 }
 
-.entry-tag_target {
+.entry-tag__target {
   position: relative;
   top: 0;
   left: 0;

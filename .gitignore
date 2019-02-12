@@ -86,3 +86,4 @@ sw.*
 # test file
 /assets/_sass/
 /assets/html/
+/assets/post.js

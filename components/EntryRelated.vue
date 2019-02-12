@@ -1,23 +1,21 @@
 <template>
-  <section class="related u-text-left">
-    <h3 class="related_title">
-      related<br>ー
-    </h3>
-    <ul class="related_list">
-      <li class="related_item">
-        <a class="related_target" href="https://webmanab-html.com/tip/scroll-box-animation/">
+  <section class="entry-related">
+    <Title2>related<br>ー</Title2>
+    <ul class="entry-related__list">
+      <li class="entry-related__item">
+        <a class="entry-related__target" href="https://webmanab-html.com/tip/scroll-box-animation/">
           スクロールするレイヤー内でアンカーリンクを設置して指定位置までスクロールさせる
           -『jQuery』
         </a>
       </li>
-      <li class="related_item">
-        <a class="related_target" href="https://webmanab-html.com/tip/image-hover-effect/">
+      <li class="entry-related__item">
+        <a class="entry-related__target" href="https://webmanab-html.com/tip/image-hover-effect/">
           これは素敵。ギャラリーなど画像のホバーエフェクトやクリックイベントに利用したいエフェクトサンプル集
           – 『effect』
         </a>
       </li>
-      <li class="related_item">
-        <a class="related_target" href="https://webmanab-html.com/tip/wait-animate/">
+      <li class="entry-related__item">
+        <a class="entry-related__target" href="https://webmanab-html.com/tip/wait-animate/">
           CSSのkeyframesアニメーションで待機時間を指定したものを吐き出す
           WAIT! Animate – 『CSS』
         </a>
@@ -25,9 +23,13 @@
     </ul>
   </section>
 </template>
+
 <script>
+import Title2 from '~/components/Title2'
+
 export default {
   name: 'EntryRelated',
+  components: { Title2 },
   props: {
     article: {
       type: Object,
@@ -36,8 +38,9 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
-.related {
+.entry-related {
   margin-top: 2rem;
   text-align: justify;
   //
@@ -52,7 +55,7 @@ export default {
   }
 }
 
-.related_title {
+.entry-related__title {
   padding-left: 0.2rem;
   font-size: 1.25rem;
   font-style: italic;
@@ -66,19 +69,19 @@ export default {
   }
 }
 
-.related_list {
+.entry-related__list {
   //
 }
 
-.related_item {
+.entry-related__item {
   line-height: 1.7;
   //
-  + .related_item {
+  + .entry-related__item {
     margin-top: 1rem;
   }
 }
 
-.related_target {
+.entry-related__target {
   position: relative;
   top: 0;
   left: 0;

@@ -252,10 +252,6 @@ import Wrapper from '~/components/Wrapper'
 import LazyImage from '~/components/LazyImage'
 import EntryHead from '~/components/EntryHead'
 import EntryContent from '~/components/EntryContent'
-// import EntrySns from '~/components/EntrySns'
-// import EntryTag from '~/components/EntryTag'
-// import EntryNav from '~/components/EntryNav'
-// import EntryRelated from '~/components/EntryRelated'
 
 import SingleAsyncData from '~/mixins/Single'
 
