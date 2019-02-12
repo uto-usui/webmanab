@@ -1,5 +1,6 @@
 <template>
   <div class="entry-content">
+    <EntryToc :list="tocList" />
     <div class="entry-content__inner" v-html="article.content" />
   </div>
 </template>
@@ -22,18 +23,47 @@ import hljs from 'highlight.js/lib/highlight'
 
 export default {
   name: 'EntryContent',
+  components: {
+    EntryToc: () => import('~/components/EntryToc')
+  },
   props: {
     article: {
       type: Object,
       default: () => {}
     }
   },
+  data() {
+    return {
+      tocList: []
+    }
+  },
+  computed: {
+    getList() {
+      return this.tocList
+    }
+  },
   mounted() {
     this.$nextTick(() => {
-      document.querySelectorAll('pre').forEach(block => {
+      this.initHljs()
+      this.createToc()
+    })
+  },
+  methods: {
+    initHljs() {
+      this.$el.querySelectorAll('pre').forEach(block => {
         hljs.highlightBlock(block)
       })
-    })
+    },
+    createToc() {
+      const titles = this.$el.querySelectorAll(
+        '.entry-content h2, .entry-content h3'
+      )
+      titles.forEach((value, i) => {
+        this.tocList[i] = value.textContent
+        // eslint-disable-next-line
+        value.id = i
+      })
+    }
   }
 }
 </script>

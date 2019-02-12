@@ -2,6 +2,7 @@
   <Wrapper>
     <article class="entry">
       <EntryHead :article="article" />
+      <EntryAd :article="article" />
       <EntryContent :article="article" />
       <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
       <EntryAd :article="article" />
