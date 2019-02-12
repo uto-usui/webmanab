@@ -3,7 +3,7 @@
     <Title2>related<br>ー</Title2>
     <ul class="entry-related__list">
       <li v-for="(item, index) in posts" :key="`related${index}`" class="entry-related__item">
-        <nuxt-link class="entry-related__target" :to="`${article.type}/${item.slug}`" v-html="item.title" />
+        <nuxt-link class="entry-related__target" :to="`${item.slug}`" v-html="item.title" />
       </li>
     </ul>
   </section>

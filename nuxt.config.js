@@ -146,6 +146,7 @@ module.exports = {
 
 // acf
 // https://wordpress.org/plugins/wp-rest-filter/#description
+// https://webmanab-html.com/wp-json/wp/v2/tip?filter[meta_key]=primary-tag&filter[meta_value]=javascript
 
 // search
 // https://webmanab-html.com/wp-json/wp/v2/tip?per_page=10&search=js

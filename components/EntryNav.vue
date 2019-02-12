@@ -1,7 +1,7 @@
 <template>
   <ul class="entry-nav">
-    <li class="entry-nav__item u-text-left" v-if="article.prev">
-      <nuxt-link :to="`${article.type}/${article.prev.slug}`" class="entry-nav__target">
+    <li v-if="article.prev" class="entry-nav__item entry-nav__item--prev u-text-left">
+      <nuxt-link :to="`${article.prev.slug}`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
             previous
@@ -12,8 +12,8 @@
       </nuxt-link>
       <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
     </li>
-    <li class="entry-nav__item u-text-right" v-if="article.next">
-      <nuxt-link :to="`${article.type}/${article.next.slug}`" class="entry-nav__target">
+    <li v-if="article.next.slug" class="entry-nav__item entry-nav__item--next u-text-right">
+      <nuxt-link :to="`${article.next.slug}`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
             next
@@ -80,7 +80,7 @@ export default {
   }
 
   //
-  .entry-nav__item:last-child & {
+  .entry-nav__item.entry-nav__item--next & {
     justify-content: flex-end;
   }
 }
@@ -141,19 +141,19 @@ export default {
   }
 
   //
-  .entry-nav__item:first-of-type & {
+  .entry-nav__item.entry-nav__item--prev & {
     transform-origin: right center;
   }
 
-  .entry-nav__item:last-of-type & {
+  .entry-nav__item.entry-nav__item--next & {
     transform-origin: left center;
   }
 
-  .entry-nav__item:first-of-type:hover & {
+  .entry-nav__item.entry-nav__item--prev:hover & {
     transform: rotateY(-45deg);
   }
 
-  .entry-nav__item:last-of-type:hover & {
+  .entry-nav__item.entry-nav__item--next:hover & {
     transform: rotateY(45deg);
   }
 }
