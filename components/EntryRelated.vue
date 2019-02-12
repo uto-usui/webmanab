@@ -2,23 +2,8 @@
   <section class="entry-related">
     <Title2>related<br>ー</Title2>
     <ul class="entry-related__list">
-      <li class="entry-related__item">
-        <a class="entry-related__target" href="https://webmanab-html.com/tip/scroll-box-animation/">
-          スクロールするレイヤー内でアンカーリンクを設置して指定位置までスクロールさせる
-          -『jQuery』
-        </a>
-      </li>
-      <li class="entry-related__item">
-        <a class="entry-related__target" href="https://webmanab-html.com/tip/image-hover-effect/">
-          これは素敵。ギャラリーなど画像のホバーエフェクトやクリックイベントに利用したいエフェクトサンプル集
-          – 『effect』
-        </a>
-      </li>
-      <li class="entry-related__item">
-        <a class="entry-related__target" href="https://webmanab-html.com/tip/wait-animate/">
-          CSSのkeyframesアニメーションで待機時間を指定したものを吐き出す
-          WAIT! Animate – 『CSS』
-        </a>
+      <li v-for="(item, index) in posts" :key="`related${index}`" class="entry-related__item">
+        <nuxt-link class="entry-related__target" :to="`${article.type}/${item.slug}`" v-html="item.title" />
       </li>
     </ul>
   </section>
@@ -35,6 +20,21 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+  data() {
+    return {
+      posts: []
+    }
+  },
+  async mounted() {
+    const query = {
+      orderby: 'date',
+      per_page: 3,
+      'filter[meta_key]': 'primary-tag',
+      'filter[meta_value]': this.article.fields['primary-tag']
+    }
+    const posts = await this.$api.get(`/${this.article.type}`, query)
+    this.posts = posts.data
   }
 }
 </script>
@@ -51,7 +51,7 @@ export default {
   }
   //
   @include desktop {
-    padding: 1.5rem 2rem;
+    padding: 2rem;
   }
 }
 

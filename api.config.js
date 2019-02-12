@@ -121,6 +121,8 @@ module.exports = {
         type: 'type',
         slug: 'slug',
         date: 'date',
+        next: 'next',
+        prev: 'prev',
         images: {
           extends: 'image',
           base: '_embedded.wp:featuredmedia',

@@ -1,32 +1,28 @@
 <template>
   <ul class="entry-nav">
-    <li class="entry-nav_item u-text-left">
-      <a href="" class="entry-nav_target">
-        <div class="entry-nav_inner">
-          <p class="entry-nav_text">
+    <li class="entry-nav__item u-text-left" v-if="article.prev">
+      <nuxt-link :to="`${article.type}/${article.prev.slug}`" class="entry-nav__target">
+        <div class="entry-nav__inner">
+          <p class="entry-nav__text">
             previous
             <br>ー
           </p>
-          <h3 class="entry-nav_title">
-            スクロールするレイヤー内でアンカーリンクを設置して指定位置までスクロールさせる -『jQuery』
-          </h3>
+          <h3 class="entry-nav__title" v-html="article.prev.title" />
         </div>
-      </a>
-      <div class="entry-nav_bg" style="background-image: url(https://c1.staticflickr.com/9/8828/28742105241_acfc8eb707_o.jpg);" />
+      </nuxt-link>
+      <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
     </li>
-    <li class="entry-nav_item u-text-right">
-      <a href="" class="entry-nav_target">
-        <div class="entry-nav_inner">
-          <p class="entry-nav_text">
+    <li class="entry-nav__item u-text-right" v-if="article.next">
+      <nuxt-link :to="`${article.type}/${article.next.slug}`" class="entry-nav__target">
+        <div class="entry-nav__inner">
+          <p class="entry-nav__text">
             next
             <br>ー
           </p>
-          <h3 class="entry-nav_title">
-            までスクロールさせる -『jQuery』
-          </h3>
+          <h3 class="entry-nav__title" v-html="article.next.title" />
         </div>
-      </a>
-      <div class="entry-nav_bg" style="background-image: url(https://c1.staticflickr.com/8/7472/28889980152_3fdd67bb51_o.jpg);" />
+      </nuxt-link>
+      <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.next.img})` }" />
     </li>
   </ul>
 </template>
@@ -51,7 +47,7 @@ export default {
   }
 }
 
-.entry-nav_item {
+.entry-nav__item {
   position: relative;
   z-index: 5;
   overflow: hidden;
@@ -60,7 +56,7 @@ export default {
   //
   @include mobile {
     //
-    + .entry-nav_item {
+    + .entry-nav__item {
       margin-top: 1rem;
     }
   }
@@ -70,7 +66,7 @@ export default {
   }
 }
 
-.entry-nav_target {
+.entry-nav__target {
   display: flex;
   align-items: center;
   height: 120px;
@@ -84,16 +80,16 @@ export default {
   }
 
   //
-  .entry-nav_item:last-child & {
+  .entry-nav__item:last-child & {
     justify-content: flex-end;
   }
 }
 
-.entry-nav_inner {
+.entry-nav__inner {
   //
 }
 
-.entry-nav_text {
+.entry-nav__text {
   font-size: 1.8rem;
   font-style: italic;
   color: $white;
@@ -104,13 +100,13 @@ export default {
     font-size: 2.2rem;
   }
   //
-  .entry-nav_item:hover & {
+  .entry-nav__item:hover & {
     color: $glay;
     letter-spacing: 0.2em;
   }
 }
 
-.entry-nav_title {
+.entry-nav__title {
   display: inline;
   line-height: 1.7;
   color: $black;
@@ -121,7 +117,7 @@ export default {
   }
 }
 
-.entry-nav_bg {
+.entry-nav__bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -145,19 +141,19 @@ export default {
   }
 
   //
-  .entry-nav_item:first-of-type & {
+  .entry-nav__item:first-of-type & {
     transform-origin: right center;
   }
 
-  .entry-nav_item:last-of-type & {
+  .entry-nav__item:last-of-type & {
     transform-origin: left center;
   }
 
-  .entry-nav_item:first-of-type:hover & {
+  .entry-nav__item:first-of-type:hover & {
     transform: rotateY(-45deg);
   }
 
-  .entry-nav_item:last-of-type:hover & {
+  .entry-nav__item:last-of-type:hover & {
     transform: rotateY(45deg);
   }
 }

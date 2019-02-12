@@ -144,20 +144,22 @@ module.exports = {
 // https://webmanab-html.com/wp-json/wp/v2/tips
 // https://webmanab-html.com/wp-json/wp/v2/clips
 
+// acf
+// https://wordpress.org/plugins/wp-rest-filter/#description
+
 // search
 // https://webmanab-html.com/wp-json/wp/v2/tip?per_page=10&search=js
 
 // max
 // https://stackoverflow.com/questions/35728943/wordpress-rest-api-v2-return-all-posts
 
-// pagenation
+// pagination
 // https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/
 
 // next prev
-// https://stackoverflow.com/questions/42546957/wordpress-api-json-how-to-get-prev-and-next-posts-in-single-post/48289814
-// post_title;
-// eye https://qiita.com/gatespace/items/34b9c71378bbfc20b6f0
-// https://webmanab-html.com/tip/wordpress-eyecatch/
 
 // pwa
 // https://qiita.com/gyarasu/items/b5c34b6aac02cb325b79
+
+// term を slug にする
+// https://github.com/WP-API/rest-filter

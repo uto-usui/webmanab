@@ -135,6 +135,7 @@ export default {
   img {
     margin: 1.5rem auto 1rem;
   }
+
   //
   strong {
     font-weight: bold;
@@ -144,6 +145,7 @@ export default {
       rgba(255, 255, 0, 0) 60%
     );
   }
+
   //
   pre {
     padding: 1px 16px 1px 22px;
@@ -158,10 +160,12 @@ export default {
       font-size: 1.6rem;
     }
   }
+
   //
   code {
     font-family: $font-mono;
   }
+
   //
   a {
     transition: 0.35s $easeOutQuint;
@@ -172,6 +176,7 @@ export default {
       background-color: $glay;
     }
   }
+
   //
   dl {
     padding: 8px;
@@ -194,17 +199,20 @@ export default {
       box-shadow: 0 0 4px rgba($black, 0.1);
     }
   }
+
   //
   dt {
     margin-bottom: 0.2rem;
     font-weight: bold;
   }
+
   //
   dd {
     + dt {
       margin-top: 1.5rem;
     }
   }
+
   //
   ul,
   ol {
@@ -228,6 +236,7 @@ export default {
       box-shadow: 0 0 4px rgba($black, 0.1);
     }
   }
+
   //
   li {
     margin-left: 1rem;
@@ -236,6 +245,7 @@ export default {
       margin-top: 1rem;
     }
   }
+
   //
   ul {
     //
@@ -243,6 +253,7 @@ export default {
       list-style-type: square;
     }
   }
+
   //
   ol {
     padding-left: 2rem;
@@ -255,6 +266,7 @@ export default {
       list-style-type: decimal-leading-zero;
     }
   }
+
   //
   figure {
     min-height: 200px;
@@ -262,6 +274,7 @@ export default {
     margin-bottom: 1.5rem;
     background-color: rgba(white, 0.75);
   }
+
   //
   p {
     margin: 1.5rem auto;
@@ -278,6 +291,7 @@ export default {
       margin-top: 0;
       margin-bottom: 0;
     }
+
     //
     code {
       padding: 2px 8px;
@@ -288,6 +302,7 @@ export default {
       box-shadow: 0 0 4px rgba($black, 0.1);
     }
   }
+
   //
   h2 {
     padding-top: 0.2rem;
@@ -311,6 +326,7 @@ export default {
       font-size: 3rem;
     }
   }
+
   //
   h3 {
     padding-right: 0.2rem;
@@ -335,7 +351,7 @@ export default {
   h4 {
     padding-left: 0.2rem;
     margin-top: 2rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-style: italic;
     line-height: 1.4;
     color: $glay;
@@ -344,7 +360,7 @@ export default {
     //
     @include tablet {
       padding-left: 0.4rem;
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
     //
     + pre {
