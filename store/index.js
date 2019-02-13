@@ -1,7 +1,9 @@
 // TODO remove next line
 export const strict = false
 
-export const state = {}
+export const state = () => {
+  return {}
+}
 
 export const mutations = {}
 

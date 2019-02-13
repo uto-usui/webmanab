@@ -1,7 +1,9 @@
-export default {
-  currentQuery: {},
-  currentPath: null,
-  currentPosts: [],
-  cachePosts: {},
-  cachePages: {}
+export default () => {
+  return {
+    currentQuery: {},
+    currentPath: null,
+    currentPosts: [],
+    cachePosts: {},
+    cachePages: {}
+  }
 }
