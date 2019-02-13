@@ -58,6 +58,7 @@ module.exports = {
       }
     ]
   ],
+
   styleResources: {
     scss: [
       '~/assets/sass/foundation/variable/_variable.scss',
@@ -110,6 +111,7 @@ module.exports = {
       config.resolve.alias['@'] = path.resolve(__dirname)
     }
   },
+
   generate: {
     interval: 1000,
     routes() {
