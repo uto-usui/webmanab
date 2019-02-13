@@ -3,5 +3,6 @@ export default {
     name: '',
     description: ''
   },
-  domain: 'https://webmanab-html.com/'
+  domain: 'https://webmanab-html.com/',
+  postTypes: ['tip', 'clip']
 }

@@ -1,16 +1,20 @@
 <template>
   <h2 class="h1">
     <span class="h1__inner">
-      <nuxt-link to="">
-        tip
-      </nuxt-link>
+      <nuxt-link :to="`/${text}`" v-text="text" />
     </span>
   </h2>
 </template>
 
 <script>
 export default {
-  name: 'Title1'
+  name: 'Title1',
+  props: {
+    text: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 
