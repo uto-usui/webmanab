@@ -5,13 +5,11 @@
     </div>
     <no-ssr>
       <InfiniteLoading
-        v-if="false"
+        v-if="infinite"
         ref="infiniteLoading"
         @infinite="moreArticles"
       >
-        <span slot="spinner">
-          loading
-        </span>
+        <Loader slot="spinner" />
         <span slot="no-results">
           <div>Sorry</div>
         </span>
@@ -45,12 +43,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Article from '~/components/Article.vue'
+import Article from '~/components/Article'
 
 import InfiniteLoading from 'vue-infinite-loading'
+import Loader from '~/components/Loader'
 
 export default {
-  components: { Article, InfiniteLoading },
+  components: { Loader, Article, InfiniteLoading },
   props: {
     articles: {
       type: Array,
@@ -63,6 +62,10 @@ export default {
     postType: {
       type: String,
       default: 'tip'
+    },
+    infinite: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -91,8 +94,6 @@ export default {
         .catch(() => {
           loadingState.complete()
         })
-
-      console.log('ccccc',this[`${this.postType}/setCachePosts`])
 
     }
   }
