@@ -129,7 +129,8 @@ module.exports = {
           props: {}
         },
         terms: 'terms',
-        fields: 'acf'
+        fields: 'acf',
+        clipImage: 'clipImage'
       }
     },
     page: {
