@@ -1,27 +1,29 @@
 <template>
   <Wrapper>
-    <section v-for="(item, index) in $store.state.postTypes" :key="`postType${index}`">
+    <SectionList v-for="(item, index) in $store.state.postTypes" :key="`postType${index}`">
       <Title1 :text="item" />
       <ArticleList
         :articles="articles(item)"
         :query="$store.state[item].currentQuery"
         :post-type="item"
       />
-    </section>
+    </SectionList>
   </Wrapper>
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
 import Wrapper from '~/components/Wrapper'
 import ArticleList from '~/components/ArticleList'
-import { mapGetters, mapState } from 'vuex'
 import Title1 from '~/components/Title1'
+import SectionList from '~/components/SectionList'
 
 export default {
   components: {
     Title1,
     ArticleList,
-    Wrapper
+    Wrapper,
+    SectionList
   },
   async asyncData({ app, store, params, route, payload }) {
     for (const postType of store.state.postTypes) {
