@@ -26,7 +26,8 @@
     "nuxt": "^2.4.2",
     "nuxtend": "^0.2.6",
     "vue-infinite-loading": "^2.4.3",
-    "vue-lazyload": "^1.2.6"
+    "vue-lazyload": "^1.2.6",
+    "vue-scrollto": "^2.13.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

@@ -13,7 +13,21 @@
       </a>
       <ul class="entry-toc__list">
         <li v-for="(item, index) in list" :key="`toc${index}`" class="entry-toc__item">
-          <a :href="`#${index}`" class="entry-toc__target" v-html="item" />
+          <a
+            v-scroll-to="`#a${index}`"
+            href="#"
+            class="entry-toc__target"
+            v-text="item.h2"
+          />
+          <ul v-if="item.h3">
+            <li v-for="(_item, _index) in item.h3" :key="`toc${_index}`" class="toc-item__child">
+              <a
+                v-scroll-to="`#a${index}${_index}`"
+                href="#"
+                v-text="`_${_item}`"
+              />
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
@@ -127,22 +141,34 @@
 }
 
 .entry-toc__item {
+  font-size: 1.4rem;
   letter-spacing: 0.1em;
   list-style-type: decimal;
   //
   + .entry-toc__item {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   //
   @include tablet {
+    font-size: 1.6rem;
     //
     + .entry-toc__item {
-      margin-top: 1.5rem;
+      margin-top: 3rem;
     }
   }
   //
   .entry-toc.is-open & {
     opacity: 1;
+  }
+}
+
+.toc-item__child {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  //
+  @include tablet {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -162,7 +188,8 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      counter: 0
     }
   }
 }

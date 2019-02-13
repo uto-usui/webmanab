@@ -41,7 +41,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~plugins/vue-lazyload.client.js', '~plugins/console.js'],
+  plugins: ['~plugins/vue-lazyload.client.js', '~plugins/console.js', '~plugins/scrollTo.js'],
 
   /*
   ** Nuxt.js modules

@@ -58,10 +58,28 @@ export default {
       const titles = this.$el.querySelectorAll(
         '.entry-content h2, .entry-content h3'
       )
-      titles.forEach((value, i) => {
-        this.tocList[i] = value.textContent
-        // eslint-disable-next-line
-        value.id = i
+
+      let h2Counter = 0
+      let h3Counter = 0
+
+      titles.forEach((el, i) => {
+        const tagNane = el.tagName
+
+        if (tagNane === 'H2') {
+          h2Counter += 1
+          h3Counter = 0
+          this.tocList[h2Counter - 1] = {
+            h2: el.textContent,
+            h3: []
+          }
+          // eslint-disable-next-line
+          el.id = `a${h2Counter - 1}`
+        } else if (tagNane === 'H3') {
+          this.tocList[h2Counter - 1].h3[h3Counter] = el.textContent
+          // eslint-disable-next-line
+          el.id = `a${h2Counter - 1}${h3Counter}`
+          h3Counter++
+        }
       })
     }
   }
