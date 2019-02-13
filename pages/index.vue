@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
 import Wrapper from '~/components/Wrapper'
 import ArticleList from '~/components/ArticleList'
 import Title1 from '~/components/Title1'
@@ -65,21 +64,7 @@ export default {
           return this.$store.state[postType].cachePosts[postSlug] || {}
         })
       }
-    },
-    // articlesClip() {
-    //   // const page = this.$store.state.cachePages[this.$store.state.currentPath] || {}
-    //   return this.$store.state[postTypes[1]].currentPosts.map(postSlug => {
-    //     return this.$store.state[postTypes[1]].cachePosts[postSlug] || {}
-    //   })
-    // },
-    ...mapState([]),
-    ...mapGetters([])
+    }
   }
-  // async mounted() {
-  //   const res = await this.$axios.get(
-  //     'https://webmanab-html.com/wp-json/wp/v2/clip?page=1'
-  //   )
-  //   console.log(res)
-  // }
 }
 </script>
