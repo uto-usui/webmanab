@@ -12,7 +12,10 @@
       </nuxt-link>
       <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
     </li>
-    <li v-if="article.next.slug" class="entry-nav__item entry-nav__item--next u-text-right">
+    <li
+      v-if="article.next !== []"
+      class="entry-nav__item entry-nav__item--next u-text-right"
+    >
       <nuxt-link :to="`${article.next.slug}`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
