@@ -8,12 +8,13 @@ export default {
     let postType = route.matched[0].path
     postType = postType.replace('/', '').replace('/:id', '')
 
-    console.log('route route route', postType)
+    // console.log('route route route', postType)
 
     store.commit(`${postType}/setCurrentPath`, route.path)
 
     const query = {
       slug: params.id,
+      custom_per_page: 1,
       _embed: 1
     }
 
@@ -27,6 +28,8 @@ export default {
         posts: posts.data
       })
       store.commit(`${postType}/setCachePosts`, posts.data)
+      // TODO post ??
+      // console.log(posts)
     }
 
     if (!store.state[postType].cachePages[store.state.currentPath]) {

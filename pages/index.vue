@@ -30,7 +30,7 @@ export default {
 
       const query = {
         orderby: 'date',
-        per_page: 8,
+        custom_per_page: 8,
         page: 1,
         _embed: 1
       }

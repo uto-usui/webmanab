@@ -118,26 +118,51 @@ module.exports = {
   },
 
   generate: {
-    interval: 1000,
+    interval: 250,
     routes() {
+      // headers
+      // 'x-wp-total': '1',
+      // 'x-wp-totalpages': '1',
+
       return Promise.all([
-        axios.get(`${apiUrl}tip?per_page=10&page=1&_embed`),
-        axios.get(`${apiUrl}clip?per_page=10&page=1&_embed`)
+        axios.get(`${apiUrl}tip?custom_per_page=1000`),
+        axios.get(`${apiUrl}clip?custom_per_page=1000`),
+        axios.get(`${apiUrl}tips`),
+        axios.get(`${apiUrl}clips`)
       ]).then(data => {
-        const tips = data[0]
-        const clips = data[1]
-        return tips.data
-          .map(tip => {
+        const tip = data[0]
+        const clip = data[1]
+        const tips = data[2]
+        const clips = data[3]
+
+        return tip.data
+          .map(el => {
             return {
-              route: '/tip/' + tip.slug,
-              payload: tip
+              route: '/tip/' + el.slug,
+              payload: el
             }
           })
           .concat(
-            clips.data.map(clip => {
+            clip.data.map(el => {
               return {
-                route: '/clip/' + clip.slug,
-                payload: clip
+                route: '/clip/' + el.slug,
+                payload: el
+              }
+            })
+          )
+          .concat(
+            tips.data.map(el => {
+              return {
+                route: '/tips/' + el.id,
+                payload: el
+              }
+            })
+          )
+          .concat(
+            clips.data.map(el => {
+              return {
+                route: '/clips/' + el.id,
+                payload: el
               }
             })
           )

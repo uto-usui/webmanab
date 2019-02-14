@@ -20,7 +20,7 @@ export default {
     store.commit(`tax/setCurrentPath`, route.path)
 
     const query = {
-      per_page: 8,
+      custom_per_page: 8,
       page: 1,
       _embed: 1
     }
@@ -36,16 +36,16 @@ export default {
       })
       store.commit(`tax/setCachePosts`, posts.data)
 
-      console.log('posts.data posts.data posts.data', posts.data)
-      console.log('state.tax state.tax state.tax', store.state.tax)
+      // console.log('posts.data posts.data posts.data', posts.data)
+      // console.log('state.tax state.tax state.tax', store.state.tax)
     }
 
     store.commit(`tax/setCurrentPosts`)
     store.commit(`tax/setCurrentQuery`, query)
 
-    console.log('taxonomy taxonomy taxonomy', taxonomy)
-    console.log('query query query', query)
-    console.log('postType postType postType', postType)
+    // console.log('taxonomy taxonomy taxonomy', taxonomy)
+    // console.log('query query query', query)
+    // console.log('postType postType postType', postType)
   },
   computed: {
     articles() {

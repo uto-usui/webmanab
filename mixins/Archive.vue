@@ -16,7 +16,7 @@ export default {
 
     const query = {
       orderby: 'date',
-      per_page: 8,
+      custom_per_page: 8,
       page: 1,
       _embed: 1
     }
@@ -34,7 +34,7 @@ export default {
       store.commit(`${postType}/setCachePosts`, posts.data)
     }
 
-    store.commit(`tax/setCurrentPosts`)
+    store.commit(`${postType}/setCurrentPosts`)
     store.commit(`${postType}/setCurrentQuery`, query)
   },
   computed: {

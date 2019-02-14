@@ -143,27 +143,16 @@ export default {
     }
   },
   async created() {
-    const query1 = {
-      per_page: 100,
+    const query = {
       page: 1
-    }
-    const query2 = {
-      per_page: 100,
-      page: 2
     }
     // get taxnomy for menu
     const data = await Promise.all([
-      this.$api.get('/tips', query1),
-      this.$api.get('/tips', query2),
-      this.$api.get('/clips', query1),
-      this.$api.get('/clips', query2)
+      this.$api.get('/tips', query),
+      this.$api.get('/clips', query)
     ])
-    const tips1 = data[0].data
-    const tips2 = data[1].data
-    const clips1 = data[2].data
-    const clips2 = data[3].data
-    this.tipsList = [...tips1, ...tips2]
-    this.clipsList = [...clips1, ...clips2]
+    this.tipsList = data[0].data
+    this.clipsList = data[1].data
 
     // console.log(this.clipsList)
   }
