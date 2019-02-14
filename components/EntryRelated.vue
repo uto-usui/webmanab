@@ -3,7 +3,7 @@
     <Title2>related<br>ー</Title2>
     <ul class="entry-related__list">
       <li v-for="(item, index) in posts" :key="`related${index}`" class="entry-related__item">
-        <nuxt-link class="entry-related__target" :to="`/${item.slug}/`" v-html="item.title" />
+        <nuxt-link class="entry-related__target" :to="`/${item.type}/${item.slug}/`" v-html="item.title" />
       </li>
     </ul>
   </section>
@@ -29,7 +29,7 @@ export default {
   async mounted() {
     const query = {
       orderby: 'date',
-      per_page: 3,
+      custom_per_page: 3,
       'filter[meta_key]': 'primary-tag',
       'filter[meta_value]': this.article.fields['primary-tag']
     }

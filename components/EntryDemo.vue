@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="article.fields">
     <a class="entry_demo" :href="article.fields['demo-url']" target="_blank">
       demo
     </a>

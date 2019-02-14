@@ -142,7 +142,9 @@ export default {
     }
   },
   mounted() {
-    this.checkFixed()
+    this.$nextTick(() => {
+      this.checkFixed()
+    })
   },
   methods: {
     checkFixed() {
