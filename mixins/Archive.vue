@@ -34,6 +34,7 @@ export default {
       store.commit(`${postType}/setCachePosts`, posts.data)
     }
 
+    store.commit(`tax/setCurrentPosts`)
     store.commit(`${postType}/setCurrentQuery`, query)
   },
   computed: {

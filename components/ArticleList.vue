@@ -11,7 +11,7 @@
       >
         <Loader slot="spinner" />
         <span slot="no-results">
-          <div>Sorry</div>
+          <div>End</div>
         </span>
         <span slot="no-more">
           <div>End</div>
@@ -66,6 +66,10 @@ export default {
     infinite: {
       type: Boolean,
       default: false
+    },
+    tax: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -75,26 +79,46 @@ export default {
     // prettier-ignore
 
     moreArticles(loadingState) {
-      // this.$store.state.tip.cachePosts
-      if (!this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath]) return
-      this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath].paged++
-      this.query.page = this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath].paged
-      this.$api
-        .get(`/${this.postType}`, this.query)
-        .then(response => {
-          this.$store.commit(`${this.postType}/setCachePages`, {
-            path: this.$route.path,
-            posts: response.data
-          })
-          this.$store.commit(`${this.postType}/setCachePosts`, response.data)
-          this.$store.commit(`${this.postType}/setCurrentPosts`)
-          loadingState.loaded()
-          this.$forceUpdate()
-        })
-        .catch(() => {
-          loadingState.complete()
-        })
 
+      if (this.tax) {
+        if (!this.$store.state.tax.cachePages[this.$store.state.tax.currentPath]) return
+        this.$store.state.tax.cachePages[this.$store.state.tax.currentPath].paged++
+        this.query.page = this.$store.state.tax.cachePages[this.$store.state.tax.currentPath].paged
+        this.$api
+          .get(`/${this.postType}`, this.query)
+          .then(response => {
+            this.$store.commit(`tax/setCachePages`, {
+              path: this.$route.path,
+              posts: response.data
+            })
+            this.$store.commit(`tax/setCachePosts`, response.data)
+            this.$store.commit(`tax/setCurrentPosts`)
+            loadingState.loaded()
+            this.$forceUpdate()
+          })
+          .catch(() => {
+            loadingState.complete()
+          })
+      } else {
+        if (!this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath]) return
+        this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath].paged++
+        this.query.page = this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath].paged
+        this.$api
+          .get(`/${this.postType}`, this.query)
+          .then(response => {
+            this.$store.commit(`${this.postType}/setCachePages`, {
+              path: this.$route.path,
+              posts: response.data
+            })
+            this.$store.commit(`${this.postType}/setCachePosts`, response.data)
+            this.$store.commit(`${this.postType}/setCurrentPosts`)
+            loadingState.loaded()
+            this.$forceUpdate()
+          })
+          .catch(() => {
+            loadingState.complete()
+          })
+      }
     }
   }
 }
