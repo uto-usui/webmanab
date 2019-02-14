@@ -1,9 +1,14 @@
 <script>
+import HeadMixin from '~/mixins/Head'
+
 export default {
-  async asyncData({ app, store, params, route, payload }) {
-    // get post type
+  mixins: [HeadMixin],
+
+  async fetch({ app, store, params, route, payload }) {
     let postType = route.matched[0].path
     postType = postType.replace('/', '').replace('/:id', '')
+
+    console.log('route route route', postType)
 
     store.commit(`${postType}/setCurrentPath`, route.path)
 
@@ -31,7 +36,6 @@ export default {
       })
     }
 
-    store.commit(`${postType}/setCurrentPosts`)
     store.commit(`${postType}/setCurrentQuery`, query)
   },
 
@@ -39,10 +43,9 @@ export default {
     article() {
       // prettier-ignore
       const page =
-              this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath] || {}
+                this.$store.state[this.postType].cachePages[this.$store.state[this.postType].currentPath] || {}
       const slug = page.slugs ? page.slugs[0] : null
       return this.$store.state[this.postType].cachePosts[slug] || {}
-      // return this.$store.getters.post || {}
     },
     featuredImage() {
       if (this.article && this.article.images && this.article.images[0]) {
@@ -51,13 +54,12 @@ export default {
       } else {
         return { height: 0, width: 0 }
       }
-    }
-  },
-
-  head() {
-    return {
-      title: `${this.article.title} | ${this.$store.state.meta.name}`,
-      meta: [{ description: this.article.excerpt }]
+    },
+    title() {
+      return `${this.article.title} | ${this.$store.state.meta.name}`
+    },
+    desc() {
+      return this.article.excerpt
     }
   }
 }

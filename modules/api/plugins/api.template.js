@@ -25,7 +25,7 @@ class ApiMapper {
      * 削る key の配列
      * @type {string[]}
      */
-    this.reservedWords = ['one', 'base', 'extends', 'props', 'categories', 'excerpt']
+    this.reservedWords = ['one', 'base', 'extends', 'props', 'categories']
   }
 
   /**

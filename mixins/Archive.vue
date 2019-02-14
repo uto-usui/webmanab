@@ -1,11 +1,14 @@
 <script>
+import HeadMixin from '~/mixins/Head'
+
 export default {
+  mixins: [HeadMixin],
   data() {
     return {
       infinite: true
     }
   },
-  async asyncData({ app, store, params, route, payload }) {
+  async fetch({ app, store, params, route, payload }) {
     let postType = route.matched[0].path
     postType = postType.replace('/', '').replace('/:id', '')
 
@@ -31,30 +34,21 @@ export default {
       store.commit(`${postType}/setCachePosts`, posts.data)
     }
 
-    store.commit(`${postType}/setCurrentPosts`)
     store.commit(`${postType}/setCurrentQuery`, query)
   },
   computed: {
     articles() {
       return postType => {
-        // const page = this.$store.state.cachePages[this.$store.state.currentPath] || {}
         return this.$store.state[postType].currentPosts.map(postSlug => {
           return this.$store.state[postType].cachePosts[postSlug] || {}
         })
       }
-    }
-  },
-
-  head() {
-    return {
-      title: `${this.postType} | ${this.$store.state.meta.name}`,
-      meta: [
-        {
-          description:
-            (this.article && this.article.excerpt) ||
-            `${this.postType} archive page`
-        }
-      ]
+    },
+    title() {
+      return `${this.postType} | ${this.$store.state.meta.name}`
+    },
+    desc() {
+      return `${this.postType} archive page`
     }
   }
 }

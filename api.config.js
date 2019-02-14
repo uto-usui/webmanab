@@ -118,6 +118,7 @@ module.exports = {
         id: 'id',
         title: 'title.rendered',
         content: 'content.rendered',
+        excerpt: 'excerpt.rendered',
         type: 'type',
         slug: 'slug',
         date: 'date',
@@ -129,8 +130,7 @@ module.exports = {
           props: {}
         },
         terms: 'terms',
-        fields: 'acf',
-        clipImage: 'clipImage'
+        fields: 'acf'
       }
     },
     page: {
@@ -140,7 +140,10 @@ module.exports = {
       extends: 'post'
     },
     clip: {
-      extends: 'post'
+      extends: 'post',
+      props: {
+        clipImage: 'clipImage'
+      }
     },
     category: {
       extends: 'term'

@@ -19,7 +19,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon-precomposed', href: '/apple-touch-icon.png' },
       {
         rel: 'stylesheet',
         href:
@@ -41,7 +42,11 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~plugins/vue-lazyload.client.js', '~plugins/console.js', '~plugins/scrollTo.js'],
+  plugins: [
+    '~plugins/vue-lazyload.client.js',
+    '~plugins/console.js',
+    '~plugins/scrollTo.js'
+  ],
 
   /*
   ** Nuxt.js modules
@@ -149,6 +154,7 @@ module.exports = {
 // acf
 // https://wordpress.org/plugins/wp-rest-filter/#description
 // https://webmanab-html.com/wp-json/wp/v2/tip?filter[meta_key]=primary-tag&filter[meta_value]=javascript
+// https://webmanab-html.com/wp-json/wp/v2/tip?filter[taxonomy]=tips&filter[term_id]=80
 
 // search
 // https://webmanab-html.com/wp-json/wp/v2/tip?per_page=10&search=js
