@@ -1,7 +1,7 @@
 <template>
   <ul class="entry-nav">
     <li v-if="article.prev" class="entry-nav__item entry-nav__item--prev u-text-left">
-      <nuxt-link :to="`${article.prev.slug}`" class="entry-nav__target">
+      <nuxt-link :to="`/${article.type}/${article.prev.slug}/`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
             previous
@@ -16,7 +16,7 @@
       v-if="article.next !== []"
       class="entry-nav__item entry-nav__item--next u-text-right"
     >
-      <nuxt-link :to="`${article.next.slug}`" class="entry-nav__target">
+      <nuxt-link :to="`/${article.type}/${article.next.slug}/`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
             next
@@ -37,6 +37,9 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+  mounted() {
+    console.log(this.article)
   }
 }
 </script>

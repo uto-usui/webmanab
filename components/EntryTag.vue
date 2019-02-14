@@ -1,9 +1,9 @@
 <template>
   <section class="entry-tag">
     <Title2>tag <br>ー</Title2>
-    <ul class="entry-tag__list">
+    <ul v-if="article.type" class="entry-tag__list">
       <li v-for="(item, index) in article.terms[`${article.type}s`]" :key="index" class="entry-tag__item">
-        <nuxt-link :to="`/${article.type}/${item.slug}`" class="entry-tag__target" v-html="item.name" />
+        <nuxt-link :to="`/${article.type}s/${item.term_id}/`" class="entry-tag__target" v-html="item.name" />
       </li>
     </ul>
   </section>

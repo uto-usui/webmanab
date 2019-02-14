@@ -2,13 +2,13 @@
   <article class="article-item">
     <div class="article-item__inner">
       <strong class="article-item__tag" v-html="article.fields['primary-tag']" />
-      <nuxt-link class="article-item__img-wrap" :to="`/${article.type}/${article.slug}`">
+      <nuxt-link class="article-item__img-wrap" :to="`/${article.type}/${article.slug}/`">
         <div class="article-item__img">
           <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
         </div>
       </nuxt-link>
       <h3 class="article-item__title">
-        <nuxt-link :to="`/${article.type}/${article.slug}`" class="article-item__target">
+        <nuxt-link :to="`/${article.type}/${article.slug}/`" class="article-item__target">
           {{ article.title }}
         </nuxt-link>
       </h3>

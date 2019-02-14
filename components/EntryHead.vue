@@ -2,7 +2,7 @@
   <header class="entry-head">
     <time class="entry-head__time" :datetime="getDate(article.date)" v-html="getDate(article.date)" />
     <h1 class="entry-head__title" v-html="article.title" />
-    <ul class="entry-head__list">
+    <ul v-if="article.type" class="entry-head__list">
       <li class="entry-head__item">
         <span class="entry-head__target">
           uto usui
@@ -12,7 +12,7 @@
         ／／
       </li>
       <li v-for="(item, index) in article.terms[`${article.type}s`]" :key="index" class="entry-head__item">
-        <nuxt-link :to="`/${article.type}/${item.slug}`" class="entry-head__target" v-html="item.name" />
+        <nuxt-link :to="`/${article.type}/${item.term_id}/`" class="entry-head__target" v-html="item.name" />
       </li>
     </ul>
   </header>

@@ -1,6 +1,6 @@
 <template>
   <div class="entry-content">
-    <EntryToc :list="tocList" />
+    <EntryToc v-if="toc" :list="tocList" />
     <div class="entry-content__inner" v-html="article.content" />
   </div>
 </template>
@@ -30,6 +30,10 @@ export default {
     article: {
       type: Object,
       default: () => {}
+    },
+    toc: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

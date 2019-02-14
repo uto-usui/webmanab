@@ -9,12 +9,12 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <nuxt-link class="header__nav-target" to="/tip">
+            <nuxt-link class="header__nav-target" to="/tip/">
               tip
             </nuxt-link>
           </li>
           <li class="header__nav-item">
-            <nuxt-link class="header__nav-target" to="/clip">
+            <nuxt-link class="header__nav-target" to="/clip/">
               clip
             </nuxt-link>
           </li>

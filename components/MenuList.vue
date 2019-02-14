@@ -3,9 +3,9 @@
     <MenuTitle :list-title="listTitle" />
     <ul class="menu-list">
       <li v-for="(item, index) in listData" :key="`listIndex${index}`" class="menu-list__item">
-        <a class="menu-list__target" :href="item.link">
+        <nuxt-link class="menu-list__target" :to="`/${item.taxonomy}/${item.id}/`">
           {{ item.name }}
-        </a>
+        </nuxt-link>
       </li>
     </ul>
   </div>
