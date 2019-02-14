@@ -7,19 +7,21 @@
 
 <script>
 import hljs from 'highlight.js/lib/highlight'
-;[
-  'javascript',
-  'bash',
-  'css',
-  'php',
-  'typescript',
-  'scss',
-  'yaml',
-  'xml'
-].forEach(langName => {
-  const langModule = require(`highlight.js/lib/languages/${langName}`)
-  hljs.registerLanguage(langName, langModule)
-})
+
+// need languages
+import javascript from 'highlight.js/lib/languages/javascript'
+import scss from 'highlight.js/lib/languages/scss'
+import typescript from 'highlight.js/lib/languages/typescript'
+import xml from 'highlight.js/lib/languages/xml'
+import bash from 'highlight.js/lib/languages/bash'
+import php from 'highlight.js/lib/languages/php'
+
+hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('scss', scss)
+hljs.registerLanguage('typescript', typescript)
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('bash', bash)
+hljs.registerLanguage('php', php)
 
 export default {
   name: 'EntryContent',
