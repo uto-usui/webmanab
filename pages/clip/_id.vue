@@ -29,6 +29,7 @@ import LazyImage from '~/components/LazyImage'
 import EntryHead from '~/components/EntryHead'
 import EntryContent from '~/components/EntryContent'
 import EntryClipLink from '~/components/EntryClipLink'
+import SectionEntry from '~/components/SectionEntry'
 
 import SingleAsyncData from '~/mixins/Single'
 
@@ -41,12 +42,12 @@ export default nuxtend({
     EntryHead,
     EntryContent,
     EntryClipLink,
+    SectionEntry,
     EntryAd: () => import('~/components/EntryAd'),
     EntrySns: () => import('~/components/EntrySns'),
     EntryTag: () => import('~/components/EntryTag'),
     EntryRelated: () => import('~/components/EntryRelated'),
-    EntryNav: () => import('~/components/EntryNav'),
-    SectionEntry: () => import('~/components/SectionEntry')
+    EntryNav: () => import('~/components/EntryNav')
   },
 
   data() {
