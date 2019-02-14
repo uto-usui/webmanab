@@ -13,9 +13,7 @@
         </nuxt-link>
       </h3>
       <p class="u-text-right">
-        <time class="article-item__time" datetime="">
-          2016-01-01
-        </time>
+        <time class="article-item__time" :datetime="getDate(article.date)" v-html="getDate(article.date)" />
       </p>
     </div>
   </article>
@@ -24,10 +22,14 @@
 <script>
 import LazyImage from '~/components/LazyImage.vue'
 
+import DateMixin from '~/mixins/Date'
+
 export default {
+  name: 'Article',
   components: {
     LazyImage
   },
+  mixins: [DateMixin],
   props: {
     article: {
       type: Object,
