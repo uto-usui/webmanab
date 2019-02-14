@@ -12,7 +12,7 @@
         ／／
       </li>
       <li v-for="(item, index) in article.terms[`${article.type}s`]" :key="index" class="entry-head__item">
-        <nuxt-link :to="`/${article.type}/${item.term_id}/`" class="entry-head__target" v-html="item.name" />
+        <nuxt-link :to="`/${article.type}s/${item.term_id}/`" class="entry-head__target" v-html="item.name" />
       </li>
     </ul>
   </header>
