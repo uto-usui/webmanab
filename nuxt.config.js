@@ -119,12 +119,12 @@ module.exports = {
 
   generate: {
     interval: 500,
-    routes() {
+    routes(callback) {
       // headers
       // 'x-wp-total': '1',
       // 'x-wp-totalpages': '1',
 
-      return Promise.all([
+      Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
         axios.get(`${apiUrl}clip?custom_per_page=1000`),
         axios.get(`${apiUrl}tips`),
@@ -136,7 +136,7 @@ module.exports = {
           const tips = data[2]
           const clips = data[3]
 
-          return tip.data
+          const arr = tip.data
             .map(el => {
               return {
                 route: '/tip/' + el.slug,
@@ -167,11 +167,11 @@ module.exports = {
                 }
               })
             )
+
+          callback(null, arr)
         })
 
-        .catch(error => {
-          console.log(error.message)
-        })
+        .catch(callback)
     }
   }
 }
