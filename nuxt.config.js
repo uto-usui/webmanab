@@ -118,7 +118,7 @@ module.exports = {
   },
 
   generate: {
-    interval: 250,
+    interval: 500,
     routes() {
       // headers
       // 'x-wp-total': '1',
