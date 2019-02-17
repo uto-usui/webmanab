@@ -6,7 +6,7 @@ import LazyImage from '~/components/LazyImage'
 
 export default {
   name: 'EntryClipFullImage',
-  components: [LazyImage],
+  components: { LazyImage },
   props: {
     article: {
       type: Object,
