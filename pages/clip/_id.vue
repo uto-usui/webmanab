@@ -2,11 +2,11 @@
   <Wrapper>
     <SectionEntry>
       <EntryHead :article="article" />
-      <EntryAd :article="article" />
+      <!--<EntryAd :article="article" />-->
       <EntryContent :article="article" />
       <EntryClipLink :article="article" :img="featuredImage.source_url" :alt="featuredImage.alt" />
-      <LazyImage :src="article.clipImage" class="entry__img-full" :alt="`${article.title} overview image`" />
-      <EntryAd :article="article" />
+      <EntryClipFullImage v-if="article.clipImage" :article="article" />
+      <!--<EntryAd :article="article" />-->
       <EntrySns :article="article" />
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
@@ -15,20 +15,14 @@
   </Wrapper>
 </template>
 
-<style lang="scss" scoped>
-.entry__img-full {
-  margin-top: 120px;
-}
-</style>
-
 <script>
 import nuxtend from 'nuxtend'
 
 import Wrapper from '~/components/Wrapper'
-import LazyImage from '~/components/LazyImage'
 import EntryHead from '~/components/EntryHead'
 import EntryContent from '~/components/EntryContent'
 import EntryClipLink from '~/components/EntryClipLink'
+import EntryClipFullImage from '~/components/EntryClipFullImage'
 import SectionEntry from '~/components/SectionEntry'
 
 import SingleAsyncData from '~/mixins/Single'
@@ -37,11 +31,11 @@ export default nuxtend({
   mixins: [SingleAsyncData],
 
   components: {
-    LazyImage,
     Wrapper,
     EntryHead,
     EntryContent,
     EntryClipLink,
+    EntryClipFullImage,
     SectionEntry,
     EntryAd: () => import('~/components/EntryAd'),
     EntrySns: () => import('~/components/EntrySns'),
