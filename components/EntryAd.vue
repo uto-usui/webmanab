@@ -1,6 +1,6 @@
 <template>
   <div class="entry-ad">
-    <img src="http://dummyimage.com/860x90/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+    <adsbygoogle :ad-slot="adSlot" />
   </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
     article: {
       type: Object,
       default: () => {}
+    },
+    adSlot: {
+      type: String,
+      default: ''
     }
   }
 }

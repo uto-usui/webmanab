@@ -57,6 +57,12 @@ module.exports = {
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
     [
+      '@nuxtjs/google-adsense',
+      {
+        id: 'ca-pub-2691922878827958'
+      }
+    ],
+    [
       '~/modules/api',
       {
         config: '~/api.config.js',

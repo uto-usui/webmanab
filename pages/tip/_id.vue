@@ -2,11 +2,11 @@
   <Wrapper>
     <SectionEntry>
       <EntryHead :article="article" />
-      <!--<EntryAd :article="article" />-->
+      <EntryAd :ad-slot="'6597241020'" :article="article" />
       <EntryDemo v-if="article.fields['demo-true']" :article="article" />
       <EntryContent :article="article" :toc="true" />
       <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
-      <!--<EntryAd :article="article" />-->
+      <EntryAd :ad-slot="'1102437429'" :article="article" />
       <EntrySns :article="article" />
       <EntryTag :article="article" />
       <EntryRelated :article="article" />

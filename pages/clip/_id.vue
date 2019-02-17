@@ -2,11 +2,11 @@
   <Wrapper>
     <SectionEntry>
       <EntryHead :article="article" />
-      <!--<EntryAd :article="article" />-->
+      <EntryAd :ad-slot="'6597241020'" :article="article" />
       <EntryContent :article="article" />
       <EntryClipLink :article="article" :img="featuredImage.source_url" :alt="featuredImage.alt" />
       <EntryClipFullImage v-if="article.clipImage" :article="article" />
-      <!--<EntryAd :article="article" />-->
+      <EntryAd :ad-slot="'1102437429'" :article="article" />
       <EntrySns :article="article" />
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
