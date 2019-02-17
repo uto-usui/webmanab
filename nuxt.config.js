@@ -178,8 +178,8 @@ module.exports = {
     interval: 500,
     routes(callback) {
       Promise.all([
-        axios.get(`${apiUrl}tip?custom_per_page=1000`),
-        axios.get(`${apiUrl}clip?custom_per_page=1000`),
+        axios.get(`${apiUrl}tip?custom_per_page=1000&_embed=1`),
+        axios.get(`${apiUrl}clip?custom_per_page=1000&_embed=1`),
         axios.get(`${apiUrl}tips`),
         axios.get(`${apiUrl}clips`)
       ])
