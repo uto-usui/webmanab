@@ -62,6 +62,7 @@ module.exports = {
         id: 'ca-pub-2691922878827958'
       }
     ],
+    ['@nuxtjs/google-gtag', { id: 'UA-69841076-1' }],
     [
       '~/modules/api',
       {
