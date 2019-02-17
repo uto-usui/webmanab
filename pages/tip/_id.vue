@@ -3,7 +3,7 @@
     <SectionEntry>
       <EntryHead :article="article" />
       <EntryAd :ad-slot="'6597241020'" :article="article" />
-      <EntryDemo v-if="article.fields['demo-true']" :article="article" />
+      <EntryDemo :article="article" />
       <EntryContent :article="article" :toc="true" />
       <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
       <EntryAd :ad-slot="'1102437429'" :article="article" />
