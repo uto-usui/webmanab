@@ -55,6 +55,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap',
     [
       '~/modules/api',
       {
@@ -63,6 +64,62 @@ module.exports = {
       }
     ]
   ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://webmanab-html.com',
+    generate: true,
+    routes(callback) {
+      Promise.all([
+        axios.get(`${apiUrl}tip?custom_per_page=1000`),
+        axios.get(`${apiUrl}clip?custom_per_page=1000`),
+        axios.get(`${apiUrl}tips`),
+        axios.get(`${apiUrl}clips`)
+      ])
+        .then(data => {
+          const tip = data[0]
+          const clip = data[1]
+          const tips = data[2]
+          const clips = data[3]
+
+          const arr = tip.data
+            .map(el => {
+              return {
+                route: '/tip/' + el.slug,
+                payload: el
+              }
+            })
+            .concat(
+              clip.data.map(el => {
+                return {
+                  route: '/clip/' + el.slug,
+                  payload: el
+                }
+              })
+            )
+            .concat(
+              tips.data.map(el => {
+                return {
+                  route: '/tips/' + el.id,
+                  payload: el
+                }
+              })
+            )
+            .concat(
+              clips.data.map(el => {
+                return {
+                  route: '/clips/' + el.id,
+                  payload: el
+                }
+              })
+            )
+
+          callback(null, arr)
+        })
+
+        .catch(callback)
+    }
+  },
 
   styleResources: {
     scss: [
@@ -120,10 +177,6 @@ module.exports = {
   generate: {
     interval: 500,
     routes(callback) {
-      // headers
-      // 'x-wp-total': '1',
-      // 'x-wp-totalpages': '1',
-
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
         axios.get(`${apiUrl}clip?custom_per_page=1000`),
