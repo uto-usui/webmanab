@@ -87,42 +87,13 @@ module.exports = {
           const clip = data[1]
           const tips = data[2]
           const clips = data[3]
-
           const arr = tip.data
-            .map(el => {
-              return {
-                route: '/tip/' + el.slug,
-                payload: el
-              }
-            })
-            .concat(
-              clip.data.map(el => {
-                return {
-                  route: '/clip/' + el.slug,
-                  payload: el
-                }
-              })
-            )
-            .concat(
-              tips.data.map(el => {
-                return {
-                  route: '/tips/' + el.id,
-                  payload: el
-                }
-              })
-            )
-            .concat(
-              clips.data.map(el => {
-                return {
-                  route: '/clips/' + el.id,
-                  payload: el
-                }
-              })
-            )
-
+            .map(el => '/tip/' + el.slug)
+            .concat(clip.data.map(el => '/clip/' + el.slug))
+            .concat(tips.data.map(el => '/tips/' + el.id))
+            .concat(clips.data.map(el => '/clips/' + el.id))
           callback(null, arr)
         })
-
         .catch(callback)
     }
   },
