@@ -3,7 +3,7 @@ const axios = require('axios')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const pkg = require('./package')
 
-const apiUrl = 'https://webmanab-html.com/wp-json/wp/v2/'
+const apiUrl = 'https://wp.webmanab-html.com/wp-json/wp/v2/'
 
 module.exports = {
   mode: 'universal',
