@@ -2,7 +2,7 @@
   <Wrapper>
     <SectionEntry>
       <EntryHead :article="article" />
-      <EntryAd :ad-slot="'6597241020'" :article="article" />
+      <EntryAd :ad-slot="'6597241020'" />
       <EntryDemo :article="article" />
       <EntryContent :article="article" :toc="true" />
       <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
@@ -11,6 +11,7 @@
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
       <EntryNav :article="article" />
+      <EntryAdFoot/>
     </SectionEntry>
   </Wrapper>
 </template>
@@ -36,6 +37,7 @@ export default nuxtend({
     EntryContent,
     EntryDemo,
     EntryAd: () => import('~/components/EntryAd'),
+    EntryAdFoot: () => import('~/components/EntryAdFoot'),
     EntrySns: () => import('~/components/EntrySns'),
     EntryTag: () => import('~/components/EntryTag'),
     EntryRelated: () => import('~/components/EntryRelated'),

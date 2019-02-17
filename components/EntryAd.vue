@@ -17,10 +17,6 @@
 export default {
   name: 'EntryAd',
   props: {
-    article: {
-      type: Object,
-      default: () => {}
-    },
     adSlot: {
       type: String,
       default: ''
