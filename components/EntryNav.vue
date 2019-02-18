@@ -1,7 +1,7 @@
 <template>
   <ul class="entry-nav">
     <li
-      v-if="article.prev.length !== 0 && article.prev.slug"
+      v-if="article.prev && article.prev.length !== 0 && article.prev.slug"
       class="entry-nav__item entry-nav__item--prev u-text-left"
     >
       <nuxt-link :to="`/${article.type}/${article.prev.slug}/`" class="entry-nav__target">
@@ -16,7 +16,7 @@
       <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
     </li>
     <li
-      v-if="article.next.length !== 0 && article.next.slug"
+      v-if="article.prev && article.next.length !== 0 && article.next.slug"
       class="entry-nav__item entry-nav__item--next u-text-right"
     >
       <nuxt-link :to="`/${article.type}/${article.next.slug}/`" class="entry-nav__target">
@@ -42,7 +42,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.article)
+    console.log('mounted entryNav - article', this.article)
   }
 }
 </script>
