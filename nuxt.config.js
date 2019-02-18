@@ -72,6 +72,21 @@ module.exports = {
     ]
   ],
 
+  /**
+   * page transition
+   */
+  transition: {
+    css: false,
+    enter(el, done) {
+      done()
+    },
+    leave(el, done) {
+      this.$store.getters.getMenuOpen &&
+        this.$store.dispatch('setMenuOpen', false)
+      done()
+    }
+  },
+
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://webmanab-html.com',

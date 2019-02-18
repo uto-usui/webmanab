@@ -6,5 +6,16 @@ export default {
       name: app.head.title,
       description: description ? description.content : ''
     })
+  },
+  toggleMenuOpen({ commit, state }) {
+    let isOpen = state.menuOpen
+    isOpen = !isOpen
+    commit('menuOpen', isOpen)
+  },
+  /**
+   * @param value {boolean}
+   */
+  setMenuOpen({ commit }, value) {
+    commit('menuOpen', value)
   }
 }

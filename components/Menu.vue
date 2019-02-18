@@ -1,7 +1,7 @@
 <template>
   <div class="menu__wrapper">
-    <nav class="menu" :class="[{'is-open': isOpen}]">
-      <a class="menu__btn" href="#" @click.prevent="isOpen = !isOpen">
+    <nav class="menu" :class="[{'is-open': getMenuOpen}]">
+      <a class="menu__btn" href="#" @click.prevent="toggleMenuOpen">
         menu
       </a>
       <div class="menu__inner">
@@ -131,6 +131,7 @@
 </style>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import MenuList from './MenuList'
 
 export default {
@@ -141,6 +142,9 @@ export default {
       clipsList: [],
       isOpen: false
     }
+  },
+  computed: {
+    ...mapGetters(['getMenuOpen'])
   },
   async created() {
     const query = {
@@ -153,8 +157,9 @@ export default {
     ])
     this.tipsList = data[0].data
     this.clipsList = data[1].data
-
-    // console.log(this.clipsList)
+  },
+  methods: {
+    ...mapActions(['toggleMenuOpen'])
   }
 }
 </script>
