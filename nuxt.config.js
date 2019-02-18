@@ -86,33 +86,26 @@ module.exports = {
   feed: [
     {
       path: '/feed.xml',
-      create(feed) {
+      async create(feed) {
+        const res = await axios.get(`${apiUrl}tip?custom_per_page=50`)
+
+        res.data.forEach(post => {
+          const url = `https://webmanab-html.com/${post.type}/${post.slug}`
+          feed.addItem({
+            title: post.title,
+            id: url,
+            link: url,
+            description: post.excerpt.rendered,
+            content: post.content.rendered
+          })
+        })
+
         feed.options = {
           title: 'webmanab.html／ウェブまなぶ',
           link: 'https://webmanab-html.com/feed.xml',
           description:
             'ウェブ制作のあれこれについて学習したことをメモしたりクリップしたり気ままに綴っていきます。'
         }
-
-        Promise.all([
-          axios.get(`${apiUrl}tip?custom_per_page=1000`),
-          axios.get(`${apiUrl}clip?custom_per_page=1000`)
-        ]).then(data => {
-          const tip = data[0]
-          const clip = data[1]
-          const arr = tip.data
-            .map(el => '/tip/' + el.slug)
-            .concat(clip.data.map(el => '/clip/' + el.slug))
-          arr.forEach(post => {
-            feed.addItem({
-              title: post.title,
-              id: post.url,
-              link: post.url,
-              description: post.description,
-              content: post.content
-            })
-          })
-        })
 
         feed.addCategory('frontend')
 
@@ -223,7 +216,7 @@ module.exports = {
   },
 
   generate: {
-    interval: 300,
+    interval: 300
     routes(callback) {
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
@@ -279,8 +272,6 @@ module.exports = {
 
 // tax
 // https://v2.wp-api.org/reference/taxonomies/
-// https://webmanab-html.com/wp-json/wp/v2/tips
-// https://webmanab-html.com/wp-json/wp/v2/clips
 
 // acf
 // https://wordpress.org/plugins/wp-rest-filter/#description
