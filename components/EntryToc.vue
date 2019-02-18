@@ -1,5 +1,5 @@
 <template>
-  <div class="entry-toc__wrap" v-if="list.length !== 0">
+  <div v-if="list.length !== 0" class="entry-toc__wrap">
     <section
       class="entry-toc"
       :class="[{'is-open': isOpen}]"
