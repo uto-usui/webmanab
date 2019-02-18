@@ -1,7 +1,6 @@
 const path = require('path')
 const axios = require('axios')
 const StylelintPlugin = require('stylelint-webpack-plugin')
-const pkg = require('./package')
 
 const apiUrl = 'https://wp.webmanab-html.com/wp-json/wp/v2/'
 
@@ -12,11 +11,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'webmanab.html／ウェブまなぶ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'ウェブ制作のあれこれについて学習したことをメモしたりクリップしたり気ままに綴っていきます。'
+      }
     ],
     link: [
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -56,6 +60,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
+    '@nuxtjs/feed',
     [
       '@nuxtjs/google-adsense',
       {
@@ -70,6 +75,53 @@ module.exports = {
         baseURI: `${apiUrl}`
       }
     ]
+  ],
+
+  /**
+   * create rss feed
+   */
+  feed: [
+    {
+      path: '/feed.xml',
+      create(feed) {
+        feed.options = {
+          title: 'webmanab.html／ウェブまなぶ',
+          link: 'https://webmanab-html.com/feed.xml',
+          description:
+            'ウェブ制作のあれこれについて学習したことをメモしたりクリップしたり気ままに綴っていきます。'
+        }
+
+        Promise.all([
+          axios.get(`${apiUrl}tip?custom_per_page=1000`),
+          axios.get(`${apiUrl}clip?custom_per_page=1000`)
+        ]).then(data => {
+          const tip = data[0]
+          const clip = data[1]
+          const arr = tip.data
+            .map(el => '/tip/' + el.slug)
+            .concat(clip.data.map(el => '/clip/' + el.slug))
+          arr.forEach(post => {
+            feed.addItem({
+              title: post.title,
+              id: post.url,
+              link: post.url,
+              description: post.description,
+              content: post.content
+            })
+          })
+        })
+
+        feed.addCategory('frontend')
+
+        feed.addContributor({
+          name: 'uto usui',
+          email: 'mee@uto-usui.com',
+          link: 'https://webmanab-html.com/'
+        })
+      },
+      cacheTime: 60 * 60 * 12 * 7,
+      type: 'rss2'
+    }
   ],
 
   /**
