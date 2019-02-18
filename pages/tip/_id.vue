@@ -11,7 +11,7 @@
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
       <EntryNav :article="article" />
-      <EntryAdFoot/>
+      <EntryAdFoot />
     </SectionEntry>
   </Wrapper>
 </template>

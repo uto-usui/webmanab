@@ -12,7 +12,7 @@
         height="1"
         border="0"
         alt=""
-        style="border:none !important; margin:0px !important;"
+        style="border:none !important; margin:0 !important;"
       >
     </li>
   </ul>

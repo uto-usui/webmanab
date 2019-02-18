@@ -2,7 +2,8 @@
   <ul class="entry-nav">
     <li
       v-if="article.prev.length !== 0"
-      class="entry-nav__item entry-nav__item--prev u-text-left">
+      class="entry-nav__item entry-nav__item--prev u-text-left"
+    >
       <nuxt-link :to="`/${article.type}/${article.prev.slug}/`" class="entry-nav__target">
         <div class="entry-nav__inner">
           <p class="entry-nav__text">
