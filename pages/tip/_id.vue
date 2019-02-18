@@ -5,7 +5,7 @@
       <EntryAd :ad-slot="'6597241020'" />
       <EntryDemo :article="article" />
       <EntryContent :article="article" :toc="true" />
-      <LazyImage :src="featuredImage.source_url" :alt="featuredImage.alt" />
+      <LazyImage :src="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
       <EntryAd :ad-slot="'1102437429'" :article="article" />
       <EntrySns :article="article" />
       <EntryTag :article="article" />

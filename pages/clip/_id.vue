@@ -4,7 +4,7 @@
       <EntryHead :article="article" />
       <EntryAd :ad-slot="'6597241020'" :article="article" />
       <EntryContent :article="article" />
-      <EntryClipLink :article="article" :img="featuredImage.source_url" :alt="featuredImage.alt" />
+      <EntryClipLink :article="article" :img="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
       <EntryClipFullImage v-if="article.clipImage" :article="article" />
       <EntryAd :ad-slot="'1102437429'" :article="article" />
       <EntrySns :article="article" />
