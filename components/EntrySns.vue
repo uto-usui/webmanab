@@ -7,6 +7,9 @@
           <svg>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter" />
           </svg>
+          <p class="is-sr-only">
+            twitter
+          </p>
         </a>
       </li>
       <li class="entry-sns__item">
@@ -14,6 +17,9 @@
           <svg>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook" />
           </svg>
+          <p class="is-sr-only">
+            facebook
+          </p>
         </a>
       </li>
       <li class="entry-sns__item">
@@ -21,6 +27,9 @@
           <svg>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google" />
           </svg>
+          <p class="is-sr-only">
+            google
+          </p>
         </a>
       </li>
       <li class="entry-sns__item">
@@ -28,6 +37,9 @@
           <svg>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-hatena" />
           </svg>
+          <p class="is-sr-only">
+            hatena
+          </p>
         </a>
       </li>
       <li class="entry-sns__item">
@@ -35,6 +47,9 @@
           <svg>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-pocket" />
           </svg>
+          <p class="is-sr-only">
+            pocket
+          </p>
         </a>
       </li>
     </ul>
