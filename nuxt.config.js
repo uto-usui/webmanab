@@ -93,7 +93,7 @@ module.exports = {
           const url = `https://webmanab-html.com/${post.type}/${post.slug}`
           feed.addItem({
             title: post.title,
-            id: url,
+            id: post.slug,
             link: url,
             description: post.excerpt.rendered,
             content: post.content.rendered
@@ -115,7 +115,7 @@ module.exports = {
           link: 'https://webmanab-html.com/'
         })
       },
-      cacheTime: 60 * 60 * 12 * 7,
+      cacheTime: 60 * 60 * 24 * 2, // 2days
       type: 'rss2'
     }
   ],
