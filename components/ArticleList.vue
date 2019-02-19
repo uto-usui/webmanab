@@ -5,7 +5,7 @@
     </div>
     <no-ssr>
       <InfiniteLoading
-        v-if="infinite && articles.length === 8"
+        v-if="infinite && articles.length % 8 === 0"
         ref="infiniteLoading"
         @infinite="moreArticles"
       >
