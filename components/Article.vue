@@ -147,25 +147,24 @@ export default {
   position: relative;
   padding-top: calc(9 / 16 * 100%);
   overflow: hidden;
+  background-color: $glay;
   //
   > img {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
-    will-change: transform;
+    will-change: opacity;
     opacity: 0;
-    transform: translate(-50%, -10%) scaleY(1.12);
+    transform: translate(-50%, -50%);
     //
     &[lazy='loading'] {
       opacity: 0;
-      transform: translate(-50%, -10%) scaleY(1.12);
     }
     //
     &[lazy='loaded'] {
       opacity: 1;
-      transition: transform 1.1s $easeSmoothOut;
-      transform: translate(-50%, -50%) scaleY(1);
+      transition: opacity 0.25s;
     }
   }
   //
