@@ -216,7 +216,7 @@ module.exports = {
   },
 
   generate: {
-    interval: 300
+    interval: 300,
     routes(callback) {
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
