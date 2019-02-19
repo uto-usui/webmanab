@@ -14,7 +14,6 @@ export default {
     postType = postType.replace('/', '').replace('s/:id?', '')
 
     const taxonomy = `${postType}s`
-    // set tax / reset pages and posts
 
     store.commit(`tax/setTerm`, params.id)
     store.commit(`tax/setCurrentPath`, route.path)
@@ -35,17 +34,10 @@ export default {
         posts: posts.data
       })
       store.commit(`tax/setCachePosts`, posts.data)
-
-      // console.log('posts.data posts.data posts.data', posts.data)
-      // console.log('state.tax state.tax state.tax', store.state.tax)
     }
 
     store.commit(`tax/setCurrentPosts`)
     store.commit(`tax/setCurrentQuery`, query)
-
-    // console.log('taxonomy taxonomy taxonomy', taxonomy)
-    // console.log('query query query', query)
-    // console.log('postType postType postType', postType)
   },
   computed: {
     articles() {

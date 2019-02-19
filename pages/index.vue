@@ -59,7 +59,6 @@ export default {
      */
     articles() {
       return postType => {
-        // const page = this.$store.state.cachePages[this.$store.state.currentPath] || {}
         return this.$store.state[postType].currentPosts.map(postSlug => {
           return this.$store.state[postType].cachePosts[postSlug] || {}
         })
