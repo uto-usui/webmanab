@@ -21,9 +21,19 @@ module.exports = {
     'no-param-reassign': [
       'error',
       {
-        props: true,
-        ignorePropertyModificationsFor: ['state'],
-      },
+        'props': true,
+        'ignorePropertyModificationsFor': [
+          'state',
+          'acc',
+          'e',
+          'ctx',
+          'req',
+          'request',
+          'res',
+          'config',
+          'feed'
+        ]
+      }
     ],
     'vue/no-v-html': [
       'off',
