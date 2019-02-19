@@ -182,12 +182,6 @@ module.exports = {
     splitChunks: {
       layouts: true
     },
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['IE 11', 'last 2 versions'],
-        grid: true
-      })
-    ],
     /*
     ** You can extend webpack config here
     */
