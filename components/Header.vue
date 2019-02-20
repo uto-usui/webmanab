@@ -19,6 +19,11 @@
             </nuxt-link>
           </li>
           <li class="header__nav-item">
+            <nuxt-link class="header__nav-target" to="/lab/">
+              lab
+            </nuxt-link>
+          </li>
+          <li class="header__nav-item">
             <nuxt-link class="header__nav-target" to="/">
               about
             </nuxt-link>

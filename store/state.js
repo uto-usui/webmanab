@@ -5,7 +5,7 @@ export default () => {
       description: ''
     },
     domain: 'https://webmanab-html.com/',
-    postTypes: ['tip', 'clip'],
+    postTypes: ['tip', 'clip', 'lab'],
     menuOpen: false
   }
 }

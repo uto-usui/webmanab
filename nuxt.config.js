@@ -143,19 +143,25 @@ module.exports = {
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
         axios.get(`${apiUrl}clip?custom_per_page=1000`),
+        axios.get(`${apiUrl}lab?custom_per_page=1000`),
         axios.get(`${apiUrl}tips`),
-        axios.get(`${apiUrl}clips`)
+        axios.get(`${apiUrl}clips`),
+        axios.get(`${apiUrl}labs`)
       ])
         .then(data => {
           const tip = data[0]
           const clip = data[1]
-          const tips = data[2]
-          const clips = data[3]
+          const lab = data[2]
+          const tips = data[3]
+          const clips = data[4]
+          const labs = data[5]
           const arr = tip.data
             .map(el => '/tip/' + el.slug)
             .concat(clip.data.map(el => '/clip/' + el.slug))
+            .concat(lab.data.map(el => '/lab/' + el.slug))
             .concat(tips.data.map(el => '/tips/' + el.id))
             .concat(clips.data.map(el => '/clips/' + el.id))
+            .concat(labs.data.map(el => '/labs/' + el.id))
           callback(null, arr)
         })
         .catch(callback)
@@ -215,14 +221,18 @@ module.exports = {
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
         axios.get(`${apiUrl}clip?custom_per_page=1000`),
+        axios.get(`${apiUrl}lab?custom_per_page=1000`),
         axios.get(`${apiUrl}tips`),
-        axios.get(`${apiUrl}clips`)
+        axios.get(`${apiUrl}clips`),
+        axios.get(`${apiUrl}labs`)
       ])
         .then(data => {
           const tip = data[0]
           const clip = data[1]
-          const tips = data[2]
-          const clips = data[3]
+          const lab = data[2]
+          const tips = data[3]
+          const clips = data[4]
+          const labs = data[5]
 
           const arr = tip.data
             .map(el => {
@@ -240,6 +250,14 @@ module.exports = {
               })
             )
             .concat(
+              lab.data.map(el => {
+                return {
+                  route: '/lab/' + el.slug,
+                  payload: el
+                }
+              })
+            )
+            .concat(
               tips.data.map(el => {
                 return {
                   route: '/tips/' + el.id,
@@ -251,6 +269,14 @@ module.exports = {
               clips.data.map(el => {
                 return {
                   route: '/clips/' + el.id,
+                  payload: el
+                }
+              })
+            )
+            .concat(
+              labs.data.map(el => {
+                return {
+                  route: '/labs/' + el.id,
                   payload: el
                 }
               })

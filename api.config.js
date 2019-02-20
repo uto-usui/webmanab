@@ -65,6 +65,27 @@ module.exports = {
         '/clips/:id': 'clips'
       }
     },
+    lab: {
+      get: {
+        '/lab': 'lab',
+        '/lab/:id': 'lab'
+      },
+      post: {
+        '/lab': 'lab'
+      },
+      put: {
+        '/lab/:id': 'lab'
+      },
+      delete: {
+        '/lab/:id': 'lab'
+      }
+    },
+    labs: {
+      get: {
+        '/labs': 'labs',
+        '/clips/:id': 'labs'
+      }
+    },
     category: {
       get: {
         '/categories': 'categories',
@@ -144,6 +165,9 @@ module.exports = {
       props: {
         clipImage: 'clipImage'
       }
+    },
+    lab: {
+      extends: 'post'
     },
     category: {
       extends: 'term'

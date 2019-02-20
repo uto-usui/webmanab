@@ -3,7 +3,7 @@
     <div class="article-item__inner">
       <strong class="article-item__tag" v-html="article.fields['primary-tag']" />
       <nuxt-link class="article-item__img-wrap" :to="`/${article.type}/${article.slug}/`">
-        <div class="article-item__img">
+        <div v-if="article && article.images && article.images[0]" class="article-item__img">
           <LazyImage :src="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
         </div>
       </nuxt-link>

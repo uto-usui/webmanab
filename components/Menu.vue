@@ -7,6 +7,7 @@
       <div class="menu__inner">
         <MenuList :list-data="tipsList" list-title="tip" />
         <MenuList :list-data="clipsList" list-title="clip" />
+        <MenuList :list-data="labsList" list-title="lab" />
       </div>
     </nav>
     <div class="menu__overlay" />
@@ -140,6 +141,7 @@ export default {
     return {
       tipsList: [],
       clipsList: [],
+      labsList: [],
       isOpen: false
     }
   },
@@ -153,10 +155,12 @@ export default {
     // get taxnomy for menu
     const data = await Promise.all([
       this.$api.get('/tips', query),
-      this.$api.get('/clips', query)
+      this.$api.get('/clips', query),
+      this.$api.get('/labs', query)
     ])
     this.tipsList = data[0].data
     this.clipsList = data[1].data
+    this.labsList = data[2].data
   },
   methods: {
     ...mapActions(['toggleMenuOpen'])
