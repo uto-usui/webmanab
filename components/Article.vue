@@ -8,7 +8,10 @@
         </div>
       </nuxt-link>
       <h3 class="article-item__title">
-        <nuxt-link :to="`/${article.type}/${article.slug}/`" class="article-item__target">
+        <a v-if="article.type === 'clip'" :href="article.fields['clip-url']" target="_blank" class="article-item__target">
+          {{ article.title }}
+        </a>
+        <nuxt-link v-else :to="`/${article.type}/${article.slug}/`" class="article-item__target">
           {{ article.title }}
         </nuxt-link>
       </h3>
