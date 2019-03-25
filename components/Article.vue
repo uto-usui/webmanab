@@ -4,7 +4,10 @@
       <strong class="article-item__tag" v-html="article.fields['primary-tag']" />
       <nuxt-link class="article-item__img-wrap" :to="`/${article.type}/${article.slug}/`">
         <div v-if="article && article.images && article.images[0]" class="article-item__img">
-          <LazyImage :src="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
+          <img
+            v-lazy="featuredImage('large')"
+            :data-srcset="`${featuredImage('thumb700')} 200w, ${featuredImage('thumb480')} 768w, ${featuredImage('thumb370')} 1480w, ${featuredImage('thumb480')} 1700w`"
+          >
         </div>
       </nuxt-link>
       <h3 class="article-item__title">
@@ -23,14 +26,12 @@
 </template>
 
 <script>
-import LazyImage from '~/components/LazyImage.vue'
-
 import DateMixin from '~/mixins/Date'
 
 export default {
   name: 'Article',
   components: {
-    LazyImage
+    //
   },
   mixins: [DateMixin],
   props: {
@@ -41,11 +42,18 @@ export default {
   },
   computed: {
     featuredImage() {
-      if (this.article && this.article.images && this.article.images[0]) {
-        const featuredImage = this.article.images[0]
-        return featuredImage.sizes.large || featuredImage.sizes.full || false
-      } else {
-        return { height: 0, width: 0 }
+      return size => {
+        if (
+          this.article &&
+          this.article.images &&
+          this.article.images[0] &&
+          this.article.images[0].sizes &&
+          this.article.images[0].sizes[size]
+        ) {
+          return this.article.images[0].sizes[size].source_url
+        } else {
+          return { height: 0, width: 0 }
+        }
       }
     }
   }
