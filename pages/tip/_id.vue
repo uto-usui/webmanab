@@ -7,7 +7,7 @@
       <EntryContent :article="article" :toc="true" />
       <LazyImage :src="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
       <EntryAd :ad-slot="'1102437429'" :article="article" />
-      <EntrySns :article="article" />
+      <EntrySns :post-type="postType" :article="article" />
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
       <EntryNav :article="article" />

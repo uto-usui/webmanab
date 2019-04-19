@@ -7,7 +7,7 @@
       <EntryClipLink :article="article" :img="featuredImage.source_url" :alt="`${article.title}のアイキャッチ画像`" />
       <EntryClipFullImage v-if="article.clipImage" :article="article" />
       <EntryAd :ad-slot="'1102437429'" :article="article" />
-      <EntrySns :article="article" />
+      <EntrySns :post-type="postType" :article="article" />
       <EntryTag :article="article" />
       <EntryRelated :article="article" />
       <EntryNav :article="article" />
