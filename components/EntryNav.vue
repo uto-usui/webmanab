@@ -13,7 +13,7 @@
           <h3 class="entry-nav__title" v-html="article.prev.title" />
         </div>
       </nuxt-link>
-      <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
+      <div v-if="article.prev.img" class="entry-nav__bg" :style="{ backgroundImage: `url(${article.prev.img})` }" />
     </li>
     <li
       v-if="article.prev && article.next.length !== 0 && article.next.slug"
@@ -28,7 +28,7 @@
           <h3 class="entry-nav__title" v-html="article.next.title" />
         </div>
       </nuxt-link>
-      <div class="entry-nav__bg" :style="{ backgroundImage: `url(${article.next.img})` }" />
+      <div v-if="article.next.img" class="entry-nav__bg" :style="{ backgroundImage: `url(${article.next.img})` }" />
     </li>
   </ul>
 </template>
