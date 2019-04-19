@@ -1,5 +1,5 @@
 <template>
-  <div v-if="list.length !== 0" class="entry-toc__wrap">
+  <div class="entry-toc__wrap">
     <section
       class="entry-toc"
       :class="[{'is-open': isOpen}]"
@@ -191,6 +191,11 @@ export default {
       isOpen: false,
       counter: 0
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      console.log('📜 toc list', this.list)
+    })
   }
 }
 </script>

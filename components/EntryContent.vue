@@ -1,6 +1,6 @@
 <template>
   <div class="entry-content">
-    <EntryToc v-if="toc" :list="tocList" />
+    <EntryToc v-if="toc && tocList" :list="tocList" />
     <div class="entry-content__inner" v-html="article.content" />
   </div>
 </template>
@@ -16,6 +16,8 @@ import xml from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import php from 'highlight.js/lib/languages/php'
 
+import EntryToc from '~/components/EntryToc'
+
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('scss', scss)
 hljs.registerLanguage('typescript', typescript)
@@ -26,7 +28,7 @@ hljs.registerLanguage('php', php)
 export default {
   name: 'EntryContent',
   components: {
-    EntryToc: () => import('~/components/EntryToc')
+    EntryToc
   },
   props: {
     article: {
@@ -44,9 +46,7 @@ export default {
     }
   },
   computed: {
-    getList() {
-      return this.tocList
-    }
+    //
   },
   mounted() {
     this.$nextTick(() => {
