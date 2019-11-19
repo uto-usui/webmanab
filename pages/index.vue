@@ -24,7 +24,7 @@ export default {
     Wrapper,
     SectionList
   },
-  async asyncData({ app, store, params, route, payload }) {
+  async fetch({ app, store, params, route, payload }) {
     for (const postType of store.state.postTypes) {
       store.commit(`${postType}/setCurrentPath`, route.path)
 
