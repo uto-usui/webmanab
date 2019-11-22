@@ -60,8 +60,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: $space-5;
+  height: $space-5;
   font-style: italic;
   font-weight: bold;
   color: $secondary-color;
@@ -70,7 +70,7 @@
   background-color: $glay;
   transition: transform 0.45s $easeOutSine;
   transition-delay: 0.35s;
-  transform: translateX(-60px);
+  transform: translateX(-#{$space-5});
   will-change: transform;
   //
   &:hover {
@@ -85,14 +85,18 @@
 }
 
 .menu__inner {
-  width: calc(100% - 60px);
+  width: calc(100% - #{$space-5});
   height: 100%;
-  padding-top: 20px;
+  padding-top: 2px;
   overflow-y: auto;
   background-color: rgba($glay, 0.95);
   transition: 0.85s $easeInOutExpo;
   transform: rotateY(5deg);
   transform-origin: 0% 50%;
+  //
+  @include desktop {
+    padding-bottom: $space-5;
+  }
   //
   .menu.is-open & {
     pointer-events: auto;

@@ -16,18 +16,22 @@ export default {
 
 <style lang="scss">
 .menu-title {
-  padding-bottom: 0.4em;
-  padding-left: 0.6em;
-  margin-bottom: 15px;
-  font-size: 2.8rem;
+  padding-top: $space-2;
+  padding-bottom: $space-2;
+  padding-left: $space-2;
+  margin-bottom: $space-2;
+  font-size: $font-size-l5;
   font-weight: 800;
   color: $secondary-color;
   text-align: left;
   text-transform: capitalize;
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid rgba($white, 0.5);
   //
   @include tablet {
-    font-size: 4.6rem;
+    padding-top: $space-5;
+    padding-left: $space-4;
+    margin-bottom: $space-4;
+    font-size: $font-size-l6;
   }
 }
 </style>

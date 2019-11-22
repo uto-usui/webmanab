@@ -38,19 +38,26 @@ export default {
 .menu-list {
   display: flex;
   flex-wrap: wrap;
-  padding-right: 16px;
-  padding-left: 16px;
-  margin-bottom: 50px;
+  padding-right: $space-2;
+  padding-left: $space-2;
+  margin-bottom: $space-2;
+  margin-left: -5px;
   //
   @include mobile {
     max-height: 350px;
     overflow: auto;
+  }
+  //
+  @include desktop {
+    padding-right: $space-4;
+    padding-left: $space-4;
   }
 }
 
 .menu-list__target {
   display: inline-block;
   padding: 0.6em 0.8em;
+  font-size: $font-size-l1;
   color: $white;
   text-transform: uppercase;
   transition: 0.25s $easeOutQuart;
