@@ -36,33 +36,36 @@
 
 <style lang="scss">
 .header {
+  position: relative;
   //
   &.is-fixed {
-    padding-top: 120px;
+    // padding-top: 120px;
   }
 }
 
 .header__inner {
-  padding: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
   //
   @include tablet {
     padding: 30px;
   }
   //
   @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 51px 40px 35px;
+    padding: calc(#{$space-5} + 1px) 40px 0;
   }
   //
   &.is-fixed {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 99;
     height: 40px;
     padding-top: 0;
     padding-bottom: 0;
@@ -71,11 +74,12 @@
 }
 
 .header__title {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  // padding-left: $space-2;
+  margin-top: $space-7;
+  margin-bottom: $space-2;
   //
   > a {
-    font-size: 3.2rem;
+    font-size: $font-size-l5;
     font-weight: bold;
     color: $glay;
 
@@ -86,24 +90,21 @@
   //
   @include tablet {
     margin-top: 45px;
-    font-size: 4rem;
   }
   //
   @include desktop {
-    padding-left: 16px;
+    padding-left: $space-3;
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
 .header__nav {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
+  // padding-left: $space-3;
   //
   @include desktop {
-    width: 300px;
-    margin-right: 100px;
+    padding-right: $space-5;
+    margin-right: $space-5;
   }
 }
 
@@ -119,16 +120,12 @@
 .header__nav-item {
   //
   + .header__nav-item {
-    margin-left: 3rem;
-    //
-    @include tablet {
-      margin-left: 5rem;
-    }
+    margin-left: $space-4;
   }
 }
 
 .header__nav-target {
-  font-size: 1.8rem;
+  font-size: $font-size-l3;
   font-style: italic;
   color: $glay;
   //
@@ -153,7 +150,7 @@ export default {
   },
   methods: {
     checkFixed() {
-      this.isFixed = window.innerWidth >= 1080 && window.pageYOffset > 51
+      this.isFixed = window.innerWidth >= 1080 && window.pageYOffset > 45
 
       requestAnimationFrame(this.checkFixed)
     }
