@@ -23,13 +23,16 @@
 
 <style lang="scss" scoped>
 .article-list {
+  margin-top: $space-5;
   //
+  @include desktop {
+    margin-top: $space-6;
+  }
 }
 
 .article-list__inner {
   display: flex;
   flex-flow: wrap;
-  margin-top: 50px;
   //
   &.js-tab-item {
     display: none;
@@ -43,9 +46,9 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import InfiniteLoading from 'vue-infinite-loading'
 import Article from '~/components/Article'
 
-import InfiniteLoading from 'vue-infinite-loading'
 import Loader from '~/components/Loader'
 
 export default {

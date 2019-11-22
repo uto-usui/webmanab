@@ -14,7 +14,6 @@ export default {
 .section-list {
   position: relative;
   z-index: 1;
-  margin-top: 65px;
   margin-bottom: 120px;
   //
   @include desktop {
