@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .h1 {
-  font-size: 7rem;
+  font-size: $font-size-l7;
   font-style: italic;
   font-weight: bold;
   text-transform: capitalize;
@@ -85,7 +85,7 @@ export default {
       top: -2.8em;
       left: 50%;
       width: 6em;
-      font-size: 1.4rem;
+      font-size: $font-size-l2;
       font-style: italic;
       content: 'All View';
       opacity: 0;
