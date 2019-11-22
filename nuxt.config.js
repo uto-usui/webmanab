@@ -138,7 +138,6 @@ module.exports = {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://webmanab-html.com',
-    generate: true,
     routes(callback) {
       Promise.all([
         axios.get(`${apiUrl}tip?custom_per_page=1000`),
