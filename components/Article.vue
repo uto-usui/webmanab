@@ -89,14 +89,15 @@ export default {
   min-width: 100px;
   padding-right: 4px;
   padding-bottom: 4px;
-  padding-left: 16px;
+  padding-left: $space-2;
+  font-size: $font-size-l1;
   font-style: italic;
   color: $glay;
   border-bottom: 2px solid currentcolor;
   //
   &::first-letter {
     padding-right: 6px;
-    font-size: 5rem;
+    font-size: $font-size-l6;
     font-weight: bold;
     color: $white;
     text-shadow: -1px -1px 0 $text-color, 1px -1px 0 $text-color,
@@ -106,11 +107,13 @@ export default {
 }
 
 .article-item__title {
-  margin: 20px 16px;
+  margin: -6px $space-2 $space-2;
+  font-size: $font-size-l3;
+  line-height: 40px;
   text-align: justify;
   //
   @include tablet {
-    font-size: 1.8rem;
+    //
   }
 }
 
@@ -128,9 +131,10 @@ export default {
 
 .article-item__img-wrap {
   display: block;
-  width: calc(100% - 32px);
-  margin-top: 20px;
+  width: calc(100% - #{$space-2} * 2);
+  margin-top: $space-2;
   margin-right: auto;
+  margin-bottom: $space-2;
   margin-left: auto;
   vertical-align: bottom;
   transition: 0.25s $easeOutQuart;
@@ -148,7 +152,7 @@ export default {
   @include desktop {
     //
   }
-
+  //
   @include widescreen {
     //
   }
@@ -188,8 +192,7 @@ export default {
   position: relative;
   top: 0;
   left: 0;
-  padding: 0.2em 0.5em 0.15em;
-  line-height: 2.5;
+  padding: 0.2em 0.1em 0.2em;
   color: $white;
   background-color: $glay;
   transition: 0.25s $easeOutQuart;
@@ -204,10 +207,10 @@ export default {
 
 .article-item__time {
   display: inline-block;
-  padding-right: calc(100px - 5em);
+  padding-right: $space-2;
   padding-bottom: 4px;
   padding-left: 4px;
-  font-size: 1.4rem;
+  font-size: $font-size-l2;
   font-style: italic;
   border-bottom: 2px solid currentcolor;
 }
