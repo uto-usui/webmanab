@@ -12,7 +12,7 @@
         height="1"
         border="0"
         alt=""
-        style="border:none !important; margin:0 !important;"
+        style="margin:0 !important;border:none !important;"
       >
     </li>
   </ul>
@@ -37,6 +37,7 @@
   border: 6px double $black;
   //
   @include mobile {
+    //
     &:last-child {
       display: none;
     }
