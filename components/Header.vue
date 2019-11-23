@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: calc(#{$space-5} + 1px) 40px 0;
+    padding: calc(#{$space-5} + 2px) 40px 0;
   }
   //
   &.is-fixed {
@@ -75,7 +75,7 @@
 
 .header__title {
   // padding-left: $space-2;
-  margin-top: $space-7;
+  margin-top: $space-6;
   margin-bottom: $space-2;
   //
   > a {
@@ -86,10 +86,6 @@
     .header.fixed & {
       font-size: 3rem;
     }
-  }
-  //
-  @include tablet {
-    margin-top: 45px;
   }
   //
   @include desktop {
