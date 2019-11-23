@@ -35,7 +35,14 @@ $font-size-s2: 1rem * 8 / 10 !default; // 0.8rem
 // line height
 // ---------------------------------------------------------
 //
-$line-height: 1rem * 0.4 !default; //
+$line-height-unit: 1rem * 0.8 !default; // 8
+$line-height-l7: $line-height-unit * 20 !default;
+$line-height-l6: $line-height-unit * 10 !default;
+$line-height-l5: $line-height-unit * 7 !default;
+$line-height-l4: $line-height-unit * 5 !default;
+$line-height-l3: $line-height-unit * 4 !default;
+$line-height-l2: $line-height-unit * 3 !default;
+$line-height-l1: $line-height-unit * 3 !default;
 //
 //
 // ---------------------------------------------------------
@@ -51,6 +58,9 @@ $space-5: $space-unit * 13 !default; // 5.2rem
 $space-6: $space-unit * 21 !default; // 8.4rem
 $space-7: $space-unit * 34 !default; // 13.6rem
 $space-8: $space-unit * 55 !default; // 22rem
+$space-9: $space-unit * 89 !default; // 35.6rem
+$space-10: $space-unit * 144 !default; // 57.6rem
+$space-11: $space-unit * 233 !default; // 93.2rem
 
 //
 //
