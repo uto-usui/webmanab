@@ -36,17 +36,15 @@
 
 <style lang="scss" scoped>
 .entry-toc__wrap {
-  max-width: calc(1em * 42);
+  max-width: $space-10;
   margin-right: auto;
   margin-left: auto;
-  font-size: 1.5rem;
   //
   @include tablet {
-    padding-right: 1em;
-    padding-left: 1em;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    font-size: 1.6rem;
+    padding-right: $space-3;
+    padding-left: $space-3;
+    margin-top: $space-5;
+    margin-bottom: $space-5;
   }
 }
 
@@ -54,10 +52,10 @@
   position: relative;
   display: block;
   max-height: 120px;
-  padding-top: 1rem;
-  padding-right: 1em;
-  padding-bottom: 2rem;
-  padding-left: 1em;
+  padding-top: $space-2;
+  padding-right: $space-2;
+  padding-bottom: $space-4;
+  padding-left: $space-2;
   overflow: hidden;
   border-top: 6px double currentColor;
   border-bottom: 6px solid currentColor;
@@ -65,17 +63,14 @@
   //
   @include tablet {
     max-height: 140px;
-    font-size: 1.6rem;
+    padding-right: $space-4;
+    padding-left: $space-4;
+    font-size: $font-size-l3;
   }
   //
   &.is-open {
     max-height: 999px;
     padding-bottom: 4.5rem;
-    //
-    @include tablet {
-      padding-right: 1.5rem;
-      padding-left: 1.5rem;
-    }
   }
   //
   &:hover {
@@ -86,14 +81,14 @@
 .entry-toc__title {
   display: block;
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: $font-size-l3;
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   cursor: pointer;
   //
   @include desktop {
-    font-size: 2.4rem;
+    font-size: $font-size-l4;
     line-height: 1.5;
   }
   //
@@ -102,7 +97,7 @@
     bottom: 1rem;
     left: 50%;
     z-index: 9;
-    font-size: 1.8rem;
+    font-size: $font-size-l3;
     font-style: italic;
     content: 'open';
     transition: 0.2s $easeInOutQuart;
@@ -121,17 +116,13 @@
 .entry-toc__list {
   position: relative;
   z-index: 1;
-  padding-left: 3rem;
-  line-height: 1.35;
-  text-align: left;
+  padding-left: $space-3;
   opacity: 0;
   transition: 0.4s $easeInOutSine;
   //
   @include tablet {
     padding-top: 0.5rem;
     padding-bottom: 1rem;
-    font-size: 1.6rem;
-    line-height: 1;
   }
   //
   .entry-toc.is-open & {
@@ -141,20 +132,22 @@
 }
 
 .entry-toc__item {
-  font-size: 1.4rem;
+  font-size: $font-size-l2;
+  line-height: $line-height-l2;
+  text-align: left;
   letter-spacing: 0.1em;
   list-style-type: decimal;
   //
   + .entry-toc__item {
-    margin-top: 1.5rem;
+    margin-top: $space-3;
+    //
+    @include tablet {
+      margin-top: $space-2;
+    }
   }
   //
   @include tablet {
-    font-size: 1.6rem;
     //
-    + .entry-toc__item {
-      margin-top: 3rem;
-    }
   }
   //
   .entry-toc.is-open & {
@@ -164,11 +157,10 @@
 
 .toc-item__child {
   margin-top: 1rem;
-  font-size: 1.4rem;
+  font-size: $font-size-l2;
   //
   @include tablet {
-    margin-top: 1.5rem;
-    font-size: 1.6rem;
+    margin-top: $space-2;
   }
 }
 

@@ -76,16 +76,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .entry-sns__wrap {
-  margin-top: 2rem;
+  margin-top: $space-3;
   //
   @include tablet {
-    margin-top: 8rem;
+    margin-top: $space-5;
   }
 }
 
 .entry-sns__title {
   padding-left: 0.2rem;
-  font-size: 1.25rem;
+  font-size: $font-size-l2;
   font-style: italic;
   color: $glay;
   letter-spacing: 0.1em;
@@ -93,7 +93,7 @@ export default {
   @include tablet {
     padding-left: 0.4rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: $font-size-l3;
   }
 }
 

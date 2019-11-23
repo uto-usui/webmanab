@@ -12,14 +12,10 @@ export default {
 
 <style lang="scss" scoped>
 .entry {
-  max-width: 940px;
+  max-width: $space-11;
+  padding-top: $space-5;
   margin-right: auto;
   margin-left: auto;
-  //
-  @include desktop {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
   //
   @include desktop {
     padding-right: 40px;

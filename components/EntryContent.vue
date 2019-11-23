@@ -93,6 +93,14 @@ export default {
 </script>
 
 <style lang="scss">
+.entry-content {
+  margin-bottom: $space-4;
+  //
+  @include tablet {
+    margin-bottom: $space-6;
+  }
+}
+
 .hljs {
   display: block;
   padding: 0.5em;
@@ -175,19 +183,14 @@ export default {
 }
 
 .entry-content__inner {
-  max-width: calc(1em * 42);
-  padding-right: 1em;
-  padding-left: 1em;
+  max-width: $space-10;
+  padding-right: $space-3;
+  padding-left: $space-3;
   margin-right: auto;
   margin-left: auto;
-  font-size: 1.5rem;
-  //
-  @include tablet {
-    font-size: 1.6rem;
-  }
   //
   img {
-    margin: 1.5rem auto 1rem;
+    margin: $space-3 auto $space-2;
   }
 
   //
@@ -202,16 +205,19 @@ export default {
 
   //
   pre {
-    padding: 1px 16px 1px 22px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    padding: 1px $space-2 1px $space-2;
+    margin-top: $space-2;
+    margin-bottom: $space-2;
+    font-size: $font-size-l2;
+    line-height: $line-height-l2;
     text-align: left;
     letter-spacing: normal;
     //
     @include tablet {
-      margin-bottom: 2rem;
-      font-size: 1.6rem;
+      padding: 0 $space-3;
+      margin-bottom: $space-3;
+      font-size: $font-size-l3;
+      line-height: $line-height-l3;
     }
   }
 
@@ -234,14 +240,16 @@ export default {
   //
   dl {
     padding: 8px;
-    margin: 1rem auto 1.5rem;
-    line-height: 1.55;
+    margin: $space-3 auto;
+    font-size: $font-size-l3;
+    line-height: $line-height-l2;
     text-align: left;
     border: 6px double currentcolor;
     //
     @include tablet {
-      padding: 1.5rem 2rem;
-      margin-bottom: 3rem;
+      padding: $space-2 $space-3;
+      margin-top: $space-4;
+      margin-bottom: $space-4;
     }
     //
     code {
@@ -263,22 +271,24 @@ export default {
   //
   dd {
     + dt {
-      margin-top: 1.5rem;
+      margin-top: $space-2;
     }
   }
 
   //
   ul,
   ol {
-    padding: 0.6rem 1.5rem 0.6rem 2rem;
-    margin: 1.5rem auto 1rem;
-    line-height: 1.55;
+    padding: $space-unit $space-2 $space-unit $space-3;
+    margin: $space-3 auto;
+    font-size: $font-size-l3;
+    line-height: $line-height-l3;
     text-align: left;
     border: 6px double currentcolor;
     //
     @include tablet {
-      padding: 1.5rem 1.5rem 1.5rem 3rem;
-      margin-bottom: 3rem;
+      padding: $space-2 $space-2 $space-2 $space-4;
+      margin-top: $space-4;
+      margin-bottom: $space-4;
     }
     //
     code {
@@ -293,10 +303,10 @@ export default {
 
   //
   li {
-    margin-left: 1rem;
+    margin-left: $space-2;
     //
     + li {
-      margin-top: 1rem;
+      margin-top: $space-1;
     }
   }
 
@@ -310,7 +320,7 @@ export default {
 
   //
   ol {
-    padding-left: 2rem;
+    padding-left: $space-3;
     //
     @include tablet {
       padding-left: 3rem;
@@ -331,13 +341,14 @@ export default {
 
   //
   p {
-    margin: 1.5rem auto;
-    line-height: 1.9;
+    margin: $space-3 auto;
+    font-size: $font-size-l3;
+    line-height: $line-height-l3;
     text-align: justify;
     //
     @include tablet {
-      margin: 2rem auto;
-      line-height: 2;
+      margin: $space-4 auto;
+      line-height: $line-height-l3;
     }
     //
     > img {
@@ -362,13 +373,12 @@ export default {
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     padding-left: 0.2rem;
-    margin-top: 4rem;
-    font-size: 2.25rem;
+    margin-top: $space-5;
+    font-size: $font-size-l5;
     font-weight: bold;
-    line-height: 1.3;
+    line-height: $line-height-l4;
     color: $glay;
     text-align: left;
-    letter-spacing: 0.05em;
     border-top: 6px double rgba($glay, 0.95);
     border-bottom: 6px double rgba($glay, 0.95);
     //
@@ -376,8 +386,7 @@ export default {
       padding-top: 0.4rem;
       padding-bottom: 0.4rem;
       padding-left: 0.4rem;
-      margin-top: 6rem;
-      font-size: 3rem;
+      margin-top: $space-6;
     }
   }
 
@@ -386,10 +395,10 @@ export default {
     padding-right: 0.2rem;
     padding-bottom: 0.1rem;
     padding-left: 0.2rem;
-    margin-top: 3rem;
-    font-size: 2rem;
+    margin-top: $space-4;
+    font-size: $font-size-l4;
     font-weight: 600;
-    line-height: 1.35;
+    line-height: $line-height-l3;
     color: rgba($glay, 0.95);
     text-align: left;
     border-bottom: 6px double $glay;
@@ -397,40 +406,54 @@ export default {
     @include tablet {
       padding-right: 0.4rem;
       padding-left: 0.4rem;
-      margin-top: 5rem;
-      font-size: 2.5rem;
+      margin-top: $space-5;
     }
   }
 
   h4 {
-    padding-left: 0.2rem;
-    margin-top: 2rem;
-    font-size: 1.5rem;
+    margin-top: $space-3;
+    font-size: $font-size-l2;
     font-style: italic;
-    line-height: 1.4;
+    line-height: $line-height-l1;
     color: $glay;
     text-align: left;
     letter-spacing: 0.1em;
     //
     @include tablet {
-      padding-left: 0.4rem;
-      font-size: 2rem;
+      font-size: $font-size-l3;
+      line-height: $line-height-l2;
     }
     //
     + pre {
-      margin-top: 1rem;
+      margin-top: $space-unit;
+      //
+      @include tablet {
+        margin-top: $space-1;
+      }
     }
 
     + ol {
-      margin-top: 1rem;
+      margin-top: $space-unit;
+      //
+      @include tablet {
+        margin-top: $space-1;
+      }
     }
 
     + ul {
-      margin-top: 1rem;
+      margin-top: $space-unit;
+      //
+      @include tablet {
+        margin-top: $space-1;
+      }
     }
 
     + dl {
-      margin-top: 1rem;
+      margin-top: $space-unit;
+      //
+      @include tablet {
+        margin-top: $space-1;
+      }
     }
   }
 

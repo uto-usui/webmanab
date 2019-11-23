@@ -48,11 +48,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .entry-nav {
-  margin-top: 2rem;
+  margin-top: $space-3;
   //
   @include tablet {
     display: flex;
-    margin-top: 5rem;
+    margin-top: $space-5;
   }
 }
 
@@ -117,6 +117,7 @@ export default {
 
 .entry-nav__title {
   display: inline;
+  font-size: $font-size-l2;
   line-height: 1.7;
   color: $black;
   background-color: $white;

@@ -24,10 +24,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .entry-tag {
-  margin-top: 2rem;
+  margin-top: $space-3;
   //
   @include tablet {
-    margin-top: 5rem;
+    margin-top: $space-5;
   }
 }
 
@@ -37,7 +37,7 @@ export default {
 }
 
 .entry-tag__item {
-  margin-right: 1.5rem;
+  margin-right: $space-2;
 }
 
 .entry-tag__target {
@@ -45,6 +45,7 @@ export default {
   top: 0;
   left: 0;
   padding: 0.2em 0.5em 0.15em;
+  font-size: $font-size-l2;
   line-height: 2.5;
   color: $white;
   text-transform: uppercase;

@@ -7,8 +7,8 @@
 <style lang="scss">
 .entry-ad {
   padding: 0.8rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: $space-4;
+  margin-bottom: $space-4;
   border: 6px double $black;
 }
 </style>

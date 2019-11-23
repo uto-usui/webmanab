@@ -41,12 +41,12 @@ export default {
 
 <style lang="scss" scoped>
 .entry-related {
-  margin-top: 2rem;
+  margin-top: $space-3;
   text-align: justify;
   //
   @include tablet {
     padding: 1rem;
-    margin-top: 5rem;
+    margin-top: $space-5;
     border: 6px double currentColor;
   }
   //
@@ -86,7 +86,8 @@ export default {
   top: 0;
   left: 0;
   padding: 0.2em 0.5em 0.15em;
-  line-height: 2.5;
+  font-size: $font-size-l2;
+  line-height: $line-height-l3;
   color: $white;
   background-color: $glay;
   transition: 0.25s $easeOutQuart;
