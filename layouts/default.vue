@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="default-layout" :class="$route.name">
     <Bar v-for="index in 4" :key="`bar${index}`" />
     <Header />
     <Nuxt />
