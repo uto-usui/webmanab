@@ -21,9 +21,11 @@ export default {}
   }
   //
   @include desktop {
+    padding-top: calc(#{$space-7} + #{$space-6});
     padding-right: 40px;
+    // padding-bottom: calc(#{$space-8} + #{$space-6});
     padding-left: 40px;
-    margin-top: 100px;
+    margin-top: 0;
     margin-bottom: 200px;
   }
   //
