@@ -1,5 +1,5 @@
 <template>
-  <div class="entry-toc__wrap">
+  <div v-if="list.length" class="entry-toc__wrap">
     <section
       class="entry-toc"
       :class="[{'is-open': isOpen}]"
@@ -36,13 +36,11 @@
 
 <style lang="scss" scoped>
 .entry-toc__wrap {
-  max-width: $space-10;
+  max-width: 71rem;
   margin-right: auto;
   margin-left: auto;
   //
   @include tablet {
-    padding-right: $space-3;
-    padding-left: $space-3;
     margin-top: $space-5;
     margin-bottom: $space-5;
   }

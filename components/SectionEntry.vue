@@ -18,8 +18,7 @@ export default {
   margin-left: auto;
   //
   @include desktop {
-    padding-right: 40px;
-    padding-left: 40px;
+    //
   }
 }
 </style>

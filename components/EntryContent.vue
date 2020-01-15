@@ -183,11 +183,16 @@ export default {
 }
 
 .entry-content__inner {
-  max-width: $space-10;
+  max-width: 71rem;
   padding-right: $space-3;
   padding-left: $space-3;
   margin-right: auto;
   margin-left: auto;
+  //
+  @include tablet {
+    padding-right: 0;
+    padding-left: 0;
+  }
   //
   img {
     margin: $space-3 auto $space-2;
@@ -205,17 +210,21 @@ export default {
 
   //
   pre {
-    padding: 1px $space-2 1px $space-2;
+    padding: 1px 2rem;
     margin-top: $space-2;
+    margin-right: -2rem;
     margin-bottom: $space-2;
+    margin-left: -2rem;
     font-size: $font-size-l2;
     line-height: $line-height-l2;
     text-align: left;
     letter-spacing: normal;
     //
     @include tablet {
-      padding: 0 $space-3;
+      padding: 0 calc((#{$space-11} - 71rem) / 2);
+      margin-right: calc((#{$space-11} - 71rem) / 2 * -1);
       margin-bottom: $space-3;
+      margin-left: calc((#{$space-11} - 71rem) / 2 * -1);
       font-size: $font-size-l3;
       line-height: $line-height-l3;
     }
@@ -387,6 +396,7 @@ export default {
       padding-bottom: 0.4rem;
       padding-left: 0.4rem;
       margin-top: $space-6;
+      margin-bottom: -$space-unit;
     }
   }
 
@@ -407,6 +417,7 @@ export default {
       padding-right: 0.4rem;
       padding-left: 0.4rem;
       margin-top: $space-5;
+      margin-bottom: -$space-unit;
     }
   }
 
