@@ -116,7 +116,6 @@ export default {
   //
   @include tablet {
     font-size: $font-size-l5;
-    font-weight: lighter;
     line-height: $line-height-l4;
   }
 }

@@ -46,7 +46,14 @@ export default {
     }
   },
   computed: {
-    //
+    // currentPage() {
+    //   return this.$store.getters['clip/currentPage']
+    // }
+  },
+  watch: {
+    tocList(val) {
+      console.log(val)
+    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -62,16 +69,16 @@ export default {
     },
     createToc() {
       const titles = this.$el.querySelectorAll(
-        '.entry-content h2, .entry-content h3'
+        '.entry-content__inner h2, .entry-content__inner h3'
       )
 
       let h2Counter = 0
       let h3Counter = 0
 
-      titles.forEach((el, i) => {
-        const tagNane = el.tagName
+      titles.forEach(el => {
+        const tagName = el.tagName
 
-        if (tagNane === 'H2') {
+        if (tagName === 'H2') {
           h2Counter += 1
           h3Counter = 0
           this.tocList[h2Counter - 1] = {
@@ -80,7 +87,7 @@ export default {
           }
           // eslint-disable-next-line
           el.id = `a${h2Counter - 1}`
-        } else if (tagNane === 'H3') {
+        } else if (tagName === 'H3') {
           this.tocList[h2Counter - 1].h3[h3Counter] = el.textContent
           // eslint-disable-next-line
           el.id = `a${h2Counter - 1}${h3Counter}`
@@ -183,7 +190,6 @@ export default {
 }
 
 .entry-content__inner {
-  max-width: 71rem;
   padding-right: $space-3;
   padding-left: $space-3;
   margin-right: auto;
@@ -195,7 +201,7 @@ export default {
   }
   //
   img {
-    margin: $space-3 auto $space-2;
+    margin: $space-3 calc(100% / 12 * 1 * -1) $space-2 0;
   }
 
   //
@@ -221,10 +227,11 @@ export default {
     letter-spacing: normal;
     //
     @include tablet {
-      padding: 0 calc((#{$space-11} - 71rem) / 2);
-      margin-right: calc((#{$space-11} - 71rem) / 2 * -1);
+      padding: 0 $space-4;
+      // margin-right: calc(100% / 12 * 1 * -1);
+      margin-right: 0;
       margin-bottom: $space-3;
-      margin-left: calc((#{$space-11} - 71rem) / 2 * -1);
+      margin-left: calc(100% / 12 * 4);
       font-size: $font-size-l3;
       line-height: $line-height-l3;
     }
@@ -253,12 +260,13 @@ export default {
     font-size: $font-size-l3;
     line-height: $line-height-l2;
     text-align: left;
-    border: 6px double currentcolor;
+    border: 6px double currentColor;
     //
     @include tablet {
       padding: $space-2 $space-3;
       margin-top: $space-4;
       margin-bottom: $space-4;
+      margin-left: calc(100% / 12 * 4);
     }
     //
     code {
@@ -292,12 +300,13 @@ export default {
     font-size: $font-size-l3;
     line-height: $line-height-l3;
     text-align: left;
-    border: 6px double currentcolor;
+    border: 6px double currentColor;
     //
     @include tablet {
       padding: $space-2 $space-2 $space-2 $space-4;
       margin-top: $space-4;
       margin-bottom: $space-4;
+      margin-left: calc(100% / 12 * 4);
     }
     //
     code {
@@ -356,7 +365,9 @@ export default {
     text-align: justify;
     //
     @include tablet {
-      margin: $space-4 auto;
+      margin-top: $space-4;
+      margin-bottom: $space-4;
+      margin-left: calc(100% / 12 * 4);
       line-height: $line-height-l3;
     }
     //
@@ -384,7 +395,7 @@ export default {
     padding-left: 0.2rem;
     margin-top: $space-5;
     font-size: $font-size-l5;
-    font-weight: bold;
+    font-weight: 600;
     line-height: $line-height-l4;
     color: $glay;
     text-align: left;
@@ -392,11 +403,11 @@ export default {
     border-bottom: 6px double rgba($glay, 0.95);
     //
     @include tablet {
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
-      padding-left: 0.4rem;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+      padding-left: 0.25em;
       margin-top: $space-6;
-      margin-bottom: -$space-unit;
+      margin-bottom: $space-5;
     }
   }
 
@@ -417,7 +428,7 @@ export default {
       padding-right: 0.4rem;
       padding-left: 0.4rem;
       margin-top: $space-5;
-      margin-bottom: -$space-unit;
+      margin-left: calc(100% / 12 * 4);
     }
   }
 
@@ -431,6 +442,7 @@ export default {
     letter-spacing: 0.1em;
     //
     @include tablet {
+      margin-left: calc(100% / 12 * 4);
       font-size: $font-size-l3;
       line-height: $line-height-l2;
     }

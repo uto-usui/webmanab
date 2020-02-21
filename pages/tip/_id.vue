@@ -24,6 +24,7 @@ import LazyImage from '~/components/LazyImage'
 import EntryHead from '~/components/EntryHead'
 import EntryContent from '~/components/EntryContent'
 import EntryDemo from '~/components/EntryDemo'
+import SectionEntry from '~/components/SectionEntry'
 
 import SingleAsyncData from '~/mixins/Single'
 
@@ -36,13 +37,13 @@ export default nuxtend({
     EntryHead,
     EntryContent,
     EntryDemo,
+    SectionEntry,
     EntryAd: () => import('~/components/EntryAd'),
     EntryAdFoot: () => import('~/components/EntryAdFoot'),
     EntrySns: () => import('~/components/EntrySns'),
     EntryTag: () => import('~/components/EntryTag'),
     EntryRelated: () => import('~/components/EntryRelated'),
     EntryNav: () => import('~/components/EntryNav'),
-    SectionEntry: () => import('~/components/SectionEntry')
   },
 
   data() {

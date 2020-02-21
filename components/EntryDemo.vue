@@ -1,5 +1,5 @@
 <template>
-  <div v-if="article.fields.length !== 0 && article.fields['demo-true']">
+  <div v-if="article.fields && article.fields.length !== 0 && article.fields['demo-true']">
     <a class="entry_demo" :href="article.fields['demo-url']" target="_blank">
       demo
     </a>
