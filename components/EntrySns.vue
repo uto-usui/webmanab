@@ -99,8 +99,8 @@ export default {
 
 .entry-sns {
   display: flex;
-  border-top: 6px double currentcolor;
-  border-bottom: 6px double currentcolor;
+  border-top: 6px double currentColor;
+  border-bottom: 6px double currentColor;
 }
 
 .entry-sns__item {

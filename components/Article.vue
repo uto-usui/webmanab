@@ -68,7 +68,7 @@ export default {
   //
   @include tablet {
     width: 50%;
-    border-left: 2px solid currentcolor;
+    border-left: 2px solid currentColor;
   }
   //
   @include desktop {
@@ -93,7 +93,7 @@ export default {
   font-size: $font-size-l1;
   font-style: italic;
   color: $glay;
-  border-bottom: 2px solid currentcolor;
+  border-bottom: 2px solid currentColor;
   //
   &::first-letter {
     padding-right: 6px;
@@ -212,6 +212,6 @@ export default {
   padding-left: 4px;
   font-size: $font-size-l2;
   font-style: italic;
-  border-bottom: 2px solid currentcolor;
+  border-bottom: 2px solid currentColor;
 }
 </style>
