@@ -3,7 +3,7 @@
     <div class="article-list__inner">
       <Article v-for="article in articles" :key="article.id" :article="article" />
     </div>
-    <no-ssr>
+    <client-only>
       <InfiniteLoading
         v-if="infinite && articles.length % 8 === 0"
         ref="infiniteLoading"
@@ -17,7 +17,7 @@
           <div>End</div>
         </span>
       </InfiniteLoading>
-    </no-ssr>
+    </client-only>
   </div>
 </template>
 
