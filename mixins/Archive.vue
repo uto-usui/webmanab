@@ -8,6 +8,21 @@ export default {
       infinite: true
     }
   },
+  computed: {
+    articles() {
+      return postType => {
+        return this.$store.state[postType].currentPosts.map(postSlug => {
+          return this.$store.state[postType].cachePosts[postSlug] || {}
+        })
+      }
+    },
+    title() {
+      return `${this.postType} | ${this.$store.state.meta.name}`
+    },
+    desc() {
+      return `${this.postType} archive page`
+    }
+  },
   async fetch({ app, store, params, route, payload }) {
     let postType = route.matched[0].path
     postType = postType.replace('/', '').replace('/:id', '')
@@ -36,21 +51,6 @@ export default {
 
     store.commit(`${postType}/setCurrentPosts`)
     store.commit(`${postType}/setCurrentQuery`, query)
-  },
-  computed: {
-    articles() {
-      return postType => {
-        return this.$store.state[postType].currentPosts.map(postSlug => {
-          return this.$store.state[postType].cachePosts[postSlug] || {}
-        })
-      }
-    },
-    title() {
-      return `${this.postType} | ${this.$store.state.meta.name}`
-    },
-    desc() {
-      return `${this.postType} archive page`
-    }
   }
 }
 </script>

@@ -24,6 +24,19 @@ export default {
     Wrapper,
     SectionList
   },
+  computed: {
+    /**
+     * 引数として postType を与える
+     * @return {function(*): (*|{})[]}
+     */
+    articles() {
+      return postType => {
+        return this.$store.state[postType].currentPosts.map(postSlug => {
+          return this.$store.state[postType].cachePosts[postSlug] || {}
+        })
+      }
+    }
+  },
   async fetch({ app, store, params, route, payload }) {
     for (const postType of store.state.postTypes) {
       store.commit(`${postType}/setCurrentPath`, route.path)
@@ -50,19 +63,6 @@ export default {
 
       store.commit(`${postType}/setCurrentPosts`)
       store.commit(`${postType}/setCurrentQuery`, query)
-    }
-  },
-  computed: {
-    /**
-     * 引数として postType を与える
-     * @return {function(*): (*|{})[]}
-     */
-    articles() {
-      return postType => {
-        return this.$store.state[postType].currentPosts.map(postSlug => {
-          return this.$store.state[postType].cachePosts[postSlug] || {}
-        })
-      }
     }
   }
 }

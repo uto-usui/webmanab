@@ -43,7 +43,7 @@ export default nuxtend({
     EntrySns: () => import('~/components/EntrySns'),
     EntryTag: () => import('~/components/EntryTag'),
     EntryRelated: () => import('~/components/EntryRelated'),
-    EntryNav: () => import('~/components/EntryNav'),
+    EntryNav: () => import('~/components/EntryNav')
   },
 
   data() {
