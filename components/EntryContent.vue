@@ -208,7 +208,7 @@ export default {
 
   //
   strong {
-    font-weight: bold;
+    font-weight: 600;
     background-image: linear-gradient(
       0deg,
       rgba(255, 255, 0, 0.3) 45%,
@@ -388,6 +388,30 @@ export default {
       background-color: rgba(white, 0.35);
       border-radius: 3px;
       box-shadow: 0 0 4px rgba($black, 0.1);
+    }
+  }
+
+  blockquote {
+    padding: space-scalar(4);
+    margin: get-line-height(-1, 0, 1) auto;
+    font-style: italic;
+    background-color: rgba($black, 0.065);
+    border-left: 6px double $black;
+    //
+    @include tablet {
+      margin-top: get-line-height(0, 1, 1);
+      margin-bottom: get-line-height(0, 1, 1);
+      margin-left: calc(100% / 12 * 4);
+    }
+    //
+    > p {
+      margin: 0;
+      //
+      @include sizes(-2, 1);
+      //
+      @include tablet {
+        @include sizes(-1, 0);
+      }
     }
   }
 
