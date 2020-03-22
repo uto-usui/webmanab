@@ -16,22 +16,24 @@ export default {
 
 <style lang="scss">
 .menu-title {
-  padding-top: $space-2;
-  padding-bottom: $space-2;
-  padding-left: $space-2;
-  margin-bottom: $space-2;
-  font-size: $font-size-l5;
-  font-weight: 800;
+  padding-top: space-scalar(4);
+  padding-bottom: space-scalar(4);
+  padding-left: space-scalar(4);
+  margin-bottom: space-scalar(4);
+  font-weight: 600;
   color: $secondary-color;
   text-align: left;
   text-transform: capitalize;
   border-bottom: 1px solid rgba($white, 0.5);
   //
+  @include sizes(4);
+  //
   @include tablet {
-    padding-top: $space-5;
-    padding-left: $space-4;
-    margin-bottom: $space-4;
-    font-size: $font-size-l6;
+    padding-top: space-scalar(12);
+    padding-left: space-scalar(8);
+    margin-bottom: space-scalar(8);
+    //
+    @include sizes(5);
   }
 }
 </style>

@@ -90,10 +90,13 @@ export default {
   color: $glay;
   letter-spacing: 0.1em;
   //
+  @include sizes(-1);
+  //
   @include tablet {
     padding-left: 0.4rem;
     margin-bottom: 1rem;
-    font-size: $font-size-l3;
+    //
+    @include sizes(0);
   }
 }
 

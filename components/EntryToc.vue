@@ -40,8 +40,8 @@
   margin-left: auto;
   //
   @include tablet {
-    margin-top: $space-5;
-    margin-bottom: $space-5;
+    margin-top: space-scalar(14);
+    margin-bottom: space-scalar(14);
   }
 }
 
@@ -49,10 +49,10 @@
   position: relative;
   display: block;
   max-height: 120px;
-  padding-top: $space-2;
-  padding-right: $space-2;
-  padding-bottom: $space-4;
-  padding-left: $space-2;
+  padding-top: space-scalar(4);
+  padding-right: space-scalar(2);
+  padding-bottom: space-scalar(4);
+  padding-left: space-scalar(2);
   overflow: hidden;
   border-top: 6px double currentColor;
   border-bottom: 6px solid currentColor;
@@ -62,11 +62,10 @@
     max-height: 140px;
     padding-right: $space-4;
     padding-left: $space-4;
-    font-size: $font-size-l3;
   }
   //
   &.is-open {
-    max-height: 999px;
+    max-height: 1400px;
     padding-bottom: 4.5rem;
   }
   //
@@ -77,24 +76,24 @@
 
 .entry-toc__title {
   display: block;
-  margin-bottom: 1rem;
-  font-size: $font-size-l3;
-  line-height: 1.5;
+  margin-bottom: space-scalar(4);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   cursor: pointer;
   //
+  @include sizes(0, 0);
+  //
   @include desktop {
-    font-size: $font-size-l4;
-    line-height: 1.5;
+    margin-bottom: space-scalar(2);
+    //
+    @include sizes(2, 0);
   }
   //
   &::after {
     position: absolute;
-    bottom: 1rem;
+    bottom: space-scalar(4);
     left: 50%;
     z-index: 9;
-    font-size: $font-size-l3;
     font-style: italic;
     content: 'open';
     transition: 0.2s $easeInOutQuart;
@@ -129,22 +128,22 @@
 }
 
 .entry-toc__item {
-  font-size: $font-size-l2;
-  line-height: $line-height-l2;
   text-align: left;
   letter-spacing: 0.1em;
   list-style-type: decimal;
   //
-  + .entry-toc__item {
-    margin-top: $space-3;
-    //
-    @include tablet {
-      margin-top: $space-2;
-    }
-  }
+  @include sizes(-1, 0);
   //
   @include tablet {
+    @include sizes(0, 0);
+  }
+  //
+  + .entry-toc__item {
+    margin-top: space-scalar(6);
     //
+    @include tablet {
+      margin-top: space-scalar(8);
+    }
   }
   //
   .entry-toc.is-open & {
@@ -153,11 +152,12 @@
 }
 
 .toc-item__child {
-  margin-top: 1rem;
-  font-size: $font-size-l2;
+  margin-top: space-scalar(2);
+  //
+  @include sizes(-2, 1);
   //
   @include tablet {
-    margin-top: $space-2;
+    margin-top: space-scalar(4);
   }
 }
 

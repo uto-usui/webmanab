@@ -23,10 +23,10 @@
 
 <style lang="scss" scoped>
 .article-list {
-  margin-top: $space-5;
+  margin-top: get-line-height(7, -2, 1);
   //
   @include desktop {
-    margin-top: $space-6;
+    margin-top: get-line-height(7, 0, 1);
   }
 }
 

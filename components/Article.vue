@@ -90,27 +90,29 @@ export default {
   padding-right: 4px;
   padding-bottom: 4px;
   padding-left: $space-2;
-  font-size: $font-size-l1;
   font-style: italic;
   color: $glay;
   border-bottom: 2px solid currentColor;
   //
+  @include sizes(-3);
+  //
   &::first-letter {
     padding-right: 6px;
-    font-size: $font-size-l6;
     font-weight: bold;
     color: $white;
     text-shadow: -1px -1px 0 $text-color, 1px -1px 0 $text-color,
       -1px 1px 0 $text-color, 2px 3px 0 $text-color;
     text-transform: capitalize;
+    //
+    @include sizes(5);
   }
 }
 
 .article-item__title {
   margin: -6px $space-2 $space-2;
-  font-size: $font-size-l3;
-  line-height: 40px;
   text-align: justify;
+  //
+  @include sizes(0, 1);
   //
   @include tablet {
     //
@@ -210,8 +212,9 @@ export default {
   padding-right: $space-2;
   padding-bottom: 4px;
   padding-left: 4px;
-  font-size: $font-size-l2;
   font-style: italic;
   border-bottom: 2px solid currentColor;
+  //
+  @include sizes(-2);
 }
 </style>

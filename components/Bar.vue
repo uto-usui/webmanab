@@ -10,16 +10,16 @@ export default {}
 .bar {
   position: fixed;
   z-index: 99;
-  margin: 15px;
+  margin: space-scalar(4);
   pointer-events: none;
   background-color: $glay;
   //
   @include tablet {
-    margin: 30px;
+    margin: space-scalar(8);
   }
   //
   @include desktop {
-    margin: 40px;
+    margin: space-scalar(10);
   }
 
   &:nth-of-type(1) {

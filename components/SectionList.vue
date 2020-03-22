@@ -14,19 +14,19 @@ export default {
 .section-list {
   position: relative;
   z-index: 1;
-  margin-bottom: 120px;
+  margin-bottom: get-line-height(7, 0, 1);
   //
   @include desktop {
-    margin-bottom: 200px;
+    margin-bottom: get-line-height(7, 0, 2);
   }
   //
   &::after {
     position: absolute;
-    bottom: -60px;
+    bottom: calc(#{get-line-height(7, 0, 1)} / 2 * -1 + #{space-scalar(4)} / 2);
     left: 50%;
     width: 30%;
-    max-width: 300px;
-    height: 15px;
+    max-width: space-scalar(75);
+    height: space-scalar(4);
     content: '';
     background: repeating-linear-gradient(
       45deg,
@@ -39,7 +39,9 @@ export default {
     transform: translate(-50%, -50%);
     //
     @include desktop {
-      bottom: -100px;
+      bottom: calc(
+        #{get-line-height(7, 0, 2)} / 2 * -1 + #{space-scalar(4)} / 2
+      );
     }
   }
 }

@@ -57,15 +57,17 @@ export default {
 
 .entry-related__title {
   padding-left: 0.2rem;
-  font-size: 1.25rem;
   font-style: italic;
   color: $glay;
   letter-spacing: 0.1em;
   //
+  @include sizes(-1);
+  //
   @include tablet {
     padding-left: 0.4rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    //
+    @include sizes(0);
   }
 }
 
@@ -86,11 +88,15 @@ export default {
   top: 0;
   left: 0;
   padding: 0.2em 0.5em 0.15em;
-  font-size: $font-size-l2;
-  line-height: $line-height-l3;
   color: $white;
   background-color: $glay;
   transition: 0.25s $easeOutQuart;
+  //
+  @include sizes(-1, 1);
+  //
+  @include desktop {
+    @include sizes(0, 1);
+  }
   //
   &:hover {
     top: -5px;

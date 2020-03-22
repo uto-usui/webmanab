@@ -1,6 +1,8 @@
-<template>
+<template functional>
   <main class="wrapper">
-    <slot />
+    <div class="wrapper__inner">
+      <slot />
+    </div>
   </main>
 </template>
 
@@ -10,23 +12,23 @@ export default {}
 
 <style lang="scss" scoped>
 .wrapper {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-top: 65px;
-  margin-bottom: 120px;
+  padding-right: space-scalar(4);
+  padding-left: space-scalar(4);
+  margin-top: space-scalar(16);
+  margin-bottom: space-scalar(30);
+  overflow-x: hidden;
   //
   @include tablet {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: space-scalar(8);
+    padding-left: space-scalar(8);
   }
   //
   @include desktop {
-    padding-top: calc(#{$space-7} + #{$space-6});
-    padding-right: 40px;
-    // padding-bottom: calc(#{$space-8} + #{$space-6});
-    padding-left: 40px;
+    padding-top: space-scalar(10);
+    padding-right: space-scalar(10);
+    padding-left: space-scalar(10);
     margin-top: 0;
-    margin-bottom: 200px;
+    margin-bottom: space-scalar(50);
   }
   //
   &.article--line {
@@ -54,6 +56,12 @@ export default {}
         bottom: -100px;
       }
     }
+  }
+}
+
+.wrapper__inner {
+  @include desktop {
+    padding-top: calc(#{space-scalar(10)} + #{get-line-height(7, 0, 1)});
   }
 }
 </style>

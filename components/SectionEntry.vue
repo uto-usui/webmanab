@@ -12,22 +12,23 @@ export default {
 
 <style lang="scss" scoped>
 .entry {
-  max-width: calc(#{$space-11});
-  padding-top: $space-5;
+  max-width: calc(#{space-scalar(232)});
+  padding-top: space-scalar(10);
+  padding-bottom: space-scalar(10);
   margin-right: auto;
   margin-left: auto;
   //
   @include tablet {
-    max-width: calc(#{$space-11} + 30px * 2);
-    padding-right: 30px;
-    padding-left: 30px;
-    overflow: hidden;
+    max-width: calc(#{space-scalar(232)} + #{space-scalar(8)} * 2);
+    padding-right: space-scalar(8);
+    padding-left: space-scalar(8);
+    // overflow: hidden;
   }
   //
   @include desktop {
-    max-width: calc(#{$space-11} + 40px * 2);
-    padding-right: 40px;
-    padding-left: 40px;
+    max-width: calc(#{space-scalar(232)} + #{space-scalar(10)} * 2);
+    padding-right: space-scalar(10);
+    padding-left: space-scalar(10);
   }
 }
 </style>

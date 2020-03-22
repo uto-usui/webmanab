@@ -20,10 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 .h1 {
-  font-size: $font-size-l7;
   font-style: italic;
   font-weight: bold;
   text-transform: capitalize;
+  //
+  @include sizes(7);
 }
 
 .h1__inner {

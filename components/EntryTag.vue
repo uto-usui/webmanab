@@ -45,12 +45,12 @@ export default {
   top: 0;
   left: 0;
   padding: 0.2em 0.5em 0.15em;
-  font-size: $font-size-l2;
-  line-height: 2.5;
   color: $white;
   text-transform: uppercase;
   background-color: $glay;
   transition: 0.25s $easeOutQuart;
+  //
+  @include sizes(-1, 2);
   //
   &:hover {
     top: -5px;

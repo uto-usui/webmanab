@@ -15,6 +15,7 @@ import typescript from 'highlight.js/lib/languages/typescript'
 import xml from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import php from 'highlight.js/lib/languages/php'
+import yaml from 'highlight.js/lib/languages/yaml'
 
 import EntryToc from '~/components/EntryToc'
 
@@ -24,6 +25,7 @@ hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('bash', bash)
 hljs.registerLanguage('php', php)
+hljs.registerLanguage('yaml', yaml)
 
 export default {
   name: 'EntryContent',
@@ -221,19 +223,18 @@ export default {
     margin-right: -2rem;
     margin-bottom: $space-2;
     margin-left: -2rem;
-    font-size: $font-size-l2;
-    line-height: $line-height-l2;
     text-align: left;
     letter-spacing: normal;
     //
+    @include sizes(-1, 0);
+    //
     @include tablet {
-      padding: 0 $space-4;
-      // margin-right: calc(100% / 12 * 1 * -1);
+      padding: 0 2em;
       margin-right: 0;
       margin-bottom: $space-3;
       margin-left: calc(100% / 12 * 4);
-      font-size: $font-size-l3;
-      line-height: $line-height-l3;
+      //
+      @include sizes(0, 0);
     }
   }
 
@@ -256,16 +257,16 @@ export default {
   //
   dl {
     padding: 8px;
-    margin: $space-3 auto;
-    font-size: $font-size-l3;
-    line-height: $line-height-l2;
+    margin: get-line-height(-1, 0, 1) auto;
     text-align: left;
     border: 6px double currentColor;
     //
+    @include sizes(-1, 0);
+    //
     @include tablet {
       padding: $space-2 $space-3;
-      margin-top: $space-4;
-      margin-bottom: $space-4;
+      margin-top: get-line-height(0, 1, 1);
+      margin-bottom: get-line-height(0, 1, 1);
       margin-left: calc(100% / 12 * 4);
     }
     //
@@ -295,17 +296,17 @@ export default {
   //
   ul,
   ol {
-    padding: $space-unit $space-2 $space-unit $space-3;
-    margin: $space-3 auto;
-    font-size: $font-size-l3;
-    line-height: $line-height-l3;
+    padding: $space-unit $space-2 $space-unit space-scalar(4);
+    margin: get-line-height(-1, 0, 1) auto;
     text-align: left;
     border: 6px double currentColor;
     //
+    @include sizes(-1, 0);
+    //
     @include tablet {
-      padding: $space-2 $space-2 $space-2 $space-4;
-      margin-top: $space-4;
-      margin-bottom: $space-4;
+      padding: $space-2 $space-2 $space-2 space-scalar(6);
+      margin-top: get-line-height(0, 1, 1);
+      margin-bottom: get-line-height(0, 1, 1);
       margin-left: calc(100% / 12 * 4);
     }
     //
@@ -341,7 +342,7 @@ export default {
     padding-left: $space-3;
     //
     @include tablet {
-      padding-left: 3rem;
+      padding-left: space-scalar(10);
     }
     //
     > li {
@@ -359,16 +360,18 @@ export default {
 
   //
   p {
-    margin: $space-3 auto;
-    font-size: $font-size-l3;
-    line-height: $line-height-l3;
-    text-align: justify;
+    margin: get-line-height(-1, 0, 1) auto;
+    text-align: left;
+    //
+    @include sizes(-1, 0);
     //
     @include tablet {
-      margin-top: $space-4;
-      margin-bottom: $space-4;
+      margin-top: get-line-height(0, 1, 1);
+      margin-bottom: get-line-height(0, 1, 1);
       margin-left: calc(100% / 12 * 4);
-      line-height: $line-height-l3;
+      text-align: justify;
+      //
+      @include sizes(0, 1);
     }
     //
     > img {
@@ -390,61 +393,68 @@ export default {
 
   //
   h2 {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-left: 0.2rem;
-    margin-top: $space-5;
-    font-size: $font-size-l5;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.2em;
+    margin-top: get-line-height(-1, 0, 3);
+    margin-bottom: get-line-height(-1, 0, 1);
     font-weight: 600;
-    line-height: $line-height-l4;
     color: $glay;
     text-align: left;
     border-top: 6px double rgba($glay, 0.95);
     border-bottom: 6px double rgba($glay, 0.95);
     //
+    @include sizes(3, 1);
+    //
     @include tablet {
       padding-top: 0.25em;
       padding-bottom: 0.25em;
       padding-left: 0.25em;
-      margin-top: $space-6;
-      margin-bottom: $space-5;
+      margin-top: get-line-height(0, 1, 3);
+      margin-bottom: get-line-height(0, 1, 2);
+      //
+      @include sizes(4, 1);
     }
   }
 
   //
   h3 {
-    padding-right: 0.2rem;
-    padding-bottom: 0.1rem;
-    padding-left: 0.2rem;
-    margin-top: $space-4;
-    font-size: $font-size-l4;
+    padding-right: 0.2em;
+    padding-bottom: 0.1em;
+    padding-left: 0.2em;
+    margin-top: get-line-height(-1, 0, 2);
+    margin-bottom: get-line-height(-1, 0, 1);
     font-weight: 600;
-    line-height: $line-height-l3;
     color: rgba($glay, 0.95);
     text-align: left;
     border-bottom: 6px double $glay;
     //
+    @include sizes(1, 1);
+    //
     @include tablet {
-      padding-right: 0.4rem;
-      padding-left: 0.4rem;
-      margin-top: $space-5;
+      padding-right: 0.4em;
+      padding-left: 0.4em;
+      margin-top: get-line-height(0, 1, 2);
+      margin-bottom: get-line-height(0, 1, 1);
       margin-left: calc(100% / 12 * 4);
+      //
+      @include sizes(1, 1);
     }
   }
 
   h4 {
     margin-top: $space-3;
-    font-size: $font-size-l2;
     font-style: italic;
-    line-height: $line-height-l1;
     color: $glay;
     text-align: left;
     letter-spacing: 0.1em;
     //
+    @include sizes(-1, 0);
+    //
     @include tablet {
       margin-left: calc(100% / 12 * 4);
-      font-size: $font-size-l3;
-      line-height: $line-height-l2;
+      //
+      @include sizes(0, 0);
     }
     //
     + pre {

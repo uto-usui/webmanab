@@ -37,13 +37,13 @@ export default {
 .entry-head {
   position: relative;
   z-index: 1;
-  padding: $space-3;
-  margin-bottom: $space-1;
+  padding: space-scalar(5);
+  margin-bottom: space-scalar(2);
   background-color: $glay;
   //
   @include tablet {
-    padding: $space-4 $space-5;
-    margin-bottom: $space-5;
+    padding: space-scalar(8) space-scalar(12);
+    margin-bottom: space-scalar(10);
   }
   //
   &::after {
@@ -84,13 +84,14 @@ export default {
 
 .entry-head__time {
   position: absolute;
-  top: -#{$space-3};
+  top: space-scalar(-5);
   right: 50%;
   display: inline-block;
-  font-size: $font-size-l1;
   font-style: italic;
   color: $black;
   transform: translateX(50%);
+  //
+  @include sizes(-2);
   //
   &::after {
     position: absolute;
@@ -104,19 +105,18 @@ export default {
 
   //
   @include tablet {
-    font-size: $font-size-l2;
+    @include sizes(-2);
   }
 }
 
 .entry-head__title {
-  font-size: $font-size-l3;
-  line-height: $line-height-l3;
   color: $white;
   text-align: center;
   //
+  @include sizes(0, 0);
+  //
   @include tablet {
-    font-size: $font-size-l5;
-    line-height: $line-height-l4;
+    @include sizes(3, 1);
   }
 }
 
@@ -125,10 +125,11 @@ export default {
   flex-flow: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: $space-2;
+  //
+  margin-top: get-line-height(-2, 0, 1);
   //
   @include tablet {
-    margin-top: $space-3;
+    margin-top: get-line-height(-1, -1, 1);
   }
 }
 
@@ -139,7 +140,7 @@ export default {
   }
   //
   + .entry-head__item {
-    margin-left: $space-unit;
+    margin-left: space-scalar(2);
   }
 }
 
@@ -149,13 +150,14 @@ export default {
   left: 0;
   display: inline-block;
   padding: 6px 8px 4px;
-  font-size: $font-size-l1;
   color: $white;
   text-transform: uppercase;
   transition: 0.25s $easeOutQuart;
   //
+  @include sizes(-2);
+  //
   @include tablet {
-    font-size: $font-size-l2;
+    @include sizes(-1);
   }
   //
   &:hover {

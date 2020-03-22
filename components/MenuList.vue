@@ -38,29 +38,34 @@ export default {
 .menu-list {
   display: flex;
   flex-wrap: wrap;
-  padding-right: $space-2;
-  padding-left: $space-2;
-  margin-bottom: $space-2;
+  padding-right: space-scalar(4);
+  padding-left: space-scalar(4);
+  margin-bottom: space-scalar(4);
   margin-left: -5px;
   //
   @include mobile {
-    max-height: 350px;
+    max-height: space-scalar(90);
     overflow: auto;
   }
   //
   @include desktop {
-    padding-right: $space-4;
-    padding-left: $space-4;
+    padding-right: space-scalar(8);
+    padding-left: space-scalar(8);
   }
 }
 
 .menu-list__target {
   display: inline-block;
   padding: 0.6em 0.8em;
-  font-size: $font-size-l1;
   color: $white;
   text-transform: uppercase;
   transition: 0.25s $easeOutQuart;
+  //
+  @include sizes(-2);
+  //
+  @include desktop {
+    @include sizes(-1);
+  }
   //
   &:hover {
     text-decoration: none;

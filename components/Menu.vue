@@ -34,7 +34,7 @@
   left: 0;
   z-index: 9999;
   display: flex;
-  margin: 15px;
+  margin: space-scalar(4);
   transition: transform 0.85s $easeInOutQuint;
   transform: translateX(100%);
   perspective: 800px;
@@ -46,11 +46,11 @@
 
   //
   @include tablet {
-    margin: 30px;
+    margin: space-scalar(8);
   }
   //
   @include desktop {
-    margin: 40px;
+    margin: space-scalar(10);
   }
 }
 
@@ -60,18 +60,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: $space-5;
-  height: $space-5;
+  width: space-scalar(16);
+  height: space-scalar(16);
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
   color: $secondary-color;
   text-transform: uppercase;
   pointer-events: auto;
   background-color: $glay;
   transition: transform 0.45s $easeOutSine;
   transition-delay: 0.35s;
-  transform: translateX(-#{$space-5});
+  transform: translateX(-#{space-scalar(16)});
   will-change: transform;
+  //
+  @include sizes(-2);
   //
   &:hover {
     text-decoration: none;
@@ -85,7 +87,7 @@
 }
 
 .menu__inner {
-  width: calc(100% - #{$space-5});
+  width: calc(100% - #{space-scalar(16)});
   height: 100%;
   padding-top: 2px;
   overflow-y: auto;
@@ -112,18 +114,18 @@
   bottom: 0;
   left: 0;
   z-index: 999;
-  margin: 15px;
+  margin: space-scalar(4);
   background-color: rgba($thirdry-color, 0);
   transition: 0.4s $easeInOutExpo;
   transform: rotateY(10deg) translateX(-100%) translateZ(0);
   transform-origin: 0% 50%;
   //
   @include tablet {
-    margin: 30px;
+    margin: space-scalar(8);
   }
   //
   @include desktop {
-    margin: 40px;
+    margin: space-scalar(10);
   }
   // active
   @at-root {

@@ -48,12 +48,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .entry-nav {
+  position: relative;
   margin-top: $space-3;
   //
   @include tablet {
     display: flex;
     margin-top: $space-5;
+    margin-right: calc((100vw - 100%) / 2 * -1 + #{space-scalar(8)});
+    margin-left: calc((100vw - 100%) / 2 * -1 + #{space-scalar(8)});
   }
+  //
+  @include desktop {
+    margin-right: calc((100vw - 100%) / 2 * -1 + #{space-scalar(10)});
+    margin-left: calc((100vw - 100%) / 2 * -1 + #{space-scalar(10)});
+  }
+  // max-width: ;
 }
 
 .entry-nav__item {
@@ -81,7 +90,8 @@ export default {
   height: 120px;
   //
   @include tablet {
-    height: 180px;
+    height: 17.5vw;
+    min-height: 180px;
   }
   //
   &:hover {
@@ -105,8 +115,10 @@ export default {
   text-transform: capitalize;
   transition: 0.3s $easeOutQuint;
   //
+  @include sizes(1);
+  //
   @include tablet {
-    font-size: 2.2rem;
+    @include sizes(2);
   }
   //
   .entry-nav__item:hover & {
@@ -117,13 +129,13 @@ export default {
 
 .entry-nav__title {
   display: inline;
-  font-size: $font-size-l2;
-  line-height: 1.7;
   color: $black;
   background-color: $white;
   //
+  @include sizes(-1, 1);
+  //
   @include tablet {
-    line-height: 2;
+    @include sizes(0, 1);
   }
 }
 

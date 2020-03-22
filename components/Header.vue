@@ -44,12 +44,12 @@
 }
 
 .header__inner {
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-top: space-scalar(4);
+  padding-right: space-scalar(4);
+  padding-left: space-scalar(4);
   //
   @include tablet {
-    padding: 30px;
+    padding: space-scalar(8);
   }
   //
   @include desktop {
@@ -61,7 +61,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: calc(#{$space-5} + 2px) 40px 0;
+    padding-top: space-scalar(14);
+    padding-right: space-scalar(10);
+    padding-left: space-scalar(10);
   }
   //
   &.is-fixed {
@@ -79,17 +81,21 @@
   margin-bottom: $space-2;
   //
   > a {
-    font-size: $font-size-l5;
-    font-weight: bold;
+    display: inline-block;
+    font-weight: 600;
     color: $glay;
+    transition: transform 0.3s $easeInOutSine;
+    transform-origin: left center;
+    //
+    @include sizes(4);
 
-    .header.fixed & {
-      font-size: 3rem;
+    .header.is-fixed & {
+      transform: scale(0.85);
     }
   }
   //
   @include desktop {
-    padding-left: $space-3;
+    padding-left: space-scalar(6);
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -99,8 +105,7 @@
   // padding-left: $space-3;
   //
   @include desktop {
-    padding-right: $space-5;
-    margin-right: $space-5;
+    padding-right: calc(#{space-scalar(10)} + #{space-scalar(16)});
   }
 }
 
@@ -116,14 +121,19 @@
 .header__nav-item {
   //
   + .header__nav-item {
-    margin-left: $space-4;
+    margin-left: space-scalar(10);
+    //
+    @include desktop {
+      margin-left: space-scalar(12);
+    }
   }
 }
 
 .header__nav-target {
-  font-size: $font-size-l3;
   font-style: italic;
   color: $glay;
+  //
+  @include sizes(1);
   //
   &:hover {
     text-decoration: none;
