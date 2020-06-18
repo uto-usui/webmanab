@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import hljs from 'highlight.js/lib/highlight'
+import hljs from 'highlight.js/lib/core'
 
 // need languages
 import javascript from 'highlight.js/lib/languages/javascript'
