@@ -75,7 +75,7 @@ class ApiMapper {
    */
   getServiceEndpoint(method, endpoint) {
     const name = Object.keys(this.api).filter((name) => {
-      return this.api[name][method] && this.api[name][method][endpoint]
+       return this.api[name] && this.api[name][method] && this.api[name][method][endpoint]
     })[0] || null
 
     if (!name) return null
