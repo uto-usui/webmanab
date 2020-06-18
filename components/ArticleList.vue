@@ -1,12 +1,13 @@
 <template>
   <div class="article-list">
-    <div class="article-list__inner">
+    <div class="article-list__inner" infinite-wrapper>
       <Article v-for="article in articles" :key="article.id" :article="article" />
     </div>
     <client-only>
       <InfiniteLoading
         v-if="infinite && articles.length % 8 === 0"
         ref="infiniteLoading"
+        force-use-infinite-wrapper
         @infinite="moreArticles"
       >
         <Loader slot="spinner" />
