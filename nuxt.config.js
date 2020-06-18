@@ -286,6 +286,31 @@ module.exports = {
 
         .catch(callback)
     }
+  },
+
+  workbox: {
+    skipWaiting: true,
+    clientsClaim: true,
+    // ios safari video support
+    runtimeCaching: [
+      // google fonts
+      {
+        urlPattern: '^https://fonts.(?:googleapis|gstatic).com/(.*)',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        // ex. poryfill
+        urlPattern: 'https://cdn.jsdelivr.net/.*',
+        handler: 'cacheFirst'
+      },
+      // assets
+      {
+        urlPattern: 'https://wp.webmanab-html.com/wp-content/uploads/',
+        handler: 'cacheFirst'
+      }
+    ]
   }
 }
 
