@@ -1,4 +1,6 @@
-const axios = require('axios')
+import { defineNuxtPlugin } from 'nuxt/app'
+
+import axios from 'axios'
 
 class ApiMapper {
 
@@ -200,8 +202,10 @@ class ApiMapper {
   }
 }
 
-export default (ctx, inject) => {
+
+export default defineNuxtPlugin((nuxtApp) => {
   const api = new ApiMapper( <%= JSON.stringify(options) %>, )
-  ctx.$api = api
-  inject('api', api)
-}
+
+  nuxtApp.vueApp.provide('api', api)
+  nuxtApp.provide('api', api)
+});
