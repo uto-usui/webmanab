@@ -39,7 +39,7 @@ export default {
   /**
    *
    */
-  setCurrentPosts(state, data) {
+  setCurrentPosts(state, _data) {
     state.currentPosts = state.cachePages[state.currentPath]
       ? state.cachePages[state.currentPath].slugs
       : []

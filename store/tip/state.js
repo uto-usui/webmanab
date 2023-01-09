@@ -1,4 +1,4 @@
-export default () => {
+export const tipState = () => {
   return {
     currentQuery: {},
     currentPath: null,

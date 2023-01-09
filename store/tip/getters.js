@@ -1,4 +1,4 @@
-export default {
+export const tipGetters = {
   currentPage(state) {
     return state.cachePages[state.currentPath] || {}
   },

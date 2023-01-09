@@ -1,12 +1,13 @@
+import { resolve } from 'path'
+import { defineNuxtConfig } from 'nuxt/config'
+
 const path = require('path')
 const axios = require('axios')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 
 const apiUrl = 'https://wp.webmanab-html.com/wp-json/wp/v2/'
 
-module.exports = {
-  mode: 'universal',
-
+export default defineNuxtConfig({
   /*
   ** Headers of the page
   */
@@ -50,31 +51,26 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/vue-lazyload.client.js',
-    '~plugins/console.js',
-    '~plugins/scrollTo.js'
+    './plugins/vue-lazyload.client.js',
+    './plugins/scrollTo.js',
+    './plugins/vuex.ts',
+    './plugins/vue-gtag.client.ts'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/feed',
     [
       '@nuxtjs/google-adsense',
       {
         id: 'ca-pub-2691922878827958'
       }
     ],
-    ['@nuxtjs/google-gtag', { id: 'UA-69841076-1' }],
     [
-      '~/modules/api',
+      './modules/api',
       {
-        config: '~/api.config.js',
+        config: '../../api.config.js',
         baseURI: `${apiUrl}`
       }
     ]
@@ -165,19 +161,6 @@ module.exports = {
         })
         .catch(callback)
     }
-  },
-
-  styleResources: {
-    scss: [
-      '~/assets/sass/foundation/variable/_variable.scss',
-      '~/assets/sass/foundation/mixin/_mixin.scss'
-    ]
-  },
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
   },
 
   /*
@@ -311,8 +294,25 @@ module.exports = {
         handler: 'cacheFirst'
       }
     ]
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+          @import "~/assets/sass/foundation/variable/_variable.scss";
+          @import "~/assets/sass/foundation/mixin/_mixin.scss";
+          `
+        }
+      }
+    },
+    resolve: {
+      alias: {
+        Sass: resolve(__dirname, './assets/sass/')
+      }
+    }
   }
-}
+})
 
 // tax
 // https://v2.wp-api.org/reference/taxonomies/

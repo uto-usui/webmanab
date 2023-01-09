@@ -1,4 +1,4 @@
-export default {
+export const mutations = {
   setMeta(state, data) {
     state.meta = data
   },

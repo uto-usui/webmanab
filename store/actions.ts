@@ -1,4 +1,4 @@
-export default {
+export const actions = {
   nuxtServerInit({ commit, state }, { app }) {
     const description =
       app.head.meta && app.head.meta.find(meta => meta.name === 'description')
@@ -13,7 +13,9 @@ export default {
     commit('menuOpen', isOpen)
   },
   /**
-   * @param value {boolean}
+   *
+   * @param commit
+   * @param value
    */
   setMenuOpen({ commit }, value) {
     commit('menuOpen', value)
