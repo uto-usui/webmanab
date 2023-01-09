@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <main class="wrapper">
     <div class="wrapper__inner">
       <slot />
