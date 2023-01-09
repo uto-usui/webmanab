@@ -123,7 +123,7 @@ module.exports = {
   /**
    * page transition
    */
-  transition: {
+  pageTransition: {
     css: false,
     enter(el, done) {
       done()
