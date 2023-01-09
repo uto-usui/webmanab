@@ -1,6 +1,6 @@
 // extends 継承
 // base どこをルートとするか
-module.exports = {
+export default {
   baseURI: 'https://wp.webmanab-html.com/wp-json',
   api: {
     meta: {

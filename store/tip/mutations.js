@@ -1,4 +1,4 @@
-export default {
+export const tipMutations = {
   /**
    * post data 記事の詳細
    * @param state
@@ -39,7 +39,7 @@ export default {
   /**
    *
    */
-  setCurrentPosts(state, data) {
+  setCurrentPosts(state, _data) {
     state.currentPosts = state.cachePages[state.currentPath]
       ? state.cachePages[state.currentPath].slugs
       : []

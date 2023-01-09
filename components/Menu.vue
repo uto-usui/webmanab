@@ -94,7 +94,7 @@
   background-color: rgba($glay, 0.95);
   transition: 0.85s $easeInOutExpo;
   transform: rotateY(5deg);
-  transform-origin: 0% 50%;
+  transform-origin: 0 50%;
   //
   @include desktop {
     padding-bottom: $space-5;
@@ -118,7 +118,7 @@
   background-color: rgba($thirdry-color, 0);
   transition: 0.4s $easeInOutExpo;
   transform: rotateY(10deg) translateX(-100%) translateZ(0);
-  transform-origin: 0% 50%;
+  transform-origin: 0 50%;
   //
   @include tablet {
     margin: space-scalar(8);
@@ -159,11 +159,7 @@ export default {
       page: 1
     }
     // get taxnomy for menu
-    const data = await Promise.all([
-      this.$api.get('/tips', query),
-      this.$api.get('/clips', query),
-      this.$api.get('/labs', query)
-    ])
+    const data = await Promise.all([this.$api.get('/tips', query)])
     this.tipsList = data[0].data
     this.clipsList = data[1].data
     this.labsList = data[2].data
