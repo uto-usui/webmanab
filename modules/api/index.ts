@@ -1,6 +1,5 @@
 import path from 'path'
-import { defineNuxtModule, addPluginTemplate } from '@nuxt/kit'
-import webpack from 'webpack'
+import { addPluginTemplate, defineNuxtModule } from '@nuxt/kit'
 
 const module = defineNuxtModule({
   setup(_options, nuxt) {
