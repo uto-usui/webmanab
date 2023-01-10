@@ -39,7 +39,7 @@ export const tipMutations = {
   /**
    *
    */
-  setCurrentPosts(state, _data) {
+  setCurrentPosts(state) {
     state.currentPosts = state.cachePages[state.currentPath]
       ? state.cachePages[state.currentPath].slugs
       : []
