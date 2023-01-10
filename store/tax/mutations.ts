@@ -1,4 +1,4 @@
-export default {
+export const taxMutations = {
   /**
    * post data 記事の詳細
    * @param state
@@ -39,7 +39,7 @@ export default {
   /**
    *
    */
-  setCurrentPosts(state, data) {
+  setCurrentPosts(state) {
     state.currentPosts = state.cachePages[state.currentPath]
       ? state.cachePages[state.currentPath].slugs
       : []
@@ -58,7 +58,6 @@ export default {
   },
   /**
    * set term id / reset posts and pages
-   * @param data {string} term id
    */
   setTerm(state, data) {
     state.cachePosts = {}

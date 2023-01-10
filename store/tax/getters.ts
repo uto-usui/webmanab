@@ -1,4 +1,4 @@
-export default {
+export const taxGetters = {
   currentPage(state) {
     return state.cachePages[state.currentPath] || {}
   },
