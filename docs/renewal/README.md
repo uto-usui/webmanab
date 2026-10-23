@@ -92,6 +92,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `tip/frontnote` のコードの中の `<h1>` が文字として出る | 旧サイトはエスケープ漏れで見出しとして描画していた |
 | キーボードで操作したとき、シェアとメニューのボタンにフォーカスの枠が出る（マウスで見ている限りは変わらない） | `<a>` から button に変えると、reset の `outline: none` で旧サイトにはあった枠が消えるため（08 の A-5） |
 | `tip/frontnote` と `tip/javascript-es6` のコードブロック 1 個ずつで、色の付き方が変わる | 上の直しと、消えていた文字を元に戻した結果、自動判定される言語が変わる（php → xml、xml → javascript） |
+| 375px の幅で、最後に空行があるコードブロック 113 個（40 ページ）が 1px 高くなる。1080px では同じ | 旧サイトは最後の改行が `<code>` の外（`</code>` と `</pre>` の間）にあり、新サイトは `<code>` の中にある。Markdown から 115 個だけを見分ける印を持たせるほどの差ではないので受け入れる |
 | 英数字が Open Sans から OS の標準フォント（mac は SF、Windows は Segoe UI）に、コードが Source Code Pro から OS の等幅フォント（mac は Menlo）になる。日本語は今までどおり游ゴシックなど | Google Fonts の CSS が描画を止めていて、表示が遅れていた（mobile の LCP の原因の 1 つ）。ユーザーの判断で Web フォントをやめる |
 | 前後記事ナビのタイトルが、その記事の見出しと同じ文字になる（169 本。例: `-` → `–`、`'` → `’`、`...` → `…`、`Wordpress` → `WordPress`） | 旧サイトのナビは WP の生のタイトルを出していて、記事の見出し（WP が記号を整えたもの）と文字が違っていた。別のタイトルを記事データに持たず、見出しにそろえる |
 
@@ -138,7 +139,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 - 新しいビルドの URL が、旧 sitemap の 1323 件と一致する。
 - 旧サイトの基準スクリーンショット 64 枚と比べて、差が「4. 旧サイトから見た目が変わるところ」の範囲に収まる。computed style の比較でも同じ。
-- コードブロック 762 個の高さが旧サイトと一致する（02 の 10 章）。
+- コードブロック 762 個の高さが旧サイトと一致する（02 の 10 章）。例外は 4 章に書いた 2 つ（`tip/frontnote` の `<h1>` の直しと、375px で 1px 高くなる 113 個）だけ。
 - 旧 Service Worker が入ったブラウザで開いても、新しいサイトが表示される。
 - `pnpm lint`、`pnpm check`、`pnpm test`、`pnpm build`、`pnpm test:dist`、`pnpm test:e2e`、`pnpm audit --audit-level high` が通る。
 - a11y の違反の件数が、旧サイトの基準（`test/a11y/baseline.json`）から増えていない。増えたものは、08 の 2.6 の手順で片付けるか、一覧に理由を書いてある。
