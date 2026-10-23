@@ -1,0 +1,107 @@
+{
+  "axeCore": "4.13.0",
+  "measuredAt": "2026-10-23",
+  "source": "pnpm test:catalog（ローカルの macOS。CI で最初に回したら置き直す）",
+  "pages": {
+    "bar/default@375": {},
+    "bar/default@768": {},
+    "bar/default@1080": {},
+    "bar/default@1480": {},
+    "header/default@375": {},
+    "header/default@768": {},
+    "header/default@1080": {},
+    "header/default@1480": {},
+    "header/fixed@1080": {},
+    "header/fixed@1480": {},
+    "header/not-fixed-on-tablet@768": {},
+    "layout/default@375": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/default@768": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/default@1080": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/default@1480": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/menu-open@375": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/menu-open@768": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/menu-open@1080": {
+      "scrollable-region-focusable": 1
+    },
+    "layout/menu-open@1480": {
+      "scrollable-region-focusable": 1
+    },
+    "menu/closed@375": {},
+    "menu/closed@768": {},
+    "menu/closed@1080": {},
+    "menu/closed@1480": {},
+    "menu/focus-visible@375": {},
+    "menu/focus-visible@768": {},
+    "menu/focus-visible@1080": {},
+    "menu/focus-visible@1480": {},
+    "menu/item-hover@375": {},
+    "menu/item-hover@768": {},
+    "menu/item-hover@1080": {},
+    "menu/item-hover@1480": {},
+    "menu/many-terms@375": {},
+    "menu/many-terms@768": {},
+    "menu/many-terms@1080": {},
+    "menu/many-terms@1480": {},
+    "menu/open@375": {},
+    "menu/open@768": {},
+    "menu/open@1080": {},
+    "menu/open@1480": {},
+    "title1/clip@375": {},
+    "title1/clip@768": {},
+    "title1/clip@1080": {},
+    "title1/clip@1480": {},
+    "title1/hover@375": {},
+    "title1/hover@768": {},
+    "title1/hover@1080": {},
+    "title1/hover@1480": {},
+    "title1/lab@375": {},
+    "title1/lab@768": {},
+    "title1/lab@1080": {},
+    "title1/lab@1480": {},
+    "title1/tip@375": {},
+    "title1/tip@768": {},
+    "title1/tip@1080": {},
+    "title1/tip@1480": {},
+    "title1/tips@375": {},
+    "title1/tips@768": {},
+    "title1/tips@1080": {},
+    "title1/tips@1480": {},
+    "title2/related@375": {},
+    "title2/related@768": {},
+    "title2/related@1080": {},
+    "title2/related@1480": {},
+    "title2/share@375": {},
+    "title2/share@768": {},
+    "title2/share@1080": {},
+    "title2/share@1480": {},
+    "title2/tag@375": {},
+    "title2/tag@768": {},
+    "title2/tag@1080": {},
+    "title2/tag@1480": {},
+    "wrapper/default@375": {
+      "scrollable-region-focusable": 1
+    },
+    "wrapper/default@768": {
+      "scrollable-region-focusable": 1
+    },
+    "wrapper/default@1080": {
+      "scrollable-region-focusable": 1
+    },
+    "wrapper/default@1480": {
+      "scrollable-region-focusable": 1
+    }
+  },
+  "changes": []
+}

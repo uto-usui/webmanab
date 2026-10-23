@@ -9,7 +9,11 @@ export default getViteConfig({
         extends: true,
         test: {
           name: 'unit',
-          include: ['test/unit/**/*.test.ts', 'test/content/**/*.test.ts'],
+          include: [
+            'test/unit/**/*.test.ts',
+            'test/content/**/*.test.ts',
+            'test/components/**/*.test.ts',
+          ],
           env: { TZ: 'UTC' },
         },
       },
