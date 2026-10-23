@@ -74,6 +74,10 @@ test('/clip/ で下までスクロールすると 8 件増え、読み込み中�
       json: { items: items('clip', 8), page: 2, last: 103, total: 817 },
     })
   })
+  // 足したあとに読み込み口がまだ画面内なら 3 ページ目も読みにいく。件数が変わらないように止めておく
+  await page.route('**/data/clip/3.json', (route) =>
+    route.fulfill({ status: 500, body: '' }),
+  )
 
   await page.goto('/clip/')
   await expect(cards(page)).toHaveCount(8)
