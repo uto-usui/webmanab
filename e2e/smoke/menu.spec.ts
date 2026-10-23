@@ -60,6 +60,21 @@ test('閉じているとき、Tab でメニューの中に止まらない（A-1�
   expect(visited).not.toContain('menu')
 })
 
+test('開いているとき、Tab でメニューのリンクに届く（A-1）', async ({
+  page,
+}) => {
+  await expect(page.locator('.menu__inner a').first()).toBeAttached()
+  await page.click('.menu__btn')
+  let reached = false
+  for (let i = 0; i < 50 && !reached; i++) {
+    await page.keyboard.press('Tab')
+    reached = await page.evaluate(
+      () => !!document.activeElement?.closest('.menu__inner'),
+    )
+  }
+  expect(reached).toBe(true)
+})
+
 test('Tab で来たボタンにフォーカスの枠が出る（A-5）', async ({ page }) => {
   for (let i = 0; i < 50; i++) {
     await page.keyboard.press('Tab')
