@@ -93,6 +93,15 @@ describe.each(htmlFiles)('%s', (file) => {
     })
   }
 
+  // 正の tabindex は Tab の順を見た目の順から外す（08 の 2.2）。
+  // tip/html5-global の本文は tabindex を説明するデモの input を 3 つ持つので、その 3 つだけ通す
+  test('tabindex に正の値がない', () => {
+    const positive = tags.filter((tag) => /\stabindex="[1-9]/.test(tag))
+    expect(positive).toHaveLength(
+      file === 'tip/html5-global/index.html' ? 3 : 0,
+    )
+  })
+
   test('旧実装の独自属性 lazy が残っていない（data-lazy に変えた）', () => {
     expect(tags.filter((tag) => /\slazy(?=[\s=>/])/.test(tag))).toEqual([])
   })
