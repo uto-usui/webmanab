@@ -13,13 +13,14 @@ export const load = (root: string) => {
       .filter((file) => file.endsWith('.md'))
       .map((file) => {
         // glob loader と同じパーサー（YAML のタイムスタンプを Date にする）で読む
-        const { frontmatter } = parseFrontmatter(
+        const { frontmatter, content } = parseFrontmatter(
           readFileSync(join(path, file), 'utf8'),
         )
         return {
           dir,
           file,
           frontmatter,
+          body: content,
           result: postSchema.safeParse(frontmatter),
         }
       })
