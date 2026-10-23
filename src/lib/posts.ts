@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content'
+import { primaryTagKey } from './primary-tag'
 import type { PostData } from './schema'
 import {
   PER_PAGE,
@@ -66,6 +67,12 @@ export const related = <T extends Sortable & EntryWith<'primaryTag'>>(
     ),
   ).slice(0, limit)
 }
+
+/** 記事ページの関連記事。比べるキーはアイキャッチと共有する primaryTagKey（打ち間違い 7 語を寄せる） */
+export const relatedPosts = <T extends Sortable & EntryWith<'primaryTag'>>(
+  all: readonly T[],
+  post: T,
+) => related(all, post, primaryTagKey)
 
 /** ターム一覧ページの記事。新しい順 */
 export const postsInTerm = <T extends Sortable & EntryWith<'terms'>>(
