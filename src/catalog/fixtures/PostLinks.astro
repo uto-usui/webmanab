@@ -1,0 +1,20 @@
+---
+// Wrapper の中身の見本。実ページの main には記事へのリンクが並ぶので、リンクを含む中身にする
+import { postPath } from '../../lib/posts'
+import { posts } from './posts'
+---
+
+<ul class="post-links">
+  {Object.values(posts).map((post) => (
+    <li>
+      <a href={postPath(post.type, post.slug)}>{post.title}</a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  /* reset の line-height: 1 のまま縦に並べると、見本の側で axe の target-size が出る */
+  .post-links li + li {
+    margin-top: 16px;
+  }
+</style>

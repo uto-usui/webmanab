@@ -1,12 +1,10 @@
 ---
-// layouts/Default.astro をそのまま描く。中身は Wrapper に段落を 1 つ
+// layouts/Default.astro をそのまま描く
 import Default from '../../layouts/Default.astro'
-import Wrapper from '../../components/Wrapper.astro'
+import WrapperPage from './WrapperPage.astro'
 ---
 
 <Default title="catalog: layout">
   <meta name="robots" content="noindex" slot="head" />
-  <Wrapper>
-    <p>wrapper の中身</p>
-  </Wrapper>
+  <WrapperPage />
 </Default>
