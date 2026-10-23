@@ -1,12 +1,12 @@
-// ページ単位の axe と数値の指標を test-results/a11y-report.json に書く（08 の 2.6）。
+// ページ単位の axe と数値の指標を、ページ×幅ごとに test-results/e2e/ の中へ書く（08 の 2.6）。
+// まとめるのは merge-report.ts（globalTeardown）。
 // 報告だけなので expect を使わない。比べるのは scripts/a11y-compare.ts。
 // 条件は旧サイトの監査（08 の 2.3、.snapshot/prototypes/qa/audit.mjs）に合わせる。
 import AxeBuilder from '@axe-core/playwright'
 import { test, type Page } from '@playwright/test'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { dirname } from 'node:path'
+import { writeFileSync } from 'node:fs'
+import { A11Y_RESULT, type PageResult } from './merge-report.ts'
 
-const OUT = 'test-results/a11y-report.json'
 const TAGS = [
   'wcag2a',
   'wcag2aa',
@@ -53,25 +53,6 @@ const TARGETS: Target[] = [
     },
   },
 ]
-
-interface Report {
-  axeCore?: string
-  pages: Record<string, Record<string, number>>
-  metrics: Record<string, Record<string, number>>
-  details: Record<string, unknown>
-  skipped: Record<string, string>
-}
-
-// テストが落ちて worker が替わっても結果が消えないよう、1 件ごとにファイルへ足す。
-// test-results/ は実行のたびに Playwright が空にする
-function save(update: (report: Report) => void) {
-  const report: Report = existsSync(OUT)
-    ? JSON.parse(readFileSync(OUT, 'utf8'))
-    : { pages: {}, metrics: {}, details: {}, skipped: {} }
-  update(report)
-  mkdirSync(dirname(OUT), { recursive: true })
-  writeFileSync(OUT, `${JSON.stringify(report, null, 2)}\n`)
-}
 
 // axe では見えない数値（08 の 2.6 の metrics）
 function collectMetrics(page: Page) {
@@ -127,7 +108,13 @@ for (const viewport of WIDTHS) {
 
     for (const target of TARGETS) {
       const key = `${target.key}@${viewport.width}`
-      test(key, async ({ page, baseURL }) => {
+      test(key, async ({ page, baseURL }, testInfo) => {
+        // 1 件ごとに別のファイルにして、worker どうしで書き込みがぶつからないようにする
+        const save = (result: PageResult) =>
+          writeFileSync(
+            testInfo.outputPath(A11Y_RESULT),
+            JSON.stringify({ ...result, key }),
+          )
         const allowed = new Set([
           new URL(baseURL!).host,
           'fonts.googleapis.com',
@@ -141,29 +128,28 @@ for (const viewport of WIDTHS) {
         try {
           const res = await page.goto(target.path, { waitUntil: 'load' })
           if (res?.status() !== 200) {
-            save((r) => (r.skipped[key] = `HTTP ${res?.status()}`))
+            save({ skipped: `HTTP ${res?.status()}` })
             return
           }
           await page.waitForTimeout(1500)
           await target.open?.(page)
           const result = await new AxeBuilder({ page }).withTags(TAGS).analyze()
           const metrics = await collectMetrics(page)
-          save((r) => {
-            r.axeCore = result.testEngine.version
-            r.pages[key] = Object.fromEntries(
+          save({
+            axeCore: result.testEngine.version,
+            counts: Object.fromEntries(
               result.violations.map((v) => [v.id, v.nodes.length]),
-            )
-            for (const [name, value] of Object.entries(metrics))
-              (r.metrics[name] ??= {})[key] = value
-            r.details[key] = result.violations.map((v) => ({
+            ),
+            metrics,
+            details: result.violations.map((v) => ({
               id: v.id,
               impact: v.impact,
               targets: v.nodes.map((n) => n.target.join(' ')),
-            }))
+            })),
           })
         } catch (e) {
           // ページの部品がまだない（メニューや目次）ときもここに来る
-          save((r) => (r.skipped[key] = String(e).split('\n')[0]))
+          save({ skipped: String(e).split('\n')[0] })
         }
       })
     }

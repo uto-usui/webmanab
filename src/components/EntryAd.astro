@@ -1,0 +1,36 @@
+---
+import { PUBLIC_ADSENSE_CLIENT } from 'astro:env/client'
+
+interface Props {
+  adSlot: string
+}
+
+const { adSlot } = Astro.props
+---
+
+{/* 広告のクライアント ID がないビルドでも、レイアウトを本番とそろえるため枠は出す */}
+<div class="entry-ad">
+  {PUBLIC_ADSENSE_CLIENT && (
+    <>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={PUBLIC_ADSENSE_CLIENT}
+        data-ad-slot={adSlot}
+        data-ad-format="auto"
+      />
+      <script is:inline>
+        ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+      </script>
+    </>
+  )}
+</div>
+
+<style lang="scss" is:global>
+  .entry-ad {
+    padding: 0.8rem;
+    margin-top: $space-4;
+    margin-bottom: $space-4;
+    border: 6px double $black;
+  }
+</style>

@@ -1,0 +1,129 @@
+   <p>自分のinstagramアカウントの投稿のみをAPIを使って取得したいときの駆け足のtipsです。<br>
+とにかく簡単にJavaScriptのみで実装したい時に参考にしてください。</p>
+
+<h2 id="a0">API取得用のクライアントの作成</h2>
+
+<ol>
+<li>ブラウザでinstagramに<a href="https://www.instagram.com/" target="_blank" rel="noopener">ログイン</a></li>
+
+<li>フッターのナビゲーション「API」</li>
+
+<li>メインビジュアルのボタン「Register Your Application」</li>
+
+<li>デヴェロッパー登録</li>
+
+<li>メインビジュアルのボタン「Register Your Application」</li>
+
+<li>上部のボタン「Register a new Client 」</li>
+
+<li>Detailsタブの Application Name / Description / Website URL / Valid redirect URIs (基本Website URLと同じでok) を入力</li>
+
+<li>Secyrityタブの「Disable implicit OAuth」のチェックをはずす</li>
+
+<li>「Resister」ボタン</li>
+
+<li>CLIENT IDをコピーしてメモしておく</li>
+
+</ol>
+
+<h2 id="a1">USER IDの取得</h2>
+
+<ol>
+<li><a href="https://smashballoon.com/instagram-feed/find-instagram-user-id/" target="_blank" rel="noopener">find instagram user id</a>でidを取得</li>
+
+<li>Usernameを入力</li>
+
+<li>User IDをコピーしてメモしておく</li>
+
+</ol>
+
+<h2 id="a2">アクセストークンの取得</h2>
+
+<ol>
+<li><a href="https://instagram.com/oauth/authorize/?client_id=CLIENT_ID&#x26;redirect_uri=REDIRECT_URL&#x26;response_type=token" target="_blank" rel="noopener">https://instagram.com/oauth/authorize/?client_id=CLIENT_ID&#x26;redirect_uri=REDIRECT_URL&#x26;response_type=token</a>に「CLIENT_ID」と「REDIRECT_URL」を先ほど作成した内容に置き換えてアクセス</li>
+
+<li>「Authorize」ボタン</li>
+
+<li>「REDIRECT_URL」のページへ遷移</li>
+
+<li>URLの末尾に「#access_token=*」の形式で「access_token」が返っているのでコピーしてメモ</li>
+
+</ol>
+
+<h2 id="a3">プラグインInstafeed.jsで表示</h2>
+
+<p>取得と描画は「Instafeed.js」を利用すると、簡単に出力することができます。</p>
+
+<ul>
+<li><a href="http://instafeedjs.com/" target="_blank" rel="noopener">Instafeed.js</a></li>
+
+</ul>
+
+<h4 id="html">html</h4>
+
+<pre class="hljs javascript"><code>
+&#x3C;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"instagram"</span> id=<span class="hljs-string">"instafeed"</span>>&#x3C;/div>
+<span class="xml"><span class="hljs-tag">&#x3C;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/js/instafeed.min.js"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">script</span>></span></span>
+
+
+</code></pre>
+
+<h4 id="javascript">javascript</h4>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> myfeed = <span class="hljs-keyword">new</span> Instafeed({
+
+    <span class="hljs-attr">clientId</span>: <span class="hljs-string">'[your client id]'</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-string">'user'</span>,
+    <span class="hljs-attr">userId</span>: <span class="hljs-string">'[your user id]'</span>,
+    <span class="hljs-attr">accessToken</span>:<span class="hljs-string">'[your token]'</span>,
+    <span class="hljs-attr">links</span>: <span class="hljs-literal">true</span> ,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">4</span>, <span class="hljs-comment">// 件数</span>
+    <span class="hljs-attr">resolution</span>:<span class="hljs-string">'standard_resolution'</span>,  <span class="hljs-comment">// 解像度</span>
+    <span class="hljs-attr">template</span>: <span class="hljs-string">'&#x3C;li class="instagram_item">&#x3C;a class="instagram_target" href="{{link}}" target="_blank" style="background-image: url({{image}});">&#x3C;span>♡{{likes}}&#x3C;/span>&#x3C;/a>&#x3C;/li>'</span>, <span class="hljs-comment">// {{image}} {{link}} {{caption}} {{likes}} {{comments}}</span>
+
+    <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-comment">// コールバック</span>
+    }
+
+  });
+myfeed.run();
+
+</code></pre>
+
+<p>他にもいろいろなオプションを渡すことで、ソートしたり、好みやデザインに合わせることができます。コールバック関数で、ローダーを管理したりすることもできますね。</p>
+
+<h4 id="javascript-1">javascript</h4>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> loadButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'load-more'</span>);
+  <span class="hljs-keyword">var</span> feed = <span class="hljs-keyword">new</span> Instafeed({
+    <span class="hljs-comment">// every time we load more, run this function</span>
+    <span class="hljs-attr">after</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// disable button if no more results to load</span>
+      <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.hasNext()) {
+        loadButton.setAttribute(<span class="hljs-string">'disabled'</span>, <span class="hljs-string">'disabled'</span>);
+      }
+    },
+});
+
+loadButton.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  feed.next();
+});
+
+feed.run();
+
+</code></pre>
+
+<p>上記のように、公式では「Load more」ボタンを設置するサンプルが用意されています。</p>
+
+<ul>
+<li><a href="http://instafeedjs.com/" target="_blank" rel="noopener">Instafeed.js</a></li>
+
+</ul>
+
+<p>ただ、このスクリプトを利用すると、アクセストークンなどが丸見えになってしまいます。悪用などされると厄介なので、その辺りはケースに応じて対応したいですね。</p>
+
+<p>おわります。</p>
+
+  

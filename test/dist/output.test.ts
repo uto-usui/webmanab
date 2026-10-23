@@ -1,8 +1,15 @@
 // ビルド出力のうち、ページがそろう前から成り立つもの（08 の 1.5）
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
-import { DIST, distFiles, pagePath, readDist, startTags } from './dist.ts'
+import {
+  DIST,
+  distFiles,
+  legacyPaths,
+  pagePath,
+  readDist,
+  startTags,
+} from './dist.ts'
 
 const htmlFiles = distFiles('**/*.html')
 
@@ -21,15 +28,8 @@ test('CATALOG なしのビルドにカタログが出ていない', () => {
   expect(existsSync(join(DIST, 'catalog'))).toBe(false)
 })
 
-const legacy = new Set(
-  readFileSync(new URL('../fixtures/legacy-urls.txt', import.meta.url), 'utf8')
-    .split('\n')
-    .filter(Boolean)
-    .map((url) => decodeURIComponent(url)),
-)
-
 test('出力したページは、すべて旧サイトの URL にある（余分なページがない）', () => {
-  const extra = htmlFiles.map(pagePath).filter((path) => !legacy.has(path))
+  const extra = htmlFiles.map(pagePath).filter((path) => !legacyPaths.has(path))
   expect(extra).toEqual([])
 })
 
@@ -70,10 +70,22 @@ describe.each(htmlFiles)('%s', (file) => {
     expect(robots.filter((tag) => /noindex/i.test(tag))).toEqual([])
   })
 
-  test('変数なしのビルドに AdSense と GA のタグがない', () => {
-    expect(html).not.toContain('adsbygoogle.js')
-    expect(html).not.toContain('googletagmanager')
+  // 本文のコードの例（tip/nuxt-static-site-tips）にも同じ文字があるので、script の src で見る
+  test('変数なしのビルドに AdSense と GA の script がない', () => {
+    expect(
+      tags.filter(
+        (tag) =>
+          tag.startsWith('<script') &&
+          /\ssrc="[^"]*(adsbygoogle\.js|googletagmanager\.com)/.test(tag),
+      ),
+    ).toEqual([])
   })
+
+  if (/^(tip|clip|lab)\/[^/]+\/index\.html$/.test(file)) {
+    test('記事ページに広告の枠（.entry-ad）は出ている', () => {
+      expect(html).toContain('class="entry-ad"')
+    })
+  }
 
   test('旧実装の独自属性 lazy が残っていない（data-lazy に変えた）', () => {
     expect(tags.filter((tag) => /\slazy(?=[\s=>/])/.test(tag))).toEqual([])
@@ -100,8 +112,6 @@ describe.each(htmlFiles)('%s', (file) => {
       .filter((ref) => ref.startsWith('/') && !ref.startsWith('//'))
       .map((ref) => decodeURIComponent(ref.replace(/&amp;/g, '&')))
       .map((ref) => ref.replace(/[?#].*$/, ''))
-      // まだ作っていないページ（一覧は手順 8 など）への参照は通す。旧 URL がすべてそろうことは手順 12 の URL の一致テストで見る
-      .filter((ref) => !legacy.has(ref))
       .filter((ref) => {
         const target = ref.endsWith('/') ? `${ref}index.html` : ref
         return !existsSync(join(DIST, target))

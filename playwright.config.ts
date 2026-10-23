@@ -5,6 +5,9 @@ const port = Number(process.env.E2E_PORT ?? 4321)
 
 export default defineConfig({
   testDir: 'e2e',
+  // カタログ（test-results/catalog）を消さないよう、QA の出力は分ける
+  outputDir: 'test-results/e2e',
+  globalTeardown: './e2e/a11y/merge-report.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -32,8 +35,6 @@ export default defineConfig({
     {
       name: 'a11y',
       testDir: 'e2e/a11y',
-      // 結果を 1 つの JSON にまとめるので、1 つの worker で順に回す
-      fullyParallel: false,
       use: { ...devices['Desktop Chrome'] },
     },
     // 旧サイトとの比較。ローカルの macOS だけで回す

@@ -1,0 +1,411 @@
+   <p>シンプルが魅力のCSSはリッチな表現や複雑なサイトなどの保守性に欠けますが、CSSメタ言語で記述することでコーディング効率やソースコードの保守性を向上することができます。フロントエンドでは必須の技術になってきましたが、CSSメタ言語の中でも学習コストが低く扱いやすいSass(SCSS記法)で、デザイナーがとりあえず覚えておくと便利な内容や+αをまとめます。</p>
+
+<h2 id="a0">Sassのコンパイル</h2>
+
+<p>SassはCSSに変換してhtmlファイルにはCSSファイルとして読み込ませることになるので、コンパイラー(変換するやつ)が必須です。Dreamweaver2017やBracketsの拡張機能を使えば簡単にコンパイルすることができますし、タスクランナーのgulpを利用すればより高度に取り扱うことができます。</p>
+
+<ul>
+<li><a href="/tip/macos-gulp-init/">デザイナーがMacOSでgulpを動かせるようになるまで</a></li>
+
+</ul>
+
+<p>とりあえずオンラインでの実行環境は</p>
+
+<ul>
+<li><a href="http://codepen.io/" target="_blank" rel="noopener">codepen</a></li>
+
+<li><a href="https://jsfiddle.net/" target="_blank" rel="noopener">jsfiddle</a></li>
+
+<li><a href="http://www.sassmeister.com/" target="_blank" rel="noopener">sassmeister – 変換ツール</a></li>
+
+<li><a href="http://css2sass.herokuapp.com/" target="_blank" rel="noopener">css2sass – 変換ツール</a></li>
+
+</ul>
+
+<p>これでさくっと試してみることができます。</p>
+
+<h2 id="a1">これだけはデザイナーも覚えておきたい、Sass(SCSS)の小技集</h2>
+
+<p>Sass(SCSS記法)の学習コストが低い理由は、CSSと同じ記法で記述することができるからです。いきなり高度なことが要求されるわけではなく、わかることだけ、自分が便利だと思える構文だけを利用することができます。基本的な使い方やテクニックなどを簡単に解説します。</p>
+
+<h3 id="a10">ネストと結合子</h3>
+
+<p>セレクタをネスト(入れ子に)して記述することができます。基本のセレクタ・疑似セレクタ・疑似要素の依存関係が視覚的に把握でき、親となるセレクタを１つにしてまとめて記述することができるので、簡潔なコードを実現できます。</p>
+
+<h4 id="scss">SCSS</h4>
+
+<pre class="hljs"><code>
+.ex {
+  ...
+  .ex_child {
+    ...
+  }
+  + .ex {
+    ...
+  }
+}
+
+</code></pre>
+
+<p>これをコンパイルすると</p>
+
+<pre class="hljs"><code>
+.ex {...}
+
+.ex .ex_child {...}
+
+.ex + .ex {...}
+
+</code></pre>
+
+<p>となります。</p>
+
+<p>Sassには<code>&#x26;</code>という結合子が用意されていて、これを前方に使うことでネストしているセレクタを結合することができます。後方に使うと、ネストの親子関係を逆転するセレクタ指定が可能になります。</p>
+
+<h4 id="scss-1">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  ...
+  &#x26;<span class="hljs-selector-class">.ex--small</span> {
+    ...
+  }
+  &#x26;<span class="hljs-selector-pseudo">:nth-child</span>(2) {
+    ...
+  }
+  &#x26;<span class="hljs-selector-pseudo">::after</span> {
+    ...
+  }
+  <span class="hljs-selector-class">.target</span>: hover &#x26; {
+    ...
+  }
+}
+
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {...}
+
+<span class="hljs-selector-class">.ex</span><span class="hljs-selector-class">.ex--small</span> {...}
+
+<span class="hljs-selector-class">.ex</span><span class="hljs-selector-pseudo">:nth-child</span> {...}
+
+<span class="hljs-selector-class">.ex</span><span class="hljs-selector-pseudo">::after</span> {...}
+
+<span class="hljs-selector-class">.target</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.ex</span> {...}
+
+</code></pre>
+
+<p>ネストのし過ぎには注意します。ホバーなどのアクション目的でのネストは理にかなっていますが、要素セレクタやクラスセレクタの子孫指定でのネストなど、無駄なスコープや詳細度を与えないように注意します。このあたりはコーディングルールやCSS構成案などと合わせて考える必要がありますね。</p>
+
+<h3 id="a11">変数に値を格納</h3>
+
+<p>Sassでは変数を利用して共通の値などをまとめておくことができます。変数はプロパティや他の変数との演算やSass関数での利用が可能です。</p>
+
+<h4 id="scss-2">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-variable">$primary-color</span>: hsla(<span class="hljs-number">180</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>);
+<span class="hljs-variable">$text-base-color</span>: hsla(<span class="hljs-number">0</span>,<span class="hljs-number">0%</span>,<span class="hljs-number">10%</span>,<span class="hljs-number">1</span>);
+<span class="hljs-variable">$base-line-height</span>: <span class="hljs-number">1.75</span>;
+
+</code></pre>
+
+<h3 id="a12">プロパティ値を演算</h3>
+
+<p>CSSのプロパティ内で四則演算することができます。ただし異なる単位をまたいでの計算はできません。この場合はCSSの<code>calc()</code>関数で解決します。</p>
+
+<h4 id="scss-3">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span> * <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">100%</span> * <span class="hljs-number">5em</span>; <span class="hljs-comment">// NG</span>
+  <span class="hljs-attribute">margin</span>: calc(<span class="hljs-number">100%</span> * <span class="hljs-number">5em</span>); <span class="hljs-comment">// OK</span>
+}
+
+</code></pre>
+
+<h4 id="css-1">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attribute">margin</span>: calc(<span class="hljs-number">100%</span> * <span class="hljs-number">5em</span>);
+}
+
+</code></pre>
+
+<h3 id="a13">コメントアウト</h3>
+
+<p>SassではJavaScriptと同じように<code>//</code>でその行の右側をコメントアウトすることができます。このコメントアウトはコンパイル後に削除されます。削除されたくないコメントについては<code>/* */</code>の中に記述します。</p>
+
+<h4 id="scss-4">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-comment">// this is my favorite rule</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+
+</code></pre>
+
+<h4 id="css-2">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+
+</code></pre>
+
+<h3 id="a14">@importで別ファイルを読み込み</h3>
+
+<p>Sassには複数のファイルに細かくスタイルシートのルールを分割し、見通しよく管理できる機能があります。それは<code>@import</code>構文を使うことによって実現できます。CSSの<code>@import</code>は速度も遅く推奨されませんが、Sassの<code>@import</code>はコンパイル時に他のファイルを読み込んで１つのファイルにルールを結合しまとめます。</p>
+
+<h4 id="scss-5">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">"object/component/_button"</span>;
+
+</code></pre>
+
+<p>読み込み先を相対パスで記述し、拡張子は省略できます。読み込み用のSCSSファイルには<code>_</code>のプレフィクスをつけることでコンパイルの管理対象から外れ読み込み専用として認識されます。読み込むファイルには原則このルールと考えて大丈夫です。</p>
+
+<h3 id="a15">Sassの関数</h3>
+
+<p>Sassには様々な強力な関数が用意されています。</p>
+
+<dl><dt>round()</dt>
+<dd>数値の小数点以下を四捨五入</dd>
+<dt>ceil()</dt>
+<dd>数値の小数点以下を切り上げ</dd>
+<dt>floor()</dt>
+<dd>数値の小数点以下を切り捨て</dd>
+<dt>rgba()</dt>
+<dd>RGBA形式に変換</dd>
+<dt>lighten()</dt>
+<dd>色を明るく</dd>
+<dt>darken()</dt>
+<dd>色を暗く</dd>
+<dt>saturate()</dt>
+<dd>彩度を上げる</dd>
+<dt>desaturate()</dt>
+<dd>彩度を下げる</dd>
+<dt>grayscale()</dt>
+<dd>グレースケールに変換</dd>
+<dt>complement()</dt>
+<dd>補色</dd>
+<dt>mix()</dt>
+<dd>2つのカラーコードの中間色</dd>
+<dt>adjust-hue()</dt>
+<dd>色相環の角度を変更</dd>
+</dl>
+
+<h4 id="scss-6">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">width</span>: round(<span class="hljs-number">100%</span> / <span class="hljs-number">3</span>); <span class="hljs-comment">/* round */</span>
+  <span class="hljs-attribute">width</span>: ceil(<span class="hljs-number">100%</span> / <span class="hljs-number">3</span>); <span class="hljs-comment">/* ceil */</span>
+  <span class="hljs-attribute">width</span>: floor(<span class="hljs-number">100%</span> / <span class="hljs-number">3</span>); <span class="hljs-comment">/* floor */</span>
+
+  <span class="hljs-attribute">color</span>: rgba(black, .<span class="hljs-number">5</span>); <span class="hljs-comment">/* rgba */</span>
+  <span class="hljs-attribute">color</span>: lighten(black, <span class="hljs-number">30%</span>); <span class="hljs-comment">/* lighten */</span>
+  <span class="hljs-attribute">color</span>: darken(white, <span class="hljs-number">30%</span>); <span class="hljs-comment">/* darken */</span>
+  <span class="hljs-attribute">color</span>: saturate(hsla(<span class="hljs-number">180</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>), <span class="hljs-number">20%</span>); <span class="hljs-comment">/* saturate */</span>
+  <span class="hljs-attribute">color</span>: desaturate(green, <span class="hljs-number">20%</span>); <span class="hljs-comment">/* desaturate */</span>
+  <span class="hljs-attribute">color</span>: grayscale(green); <span class="hljs-comment">/* grayscale　*/</span>
+  <span class="hljs-attribute">color</span>: complement(hsla(<span class="hljs-number">180</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>)); <span class="hljs-comment">/* complement　*/</span>
+
+  <span class="hljs-attribute">color</span>: mix(blue, orange); <span class="hljs-comment">/* mix */</span>
+  <span class="hljs-attribute">color</span>: adjust-hue(orange, <span class="hljs-number">90deg</span>); <span class="hljs-comment">/* adjust-hue */</span>
+
+</code></pre>
+
+<h4 id="css-3">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">33%</span>; <span class="hljs-comment">/* round */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">34%</span>; <span class="hljs-comment">/* ceil */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">33%</span>; <span class="hljs-comment">/* floor */</span>
+  <span class="hljs-attribute">color</span>: rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.5</span>); <span class="hljs-comment">/* rgba */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#4d4d4d</span>; <span class="hljs-comment">/* lighten */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#b3b3b3</span>; <span class="hljs-comment">/* darken */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#26d9d9</span>; <span class="hljs-comment">/* saturate */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#0d730d</span>; <span class="hljs-comment">/* desaturate */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#404040</span>; <span class="hljs-comment">/* grayscale　*/</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#bf4040</span>; <span class="hljs-comment">/* complement　*/</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#805380</span>; <span class="hljs-comment">/* mix */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#00ff26</span>; <span class="hljs-comment">/* adjust-hue */</span>
+}
+
+
+</code></pre>
+
+<h3 id="a16">forループで繰り返し処理</h3>
+
+<p>Sassには繰り返しの処理を行いたい場合に便利なループ構文が用意されています。<code>:nth-child()</code>とかと合わせて表現することで簡潔に記述することができます。</p>
+
+<pre class="hljs scss"><code><span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from n through m {...}
+</code></pre>
+
+<p>上記の構文で、回数を指定したforループを実行することができます。</p>
+
+<p>例として、順番にアニメーションを遅らせて実行したい場合のループです。<code>nth-child()</code>の値に応じて<code>animation-delay</code>にループ内で都度計算した変数<code>$dalay</code>を指定しています、</p>
+
+<h4 id="scss-7">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background-color</span>: rgba(white,.<span class="hljs-number">35</span>);
+  <span class="hljs-attribute">animation</span>: rotate <span class="hljs-number">1.5s</span> alternate infinite both;
+  <span class="hljs-comment">//</span>
+  <span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">2</span> through <span class="hljs-number">5</span> {
+    &#x26;<span class="hljs-selector-pseudo">:nth-child</span>(#{<span class="hljs-variable">$i</span>}) {
+      <span class="hljs-variable">$delay</span>: <span class="hljs-number">0.3</span> * (<span class="hljs-variable">$i</span> - <span class="hljs-number">1</span>) + s;
+      <span class="hljs-attribute">animation-delay</span>: <span class="hljs-variable">$delay</span>;
+    }
+  }
+  <span class="hljs-comment">//</span>
+  + <span class="hljs-selector-class">.item</span> {
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
+  }
+}
+
+<span class="hljs-keyword">@keyframes</span> rotate {
+  from {
+    <span class="hljs-attribute">transform</span>: rotateY(<span class="hljs-number">0</span>);
+  }
+  to {
+    <span class="hljs-attribute">transform</span>: rotateY(<span class="hljs-number">360deg</span>);
+  }
+}
+
+</code></pre>
+
+<h4 id="css-4">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background-color</span>: rgba(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0.35</span>);
+  <span class="hljs-attribute">animation</span>: rotate <span class="hljs-number">1.5s</span> alternate infinite both;
+}
+
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child</span>(2) {
+  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">0.3s</span>;
+}
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child</span>(3) {
+  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">0.6s</span>;
+}
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child</span>(4) {
+  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">0.9s</span>;
+}
+<span class="hljs-selector-class">.item</span><span class="hljs-selector-pseudo">:nth-child</span>(5) {
+  <span class="hljs-attribute">animation-delay</span>: <span class="hljs-number">1.2s</span>;
+}
+
+<span class="hljs-selector-class">.item</span> + <span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
+}
+
+<span class="hljs-keyword">@keyframes</span> rotate {
+  from {
+    <span class="hljs-attribute">transform</span>: rotateY(<span class="hljs-number">0</span>);
+  }
+  to {
+    <span class="hljs-attribute">transform</span>: rotateY(<span class="hljs-number">360deg</span>);
+  }
+}
+
+</code></pre>
+
+<p>CSS固有のキーワードや関数の内部に変数を使用することはできないので注意します。<code>#{$i}</code>のように<code>#{$variable}</code>と記述してエスケープする必要があります。</p>
+
+<h3 id="a17">mixinで処理をまとめる</h3>
+
+<p>mixinは繰り返し使いたい処理をまとめておける構文です。自分で作るには少しむつかしいですが取り扱いは簡単です。<code>@mixin</code>で定義した処理を<code>@include</code>で呼び出します。mixinはいろんなところで便利なものが配布されていたり提示されているので必要なものがあればピックアップしておきます。<br>
+例として、<code>px</code>単位で指定した<code>font-size</code>を<code>rem</code>の単位に自動計算して変換する<code>mixin</code>です。</p>
+
+<h4 id="scss-8">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-keyword">@mixin</span> fontsize(<span class="hljs-variable">$size</span>: <span class="hljs-number">14</span>, <span class="hljs-variable">$root</span>: <span class="hljs-number">14</span>) {
+  <span class="hljs-attribute">font-size</span>: (<span class="hljs-variable">$size</span> / <span class="hljs-variable">$root</span>) * <span class="hljs-number">1rem</span>;
+}
+
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-keyword">@include</span> fontsize(<span class="hljs-number">20</span>);
+}
+
+</code></pre>
+
+<h4 id="css-5">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-selector-class">.ex</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.42857143rem</span>;
+}
+
+</code></pre>
+
+<p><code>$size</code>には呼び出し時の値が格納されていますが、引数がない場合にデフォルト14をセットして、<code>$base</code>にはドキュメントルート<code>html</code>のフォントサイズを指定しています。</p>
+
+<p><code>@mixin</code>の名前は任意で決めることができますが、以下のようなルールがあります。</p>
+
+<ul>
+<li>数字から始めることができない</li>
+
+<li>特殊記号が含まれていない</li>
+
+<li>連続したハイフンから始めることができない</li>
+
+</ul>
+
+<p>また、<code>@content</code>を使うことで<code>@mixin</code>でセレクタを呼び出すことができます。</p>
+
+<h4 id="scss-9">SCSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-comment">// Chrome Hack</span>
+<span class="hljs-keyword">@mixin</span> hackChrome {
+  <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-webkit-min-device-pixel-ratio:<span class="hljs-number">0</span>){
+    <span class="hljs-keyword">@content</span>
+  }
+}
+
+.ex {
+  <span class="hljs-keyword">@include</span> hackChrome {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  }
+}
+
+</code></pre>
+
+<h4 id="css-6">CSS</h4>
+
+<pre class="hljs scss"><code>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-webkit-min-device-pixel-ratio:<span class="hljs-number">0</span>){
+  <span class="hljs-selector-class">.ex</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  }
+}
+
+</code></pre>
+
+<h4 id="demo">demo</h4>
+
+<p><iframe width="100%" height="450" src="//jsfiddle.net/yutousui/d8knz11c/embedded/html,css,result/dark/" allowfullscreen frameborder="0" title="jsfiddle のデモ"></iframe></p>
+
+<p>おわります。</p>
+
+  

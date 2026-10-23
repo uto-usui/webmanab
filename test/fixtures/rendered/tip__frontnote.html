@@ -1,0 +1,202 @@
+   <p>Node.js製の<strong>スタイルガイドジェネレータ「FrontNote」</strong>のガイドです。「FrontNote」の特徴としてはスタイル全体の概要の記述、カラーパレットの作成、スタイルに任意のラベル付与などがあり、すごくここが有能で嬉しいポイントです。後はマテリアルデザインなところが個人的にテンションが上がりました○</p>
+
+<p>「FrontNote」には「gulp.js」用のプラグインが配布されているのでそれを利用します。「gulp.js」でSCSSの更新時をウォッチして、「FrontNote」に反映するようにして動かしたりすると素敵です。</p>
+
+<h2 id="a0">スタイルガイドジェネレーター「FrontNote」を利用する環境をつくる</h2>
+
+<p>使い方は簡単です。今回は「gulp.js」のプラグインを使用することを前提として、まずは導入してみます。</p>
+
+<p>「gulp.js」の導入に関しては詳しく記事にしました。</p>
+
+<ul>
+<li><a href="/tip/macos-gulp-init/">デザイナーがMacOSで「gulp.js」を動かせるようになるまでと、タスクとテンプレートファイルβ版の配布 -『front-end』</a></li>
+
+</ul>
+
+<h3 id="a00">gulpプラグインでFrontNoteをつかう</h3>
+
+<p>「gulp.js」用の「Frontnote」のプラグインをインストールします。</p>
+
+<ul>
+<li><a href="https://www.npmjs.com/package/gulp-frontnote" target="_blank" rel="noopener">StyleGuide Generator for Gulp</a></li>
+
+</ul>
+
+<h4 id="terminal">terminal</h4>
+
+<pre class="hljs"><code>npm install frontnote --save-dev
+</code></pre>
+
+<h3 id="a01">gulpfile.jsへタスクを記述する</h3>
+
+<p>gulpfile.jsに記述していきます。いくつかオプションがありますが、<code>out</code>に出力したファイルを置くディレクトリと、<code>overview</code>にスタイル全体の概要を記述するマークダウンファイルのディレクトリと、<code>css</code>にコンパイルされた後のファイルの場所を、それぞれオプションに渡しておきます。</p>
+
+<p>任意のディレクトリのSCSSファイルのスタイルガイドを生成するタスクを記述します。</p>
+
+<h4 id="gulpfilejs">gulpfile.js</h4>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">const</span> frontnote = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-frontnote'</span>);
+
+<span class="hljs-keyword">let</span> frontNote = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-frontnote'</span>),
+    srcPath = <span class="hljs-string">'my/dir/src'</span>,
+    distPath = <span class="hljs-string">'my/dir/dist'</span>;
+
+gulp.task(<span class="hljs-string">'note'</span>, <span class="hljs-function">() =></span> {
+  gulp.src(srcPath + <span class="hljs-string">'/**/*.scss'</span>) <span class="hljs-comment">// 監視対象のファイルを指定</span>
+   .pipe(frontNote({
+      <span class="hljs-attr">out</span>: distPath + <span class="hljs-string">'./guide'</span>, <span class="hljs-comment">// guideフォルダを作って格納</span>
+      <span class="hljs-attr">overview</span>: distPath + <span class="hljs-string">'/frontnote.md'</span>, <span class="hljs-comment">// スタイルガイドのトップページ</span>
+      <span class="hljs-attr">css</span>: <span class="hljs-string">'../main.css'</span> <span class="hljs-comment">// コンパイル後のCSSファイルのパス(outからの相対パス)</span>
+   }));
+});
+
+</code></pre>
+
+<h4 id="terminal-1">terminal</h4>
+
+<pre class="hljs"><code>gulp note
+</code></pre>
+
+<h2 id="a1">スタイルガイドジェネレーター「FrontNote」の記述方法</h2>
+
+<p>作業しているCSSやSCSSファイルにコメントアウトでスタイルガイドを記述していきます。SCSSで管理している場合はファイルをコンポーネントとかレイアウトごとに仕分けして管理していくことになると思いますが、そのファイルごとにページが作成されます。わかりやすいようにファイルの上部にコメントとして記述するといいでしょう。</p>
+
+<h3 id="a10">スタイルガイドのページタイトルと概要</h3>
+
+<p>スタイルガイドの各ページのタイトルと概要を記述します。これはページ(ファイル)につき１セクションしか記述することができません。</p>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-comment">/*
+#overview
+このスタイルガイドのページタイトルです
+
+このスタイルガイドのページ概要です。
+*/</span>
+
+</code></pre>
+
+<h3 id="a11">通常の記述</h3>
+
+<pre class="hljs xml"><code class="sass">
+/*
+#styleguide
+見出しのスタイル＊ タイトルをここに書く。
+
+これはサイト全体に適用される見出しのスタイルです＊ コメントをここに書く。
+
+```
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h1"</span>></span>title01<span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h2"</span>></span>title02<span class="hljs-tag">&#x3C;/<span class="hljs-name">h2</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h3"</span>></span>title03<span class="hljs-tag">&#x3C;/<span class="hljs-name">h3</span>></span>
+```
+
+*/
+</code></pre>
+
+<h3 id="a12">ラベルをつける</h3>
+
+<p>注釈としてのラベルをつけることができます。古い情報や重要項目、策定中とかパッと見でわかりやすくできるので必要なところには使っておくと便利です。</p>
+
+<pre class="hljs xml"><code class="sass">
+/*
+#styleguide
+古い見出し
+
+これは昔の見出しです。
+
+@todo
+@非推奨
+
+```
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h1-old"</span>></span>title01<span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>
+```
+
+*/
+</code></pre>
+
+<h3 id="a13">カラーパレット</h3>
+
+<p>カラーコードとその色味がわかる、カラーパレットを出力することができます。</p>
+
+<pre class="hljs bash"><code class="sass">
+/*
+<span class="hljs-comment">#colors</span>
+
+@primary <span class="hljs-comment">#33ccaa</span>
+@secondary <span class="hljs-comment">#aa55cc</span>
+@primary-text <span class="hljs-comment">#cccccc</span>
+*/
+</code></pre>
+
+<h3 id="a14">FrontNoteはいろいろカスタマイズができる</h3>
+
+<p>詳しい使い方のドキュメントはgithubを参照します。オプションなどいろいろ用意されているのがわかります。ejsの知識があればテンプレートをカスタマイズすることも容易です。</p>
+
+<ul>
+<li><a href="https://github.com/frontainer/frontnote" target="_blank" rel="noopener">FrontNote github</a></li>
+
+<li><a href="https://github.com/frontainer/frontnote-template" target="_blank" rel="noopener">FrontNote Template github</a></li>
+
+</ul>
+
+<p>もともとのスタイルや見栄えはマテリアルデザインで余計な飾りがなく清潔で素敵ですが、CSSとJavaScriptはオプションでカスタムすることができるので、そのあたりも必要に応じて考えてあげるといいかなと思います。</p>
+
+<p>FrontNoteを使うことによって、コメントをSCSS各ファイルに分散させておくことができるので見通しが良いなーと個人的には思うのですが、１ファイルにまとめておきたいというプロジェクトもあるので、この運用については要相談ですね。</p>
+
+<h3 id="a15">gulpでSassをコンパイル時にFrontNoteをつかう</h3>
+
+<p>今回紹介したタスクは、単純に任意のディレクトリにあるSCSSファイルからFrontNoteを出力するコードになっていました。ぼくが普段扱っているタスクはもう少し複雑なものになっているので、掲載しておきます。</p>
+
+<h4 id="gulpfilebabeljs">gulpfile.babel.js</h4>
+
+<pre class="hljs javascript"><code>
+gulp.task(<span class="hljs-string">'sass'</span>, <span class="hljs-function">() =></span> {
+  gulp.src(srcPath.sassPath + <span class="hljs-string">'/**/*.scss'</span>)
+    .pipe(plumber({ <span class="hljs-attr">errorHandler</span>: notify.onError(<span class="hljs-string">'&#x3C;%= error.message %>'</span>) }))
+    .pipe(frontnote({
+      <span class="hljs-attr">out</span>: distPath.cssPath + <span class="hljs-string">'/guide/'</span>,
+      <span class="hljs-attr">css</span>:  <span class="hljs-string">'../main.css'</span>,
+      <span class="hljs-attr">title</span>: <span class="hljs-string">'Style Guide'</span>
+    }))
+    .pipe(sass({
+      <span class="hljs-attr">config_file</span>: <span class="hljs-string">'config.rb'</span>,
+      <span class="hljs-attr">sass</span>: srcPath.sassPath,
+      <span class="hljs-attr">css</span>: srcPath.cssPath,
+      <span class="hljs-attr">image</span>: srcPath.imgPath
+    }))
+    .pipe(autoprefixer({
+      <span class="hljs-attr">browsers</span>: [<span class="hljs-string">'last 2 version'</span>, <span class="hljs-string">'iOS >= 8.1'</span>, <span class="hljs-string">'Android >= 4.4.4'</span>],
+      <span class="hljs-attr">cascade</span>: <span class="hljs-literal">false</span>
+    }))
+    .pipe(csscomb())
+    .pipe(gulp.dest(distPath.cssPath + <span class="hljs-string">'/'</span>))
+    .pipe(cssmin())
+    .pipe(rename({ <span class="hljs-attr">suffix</span>: <span class="hljs-string">'.min'</span> }))
+    .pipe(gulp.dest(distPath.cssPath + <span class="hljs-string">'/'</span>))
+    .pipe(browser.reload({ <span class="hljs-attr">stream</span>: <span class="hljs-literal">true</span> }))
+    .pipe(notify(<span class="hljs-string">'css task finished'</span>));
+});
+
+</code></pre>
+
+<ul>
+<li>Sass(SCSS)をCSSに変換(compass)</li>
+
+<li>スタイルガイドを生成(frontnote)</li>
+
+<li>autoprefixerを実行</li>
+
+<li>CSSプロパティの並び順を整形</li>
+
+<li>一時保存して、圧縮して名前を変更して、再保存</li>
+
+<li>ブラウザを再起動</li>
+
+</ul>
+
+<p>というようなタスクを実行することでCSSにまつわるタスクを一括で行っています。</p>
+
+<p>おわります。</p>
+
+  
