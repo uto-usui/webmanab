@@ -30,20 +30,8 @@ $space-11: $space-unit * 233 !default;
 // フォント名の大文字小文字は保つ（BlinkMacSystemFont は Chromium が名前で見分ける）
 // stylelint-disable value-keyword-case
 $font-sans-serif:
-  'Open Sans',
-  -apple-system,
-  BlinkMacSystemFont,
-  '游ゴシック体',
-  'Yu Gothic',
-  YuGothic,
-  'ヒラギノ角ゴ Pro W3',
-  'Hiragino Kaku Gothic Pro',
-  'メイリオ',
-  Meiryo,
-  'Helvetica Neue',
-  Helvetica,
-  Arial,
-  'ＭＳ Ｐゴシック',
-  'MS PGothic',
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', '游ゴシック体', 'Yu Gothic',
+  YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
+  Meiryo, 'Helvetica Neue', Helvetica, Arial, 'ＭＳ Ｐゴシック', 'MS PGothic',
   sans-serif;
-$font-mono: 'Source Code Pro', monospace !default;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
