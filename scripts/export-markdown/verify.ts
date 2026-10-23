@@ -8,7 +8,6 @@ import { decodeHTML } from 'entities'
 import { parse as parseYaml } from 'yaml'
 import { htmlToMarkdown } from './convert.ts'
 import {
-  collectNavTitles,
   fileName,
   frontmatter,
   TAXONOMY,
@@ -20,6 +19,7 @@ import {
   compare,
   intendedKinds,
   metrics,
+  navTitleDiff,
   parseHtml,
   renderMarkdown,
   unexplained,
@@ -44,7 +44,6 @@ const root = path.resolve(args.root ?? repoRoot)
 const htmlDir = snapshotHtmlDir(args.snapshot)
 const posts = loadSnapshot(htmlDir)
 const knownPaths = new Set(posts.map(postPath))
-const navTitles = collectNavTitles(posts)
 const fromFiles = !args['from-html']
 const key = (p: SnapshotPost) => `${p.type}/${decodeURIComponent(p.slug)}`
 
@@ -88,6 +87,9 @@ for (const p of posts) {
   }
 }
 
+// 旧ナビと title の文字が違う記事と、違いの種類（README 4 章の「変わるところ」）
+const navTitleDiffs = new Map<string, string>()
+
 // 文字・数字・HTML の空白以外の文字（引用符、ダッシュ、記号、U+3000 や U+202F などの空白類）。
 // 旧データ（実体参照のまま）から frontmatter() と別の道筋で取り出し、数と種類が変わっていないかを見る
 const SYMBOL = /[^\p{L}\p{N} \t\n\f\r]/gu
@@ -104,7 +106,7 @@ const instant = (v: unknown) =>
   v instanceof Date ? v.getTime() : Date.parse(String(v))
 function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
   const fails: string[] = []
-  const exp = frontmatter(p, navTitles)
+  const exp = frontmatter(p)
   const raw = wpRaw(p)
   if (instant(fm.date) !== Date.parse(exp.date)) fails.push('date')
   // 独立した照合として、WP の date_gmt / modified_gmt と同じ瞬間かも確かめる
@@ -125,9 +127,11 @@ function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
   // 上の照合は同じ frontmatter() との比較なので、旧データからの独立した照合も足す
   const title = legacyTitle(p)
   if (title !== null && fm.title !== title) fails.push('title-h1')
-  const nav = legacyNavTitles.get(postPath(p))
-  if (nav && [...nav].some((t) => t !== (fm.navTitle ?? fm.title)))
-    fails.push('nav-title')
+  for (const nav of legacyNavTitles.get(postPath(p)) ?? []) {
+    const kinds = navTitleDiff(fm.title, nav)
+    if (!kinds) fails.push('nav-title')
+    else if (kinds.length) navTitleDiffs.set(key(p), kinds.join('+'))
+  }
   const rawTerms = p.terms?.[TAXONOMY[p.type]]
   const pairs: [unknown[], unknown[]][] = [
     [[p.title], [fm.title]],
@@ -228,7 +232,7 @@ if (fromFiles) {
 const termFails: string[] = []
 if (fromFiles) {
   for (const [tax, list] of Object.entries(
-    buildTerms(posts.map((p) => frontmatter(p, navTitles))),
+    buildTerms(posts.map((p) => frontmatter(p))),
   )) {
     const file = JSON.parse(
       fs.readFileSync(path.join(termsDir(root), `${tax}.json`), 'utf8'),
@@ -263,7 +267,12 @@ for (const r of bad)
   console.log(`UNEXPLAINED: ${r.key} ${r.unexplained.join(',')}`)
 if (fromFiles) {
   console.log(
-    `frontmatter mismatches ${fmFails.length} (old nav titles for ${legacyNavTitles.size} posts)`,
+    `frontmatter mismatches ${fmFails.length} (h1 and old nav titles included)`,
+  )
+  const byKind: Record<string, number> = {}
+  for (const k of navTitleDiffs.values()) byKind[k] = (byKind[k] ?? 0) + 1
+  console.log(
+    `old nav titles differing from title (expected, README 4) ${navTitleDiffs.size} ${JSON.stringify(byKind)}`,
   )
   for (const f of fmFails) console.log(`  ${f}`)
   console.log(

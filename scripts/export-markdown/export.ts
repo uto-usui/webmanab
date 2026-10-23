@@ -5,7 +5,6 @@ import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { htmlToMarkdown, type Note } from './convert.ts'
 import {
-  collectNavTitles,
   fileName,
   frontmatter,
   postFile,
@@ -34,7 +33,6 @@ const { values: args } = parseArgs({
 const out = path.resolve(args.out ?? repoRoot)
 const posts = loadSnapshot(snapshotHtmlDir(args.snapshot))
 const knownPaths = new Set(posts.map(postPath))
-const navTitles = collectNavTitles(posts)
 
 let written = 0
 let skipped = 0
@@ -53,7 +51,7 @@ const fms: Frontmatter[] = []
 const files = new Set<string>()
 const report: { key: string; file: string; notes: Note[] }[] = []
 for (const p of posts) {
-  const fm = frontmatter(p, navTitles)
+  const fm = frontmatter(p)
   const { md, notes } = htmlToMarkdown(p.content ?? '', { knownPaths })
   const file = path.join(postsDir(out), p.type, `${fileName(p)}.md`)
   if (files.has(file)) throw new Error(`ファイル名が重複しています: ${file}`)

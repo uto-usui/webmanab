@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
 import {
-  collectNavTitles,
   fileName,
   frontmatter,
   postFile,
@@ -138,42 +137,6 @@ describe('frontmatter', () => {
     expect(
       demo('clip', { 'demo-true': true, 'demo-url': 'https://a.example/' }),
     ).toBeUndefined()
-  })
-})
-
-describe('navTitle', () => {
-  const posts = [
-    post({
-      type: 'clip',
-      slug: 'a-is-for-albert',
-      next: { title: "Balsan, la Griffe de l'uniforme", slug: 'balsan' },
-    }),
-    post({
-      type: 'clip',
-      slug: 'balsan',
-      title: 'Balsan, la Griffe de l&#8217;uniforme',
-      prev: { title: 'Elena Saharova ✌&#x1f3fb;', slug: 'elena' },
-    }),
-    post({ type: 'clip', slug: 'elena', title: 'Elena Saharova ✌🏻' }),
-  ]
-
-  it('旧ナビの表示が title と違う記事にだけ、title の直後に出す', () => {
-    const navTitles = collectNavTitles(posts)
-    const fm = frontmatter(posts[1], navTitles)
-    expect(fm.title).toBe('Balsan, la Griffe de l’uniforme')
-    expect(fm.navTitle).toBe("Balsan, la Griffe de l'uniforme")
-    expect(Object.keys(fm).slice(3, 5)).toEqual(['title', 'navTitle'])
-    // v-html で出していたので、実体参照はデコードした文字で比べる
-    expect(frontmatter(posts[2], navTitles)).not.toHaveProperty('navTitle')
-  })
-
-  it('同じ記事のナビのタイトルが食い違えば止める', () => {
-    const other = post({
-      type: 'clip',
-      slug: 'x',
-      next: { title: 'Balsan', slug: 'balsan' },
-    })
-    expect(() => collectNavTitles([...posts, other])).toThrow('balsan')
   })
 })
 

@@ -15,7 +15,6 @@ export interface Frontmatter {
   type: PostType
   slug: string
   title: string
-  navTitle?: string
   date: string
   modified?: string
   excerpt?: string
@@ -52,35 +51,7 @@ const navSlug = (n: unknown) =>
     ? decodeURIComponent(String(n.slug))
     : null
 
-const postKey = (type: PostType, slug: string) =>
-  `${type}/${decodeURIComponent(slug)}`
-
-// 旧サイトの前後記事ナビは、隣の記事の state にある prev/next.title を v-html で出していた。
-// これは WP の生の post_title で、wptexturize がかかっていない（' や - のまま）ので、
-// 記事の title（title.rendered）と表示が違う記事がある
-export function collectNavTitles(posts: SnapshotPost[]): Map<string, string> {
-  const titles = new Map<string, string>()
-  for (const p of posts) {
-    for (const n of [p.prev, p.next]) {
-      if (!n || typeof n !== 'object' || !('slug' in n) || !n.slug) continue
-      const key = postKey(p.type, String(n.slug))
-      const title = text('title' in n ? n.title : '')
-      const seen = titles.get(key)
-      if (seen !== undefined && seen !== title) {
-        throw new Error(`前後記事のタイトルが食い違っています: ${key}`)
-      }
-      titles.set(key, title)
-    }
-  }
-  return titles
-}
-
-export function frontmatter(
-  p: SnapshotPost,
-  navTitles: ReadonlyMap<string, string> = new Map(),
-): Frontmatter {
-  const title = text(p.title)
-  const navTitle = navTitles.get(postKey(p.type, p.slug))
+export function frontmatter(p: SnapshotPost): Frontmatter {
   const f = p.fields ?? {}
   // 単一ページの生データにしかないので、一覧からしか取れなかった 2 件にはない
   const { modified } = wpRaw(p)
@@ -99,9 +70,7 @@ export function frontmatter(
     id: p.id,
     type: p.type,
     slug: decodeURIComponent(p.slug),
-    title,
-    // 旧ナビの表示が title と違う記事にだけ出す
-    ...(navTitle && navTitle !== title ? { navTitle } : {}),
+    title: text(p.title),
     date: `${p.date}+09:00`,
     ...(modified ? { modified: `${modified}+09:00` } : {}),
     ...(excerpt ? { excerpt } : {}),
@@ -128,7 +97,7 @@ export function toYaml(fm: Frontmatter): string {
     if (isScalar(node)) node.type = type
   }
   // 記号（: # 「 など）が多く、913 のような数字だけの slug もあるので、文字列は常にダブルクォート
-  for (const k of ['slug', 'title', 'navTitle', 'excerpt', 'primaryTag'])
+  for (const k of ['slug', 'title', 'excerpt', 'primaryTag'])
     scalar(doc.get(k, true), 'QUOTE_DOUBLE')
   // 日付は YAML のタイムスタンプとして書く
   for (const k of ['date', 'modified']) scalar(doc.get(k, true), 'PLAIN')

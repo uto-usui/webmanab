@@ -3,6 +3,7 @@ import { htmlToMarkdown } from '../../../scripts/export-markdown/convert.ts'
 import {
   compare,
   metrics,
+  navTitleDiff,
   parseHtml,
   renderMarkdown,
   unexplained,
@@ -66,5 +67,25 @@ describe('往復検証', () => {
       ]),
     ).toEqual(['strong'])
     expect(unexplained(fails, notes)).toEqual(fails)
+  })
+})
+
+describe('navTitleDiff', () => {
+  it('旧ナビとの違いが wptexturize と capital_P_dangit だけなら種類を返す', () => {
+    expect(navTitleDiff('a', 'a')).toEqual([])
+    expect(
+      navTitleDiff(
+        'Balsan, la Griffe de l’uniforme',
+        "Balsan, la Griffe de l'uniforme",
+      ),
+    ).toEqual(['quote'])
+    expect(
+      navTitleDiff('WordPressの末尾の[…] – x', 'Wordpressの末尾の[...] - x'),
+    ).toEqual(['dash', 'ellipsis', 'capital-p'])
+  })
+
+  it('それ以外の違いは null', () => {
+    expect(navTitleDiff('ね\u202f—\u202fNT', 'ね — NT')).toBeNull()
+    expect(navTitleDiff('a – b', 'a - c')).toBeNull()
   })
 })
