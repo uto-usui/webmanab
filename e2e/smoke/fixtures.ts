@@ -1,15 +1,11 @@
-// smoke の page は、このサイトと Google Fonts だけを読む。本文の jsfiddle や Amazon の広告は
+// smoke の page は、このサイトだけを読む。本文の jsfiddle や Amazon の広告は
 // 外のサイトの都合で読み込みが終わらなかったりエラーを出したりするので、止めて結果を安定させる
 import { test as base } from '@playwright/test'
 
 export { expect } from '@playwright/test'
 
 export const isExternal = (url: string, baseURL: string) =>
-  !new Set([
-    new URL(baseURL).host,
-    'fonts.googleapis.com',
-    'fonts.gstatic.com',
-  ]).has(new URL(url).host)
+  new URL(url).host !== new URL(baseURL).host
 
 export const test = base.extend({
   page: async ({ page, baseURL }, use) => {
