@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/build-og.mjs",
-    "build": "astro build",
+    "build": "astro build --force",
     "preview": "astro preview",
     "check": "astro check",
     "lint": "eslint . && stylelint \"src/**/*.{astro,css,scss}\" --allow-empty-input",
