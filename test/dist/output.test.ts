@@ -100,8 +100,6 @@ describe.each(htmlFiles)('%s', (file) => {
       .filter((ref) => ref.startsWith('/') && !ref.startsWith('//'))
       .map((ref) => decodeURIComponent(ref.replace(/&amp;/g, '&')))
       .map((ref) => ref.replace(/[?#].*$/, ''))
-      // まだ作っていないページ（一覧は手順 8 など）への参照は通す。旧 URL がすべてそろうことは手順 12 の URL の一致テストで見る
-      .filter((ref) => !legacy.has(ref))
       .filter((ref) => {
         const target = ref.endsWith('/') ? `${ref}index.html` : ref
         return !existsSync(join(DIST, target))
