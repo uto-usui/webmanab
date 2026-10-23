@@ -19,18 +19,35 @@ function cubicBezier(x1: number, y1: number, x2: number, y2: number) {
   }
 }
 
+// vue-scrollto と同じく、利用者がマウスやホイールで触ったら止める。
+// 旧サイトは keyup でも止めていたが、Enter で選んだ直後に止まってしまうので入れない
+const ABORT_EVENTS = ['mousedown', 'wheel', 'touchmove'] as const
+
 function scrollToElement(target: HTMLElement) {
+  // 行き先は押した時点で決める（vue-scrollto と同じ。目次が開く途中で押すとずれるのも同じ）
   const from = scrollY
   const to = target.getBoundingClientRect().top + scrollY - OFFSET
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
     scrollTo(0, to)
     return
   }
+  let aborted = false
+  const abort = () => {
+    aborted = true
+  }
+  for (const type of ABORT_EVENTS) {
+    addEventListener(type, abort, { passive: true, once: true })
+  }
+  const done = () => {
+    for (const type of ABORT_EVENTS) removeEventListener(type, abort)
+  }
   const start = performance.now()
   const step = (now: number) => {
+    if (aborted) return done()
     const p = Math.min(1, (now - start) / DURATION)
     scrollTo(0, from + (to - from) * ease(p))
     if (p < 1) requestAnimationFrame(step)
+    else done()
   }
   requestAnimationFrame(step)
 }
