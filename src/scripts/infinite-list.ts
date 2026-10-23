@@ -1,14 +1,7 @@
-import { titleLink, type ArticleItem } from '../components/article-item'
+import { titleLink } from '../components/article-item'
+import type { ListItem, ListPage } from '../lib/list-json'
 
-// 静的 JSON の 1 ページ分（03 の 4.2）
-interface ListPage {
-  items: ArticleItem[]
-  page: number
-  last: number
-  total: number
-}
-
-function fill(card: DocumentFragment, item: ArticleItem) {
+function fill(card: DocumentFragment, item: ListItem) {
   const find = <T extends Element>(selector: string) => {
     const el = card.querySelector<T>(selector)
     if (!el) throw new Error(`template に ${selector} がない`)

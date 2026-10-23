@@ -1,10 +1,11 @@
 ---
 import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
-import { titleLink, type ArticleItem } from './article-item'
+import type { ListItem } from '../lib/list-json'
+import { titleLink } from './article-item'
 
 interface Props {
   // 渡さないときは中身が空のカードになる。無限スクロールで複製する <template> 用
-  item?: ArticleItem
+  item?: ListItem
 }
 
 const { item } = Astro.props

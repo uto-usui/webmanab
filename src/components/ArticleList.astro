@@ -1,34 +1,21 @@
 ---
-import { formatDate } from '../lib/date'
-import { eyecatchFor } from '../lib/eyecatch'
-import { entryPath, infiniteListState, type PostEntry } from '../lib/posts'
-import { PER_PAGE } from '../lib/site'
+import { listPages } from '../lib/list-json'
+import { infiniteListState, type PostEntry } from '../lib/posts'
 import Article from './Article.astro'
 import Loader from './Loader.astro'
-import type { ArticleItem } from './article-item'
 
 interface Props {
-  // 一覧の全件（新しい順）。HTML に出すのは最初の 8 件だけ
+  // 一覧の全件。HTML に出すのは静的 JSON の 1 ページ目と同じ 8 件
   posts: PostEntry[]
-  // 無限スクロールの JSON の置き場所（`/data/tip/` など）。渡さない一覧（トップ）は 8 件で止まる
+  // 無限スクロールの JSON の置き場所（typeDataEndpoint / termDataEndpoint）。渡さない一覧（トップ）は 8 件で止まる
   endpoint?: string
 }
 
 const { posts, endpoint } = Astro.props
 
-const toArticleItem = ({ data }: PostEntry): ArticleItem => ({
-  type: data.type,
-  path: entryPath({ data }),
-  title: data.title,
-  dateLabel: formatDate(data.date),
-  primaryTag: data.primaryTag,
-  clipUrl: data.clipUrl,
-  eyecatch: eyecatchFor(data).svg,
-})
-const items = posts.slice(0, PER_PAGE).map(toArticleItem)
-const { hasLoader, lastPage, showEndAfterLast } = infiniteListState(
-  posts.length,
-)
+// JSON と同じ関数で作り、HTML の 8 件と 2 ページ目以降の中身がずれないようにする
+const [{ items, total }] = listPages(posts)
+const { hasLoader, lastPage, showEndAfterLast } = infiniteListState(total)
 const infinite = endpoint !== undefined && hasLoader
 ---
 
