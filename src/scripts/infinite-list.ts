@@ -1,15 +1,19 @@
 import { titleLink } from '../components/article-item'
 import type { ListItem, ListPage } from '../lib/list-json'
 
-function fill(card: DocumentFragment, item: ListItem) {
+// 1 件目のカードを複製して中身を差し替える。マークアップを Article.astro の 1 か所に保つため
+function fill(card: Element, item: ListItem) {
   const find = <T extends Element>(selector: string) => {
     const el = card.querySelector<T>(selector)
-    if (!el) throw new Error(`template に ${selector} がない`)
+    if (!el) throw new Error(`カードに ${selector} がない`)
     return el
   }
   find('.article-item__tag').textContent = item.primaryTag
   find<HTMLAnchorElement>('.article-item__img-wrap').href = item.path
-  find<HTMLImageElement>('.article-item__img > img').src = item.eyecatch
+
+  const img = find<HTMLImageElement>('.article-item__img > img')
+  img.dataset.lazy = 'loading'
+  img.src = item.eyecatch
 
   const target = find<HTMLAnchorElement>('.article-item__target')
   const link = titleLink(item)
@@ -17,6 +21,9 @@ function fill(card: DocumentFragment, item: ListItem) {
   if (link.external) {
     target.target = '_blank'
     target.rel = 'noopener'
+  } else {
+    target.removeAttribute('target')
+    target.removeAttribute('rel')
   }
   target.textContent = item.title
 
@@ -33,10 +40,9 @@ function setup(list: HTMLElement) {
   const container = list.querySelector('.infinite-loading-container')
   const loader = list.querySelector<HTMLElement>('[data-infinite-loader]')
   const end = list.querySelector<HTMLElement>('[data-infinite-end]')
-  const template = list.querySelector<HTMLTemplateElement>(
-    'template[data-article-template]',
-  )
-  if (!endpoint || !inner || !container || !loader || !end || !template) return
+  // 0 件の一覧には複製元がないが、続きを読まずに End を出すだけなので使わない
+  const source = inner?.querySelector('.article-item')
+  if (!endpoint || !inner || !container || !loader || !end) return
 
   let page = 1
   let loading = false
@@ -55,8 +61,9 @@ function setup(list: HTMLElement) {
       const res = await fetch(`${endpoint}${page + 1}.json`)
       if (!res.ok) throw new Error(`${res.status} ${res.url}`)
       const data = (await res.json()) as ListPage
+      if (!source) throw new Error('複製するカードがない')
       for (const item of data.items) {
-        const card = template.content.cloneNode(true) as DocumentFragment
+        const card = source.cloneNode(true) as Element
         fill(card, item)
         inner.append(card)
       }
