@@ -22,7 +22,7 @@
     "test:watch": "vitest --project unit",
     "test:dist": "vitest run --project dist",
     "test:e2e": "playwright test --project=smoke",
-    "test:a11y": "playwright test --project=a11y",
+    "test:a11y": "playwright test --project=a11y && node scripts/a11y-compare.ts",
     "test:visual": "playwright test --project=visual",
     "catalog": "CATALOG=1 astro dev",
     "build:catalog": "CATALOG=1 astro build --outDir dist-catalog",
