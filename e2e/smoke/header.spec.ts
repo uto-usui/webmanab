@@ -1,5 +1,6 @@
 // ヘッダー固定（02、03 の 7 章）。1080px 以上で 46px スクロールすると is-fixed が付く
-import { expect, test, type Page } from '@playwright/test'
+import { type Page } from '@playwright/test'
+import { expect, test } from './fixtures'
 
 const fixed = (page: Page) =>
   page.evaluate(() =>
@@ -20,9 +21,7 @@ const scrollPage = (page: Page, y: number) =>
   )
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/')
-  // 今のトップは画面の高さしかなくスクロールできないので、高さだけ足す（記事ページができたらそちらで見る）
-  await page.evaluate(() => (document.body.style.minHeight = '3000px'))
+  await page.goto('/tip/method-control/')
 })
 
 test('1080px では 46px で付き、45px で外れる', async ({ page }) => {

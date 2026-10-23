@@ -1,5 +1,6 @@
 // メニュー（03 の 7 章、08 の 2.4 の A-1、A-2、A-5）
-import { expect, test, type Page } from '@playwright/test'
+import { type Page } from '@playwright/test'
+import { expect, test } from './fixtures'
 
 const state = (page: Page) =>
   page.evaluate(() => ({
