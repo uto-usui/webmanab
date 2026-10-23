@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths } from 'astro'
+import ArticleList from '../../components/ArticleList.astro'
+import Title1 from '../../components/Title1.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import Default from '../../layouts/Default.astro'
+import { termDataEndpoint } from '../../lib/list-json'
+import { getPosts, postsInTerm } from '../../lib/posts'
+import { pageTitle } from '../../lib/site'
+import { getTerms } from '../../lib/terms'
+
+const tax = 'tips'
+const type = 'tip'
+
+// 投稿 0 件のタームがあっても旧 URL を残すために出す
+export const getStaticPaths = (() =>
+  getTerms('tips').map(({ id }) => ({
+    params: { id: String(id) },
+  }))) satisfies GetStaticPaths
+
+const id = Number(Astro.params.id)
+const posts = postsInTerm(await getPosts(type), tax, id)
+---
+
+<Default title={pageTitle(type)} routeName="tips-id">
+  <Wrapper>
+    {/* 旧サイトのリンク先 /tips にはページがなかった。見え方は同じまま /tip/ へ向ける */}
+    <Title1 text={tax} href={`/${type}/`} />
+    <ArticleList posts={posts} endpoint={termDataEndpoint(tax, id)} />
+  </Wrapper>
+</Default>

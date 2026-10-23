@@ -1,0 +1,19 @@
+---
+import ArticleList from '../../components/ArticleList.astro'
+import Title1 from '../../components/Title1.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import Default from '../../layouts/Default.astro'
+import { typeDataEndpoint } from '../../lib/list-json'
+import { getPosts } from '../../lib/posts'
+import { pageTitle } from '../../lib/site'
+
+const type = 'tip'
+const posts = await getPosts(type)
+---
+
+<Default title={pageTitle(type)} routeName={type}>
+  <Wrapper>
+    <Title1 text={type} />
+    <ArticleList posts={posts} endpoint={typeDataEndpoint(type)} />
+  </Wrapper>
+</Default>

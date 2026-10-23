@@ -1,0 +1,75 @@
+---
+import { listPages } from '../lib/list-json'
+import { infiniteListState, type PostEntry } from '../lib/posts'
+import Article from './Article.astro'
+import Loader from './Loader.astro'
+
+interface Props {
+  // 一覧の全件。HTML に出すのは静的 JSON の 1 ページ目と同じ 8 件
+  posts: PostEntry[]
+  // 無限スクロールの JSON の置き場所（typeDataEndpoint / termDataEndpoint）。渡さない一覧（トップ）は 8 件で止まる
+  endpoint?: string
+}
+
+const { posts, endpoint } = Astro.props
+
+// JSON と同じ関数で作り、HTML の 8 件と 2 ページ目以降の中身がずれないようにする
+const [{ items, total }] = listPages(posts)
+const { hasLoader, lastPage, showEndAfterLast } = infiniteListState(total)
+const infinite = endpoint !== undefined && hasLoader
+---
+
+<div
+  class="article-list"
+  data-endpoint={infinite ? endpoint : undefined}
+  data-last-page={infinite ? lastPage : undefined}
+  data-end-after-last={infinite ? String(showEndAfterLast) : undefined}
+>
+  <div class="article-list__inner">
+    {items.map((item) => (
+      <Article item={item} />
+    ))}
+  </div>
+  {infinite && (
+    <>
+      {/* 旧 vue-infinite-loading と同じ構造。JS なしの HTML では旧サイトと同じく何も見せない */}
+      <div class="infinite-loading-container">
+        <div class="infinite-status-prompt" data-infinite-loader hidden>
+          <Loader />
+        </div>
+        <div class="infinite-status-prompt" data-infinite-end hidden>
+          <div>End</div>
+        </div>
+      </div>
+      <template data-article-template>
+        <Article />
+      </template>
+    </>
+  )}
+</div>
+
+<script>
+  import '../scripts/image-fade'
+  import '../scripts/infinite-list'
+</script>
+
+<style lang="scss">
+  .article-list {
+    margin-top: get-line-height(7, -2, 1);
+
+    @include desktop {
+      margin-top: get-line-height(7, 0, 1);
+    }
+  }
+
+  .article-list__inner {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  // vue-infinite-loading が入れていた CSS のうち、slot を渡したときにも効いていたもの
+  .infinite-loading-container {
+    clear: both;
+    text-align: center;
+  }
+</style>
