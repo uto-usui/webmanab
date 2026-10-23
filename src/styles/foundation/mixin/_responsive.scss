@@ -30,12 +30,10 @@
   }
 }
 
-
 @mixin touch {
   @media screen and (max-width: $desktop - 1px) {
     @content;
   }
-
 }
 
 @mixin desktop {

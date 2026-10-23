@@ -33,4 +33,16 @@ export default defineConfig({
       }),
     },
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 旧 Nuxt の style-resources と同じく、全部の SCSS の先頭に変数と mixin を足す
+          additionalData: `@import "/src/styles/foundation/variable/_variable.scss", "/src/styles/foundation/mixin/_mixin.scss";\n`,
+          // @use への書き換えは見た目の確認が済んでから別の作業で行う
+          silenceDeprecations: ['import'],
+        },
+      },
+    },
+  },
 })

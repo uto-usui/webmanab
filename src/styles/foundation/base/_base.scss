@@ -8,27 +8,17 @@ body {
   width: 100%;
   height: 100%;
   font-family: $font-sans-serif;
-  // font-size: 1.4rem;
   font-weight: $base-fontweight;
+
+  // 旧サイトの "palt" は壊れた値として捨てられ、kern だけが効いていた。palt にすると和文の字間が詰まる
+  font-feature-settings: 'kern';
+  font-variant-ligatures: none;
   color: $text-color;
-  word-wrap: break-word;
+  letter-spacing: 0.01em;
   overflow-wrap: break-word;
   background-color: $white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "palt";
-  font-variant-ligatures: none;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  letter-spacing: 0.01em;
-
-  //
-  //.safari & {
-  //  font-feature-settings : "pkna"; // follow back -- ios10 safari10
-  //}
-  @media screen\0 {
-    font-family: $font-ie;
-  }
 }
 
 a {
@@ -63,11 +53,11 @@ select {
   padding: 0;
   margin: 0;
   color: $color-black;
+  appearance: none;
+  outline: none;
   background: none;
   border: none;
   border-radius: 0;
-  outline: none;
-  appearance: none;
 }
 
 ::selection {
@@ -75,16 +65,15 @@ select {
   background: $color-gray-level4;
 }
 
-
-img[lazy='loading'] {
+img[data-lazy='loading'] {
   opacity: 0;
 }
 
-img[lazy='error'] {
+img[data-lazy='error'] {
   opacity: 1;
 }
 
-img[lazy='loaded'] {
+img[data-lazy='loaded'] {
   opacity: 1;
   transition: 0.8s;
 }
