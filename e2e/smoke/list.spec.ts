@@ -1,7 +1,13 @@
 import { expect, test, type Page } from '@playwright/test'
 
 type ListPage = {
-  items: { path: string; title: string; dateLabel: string; clipUrl?: string }[]
+  items: {
+    path: string
+    title: string
+    dateLabel: string
+    clipUrl?: string
+    eyecatch: string
+  }[]
   page: number
   last: number
   total: number
@@ -101,6 +107,48 @@ test('clipUrl のない clip はタイトルが記事ページへつながる', 
   const title = page.locator('.article-item__target[href="/clip/the-wing/"]')
   await expect(title).toHaveCount(1)
   await expect(title).not.toHaveAttribute('target', /.*/)
+})
+
+test('足したカードは複製元の状態を引き継がない', async ({ page }) => {
+  // 複製元の 1 件目は clip で target 付き、画像は loaded。clipUrl のない clip を足すと target が外れ、画像は loading から始まる
+  const next = await getJson(page, '/data/clip/2.json')
+  const [item] = next.items
+  await page.route('**/data/clip/2.json', (route) =>
+    route.fulfill({
+      json: {
+        ...next,
+        items: [{ ...item, clipUrl: undefined }, ...next.items.slice(1)],
+      },
+    }),
+  )
+  await page.route('**/data/clip/3.json', (route) =>
+    route.fulfill({ status: 500, body: '' }),
+  )
+  let release = () => {}
+  const held = new Promise<void>((resolve) => (release = resolve))
+  await page.route(`**${item.eyecatch}`, async (route) => {
+    await held
+    await route.continue()
+  })
+
+  await page.goto('/clip/')
+  await expect(cards(page).first().locator('img')).toHaveAttribute(
+    'data-lazy',
+    'loaded',
+  )
+  await scrollToBottom(page)
+  await expect(cards(page)).toHaveCount(16)
+
+  const added = cards(page).nth(8)
+  const title = added.locator('.article-item__target')
+  await expect(title).toHaveAttribute('href', item.path)
+  await expect(title).not.toHaveAttribute('target', /.*/)
+  await expect(title).not.toHaveAttribute('rel', /.*/)
+  await added.scrollIntoViewIfNeeded()
+  const img = added.locator('img')
+  await expect(img).toHaveAttribute('data-lazy', 'loading')
+  release()
+  await expect(img).toHaveAttribute('data-lazy', 'loaded')
 })
 
 test('合計が 8 の倍数のタームは、最後のページのあとに End が出る', async ({
