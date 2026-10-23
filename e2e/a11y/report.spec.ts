@@ -33,6 +33,8 @@ const TARGETS: Target[] = [
   { key: 'term', path: '/tips/29/' },
   { key: 'tip-a', path: '/tip/method-control/' },
   { key: 'tip-b', path: '/tip/sass-pickup/' },
+  // 段落の中にリンクがある記事（link-in-text-block、A11Y-22）。旧サイトの 9 ページにはなかったので足した
+  { key: 'tip-c', path: '/tip/genymotion/' },
   { key: 'clip', path: '/clip/2016-jsconf-is/' },
   { key: 'lab', path: '/lab/createjs-node-motion/' },
   {
