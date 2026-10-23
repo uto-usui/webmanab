@@ -2,7 +2,7 @@
 id: 2116
 type: clip
 slug: "hokuto-ninjin"
-title: "世紀末競馬 北斗の拳 ニンジン味 │ Umabi"
+title: "世紀末競馬　北斗の拳 ニンジン味 │ Umabi"
 date: 2018-01-28T14:05:59+09:00
 modified: 2018-01-28T14:05:59+09:00
 primaryTag: "culture"

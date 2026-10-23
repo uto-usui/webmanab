@@ -2,7 +2,7 @@
 id: 953
 type: clip
 slug: "commono-inc"
-title: "commono inc. | 札幌を拠点とするウェブデザイン・ブランディングファーム"
+title: "commono inc.　|　札幌を拠点とするウェブデザイン・ブランディングファーム"
 date: 2017-01-09T20:37:07+09:00
 modified: 2017-01-31T21:29:33+09:00
 primaryTag: "studio"

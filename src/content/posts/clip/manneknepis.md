@@ -2,7 +2,7 @@
 id: 745
 type: clip
 slug: "manneknepis"
-title: "福岡の洋菓子・お菓子・パン Manneknepis | マヌカンピス"
+title: "福岡の洋菓子・お菓子・パン　Manneknepis | マヌカンピス"
 date: 2016-11-29T14:26:35+09:00
 modified: 2016-11-26T14:43:01+09:00
 excerpt: "グリッドレイアウトながらイラストや手書き文字が自由に配置されているのがかわいい。"

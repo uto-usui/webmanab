@@ -2,6 +2,7 @@
 import { decodeHTML } from 'entities'
 import { Document, isMap, isScalar, isSeq } from 'yaml'
 import type { PostType, SnapshotPost } from './snapshot.ts'
+import { collapseWhitespace, trimWhitespace } from './whitespace.ts'
 
 export interface Term {
   id: number
@@ -35,9 +36,7 @@ interface WpRaw {
 export const wpRaw = (p: SnapshotPost): WpRaw => (p.images?.alt ?? {}) as WpRaw
 
 const text = (s: unknown) =>
-  decodeHTML(String(s ?? ''))
-    .replace(/\s+/g, ' ')
-    .trim()
+  trimWhitespace(collapseWhitespace(decodeHTML(String(s ?? ''))))
 const plain = (html: unknown) =>
   text(String(html ?? '').replace(/<[^>]*>/g, ' '))
 
@@ -57,9 +56,7 @@ export function frontmatter(p: SnapshotPost): Frontmatter {
   // 単一ページの生データにしかないので、一覧からしか取れなかった 2 件にはない
   const { modified } = wpRaw(p)
   // WP が文字数で切ったあとに付けた ..more を外す
-  const excerpt = plain(p.excerpt)
-    .replace(/\.\.more$/, '')
-    .trim()
+  const excerpt = trimWhitespace(plain(p.excerpt).replace(/\.\.more$/, ''))
   const terms = p.terms?.[TAXONOMY[p.type]]
   // clip/the-gigi は clip-url が空で、demo-url に同じ役割の URL が入っている
   const clipUrl =
@@ -78,7 +75,7 @@ export function frontmatter(p: SnapshotPost): Frontmatter {
     ...(modified ? { modified: `${modified}+09:00` } : {}),
     ...(excerpt ? { excerpt } : {}),
     // 旧一覧カードが文字列をそのまま表示していたので、前後の空白だけ詰める。表記ゆれはアイキャッチ側で寄せる
-    primaryTag: String(f['primary-tag'] ?? '').trim(),
+    primaryTag: trimWhitespace(String(f['primary-tag'] ?? '')),
     terms: (Array.isArray(terms) ? terms : []).map((t) => ({
       id: t.term_id,
       name: text(t.name),

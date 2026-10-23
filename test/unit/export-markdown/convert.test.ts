@@ -84,6 +84,10 @@ describe('段落とインライン', () => {
     expect(notes).toEqual([{ kind: 'img-dropped', alt: '図', src: 'x.png' }])
   })
 
+  it('U+3000 だけの段落は空とみなさず、本文の U+00A0 も残す', () => {
+    expect(md('<p>　</p>\n<p>a\u00a0b</p>')).toBe('　\n\na\u00a0b\n')
+  })
+
   it('属性のない span は外す', () => {
     expect(md('<h4><span>見出し</span></h4>')).toBe('#### 見出し\n')
   })

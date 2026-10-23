@@ -2,7 +2,7 @@
 id: 1174
 type: lab
 slug: "createjs-beat-motion-trigonometric"
-title: "三角関数(sinθ)を使ったビートモーション -『Create.js』"
+title: "三角関数(sinθ)を使ったビートモーション -『Create.js』　"
 date: 2017-03-01T10:39:57+09:00
 modified: 2017-03-01T10:39:57+09:00
 excerpt: "サイン波で作るリズムに脈打つ丸 window.addEventListener(“load”, init); function init() { var stage = new createjs.Stage(“myCan"

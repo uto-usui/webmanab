@@ -2,7 +2,7 @@
 id: 1177
 type: lab
 slug: "createjs-node-motion"
-title: "ノードを動かす -『Create.js』"
+title: "ノードを動かす -『Create.js』　"
 date: 2017-03-01T11:14:52+09:00
 modified: 2017-03-01T11:14:52+09:00
 excerpt: "点と線で構成されたノードを動かします window.addEventListener(“load”, init); var stage; var stageWidth; var stageHeight; var ball"

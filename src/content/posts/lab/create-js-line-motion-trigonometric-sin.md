@@ -2,7 +2,7 @@
 id: 1172
 type: lab
 slug: "create-js-line-motion-trigonometric-sin"
-title: "三角関数(sinθ)を使った線のモーション -『Create.js』"
+title: "三角関数(sinθ)を使った線のモーション -『Create.js』　"
 date: 2017-03-01T10:30:30+09:00
 modified: 2017-03-01T10:30:30+09:00
 excerpt: "サイン波を線で描画する window.addEventListener(“load”, init); function init() { var stage = new createjs.Stage(“myCanvas”"

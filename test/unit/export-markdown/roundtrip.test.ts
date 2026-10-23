@@ -47,6 +47,17 @@ describe('往復検証', () => {
     expect(roundtrip(md.replace('\\\n', '\n'))).toContain('br')
   })
 
+  it('U+3000 などを普通の空白に変えると検出する', () => {
+    const html = '<p>上品な　ホバー</p>'
+    const a = metrics(parseHtml(html), 'original')
+    expect(
+      compare(a, metrics(renderMarkdown('上品な　ホバー\n'), 'rendered')),
+    ).toEqual([])
+    expect(
+      compare(a, metrics(renderMarkdown('上品な ホバー\n'), 'rendered')),
+    ).toContain('text')
+  })
+
   it('意図して直したものだけを、記録の種類で説明できる差として扱う', () => {
     const fails = ['hrefs', 'dom', 'strong']
     expect(
