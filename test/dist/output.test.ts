@@ -1,8 +1,15 @@
 // ビルド出力のうち、ページがそろう前から成り立つもの（08 の 1.5）
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
-import { DIST, distFiles, pagePath, readDist, startTags } from './dist.ts'
+import {
+  DIST,
+  distFiles,
+  legacyPaths,
+  pagePath,
+  readDist,
+  startTags,
+} from './dist.ts'
 
 const htmlFiles = distFiles('**/*.html')
 
@@ -21,15 +28,8 @@ test('CATALOG なしのビルドにカタログが出ていない', () => {
   expect(existsSync(join(DIST, 'catalog'))).toBe(false)
 })
 
-const legacy = new Set(
-  readFileSync(new URL('../fixtures/legacy-urls.txt', import.meta.url), 'utf8')
-    .split('\n')
-    .filter(Boolean)
-    .map((url) => decodeURIComponent(url)),
-)
-
 test('出力したページは、すべて旧サイトの URL にある（余分なページがない）', () => {
-  const extra = htmlFiles.map(pagePath).filter((path) => !legacy.has(path))
+  const extra = htmlFiles.map(pagePath).filter((path) => !legacyPaths.has(path))
   expect(extra).toEqual([])
 })
 
