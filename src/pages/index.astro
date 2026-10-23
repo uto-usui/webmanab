@@ -1,16 +1,8 @@
 ---
-// 土台だけのページ。手順 3 でレイアウトに置き換える
-import '../styles/global.scss'
+import Default from '../layouts/Default.astro'
+import Wrapper from '../components/Wrapper.astro'
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <title>webmanab.html</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Source+Code+Pro"
-    />
-  </head>
-  <body></body>
-</html>
+<Default title="webmanab.html／ウェブまなぶ" routeName="index">
+  <Wrapper />
+</Default>
