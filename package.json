@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/build-og.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -37,6 +38,7 @@
     "@astrojs/markdown-satteri": "0.4.5",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
+    "@resvg/resvg-js": "2.6.2",
     "astro": "7.4.2",
     "sass": "1.105.1"
   },
