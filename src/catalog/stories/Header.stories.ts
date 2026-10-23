@@ -1,6 +1,7 @@
 import Header from '../../components/Header.astro'
 import type { Meta, Story } from '../types'
 
+// 現在地の aria-current は Astro.url から決まり props で渡せないので、story では扱わない
 export default { component: Header } satisfies Meta<typeof Header>
 
 export const Default: Story<typeof Header> = {}

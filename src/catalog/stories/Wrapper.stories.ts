@@ -1,9 +1,6 @@
-import Wrapper from '../../components/Wrapper.astro'
 import type { Meta, Story } from '../types'
+import WrapperPage from '../fixtures/WrapperPage.astro'
 
-export default {
-  component: Wrapper,
-  args: { slot: '<p>wrapper の中身</p>' },
-} satisfies Meta<typeof Wrapper>
+export default { component: WrapperPage } satisfies Meta<typeof WrapperPage>
 
-export const Default: Story<typeof Wrapper> = {}
+export const Default: Story<typeof WrapperPage> = {}
