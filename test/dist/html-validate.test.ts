@@ -8,6 +8,10 @@ import { DIST, distFiles } from './dist.ts'
 const validator = new HtmlValidate({
   root: true,
   extends: ['html-validate:standard', 'html-validate:document'],
+  rules: {
+    // Google Fonts の CSS は UA ごとに中身が変わり integrity を付けられない。テンプレートの妥当性とも関係しない
+    'require-sri': 'off',
+  },
 })
 
 // 本文の生 HTML から来る既知の違反を、ページごとに「ページ: [規則]」で書く（手順 6 で埋める）
