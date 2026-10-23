@@ -1,0 +1,57 @@
+---
+// カテゴリごとに 3 件のアイキャッチを、一覧のサムネイルと同じくらいの大きさで並べる（05 の 3 章）。
+// 同じ入力なら同じ SVG になるので、絵柄の変化はスクリーンショットの差で気づける
+import {
+  EYECATCH_HEIGHT,
+  EYECATCH_WIDTH,
+  renderEyecatch,
+  type EyecatchVariant,
+} from '../../lib/eyecatch'
+import { eyecatchSamples } from './eyecatch'
+
+interface Props {
+  variant: EyecatchVariant
+}
+
+const { variant } = Astro.props
+// SVG の中の id（pattern など）がページの中でぶつからないよう、インラインではなく data URI の img にする
+const src = (svg: string) => `data:image/svg+xml,${encodeURIComponent(svg)}`
+---
+
+<div class="eyecatch-grid">
+  {Object.entries(eyecatchSamples).map(([key, inputs]) => (
+    <section class="eyecatch-grid__row">
+      <h2 class="eyecatch-grid__key">{key}</h2>
+      {inputs.map((input) => (
+        <img
+          class="eyecatch-grid__img"
+          src={src(renderEyecatch(input, { variant }))}
+          width={EYECATCH_WIDTH}
+          height={EYECATCH_HEIGHT}
+          alt={`${input.type} ${input.id}`}
+        />
+      ))}
+    </section>
+  ))}
+</div>
+
+<style>
+  .eyecatch-grid {
+    padding: 16px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .eyecatch-grid__row {
+    display: grid;
+    grid-template-columns: 120px repeat(3, 320px);
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .eyecatch-grid__img {
+    width: 320px;
+    height: auto;
+  }
+</style>

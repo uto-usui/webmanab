@@ -22,6 +22,28 @@ test.describe('menu', () => {
     expect(stops).toBe(0)
   })
 
+  test('A-1: レイアウトの中でも、閉じたメニューに Tab が止まらない', async ({
+    page,
+  }) => {
+    await openStory(page, findStory('layout/default'))
+    expect(await page.locator('.menu__inner a[href]').count()).toBeGreaterThan(
+      100,
+    )
+    // メニューの外でフォーカスが止まる所をひと回りしても、中に入らないこと
+    const outside = await page.evaluate(
+      () =>
+        [...document.querySelectorAll('a[href], button')].filter(
+          (el) => !el.closest('[inert]'),
+        ).length,
+    )
+    let stops = 0
+    for (let i = 0; i < outside + 2; i++) {
+      await page.keyboard.press('Tab')
+      if (await insideMenu(page)) stops++
+    }
+    expect(stops).toBe(0)
+  })
+
   test('A-1: 開くと中のリンクに Tab が届く', async ({ page }) => {
     await openStory(page, findStory('menu/open'))
     await expect(page.locator('.menu__inner')).toHaveJSProperty('inert', false)

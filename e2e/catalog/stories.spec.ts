@@ -58,8 +58,17 @@ const checks: Record<string, (page: Page) => Promise<void>> = {
     await expect(page.locator('.article-item')).toHaveCount(16)
     await expect(page.locator('[data-infinite-end]')).toBeVisible()
     await expect(page.locator('.loader')).toBeHidden()
-    // 足したカードも元のカードと同じ形で埋まっている
-    await expect(page.locator('.article-item__target').last()).toHaveText(/\S/)
+    // 足したカードは 1 件目の複製なので、中身が 2 ページ目の記事に入れ替わっていること
+    const last = page.locator('.article-item').last()
+    await expect(last.locator('.article-item__target')).toHaveText(
+      '複数の画像を手早くsipsコマンドで一括リサイズする -『Mac』',
+    )
+    await expect(last.locator('.article-item__target')).toHaveAttribute(
+      'href',
+      '/tip/sips/',
+    )
+    await expect(last.locator('img')).toHaveAttribute('src', /\/2308\.svg$/)
+    await expect(last.locator('img')).toHaveAttribute('data-lazy', 'loaded')
   },
   'article-list/no-more': async (page) => {
     await expect(page.locator('.article-item')).toHaveCount(12)
@@ -68,6 +77,43 @@ const checks: Record<string, (page: Page) => Promise<void>> = {
   'article-list/empty': async (page) => {
     await expect(page.locator('.article-item')).toHaveCount(0)
     await expect(page.locator('[data-infinite-end]')).toBeVisible()
+  },
+  'entry-toc/closed': async (page) => {
+    await expect(page.locator('.entry-toc')).not.toHaveClass(/\bis-open\b/)
+    await expect(page.locator('.entry-toc__list')).toHaveJSProperty(
+      'inert',
+      true,
+    )
+  },
+  'entry-toc/open': async (page) => {
+    await expect(page.locator('.entry-toc')).toHaveClass(/\bis-open\b/)
+    await expect(page.locator('.entry-toc__list')).toHaveJSProperty(
+      'inert',
+      false,
+    )
+  },
+  'entry-share/supported': (page) =>
+    expect(page.locator('.entry-sns__label')).toHaveText('share this page'),
+  'entry-share/unsupported': (page) =>
+    expect(page.locator('.entry-sns__label')).toHaveText('copy link'),
+  'entry-share/copied': async (page) => {
+    await expect(page.locator('.entry-sns__target')).toHaveClass(
+      /\bis-copied\b/,
+    )
+    await expect(page.locator('.entry-sns__label')).toHaveText('copied')
+    await expect(page.getByRole('status')).toHaveText('リンクをコピーしました')
+  },
+  'entry-related/empty': (page) =>
+    expect(page.locator('.entry-related ul')).toHaveCount(0),
+  'entry-nav/prev-only': async (page) => {
+    await expect(page.locator('.entry-nav__item')).toHaveCount(1)
+    await expect(page.locator('.entry-nav__item--prev')).toHaveCount(1)
+  },
+  'entry-nav/next-only': async (page) => {
+    await expect(page.locator('.entry-nav__item')).toHaveCount(1)
+    await expect(page.locator('.entry-nav__item--next')).toHaveClass(
+      /\bu-text-right\b/,
+    )
   },
 }
 

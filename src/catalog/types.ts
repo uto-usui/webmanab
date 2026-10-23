@@ -18,7 +18,12 @@ export type Step =
 
 /** e2e/catalog/mocks.ts の名前 */
 export type MockName =
-  'share-supported' | 'share-unsupported' | 'list-pending' | 'eyecatch-pending'
+  | 'share-supported'
+  | 'share-unsupported'
+  | 'share-abort'
+  | 'hold-timers'
+  | 'list-pending'
+  | 'eyecatch-pending'
 
 export interface CatalogParameters {
   /** スクリーンショットと axe の前にする操作 */

@@ -1,5 +1,11 @@
 {
-  "article/link-name": "A11Y-02",
   "article-list/link-name": "A11Y-02",
+  "article/link-name": "A11Y-02",
+  "entry-ad-foot/image-alt": "A11Y-03",
+  "entry-ad-foot/link-name": "A11Y-03",
+  "entry-content/color-contrast": "A11Y-04",
+  "entry-content/scrollable-region-focusable": "A11Y-06",
+  "entry-head/color-contrast": "A11Y-05",
+  "entry-head/target-size": "A11Y-08",
   "section-list/link-name": "A11Y-02"
 }
