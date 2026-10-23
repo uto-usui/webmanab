@@ -4,13 +4,16 @@ import { expect, test } from './fixtures'
 
 const PATH = '/tip/method-control/'
 
+const canonical = (page: Page) =>
+  page.locator('link[rel="canonical"]').getAttribute('href')
+
 const dataset = (page: Page) =>
   page.locator('.entry-sns__target').evaluate((el) => ({
     title: (el as HTMLElement).dataset.shareTitle,
     url: (el as HTMLElement).dataset.shareUrl,
   }))
 
-test('navigator.share があれば、title と記事の URL で呼ぶ', async ({
+test('navigator.share があれば、title と canonical で呼ぶ', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -29,12 +32,11 @@ test('navigator.share があれば、title と記事の URL で呼ぶ', async ({
   )
   const expected = await dataset(page)
   expect(shared).toEqual(expected)
-  // canonical と同じ絶対 URL（head の canonical のテストは手順 9 で足す）
-  expect(new URL(shared.url!).pathname).toBe(PATH)
+  expect(shared.url).toBe(await canonical(page))
   expect(shared.title).toBeTruthy()
 })
 
-test('navigator.share がなければ URL をコピーし、2 秒で元に戻る', async ({
+test('navigator.share がなければ canonical をコピーし、2 秒で元に戻る', async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -55,7 +57,7 @@ test('navigator.share がなければ URL をコピーし、2 秒で元に戻る
   await page.click('.entry-sns__target')
   expect(
     await page.evaluate(() => (window as unknown as { copied: string }).copied),
-  ).toBe((await dataset(page)).url)
+  ).toBe(await canonical(page))
   await expect(label).toHaveText('copied')
   await expect(status).not.toBeEmpty()
   await expect(label).toHaveText('copy link', { timeout: 3000 })
