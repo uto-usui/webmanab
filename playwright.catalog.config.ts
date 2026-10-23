@@ -35,8 +35,9 @@ export default defineConfig({
     toHaveScreenshot: {
       animations: 'disabled',
       caret: 'hide',
-      // 同じビルドを続けて撮っても、和文の縁が 2px ほど揺れることがあった（--repeat-each=5 で 455 回中 1 回）
-      maxDiffPixels: 10,
+      // 同じビルドを続けて撮っても、和文と欧文が混ざる行で文字の並びが 1px 上下にずれることがある（並列で回すと出やすい）。
+      // 実測で最大 106px。--disable-gpu、--disable-lcd-text、fonts.ready のあとの再レイアウトでは消えなかった。原因は未確認
+      maxDiffPixels: 200,
     },
   },
 })
