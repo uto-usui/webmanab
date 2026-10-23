@@ -11,6 +11,15 @@
   PUBLIC_ADSENSE_CLIENT = "ca-pub-2691922878827958"
   # PUBLIC_GA4_ID = "G-XXXXXXXXXX"  # ID を用意したら有効にする
 
+# AdSense に関係しないものだけ。script-src は AdSense が読む先が多いので入れない（08 の 5.1、5.2）
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Content-Security-Policy = "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
+
 [[headers]]
   for = "/sw.js"
   [headers.values]
