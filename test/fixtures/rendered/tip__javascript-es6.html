@@ -1,0 +1,189 @@
+   <p>近年、ECMAScript 2015がリリースされてから、ES2016、ES2017、ES2018、というように日進月歩な JavaScript (ES6)になり、日 々記法やメソッドをアップデートさせていく必要が出てきました。いつまでも旧時代なコードはちょっとおしゃれじゃないので、より効率的なコーディングを心がけつつ、新しいよく使いたい仕様のまとめです。</p>
+
+<h2 id="a0">変数 let 定数 const</h2>
+
+<p>もう <code>var</code> は使いません。 変数<code>let</code> か、再代入しない値は定数 <code>const</code> として定義します。定数は変更は可能なので、オブジェクトの中身を更新したりすることはできます。</p>
+
+<h2 id="a1">アロー関数</h2>
+
+<p><code>function</code> キーワードを使って、関数を宣言していましたが、アロー関数で簡潔に書くようになりました。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> func = <span class="hljs-function"><span class="hljs-params">x</span> =></span> <span class="hljs-string">'201'</span> + x
+
+</code></pre>
+
+<p>色々なパターンや諸略記法があり、アロー関数と<code>function</code>構文は厳密に等しくないので、詳しい記事は次を参照します。</p>
+
+<ul>
+<li><a href="http://analogic.jp/arrow-function/" target="_blank" rel="noopener">ES2015(ES6)新構文：アロー関数(Arrow function)｜もっこりJavaScript｜ANALOGIC（アナロジック）</a></li>
+
+</ul>
+
+<h2 id="a2">文字列の取り扱い</h2>
+
+<p>文字列テンプレートリテラルを利用することで、改行や変数の埋め込みが可能になりました。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">'uto'</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hi!
+I am <span class="hljs-subst">${name}</span>.`</span>);
+
+</code></pre>
+
+<h2 id="a3">オブジェクトをコピー assign()</h2>
+
+<p>オブジェクトをコピーやマージには、<code>assign()</code> を利用します。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> NewSettings = <span class="hljs-built_in">Object</span>.assign({}, option);
+
+</code></pre>
+
+<p>さらに ES2018 では、</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> NewSettings = {...option};
+
+</code></pre>
+
+<p>というように、スプレッド演算子でオブジェクトが展開できるようになったので、簡潔に記述することができます。</p>
+
+<h2 id="a4">配列要素の存在チェック includes()</h2>
+
+<p>配列内に特定の要素があるかどうかを調べる場合、従来は次のようにindexOf()メソッドを使っていました。</p>
+
+<p>targetArray.indexOf(“田中”) >= 0</p>
+
+<p><code>includes()</code> メソッドは配列内の要素もしくは文字列の存在チェックをして真偽値を返します。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> array = [<span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">300</span>];
+array.includes(<span class="hljs-number">200</span>) &#x26;&#x26; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'✨ yes ✨'</span>)
+
+<span class="hljs-keyword">const</span> ua = navigator.userAgent;
+ua.includes(<span class="hljs-string">'iOS'</span>) &#x26;&#x26; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'📱iOS'</span>);
+
+</code></pre>
+
+<h2 id="a5">数字の頭の0を追加する padStart()</h2>
+
+<p>1桁の数字の頭に0をつけた文字列にしたいとき、文字詰めのための<code>padStart()</code>メソッドを利用します。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> sec = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getSeconds();
+
+<span class="hljs-comment">// 文字列.padStart(長さ, 詰める文字)</span>
+<span class="hljs-keyword">const</span> paddedSecond = <span class="hljs-built_in">String</span>(sec).padStart(<span class="hljs-number">2</span>, <span class="hljs-string">"0"</span>);
+<span class="hljs-built_in">console</span>.log(paddedSecond);
+
+</code></pre>
+
+<h2 id="a6">Promise と async/await で非同期処理</h2>
+
+<p>Promise と async/await で処理を連結したり引数を渡して非同期処理をシンプルに記述できます。</p>
+
+<p><code>async</code> は関数内で <code>await</code> を有効化します。 <code>await</code> は Promise の結果を待ち、返り値を受け取ります。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">const</span> timer = <span class="hljs-function">(<span class="hljs-params">delay</span>) =></span> {
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =></span> {
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =></span> {
+      resolve(delay)
+    }, delay)
+  })
+
+};
+
+(<span class="hljs-keyword">async</span>() => {
+
+  <span class="hljs-keyword">let</span> delay = <span class="hljs-keyword">await</span> timer(<span class="hljs-number">1000</span>)
+  <span class="hljs-built_in">console</span>.log(delay)
+
+  delay = <span class="hljs-keyword">await</span> timer(<span class="hljs-number">2000</span>)
+  <span class="hljs-built_in">console</span>.log(delay)
+
+  delay = <span class="hljs-keyword">await</span> timer(<span class="hljs-number">1000</span>)
+  <span class="hljs-built_in">console</span>.log(delay)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>)
+
+})()
+
+</code></pre>
+
+<h2 id="a7">値を取り出すループ for of</h2>
+
+<p>ループを回して、要素をひとつずつ取り出す時は <code>for ... of</code> を使います.</p>
+
+<pre class="hljs php"><code class="js">
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">array</span> = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> value of <span class="hljs-keyword">array</span>) {
+  console.log(value);
+}
+
+</code></pre>
+
+<h2 id="a8">整数の取得 Math.trunc()</h2>
+
+<p>小数を整数に丸める場合、<code>Math.floor()</code>を使っていましたが負の数の挙動が丸まりかたが微妙でした。これからは 数値の整数部分だけを取得する <code>Math.trunc()</code> を使います。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-built_in">Math</span>.trunc(<span class="hljs-number">10.5</span>);
+<span class="hljs-built_in">Math</span>.trunc(<span class="hljs-number">-100.5</span>);
+
+</code></pre>
+
+<h2 id="a9">べき乗演算子 **</h2>
+
+<p>べき乗の計算には、<code>**</code> べき乗演算子(Exponentiation Operator) を使います。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span> ** <span class="hljs-number">4</span>) <span class="hljs-comment">// 16</span>
+
+</code></pre>
+
+<h2 id="a10">文字数をカウントするときのスプレッド演算子 …</h2>
+
+<p>文字数をカウントするとき、<code>length</code> プロパティを使いますが、サロゲートペア文字列の問題がありました。スプレッド演算子 <code>...</code> を利用すると解決します。</p>
+
+<pre class="hljs javascript"><code class="js">
+[...<span class="hljs-string">`🍣🍣🍣`</span>].length; <span class="hljs-comment">// 3</span>
+
+</code></pre>
+
+<h2 id="a11">クラスを宣言する class</h2>
+
+<p><code>function</code> と<code>prototype</code> で作っていたクラスは <code>class</code> で宣言するようにします。</p>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ex</span> </span>{
+
+  <span class="hljs-keyword">constructor</span>(value) {
+    <span class="hljs-built_in">this</span>.value = value;
+  }
+
+  <span class="hljs-keyword">get</span> <span class="hljs-title">target</span>() {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>._target;
+  }
+
+  <span class="hljs-keyword">set</span> <span class="hljs-title">target</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-built_in">this</span>._target = value;
+  }
+
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">subEx</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Ex</span> </span>{
+
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-built_in">super</span>();  <span class="hljs-comment">// 継承する</span>
+  }
+
+}
+
+</code></pre>
+
+<p>おわります。</p>
+
+  
