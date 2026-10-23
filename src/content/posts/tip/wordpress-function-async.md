@@ -41,6 +41,7 @@ function add_async_script( $url ) {
 add_filter( 'clean_url', 'add_async_script', 11, 1 );
 }
 
+
 ```
 
 以下のように出力されます。
@@ -50,6 +51,7 @@ add_filter( 'clean_url', 'add_async_script', 11, 1 );
 ```html
 
 <script type="text/javascript" src="http://ex.com/wp-includes/js/script.min.js?ver=4.5.2" async></script>
+
 
 ```
 

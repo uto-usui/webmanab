@@ -40,6 +40,7 @@ legacy:
   background-repeat: no-repeat;
 }
 
+
 ```
 
 ### 幅の定義

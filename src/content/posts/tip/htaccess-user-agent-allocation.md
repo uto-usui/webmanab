@@ -35,6 +35,7 @@ RewriteCond %{HTTP_USER_AGENT} !(iPod|iPhone|iPad|Android|Windows\ Phone)
 RewriteRule ^sp/(.*)$ $1 [R]
 RewriteBase /
 
+
 ```
 
 <dl><dt>PC</dt><dd>http://ex.com/</dd><dt>SP</dt><dd>http://ex.com/sp/</dd></dl>
@@ -51,6 +52,7 @@ RewriteCond %{REQUEST_URI} !/sp/
 RewriteCond %{HTTP_USER_AGENT} (iPod|iPhone|iPad|Android|Windows\ Phone)
 RewriteRule ^(.*)$ sp/$1 [R]
 RewriteBase /
+
 
 ```
 

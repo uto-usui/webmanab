@@ -35,6 +35,7 @@ CSSへのセレクタなどの記述のみで、ブラウザ別にスタイル�
   }
 }
 
+
 ```
 
 #### Firefox
@@ -47,6 +48,7 @@ CSSへのセレクタなどの記述のみで、ブラウザ別にスタイル�
     background: aquamarine;
   }
 }
+
 
 ```
 
@@ -61,6 +63,7 @@ CSSへのセレクタなどの記述のみで、ブラウザ別にスタイル�
   }
 }
 
+
 ```
 
 #### Safari
@@ -72,6 +75,7 @@ CSSへのセレクタなどの記述のみで、ブラウザ別にスタイル�
   ::i-block-chrome, .ex {
     background: aquamarine;
 }
+
 
 ```
 
@@ -89,6 +93,7 @@ if ( navigator.userAgent.indexOf('iPhone') > 0 ) {
     $(".ex").addClass("iPhone");
 };
 
+
 ```
 
 #### Android
@@ -99,6 +104,7 @@ if ( navigator.userAgent.indexOf('iPhone') > 0 ) {
 if ( navigator.userAgent.indexOf('Android') > 0 ) {
     $(".ex").addClass("Android");
 };
+
 
 ```
 

@@ -44,6 +44,7 @@ function add_posts_columns_thumbId_row($column_name, $post_id) {
 add_filter( 'manage_posts_columns', 'add_posts_columns_thumbId' );
 add_action( 'manage_posts_custom_column', 'add_posts_columns_thumbId_row', 10, 2 );
 
+
 ```
 
 ### 項目名の変更

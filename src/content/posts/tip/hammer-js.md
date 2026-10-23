@@ -43,6 +43,7 @@ $('#ex').hammer().on('swipe', function(){
 });
 </script>
 
+
 ```
 
 おわります。

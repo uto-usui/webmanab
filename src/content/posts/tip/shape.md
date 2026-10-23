@@ -23,6 +23,7 @@ CreateJSではステージに表示オブジェクトを追加することでコ
 
 var stage = new createjs.Stage("ex-canvas");
 
+
 ```
 
 ### シェイプ(表示オブジェクト)の作成
@@ -30,6 +31,7 @@ var stage = new createjs.Stage("ex-canvas");
 ```js
 
 var obj = new createjs.Shape();
+
 
 ```
 
@@ -40,6 +42,7 @@ var obj = new createjs.Shape();
 ```js
 
 stage.addChild(obj);
+
 
 ```
 
@@ -52,6 +55,7 @@ stage.addChild(obj);
 obj.x = 100;
 obj.y = 100;
 
+
 ```
 
 ### 角度
@@ -61,6 +65,7 @@ obj.y = 100;
 ```js
 
 obj.rotation = 45;
+
 
 ```
 
@@ -73,6 +78,7 @@ obj.rotation = 45;
 
 obj.alpha = 0.5; 
 
+
 ```
 
 ### 表示非表示
@@ -82,6 +88,7 @@ obj.alpha = 0.5;
 ```js
 
 obj.visible = false;
+
 
 ```
 
@@ -94,6 +101,7 @@ obj.visible = false;
 obj.scaleX = 1.2; // 1.2倍の幅に
 obj.scaleY = 0.5; // 半分の高さに
 
+
 ```
 
 ### 塗り
@@ -103,6 +111,7 @@ obj.scaleY = 0.5; // 半分の高さに
 ```js
 
 obj.graphics.beginFill('#2299cc');
+
 
 ```
 
@@ -120,6 +129,7 @@ obj.graphics.beginFill('#2299cc');
 obj.graphics.setStrokeStyle(2);
 obj.graphics.beginStroke('#2299cc'); 
 
+
 ```
 
 ## 円を描く
@@ -130,6 +140,7 @@ obj.graphics.beginStroke('#2299cc');
 ```js
 
 shape.graphics.drawCircle(0, 0, 100);
+
 
 ```
 
@@ -164,6 +175,7 @@ function init() {
   stage.update();
 }
 
+
 ```
 
 ## 四角形を描く
@@ -173,6 +185,7 @@ function init() {
 ```js
 
 shape.graphics.drawRect(0, 0, 100, 100); 
+
 
 ```
 
@@ -207,6 +220,7 @@ function init() {
   stage.update();
 }
 
+
 ```
 
 ## 角丸四角形を描く
@@ -216,6 +230,7 @@ function init() {
 ```js
 
 shape.graphics.drawRoundRect(0, 0, 50, 50, 5, 5);
+
 
 ```
 
@@ -228,6 +243,7 @@ shape.graphics.drawRoundRect(0, 0, 50, 50, 5, 5);
 ```js
 
 poly.graphics.drawPolyStar(0, 0, 75, 12, 0.1, -90); 
+
 
 ```
 
@@ -262,6 +278,7 @@ function init04() {
   stage.update();
 }
 
+
 ```
 
 ## 自由に図形を描く
@@ -277,5 +294,6 @@ shape.graphics.lineTo(0, 50);
 shape.graphics.lineTo(50, 120); 
 shape.graphics.lineTo(50, 20);
 shape.graphics.lineTo(0, 0); 
+
 
 ```

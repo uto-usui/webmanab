@@ -31,6 +31,7 @@ legacy:
 var name;
 var myName = 'zoro';
 
+
 ```
 
 #### let 《ES2015》
@@ -72,6 +73,7 @@ var myName = 'zoro';
 ```
 
 const MY_TAX = 1.15;
+
 
 ```
 

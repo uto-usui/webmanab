@@ -23,6 +23,7 @@ Mac「OS X El Capitan 」で不可視ファイルを表示するには、ター�
 
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
+
 ```
 
 ### 不可視ファイルを非表示する
@@ -30,6 +31,7 @@ defaults write com.apple.finder AppleShowAllFiles TRUE
 ```xml
 
 defaults write com.apple.finder AppleShowAllFiles FALSE
+
 
 ```
 
@@ -40,6 +42,7 @@ defaults write com.apple.finder AppleShowAllFiles FALSE
 ```xml
 
 killall Finder
+
 
 ```
 

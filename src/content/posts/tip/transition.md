@@ -59,6 +59,7 @@ CSS2.1には中間の値が定義されていなかったので、プロパテ�
   color: #aaa;
 }
 
+
 ```
 
 #### 設定項目
@@ -88,6 +89,7 @@ ex {
   transition-property: keyword
 }
 
+
 ```
 
 キーワードにはall/none/cssのプロパティを記述します。
@@ -102,6 +104,7 @@ p {
   margin: 1em;
   transition-property: margin;
 }
+
 
 ```
 
@@ -118,6 +121,7 @@ ex {
   transition-duration: time;
 }
 
+
 ```
 
 - 時間の単位は秒です。
@@ -132,6 +136,7 @@ p {
   transition-property: margin;
   transition-duration: 1s;
 }
+
 
 ```
 
@@ -148,6 +153,7 @@ p {
 
 ex { transition-timing-function: keyword; } //デフォルト値はease
 
+
 ```
 
 <dl><dt>ease</dt><dd>ゆっくり-加速-ゆっくり</dd><dt>linear</dt><dd>一定</dd><dt>ease-in</dt><dd>ゆっくり-加速</dd><dt>ease-in-out</dt><dd>easeの変化を緩やかに</dd></dl>
@@ -163,6 +169,7 @@ ex { transition-timing-function: keyword; } //デフォルト値はease
 ex {
   transition-timing-function: cubic-bezier(x1, y1, x2, y2);
 }
+
 
 ```
 
@@ -194,6 +201,7 @@ ex {
   transition-timing-function: steps(count, direction);
 }
 
+
 ```
 
 <dl><dt>count</dt><dd>アニメーションを分割する数(整数)</dd><dt>direction</dt><dd>start/endどの時点で変化が発生するか(省略可能)</dd></dl>
@@ -205,6 +213,7 @@ ex {
 ex {
   transition-timing-function: steps(3);
 }
+
 
 ```
 
@@ -226,6 +235,7 @@ ex {
   transition-delay: time; 
 }
 
+
 ```
 
 - timeの単位はms(ミリ秒)かs(秒)になります。
@@ -242,6 +252,7 @@ p {
   transition-delay: 800ms;
 }
 
+
 ```
 
 負の値を指定すると、**その値だけスキップした状態**でトランジションを即座に開始します。
@@ -257,6 +268,7 @@ p {
   transition-delay: -1s; //すでに１秒たった状態からスタート
 }
 
+
 ```
 
 ## transitionの短縮記法
@@ -269,6 +281,7 @@ ex {
   /* transition: property duration delay timing-function; */
   transition: margin 1s .8s ease;
 }
+
 
 ```
 
@@ -291,6 +304,7 @@ ex {
   padding 1.4s .4s linear, 
   font-size .4s 1.4s linear;
 }
+
 
 ```
 
@@ -318,6 +332,7 @@ ex {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
+
 
 ```
 
