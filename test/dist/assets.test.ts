@@ -37,10 +37,18 @@ describe('無限スクロールの JSON', () => {
       expect(pages.every(({ total }) => total === paths.length)).toBe(true)
     })
 
-    test('アイキャッチの SVG が dist/ にある', () => {
+    test('記事のページとアイキャッチの SVG が dist/ にある', () => {
       const missing = pages
-        .flatMap(({ items }) => items.map(({ eyecatch }) => eyecatch))
-        .filter((path) => !existsSync(join(DIST, path)))
+        .flatMap(({ items }) =>
+          items.flatMap(({ path, eyecatch }) => [path, eyecatch]),
+        )
+        .map((path) => decodeURIComponent(path))
+        .filter(
+          (path) =>
+            !existsSync(
+              join(DIST, path.endsWith('/') ? `${path}index.html` : path),
+            ),
+        )
       expect(missing).toEqual([])
     })
   })
@@ -54,6 +62,10 @@ test('アイキャッチの SVG は記事ごとに通常とナビ用の 2 枚で
     ])
     .sort()
   expect(distFiles('eyecatch/**/*.svg')).toEqual(expected)
+})
+
+test('旧 Service Worker を解除する sw.js がある（01 の 3 章）', () => {
+  expect(readDist('sw.js')).toContain('registration.unregister()')
 })
 
 test('OGP の PNG はカテゴリごとの 23 枚', () => {
