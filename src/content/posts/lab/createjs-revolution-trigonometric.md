@@ -2,7 +2,7 @@
 id: 1175
 type: lab
 slug: "createjs-revolution-trigonometric"
-title: "三角関数(sinθ/cosθ)を使った公転 -『Create.js』"
+title: "三角関数(sinθ/cosθ)を使った公転 -『Create.js』　"
 date: 2017-03-01T10:48:59+09:00
 modified: 2017-03-01T10:56:08+09:00
 excerpt: "円周上を公転するように動く丸 window.addEventListener(“load”, init); function init() { var stage = new createjs.Stage(“myCanv"

@@ -2,7 +2,7 @@
 id: 1081
 type: clip
 slug: "kamioto"
-title: "かみおと KAMIOTO | みんなで創る地域プロジェクト 加美町×河北新報社"
+title: "かみおと　KAMIOTO | みんなで創る地域プロジェクト　加美町×河北新報社"
 date: 2017-02-21T16:56:26+09:00
 modified: 2017-02-17T16:57:03+09:00
 primaryTag: "music"

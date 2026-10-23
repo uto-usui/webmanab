@@ -5,7 +5,7 @@ slug: "you-gotta-love-frontend-conference-june-27-28-2016-tel-aviv-israel"
 title: "You Gotta Love Frontend Conference | June 27-28, 2016 | Tel Aviv, Israel"
 date: 2016-10-03T00:59:08+09:00
 modified: 2016-10-27T00:59:35+09:00
-excerpt: "ダークでシンプルなレイアウトにサイトトップのインタラクションが目を引く。コンテンツの卍型の配置バランと上品な ホバーエフェクトがが素敵。"
+excerpt: "ダークでシンプルなレイアウトにサイトトップのインタラクションが目を引く。コンテンツの卍型の配置バランと上品な　ホバーエフェクトがが素敵。"
 primaryTag: "dark"
 terms:
   - { id: 181, name: "black", slug: "black" }

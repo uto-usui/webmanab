@@ -2,7 +2,7 @@
 id: 1173
 type: lab
 slug: "createjs-round-motion-trigonometric"
-title: "三角関数(sinθ)を使った丸のモーション -『Create.js』"
+title: "三角関数(sinθ)を使った丸のモーション -『Create.js』　"
 date: 2017-03-01T10:33:47+09:00
 modified: 2017-03-01T10:37:24+09:00
 excerpt: "サイン波に沿って丸を動かす window.addEventListener(“load”, init); function init() { var stage = new createjs.Stage(“myCanva"

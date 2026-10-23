@@ -2,7 +2,7 @@
 id: 1176
 type: lab
 slug: "createjs-gravity-and-friction"
-title: "シンプルな重力と摩擦の表現 -『Create.js』"
+title: "シンプルな重力と摩擦の表現 -『Create.js』　"
 date: 2017-03-01T10:55:26+09:00
 modified: 2017-03-01T10:55:26+09:00
 excerpt: "シンプルな丸パーティクルを使った重力と摩擦の表現 window.addEventListener(“load”, init); function init() { // ステージを作成 var stage = new c"
