@@ -36,7 +36,10 @@
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
     "astro": "7.4.2",
-    "sass": "1.105.1"
+    "hljs10": "npm:highlight.js@10.1.1",
+    "linkedom": "0.18.13",
+    "sass": "1.105.1",
+    "satteri": "0.10.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
