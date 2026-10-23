@@ -25,4 +25,7 @@ jobs:
       - run: pnpm test:dist
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
+      # axe は報告だけ。増えたら警告と Job Summary に出し、マージは止めない（08 の 2.6）
+      - run: pnpm test:a11y
+        continue-on-error: true
       - run: pnpm audit --audit-level high
