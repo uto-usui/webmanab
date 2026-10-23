@@ -1,0 +1,76 @@
+# 公開後の見張り（08 の 7.3）。週 1 回、本番の死活と依存の脆弱性を見て Moshi に知らせる
+name: Monitor
+on:
+  schedule:
+    - cron: '0 0 * * 1' # 毎週月曜 9:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - id: site
+        name: Check production
+        shell: bash
+        run: |
+          # ビルドに使う SITE_URL を正とする（ドメインを替えたら netlify.toml だけ直せばよい）
+          site=$(sed -nE 's/^[[:space:]]*SITE_URL[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/p' netlify.toml | head -n1)
+          echo "SITE_URL: $site"
+          failures=()
+          fail() { echo "::error::$1"; failures+=("$1"); }
+          get() { curl -sS --max-time 20 -o "$2" -D "$2.headers" -w '%{http_code}' "$1" || echo 000; }
+
+          [ "$(get "$site/sitemap.xml" sitemap.xml)" = 200 ] || fail "sitemap.xml が 200 でない"
+          urls=$(grep -oE '<loc>[^<]+</loc>' sitemap.xml | sed -E 's#</?loc>##g' | sort -R | head -n 20 || true)
+          [ -n "$urls" ] || fail "sitemap.xml に URL がない"
+          for url in $urls; do
+            code=$(get "$url" page.html)
+            [ "$code" = 200 ] || { fail "${url} が ${code}"; continue; }
+            canonical=$(grep -oE '<link[^>]*rel="canonical"[^>]*>' page.html | grep -oE 'href="[^"]*"' | sed -E 's/href="(.*)"/\1/' || true)
+            [ "$canonical" = "$url" ] || fail "${url} の canonical が「${canonical}」"
+          done
+
+          [ "$(get "$site/robots.txt" robots.txt)" = 200 ] && grep -qF "Sitemap: $site/sitemap.xml" robots.txt ||
+            fail "robots.txt に Sitemap: ${site}/sitemap.xml がない"
+          [ "$(get "$site/ads.txt" ads.txt)" = 200 ] && grep -qF 'pub-2691922878827958' ads.txt ||
+            fail "ads.txt に AdSense の ID がない"
+          # 旧 Service Worker を解除するファイル（01 の 3 章）
+          [ "$(get "$site/sw.js" sw.js)" = 200 ] && grep -qi '^cache-control:.*no-cache' sw.js.headers ||
+            fail "sw.js が 200 でないか、no-cache でない"
+
+          echo "first=${failures[0]:-}" >> "$GITHUB_OUTPUT"
+          { echo "## 本番の死活（${site}）"; echo; [ ${#failures[@]} -eq 0 ] && echo "問題なし" || printf -- '- %s\n' "${failures[@]}"; } >> "$GITHUB_STEP_SUMMARY"
+          [ ${#failures[@]} -eq 0 ]
+      - uses: pnpm/action-setup@v6
+        if: always()
+      - uses: actions/setup-node@v7
+        if: always()
+        with:
+          node-version-file: .nvmrc
+      - id: audit
+        if: always()
+        run: pnpm audit --audit-level high
+      - name: Notify Moshi
+        if: always()
+        shell: bash
+        env:
+          MOSHI_TOKEN: ${{ secrets.MOSHI_TOKEN }}
+          SITE: ${{ steps.site.outcome }}
+          FIRST: ${{ steps.site.outputs.first }}
+          AUDIT: ${{ steps.audit.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "$MOSHI_TOKEN" ] || exit 0
+          if [ "$SITE" = success ] && [ "$AUDIT" = success ]; then
+            message="本番の死活と pnpm audit は問題なし"
+          else
+            message="本番: ${SITE}${FIRST:+（${FIRST}）}、pnpm audit: ${AUDIT} ${RUN_URL}"
+          fi
+          jq -n --arg token "$MOSHI_TOKEN" --arg message "$message" \
+            '{token: $token, title: "webmanab: 週 1 の見張り", message: $message}' |
+            curl -s -X POST https://api.getmoshi.app/api/webhook -H 'Content-Type: application/json' -d @-
