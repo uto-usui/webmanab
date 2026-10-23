@@ -16,6 +16,12 @@ describe('コードブロック', () => {
     ).toBe('```bath\n\nnpx create-nuxt-app\n\n\n```\n')
   })
 
+  it('</code> と </pre> の間の改行も中身の末尾に含める', () => {
+    expect(md('<pre><code class="js">a\n</code>\n</pre>')).toBe(
+      '```js\na\n\n\n```\n',
+    )
+  })
+
   it('class がなければ info string は空。改行で終わらない中身もそのまま', () => {
     expect(md('<pre><code>a {\n}</code></pre>')).toBe('```\na {\n}\n```\n')
   })

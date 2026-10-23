@@ -49,13 +49,13 @@ type Side = 'original' | 'rendered'
 function codeBlock(pre: Element, side: Side) {
   const code = codeOf(pre)
   const cls = classOf(code)
-  const text = codeTextContent(code)
   return side === 'original'
-    ? { lang: cls || null, value: text }
+    ? // </code> と </pre> の間の改行も画面ではコードの最後の空行として見えていたので、pre 全体で数える
+      { lang: cls || null, value: codeTextContent(pre) }
     : // 描画側のプラグインと同じく、言語の class から language- を外し、フェンス付きコードが足した末尾の改行を 1 つ外す
       {
         lang: cls.replace(/^language-/, '') || null,
-        value: text.replace(/\n$/, ''),
+        value: codeTextContent(code).replace(/\n$/, ''),
       }
 }
 
