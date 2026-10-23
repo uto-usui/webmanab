@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content'
 import Default from '../../layouts/Default.astro'
+import { buildHead } from '../../lib/head'
 import Wrapper from '../../components/Wrapper.astro'
 import SectionEntry from '../../components/SectionEntry.astro'
 import EntryHead from '../../components/EntryHead.astro'
@@ -26,7 +27,6 @@ import {
   relatedPosts,
   type PostEntry,
 } from '../../lib/posts'
-import { pageTitle } from '../../lib/site'
 
 export const getStaticPaths = async () =>
   postStaticPaths(await getPosts('tip'), 'tip')
@@ -39,9 +39,10 @@ const { entry } = Astro.props
 const all = await getPosts('tip')
 const { Content, headings } = await render(entry)
 const { prev, next } = neighbors(all, entry)
+const head = buildHead({ kind: 'post', entry }, Astro.site!)
 ---
 
-<Default title={pageTitle(entry.data.title)} routeName="tip-id">
+<Default title={head.title} head={head} routeName="tip-id">
   <Wrapper>
     <SectionEntry>
       <EntryHead entry={entry} />

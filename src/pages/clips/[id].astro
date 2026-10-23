@@ -4,9 +4,9 @@ import ArticleList from '../../components/ArticleList.astro'
 import Title1 from '../../components/Title1.astro'
 import Wrapper from '../../components/Wrapper.astro'
 import Default from '../../layouts/Default.astro'
+import { buildHead } from '../../lib/head'
 import { termDataEndpoint } from '../../lib/list-json'
 import { getPosts, postsInTerm } from '../../lib/posts'
-import { pageTitle } from '../../lib/site'
 import { getTerms } from '../../lib/terms'
 
 const tax = 'clips'
@@ -20,9 +20,10 @@ export const getStaticPaths = (() =>
 
 const id = Number(Astro.params.id)
 const posts = postsInTerm(await getPosts(type), tax, id)
+const head = buildHead({ kind: 'term', tax, id }, Astro.site!)
 ---
 
-<Default title={pageTitle(type)} routeName="clips-id">
+<Default title={head.title} head={head} routeName="clips-id">
   <Wrapper>
     {/* 旧サイトのリンク先 /clips にはページがなかった。見え方は同じまま /clip/ へ向ける */}
     <Title1 text={tax} href={`/${type}/`} />
