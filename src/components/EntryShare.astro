@@ -1,0 +1,100 @@
+---
+import Title2 from './Title2.astro'
+
+interface Props {
+  url: string
+  title: string
+}
+
+const { url, title } = Astro.props
+---
+
+<section class="entry-sns__wrap">
+  <Title2>
+    share <br />ー
+  </Title2>
+  <div class="entry-sns">
+    <button
+      type="button"
+      class="entry-sns__target"
+      data-share-url={url}
+      data-share-title={title}
+    >
+      <svg class="entry-sns__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 15V3M7 8l5-5 5 5M5 12v8h14v-8"></path>
+      </svg>
+      <span class="entry-sns__label">share this page</span>
+    </button>
+    <span class="is-sr-only" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
+<script>
+  import '../scripts/share'
+</script>
+
+<style lang="scss">
+  .entry-sns__wrap {
+    margin-top: $space-3;
+
+    @include tablet {
+      margin-top: $space-5;
+    }
+  }
+
+  .entry-sns {
+    display: flex;
+    border-top: 6px double currentcolor;
+    border-bottom: 6px double currentcolor;
+  }
+
+  .entry-sns__target {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-style: italic;
+    color: $black;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(-1, 0);
+
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      background-color: $glay;
+      box-shadow: -5px 5px 0 $primary-color;
+      transform: translate3d(5px, -5px, 0);
+    }
+
+    // reset の outline: none で消える枠を、キーボード操作のときだけ戻す（08 の A-5）
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 4px;
+    }
+
+    &.is-copied {
+      box-shadow: -5px 5px 0 $thirdry-color;
+    }
+  }
+
+  .entry-sns__icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    transition: 0.25s $easeOutQuart;
+
+    .entry-sns__target:hover & {
+      transform: rotateY(1turn) translateZ(10px);
+    }
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+import Title2 from './Title2.astro'
+import { entryPath, type PostEntry } from '../lib/posts'
+
+interface Props {
+  posts: PostEntry[]
+}
+
+const { posts } = Astro.props
+---
+
+<section class="entry-related">
+  <Title2>
+    related
+    <br />ー
+  </Title2>
+  {/* 0 件のときも枠と見出しは出すが、空の ul は出さない（08 の A-7） */}
+  {posts.length > 0 && (
+    <ul class="entry-related__list">
+      {posts.map((post) => (
+        <li class="entry-related__item">
+          <a class="entry-related__target" href={entryPath(post)}>
+            {post.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</section>
+
+<style lang="scss">
+  .entry-related {
+    margin-top: $space-3;
+    text-align: justify;
+
+    @include tablet {
+      padding: 1rem;
+      margin-top: $space-5;
+      border: 6px double currentcolor;
+    }
+
+    @include desktop {
+      padding: 2rem;
+    }
+  }
+
+  .entry-related__item {
+    line-height: 1.7;
+
+    + .entry-related__item {
+      margin-top: 1rem;
+    }
+  }
+
+  .entry-related__target {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0.2em 0.5em 0.15em;
+    color: $white;
+    background-color: $glay;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(-1, 1);
+
+    @include desktop {
+      @include sizes(0, 1);
+    }
+
+    &:hover {
+      top: -5px;
+      left: 5px;
+      box-shadow: -5px 5px 0 $primary-color;
+    }
+  }
+</style>

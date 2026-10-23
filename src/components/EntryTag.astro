@@ -1,0 +1,65 @@
+---
+import Title2 from './Title2.astro'
+import { termPath } from '../lib/terms'
+import { TAXONOMY_OF } from '../lib/site'
+import type { PostEntry } from '../lib/posts'
+
+interface Props {
+  entry: PostEntry
+}
+
+const { type, terms } = Astro.props.entry.data
+---
+
+<section class="entry-tag">
+  <Title2>
+    tag <br />ー
+  </Title2>
+  <ul class="entry-tag__list">
+    {terms.map(({ id, name }) => (
+      <li class="entry-tag__item">
+        <a class="entry-tag__target" href={termPath(TAXONOMY_OF[type], id)}>
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style lang="scss">
+  .entry-tag {
+    margin-top: $space-3;
+
+    @include tablet {
+      margin-top: $space-5;
+    }
+  }
+
+  .entry-tag__list {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  .entry-tag__item {
+    margin-right: $space-2;
+  }
+
+  .entry-tag__target {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0.2em 0.5em 0.15em;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $glay;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(-1, 2);
+
+    &:hover {
+      top: -5px;
+      left: 5px;
+      box-shadow: -5px 5px 0 $thirdry-color;
+    }
+  }
+</style>

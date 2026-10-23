@@ -1,0 +1,63 @@
+---
+import { render } from 'astro:content'
+import Default from '../../layouts/Default.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import SectionEntry from '../../components/SectionEntry.astro'
+import EntryHead from '../../components/EntryHead.astro'
+import EntryAd from '../../components/EntryAd.astro'
+import EntryContent from '../../components/EntryContent.astro'
+import EntryClipLink from '../../components/EntryClipLink.astro'
+import EntryShare from '../../components/EntryShare.astro'
+import EntryTag from '../../components/EntryTag.astro'
+import EntryRelated from '../../components/EntryRelated.astro'
+import EntryNav from '../../components/EntryNav.astro'
+import { eyecatchFor } from '../../lib/eyecatch'
+import {
+  entryPath,
+  getPosts,
+  neighbors,
+  postStaticPaths,
+  relatedPosts,
+  type PostEntry,
+} from '../../lib/posts'
+import { pageTitle } from '../../lib/site'
+
+export const getStaticPaths = async () =>
+  postStaticPaths(await getPosts('clip'), 'clip')
+
+interface Props {
+  entry: PostEntry
+}
+
+const { entry } = Astro.props
+const all = await getPosts('clip')
+const { Content } = await render(entry)
+const { prev, next } = neighbors(all, entry)
+---
+
+<Default title={pageTitle(entry.data.title)} routeName="clip-id">
+  <Wrapper>
+    <SectionEntry>
+      <EntryHead entry={entry} />
+      <EntryAd adSlot="6597241020" />
+      <EntryContent>
+        <Content />
+      </EntryContent>
+      {entry.data.clipUrl && (
+        <EntryClipLink
+          href={entry.data.clipUrl}
+          title={entry.data.title}
+          src={eyecatchFor(entry.data).svg}
+        />
+      )}
+      <EntryAd adSlot="1102437429" />
+      <EntryShare
+        url={new URL(entryPath(entry), Astro.site).href}
+        title={entry.data.title}
+      />
+      <EntryTag entry={entry} />
+      <EntryRelated posts={relatedPosts(all, entry)} />
+      <EntryNav prev={prev} next={next} />
+    </SectionEntry>
+  </Wrapper>
+</Default>

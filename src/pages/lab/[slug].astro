@@ -1,0 +1,55 @@
+---
+import { render } from 'astro:content'
+import Default from '../../layouts/Default.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import SectionEntry from '../../components/SectionEntry.astro'
+import EntryHead from '../../components/EntryHead.astro'
+import EntryAd from '../../components/EntryAd.astro'
+import EntryContent from '../../components/EntryContent.astro'
+import EntryShare from '../../components/EntryShare.astro'
+import EntryTag from '../../components/EntryTag.astro'
+import EntryRelated from '../../components/EntryRelated.astro'
+import EntryNav from '../../components/EntryNav.astro'
+import {
+  entryPath,
+  getPosts,
+  neighbors,
+  postStaticPaths,
+  relatedPosts,
+  type PostEntry,
+} from '../../lib/posts'
+import { pageTitle } from '../../lib/site'
+
+export const getStaticPaths = async () =>
+  postStaticPaths(await getPosts('lab'), 'lab')
+
+interface Props {
+  entry: PostEntry
+}
+
+const { entry } = Astro.props
+const all = await getPosts('lab')
+const { Content } = await render(entry)
+const { prev, next } = neighbors(all, entry)
+---
+
+{/* lab には旧サイトと同じくアイキャッチを出さない（02 の 9.2） */}
+<Default title={pageTitle(entry.data.title)} routeName="lab-id">
+  <Wrapper>
+    <SectionEntry>
+      <EntryHead entry={entry} />
+      <EntryAd adSlot="6597241020" />
+      <EntryContent>
+        <Content />
+      </EntryContent>
+      <EntryAd adSlot="1102437429" />
+      <EntryShare
+        url={new URL(entryPath(entry), Astro.site).href}
+        title={entry.data.title}
+      />
+      <EntryTag entry={entry} />
+      <EntryRelated posts={relatedPosts(all, entry)} />
+      <EntryNav prev={prev} next={next} />
+    </SectionEntry>
+  </Wrapper>
+</Default>
