@@ -40,6 +40,7 @@ for (const toc of document.querySelectorAll<HTMLElement>('.entry-toc')) {
   toc.querySelector('.entry-toc__title')?.addEventListener('click', (event) => {
     event.preventDefault()
     const open = toc.classList.toggle('is-open')
+    toc.classList.add('has-opened')
     if (list) list.inert = !open
   })
   list?.addEventListener('click', (event) => {

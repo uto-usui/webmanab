@@ -152,6 +152,11 @@ for (const h of Astro.props.headings) {
     .entry-toc.is-open & {
       opacity: 1;
     }
+
+    // 旧サイトは初めて開くまで目次の中身が空だった。閉じた枠の高さをそろえるため、それまでは項目を出さない
+    .entry-toc:not(.has-opened) & {
+      display: none;
+    }
   }
 
   .toc-item__child {
