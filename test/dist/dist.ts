@@ -39,7 +39,10 @@ export function pagePath(file: string): string {
   return `/${file.replace(/index\.html$/, '')}`
 }
 
-/** 開始タグを 1 つずつ返す。本文のコードはエスケープされているので拾わない */
+/**
+ * 開始タグを 1 つずつ返す。本文のコードはエスケープされているので拾わない。
+ * 属性の値には > がそのまま入ることがある（description の「=>」など）ので、引用符の中は読み飛ばす
+ */
 export function startTags(html: string): string[] {
-  return html.match(/<[a-zA-Z][^>]*>/g) ?? []
+  return html.match(/<[a-zA-Z](?:[^>"']|"[^"]*"|'[^']*')*>/g) ?? []
 }
