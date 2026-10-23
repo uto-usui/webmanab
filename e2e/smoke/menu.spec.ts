@@ -76,7 +76,9 @@ test('開いているとき、Tab でメニューのリンクに届く（A-1）'
 })
 
 test('Tab で来たボタンにフォーカスの枠が出る（A-5）', async ({ page }) => {
-  for (let i = 0; i < 50; i++) {
+  // メニューは本文のあとにあるので、一覧のカードのリンクを全部たどれる回数にする
+  const limit = await page.locator('a[href], button').count()
+  for (let i = 0; i <= limit; i++) {
     await page.keyboard.press('Tab')
     if (
       await page
