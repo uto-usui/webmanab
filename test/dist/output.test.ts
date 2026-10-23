@@ -70,10 +70,22 @@ describe.each(htmlFiles)('%s', (file) => {
     expect(robots.filter((tag) => /noindex/i.test(tag))).toEqual([])
   })
 
-  test('変数なしのビルドに AdSense と GA のタグがない', () => {
-    expect(html).not.toContain('adsbygoogle.js')
-    expect(html).not.toContain('googletagmanager')
+  // 本文のコードの例（tip/nuxt-static-site-tips）にも同じ文字があるので、script の src で見る
+  test('変数なしのビルドに AdSense と GA の script がない', () => {
+    expect(
+      tags.filter(
+        (tag) =>
+          tag.startsWith('<script') &&
+          /\ssrc="[^"]*(adsbygoogle\.js|googletagmanager\.com)/.test(tag),
+      ),
+    ).toEqual([])
   })
+
+  if (/^(tip|clip|lab)\/[^/]+\/index\.html$/.test(file)) {
+    test('記事ページに広告の枠（.entry-ad）は出ている', () => {
+      expect(html).toContain('class="entry-ad"')
+    })
+  }
 
   test('旧実装の独自属性 lazy が残っていない（data-lazy に変えた）', () => {
     expect(tags.filter((tag) => /\slazy(?=[\s=>/])/.test(tag))).toEqual([])
