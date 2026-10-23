@@ -150,8 +150,8 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 ## 7. 実装を始めるときに拾うこと
 
 - `.snapshot/`（旧 HTML と基準スクリーンショット）は今 `.git/info/exclude` だけで除外している。新しい `.gitignore` にも入れる。
-- `assets/eyecatch-samples/src/` は試作のソース。本実装が `src/lib/eyecatch/` に入ったら、PR の前に消すか、参考と明記する。
-- 02 の 9.2 にあるアイキャッチの URL の例（`{slug}`）は古い。`{id}` が正しい。
+- `assets/eyecatch-samples/src/`（試作のソース）は、本実装が `src/lib/eyecatch/` に入ったので消した。`glyphs.json` を作り直す道具は `scripts/eyecatch/build-glyphs.mjs`（`pnpm build:glyphs`）。試作のソースは `.snapshot/prototypes/eyecatch/samples-src/` にも写してある。
+- 02 の 9.2 にあったアイキャッチの URL の例（`{slug}`）は `{id}` に、大きさは 640×360 に直した。
 
 ## 8. 次のセッションの始め方
 
@@ -163,7 +163,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `.snapshot/baseline/` | 旧サイトの基準スクリーンショット 64 枚、computed style 52 ページ分、撮影スクリプト `capture.ts`（`--base` で新サイトも同じ条件で撮れる） |
 | `.snapshot/prototypes/md-exporter/` | 変換（`convert-unified.mjs`、`frontmatter.mjs`、`export.mjs`）、往復検証（`verify.mjs`）、最新の出力 `out-v4/`（記事 1030 本とターム JSON） |
 | `.snapshot/prototypes/architecture/proto/` | Astro の試作（`src/lib/markdown/hljs.mjs` など）と、コードブロックの比較スクリプト |
-| `.snapshot/prototypes/eyecatch/`、`assets/eyecatch-samples/src/` | アイキャッチの生成関数と `build-og.mjs` |
+| `.snapshot/prototypes/eyecatch/`（`samples-src/` に試作のソース） | アイキャッチの生成関数と `build-og.mjs` |
 | `.snapshot/prototypes/art-direction/` | 撮影と computed style の比較に使った道具 |
 | `.snapshot/prototypes/storybook/proto/` | 自前のカタログの試作（`src/catalog/`、`playwright.catalog.config.ts`、`tests/catalog/`）。Storybook と Astrobook を試した設定も残っている |
 | `.snapshot/prototypes/qa/` | 旧サイトの a11y 監査のスクリプト（`audit.mjs`）と結果（`results-413.json` が axe-core 4.13.0 の結果）、Lighthouse の結果（`lh/`） |
