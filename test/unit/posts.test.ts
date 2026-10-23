@@ -8,6 +8,7 @@ import {
   postStaticPaths,
   postsInTerm,
   related,
+  relatedPosts,
   sitePaths,
   sortByDateDesc,
 } from '../../src/lib/posts'
@@ -229,5 +230,18 @@ describe('静的なパス', () => {
     const before = slugs(all)
     expect(slugs(sortByDateDesc(all))).toEqual(['ね - nt', 'b', 'a'])
     expect(slugs(all)).toEqual(before)
+  })
+})
+
+describe('relatedPosts', () => {
+  test('primaryTagKey で空白・大文字小文字・打ち間違いを寄せて比べる', () => {
+    const all = [
+      post('self', '2020-01-05', { primaryTag: 'Animation' }),
+      post('a', '2020-01-01', { primaryTag: 'aniamtion' }),
+      post('b', '2020-01-02', { primaryTag: ' animation ' }),
+      post('c', '2020-01-03', { primaryTag: 'sport' }),
+      post('d', '2020-01-04', { primaryTag: 'animation', type: 'lab' }),
+    ]
+    expect(slugs(relatedPosts(all, all[0]))).toEqual(['b', 'a'])
   })
 })
