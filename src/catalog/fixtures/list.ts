@@ -2,7 +2,7 @@
 // id は実在の記事のものにしてある。アイキャッチの URL（/eyecatch/tip/{id}.svg）がカタログのビルドにも出るため
 import type { PostEntry } from '../../lib/posts'
 import type { PostData } from '../../lib/schema'
-import { post } from './posts'
+import { post, toEntry as entry } from './posts'
 
 const tips: PostData[] = [
   post({
@@ -215,12 +215,6 @@ const tips: PostData[] = [
     ],
   }),
 ]
-
-const entry = (data: PostData): PostEntry => ({
-  id: `${data.type}/${data.slug}`,
-  collection: 'posts',
-  data,
-})
 
 /** ArticleList に渡す一覧。件数で読み込み口と End の出し分けが変わる（03 の 4.3） */
 export const lists = {

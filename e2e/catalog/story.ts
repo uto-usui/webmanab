@@ -64,6 +64,21 @@ async function loadImages(page: Page) {
     .locator('img[data-lazy="loading"]')
     .first()
     .waitFor({ state: 'detached' })
+  // CSS の背景画像（前後記事ナビのアイキャッチ）も読み終わってから撮る
+  await page.evaluate(() =>
+    Promise.all(
+      [...document.querySelectorAll<HTMLElement>('[style*="url("]')].map(
+        (el) => {
+          const url =
+            getComputedStyle(el).backgroundImage.match(/url\("?(.+?)"?\)/)?.[1]
+          if (!url) return
+          const img = new Image()
+          img.src = url
+          return img.decode().catch(() => {})
+        },
+      ),
+    ),
+  )
 }
 
 /** Tab を押して selector の要素にフォーカスを当てる。:focus-visible はキーボードでないと付かない */

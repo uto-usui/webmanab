@@ -78,6 +78,43 @@ const checks: Record<string, (page: Page) => Promise<void>> = {
     await expect(page.locator('.article-item')).toHaveCount(0)
     await expect(page.locator('[data-infinite-end]')).toBeVisible()
   },
+  'entry-toc/closed': async (page) => {
+    await expect(page.locator('.entry-toc')).not.toHaveClass(/\bis-open\b/)
+    await expect(page.locator('.entry-toc__list')).toHaveJSProperty(
+      'inert',
+      true,
+    )
+  },
+  'entry-toc/open': async (page) => {
+    await expect(page.locator('.entry-toc')).toHaveClass(/\bis-open\b/)
+    await expect(page.locator('.entry-toc__list')).toHaveJSProperty(
+      'inert',
+      false,
+    )
+  },
+  'entry-share/supported': (page) =>
+    expect(page.locator('.entry-sns__label')).toHaveText('share this page'),
+  'entry-share/unsupported': (page) =>
+    expect(page.locator('.entry-sns__label')).toHaveText('copy link'),
+  'entry-share/copied': async (page) => {
+    await expect(page.locator('.entry-sns__target')).toHaveClass(
+      /\bis-copied\b/,
+    )
+    await expect(page.locator('.entry-sns__label')).toHaveText('copied')
+    await expect(page.getByRole('status')).toHaveText('リンクをコピーしました')
+  },
+  'entry-related/empty': (page) =>
+    expect(page.locator('.entry-related ul')).toHaveCount(0),
+  'entry-nav/prev-only': async (page) => {
+    await expect(page.locator('.entry-nav__item')).toHaveCount(1)
+    await expect(page.locator('.entry-nav__item--prev')).toHaveCount(1)
+  },
+  'entry-nav/next-only': async (page) => {
+    await expect(page.locator('.entry-nav__item')).toHaveCount(1)
+    await expect(page.locator('.entry-nav__item--next')).toHaveClass(
+      /\bu-text-right\b/,
+    )
+  },
 }
 
 for (const story of loadStories()) {

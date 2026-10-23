@@ -1,10 +1,18 @@
 // 記事の frontmatter の見本。実データから極端な値を選んで写した（07 の 8.1）。元は各項目の type/slug で、
 // excerpt は先頭だけ、legacy は省いた。スキーマが変わると astro check で型エラーになり、読み込むと postSchema にも通す
 import type { z } from 'astro/zod'
+import type { PostEntry } from '../../lib/posts'
 import { postSchema, type PostData } from '../../lib/schema'
 
 export const post = (raw: z.input<typeof postSchema>): PostData =>
   postSchema.parse(raw)
+
+/** 部品が受け取る getCollection() の 1 件の形にする */
+export const toEntry = (data: PostData): PostEntry => ({
+  id: `${data.type}/${data.slug}`,
+  collection: 'posts',
+  data,
+})
 
 export const posts = {
   // tip/2016-2017-css-font: 日本語のタイトルと『』
