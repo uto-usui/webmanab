@@ -1,5 +1,5 @@
 // axe の結果を基準の件数と比べる（08 の 2.6、07 の 10.3）。マージは止めないので終了コードは常に 0。
-// 使い方: node scripts/a11y-compare.ts [--baseline test/a11y/baseline.json] [--report test-results/a11y-report.json]
+// 使い方: node scripts/a11y-compare.ts [--baseline test/a11y/baseline.json] [--report test-results/e2e/a11y-report.json]
 import { appendFileSync, existsSync, readFileSync } from 'node:fs'
 import { parseArgs } from 'node:util'
 
@@ -126,7 +126,7 @@ function main() {
   const { values } = parseArgs({
     options: {
       baseline: { type: 'string', default: 'test/a11y/baseline.json' },
-      report: { type: 'string', default: 'test-results/a11y-report.json' },
+      report: { type: 'string', default: 'test-results/e2e/a11y-report.json' },
     },
   })
   const gh = !!process.env.GITHUB_ACTIONS
