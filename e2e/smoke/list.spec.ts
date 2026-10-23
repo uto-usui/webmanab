@@ -1,34 +1,11 @@
 import { expect, test, type Page } from '@playwright/test'
 
-// 静的 JSON（03 の 4.2）とアイキャッチの SVG はほかの担当が作るルートなので、ここでは形だけを決めてモックする。
-// 一覧の部品と script が、その形を正しく描くかを見る
-type Item = {
-  type: string
-  slug: string
-  path: string
-  title: string
-  date: string
-  dateLabel: string
-  primaryTag: string
-  clipUrl?: string
-  eyecatch: string
+type ListPage = {
+  items: { path: string; title: string; dateLabel: string; clipUrl?: string }[]
+  page: number
+  last: number
+  total: number
 }
-
-const SVG =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360"><rect width="640" height="360" fill="#ffd740"/></svg>'
-
-const items = (type: string, count: number): Item[] =>
-  Array.from({ length: count }, (_, i) => ({
-    type,
-    slug: `mock-${i}`,
-    path: `/${type}/mock-${i}/`,
-    title: `mock ${type} ${i}`,
-    date: '2001-01-01T00:00:00+09:00',
-    dateLabel: '2001-01-01',
-    primaryTag: 'mock',
-    ...(type === 'clip' ? { clipUrl: `https://example.com/${i}` } : {}),
-    eyecatch: `/eyecatch/${type}/${9000 + i}.svg`,
-  }))
 
 const cards = (page: Page) =>
   page.locator('.article-list__inner > .article-item')
@@ -36,12 +13,8 @@ const container = (page: Page) => page.locator('.infinite-loading-container')
 const end = (page: Page) => page.locator('[data-infinite-end]')
 const scrollToBottom = (page: Page) =>
   page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight))
-
-test.beforeEach(async ({ page }) => {
-  await page.route('**/eyecatch/**/*.svg', (route) =>
-    route.fulfill({ contentType: 'image/svg+xml', body: SVG }),
-  )
-})
+const getJson = async (page: Page, path: string) =>
+  (await (await page.request.get(path)).json()) as ListPage
 
 test('一覧のタイトルの実体参照が文字で出る', async ({ page }) => {
   await page.goto('/clips/69/')
@@ -66,13 +39,12 @@ test('トップは 3 つの一覧に 8 件ずつで、無限スクロールが�
 test('/clip/ で下までスクロールすると 8 件増え、読み込み中は Loader が出る', async ({
   page,
 }) => {
+  const next = await getJson(page, '/data/clip/2.json')
   let release = () => {}
   const held = new Promise<void>((resolve) => (release = resolve))
   await page.route('**/data/clip/2.json', async (route) => {
     await held
-    await route.fulfill({
-      json: { items: items('clip', 8), page: 2, last: 103, total: 817 },
-    })
+    await route.continue()
   })
   // 足したあとに読み込み口がまだ画面内なら 3 ページ目も読みにいく。件数が変わらないように止めておく
   await page.route('**/data/clip/3.json', (route) =>
@@ -94,30 +66,46 @@ test('/clip/ で下までスクロールすると 8 件増え、読み込み中�
   await expect(container(page)).toHaveCount(1)
   await expect(end(page)).toBeHidden()
 
-  // 足したカードの中身。clip のタイトルは外部サイトへ新しいタブで開く
+  // 足したカードの中身が JSON の 1 件目と同じ。clip のタイトルは外部サイトへ新しいタブで開く
+  const [item] = next.items
   const added = cards(page).nth(8)
-  await expect(added.locator('.article-item__tag')).toHaveText('mock')
   await expect(added.locator('.article-item__img-wrap')).toHaveAttribute(
     'href',
-    '/clip/mock-0/',
+    item.path,
   )
   const title = added.locator('.article-item__target')
-  await expect(title).toHaveText('mock clip 0')
-  await expect(title).toHaveAttribute('href', 'https://example.com/0')
+  await expect(title).toHaveText(item.title)
+  await expect(title).toHaveAttribute('href', item.clipUrl ?? '')
   await expect(title).toHaveAttribute('target', '_blank')
-  await expect(added.locator('time')).toHaveAttribute('datetime', '2001-01-01')
+  await expect(added.locator('time')).toHaveAttribute(
+    'datetime',
+    item.dateLabel,
+  )
   await added.scrollIntoViewIfNeeded()
   await expect(added.locator('img')).toHaveAttribute('data-lazy', 'loaded')
+})
+
+test('HTML の最初の 8 件が JSON の 1 ページ目と同じ', async ({ page }) => {
+  const first = await getJson(page, '/data/tips/29/1.json')
+  await page.goto('/tips/29/')
+  const hrefs = await page
+    .locator('.article-list__inner .article-item__img-wrap')
+    .evaluateAll((els) => els.map((el) => el.getAttribute('href')))
+  expect(hrefs).toEqual(first.items.map((item) => item.path))
+})
+
+test('clipUrl のない clip はタイトルが記事ページへつながる', async ({
+  page,
+}) => {
+  await page.goto('/clips/180/')
+  const title = page.locator('.article-item__target[href="/clip/the-wing/"]')
+  await expect(title).toHaveCount(1)
+  await expect(title).not.toHaveAttribute('target', /.*/)
 })
 
 test('合計が 8 の倍数のタームは、最後のページのあとに End が出る', async ({
   page,
 }) => {
-  await page.route('**/data/labs/212/2.json', (route) =>
-    route.fulfill({
-      json: { items: items('lab', 8), page: 2, last: 2, total: 16 },
-    }),
-  )
   await page.goto('/labs/212/')
   const list = page.locator('.article-list')
   await expect(list).toHaveAttribute('data-last-page', '2')
@@ -132,11 +120,6 @@ test('合計が 8 の倍数のタームは、最後のページのあとに End 
 test('合計が 8 の倍数でないタームは、最後のページのあとに読み込み口が消える', async ({
   page,
 }) => {
-  await page.route('**/data/labs/173/2.json', (route) =>
-    route.fulfill({
-      json: { items: items('lab', 3), page: 2, last: 2, total: 11 },
-    }),
-  )
   await page.goto('/labs/173/')
   await expect(container(page)).toHaveCount(1)
 
