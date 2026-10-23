@@ -56,6 +56,7 @@ legacy:
   flex-direction: column;
 }
 
+
 ```
 
 ### デフォルトのalign-items: stretchの効果を使う

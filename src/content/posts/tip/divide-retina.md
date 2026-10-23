@@ -33,4 +33,5 @@ if(retina < 2) {
 } else if(retina >= 2) {
   $('ex').html('Retinaディスプレイとかの高解像度です！');
 }
+
 ```

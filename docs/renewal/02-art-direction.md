@@ -806,7 +806,7 @@ CSS（SCSS。今の EntrySns の値を引き継ぐ）:
 
 (a) 一覧の 16:9 サムネイル（`.article-item__img`）
 
-- 今の DOM と CSS をそのまま使い、`img` の src を SVG にする。`<img src="/eyecatch/{type}/{slug}.svg" width="1600" height="900" alt="" loading="lazy" lazy="loading">`。alt は隣にタイトルがあるので空にする。
+- 今の DOM と CSS をそのまま使い、`img` の src を SVG にする。`<img src="/eyecatch/{type}/{id}.svg" width="640" height="360" alt="" loading="lazy" lazy="loading">`。alt は隣にタイトルがあるので空にする。
 - 箱は 16:9、`img` は幅 100% で上下中央なので、16:9 の SVG なら切れずにぴったり収まる。本番で測った箱の大きさは 375px 時 304.6×171.3px、768px 時 311.6×175.3px、1080px 時 292.9×164.8px、1480px 時 309.6×174.1px。幅 290px 前後で読める密度にする。
 - 背景 #393e46 は読み込み前の面として残る。読み込み後 0.25s で opacity 1（5.6）。
 - ホバーで箱全体が右上に 10px ずれ、左下に #ffd740 の影が出る。SVG の外周に枠線や影を描かない。外周 1 割ほどは #ffd740 と #eeeeee のどちらとも区別がつく色にする（影と背景に溶けないように）。

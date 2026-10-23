@@ -30,6 +30,7 @@ legacy:
   color: white;
 }
 
+
 ```
 
 以下のように、セレクタを指定して絞り込むことも可能です。
@@ -42,6 +43,7 @@ legacy:
   background: red;
   color: white;
 }
+
 
 ```
 
@@ -67,6 +69,7 @@ input {
 input::selection {
   color: black;
 }
+
 
 ```
 

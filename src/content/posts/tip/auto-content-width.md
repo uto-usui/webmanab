@@ -37,6 +37,7 @@ figure {
   width: min-content;
 }
 
+
 ```
 
 ## min-contentとは
@@ -62,6 +63,7 @@ figure {
   max-width: 350px; // 適切な幅を与える
   max-width: min-content;
 }
+
 
 ```
 

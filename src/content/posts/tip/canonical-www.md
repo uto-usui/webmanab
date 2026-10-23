@@ -56,6 +56,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.ex\.com
 RewriteRule ^(.*)$ http://ex.com/$1 [R=301,L]
 
+
 ```
 
 ### index.htmlの有無も統一
@@ -68,5 +69,6 @@ url末尾の `index.html` の有無に関しても上記と同じことが言え
 
 RewriteCond %{THE_REQUEST} ^.*/index.html
 RewriteRule ^(.*)index.html$ http://www.ex.com/$1 [R=301,L]
+
 
 ```

@@ -27,6 +27,7 @@ legacy:
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 ```
 
 ですが、固定幅のサイトを制作する際、例えば上位のブロックに最小幅指定(`min-width: ...`)があると、上記コードだと画面幅ぴったりに表示されません。
@@ -44,6 +45,7 @@ legacy:
 ```html
 
 <meta name="viewport" content="width=1040, user-scalable=yes">
+
 
 ```
 

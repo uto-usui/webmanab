@@ -92,6 +92,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `tip/frontnote` のコードの中の `<h1>` が文字として出る | 旧サイトはエスケープ漏れで見出しとして描画していた |
 | キーボードで操作したとき、シェアとメニューのボタンにフォーカスの枠が出る（マウスで見ている限りは変わらない） | `<a>` から button に変えると、reset の `outline: none` で旧サイトにはあった枠が消えるため（08 の A-5） |
 | `tip/frontnote` と `tip/javascript-es6` のコードブロック 1 個ずつで、色の付き方が変わる | 上の直しと、消えていた文字を元に戻した結果、自動判定される言語が変わる（php → xml、xml → javascript） |
+| 375px の幅で、最後に空行があるコードブロック 113 個（40 ページ）が 1px 高くなる。1080px では同じ | 旧サイトは最後の改行が `<code>` の外（`</code>` と `</pre>` の間）にあり、新サイトは `<code>` の中にある。Markdown から 115 個だけを見分ける印を持たせるほどの差ではないので受け入れる |
 | 英数字が Open Sans から OS の標準フォント（mac は SF、Windows は Segoe UI）に、コードが Source Code Pro から OS の等幅フォント（mac は Menlo）になる。日本語は今までどおり游ゴシックなど | Google Fonts の CSS が描画を止めていて、表示が遅れていた（mobile の LCP の原因の 1 つ）。ユーザーの判断で Web フォントをやめる |
 | 前後記事ナビのタイトルが、その記事の見出しと同じ文字になる（169 本。例: `-` → `–`、`'` → `’`、`...` → `…`、`Wordpress` → `WordPress`） | 旧サイトのナビは WP の生のタイトルを出していて、記事の見出し（WP が記号を整えたもの）と文字が違っていた。別のタイトルを記事データに持たず、見出しにそろえる |
 
@@ -138,7 +139,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 - 新しいビルドの URL が、旧 sitemap の 1323 件と一致する。
 - 旧サイトの基準スクリーンショット 64 枚と比べて、差が「4. 旧サイトから見た目が変わるところ」の範囲に収まる。computed style の比較でも同じ。
-- コードブロック 762 個の高さが旧サイトと一致する（02 の 10 章）。
+- コードブロック 762 個の高さが旧サイトと一致する（02 の 10 章）。例外は 4 章に書いた 2 つ（`tip/frontnote` の `<h1>` の直しと、375px で 1px 高くなる 113 個）だけ。
 - 旧 Service Worker が入ったブラウザで開いても、新しいサイトが表示される。
 - `pnpm lint`、`pnpm check`、`pnpm test`、`pnpm build`、`pnpm test:dist`、`pnpm test:e2e`、`pnpm audit --audit-level high` が通る。
 - a11y の違反の件数が、旧サイトの基準（`test/a11y/baseline.json`）から増えていない。増えたものは、08 の 2.6 の手順で片付けるか、一覧に理由を書いてある。
@@ -149,8 +150,8 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 ## 7. 実装を始めるときに拾うこと
 
 - `.snapshot/`（旧 HTML と基準スクリーンショット）は今 `.git/info/exclude` だけで除外している。新しい `.gitignore` にも入れる。
-- `assets/eyecatch-samples/src/` は試作のソース。本実装が `src/lib/eyecatch/` に入ったら、PR の前に消すか、参考と明記する。
-- 02 の 9.2 にあるアイキャッチの URL の例（`{slug}`）は古い。`{id}` が正しい。
+- `assets/eyecatch-samples/src/`（試作のソース）は、本実装が `src/lib/eyecatch/` に入ったので消した。`glyphs.json` を作り直す道具は `scripts/eyecatch/build-glyphs.mjs`（`pnpm build:glyphs`）。試作のソースは `.snapshot/prototypes/eyecatch/samples-src/` にも写してある。
+- 02 の 9.2 にあったアイキャッチの URL の例（`{slug}`）は `{id}` に、大きさは 640×360 に直した。
 
 ## 8. 次のセッションの始め方
 
@@ -162,7 +163,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `.snapshot/baseline/` | 旧サイトの基準スクリーンショット 64 枚、computed style 52 ページ分、撮影スクリプト `capture.ts`（`--base` で新サイトも同じ条件で撮れる） |
 | `.snapshot/prototypes/md-exporter/` | 変換（`convert-unified.mjs`、`frontmatter.mjs`、`export.mjs`）、往復検証（`verify.mjs`）、最新の出力 `out-v4/`（記事 1030 本とターム JSON） |
 | `.snapshot/prototypes/architecture/proto/` | Astro の試作（`src/lib/markdown/hljs.mjs` など）と、コードブロックの比較スクリプト |
-| `.snapshot/prototypes/eyecatch/`、`assets/eyecatch-samples/src/` | アイキャッチの生成関数と `build-og.mjs` |
+| `.snapshot/prototypes/eyecatch/`（`samples-src/` に試作のソース） | アイキャッチの生成関数と `build-og.mjs` |
 | `.snapshot/prototypes/art-direction/` | 撮影と computed style の比較に使った道具 |
 | `.snapshot/prototypes/storybook/proto/` | 自前のカタログの試作（`src/catalog/`、`playwright.catalog.config.ts`、`tests/catalog/`）。Storybook と Astrobook を試した設定も残っている |
 | `.snapshot/prototypes/qa/` | 旧サイトの a11y 監査のスクリプト（`audit.mjs`）と結果（`results-413.json` が axe-core 4.13.0 の結果）、Lighthouse の結果（`lh/`） |

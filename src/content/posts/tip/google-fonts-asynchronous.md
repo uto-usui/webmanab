@@ -42,6 +42,7 @@ WebFontConfig = {
   s.parentNode.insertBefore(wf, s);
 })();
 
+
 ```
 
 `families: []`の中に読み込みたいフォント名を記述します。

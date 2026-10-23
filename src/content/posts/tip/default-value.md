@@ -31,6 +31,7 @@ function exFunction (pass) {
 exFunction('1234');  // 1234を出力
 exFunction();        // 0000を出力
 
+
 ```
 
 おわります。

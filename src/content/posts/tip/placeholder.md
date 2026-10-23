@@ -42,6 +42,7 @@ legacy:
   opacity: 1;
 }
 
+
 ```
 
 上記コードでは`class`指定していますが、属性セレクタの`[type="text"]`や`[type="password"]`というように指定してあげることもできます。
