@@ -1,0 +1,47 @@
+---
+// 無限スクロールの読み込み中に画面中央に出る 20 本のバー。見た目だけなので読み上げない（08 の A-11）
+---
+
+<div class="loader" aria-hidden="true">
+  {Array.from({ length: 20 }, () => (
+    <span />
+  ))}
+</div>
+
+<style lang="scss">
+  .loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+
+    > span {
+      display: inline-block;
+      width: 7.5px;
+      height: 7.5px;
+      margin: 0 2px;
+
+      // 旧 lighten($thirdry-color, 8%)。color.adjust は小数の % で出力されるので値で書く（02 の 10 章）
+      background: #34a296;
+      border-radius: 0;
+
+      // Astro は keyframes の名前をスコープしないので、旧来の temp から変える
+      animation: loader-wave 1s infinite cubic-bezier(0.005, 0.56, 0.58, 1.59);
+
+      @for $i from 1 through 20 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: $i * 0.05s;
+        }
+      }
+    }
+  }
+
+  @keyframes loader-wave {
+    50% {
+      // 旧 darken($thirdry-color, 2%)
+      background: #287b72;
+      transform: scale(1, 5);
+    }
+  }
+</style>
