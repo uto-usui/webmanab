@@ -1,6 +1,6 @@
 pnpm-lock.yaml
-dist/
-dist-catalog/
+/dist/
+/dist-catalog/
 .astro/
 docs/
 src/content/posts/
