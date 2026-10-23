@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Frame from './Frame.astro'
+import { stories, type ResolvedStory } from './stories'
+
+export const getStaticPaths = (() =>
+  stories.map((story) => {
+    const [component, name] = story.entry.id.split('/')
+    return { params: { component, story: name }, props: story }
+  })) satisfies GetStaticPaths
+
+type Props = ResolvedStory
+
+const { entry, component: Component, args } = Astro.props
+const { slot, ...props } = args
+---
+
+{entry.page ? (
+  <Component {...props}>{slot && <Fragment set:html={slot} />}</Component>
+) : (
+  <Frame
+    title={`catalog: ${entry.id}`}
+    story={entry.id}
+    minHeight={entry.minHeight}
+    padding={entry.padding}
+  >
+    <Component {...props}>{slot && <Fragment set:html={slot} />}</Component>
+  </Frame>
+)}
