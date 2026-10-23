@@ -4,24 +4,20 @@ import type { ListItem } from '../lib/list-json'
 import { titleLink } from './article-item'
 
 interface Props {
-  // 渡さないときは中身が空のカードになる。無限スクロールで複製する <template> 用
-  item?: ListItem
+  item: ListItem
 }
 
 const { item } = Astro.props
-const link = item ? titleLink(item) : undefined
+const link = titleLink(item)
 ---
 
 <article class="article-item">
   <div class="article-item__inner">
-    <strong class="article-item__tag">{item?.primaryTag}</strong>
-    <a class="article-item__img-wrap" href={item?.path}>
+    <strong class="article-item__tag">{item.primaryTag}</strong>
+    <a class="article-item__img-wrap" href={item.path}>
       <div class="article-item__img">
-        {!item && (
-          <Fragment set:html="<!-- [html-validate-disable-next element-required-attributes: 複製したあと infinite-list.ts が src を入れる] -->" />
-        )}
         <img
-          src={item?.eyecatch}
+          src={item.eyecatch}
           width={EYECATCH_WIDTH}
           height={EYECATCH_HEIGHT}
           alt=""
@@ -33,16 +29,16 @@ const link = item ? titleLink(item) : undefined
     <h3 class="article-item__title">
       <a
         class="article-item__target"
-        href={link?.href}
-        target={link?.external ? '_blank' : undefined}
-        rel={link?.external ? 'noopener' : undefined}
+        href={link.href}
+        target={link.external ? '_blank' : undefined}
+        rel={link.external ? 'noopener' : undefined}
       >
-        {item?.title}
+        {item.title}
       </a>
     </h3>
     <p class="u-text-right">
-      <time class="article-item__time" datetime={item?.dateLabel}>
-        {item?.dateLabel}
+      <time class="article-item__time" datetime={item.dateLabel}>
+        {item.dateLabel}
       </time>
     </p>
   </div>

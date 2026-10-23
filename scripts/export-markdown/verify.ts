@@ -19,6 +19,7 @@ import {
   compare,
   intendedKinds,
   metrics,
+  navTitleDiff,
   parseHtml,
   renderMarkdown,
   unexplained,
@@ -56,25 +57,46 @@ function readPost(p: SnapshotPost): { fm: Frontmatter; md: string } {
   return { fm: parseYaml(m[1]), md: m[2] }
 }
 
-// 旧サイトの記事ページで h1 に表示されていたタイトル（ブラウザと同じく HTML の空白だけ詰める）
-function legacyTitle(p: SnapshotPost): string | null {
-  const file = path.join(
-    htmlDir,
-    p.type,
-    decodeURIComponent(p.slug),
-    'index.html',
-  )
-  if (!fs.existsSync(file)) return null
-  const m = fs
-    .readFileSync(file, 'utf8')
-    .match(/<h1 class="entry-head__title"[^>]*>([^<]*)<\/h1>/)
-  return m ? trimWhitespace(collapseWhitespace(decodeHTML(m[1]))) : null
+const display = (html: string) =>
+  trimWhitespace(collapseWhitespace(decodeHTML(html)))
+const pageHtml = (type: string, slug: string) => {
+  const file = path.join(htmlDir, type, slug, 'index.html')
+  return fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null
 }
 
-// HTML の空白ではない空白類（U+3000、U+202F、U+00A0 など）。表示される文字なので数が変わってはいけない
-const SPECIAL_SPACE = /[^\S \t\n\f\r]/gu
-const specialSpaces = (v: unknown) =>
-  [...decodeHTML(JSON.stringify(v ?? '')).matchAll(SPECIAL_SPACE)]
+// 旧サイトの記事ページで h1 に表示されていたタイトル（ブラウザと同じく HTML の空白だけ詰める）
+function legacyTitle(p: SnapshotPost): string | null {
+  const m = pageHtml(p.type, decodeURIComponent(p.slug))?.match(
+    /<h1 class="entry-head__title"[^>]*>([^<]*)<\/h1>/,
+  )
+  return m ? display(m[1]) : null
+}
+
+// 旧サイトの前後記事ナビに表示されていたタイトル。リンク先のパスごとに集める
+const legacyNavTitles = new Map<string, Set<string>>()
+for (const p of posts) {
+  if (p.source !== 'single') continue
+  const html = pageHtml(p.type, decodeURIComponent(p.slug)) ?? ''
+  const navs = html.matchAll(
+    /<a href="([^"]+)" class="entry-nav__target"[^>]*>[\s\S]*?<h3 class="entry-nav__title"[^>]*>([^<]*)<\/h3>/g,
+  )
+  for (const [, href, title] of navs) {
+    const k = decodeURIComponent(href)
+    if (!legacyNavTitles.has(k)) legacyNavTitles.set(k, new Set())
+    legacyNavTitles.get(k)!.add(display(title))
+  }
+}
+
+// 旧ナビと title の文字が違う記事と、違いの種類（README 4 章の「変わるところ」）
+const navTitleDiffs = new Map<string, string>()
+
+// 文字・数字・HTML の空白以外の文字（引用符、ダッシュ、記号、U+3000 や U+202F などの空白類）。
+// 旧データ（実体参照のまま）から frontmatter() と別の道筋で取り出し、数と種類が変わっていないかを見る
+const SYMBOL = /[^\p{L}\p{N} \t\n\f\r]/gu
+const symbols = (values: unknown[], decode: boolean) =>
+  values
+    .map((v) => String(v ?? ''))
+    .flatMap((v) => [...(decode ? decodeHTML(v) : v).matchAll(SYMBOL)])
     .map((m) => m[0])
     .sort()
     .join('')
@@ -105,18 +127,34 @@ function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
   // 上の照合は同じ frontmatter() との比較なので、旧データからの独立した照合も足す
   const title = legacyTitle(p)
   if (title !== null && fm.title !== title) fails.push('title-h1')
+  for (const nav of legacyNavTitles.get(postPath(p)) ?? []) {
+    const kinds = navTitleDiff(fm.title, nav)
+    if (!kinds) fails.push('nav-title')
+    else if (kinds.length) navTitleDiffs.set(key(p), kinds.join('+'))
+  }
   const rawTerms = p.terms?.[TAXONOMY[p.type]]
-  const pairs: [unknown, unknown][] = [
-    [p.title, fm.title],
-    [p.excerpt, fm.excerpt],
-    [p.fields?.['primary-tag'], fm.primaryTag],
+  const pairs: [unknown[], unknown[]][] = [
+    [[p.title], [fm.title]],
+    [
+      [
+        String(p.excerpt ?? '')
+          .replace(/<[^>]*>/g, '')
+          .replace(/\.\.more\s*$/, ''),
+      ],
+      [fm.excerpt],
+    ],
+    [[p.fields?.['primary-tag']], [fm.primaryTag]],
     [
       Array.isArray(rawTerms) ? rawTerms.map((t) => t.name) : [],
       fm.terms.map((t) => t.name),
     ],
   ]
-  if (pairs.some(([a, b]) => specialSpaces(a) !== specialSpaces(b)))
-    fails.push('special-space')
+  for (const [a, b] of pairs) {
+    if (symbols(a, true) !== symbols(b, false)) {
+      fails.push('symbols')
+      break
+    }
+  }
   return fails
 }
 
@@ -194,7 +232,7 @@ if (fromFiles) {
 const termFails: string[] = []
 if (fromFiles) {
   for (const [tax, list] of Object.entries(
-    buildTerms(posts.map(frontmatter)),
+    buildTerms(posts.map((p) => frontmatter(p))),
   )) {
     const file = JSON.parse(
       fs.readFileSync(path.join(termsDir(root), `${tax}.json`), 'utf8'),
@@ -228,7 +266,14 @@ for (const r of intendedOnly)
 for (const r of bad)
   console.log(`UNEXPLAINED: ${r.key} ${r.unexplained.join(',')}`)
 if (fromFiles) {
-  console.log(`frontmatter mismatches ${fmFails.length}`)
+  console.log(
+    `frontmatter mismatches ${fmFails.length} (h1 and old nav titles included)`,
+  )
+  const byKind: Record<string, number> = {}
+  for (const k of navTitleDiffs.values()) byKind[k] = (byKind[k] ?? 0) + 1
+  console.log(
+    `old nav titles differing from title (expected, README 4) ${navTitleDiffs.size} ${JSON.stringify(byKind)}`,
+  )
   for (const f of fmFails) console.log(`  ${f}`)
   console.log(
     `stray files ${strayFiles.length}${strayFiles.length ? `: ${strayFiles.join(' ')}` : ''}`,

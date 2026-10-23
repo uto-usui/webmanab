@@ -1,0 +1,413 @@
+{
+  "lab/circular-motion-with-depth/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/count-textarea/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/create-js-line-motion-trigonometric-sin/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/createjs-beat-motion-trigonometric/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/createjs-gravity-and-friction/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/createjs-node-motion/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/createjs-revolution-trigonometric/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/createjs-round-motion-trigonometric/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/css-background-clip-text/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/css-cube-animation/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/css-embed-images-scroll-the-screen-iphone6-outline-mockup/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/customize-easing-of-mouse-scroll/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/effects-to-youtube-videos/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/flex-responsive-table/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/give-speed-and-angle-as-separate-random-values/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/hover-effect-to-change-the-background-colo/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/hover-text-effect/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/jqueryui-simple-calender/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/move-a-node-with-springiness/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/move-an-object-while-drawing-a-circle/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/noise-glitch/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/parallax-distorts-by-following-mouse/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/parallax-shifting-divided-background-by-mouse/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-circle-at-the-mouse-position/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-circle/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-draw-countless-circles-draw-function/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-gradation-dot/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-line-and-point/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-random-square/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-random-walk/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-rect-in-a-circle/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-rect-spiral/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-square/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-star/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/processing-js-triangle/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/random-color-circle-createjs/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/random-color-square-createjs/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/rotate-elements-arranged-on-the-circumference/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/smooth-movement-using-sin-wave/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/star-random-color-createjs/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/star-rotate-animation-createjs/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/styling-input/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/toc/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/tweenmax-easing-of-scroll-parallax/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/tweenmax-visual-range-animation-class/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/vue-todo/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "lab/無限ループするニュースティッカー-『javascript』/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/ajax-function-php/index.html": {
+    "heading-level": 2
+  },
+  "tip/animation-sin-cos/index.html": {
+    "heading-level": 2
+  },
+  "tip/aquarelle/index.html": {
+    "heading-level": 1
+  },
+  "tip/auto-content-width/index.html": {
+    "heading-level": 2,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/brackets-file-tree-exclude/index.html": {
+    "heading-level": 1
+  },
+  "tip/control-random-values/index.html": {
+    "heading-level": 2,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/css-browser-selector/index.html": {
+    "heading-level": 1
+  },
+  "tip/css-ellipsis-mixin/index.html": {
+    "heading-level": 2,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/css-grid-for-ie/index.html": {
+    "heading-level": 3
+  },
+  "tip/css-hack/index.html": {
+    "heading-level": 2
+  },
+  "tip/css-selection/index.html": {
+    "heading-level": 1
+  },
+  "tip/default-value/index.html": {
+    "heading-level": 1
+  },
+  "tip/divide-retina/index.html": {
+    "heading-level": 1
+  },
+  "tip/docker-instant-php/index.html": {
+    "heading-level": 1
+  },
+  "tip/easy-instagram-feed/index.html": {
+    "heading-level": 1
+  },
+  "tip/ejs-basic/index.html": {
+    "heading-level": 1
+  },
+  "tip/ejs-json-object/index.html": {
+    "heading-level": 1
+  },
+  "tip/es6-jquery-this-undefined/index.html": {
+    "heading-level": 1
+  },
+  "tip/ffmpeg-mp4-to-mp3/index.html": {
+    "heading-level": 2
+  },
+  "tip/flex-grandson/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/github-toc/index.html": {
+    "heading-level": 1
+  },
+  "tip/gitlabci-ftp/index.html": {
+    "heading-level": 1
+  },
+  "tip/gulp-imagemin-2018/index.html": {
+    "heading-level": 3
+  },
+  "tip/hammer-js/index.html": {
+    "heading-level": 1
+  },
+  "tip/hide-toolbar/index.html": {
+    "heading-level": 1
+  },
+  "tip/htaccess-user-agent-allocation/index.html": {
+    "heading-level": 1
+  },
+  "tip/html5-basic/index.html": {
+    "heading-level": 3
+  },
+  "tip/html5-global/index.html": {
+    "element-permitted-content": 1,
+    "input-missing-label": 3
+  },
+  "tip/html5-responsive-image/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/javascript-augument-2015/index.html": {
+    "heading-level": 2
+  },
+  "tip/javascript-mouse-position/index.html": {
+    "heading-level": 2
+  },
+  "tip/javascript-object-about/index.html": {
+    "heading-level": 2
+  },
+  "tip/javascript-settimeout-jquery-queue/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/jquery-accordion/index.html": {
+    "heading-level": 1
+  },
+  "tip/macos-full-path-finder-head/index.html": {
+    "heading-level": 1
+  },
+  "tip/macos-gulp-init/index.html": {
+    "heading-level": 1
+  },
+  "tip/method-control/index.html": {
+    "heading-level": 3
+  },
+  "tip/mulch-border/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/os-x-el-capitan-appear-invisible-files/index.html": {
+    "heading-level": 1
+  },
+  "tip/particler/index.html": {
+    "heading-level": 1
+  },
+  "tip/perfect-scrollbar/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/placeholder/index.html": {
+    "heading-level": 1
+  },
+  "tip/regular-expression-including-a-new-line/index.html": {
+    "heading-level": 1
+  },
+  "tip/resposive-background/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/sass-pickup/index.html": {
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/scroll-box-animation/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/sips/index.html": {
+    "heading-level": 1
+  },
+  "tip/static-random-gradation-color-for-updating-random-values-at-compile-time/index.html": {
+    "heading-level": 1
+  },
+  "tip/svg-height/index.html": {
+    "heading-level": 1
+  },
+  "tip/terminal-alias/index.html": {
+    "heading-level": 1
+  },
+  "tip/transition/index.html": {
+    "element-permitted-content": 1,
+    "heading-level": 3
+  },
+  "tip/url-query-action/index.html": {
+    "heading-level": 1
+  },
+  "tip/user-agent-check/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  },
+  "tip/viewport/index.html": {
+    "heading-level": 1
+  },
+  "tip/vue-vuex/index.html": {
+    "heading-level": 2
+  },
+  "tip/wordpress-admin-thumb-id/index.html": {
+    "heading-level": 1
+  },
+  "tip/wordpress-body-class/index.html": {
+    "heading-level": 1
+  },
+  "tip/wordpress-excerpt-test/index.html": {
+    "heading-level": 1
+  },
+  "tip/wordpress-get_template_part/index.html": {
+    "heading-level": 2
+  },
+  "tip/wordpress-rest-api/index.html": {
+    "heading-level": 1
+  },
+  "tip/wordpress-rss-cpt/index.html": {
+    "heading-level": 1
+  },
+  "tip/youtube-responsive-css/index.html": {
+    "heading-level": 1,
+    "attribute-allowed-values": 1,
+    "no-deprecated-attr": 1
+  }
+}

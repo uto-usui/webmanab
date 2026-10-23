@@ -1,0 +1,340 @@
+   <style>
+.ex01 {
+    position: relative;
+    margin: 1em;
+    display: inline-block;
+ }
+.ex01::after {
+    display: block;
+    width: 200%;
+    padding: .2em .8em;
+    content: attr(title);
+    top: calc(100% + 15px);
+    font-size: 12px;
+    color: hsla(200, 40%, 5%, 0.5);
+    background-color:hsla(200, 40%, 90%, 0.3);
+}
+.ex01::before {
+    top: 100%;
+    content: \'\';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent hsla(200, 40%, 90%, 0.3) transparent;
+}
+.ex01::after, .ex01::before {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    transition: .4s;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.ex01:hover::after, .ex01:hover::before {
+    opacity: 1;
+}
+</style>
+<p>グローバル属性とは、すべての要素に共通して指定できる属性です。<br>
+HTML5以前は「ほとんど全ての要素に使用可能」と定義されているものはありましたが、「全て」と定義されている属性はありませんでした。<br>
+HTML5で新しく定義されたのは、<strong>「hidden」「translate」「spellcheck」「contenteditable」</strong>です。</p>
+
+<h2 id="a0">主なグローバル属性</h2>
+
+<h3 id="a00">class</h3>
+
+<p>CSSでおなじみの<code>class</code>属性は、指定した要素が属する種類や分類を示すための属性です。<br>
+名前は空白文字で区切って記述することができ、連続して複数を記述することができます。<br>
+先頭、末尾の前後に空白が挿入されていても問題ありません。<br>
+値を空のままにしておくことも可能です。</p>
+
+<h4 id="html">html</h4>
+
+<pre class="hljs javascript"><code class="html">
+&#x3C;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"ex1 ex2 ex3"</span>>&#x3C;/div>
+<span class="xml"><span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">" zoro sanji nami "</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span></span>
+<span class="xml"><span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"325"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span></span>
+<span class="xml"><span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">""</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span></span>
+</code></pre>
+
+<h3 id="a01">id</h3>
+
+<p>javascriptで取り扱うことの多い<code>id</code>属性は、<strong>指定した要素に固有の名前を与えるための属性</strong>です。<br>
+「固有」なので、同じページ内で他の属性に同じ値を指定することができません。<br>
+アンカーリンクの指定や、特定の要素１つを対象にしたい場合に使用します。</p>
+
+<p><code>class</code>とは違い<code>id</code>は、空白文字を含むことができず、値を空にすることはできません。</p>
+
+<h4 id="html-1">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sanji"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"0302"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span>
+</code></pre>
+
+<h3 id="a02">lang</h3>
+
+<p>lang属性は、<strong>要素内容と属性値の言語の種類を示す属性</strong>です。<br>
+値は、「BCP47」という使用で定義されている言語タグを記述します。</p>
+
+<p>文書全体の言語がわかるように、<code>html</code>要素」に<code>lang</code>属性を指定すつことが推奨されています。</p>
+
+<h4 id="html-2">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-meta">&#x3C;!doctype <span class="hljs-meta-keyword">html</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">head</span>></span>
+    <span class="hljs-tag">&#x3C;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>></span>
+    <span class="hljs-tag">&#x3C;<span class="hljs-name">title</span>></span>Document<span class="hljs-tag">&#x3C;/<span class="hljs-name">title</span>></span>
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">head</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">body</span>></span>
+    
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">body</span>></span>
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">html</span>></span>
+
+</code></pre>
+
+<h3 id="a03">title</h3>
+
+<p>title属性は要素に<strong>関連する補助的な案内や補足情報を示すための属</strong>です。<br>
+通常はブラウザでマウスオーバーしたときのツールチップとして表示されます。</p>
+
+<p><code>content</code>を使って自作ツールチップもいいかも。</p>
+
+<p><a class="ex01" href="kid.html" title="ユースタス・キャプテン・キッドの情報ページ">ユースタス屋</a></p>
+
+<h4 id="css">css</h4>
+
+<pre class="hljs yaml"><code class="css">
+<span class="hljs-string">.ex01</span> {
+    <span class="hljs-attr">position:</span> <span class="hljs-string">relative;</span>
+    <span class="hljs-attr">margin:</span> <span class="hljs-string">1em;</span>
+    <span class="hljs-attr">display:</span> <span class="hljs-string">inline-block;</span>
+ }
+<span class="hljs-string">.ex01::after</span> {
+    <span class="hljs-attr">display:</span> <span class="hljs-string">block;</span>
+    <span class="hljs-attr">width:</span> <span class="hljs-number">200</span><span class="hljs-string">%;</span>
+    <span class="hljs-attr">padding:</span> <span class="hljs-string">.2em</span> <span class="hljs-string">.8em;</span>
+    <span class="hljs-attr">content:</span> <span class="hljs-string">attr(title);</span>
+    <span class="hljs-attr">top:</span> <span class="hljs-string">calc(100%</span> <span class="hljs-string">+</span> <span class="hljs-string">15px);</span>
+    <span class="hljs-attr">font-size:</span> <span class="hljs-string">12px;</span>
+    <span class="hljs-attr">color:</span> <span class="hljs-string">hsla(200</span>, <span class="hljs-number">40</span><span class="hljs-string">%</span>, <span class="hljs-number">5</span><span class="hljs-string">%</span>, <span class="hljs-number">0.5</span><span class="hljs-string">);</span>
+    <span class="hljs-string">background-color:hsla(200</span>, <span class="hljs-number">40</span><span class="hljs-string">%</span>, <span class="hljs-number">90</span><span class="hljs-string">%</span>, <span class="hljs-number">0.3</span><span class="hljs-string">);</span>
+}
+<span class="hljs-string">.ex01::before</span> {
+    <span class="hljs-attr">top:</span> <span class="hljs-number">100</span><span class="hljs-string">%;</span>
+    <span class="hljs-attr">content:</span> <span class="hljs-string">\'\';</span>
+    <span class="hljs-attr">width:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+    <span class="hljs-attr">height:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+    <span class="hljs-attr">border-style:</span> <span class="hljs-string">solid;</span>
+    <span class="hljs-attr">border-width:</span> <span class="hljs-number">0</span> <span class="hljs-string">15px</span> <span class="hljs-string">15px</span> <span class="hljs-string">15px;</span>
+    <span class="hljs-attr">border-color:</span> <span class="hljs-string">transparent</span> <span class="hljs-string">transparent</span> <span class="hljs-string">hsla(200</span>, <span class="hljs-number">40</span><span class="hljs-string">%</span>, <span class="hljs-number">90</span><span class="hljs-string">%</span>, <span class="hljs-number">0.3</span><span class="hljs-string">)</span> <span class="hljs-string">transparent;</span>
+}
+<span class="hljs-string">.ex01::after,</span> <span class="hljs-string">.ex01::before</span> {
+    <span class="hljs-attr">position:</span> <span class="hljs-string">absolute;</span>
+    <span class="hljs-attr">left:</span> <span class="hljs-number">50</span><span class="hljs-string">%;</span>
+    <span class="hljs-attr">opacity:</span> <span class="hljs-number">0</span><span class="hljs-string">;</span>
+    <span class="hljs-attr">transition:</span> <span class="hljs-string">.4s;</span>
+    <span class="hljs-string">-webkit-transform:</span> <span class="hljs-string">translateX(-50%);</span>
+    <span class="hljs-attr">transform:</span> <span class="hljs-string">translateX(-50%);</span>
+}
+<span class="hljs-string">.ex01:hover::after,</span> <span class="hljs-string">.ex01:hover::before</span> {
+    <span class="hljs-attr">opacity:</span> <span class="hljs-number">1</span><span class="hljs-string">;</span>
+}
+</code></pre>
+
+<h3 id="a04">dir(列挙属性)</h3>
+
+<p>dir属性は、要素内容の<strong>テキストを表記する方向を示す属性</strong>です。<br>
+値にはキーワードが用意されていて、「ltf(left to right)」左から右と「rtl(right to left)」右から左、またはautoを指定します。</p>
+
+<h3 id="a05">tabindex</h3>
+
+<p>tabindex属性は<strong>tabキーによるフォーカスの移動順序</strong>を指定します。<br>
+tabindex属性を指定すると、フォーカス不可要素もフォーカスできるようになります。</p>
+
+<p><input type="text" tabindex="100" placeholder="tabindex=100"><br><input type="text" tabindex="300" placeholder="tabindex=300"><br><input type="text" tabindex="200" placeholder="tabindex=200"></p>
+
+<h4 id="順序の決まり">順序の決まり</h4>
+
+<p>値には、整数を記述します。</p>
+
+<ul>
+<li>0以上…tabキーのフォーカス順序は値の小さい順になります。「1、2、3」</li>
+
+<li>0以下(負の値)…tabキーのフォーカス移動ができなくなります。</li>
+
+<li>0…0以上の値が指定された要素の後に続きます。「1、2、3、0」</li>
+
+<li>指定していない要素…0に続きます。「1、2、3、4、0、指定していない要素」</li>
+
+<li>とびとびの値…値は連番である必要はありません。「1、5、8、190、0」</li>
+
+<li>複数に同じ数値…DOMの順にならいます。</li>
+
+</ul>
+
+<h3 id="a06">style</h3>
+
+<p>style属性は要素の表示方法を指定します。値にはcssのプロパティと値を記述します。<br>
+<strong>コンテンツの表示/非表示に使用するのは非準拠</strong>です。(hiddenをつかう)</p>
+
+<h4 id="html-3">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size: 115%;"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span>
+</code></pre>
+
+<h3 id="a07">accesskey</h3>
+
+<p>accesskey属性は要素に<strong>キーボードからアクセスするためのショートカット</strong>を割り当てます。<br>
+アクセスした後のアクションは、リンク先を開いたり、入力欄の選択やコマンドの実行などです。</p>
+
+<p>大文字と小文字は区別され、空白文字で区切って複数指定ができます。</p>
+
+<h4 id="html-4">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"bellamy.html"</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"B"</span>></span>ベラミーの成長日記<span class="hljs-tag">&#x3C;/<span class="hljs-name">a</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"bepo.html"</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"b"</span>></span>ベポのアイアイ<span class="hljs-tag">&#x3C;/<span class="hljs-name">a</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"sanji_zoro.html"</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"s z"</span>></span>まりもとぐるまゆ<span class="hljs-tag">&#x3C;/<span class="hljs-name">a</span>></span>
+</code></pre>
+
+<p>ただしブラウザによって操作が異なる場合があるので、広く一般的な実装には向いていません。</p>
+
+<h2 id="a1">HTML5から追加されたグローバル属性</h2>
+
+<p>HTML5から定義された新しい属性たちです。</p>
+
+<h3 id="a10">hidden(論理属性)</h3>
+
+<p>hidden属性は<strong>関連性がない</strong>ことを示します。<br>
+「非表示」という意味や「隠す」といった目的で使用することはできません。</p>
+
+<h4 id="html-5">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">label</span>></span>
+    <span class="hljs-tag">&#x3C;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"zoro"</span>></span>
+    onigiri
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">label</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">label</span>></span>
+    <span class="hljs-tag">&#x3C;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"zoro"</span>></span>
+    sanzensekai
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">label</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bad"</span> <span class="hljs-attr">hidden</span>></span>それくらいじゃむりでしょう<span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ok"</span> <span class="hljs-attr">hidden</span>></span>それならたおせますね<span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span>
+</code></pre>
+
+<h3 id="a11">translate(列挙属性)</h3>
+
+<p><code>translate</code>属性は、<strong>要素内テキストの翻訳の可否</strong>を指定できます。<br>
+ブラウザが翻訳してくれる際に、文章的に翻訳されてしまうとおかしくなってしまう箇所(ソースコードや固有名詞)などに指定します。</p>
+
+<ul>
+<li>yes…翻訳の対象になります(初期値)</li>
+
+<li>no…翻訳の対象外になります</li>
+
+</ul>
+
+<h4 id="html-6">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">p</span>></span>うるせえ...<span class="hljs-tag">&#x3C;<span class="hljs-name">span</span> <span class="hljs-attr">translate</span>=<span class="hljs-string">"no"</span>></span>鬼斬り-onigiri-<span class="hljs-tag">&#x3C;/<span class="hljs-name">span</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span>
+</code></pre>
+
+<h3 id="a12">spellcheck(列挙属性)</h3>
+
+<p><strong>スペル及び文法チェックの有無</strong>を指定します。<br>
+挙動については定義されておらず、ブラウザごとに異なります。</p>
+
+<ul>
+<li>ture…チェックをする</li>
+
+<li>false…チェックしない</li>
+
+</ul>
+
+<h3 id="a13">contenteditable(列挙属性)</h3>
+
+<p>contenteditable属性を指定すると、<strong>要素が編集可能になります</strong>。<br>
+編集後の保存や印刷が可能になります。</p>
+
+<ul>
+<li>true…編集可能</li>
+
+<li>false…編集不可</li>
+
+</ul>
+
+<h3 id="a14">カスタムデータ属性「data-*」</h3>
+
+<p>カスタムデータ属性とは使用するのに適当な属性がないときや、<strong>独自のデータを追加したいときに、任意の要素に独自の属性を追加できる</strong>ように用意されています。<br>
+属性名は「data-」という接頭語をつけ、任意の１文字以上を続けて記述します。</p>
+
+<p>１つの要素に属性はいくつでも指定でき、属性名にはアルファベットの大文字を記述することができません。</p>
+
+<h4 id="html-7">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">data-devil</span>=<span class="hljs-string">"5656"</span>></span>straw hat<span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span>
+</code></pre>
+
+<h2 id="a2">WAI-ARIA関連属性</h2>
+
+<p>HTML5では「WAI-ARIA」という別の仕様で定義されている「role属性」「aria-**<em>属性」を任意に指定することができます。<br>
+「WAI-ARIA」</em>動的なコンテンツや、複雑なインターフェースを持つサイトやアプリをアクセシブルにするための仕様です。</p>
+
+<h3 id="a20">role</h3>
+
+<p>role属性は、要素の<strong>役割がなんであるのかを示すために使用される属性</strong>です。<br>
+例えばリストで<code>navigation</code>と指定するなど、用途を明確化するために指定します。</p>
+
+<h3 id="a21">aria-***</h3>
+
+<p>aria-***属性は要素のその時点での状態や特性を示すための属性です。</p>
+
+<h4 id="html-8">html</h4>
+
+<pre class="hljs typescript"><code class="html">
+&#x3C;input <span class="hljs-keyword">type</span>=<span class="hljs-string">"radio"</span> aria-checked=<span class="hljs-string">"true"</span>>
+&#x3C;input <span class="hljs-keyword">type</span>=<span class="hljs-string">"radio"</span> aria-checked=<span class="hljs-string">"false"</span>>
+</code></pre>
+
+<h2 id="a3">列挙属性と論理属性</h2>
+
+<p>属性の性質について書いておきます。</p>
+
+<h3 id="a30">列挙属性</h3>
+
+<p>列挙属性とは、<strong>あらかじめ決められたキーワードの中から値を選択する属性</strong>です。<br>
+キーワードは大文字/小文字を問いません。<br>
+列挙属性は値を空文字指定できるものもあり、指定すると初期値に設定されます。</p>
+
+<h4 id="html-9">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span>></span><span class="hljs-tag">&#x3C;<span class="hljs-name">p</span> <span class="hljs-attr">translate</span>=<span class="hljs-string">"NO"</span>></span>鬼斬り-onigiri-<span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span>></span><span class="hljs-tag">&#x3C;<span class="hljs-name">p</span> <span class="hljs-attr">translate</span>=<span class="hljs-string">"no"</span>></span>鬼斬り-onigiri-<span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span>></span><span class="hljs-tag">&#x3C;<span class="hljs-name">p</span> <span class="hljs-attr">translate</span>=<span class="hljs-string">""</span>></span>鬼斬り-onigiri-<span class="hljs-tag">&#x3C;/<span class="hljs-name">p</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>  //yesの値
+</code></pre>
+
+<h3 id="a31">論理属性</h3>
+
+<p>論理属性とは、<strong>属性名だけで指定できる属性</strong>です。<br>
+属性を指定すると、値が真(true)になり、指定していないと偽(false)になります。<br>
+値を指定して記述することもでき「属性名=”属性名”」、値を空で記述することも可能です。</p>
+
+<h4 id="html-10">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">span</span> <span class="hljs-attr">hidden</span>=<span class="hljs-string">""</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">span</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">span</span> <span class="hljs-attr">hidden</span>=<span class="hljs-string">"hidden"</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">span</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">span</span> <span class="hljs-attr">hidden</span>></span><span class="hljs-tag">&#x3C;/<span class="hljs-name">span</span>></span>
+</code></pre>
+
+<p>おわります。</p>
+
+  

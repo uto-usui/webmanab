@@ -1,0 +1,93 @@
+   <p>Dart Sass がとても便利なのを知り、最近導入しました。Ruby Sass / Node Sass と使ってきましたが、Ruby Sass は開発環境に Ruby ないとだめだし、Node Sass はローカルの Node のバージョンに依存するからキャッシュクリアしないといけなかったりが面倒だったので、その辺りも解消できてる Dart Sass がいいかんじです。</p>
+
+<p>リリースされたのは随分前ですが。ちょっと機会がなかったので。</p>
+
+<ul>
+<li><a href="https://sass-lang.com/blog/dart-sass-100-is-released" target="_blank" rel="noopener">Sass: Dart Sass 1.0.0 is Released</a></li>
+
+</ul>
+
+<p>Nuxt での導入方法です。</p>
+
+<h2 id="a0">インストール</h2>
+
+<p>nuxt-create-app とかで作ったものなど、既存の Nuxt プロジェクトに sass をインストールします。fibers というパッケージも合わせてインストールします。</p>
+
+<pre class="hljs"><code class="bath">
+yarn add --dev sass fibers
+
+</code></pre>
+
+<p>fibers はコンパイルの高速化のために必要らしいです。</p>
+
+<blockquote>
+<p>To avoid this performance hit, render() can use the fibers package to call asynchronous importers from the synchronous code path.</p>
+
+</blockquote>
+
+<ul>
+<li><a href="https://sass-lang.com/dart-sass" target="_blank" rel="noopener">Sass: Dart Sass</a></li>
+
+</ul>
+
+<h2 id="a1">Nuxt.config.js への設定</h2>
+
+<p>Nuxt.config.js へ webpack の loader 設定を記述します。</p>
+
+<pre class="hljs typescript"><code class="js">
+<span class="hljs-keyword">import</span> Fiber <span class="hljs-keyword">from</span> ‘fibers’
+<span class="hljs-keyword">import</span> Sass <span class="hljs-keyword">from</span> ‘sass’
+
+<span class="hljs-keyword">const</span> sass = {
+  implementation: Sass,
+  sassOptions: {
+    fiber: Fiber,
+  },
+}
+
+<span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span> = {
+  build: {
+    loaders: {
+      scss,
+    },
+  }
+}
+
+</code></pre>
+
+<p>Nuxt では以上の設定だけで Dart Sass を利用できます。記述は基本いつもどうりで大丈夫です。</p>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">“scss”</span> <span class="hljs-attr">scoped</span>></span>
+.el {
+  color: $black;
+}
+<span class="hljs-tag">&#x3C;/<span class="hljs-name">style</span>></span>
+
+</code></pre>
+
+<h3 id="a10">deep セレクタ対応</h3>
+
+<p>ただし、Vue の独自セレクタである <code>/deep/</code> と <code>>>></code> が使えなくなりました。<code>v-html</code> ディレクティブで動的にやってきた DOM に、 scoped 配下のスタイルを与えたいときに使うセレクタですね。</p>
+
+<p>これには <code>::v-deep</code> のみが利用できるので、<code>/deep/</code> か <code>>>></code>　を使っている場合は書き換えていく必要があります。</p>
+
+<p>また、<code>::v-deep</code> は stylelint を使っている場合、エラー対象になることもあるので、次のようにエスケープしてやるとよいでしょう。</p>
+
+<pre class="hljs typescript"><code class="js">
+<span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span> = {
+  rules: {
+    <span class="hljs-string">'selector-pseudo-element-no-unknown'</span>: [
+      <span class="hljs-literal">true</span>,
+      {
+        ignorePseudoElements: [<span class="hljs-string">'v-deep'</span>]
+      }
+    ]
+  },
+}
+
+</code></pre>
+
+<p>おわります。</p>
+
+  
