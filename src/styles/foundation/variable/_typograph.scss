@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+$base-fontsize: 16px !default;
+$base-fontweight: 400 !default;
+
+// 縦のリズム（$line-height-unit）は _modular-scale.scss の既定値で持つ
+$font-size-l7: math.div(1rem * 8, 1) !default;
+$font-size-l6: math.div(1rem * 8, 2) !default;
+$font-size-l5: math.div(1rem * 8, 3) !default;
+$font-size-l4: math.div(1rem * 8, 4) !default;
+$font-size-l3: math.div(1rem * 8, 5) !default;
+$font-size-l2: math.div(1rem * 8, 6) !default;
+$font-size-l1: math.div(1rem * 8, 7) !default;
+$font-size-m: 1rem !default;
+$font-size-s1: math.div(1rem * 8, 9) !default;
+$font-size-s2: math.div(1rem * 8, 10) !default;
+$space-unit: 1rem * 0.4 !default;
+$space-1: $space-unit * 2 !default;
+$space-2: $space-unit * 3 !default;
+$space-3: $space-unit * 5 !default;
+$space-4: $space-unit * 8 !default;
+$space-5: $space-unit * 13 !default;
+$space-6: $space-unit * 21 !default;
+$space-7: $space-unit * 34 !default;
+$space-8: $space-unit * 55 !default;
+$space-9: $space-unit * 89 !default;
+$space-10: $space-unit * 144 !default;
+$space-11: $space-unit * 233 !default;
+
+// フォント名の大文字小文字は保つ（BlinkMacSystemFont は Chromium が名前で見分ける）
+// stylelint-disable value-keyword-case
+$font-sans-serif:
+  'Open Sans',
+  -apple-system,
+  BlinkMacSystemFont,
+  '游ゴシック体',
+  'Yu Gothic',
+  YuGothic,
+  'ヒラギノ角ゴ Pro W3',
+  'Hiragino Kaku Gothic Pro',
+  'メイリオ',
+  Meiryo,
+  'Helvetica Neue',
+  Helvetica,
+  Arial,
+  'ＭＳ Ｐゴシック',
+  'MS PGothic',
+  sans-serif;
+$font-mono: 'Source Code Pro', monospace !default;

@@ -1,9 +1,7 @@
 pnpm-lock.yaml
-dist/
-dist-catalog/
+/dist/
+/dist-catalog/
 .astro/
 docs/
 src/content/posts/
 test/fixtures/
-# 旧 SCSS。手順 2 で src/styles に移す
-assets/

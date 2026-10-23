@@ -1,4 +1,6 @@
+import { satteri } from '@astrojs/markdown-satteri'
 import { defineConfig, envField } from 'astro/config'
+import { hastPlugins, markdownFeatures } from './src/lib/markdown/index.mjs'
 
 // astro.config は .env を自動では読まない。process.env にすでにある値は上書きされない
 try {
@@ -19,6 +21,11 @@ export default defineConfig({
   compressHTML: true,
   scopedStyleStrategy: 'attribute',
   prerenderConflictBehavior: 'error',
+  markdown: {
+    // コードの色は hljs プラグインで旧サイトと同じ highlight.js 10.1.1 を当てる。Shiki / Prism は使わない
+    syntaxHighlight: false,
+    processor: satteri({ features: markdownFeatures, hastPlugins }),
+  },
   env: {
     schema: {
       PUBLIC_GA4_ID: envField.string({
@@ -31,6 +38,18 @@ export default defineConfig({
         access: 'public',
         optional: true,
       }),
+    },
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 旧 Nuxt の style-resources と同じく、全部の SCSS の先頭に変数と mixin を足す
+          additionalData: `@import "/src/styles/foundation/variable/_variable.scss", "/src/styles/foundation/mixin/_mixin.scss";\n`,
+          // @use への書き換えは見た目の確認が済んでから別の作業で行う
+          silenceDeprecations: ['import'],
+        },
+      },
     },
   },
 })

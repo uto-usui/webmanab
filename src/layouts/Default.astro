@@ -1,0 +1,42 @@
+---
+import '../styles/global.scss'
+import Bar from '../components/Bar.astro'
+import Header from '../components/Header.astro'
+import Menu from '../components/Menu.astro'
+
+interface Props {
+  title: string
+  // 旧サイトの route 名（index、tip-id など）。CSS では使わず、旧サイトとの computed style の比較でキーをそろえるためのもの
+  routeName?: string
+}
+
+const { title, routeName } = Astro.props
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {/* css2 の API にすると届くフォントファイルが変わるので、旧サイトの URL のまま */}
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Source+Code+Pro"
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class:list={['default-layout', routeName]}>
+      {/* Bar は .bar:nth-of-type で上下左右を決めるので、この div の最初の 4 つの div にする */}
+      <Bar />
+      <Bar />
+      <Bar />
+      <Bar />
+      <Header />
+      <slot />
+      <Menu />
+    </div>
+  </body>
+</html>

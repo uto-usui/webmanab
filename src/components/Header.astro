@@ -1,0 +1,134 @@
+---
+const links = [
+  { label: 'tip', href: '/tip/' },
+  { label: 'clip', href: '/clip/' },
+  { label: 'lab', href: '/lab/' },
+  { label: 'about', href: '/' },
+]
+const current = (href: string) =>
+  Astro.url.pathname === href ? 'page' : undefined
+---
+
+<header class="header">
+  <div class="header__inner">
+    <h1 class="header__title">
+      <a href="/" aria-current={current('/')}>
+        webmanab.html
+      </a>
+    </h1>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        {links.map(({ label, href }) => (
+          <li class="header__nav-item">
+            <a
+              class="header__nav-target"
+              href={href}
+              aria-current={current(href)}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  import '../scripts/header-fixed'
+</script>
+
+<style lang="scss" is:global>
+  .header {
+    position: relative;
+  }
+
+  .header__inner {
+    padding-top: space-scalar(4);
+    padding-right: space-scalar(4);
+    padding-left: space-scalar(4);
+
+    @include tablet {
+      padding: space-scalar(8);
+    }
+
+    @include desktop {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: space-scalar(14);
+      padding-right: space-scalar(10);
+      padding-left: space-scalar(10);
+    }
+
+    &.is-fixed {
+      position: fixed;
+      height: 40px;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  .header__title {
+    margin-top: $space-6;
+    margin-bottom: $space-2;
+
+    > a {
+      display: inline-block;
+      font-weight: 600;
+      color: $glay;
+      transform-origin: left center;
+      transition: transform 0.3s $easeInOutSine;
+
+      @include sizes(4);
+
+      .header.is-fixed & {
+        transform: scale(0.85);
+      }
+    }
+
+    @include desktop {
+      padding-left: space-scalar(6);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .header__nav {
+    @include desktop {
+      padding-right: calc(#{space-scalar(10)} + #{space-scalar(16)});
+    }
+  }
+
+  .header__nav-list {
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  .header__nav-item {
+    + .header__nav-item {
+      margin-left: space-scalar(10);
+
+      @include desktop {
+        margin-left: space-scalar(12);
+      }
+    }
+  }
+
+  .header__nav-target {
+    font-style: italic;
+    color: $glay;
+
+    @include sizes(1);
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+// 中身は「share <br />ー」の形で渡す。line-height が 1 のままなので「ー」が短い横線に見える
+---
+
+<h3 class="title2">
+  <slot />
+</h3>
+
+<style lang="scss">
+  .title2 {
+    padding-left: 0.2rem;
+    font-style: italic;
+    color: $glay;
+    text-align: left;
+    letter-spacing: 0.1em;
+
+    @include sizes(-1);
+
+    @include tablet {
+      padding-left: 0.4rem;
+      margin-bottom: 1rem;
+
+      @include sizes(2);
+    }
+  }
+</style>
