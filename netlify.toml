@@ -1,0 +1,22 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  # canonical / OGP / sitemap / RSS / robots.txt の絶対 URL のもと。プレビューでも本番の URL を使う
+  SITE_URL = "https://webmanab.netlify.app"
+
+# 広告と GA4 は本番だけ。値がないとタグを出さない作りにしてある
+[context.production.environment]
+  PUBLIC_ADSENSE_CLIENT = "ca-pub-2691922878827958"
+  # PUBLIC_GA4_ID = "G-XXXXXXXXXX"  # ID を用意したら有効にする
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

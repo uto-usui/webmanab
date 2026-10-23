@@ -1,0 +1,29 @@
+# 公開から 14 日たっていない版は入れない（分単位）
+minimumReleaseAge: 20160
+minimumReleaseAgeExclude:
+  # Astro 7.4 系とその推移的な依存。7.4.0 が 14 日を過ぎる 10/29 以降、PR の前に外す
+  - astro
+  - '@astrojs/*'
+  - vite
+  - rolldown
+  - '@rolldown/*'
+  - '@oxc-project/*'
+  - postcss@8.5.31
+  - zod@4.6.7
+  - p-queue@9.3.5
+  - smol-toml@1.9.1
+  - unifont@1.0.3
+  # Playwright は基準スクリーンショットと同じ Chromium で比べるため 1.64.1 に固定
+  - playwright
+  - playwright-core
+  - '@playwright/test'
+# pnpm 10 は allowBuilds を読まない（11 から）。10 の書き方で許可と拒否を分ける
+onlyBuiltDependencies:
+  - sharp
+ignoredBuiltDependencies:
+  # sass の watch 用。ビルドでは使わない
+  - '@parcel/watcher'
+auditConfig:
+  ignoreGhsas:
+    # stylelint > micromatch > braces。修正版がまだなく、lint でしか使わない
+    - GHSA-vfj7-8cjw-p6xm
