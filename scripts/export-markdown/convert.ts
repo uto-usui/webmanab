@@ -12,6 +12,7 @@ import remarkGfm from 'remark-gfm'
 import remarkStringify from 'remark-stringify'
 import { unified } from 'unified'
 import { SKIP, visit } from 'unist-util-visit'
+import { isBlank } from './whitespace.ts'
 
 // 変換で落としたもの・書き方を変えたもの・意図して直したものの記録
 export type Note =
@@ -42,7 +43,7 @@ const OLD_POST =
 
 const isElement = (n: unknown): n is Element =>
   typeof n === 'object' && n !== null && (n as Element).type === 'element'
-const isBlank = (n: ElementContent) => n.type === 'text' && !n.value.trim()
+const isBlankText = (n: ElementContent) => n.type === 'text' && isBlank(n.value)
 const str = (v: unknown) => (v == null ? '' : String(v))
 const classList = (n: Element) =>
   Array.isArray(n.properties.className)
@@ -168,7 +169,7 @@ function prepare(
         parent &&
         index !== undefined &&
         node.tagName === 'p' &&
-        node.children.every(isBlank)
+        node.children.every(isBlankText)
       ) {
         parent.children.splice(index, 1)
         return [SKIP, index]
@@ -196,7 +197,7 @@ function handlers(notes: Note[], fixes: boolean): Record<string, Handle> {
       return result
     },
     p(state, node) {
-      const kids = node.children.filter((c) => !isBlank(c))
+      const kids = node.children.filter((c) => !isBlankText(c))
       // デモ用の <style>（tip/html5-global、tip/transition）。p で包む意味はないので外す
       if (
         fixes &&

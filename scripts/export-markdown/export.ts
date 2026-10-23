@@ -19,6 +19,7 @@ import {
 } from './paths.ts'
 import { loadSnapshot, postPath } from './snapshot.ts'
 import { buildTerms } from './terms.ts'
+import { isBlank } from './whitespace.ts'
 
 const { values: args } = parseArgs({
   options: {
@@ -78,7 +79,7 @@ for (const r of report)
   for (const n of r.notes) counts[n.kind] = (counts[n.kind] ?? 0) + 1
 const summary = {
   posts: posts.length,
-  withoutBody: posts.filter((p) => !p.content?.trim()).length,
+  withoutBody: posts.filter((p) => isBlank(p.content ?? '')).length,
   fromListPage: posts
     .filter((p) => p.source === 'list')
     .map((p) => `${p.type}/${decodeURIComponent(p.slug)}`),

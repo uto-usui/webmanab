@@ -7,6 +7,12 @@ import { markdownToHtml } from 'satteri'
 import { unified } from 'unified'
 import { SKIP, visit } from 'unist-util-visit'
 import type { Note } from './convert.ts'
+import {
+  collapseWhitespace,
+  isBlank,
+  removeWhitespace,
+  trimWhitespace,
+} from './whitespace.ts'
 
 export const parseHtml = (html: string): Root =>
   unified().use(rehypeParse, { fragment: true }).parse(html)
@@ -20,7 +26,7 @@ export function renderMarkdown(md: string): Root {
 }
 
 const isElement = (n: Nodes): n is Element => n.type === 'element'
-const norm = (s: string) => s.replace(/\s+/g, ' ').trim()
+const norm = (s: string) => trimWhitespace(collapseWhitespace(s))
 const classOf = (n: Element) =>
   Array.isArray(n.properties.className) ? n.properties.className.join(' ') : ''
 const codeOf = (pre: Element) =>
@@ -59,7 +65,7 @@ const isImageOnlyP = (n: Nodes) =>
   n.children.some((c) => isElement(c) && c.tagName === 'img') &&
   n.children.every(
     (c) =>
-      (c.type === 'text' && !c.value.trim()) ||
+      (c.type === 'text' && isBlank(c.value)) ||
       (isElement(c) && c.tagName === 'img'),
   )
 
@@ -153,7 +159,7 @@ export function metrics(tree: Root, side: Side): Metrics {
   })
   const text = toText(noPre)
   m.textStrict = norm(text)
-  m.textLoose = text.replace(/\s+/g, '')
+  m.textLoose = removeWhitespace(text)
   return m
 }
 
@@ -163,7 +169,7 @@ function canon(tree: Root, side: Side): string {
   const original = side === 'original'
   const out: string[] = []
   const walk = (n: Nodes) => {
-    if (n.type === 'text') return void out.push(n.value.replace(/\s+/g, ' '))
+    if (n.type === 'text') return void out.push(collapseWhitespace(n.value))
     if (n.type === 'comment') return
     if (!isElement(n)) {
       if ('children' in n) n.children.forEach(walk)
@@ -196,7 +202,7 @@ function canon(tree: Root, side: Side): string {
   walk(tree)
   return out
     .join('')
-    .replace(/\s*(<[^>]+>)\s*/g, '$1')
+    .replace(/[ \t\n\f\r]*(<[^>]+>)[ \t\n\f\r]*/g, '$1')
     .replaceAll('<p></p>', '')
 }
 

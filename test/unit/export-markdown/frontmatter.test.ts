@@ -70,6 +70,19 @@ describe('frontmatter', () => {
     ])
   })
 
+  it('HTML の空白だけを詰め、U+3000 や U+202F などはそのまま残す', () => {
+    const fm = frontmatter(
+      post({
+        title: ' ね\u202f&#8212;\u202fNT　|\t a　',
+        excerpt: '<p>上品な　ホバー\u00a0エフェクト..more</p>\n',
+        fields: { 'primary-tag': '\u3000Nuxt ' },
+      }),
+    )
+    expect(fm.title).toBe('ね\u202f—\u202fNT　| a　')
+    expect(fm.excerpt).toBe('上品な　ホバー\u00a0エフェクト')
+    expect(fm.primaryTag).toBe('\u3000Nuxt')
+  })
+
   it('一覧ページからしか取れなかった記事には modified と legacy を出さない', () => {
     const fm = frontmatter(
       post({ source: 'list', images: undefined, slug: '%e3%81%ad' }),

@@ -4,11 +4,13 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
+import { decodeHTML } from 'entities'
 import { parse as parseYaml } from 'yaml'
 import { htmlToMarkdown } from './convert.ts'
 import {
   fileName,
   frontmatter,
+  TAXONOMY,
   wpRaw,
   type Frontmatter,
 } from './frontmatter.ts'
@@ -23,6 +25,7 @@ import {
 } from './roundtrip.ts'
 import { loadSnapshot, postPath, type SnapshotPost } from './snapshot.ts'
 import { buildTerms } from './terms.ts'
+import { collapseWhitespace, isBlank, trimWhitespace } from './whitespace.ts'
 
 const { values: args } = parseArgs({
   options: {
@@ -37,7 +40,8 @@ const { values: args } = parseArgs({
 })
 
 const root = path.resolve(args.root ?? repoRoot)
-const posts = loadSnapshot(snapshotHtmlDir(args.snapshot))
+const htmlDir = snapshotHtmlDir(args.snapshot)
+const posts = loadSnapshot(htmlDir)
 const knownPaths = new Set(posts.map(postPath))
 const fromFiles = !args['from-html']
 const key = (p: SnapshotPost) => `${p.type}/${decodeURIComponent(p.slug)}`
@@ -51,6 +55,29 @@ function readPost(p: SnapshotPost): { fm: Frontmatter; md: string } {
   if (!m) throw new Error(`frontmatter が読めません: ${key(p)}`)
   return { fm: parseYaml(m[1]), md: m[2] }
 }
+
+// 旧サイトの記事ページで h1 に表示されていたタイトル（ブラウザと同じく HTML の空白だけ詰める）
+function legacyTitle(p: SnapshotPost): string | null {
+  const file = path.join(
+    htmlDir,
+    p.type,
+    decodeURIComponent(p.slug),
+    'index.html',
+  )
+  if (!fs.existsSync(file)) return null
+  const m = fs
+    .readFileSync(file, 'utf8')
+    .match(/<h1 class="entry-head__title"[^>]*>([^<]*)<\/h1>/)
+  return m ? trimWhitespace(collapseWhitespace(decodeHTML(m[1]))) : null
+}
+
+// HTML の空白ではない空白類（U+3000、U+202F、U+00A0 など）。表示される文字なので数が変わってはいけない
+const SPECIAL_SPACE = /[^\S \t\n\f\r]/gu
+const specialSpaces = (v: unknown) =>
+  [...decodeHTML(JSON.stringify(v ?? '')).matchAll(SPECIAL_SPACE)]
+    .map((m) => m[0])
+    .sort()
+    .join('')
 
 // 日付は YAML のタイムスタンプとして読まれるので、瞬間で比べる
 const instant = (v: unknown) =>
@@ -75,6 +102,21 @@ function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
       if (k in exp !== k in fm) fails.push(k)
     } else if (JSON.stringify(fm[k]) !== JSON.stringify(exp[k])) fails.push(k)
   }
+  // 上の照合は同じ frontmatter() との比較なので、旧データからの独立した照合も足す
+  const title = legacyTitle(p)
+  if (title !== null && fm.title !== title) fails.push('title-h1')
+  const rawTerms = p.terms?.[TAXONOMY[p.type]]
+  const pairs: [unknown, unknown][] = [
+    [p.title, fm.title],
+    [p.excerpt, fm.excerpt],
+    [p.fields?.['primary-tag'], fm.primaryTag],
+    [
+      Array.isArray(rawTerms) ? rawTerms.map((t) => t.name) : [],
+      fm.terms.map((t) => t.name),
+    ],
+  ]
+  if (pairs.some(([a, b]) => specialSpaces(a) !== specialSpaces(b)))
+    fails.push('special-space')
   return fails
 }
 
@@ -97,9 +139,9 @@ for (const p of posts) {
     const f = checkFrontmatter(p, file.fm)
     if (f.length) fmFails.push(`${key(p)} ${f.join(',')}`)
   }
-  if (!html.trim()) {
+  if (isBlank(html)) {
     // 本文のない記事は、Markdown 側も本文がないことだけ確かめる
-    if (md.trim())
+    if (!isBlank(md))
       results.push({
         key: key(p),
         empty: true,
