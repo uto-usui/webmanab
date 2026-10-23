@@ -1,0 +1,83 @@
+---
+import { formatDate } from '../lib/date'
+import { eyecatchFor } from '../lib/eyecatch'
+import { entryPath, infiniteListState, type PostEntry } from '../lib/posts'
+import { PER_PAGE } from '../lib/site'
+import Article from './Article.astro'
+import Loader from './Loader.astro'
+import type { ArticleItem } from './article-item'
+
+interface Props {
+  // 一覧の全件（新しい順）。HTML に出すのは最初の 8 件だけ
+  posts: PostEntry[]
+  // 無限スクロールの JSON の置き場所（`/data/tip/` など）。渡さない一覧（トップ）は 8 件で止まる
+  endpoint?: string
+}
+
+const { posts, endpoint } = Astro.props
+
+const toArticleItem = ({ data }: PostEntry): ArticleItem => ({
+  type: data.type,
+  path: entryPath({ data }),
+  title: data.title,
+  dateLabel: formatDate(data.date),
+  primaryTag: data.primaryTag,
+  clipUrl: data.clipUrl,
+  eyecatch: eyecatchFor(data).svg,
+})
+const items = posts.slice(0, PER_PAGE).map(toArticleItem)
+const { hasLoader, lastPage, showEndAfterLast } = infiniteListState(
+  posts.length,
+)
+const infinite = endpoint !== undefined && hasLoader
+---
+
+<div
+  class="article-list"
+  data-endpoint={infinite ? endpoint : undefined}
+  data-last-page={infinite ? lastPage : undefined}
+  data-end-after-last={infinite ? String(showEndAfterLast) : undefined}
+>
+  <div class="article-list__inner">
+    {items.map((item) => (
+      <Article item={item} />
+    ))}
+  </div>
+  {infinite && (
+    <>
+      {/* 旧 vue-infinite-loading と同じ構造。JS なしの HTML では旧サイトと同じく何も見せない */}
+      <div class="infinite-loading-container">
+        <div class="infinite-status-prompt" data-infinite-loader hidden>
+          <Loader />
+        </div>
+        <div class="infinite-status-prompt" data-infinite-end hidden>
+          <div>End</div>
+        </div>
+      </div>
+      <template data-article-template>
+        <Article />
+      </template>
+    </>
+  )}
+</div>
+
+<style lang="scss">
+  .article-list {
+    margin-top: get-line-height(7, -2, 1);
+
+    @include desktop {
+      margin-top: get-line-height(7, 0, 1);
+    }
+  }
+
+  .article-list__inner {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  // vue-infinite-loading が入れていた CSS のうち、slot を渡したときにも効いていたもの
+  .infinite-loading-container {
+    clear: both;
+    text-align: center;
+  }
+</style>
