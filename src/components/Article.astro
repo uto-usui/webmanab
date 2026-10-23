@@ -17,6 +17,9 @@ const link = item ? titleLink(item) : undefined
     <strong class="article-item__tag">{item?.primaryTag}</strong>
     <a class="article-item__img-wrap" href={item?.path}>
       <div class="article-item__img">
+        {!item && (
+          <Fragment set:html="<!-- [html-validate-disable-next element-required-attributes: 複製したあと infinite-list.ts が src を入れる] -->" />
+        )}
         <img
           src={item?.eyecatch}
           width={EYECATCH_WIDTH}
