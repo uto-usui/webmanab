@@ -16,4 +16,7 @@ export const mocks: Record<MockName, (page: Page) => Promise<unknown>> = {
       // 'share' in navigator で見分けられても無い側に入るよう、prototype から消す
       Reflect.deleteProperty(Navigator.prototype, 'share')
     }),
+  // 応答を返さず、読み込み中のままにする
+  'list-pending': (page) => page.route('**/catalog/data/**', () => {}),
+  'eyecatch-pending': (page) => page.route('**/eyecatch/**', () => {}),
 }

@@ -38,7 +38,28 @@ export async function openStory(page: Page, story: StoryEntry) {
   await page.goto(`/catalog/${story.id}/`)
   await page.evaluate(() => document.fonts.ready)
   for (const step of story.steps ?? []) await runStep(page, step)
+  // 画像を止めるモックのときは、読み終わりを待つと終わらない
+  if (!story.mocks?.includes('eyecatch-pending')) await loadImages(page)
   await settle(page)
+}
+
+/**
+ * loading="lazy" の画像は画面の外だと読まれず、フルページのスクリーンショットで出たり出なかったりする。
+ * eager にして読み終わりを待ち、image-fade.ts が data-lazy を loaded にしてから撮る
+ */
+async function loadImages(page: Page) {
+  await page.evaluate(() =>
+    Promise.all(
+      [...document.images].map((img) => {
+        img.loading = 'eager'
+        return img.decode().catch(() => {})
+      }),
+    ),
+  )
+  await page
+    .locator('img[data-lazy="loading"]')
+    .first()
+    .waitFor({ state: 'detached' })
 }
 
 /** Tab を押して selector の要素にフォーカスを当てる。:focus-visible はキーボードでないと付かない */
@@ -55,6 +76,9 @@ async function runStep(page: Page, step: Step) {
   if ('click' in step) await page.click(step.click)
   else if ('hover' in step) await page.hover(step.hover)
   else if ('focus' in step) await tabTo(page, step.focus)
+  // 中身が position: fixed だけの要素（Loader の枠）は大きさが 0 なので、見えるかではなく DOM にあるかで待つ
+  else if ('waitFor' in step)
+    await page.locator(step.waitFor).first().waitFor({ state: 'attached' })
   else if ('scroll' in step) {
     await page.evaluate((y) => scrollTo(0, y), step.scroll)
     // header-fixed.ts は scroll のあと requestAnimationFrame で class を付ける

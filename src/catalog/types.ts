@@ -12,10 +12,13 @@ export type Step =
   | { focus: string }
   /** window をスクロールする量（px） */
   | { scroll: number }
+  /** selector の要素が見えるまで待つ。fetch のあとの DOM の変化を待つため */
+  | { waitFor: string }
   | { wait: number }
 
 /** e2e/catalog/mocks.ts の名前 */
-export type MockName = 'share-supported' | 'share-unsupported'
+export type MockName =
+  'share-supported' | 'share-unsupported' | 'list-pending' | 'eyecatch-pending'
 
 export interface CatalogParameters {
   /** スクリーンショットと axe の前にする操作 */

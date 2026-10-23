@@ -11,6 +11,7 @@ export default function catalog() {
         route('/catalog', './Index.astro')
         route('/catalog/index.json', './index.json.ts')
         route('/catalog/[component]/[story]', './Story.astro')
+        route('/catalog/data/[list]/[page].json', './data.json.ts')
       },
     },
   }

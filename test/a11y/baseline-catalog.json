@@ -3,6 +3,154 @@
   "measuredAt": "2026-10-23",
   "source": "pnpm test:catalog（ローカルの macOS。CI で最初に回したら置き直す）",
   "pages": {
+    "article-list/eight@375": {
+      "link-name": 8
+    },
+    "article-list/eight@768": {
+      "link-name": 8
+    },
+    "article-list/eight@1080": {
+      "link-name": 8
+    },
+    "article-list/eight@1480": {
+      "link-name": 8
+    },
+    "article-list/empty@375": {},
+    "article-list/empty@768": {},
+    "article-list/empty@1080": {},
+    "article-list/empty@1480": {},
+    "article-list/end@375": {
+      "link-name": 16
+    },
+    "article-list/end@768": {
+      "link-name": 16
+    },
+    "article-list/end@1080": {
+      "link-name": 16
+    },
+    "article-list/end@1480": {
+      "link-name": 16
+    },
+    "article-list/loading@375": {
+      "link-name": 8
+    },
+    "article-list/loading@768": {
+      "link-name": 8
+    },
+    "article-list/loading@1080": {
+      "link-name": 8
+    },
+    "article-list/loading@1480": {
+      "link-name": 8
+    },
+    "article-list/no-more@375": {
+      "link-name": 12
+    },
+    "article-list/no-more@768": {
+      "link-name": 12
+    },
+    "article-list/no-more@1080": {
+      "link-name": 12
+    },
+    "article-list/no-more@1480": {
+      "link-name": 12
+    },
+    "article/clip@375": {
+      "link-name": 1
+    },
+    "article/clip@768": {
+      "link-name": 1
+    },
+    "article/clip@1080": {
+      "link-name": 1
+    },
+    "article/clip@1480": {
+      "link-name": 1
+    },
+    "article/empty-primary-tag@375": {
+      "link-name": 1
+    },
+    "article/empty-primary-tag@768": {
+      "link-name": 1
+    },
+    "article/empty-primary-tag@1080": {
+      "link-name": 1
+    },
+    "article/empty-primary-tag@1480": {
+      "link-name": 1
+    },
+    "article/image-hover@375": {
+      "link-name": 1
+    },
+    "article/image-hover@768": {
+      "link-name": 1
+    },
+    "article/image-hover@1080": {
+      "link-name": 1
+    },
+    "article/image-hover@1480": {
+      "link-name": 1
+    },
+    "article/image-loading@375": {
+      "link-name": 1
+    },
+    "article/image-loading@768": {
+      "link-name": 1
+    },
+    "article/image-loading@1080": {
+      "link-name": 1
+    },
+    "article/image-loading@1480": {
+      "link-name": 1
+    },
+    "article/lab@375": {
+      "link-name": 1
+    },
+    "article/lab@768": {
+      "link-name": 1
+    },
+    "article/lab@1080": {
+      "link-name": 1
+    },
+    "article/lab@1480": {
+      "link-name": 1
+    },
+    "article/long-title@375": {
+      "link-name": 1
+    },
+    "article/long-title@768": {
+      "link-name": 1
+    },
+    "article/long-title@1080": {
+      "link-name": 1
+    },
+    "article/long-title@1480": {
+      "link-name": 1
+    },
+    "article/tip@375": {
+      "link-name": 1
+    },
+    "article/tip@768": {
+      "link-name": 1
+    },
+    "article/tip@1080": {
+      "link-name": 1
+    },
+    "article/tip@1480": {
+      "link-name": 1
+    },
+    "article/title-hover@375": {
+      "link-name": 1
+    },
+    "article/title-hover@768": {
+      "link-name": 1
+    },
+    "article/title-hover@1080": {
+      "link-name": 1
+    },
+    "article/title-hover@1480": {
+      "link-name": 1
+    },
     "bar/default@375": {},
     "bar/default@768": {},
     "bar/default@1080": {},
@@ -22,6 +170,10 @@
     "layout/menu-open@768": {},
     "layout/menu-open@1080": {},
     "layout/menu-open@1480": {},
+    "loader/default@375": {},
+    "loader/default@768": {},
+    "loader/default@1080": {},
+    "loader/default@1480": {},
     "menu/closed@375": {},
     "menu/closed@768": {},
     "menu/closed@1080": {},
@@ -42,6 +194,18 @@
     "menu/open@768": {},
     "menu/open@1080": {},
     "menu/open@1480": {},
+    "section-list/two-sections@375": {
+      "link-name": 8
+    },
+    "section-list/two-sections@768": {
+      "link-name": 8
+    },
+    "section-list/two-sections@1080": {
+      "link-name": 8
+    },
+    "section-list/two-sections@1480": {
+      "link-name": 8
+    },
     "title1/clip@375": {},
     "title1/clip@768": {},
     "title1/clip@1080": {},

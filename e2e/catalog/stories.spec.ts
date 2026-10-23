@@ -29,6 +29,46 @@ const checks: Record<string, (page: Page) => Promise<void>> = {
     expect(page.locator('.menu')).toHaveClass(/\bis-open\b/),
   'menu/item-hover': (page) =>
     expect(page.locator('.menu')).toHaveClass(/\bis-open\b/),
+  'article/tip': (page) =>
+    expect(page.locator('.article-item__img > img')).toHaveAttribute(
+      'data-lazy',
+      'loaded',
+    ),
+  'article/clip': async (page) => {
+    const title = page.locator('.article-item__target')
+    await expect(title).toHaveAttribute('href', /^https:/)
+    await expect(title).toHaveAttribute('target', '_blank')
+    await expect(title).toHaveAttribute('rel', 'noopener')
+  },
+  'article/image-loading': (page) =>
+    expect(page.locator('.article-item__img > img')).toHaveAttribute(
+      'data-lazy',
+      'loading',
+    ),
+  // 無限スクロールの出し分け（07 の 12 章、03 の 4.3）
+  'article-list/eight': async (page) => {
+    await expect(page.locator('.article-item')).toHaveCount(8)
+    await expect(page.locator('.infinite-loading-container')).toHaveCount(0)
+  },
+  'article-list/loading': async (page) => {
+    await expect(page.locator('.loader')).toBeVisible()
+    await expect(page.locator('.article-item')).toHaveCount(8)
+  },
+  'article-list/end': async (page) => {
+    await expect(page.locator('.article-item')).toHaveCount(16)
+    await expect(page.locator('[data-infinite-end]')).toBeVisible()
+    await expect(page.locator('.loader')).toBeHidden()
+    // 足したカードも元のカードと同じ形で埋まっている
+    await expect(page.locator('.article-item__target').last()).toHaveText(/\S/)
+  },
+  'article-list/no-more': async (page) => {
+    await expect(page.locator('.article-item')).toHaveCount(12)
+    await expect(page.locator('.infinite-loading-container')).toHaveCount(0)
+  },
+  'article-list/empty': async (page) => {
+    await expect(page.locator('.article-item')).toHaveCount(0)
+    await expect(page.locator('[data-infinite-end]')).toBeVisible()
+  },
 }
 
 for (const story of loadStories()) {

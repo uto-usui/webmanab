@@ -1,0 +1,18 @@
+---
+// Article 1 枚。画像のフェードの script は ArticleList が読み込むので、ここでも読み込む
+import Article from '../../components/Article.astro'
+import { listItem } from '../../lib/list-json'
+import type { PostData } from '../../lib/schema'
+
+interface Props {
+  post: PostData
+}
+
+const { post } = Astro.props
+---
+
+<Article item={listItem({ data: post })} />
+
+<script>
+  import '../../scripts/image-fade'
+</script>
