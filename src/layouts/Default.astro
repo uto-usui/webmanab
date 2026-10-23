@@ -3,6 +3,8 @@ import '../styles/global.scss'
 import Bar from '../components/Bar.astro'
 import Header from '../components/Header.astro'
 import Menu from '../components/Menu.astro'
+import { PUBLIC_ADSENSE_CLIENT } from 'astro:env/client'
+import { menuTerms } from '../lib/terms'
 
 interface Props {
   title: string
@@ -25,6 +27,14 @@ const { title, routeName } = Astro.props
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Source+Code+Pro"
     />
+    {PUBLIC_ADSENSE_CLIENT && (
+      <script
+        is:inline
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${PUBLIC_ADSENSE_CLIENT}`}
+        crossorigin="anonymous"
+      />
+    )}
     <slot name="head" />
   </head>
   <body>
@@ -36,7 +46,11 @@ const { title, routeName } = Astro.props
       <Bar />
       <Header />
       <slot />
-      <Menu />
+      <Menu
+        tips={menuTerms('tips')}
+        clips={menuTerms('clips')}
+        labs={menuTerms('labs')}
+      />
     </div>
   </body>
 </html>

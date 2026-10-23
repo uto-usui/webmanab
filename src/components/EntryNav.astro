@@ -1,0 +1,156 @@
+---
+import { eyecatchFor } from '../lib/eyecatch'
+import { entryPath, type PostEntry } from '../lib/posts'
+
+interface Props {
+  prev: PostEntry | null
+  next: PostEntry | null
+}
+
+const { prev, next } = Astro.props
+const items = [
+  { post: prev, dir: 'prev', label: 'previous', align: 'u-text-left' },
+  { post: next, dir: 'next', label: 'next', align: 'u-text-right' },
+].flatMap(({ post, ...rest }) => (post ? [{ post, ...rest }] : []))
+---
+
+<ul class="entry-nav">
+  {items.map(({ post, dir, label, align }) => (
+    <li class:list={['entry-nav__item', `entry-nav__item--${dir}`, align]}>
+      <a class="entry-nav__target" href={entryPath(post)}>
+        <div class="entry-nav__inner">
+          <p class="entry-nav__text">
+            {label} <br />ー
+          </p>
+          <h3 class="entry-nav__title">{post.data.title}</h3>
+        </div>
+      </a>
+      <div
+        class="entry-nav__bg"
+        style={`background-image:url(${eyecatchFor(post.data).nav})`}
+      />
+    </li>
+  ))}
+</ul>
+
+<style lang="scss">
+  .entry-nav {
+    position: relative;
+    margin-top: $space-3;
+
+    @include tablet {
+      display: flex;
+      margin-top: $space-5;
+      margin-right: calc((100vw - 100%) / 2 * -1 + #{space-scalar(8)});
+      margin-left: calc((100vw - 100%) / 2 * -1 + #{space-scalar(8)});
+    }
+
+    @include desktop {
+      margin-right: calc((100vw - 100%) / 2 * -1 + #{space-scalar(10)});
+      margin-left: calc((100vw - 100%) / 2 * -1 + #{space-scalar(10)});
+    }
+  }
+
+  .entry-nav__item {
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 800px;
+
+    @include mobile {
+      + .entry-nav__item {
+        margin-top: 1rem;
+      }
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  // 前の記事がないとき、旧サイトは next が左に寄っていた（02 の 8 章 #4）
+  .entry-nav__item--next {
+    margin-left: auto;
+  }
+
+  .entry-nav__target {
+    display: flex;
+    align-items: center;
+    height: 120px;
+
+    @include tablet {
+      height: 17.5vw;
+      min-height: 180px;
+    }
+
+    .entry-nav__item.entry-nav__item--next & {
+      justify-content: flex-end;
+    }
+  }
+
+  .entry-nav__text {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: $white;
+    text-transform: capitalize;
+    transition: 0.3s $easeOutQuint;
+
+    @include sizes(1);
+
+    @include tablet {
+      @include sizes(2);
+    }
+
+    .entry-nav__item:hover & {
+      color: $glay;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .entry-nav__title {
+    display: inline;
+    color: $black;
+    background-color: $white;
+
+    @include sizes(-1, 1);
+
+    @include tablet {
+      @include sizes(0, 1);
+    }
+  }
+
+  .entry-nav__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: 0.35s $easeOutQuint;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: '';
+      background-color: rgba($glay, 0.7);
+    }
+
+    .entry-nav__item.entry-nav__item--prev & {
+      transform-origin: right center;
+    }
+
+    .entry-nav__item.entry-nav__item--next & {
+      transform-origin: left center;
+    }
+
+    .entry-nav__item.entry-nav__item--prev:hover & {
+      transform: rotateY(-45deg);
+    }
+
+    .entry-nav__item.entry-nav__item--next:hover & {
+      transform: rotateY(45deg);
+    }
+  }
+</style>
