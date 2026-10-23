@@ -3,7 +3,7 @@
 import type { z } from 'astro/zod'
 import { postSchema, type PostData } from '../../lib/schema'
 
-const post = (raw: z.input<typeof postSchema>): PostData =>
+export const post = (raw: z.input<typeof postSchema>): PostData =>
   postSchema.parse(raw)
 
 export const posts = {

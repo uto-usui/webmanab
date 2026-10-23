@@ -1,0 +1,18 @@
+---
+// トップと同じく Title1 と ArticleList を入れた 2 つのセクション。ストライプ（::after）は各セクションの下に出る
+import ArticleList from '../../components/ArticleList.astro'
+import SectionList from '../../components/SectionList.astro'
+import Title1 from '../../components/Title1.astro'
+import { lists } from './list'
+
+const posts = lists.eight.slice(0, 4)
+---
+
+<SectionList>
+  <Title1 text="tip" />
+  <ArticleList posts={posts} />
+</SectionList>
+<SectionList>
+  <Title1 text="clip" />
+  <ArticleList posts={posts} />
+</SectionList>
