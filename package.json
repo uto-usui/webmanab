@@ -40,10 +40,14 @@
     "@astrojs/sitemap": "3.7.4",
     "@resvg/resvg-js": "2.6.2",
     "astro": "7.4.2",
-    "sass": "1.105.1"
+    "hljs10": "npm:highlight.js@10.1.1",
+    "linkedom": "0.18.13",
+    "sass": "1.105.1",
+    "satteri": "0.10.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@astrojs/internal-helpers": "0.13.0",
     "@axe-core/playwright": "4.13.0",
     "@eslint/js": "10.0.1",
     "@playwright/test": "1.64.1",
