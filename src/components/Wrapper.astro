@@ -1,0 +1,36 @@
+<main class="wrapper">
+  <div class="wrapper__inner">
+    <slot />
+  </div>
+</main>
+
+<style lang="scss">
+  // stylelint-disable selector-class-pattern -- 旧サイトの BEM の class 名をそのまま使う
+
+  .wrapper {
+    padding-right: space-scalar(4);
+    padding-left: space-scalar(4);
+    margin-top: space-scalar(16);
+    margin-bottom: space-scalar(30);
+    overflow-x: hidden;
+
+    @include tablet {
+      padding-right: space-scalar(8);
+      padding-left: space-scalar(8);
+    }
+
+    @include desktop {
+      padding-top: space-scalar(10);
+      padding-right: space-scalar(10);
+      padding-left: space-scalar(10);
+      margin-top: 0;
+      margin-bottom: space-scalar(50);
+    }
+  }
+
+  .wrapper__inner {
+    @include desktop {
+      padding-top: calc(#{space-scalar(10)} + #{get-line-height(7, 0, 1)});
+    }
+  }
+</style>

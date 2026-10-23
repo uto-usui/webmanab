@@ -6,7 +6,6 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  // 旧 SCSS は手順 2 で src/styles に移すまで残している
   globalIgnores([
     'dist/',
     'dist-catalog/',
@@ -15,7 +14,6 @@ export default defineConfig([
     'docs/',
     'test-results/',
     'playwright-report/',
-    'assets/',
   ]),
   js.configs.recommended,
   tseslint.configs.recommended,
