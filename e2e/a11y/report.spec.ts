@@ -2,6 +2,7 @@
 // まとめるのは merge-report.ts（globalTeardown）。
 // 報告だけなので expect を使わない。比べるのは scripts/a11y-compare.ts。
 // 条件は旧サイトの監査（08 の 2.3、.snapshot/prototypes/qa/audit.mjs）に合わせる。
+// 旧サイトは Google Fonts を読んでいたが、新サイトは OS の標準フォントにしたので（README 4 章）サイトの外は読まない
 import AxeBuilder from '@axe-core/playwright'
 import { test, type Page } from '@playwright/test'
 import { writeFileSync } from 'node:fs'
@@ -117,13 +118,9 @@ for (const viewport of WIDTHS) {
             testInfo.outputPath(A11Y_RESULT),
             JSON.stringify({ ...result, key }),
           )
-        const allowed = new Set([
-          new URL(baseURL!).host,
-          'fonts.googleapis.com',
-          'fonts.gstatic.com',
-        ])
+        const host = new URL(baseURL!).host
         await page.route('**/*', (route) =>
-          allowed.has(new URL(route.request().url()).host)
+          new URL(route.request().url()).host === host
             ? route.continue()
             : route.abort(),
         )
