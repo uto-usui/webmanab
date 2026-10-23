@@ -33,6 +33,12 @@ test('出力したページは、すべて旧サイトの URL にある（余分
   expect(extra).toEqual([])
 })
 
+// README 6 章の完了の条件。日本語 slug は dist/ にデコードした名前で出る
+test('旧サイトの URL 1323 件が、すべて dist/ にある', () => {
+  const built = new Set(htmlFiles.map(pagePath))
+  expect([...legacyPaths].filter((path) => !built.has(path))).toEqual([])
+})
+
 describe('旧ドメイン（webmanab-html.com）', () => {
   // tip/url-query-action の本文にあるインラインコードの例だけは残す（04 の決定）
   const EXCEPTION = 'tip/url-query-action/index.html'
