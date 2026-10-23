@@ -1,0 +1,15 @@
+---
+// AdSense の読み込みだけ。広告枠の <ins> は EntryAd が出す。クライアント ID は本番のビルドにしか入れない
+import { PUBLIC_ADSENSE_CLIENT } from 'astro:env/client'
+import { adsenseScriptSrc } from '../lib/head'
+
+interface Props {
+  /** テスト用。省略すると PUBLIC_ADSENSE_CLIENT を使う */
+  client?: string
+}
+
+const { client = PUBLIC_ADSENSE_CLIENT } = Astro.props
+const src = adsenseScriptSrc(client)
+---
+
+{src && <script is:inline async src={src} crossorigin="anonymous" />}
