@@ -30,10 +30,14 @@ const allowedHosts = new Set(['fonts.googleapis.com', 'fonts.gstatic.com'])
 
 export async function openStory(page: Page, story: StoryEntry) {
   for (const name of story.mocks ?? []) await mocks[name](page)
-  // フォント以外の外部への通信を止めて、外のサイトの状態で結果が変わらないようにする
+  // フォント以外の外部への通信を止めて、外のサイトの状態で結果が変わらないようにする。
+  // 本文の iframe（jsfiddle）は止めるとエラーの画面になるので、空のページを返す（07 の 8.2）
   await page.route(
     (url) => url.hostname !== 'localhost' && !allowedHosts.has(url.hostname),
-    (route) => route.abort(),
+    (route) =>
+      route.request().resourceType() === 'document'
+        ? route.fulfill({ contentType: 'text/html', body: '' })
+        : route.abort(),
   )
   await page.goto(`/catalog/${story.id}/`)
   await page.evaluate(() => document.fonts.ready)

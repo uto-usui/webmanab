@@ -1,0 +1,19 @@
+---
+// 本文の見本を astro.config.mjs と同じ Markdown の設定で描き、EntryContent に流し込む（07 の 8.2）
+import EntryContent from '../../components/EntryContent.astro'
+import { Content as Code } from './body/code.md'
+import { Content as Elements } from './body/elements.md'
+import { Content as RawHtml } from './body/raw-html.md'
+
+interface Props {
+  sample: 'elements' | 'code' | 'raw-html'
+}
+
+const Body = { elements: Elements, code: Code, 'raw-html': RawHtml }[
+  Astro.props.sample
+]
+---
+
+<EntryContent>
+  <Body />
+</EntryContent>

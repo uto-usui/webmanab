@@ -155,6 +155,36 @@
     "bar/default@768": {},
     "bar/default@1080": {},
     "bar/default@1480": {},
+    "entry-content/code@375": {
+      "color-contrast": 4,
+      "scrollable-region-focusable": 1
+    },
+    "entry-content/code@768": {
+      "color-contrast": 4,
+      "scrollable-region-focusable": 1
+    },
+    "entry-content/code@1080": {
+      "color-contrast": 4,
+      "scrollable-region-focusable": 1
+    },
+    "entry-content/code@1480": {
+      "color-contrast": 4,
+      "scrollable-region-focusable": 1
+    },
+    "entry-content/elements@375": {
+      "link-in-text-block": 2
+    },
+    "entry-content/elements@768": {
+      "link-in-text-block": 2
+    },
+    "entry-content/elements@1080": {},
+    "entry-content/elements@1480": {
+      "link-in-text-block": 2
+    },
+    "entry-content/raw-html@375": {},
+    "entry-content/raw-html@768": {},
+    "entry-content/raw-html@1080": {},
+    "entry-content/raw-html@1480": {},
     "header/default@375": {},
     "header/default@768": {},
     "header/default@1080": {},
