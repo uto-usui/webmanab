@@ -1,5 +1,6 @@
 import { satteri } from '@astrojs/markdown-satteri'
 import { defineConfig, envField } from 'astro/config'
+import catalog from './src/catalog/integration.mjs'
 import { hastPlugins, markdownFeatures } from './src/lib/markdown/index.mjs'
 
 // astro.config は .env を自動では読まない。process.env にすでにある値は上書きされない
@@ -21,6 +22,7 @@ export default defineConfig({
   compressHTML: true,
   scopedStyleStrategy: 'attribute',
   prerenderConflictBehavior: 'error',
+  integrations: [...(process.env.CATALOG === '1' ? [catalog()] : [])],
   markdown: {
     // コードの色は hljs プラグインで旧サイトと同じ highlight.js 10.1.1 を当てる。Shiki / Prism は使わない
     syntaxHighlight: false,
