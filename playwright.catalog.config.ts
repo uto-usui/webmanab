@@ -35,9 +35,9 @@ export default defineConfig({
     toHaveScreenshot: {
       animations: 'disabled',
       caret: 'hide',
-      // 同じビルドを続けて撮っても、和文と欧文が混ざる行で文字の並びが 1px 上下にずれることがある（並列で回すと出やすい）。
-      // 実測で最大 106px。--disable-gpu、--disable-lcd-text、fonts.ready のあとの再レイアウトでは消えなかった。原因は未確認
-      maxDiffPixels: 200,
+      // Google Fonts を使っていた間は、和文と欧文が混ざる行が 1px ずれて最大 106px の差が出ていた。
+      // OS のフォントにしてからは --repeat-each=5 の 1565 回で 1 回、14px だけだった
+      maxDiffPixels: 20,
     },
   },
 })
