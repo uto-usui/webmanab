@@ -6,9 +6,14 @@ const japanese = readFileSync('test/fixtures/legacy-urls.txt', 'utf8')
   .split('\n')
   .filter((url) => url.includes('%'))
 
-// 一覧とターム一覧は手順 8 で足す（08 の 1.6）
+// 08 の 1.6。一覧の動きは list.spec.ts が見る
 const paths = [
   '/',
+  '/tip/',
+  '/clip/',
+  '/lab/',
+  '/tips/29/',
+  '/labs/332/',
   '/tip/method-control/',
   '/clip/2016-jsconf-is/',
   '/lab/createjs-node-motion/',
