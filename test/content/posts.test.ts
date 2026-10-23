@@ -1,46 +1,11 @@
 // 記事の Markdown とターム JSON を astro:content を通さずに読み、content.config.ts と同じスキーマで確かめる。
 // fixtures では常に走らせ、src/content はエクスポーターの出力を取り込んだあとだけ走らせる
-import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
-import { parseFrontmatter } from '@astrojs/internal-helpers/frontmatter'
+import { existsSync } from 'node:fs'
 import { describe, expect, test } from 'vitest'
 import { neighbors } from '../../src/lib/posts'
-import { postSchema, termListSchema, type PostData } from '../../src/lib/schema'
-import { POST_TYPES, TAXONOMIES, TAXONOMY_OF } from '../../src/lib/site'
-
-const load = (root: string) => {
-  const posts = POST_TYPES.flatMap((dir) => {
-    const path = join(root, 'posts', dir)
-    if (!existsSync(path)) return []
-    return readdirSync(path)
-      .filter((file) => file.endsWith('.md'))
-      .map((file) => {
-        // glob loader と同じパーサー（YAML のタイムスタンプを Date にする）で読む
-        const { frontmatter } = parseFrontmatter(
-          readFileSync(join(path, file), 'utf8'),
-        )
-        return {
-          dir,
-          file,
-          frontmatter,
-          result: postSchema.safeParse(frontmatter),
-        }
-      })
-  })
-  const terms = Object.fromEntries(
-    TAXONOMIES.map((tax) => {
-      const path = join(root, 'terms', `${tax}.json`)
-      return [
-        tax,
-        existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined,
-      ]
-    }),
-  )
-  return { posts, terms }
-}
-
-const valid = (posts: ReturnType<typeof load>['posts']) =>
-  posts.flatMap(({ result }) => (result.success ? [{ data: result.data }] : []))
+import { termListSchema, type PostData } from '../../src/lib/schema'
+import { TAXONOMIES, TAXONOMY_OF } from '../../src/lib/site'
+import { load, valid } from './load'
 
 const describeContent = (name: string, root: string) =>
   describe(name, () => {
