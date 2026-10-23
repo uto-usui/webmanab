@@ -269,3 +269,27 @@ export function unexplained(fails: string[], notes: Note[]): string[] {
   const ok = new Set(notes.flatMap((n) => INTENDED[n.kind] ?? []))
   return fails.filter((f) => !ok.has(f))
 }
+
+// 旧サイトの前後記事ナビは WP の生の post_title を出していて、記事の title（title.rendered）にかかっている
+// wptexturize と capital_P_dangit の置き換えがない。新サイトはナビにも title を出す（README 4 章）
+const NAV_TITLE_RULES: [kind: string, from: RegExp, to: string][] = [
+  ['dash', /–/g, '-'],
+  ['quote', /[‘’]/g, "'"],
+  ['double-quote', /[“”]/g, '"'],
+  ['prime', /′/g, "'"],
+  ['ellipsis', /…/g, '...'],
+  ['capital-p', /WordPress/g, 'Wordpress'],
+]
+const applyRules = (s: string, rules: typeof NAV_TITLE_RULES) =>
+  rules.reduce((acc, [, from, to]) => acc.replace(from, to), s)
+
+// 旧ナビの文字と title の違いが、上の置き換えだけで説明できるなら使った置き換えの種類を返す。説明できなければ null
+export function navTitleDiff(title: string, nav: string): string[] | null {
+  if (applyRules(title, NAV_TITLE_RULES) !== applyRules(nav, NAV_TITLE_RULES))
+    return null
+  // 外すと一致しなくなる置き換えだけを、使った種類として数える
+  return NAV_TITLE_RULES.filter((rule) => {
+    const others = NAV_TITLE_RULES.filter((r) => r !== rule)
+    return applyRules(title, others) !== applyRules(nav, others)
+  }).map(([kind]) => kind)
+}
