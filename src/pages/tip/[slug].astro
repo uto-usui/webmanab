@@ -23,10 +23,9 @@ import {
   getPosts,
   neighbors,
   postStaticPaths,
-  related,
+  relatedPosts,
   type PostEntry,
 } from '../../lib/posts'
-import { primaryTagKey } from '../../lib/primary-tag'
 import { pageTitle } from '../../lib/site'
 
 export const getStaticPaths = async () =>
@@ -66,7 +65,7 @@ const { prev, next } = neighbors(all, entry)
         title={entry.data.title}
       />
       <EntryTag entry={entry} />
-      <EntryRelated posts={related(all, entry, primaryTagKey)} />
+      <EntryRelated posts={relatedPosts(all, entry)} />
       <EntryNav prev={prev} next={next} />
       <EntryAdFoot />
     </SectionEntry>
