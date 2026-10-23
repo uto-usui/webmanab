@@ -39,6 +39,7 @@ function redirect() {
 }
 redirect();
 
+
 ```
 
 ### iPadもリダイレクトアラートを出したい
@@ -59,6 +60,7 @@ function redirect() {
   }
 }
 redirect();
+
 
 ```
 

@@ -42,6 +42,7 @@ legacy:
 
 var radian = angle * Math.PI / 180
 
+
 ```
 
 ### CreateJSを使って円状にシェイプを描く
@@ -54,6 +55,7 @@ CreateJSで円形にシェイプを描きます。
 
 <canvas id="myCanvas" width="250" height="250"></canvas>
 <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+
 
 ```
 
@@ -92,5 +94,6 @@ function init() {
   }
   createjs.Ticker.addEventListener("tick", stage);
 }
+
 
 ```

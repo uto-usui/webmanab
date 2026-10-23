@@ -28,6 +28,7 @@ jQueryの`$()`関数の第一引数にセレクタが入っている場合、第
 $(selector)
 $(selector, context)
 
+
 ```
 
 ### 基本のCSSセレクタ
@@ -67,6 +68,7 @@ $('input:not(:checked)')
 // 拡張子がpng以外のimg要素
 $('img:not([src*=".png"])')
 
+
 ```
 
 #### :hasフィルタ
@@ -77,6 +79,7 @@ $('img:not([src*=".png"])')
 
 // 拡張子がpngのimg要素を含んでいるp要素
 $('p:has(img[src*=".png"]))')
+
 
 ```
 

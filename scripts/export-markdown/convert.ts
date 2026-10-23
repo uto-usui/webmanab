@@ -187,11 +187,18 @@ function handlers(notes: Note[], fixes: boolean): Record<string, Handle> {
       ) as Element | undefined
       // info string には元の class をそのまま書く（bath、CSS なども直さない）。描画側で同じ class に戻す
       const lang = code ? classList(code).join(' ') : ''
+      // </code> と </pre> の間の改行（115 ブロック）は、旧サイトではコードの最後の空行として見えていたので中身に含める
+      const after = code
+        ? node.children
+            .slice(node.children.indexOf(code) + 1)
+            .map((c) => (c.type === 'text' ? c.value : ''))
+            .join('')
+        : ''
       const result: MdastNodes = {
         type: 'code',
         lang: lang || null,
         meta: null,
-        value: codeText(code ?? node, notes, fixes),
+        value: codeText(code ?? node, notes, fixes) + after,
       }
       state.patch(node, result)
       return result

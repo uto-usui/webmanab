@@ -117,6 +117,7 @@ gulp note
 
 */
 
+
 ````
 
 ### ラベルをつける
@@ -140,6 +141,7 @@ gulp note
 
 */
 
+
 ````
 
 ### カラーパレット
@@ -155,6 +157,7 @@ gulp note
 @secondary #aa55cc
 @primary-text #cccccc
 */
+
 
 ```
 

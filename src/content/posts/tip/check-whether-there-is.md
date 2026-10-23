@@ -33,6 +33,7 @@ if($('#ex').length) {
   console.log('Yes');
 }
 
+
 ```
 
 ### 要素がないときだけ処理する
@@ -44,6 +45,7 @@ if($('#ex').length) {
 if(!$('#ex').length) {
   console.log('No');
 }
+
 
 ```
 
@@ -58,6 +60,7 @@ if($('#ex').length) {
 } else {
   console.log('No');
 }
+
 
 ```
 

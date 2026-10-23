@@ -48,6 +48,15 @@ describe('往復検証', () => {
     expect(roundtrip(md.replace('\\\n', '\n'))).toContain('br')
   })
 
+  it('</code> と </pre> の間の改行を落とすと検出する', () => {
+    const html = '<pre><code>a\n</code>\n</pre>'
+    const a = metrics(parseHtml(html), 'original')
+    const render = (md: string) =>
+      compare(a, metrics(renderMarkdown(md), 'rendered'))
+    expect(render(htmlToMarkdown(html).md)).toEqual([])
+    expect(render('```\na\n\n```\n')).toContain('code-value')
+  })
+
   it('U+3000 などを普通の空白に変えると検出する', () => {
     const html = '<p>上品な　ホバー</p>'
     const a = metrics(parseHtml(html), 'original')
