@@ -1,4 +1,4 @@
-// pnpm audit の結果から、修正版があるパッケージの名前を 1 行ずつ出す（.github/workflows/security-update.yml が使う）
+// pnpm audit の結果から、修正版があるパッケージの名前を 1 行ずつ出す（.claude/skills/deps-update が使う）
 import { execFileSync } from 'node:child_process'
 
 let out

@@ -33,7 +33,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | フレームワーク | Astro 7.4 系、静的出力、Vue なし | 試作でビルドとテストが通った（03） |
 | Node | 26 系（`.nvmrc` に `26`） | ユーザーの指定。10/28 に LTS になる。今の `.nvmrc`（v12）は Netlify で最優先になるので、書き換えは必須（01） |
 | pnpm | 10.34.6（`packageManager` で固定） | Netlify で Node 26 と pnpm 11 以上の組み合わせが落ちる報告がある。Dependabot が pnpm 10 までしか対応していない（01） |
-| 依存の版 | Dependabot の更新の PR は、公開から 14 日たった版だけにする（`cooldown`）。手で入れる版は待たない | 公開直後の版に紛れ込む悪意のあるコードを、自動の更新で取り込まないため。人が選んで入れる版は、その場で判断できる（ユーザーの判断） |
+| 依存の更新 | Dependabot には PR を作らせない（version updates と security updates を止め、alerts だけ残す）。更新は手元の Claude Code でスキル `deps-update`（`.claude/skills/deps-update/`）を使い、1 本の PR にしてマージする | 依存の更新は、上げたあとの確認と手直しが要るので、自動の PR を積み上げても結局手元でやることになる（ユーザーの判断）。きっかけは alerts のメールと、週 1 回の見張り（`monitor.yml`）の `pnpm audit` |
 | TypeScript | 6.0.3 | `astro check` と typescript-eslint が TS 7 に対応していない（01） |
 | 記事 | `src/content/posts/{tip,clip,lab}/*.md` | エクスポーターで生成。生成後は Markdown を正本にする（04） |
 | Markdown の描画 | Astro 既定の Sätteri（`rawHtml: true`、smartPunctuation は無効） | 往復検証で本文のある 861 本中 841 本が完全に一致し、残り 20 本も意図して直した差だけ。説明のつかない差は 0（04） |
@@ -163,7 +163,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | a11y | 旧サイトの基準から増えていない。カタログで見つかった本文のリンクの色の問題は、旧サイトから引き継ぐもの（A11Y-22）として 08 の 2.5 に足した |
 | 性能 | Lighthouse（mobile、広告なし）: 4 ページとも性能 100、LCP 0.9〜1.7 秒、CLS 0 |
 | Netlify | PR の Deploy Preview を止め、ビルドは master の本番だけにした。custom_domain（`webmanab-html.com`）を外した。netlify.app の応答から旧ドメインを指す canonical のヘッダーが消えたことを確かめた。応答ヘッダーは `netlify.toml` に入れた |
-| GitHub | Dependabot の security updates を有効にした（一時停止も解けた） |
+| GitHub | Dependabot は alerts だけを有効にし、PR を作る設定（security updates と `dependabot.yml`）は止めた |
 
 実装の途中で決めたこと（4 章と 2 章に反映済み）:
 
@@ -225,6 +225,6 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 3. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
 4. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
 5. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。
-6. マージ後に Dependabot の PR #29 #30 をクローズします。そのときに改めて確認します。
+6. マージのときに、旧 Nuxt の構成に向けた Dependabot の PR（#29〜#34）を閉じます。
 
-済んだもの: Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の security updates の有効化（同）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
+済んだもの: Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の PR を止めて alerts だけにする（同）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
