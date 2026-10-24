@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://gina.tokyo/
+image: { src: "/images/clip/659.webp", width: 1280, height: 720, thumb: "/images/clip/659-640.webp" }
+fullImage: { src: "/images/clip/659-full.webp", width: 1000, height: 7261 }
 legacy:
   prev: startuplab
   next: ichimiya-clinic

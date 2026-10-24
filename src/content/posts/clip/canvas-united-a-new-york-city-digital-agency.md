@@ -15,6 +15,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.canvasunited.com/
+image: { src: "/images/clip/1776.webp", width: 1000, height: 563, thumb: "/images/clip/1776-640.webp" }
 legacy:
   prev: ben-mingo-interactive-graphic-designer
   next: contemple-digital-studio

@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://mannekenpis-ceres.com/
+image: { src: "/images/clip/745.webp", width: 1200, height: 675, thumb: "/images/clip/745-640.webp" }
+fullImage: { src: "/images/clip/745-full.webp", width: 1000, height: 3083 }
 legacy:
   prev: forward-festival-zurich
   next: sodaterutowel

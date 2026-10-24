@@ -20,6 +20,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://intours-dmc.com/
+image: { src: "/images/clip/1479.webp", width: 1000, height: 563, thumb: "/images/clip/1479-640.webp" }
+fullImage: { src: "/images/clip/1479-full.webp", width: 1000, height: 5143 }
 legacy:
   prev: casa-angelina-official-website-luxury-boutique-hotel-in-the-amalfi-coast-romantic-hotel-5-star-hotel
   next: zero-_-starting-ideas

@@ -15,6 +15,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 12, name: "parallax", slug: "parallax" }
 clipUrl: http://hleb-dom.ru/en/
+image: { src: "/images/clip/979.webp", width: 1200, height: 675, thumb: "/images/clip/979-640.webp" }
+fullImage: { src: "/images/clip/979-full.webp", width: 1000, height: 563 }
 legacy:
   prev: merci-michel
   next: mirage-festival-5-edition

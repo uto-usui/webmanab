@@ -18,6 +18,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: http://www.lespetitesculottees.com/
+image: { src: "/images/clip/1550.webp", width: 1000, height: 563, thumb: "/images/clip/1550-640.webp" }
 legacy:
   prev: lonsdale
   next: homepage-global-connectivity-specialist

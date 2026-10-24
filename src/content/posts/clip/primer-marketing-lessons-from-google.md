@@ -12,6 +12,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.yourprimer.com/
+image: { src: "/images/clip/263.webp", width: 1000, height: 594, thumb: "/images/clip/263-640.webp" }
+fullImage: { src: "/images/clip/263-full.webp", width: 1000, height: 594 }
 legacy:
   prev: publicis90-startup-global-initiative
   next: uiux-design-agency-mobile-app-developers-sf-nyc

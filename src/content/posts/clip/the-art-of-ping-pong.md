@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.theartofpingpong.co.uk/
+image: { src: "/images/clip/716.webp", width: 1200, height: 675, thumb: "/images/clip/716-640.webp" }
+fullImage: { src: "/images/clip/716-full.webp", width: 1000, height: 5871 }
 legacy:
   prev: garden-eight
   next: moco

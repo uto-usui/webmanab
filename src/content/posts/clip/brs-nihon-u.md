@@ -18,6 +18,8 @@ terms:
   - { id: 133, name: "pop", slug: "pop" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://hp.brs.nihon-u.ac.jp/~fbs/
+image: { src: "/images/clip/875.webp", width: 1200, height: 675, thumb: "/images/clip/875-640.webp" }
+fullImage: { src: "/images/clip/875-full.webp", width: 1000, height: 1655 }
 legacy:
   prev: murakamifarm-sprout
   next: ongakutokurashi

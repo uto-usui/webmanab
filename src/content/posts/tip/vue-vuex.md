@@ -83,6 +83,8 @@ new Vue({
 
 まず Vuex のデータフローの公式図解を見てみます。
 
+![Vuex のデータフローの公式図解](/images/uploads/2018/02/vuex.png)
+
 データは state が保持していて、コンポーネントに呼び出される。データの更新が必要なとき、コンポーネントは dispatch メソッドで action を呼び出して、 action は API などと非同期通信をして値を受け取り、その値を commit メソッドで mutation を呼び出して渡す。そして mutation が state の値を更新する。
 
 というようなサイクルを上の図は表しています。 Action が必ず commit して mutation を呼び出すだけでなく、 コンポーネントは直接 commit して mutation を呼び出すことも可能になっています。

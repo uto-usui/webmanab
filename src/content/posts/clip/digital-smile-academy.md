@@ -20,6 +20,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://dsa.clinic/
+image: { src: "/images/clip/1513.webp", width: 1000, height: 563, thumb: "/images/clip/1513-640.webp" }
+fullImage: { src: "/images/clip/1513-full.webp", width: 1000, height: 4573 }
 legacy:
   prev: design-custom-boxes-packaging-packwire
   next: savee-the-best-way-for-you-to-save-and-share-inspiration

@@ -15,6 +15,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://annethai.com/
+image: { src: "/images/clip/2201.webp", width: 1000, height: 563, thumb: "/images/clip/2201-640.webp" }
+fullImage: { src: "/images/clip/2201-full.jpg", width: 1000, height: 25000 }
 legacy:
   prev: air-jordan-collection-retro-new-editions-jordan-com
   next: artisan-talent

@@ -15,6 +15,8 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.prored-p.com/
+image: { src: "/images/clip/1593.webp", width: 1000, height: 563, thumb: "/images/clip/1593-640.webp" }
+fullImage: { src: "/images/clip/1593-full.webp", width: 1000, height: 3400 }
 legacy:
   prev: oro-recruit
   next: onfadd-mobile-lifestyle-inspired-by-japanese-culture

@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://timroussilhe.com/
+image: { src: "/images/clip/1498.webp", width: 1000, height: 563, thumb: "/images/clip/1498-640.webp" }
+fullImage: { src: "/images/clip/1498-full.webp", width: 1000, height: 9998 }
 legacy:
   prev: la-grosse-lanterne-la-grosse-lanterne
   next: casa-angelina-official-website-luxury-boutique-hotel-in-the-amalfi-coast-romantic-hotel-5-star-hotel

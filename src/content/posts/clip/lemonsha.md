@@ -15,6 +15,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://lemonsha.com/
+image: { src: "/images/clip/165.webp", width: 1000, height: 562, thumb: "/images/clip/165-640.webp" }
+fullImage: { src: "/images/clip/165-full.webp", width: 1000, height: 4690 }
 legacy:
   prev: gree-secondary-project
   next: wed-camp

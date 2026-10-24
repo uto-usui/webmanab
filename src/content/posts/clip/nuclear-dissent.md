@@ -16,6 +16,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.nucleardissent.com
+image: { src: "/images/clip/2435.webp", width: 1200, height: 675, thumb: "/images/clip/2435-640.webp" }
 legacy:
   prev: moxy-software-design-studio
   next: orano-innovations

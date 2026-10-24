@@ -16,6 +16,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.obynars.com/
+image: { src: "/images/clip/2640.webp", width: 1200, height: 675, thumb: "/images/clip/2640-640.webp" }
 legacy:
   prev: lusion
   next: save-whales

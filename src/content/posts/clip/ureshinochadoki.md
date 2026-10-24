@@ -16,6 +16,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://ureshinochadoki.shop/
+image: { src: "/images/clip/2080.webp", width: 1000, height: 563, thumb: "/images/clip/2080-640.webp" }
+fullImage: { src: "/images/clip/2080-full.webp", width: 1000, height: 5428 }
 legacy:
   prev: unitbase-inc
   next: victoria-spicer-london-based-set-designer

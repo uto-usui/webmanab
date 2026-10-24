@@ -14,6 +14,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://2017.makemepulse.com/
+image: { src: "/images/clip/1073.webp", width: 1231, height: 675, thumb: "/images/clip/1073-640.webp" }
 legacy:
   prev: nobody-studios-digitally-driven-design-and-branding
   next: wishes-2017-immersive-garden

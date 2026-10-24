@@ -16,6 +16,8 @@ terms:
   - { id: 110, name: "stationery", slug: "stationery" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://fieldnotesbrand.com/
+image: { src: "/images/clip/364.webp", width: 1000, height: 563, thumb: "/images/clip/364-640.webp" }
+fullImage: { src: "/images/clip/364-full.webp", width: 1000, height: 4258 }
 legacy:
   prev: luxury-resort-in-tuscany-toscana-resort-castelfalfi
   next: myv382tokyo-com

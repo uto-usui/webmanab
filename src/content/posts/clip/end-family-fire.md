@@ -13,6 +13,7 @@ terms:
   - { id: 93, name: "fullscreen", slug: "fullscreen" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: https://www.endfamilyfire.org/
+image: { src: "/images/clip/2434.webp", width: 1200, height: 675, thumb: "/images/clip/2434-640.webp" }
 legacy:
   prev: denys-loveiko-portfolio-2018
   next: epicurrence-no-8

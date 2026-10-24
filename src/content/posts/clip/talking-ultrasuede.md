@@ -14,6 +14,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://talking-ultrasuede.jp/
+image: { src: "/images/clip/694.webp", width: 1200, height: 675, thumb: "/images/clip/694-640.webp" }
+fullImage: { src: "/images/clip/694-full.webp", width: 1000, height: 4436 }
 legacy:
   prev: kizuki
   next: _prefix

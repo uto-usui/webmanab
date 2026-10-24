@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://www.miragefestival.com/
+image: { src: "/images/clip/975.webp", width: 1200, height: 675, thumb: "/images/clip/975-640.webp" }
+fullImage: { src: "/images/clip/975-full.webp", width: 1000, height: 6120 }
 legacy:
   prev: house-at-khlebny
   next: angstrom-latest-works

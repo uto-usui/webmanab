@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 198, name: "science", slug: "science" }
 clipUrl: https://deepmind.com/
+image: { src: "/images/clip/521.webp", width: 1280, height: 720, thumb: "/images/clip/521-640.webp" }
+fullImage: { src: "/images/clip/521-full.webp", width: 1000, height: 2251 }
 legacy:
   prev: ecodom
   next: accueil-la-sainte-paix

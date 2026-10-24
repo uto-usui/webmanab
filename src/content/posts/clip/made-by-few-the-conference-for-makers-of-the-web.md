@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://madebyfew.com/
+image: { src: "/images/clip/479.webp", width: 1280, height: 720, thumb: "/images/clip/479-640.webp" }
+fullImage: { src: "/images/clip/479-full.webp", width: 1000, height: 5039 }
 legacy:
   prev: projections-design-conference-poznan-poland
   next: mixin

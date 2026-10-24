@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.m2mblue.com/
+image: { src: "/images/clip/1552.webp", width: 1000, height: 563, thumb: "/images/clip/1552-640.webp" }
+fullImage: { src: "/images/clip/1552-full.webp", width: 1000, height: 4636 }
 legacy:
   prev: les-petites-culottees
   next: la-peau-de-lours

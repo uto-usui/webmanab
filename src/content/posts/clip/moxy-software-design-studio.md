@@ -15,6 +15,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://moxy.studio/
+image: { src: "/images/clip/2414.webp", width: 1200, height: 675, thumb: "/images/clip/2414-640.webp" }
 legacy:
   prev: mowellens
   next: nuclear-dissent

@@ -16,6 +16,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://invisi.jp/
+image: { src: "/images/clip/1018.webp", width: 1200, height: 675, thumb: "/images/clip/1018-640.webp" }
+fullImage: { src: "/images/clip/1018-full.webp", width: 1000, height: 563 }
 legacy:
   prev: hassyadai-inc
   next: north2-creative-digital-studio

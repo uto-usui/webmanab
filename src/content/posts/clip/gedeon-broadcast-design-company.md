@@ -15,6 +15,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.gedeon.com/
+image: { src: "/images/clip/1553.webp", width: 1000, height: 563, thumb: "/images/clip/1553-640.webp" }
 legacy:
   prev: fotonaut-the-most-entertaining-photobooth-in-outer-space
   next: co

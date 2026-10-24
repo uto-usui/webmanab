@@ -20,6 +20,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://vallierbistro.com/
+image: { src: "/images/clip/870.webp", width: 1200, height: 675, thumb: "/images/clip/870-640.webp" }
+fullImage: { src: "/images/clip/870-full.webp", width: 1000, height: 7098 }
 legacy:
   prev: depart-inc
   next: towada-art-center

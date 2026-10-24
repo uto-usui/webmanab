@@ -17,6 +17,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 106, name: "purple", slug: "purple" }
 clipUrl: https://www.hondersalting.nl/
+image: { src: "/images/clip/1474.webp", width: 1000, height: 563, thumb: "/images/clip/1474-640.webp" }
+fullImage: { src: "/images/clip/1474-full.webp", width: 1000, height: 3716 }
 legacy:
   prev: lateral-view-mobile-design-innovation-studio-ios-android-web
   next: etienne-godiard

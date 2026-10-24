@@ -15,6 +15,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.balmuda.com/
+image: { src: "/images/clip/1088.webp", width: 1200, height: 675, thumb: "/images/clip/1088-640.webp" }
+fullImage: { src: "/images/clip/1088-full.webp", width: 1000, height: 2290 }
 legacy:
   prev: opsundbay
   next: kamioto

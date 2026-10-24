@@ -15,6 +15,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://vspicer.com
+image: { src: "/images/clip/2105.webp", width: 1000, height: 563, thumb: "/images/clip/2105-640.webp" }
+fullImage: { src: "/images/clip/2105-full.webp", width: 1000, height: 1604 }
 legacy:
   prev: ureshinochadoki
   next: wedge

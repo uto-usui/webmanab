@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://wine-art.co/
+image: { src: "/images/clip/1255.webp", width: 1200, height: 675, thumb: "/images/clip/1255-640.webp" }
+fullImage: { src: "/images/clip/1255-full.webp", width: 1000, height: 3962 }
 legacy:
   prev: nahel-moussi
   next: off-box-architecture

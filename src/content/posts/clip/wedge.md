@@ -15,6 +15,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://wedge.work/
+image: { src: "/images/clip/2095.webp", width: 1000, height: 563, thumb: "/images/clip/2095-640.webp" }
+fullImage: { src: "/images/clip/2095-full.webp", width: 1000, height: 1141 }
 legacy:
   prev: victoria-spicer-london-based-set-designer
   next: you-look-familiar-british-council

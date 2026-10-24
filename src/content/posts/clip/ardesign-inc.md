@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://ardesign.ne.jp/
+image: { src: "/images/clip/1406.webp", width: 1200, height: 675, thumb: "/images/clip/1406-640.webp" }
+fullImage: { src: "/images/clip/1406-full.webp", width: 1000, height: 4496 }
 legacy:
   prev: herman-scheer-we-help-brands-make-love
   next: the-ringo-nishiazabu-welcome-to-the-ringo

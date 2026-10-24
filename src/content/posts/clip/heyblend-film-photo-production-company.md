@@ -16,6 +16,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.heyblend.com/
+image: { src: "/images/clip/358.webp", width: 1000, height: 563, thumb: "/images/clip/358-640.webp" }
+fullImage: { src: "/images/clip/358-full.webp", width: 1000, height: 5428 }
 legacy:
   prev: sewage-free-seas
   next: pharrellwilliams

@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://yamazaki-moments.jp/
+image: { src: "/images/clip/2216.webp", width: 1000, height: 563, thumb: "/images/clip/2216-640.webp" }
 legacy:
   prev: viennese-modernism-2018-be-ahead-of-your-time
   next: reba-no-mori

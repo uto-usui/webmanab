@@ -15,6 +15,8 @@ terms:
   - { id: 191, name: "traffic", slug: "traffic" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.jal.com/ja/
+image: { src: "/images/clip/508.webp", width: 1280, height: 720, thumb: "/images/clip/508-640.webp" }
+fullImage: { src: "/images/clip/508-full.webp", width: 1000, height: 5467 }
 legacy:
   prev: a-net-inc
   next: milk-japon-web

@@ -20,6 +20,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.pantheoneaudio.com/
+image: { src: "/images/clip/2814.webp", width: 1200, height: 675, thumb: "/images/clip/2814-640.webp" }
 legacy:
   prev: jesper-landberg
   next: bepatrickdavid

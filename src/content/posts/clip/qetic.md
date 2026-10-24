@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.qetic.jp/
+image: { src: "/images/clip/342.webp", width: 1000, height: 563, thumb: "/images/clip/342-640.webp" }
+fullImage: { src: "/images/clip/342-full.webp", width: 1000, height: 3056 }
 legacy:
   prev: aiga-design-conference
   next: contrast

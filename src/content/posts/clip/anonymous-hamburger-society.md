@@ -15,6 +15,8 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 155, name: "pjax", slug: "pjax" }
 clipUrl: http://www.anonymoushamburger.com/
+image: { src: "/images/clip/795.webp", width: 1280, height: 713, thumb: "/images/clip/795-640.webp" }
+fullImage: { src: "/images/clip/795-full.webp", width: 1000, height: 794 }
 legacy:
   prev: carborocco
   next: jfkc

@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://acme-experience.com/
+image: { src: "/images/clip/500.webp", width: 1280, height: 719, thumb: "/images/clip/500-640.webp" }
+fullImage: { src: "/images/clip/500-full.webp", width: 1000, height: 583 }
 legacy:
   prev: mediamonks
   next: activation-nodeplus-digital-creative-agency

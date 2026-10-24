@@ -18,6 +18,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 324, name: "vue", slug: "vue" }
 clipUrl: https://www.rudolfson.com
+image: { src: "/images/clip/2672.webp", width: 1200, height: 675, thumb: "/images/clip/2672-640.webp" }
 legacy:
   prev: once-upon-a-time-in-hollywood
   next: safari-riot-home

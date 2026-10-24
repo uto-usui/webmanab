@@ -15,6 +15,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://nobody.nyc/
+image: { src: "/images/clip/1072.webp", width: 1200, height: 675, thumb: "/images/clip/1072-640.webp" }
+fullImage: { src: "/images/clip/1072-full.webp", width: 1000, height: 563 }
 legacy:
   prev: are-you-sneaky-like-pete
   next: 2017-make-me-pulse

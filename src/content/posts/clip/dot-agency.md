@@ -17,6 +17,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://dot-agency.it/
+image: { src: "/images/clip/2202.webp", width: 1000, height: 563, thumb: "/images/clip/2202-640.webp" }
 legacy:
   prev: depth-interactive
   next: estyleinc

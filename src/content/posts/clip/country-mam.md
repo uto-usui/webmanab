@@ -13,6 +13,8 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.fujiya-peko.co.jp/countrymaam/
+image: { src: "/images/clip/18.webp", width: 1280, height: 720, thumb: "/images/clip/18-640.webp" }
+fullImage: { src: "/images/clip/18-full.webp", width: 1000, height: 1635 }
 legacy:
   prev: inden-ya-collection
   next: swimmie

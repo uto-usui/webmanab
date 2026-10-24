@@ -14,6 +14,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://ring.education/
+image: { src: "/images/clip/178.webp", width: 1000, height: 563, thumb: "/images/clip/178-640.webp" }
+fullImage: { src: "/images/clip/178-full.webp", width: 1000, height: 3250 }
 legacy:
   prev: loop-2016
   next: defonce-chocolatier

@@ -14,6 +14,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 131, name: "vivid", slug: "vivid" }
 clipUrl: http://www.newdealdesign.com/
+image: { src: "/images/clip/266.webp", width: 1000, height: 562, thumb: "/images/clip/266-640.webp" }
+fullImage: { src: "/images/clip/266-full.webp", width: 1000, height: 3762 }
 legacy:
   prev: sway-water
   next: true-digital-award-winning-full-service-digital-marketing-agency-bristol

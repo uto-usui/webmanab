@@ -17,6 +17,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://uuuuu.work/
+image: { src: "/images/clip/1228.webp", width: 1200, height: 675, thumb: "/images/clip/1228-640.webp" }
+fullImage: { src: "/images/clip/1228-full.webp", width: 1000, height: 2986 }
 legacy:
   prev: jetty
   next: school-visual-interactive-production

@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://recruit.relationsgroup.co.jp/
+image: { src: "/images/clip/71.webp", width: 1280, height: 720, thumb: "/images/clip/71-640.webp" }
+fullImage: { src: "/images/clip/71-full.webp", width: 1000, height: 2271 }
 legacy:
   prev: waaark
   next: awesome-interactive-map-of-japan

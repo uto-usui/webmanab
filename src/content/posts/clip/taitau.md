@@ -13,6 +13,7 @@ terms:
   - { id: 15, name: "food", slug: "food" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://taitau.lt/
+image: { src: "/images/clip/2778.webp", width: 1200, height: 675, thumb: "/images/clip/2778-640.webp" }
 legacy:
   prev: nightingale
   next: maxilla

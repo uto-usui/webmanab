@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 347, name: "UI", slug: "ui" }
 clipUrl: https://www.red-company.nl/
+image: { src: "/images/clip/2783.webp", width: 1200, height: 675, thumb: "/images/clip/2783-640.webp" }
+fullImage: { src: "/images/clip/2783-full.webp", width: 1000, height: 3842 }
 legacy:
   prev: green-chameleon-bristol-based-design-agency
   next: soletanche-bachy

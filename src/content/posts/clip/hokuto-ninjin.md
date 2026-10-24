@@ -15,6 +15,8 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://umabi.jp/hokuto-ninjin/
+image: { src: "/images/clip/2116.webp", width: 1000, height: 563, thumb: "/images/clip/2116-640.webp" }
+fullImage: { src: "/images/clip/2116-full.webp", width: 1000, height: 2636 }
 legacy:
   prev: you-look-familiar-british-council
   next: contents-netbk-recruit

@@ -12,6 +12,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.sweet.studio
+image: { src: "/images/clip/2076.webp", width: 1000, height: 563, thumb: "/images/clip/2076-640.webp" }
 legacy:
   prev: beyond-cafe
   next: a-foreigners-guide-to-the-polish-alphabet-culture-pl

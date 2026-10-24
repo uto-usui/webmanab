@@ -21,6 +21,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://fabrication-laitiere-france.com/en
+image: { src: "/images/clip/2668.webp", width: 1200, height: 675, thumb: "/images/clip/2668-640.webp" }
 legacy:
   prev: akufen-studio-in-montreal-strategy-branding-web-interactive
   next: cobo-plastic-injection-moulding-for-footwear

@@ -19,6 +19,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.igkhair.com/
+image: { src: "/images/clip/1133.webp", width: 1056, height: 594, thumb: "/images/clip/1133-640.webp" }
 legacy:
   prev: kirin-ryotei
   next: usamaru-cafe

@@ -19,6 +19,8 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.marieweber.fr/
+image: { src: "/images/clip/2848.webp", width: 1200, height: 675, thumb: "/images/clip/2848-640.webp" }
+fullImage: { src: "/images/clip/2848-full.webp", width: 1000, height: 1081 }
 legacy:
   prev: koox
   next: obys

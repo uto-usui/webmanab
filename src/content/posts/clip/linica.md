@@ -16,6 +16,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://linica.jp/
+image: { src: "/images/clip/2530.webp", width: 1200, height: 675, thumb: "/images/clip/2530-640.webp" }
+fullImage: { src: "/images/clip/2530-full.webp", width: 1000, height: 5186 }
 legacy:
   prev: jafen-art-studio
   next: non-grid-inc

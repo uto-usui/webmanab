@@ -15,6 +15,7 @@ terms:
   - { id: 113, name: "sea", slug: "sea" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://save-whales.com/
+image: { src: "/images/clip/2643.webp", width: 1200, height: 675, thumb: "/images/clip/2643-640.webp" }
 legacy:
   prev: the-o-by-nars
   next: crafted

@@ -13,6 +13,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.mariobruschi.com/en
+image: { src: "/images/clip/30.webp", width: 1280, height: 720, thumb: "/images/clip/30-640.webp" }
+fullImage: { src: "/images/clip/30-full.webp", width: 1000, height: 1840 }
 legacy:
   prev: melanie-f-slippers-for-children
   next: jour-couture

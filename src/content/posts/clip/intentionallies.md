@@ -13,6 +13,8 @@ terms:
   - { id: 13, name: "gallery", slug: "gallery" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: http://www.intentionallies.co.jp/
+image: { src: "/images/clip/2109.webp", width: 1000, height: 563, thumb: "/images/clip/2109-640.webp" }
+fullImage: { src: "/images/clip/2109-full.webp", width: 1000, height: 6460 }
 legacy:
   prev: humana
   next: julie-bonnemoy

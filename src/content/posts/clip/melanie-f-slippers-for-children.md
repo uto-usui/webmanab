@@ -13,6 +13,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://melanie-f.com/en/
+image: { src: "/images/clip/25.webp", width: 1280, height: 720, thumb: "/images/clip/25-640.webp" }
+fullImage: { src: "/images/clip/25-full.webp", width: 1000, height: 562 }
 legacy:
   prev: swimmie
   next: mario-bruschi

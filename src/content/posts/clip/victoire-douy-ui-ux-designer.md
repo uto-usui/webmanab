@@ -20,6 +20,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://vyctoire.com/
+image: { src: "/images/clip/1262.webp", width: 1200, height: 675, thumb: "/images/clip/1262-640.webp" }
 legacy:
   prev: casamance-editeur-de-tissus-papier-peint-et-revetement-mural-contemporain
   next: rff-reykjavik-fashion-festival

@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://ryotei.kirin.jp/
+image: { src: "/images/clip/1141.webp", width: 1200, height: 675, thumb: "/images/clip/1141-640.webp" }
+fullImage: { src: "/images/clip/1141-full.webp", width: 1000, height: 5693 }
 legacy:
   prev: orsolina28
   next: igk-hair-home

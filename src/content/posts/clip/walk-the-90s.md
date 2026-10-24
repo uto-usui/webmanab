@@ -15,6 +15,7 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://circulardev.com/nike/cortez/
+image: { src: "/images/clip/2002.webp", width: 1000, height: 563, thumb: "/images/clip/2002-640.webp" }
 legacy:
   prev: valetta
   next: dieter-rams-ten-principles-for-good-design-by-shuffle-readymag

@@ -17,6 +17,7 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: https://takatsugushimazaki.com/
+image: { src: "/images/clip/2526.webp", width: 1200, height: 675, thumb: "/images/clip/2526-640.webp" }
 legacy:
   prev: port
   next: the-bewegen-bike-share-system-power-your-ride

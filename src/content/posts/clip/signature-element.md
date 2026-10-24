@@ -22,6 +22,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.signatureelement.com
+image: { src: "/images/clip/2404.webp", width: 1200, height: 675, thumb: "/images/clip/2404-640.webp" }
 legacy:
   prev: see-the-light
   next: skinfinity-cosmetics

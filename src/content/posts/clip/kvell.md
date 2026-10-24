@@ -19,6 +19,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://kvellhome.com
+image: { src: "/images/clip/1268.webp", width: 1200, height: 675, thumb: "/images/clip/1268-640.webp" }
 legacy:
   prev: le-cafe-noir-studio
   next: i-buongiorno-wines-from-salento

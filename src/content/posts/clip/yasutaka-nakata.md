@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://yasutaka-nakata.com/
+image: { src: "/images/clip/1401.webp", width: 1200, height: 675, thumb: "/images/clip/1401-640.webp" }
+fullImage: { src: "/images/clip/1401-full.webp", width: 1000, height: 5560 }
 legacy:
   prev: oro
   next: point-edge-inc

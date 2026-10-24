@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://supercrowds.co/
+image: { src: "/images/clip/1840.webp", width: 1000, height: 563, thumb: "/images/clip/1840-640.webp" }
 legacy:
   prev: sun-drive
   next: josephmark

@@ -15,6 +15,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.petline.co.jp/medycoat/
+image: { src: "/images/clip/1538.webp", width: 1000, height: 566, thumb: "/images/clip/1538-640.webp" }
 legacy:
   prev: takagirl
   next: odai-voice-of-odai-mie-japan

@@ -14,6 +14,7 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.inden-ya.co.jp/senseofwonder/
+image: { src: "/images/clip/1217.webp", width: 1200, height: 675, thumb: "/images/clip/1217-640.webp" }
 legacy:
   prev: insymbiosis
   next: dot-cotton-tampons-pads-and-liner-stop-the-dot

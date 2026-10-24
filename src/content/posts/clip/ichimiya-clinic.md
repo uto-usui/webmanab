@@ -18,6 +18,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://ichimiya-clinic.jp/
+image: { src: "/images/clip/661.webp", width: 1280, height: 720, thumb: "/images/clip/661-640.webp" }
+fullImage: { src: "/images/clip/661-full.webp", width: 1000, height: 3202 }
 legacy:
   prev: gina
   next: kaeru78

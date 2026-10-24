@@ -13,6 +13,8 @@ terms:
   - { id: 42, name: "local", slug: "local" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://newacton.com.au/
+image: { src: "/images/clip/113.webp", width: 1000, height: 562, thumb: "/images/clip/113-640.webp" }
+fullImage: { src: "/images/clip/113-full.webp", width: 1000, height: 562 }
 legacy:
   prev: su5
   next: anex

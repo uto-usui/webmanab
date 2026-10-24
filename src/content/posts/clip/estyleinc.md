@@ -20,6 +20,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://estyle-inc.jp/
+image: { src: "/images/clip/2217.webp", width: 1000, height: 563, thumb: "/images/clip/2217-640.webp" }
+fullImage: { src: "/images/clip/2217-full.webp", width: 1000, height: 4290 }
 legacy:
   prev: dot-agency
   next: general-services-inc

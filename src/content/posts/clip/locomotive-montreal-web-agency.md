@@ -16,6 +16,8 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://locomotive.ca/
+image: { src: "/images/clip/363.webp", width: 1280, height: 720, thumb: "/images/clip/363-640.webp" }
+fullImage: { src: "/images/clip/363-full.webp", width: 1000, height: 2266 }
 legacy:
   prev: squares-conference-a-design-dev-conference-by-circles-co
   next: epicurrence

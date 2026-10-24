@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://unclegrey.dk/
+image: { src: "/images/clip/498.webp", width: 1280, height: 720, thumb: "/images/clip/498-640.webp" }
+fullImage: { src: "/images/clip/498-full.webp", width: 1000, height: 3843 }
 legacy:
   prev: website-of-the-year-2015-css-design-awards
   next: mediamonks

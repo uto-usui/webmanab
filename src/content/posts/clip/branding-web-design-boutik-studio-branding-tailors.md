@@ -17,6 +17,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://boutik.pt/
+image: { src: "/images/clip/957.webp", width: 1200, height: 675, thumb: "/images/clip/957-640.webp" }
+fullImage: { src: "/images/clip/957-full.webp", width: 1000, height: 1656 }
 legacy:
   prev: boffi-official-website
   next: nicholas-ruggeri

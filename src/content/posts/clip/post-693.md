@@ -11,6 +11,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://www.getprefix.com/
+image: { src: "/images/clip/693.webp", width: 1200, height: 675, thumb: "/images/clip/693-640.webp" }
+fullImage: { src: "/images/clip/693-full.webp", width: 1000, height: 1882 }
 legacy:
   prev: talking-ultrasuede
   next: fantastic-beasts-magical-maps

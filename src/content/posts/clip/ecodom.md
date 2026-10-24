@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.ecodom-consorzio.it/it
+image: { src: "/images/clip/516.webp", width: 1280, height: 742, thumb: "/images/clip/516-640.webp" }
+fullImage: { src: "/images/clip/516-full.webp", width: 1000, height: 563 }
 legacy:
   prev: honda-moto-2017
   next: deepmind

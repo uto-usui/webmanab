@@ -13,6 +13,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.epicurrence.com/
+image: { src: "/images/clip/1774.webp", width: 1000, height: 563, thumb: "/images/clip/1774-640.webp" }
+fullImage: { src: "/images/clip/1774-full.webp", width: 953, height: 9999 }
 legacy:
   prev: envoy-homepage
   next: epok-design-studio-de-graphisme-a-paris

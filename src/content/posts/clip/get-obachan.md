@@ -19,6 +19,7 @@ terms:
   - { id: 92, name: "service", slug: "service" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://getobachan.com/
+image: { src: "/images/clip/2003.webp", width: 1000, height: 563, thumb: "/images/clip/2003-640.webp" }
 legacy:
   prev: folk
   next: gwbi-great-wisdom-buddhist-institute

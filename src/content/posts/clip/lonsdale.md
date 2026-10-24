@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.lonsdale.fr/fr/
+image: { src: "/images/clip/1520.webp", width: 1000, height: 563, thumb: "/images/clip/1520-640.webp" }
+fullImage: { src: "/images/clip/1520-full.webp", width: 1000, height: 2678 }
 legacy:
   prev: crazy-inc
   next: les-petites-culottees

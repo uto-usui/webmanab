@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.meetthegreek.com.au
+image: { src: "/images/clip/1231.webp", width: 1200, height: 675, thumb: "/images/clip/1231-640.webp" }
 legacy:
   prev: hush-google-deep-city
   next: tanakacho

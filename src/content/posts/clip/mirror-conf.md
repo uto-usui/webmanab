@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://mirrorconf.com/
+image: { src: "/images/clip/489.webp", width: 1280, height: 720, thumb: "/images/clip/489-640.webp" }
+fullImage: { src: "/images/clip/489-full.webp", width: 1000, height: 4534 }
 legacy:
   prev: wordpress-dev-conference-october-5-7-2016
   next: cssconf-budapest-2016

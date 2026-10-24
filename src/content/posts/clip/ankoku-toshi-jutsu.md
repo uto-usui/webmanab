@@ -14,6 +14,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 70, name: "sports", slug: "sports" }
 clipUrl: https://www.ankoku-toshi-jutsu.com/
+image: { src: "/images/clip/1835.webp", width: 1000, height: 563, thumb: "/images/clip/1835-640.webp" }
 legacy:
   prev: andy-wei-narrator-artist
   next: aristide-benoist-creative-developer

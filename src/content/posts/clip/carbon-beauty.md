@@ -23,6 +23,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.carbonbeauty.com/
+image: { src: "/images/clip/1271.webp", width: 1200, height: 675, thumb: "/images/clip/1271-640.webp" }
 legacy:
   prev: adidas-nmd-trainer-adidas-uk
   next: konterball

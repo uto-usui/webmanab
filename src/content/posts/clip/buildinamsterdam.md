@@ -16,6 +16,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.buildinamsterdam.com/
+image: { src: "/images/clip/2340.webp", width: 1200, height: 625, thumb: "/images/clip/2340-640.webp" }
 legacy:
   prev: sfc-open-research-forum-2018
   next: home-etq-amsterdam

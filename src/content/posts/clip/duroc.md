@@ -19,6 +19,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: https://www.duroc.ma/en/
+image: { src: "/images/clip/2010.webp", width: 1000, height: 563, thumb: "/images/clip/2010-640.webp" }
 legacy:
   prev: dogtrot
   next: einr-as

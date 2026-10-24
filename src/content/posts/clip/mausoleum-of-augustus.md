@@ -14,6 +14,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://experience.mausoleodiaugusto.it/
+image: { src: "/images/clip/1384.webp", width: 1200, height: 675, thumb: "/images/clip/1384-640.webp" }
 legacy:
   prev: point-edge-inc
   next: kaiyukan

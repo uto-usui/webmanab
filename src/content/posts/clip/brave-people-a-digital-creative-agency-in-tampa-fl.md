@@ -12,6 +12,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://bravepeople.co/
+image: { src: "/images/clip/180.webp", width: 1000, height: 563, thumb: "/images/clip/180-640.webp" }
+fullImage: { src: "/images/clip/180-full.webp", width: 1000, height: 4271 }
 legacy:
   prev: kamino-mf
   next: loop-2016

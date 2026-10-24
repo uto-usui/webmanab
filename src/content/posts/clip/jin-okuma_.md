@@ -16,6 +16,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: https://jinokuma.net/
+image: { src: "/images/clip/2422.webp", width: 1200, height: 675, thumb: "/images/clip/2422-640.webp" }
+fullImage: { src: "/images/clip/2422-full.webp", width: 1000, height: 5396 }
 legacy:
   prev: igoodi
   next: kikk-festival-2018-8th-edition-kikk-2018

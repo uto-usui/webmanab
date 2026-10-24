@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://monopo.co.jp/
+image: { src: "/images/clip/1588.webp", width: 1000, height: 563, thumb: "/images/clip/1588-640.webp" }
+fullImage: { src: "/images/clip/1588-full.webp", width: 1000, height: 1817 }
 legacy:
   prev: usports
   next: yonayonaale

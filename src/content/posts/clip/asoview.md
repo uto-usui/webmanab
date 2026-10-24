@@ -13,6 +13,8 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.asoview.co.jp/
+image: { src: "/images/clip/1527.webp", width: 1000, height: 563, thumb: "/images/clip/1527-640.webp" }
+fullImage: { src: "/images/clip/1527-full.webp", width: 1000, height: 6529 }
 legacy:
   prev: fil
   next: hite

@@ -16,6 +16,8 @@ terms:
   - { id: 122, name: "timeline", slug: "timeline" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://jsconf.uy/
+image: { src: "/images/clip/496.webp", width: 1280, height: 720, thumb: "/images/clip/496-640.webp" }
+fullImage: { src: "/images/clip/496-full.webp", width: 1000, height: 8090 }
 legacy:
   prev: you-gotta-love-frontend-conference-june-27-28-2016-tel-aviv-israel
   next: website-of-the-year-2015-css-design-awards

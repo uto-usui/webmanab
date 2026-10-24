@@ -17,6 +17,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://sportsmanship-heros.jp/
+image: { src: "/images/clip/1586.webp", width: 1000, height: 563, thumb: "/images/clip/1586-640.webp" }
+fullImage: { src: "/images/clip/1586-full.webp", width: 1000, height: 8551 }
 legacy:
   prev: yonayonaale
   next: maquillage

@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.mad.ac/
+image: { src: "/images/clip/2314.webp", width: 1200, height: 625, thumb: "/images/clip/2314-640.webp" }
+fullImage: { src: "/images/clip/2314-full.webp", width: 1000, height: 3602 }
 legacy:
   prev: home-frans-hals-museum
   next: prince-discography

@@ -14,6 +14,8 @@ terms:
   - { id: 16, name: "grid", slug: "grid" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://2016.jsconf.is/
+image: { src: "/images/clip/483.webp", width: 1280, height: 720, thumb: "/images/clip/483-640.webp" }
+fullImage: { src: "/images/clip/483-full.webp", width: 1000, height: 2229 }
 legacy:
   prev: gree-ventures
   next: outpost

@@ -14,6 +14,8 @@ terms:
   - { id: 46, name: "trip", slug: "trip" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.sanbiagiorelais.com/en/
+image: { src: "/images/clip/734.webp", width: 1200, height: 675, thumb: "/images/clip/734-640.webp" }
+fullImage: { src: "/images/clip/734-full.webp", width: 1000, height: 4762 }
 legacy:
   prev: moco
   next: goodlife

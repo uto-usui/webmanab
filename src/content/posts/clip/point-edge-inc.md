@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.pointedge.work/
+image: { src: "/images/clip/1403.webp", width: 1200, height: 675, thumb: "/images/clip/1403-640.webp" }
+fullImage: { src: "/images/clip/1403-full.webp", width: 1000, height: 5307 }
 legacy:
   prev: yasutaka-nakata
   next: mausoleum-of-augustus

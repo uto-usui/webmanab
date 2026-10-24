@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.creamu.co.jp/
+image: { src: "/images/clip/1393.webp", width: 1200, height: 675, thumb: "/images/clip/1393-640.webp" }
+fullImage: { src: "/images/clip/1393-full.webp", width: 1000, height: 4306 }
 legacy:
   prev: hios
   next: voicecream

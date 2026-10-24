@@ -18,6 +18,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://firstframe.fr
+image: { src: "/images/clip/2636.webp", width: 1200, height: 675, thumb: "/images/clip/2636-640.webp" }
 legacy:
   prev: fabio-fantolino
   next: lusion

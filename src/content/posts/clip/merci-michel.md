@@ -17,6 +17,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.merci-michel.com/
+image: { src: "/images/clip/980.webp", width: 1200, height: 675, thumb: "/images/clip/980-640.webp" }
 legacy:
   prev: poissons-exotiques-deau-douce-maison-haegel
   next: house-at-khlebny

@@ -17,6 +17,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://en.leviev-group.com
+image: { src: "/images/clip/1968.webp", width: 1000, height: 563, thumb: "/images/clip/1968-640.webp" }
+fullImage: { src: "/images/clip/1968-full.webp", width: 1000, height: 3874 }
 legacy:
   prev: le-gramme
   next: macaulay-sinclair

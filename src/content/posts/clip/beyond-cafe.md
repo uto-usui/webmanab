@@ -14,6 +14,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://beyond-cafe.com/
+image: { src: "/images/clip/2073.webp", width: 1000, height: 563, thumb: "/images/clip/2073-640.webp" }
+fullImage: { src: "/images/clip/2073-full.webp", width: 1000, height: 7262 }
 legacy:
   prev: air-france-music
   next: sweet-studio

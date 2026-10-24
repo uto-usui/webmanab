@@ -19,6 +19,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.aristidebenoist.com/
+image: { src: "/images/clip/2407.webp", width: 1200, height: 676, thumb: "/images/clip/2407-640.webp" }
 legacy:
   prev: adrien-laurent-portfolio
   next: artistsweb

@@ -18,6 +18,8 @@ terms:
   - { id: 153, name: "pet", slug: "pet" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://rinn.co.jp/
+image: { src: "/images/clip/2319.webp", width: 1200, height: 625, thumb: "/images/clip/2319-640.webp" }
+fullImage: { src: "/images/clip/2319-full.webp", width: 1000, height: 11929 }
 legacy:
   prev: business-moller-mobility-group
   next: providence-forum

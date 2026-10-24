@@ -16,6 +16,8 @@ terms:
   - { id: 45, name: "women", slug: "women" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://16soap.jp/
+image: { src: "/images/clip/171.webp", width: 1000, height: 563, thumb: "/images/clip/171-640.webp" }
+fullImage: { src: "/images/clip/171-full.webp", width: 1000, height: 3745 }
 legacy:
   prev: lo-flo-records
   next: suliya

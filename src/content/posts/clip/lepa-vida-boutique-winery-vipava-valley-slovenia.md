@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://lepavida.wine/
+image: { src: "/images/clip/1501.webp", width: 1000, height: 563, thumb: "/images/clip/1501-640.webp" }
+fullImage: { src: "/images/clip/1501-full.webp", width: 1000, height: 7467 }
 legacy:
   prev: very-berry
   next: design-custom-boxes-packaging-packwire

@@ -19,6 +19,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://klaer.rottefella.no/en/intro
+image: { src: "/images/clip/1815.webp", width: 1000, height: 563, thumb: "/images/clip/1815-640.webp" }
+fullImage: { src: "/images/clip/1815-full.webp", width: 641, height: 9999 }
 legacy:
   prev: riftworld-reed
   next: shop-simply-chocolate-simply-chocolate

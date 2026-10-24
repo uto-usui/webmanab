@@ -24,11 +24,15 @@ legacy:
 
 ### Inspiration for Line Menu Styles
 
+![LineMenuStyles](/images/uploads/2016/07/LineMenuStyles.png)
+
 シンプルで効果的なナビゲーションエフェクトのインスピレーション集。
 
 [Inspiration for Line Menu Styles](http://tympanus.net/Development/LineMenuStyles/)
 
 ### Creative Link Effects
+
+![CreativeLinkEffects1](/images/uploads/2016/07/CreativeLinkEffects1.png)
 
 プロジェクトに取り入れやすそうな、シンプルなラインアクションなどをまとめたスタイル集。
 
@@ -36,12 +40,16 @@ legacy:
 
 ### Sidebar Transitions
 
+![sidebartransitions](/images/uploads/2016/07/sidebartransitions.png)
+
 トランジションをうまく使った、アニメーション集。\
 3d表現のダイナミックなスタイルも用意されている。
 
 [Sidebar Transitions](http://tympanus.net/Development/SidebarTransitions/)
 
 ### Header Effects
+
+![HeaderEffects](/images/uploads/2016/07/HeaderEffects.jpg)
 
 ヘッダーナビゲーション固定レイアウト実装の際、スクロール後に縮小などのアニメーションを伴ったスタイル変更のインスピレーション。
 
@@ -53,6 +61,8 @@ legacy:
 
 ### Arrow Navigation Styles
 
+![ArrowNavigationEffects](/images/uploads/2016/07/ArrowNavigationEffects.png)
+
 矢印をホバーすると、サムネイルやタイトルなどのキャプションが現れるインタラクティブなスタイル集。
 
 [ArrowNavigationStyles](http://tympanus.net/Development/ArrowNavigationStyles/)
@@ -63,11 +73,15 @@ legacy:
 
 ### Dot Navigation Styles
 
+![DotNavigationStyles](/images/uploads/2016/07/DotNavigationStyles.png)
+
 よくあるサークル状のバレットスタイルで、遊びのあるアニメーションやツールチップを表示させるスタイルも用意されている。
 
 [Dot Navigation Styles](http://tympanus.net/Development/DotNavigationStyles/)
 
 ### スライダーなどで使用される、バレットナビゲーションのスタイル・エフェクトサンプル
+
+![bullet-navigation](/images/uploads/2016/07/bullet-navigation-600x307.png)
 
 実装のコードなどが細やかに開設されており、シンプルでカスタマイズしやすいものがたくさん紹介されている。\
 サークル状や矩形、三角形のスタイルなど形状も多様。

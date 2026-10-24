@@ -20,6 +20,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.martell.com/en-us/
+image: { src: "/images/clip/2779.webp", width: 1200, height: 675, thumb: "/images/clip/2779-640.webp" }
+fullImage: { src: "/images/clip/2779-full.webp", width: 1000, height: 6234 }
 legacy:
   prev: ultraviolet-way
   next: bruno-arizio-interactive-designer

@@ -19,6 +19,7 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.26may.ge/en/home/index
+image: { src: "/images/clip/2628.webp", width: 1200, height: 675, thumb: "/images/clip/2628-640.webp" }
 legacy:
   prev: design-documentary-design-canada
   next: prmo-inc

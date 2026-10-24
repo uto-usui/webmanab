@@ -12,6 +12,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: http://www.mageredavid.fr/
+image: { src: "/images/clip/176.webp", width: 1280, height: 720, thumb: "/images/clip/176-640.webp" }
+fullImage: { src: "/images/clip/176-full.webp", width: 1000, height: 1684 }
 legacy:
   prev: caribbean-vacation-in-full-360o
   next: kamino-mf

@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.beoplay.com/landingpages/beoplayh4
+image: { src: "/images/clip/1075.webp", width: 1200, height: 675, thumb: "/images/clip/1075-640.webp" }
 legacy:
   prev: wishes-2017-immersive-garden
   next: dreamscapes-lufthansa-dreamscapes

@@ -15,6 +15,7 @@ terms:
   - { id: 71, name: "hover", slug: "hover" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.cobosrl.co/
+image: { src: "/images/clip/2677.webp", width: 1200, height: 672, thumb: "/images/clip/2677-640.webp" }
 legacy:
   prev: au-rythme-du-lait
   next: design-for-business-impact-designer-fund

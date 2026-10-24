@@ -20,6 +20,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://www.lyonurbantrail.com/
+image: { src: "/images/clip/2603.webp", width: 1200, height: 675, thumb: "/images/clip/2603-640.webp" }
+fullImage: { src: "/images/clip/2603-full.webp", width: 1000, height: 5337 }
 legacy:
   prev: locomotive
   next: olivier-ouendeno-portfolio

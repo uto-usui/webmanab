@@ -10,6 +10,8 @@ primaryTag: "japan"
 terms:
   - { id: 62, name: "japan", slug: "japan" }
 clipUrl: http://www.kuronekoyamato.co.jp/ytc/customer/
+image: { src: "/images/clip/858.webp", width: 1200, height: 675, thumb: "/images/clip/858-640.webp" }
+fullImage: { src: "/images/clip/858-full.webp", width: 1000, height: 3960 }
 legacy:
   prev: pell-mell-agency
   next: villes-paysages-agence-durbanistes-et-darchitectes-paysagistes

@@ -14,6 +14,7 @@ terms:
   - { id: 281, name: "Russia", slug: "russia" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://appd.ru/
+image: { src: "/images/clip/1243.webp", width: 1200, height: 675, thumb: "/images/clip/1243-640.webp" }
 legacy:
   prev: amelias-portfolio
   next: designagentur-grafikdesign-webdesign-mekades-friends

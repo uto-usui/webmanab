@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://blab.studio/
+image: { src: "/images/clip/2416.webp", width: 1200, height: 675, thumb: "/images/clip/2416-640.webp" }
 legacy:
   prev: unit-london
   next: anaktae-architecture-interior-decoration-and-product-design

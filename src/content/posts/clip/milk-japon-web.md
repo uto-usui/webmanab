@@ -16,6 +16,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://milkjapon.com/
+image: { src: "/images/clip/509.webp", width: 1280, height: 720, thumb: "/images/clip/509-640.webp" }
+fullImage: { src: "/images/clip/509-full.webp", width: 1000, height: 4074 }
 legacy:
   prev: jal
   next: gree-ventures

@@ -20,6 +20,7 @@ terms:
   - { id: 92, name: "service", slug: "service" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://orendasecurity.com/
+image: { src: "/images/clip/2108.webp", width: 1000, height: 563, thumb: "/images/clip/2108-640.webp" }
 legacy:
   prev: one-media
   next: pofo-digital-agency-theme

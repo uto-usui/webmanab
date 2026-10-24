@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.i-studio.co.jp/
+image: { src: "/images/clip/2103.webp", width: 1000, height: 563, thumb: "/images/clip/2103-640.webp" }
+fullImage: { src: "/images/clip/2103-full.webp", width: 1000, height: 3953 }
 legacy:
   prev: contents-netbk-recruit
   next: aoki-jimusho

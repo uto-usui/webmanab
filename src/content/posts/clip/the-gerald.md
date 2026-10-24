@@ -16,6 +16,8 @@ terms:
   - { id: 46, name: "trip", slug: "trip" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://thegerald.com.au/
+image: { src: "/images/clip/2275.webp", width: 1200, height: 625, thumb: "/images/clip/2275-640.webp" }
+fullImage: { src: "/images/clip/2275-full.webp", width: 1000, height: 4519 }
 legacy:
   prev: ruya-web-design-web-development
   next: yaay-year-review-2017

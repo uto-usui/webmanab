@@ -20,6 +20,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.dock.cz/en
+image: { src: "/images/clip/1507.webp", width: 1000, height: 563, thumb: "/images/clip/1507-640.webp" }
 legacy:
   prev: viva-le-velo
   next: panike

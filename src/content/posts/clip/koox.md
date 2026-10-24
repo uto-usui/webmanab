@@ -20,6 +20,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://koox.co.uk/
+image: { src: "/images/clip/2839.webp", width: 1200, height: 675, thumb: "/images/clip/2839-640.webp" }
 legacy:
   prev: chipsa-design
   next: marie-weber

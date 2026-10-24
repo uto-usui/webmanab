@@ -15,6 +15,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.etq-amsterdam.com/
+image: { src: "/images/clip/2339.webp", width: 1200, height: 625, thumb: "/images/clip/2339-640.webp" }
 legacy:
   prev: buildinamsterdam
   next: top-sunny

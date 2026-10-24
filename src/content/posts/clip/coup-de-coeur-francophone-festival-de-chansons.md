@@ -17,6 +17,8 @@ terms:
   - { id: 131, name: "vivid", slug: "vivid" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.coupdecoeur.ca/
+image: { src: "/images/clip/751.webp", width: 1200, height: 675, thumb: "/images/clip/751-640.webp" }
+fullImage: { src: "/images/clip/751-full.webp", width: 1000, height: 4028 }
 legacy:
   prev: goodlife
   next: revols-quick-custom-fit-wireless-earphones

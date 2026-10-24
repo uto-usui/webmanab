@@ -15,6 +15,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.conserveca.org/
+image: { src: "/images/clip/972.webp", width: 1200, height: 675, thumb: "/images/clip/972-640.webp" }
+fullImage: { src: "/images/clip/972-full.webp", width: 1000, height: 5204 }
 legacy:
   prev: riccardo-ambrosio-photographer
   next: we3

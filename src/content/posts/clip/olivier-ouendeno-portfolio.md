@@ -21,6 +21,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.olouen.com/
+image: { src: "/images/clip/2591.webp", width: 1200, height: 675, thumb: "/images/clip/2591-640.webp" }
 legacy:
   prev: lyon-urban-trail
   next: silo

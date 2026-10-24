@@ -13,6 +13,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://www.inden-ya.co.jp/collection/
+image: { src: "/images/clip/15.webp", width: 1280, height: 720, thumb: "/images/clip/15-640.webp" }
 legacy:
   prev: null
   next: country-mam

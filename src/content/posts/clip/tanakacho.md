@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: http://tanakacho.co.jp/
+image: { src: "/images/clip/1230.webp", width: 1200, height: 675, thumb: "/images/clip/1230-640.webp" }
+fullImage: { src: "/images/clip/1230-full.webp", width: 1000, height: 2687 }
 legacy:
   prev: meet-the-greek
   next: shochikugeino

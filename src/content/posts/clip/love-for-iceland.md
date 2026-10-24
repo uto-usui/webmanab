@@ -14,6 +14,7 @@ terms:
   - { id: 142, name: "magazine", slug: "magazine" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://loveforiceland.com/
+image: { src: "/images/clip/1819.webp", width: 1000, height: 563, thumb: "/images/clip/1819-640.webp" }
 legacy:
   prev: home-ursa-major-supercluster
   next: midday-sweepstakes-crux

@@ -12,6 +12,8 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.kindai.ac.jp/
+image: { src: "/images/clip/1591.webp", width: 1000, height: 563, thumb: "/images/clip/1591-640.webp" }
+fullImage: { src: "/images/clip/1591-full.webp", width: 1000, height: 2780 }
 legacy:
   prev: piero-milano
   next: sakumastudio

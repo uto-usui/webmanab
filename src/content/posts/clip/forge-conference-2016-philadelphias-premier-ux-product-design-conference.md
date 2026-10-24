@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.forgeconf.com/
+image: { src: "/images/clip/487.webp", width: 1280, height: 719, thumb: "/images/clip/487-640.webp" }
+fullImage: { src: "/images/clip/487-full.webp", width: 1000, height: 4501 }
 legacy:
   prev: the-frontend-guide-to-life-universe-and-everything
   next: wordpress-dev-conference-october-5-7-2016

@@ -17,6 +17,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.pbs.up.pt/
+image: { src: "/images/clip/2279.webp", width: 1200, height: 675, thumb: "/images/clip/2279-640.webp" }
+fullImage: { src: "/images/clip/2279-full.webp", width: 1000, height: 1339 }
 legacy:
   prev: newhattan
   next: robin-mastromarino-interactive-designer

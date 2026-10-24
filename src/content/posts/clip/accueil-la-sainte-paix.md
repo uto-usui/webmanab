@@ -20,6 +20,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://saintepaix.com/
+image: { src: "/images/clip/520.webp", width: 1280, height: 720, thumb: "/images/clip/520-640.webp" }
+fullImage: { src: "/images/clip/520-full.webp", width: 1000, height: 3002 }
 legacy:
   prev: deepmind
   next: luminaire-deco-scandinave-lampes-design-lampadaires-meubles-aix-en-provence

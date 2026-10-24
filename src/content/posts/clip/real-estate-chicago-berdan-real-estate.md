@@ -11,6 +11,8 @@ terms:
   - { id: 16, name: "grid", slug: "grid" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: http://berdanrealestate.com/
+image: { src: "/images/clip/2107.webp", width: 1000, height: 563, thumb: "/images/clip/2107-640.webp" }
+fullImage: { src: "/images/clip/2107-full.webp", width: 1000, height: 4119 }
 legacy:
   prev: general-services-inc
   next: viennese-modernism-2018-be-ahead-of-your-time

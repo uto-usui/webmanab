@@ -14,6 +14,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://analyticaprojects.com/
+image: { src: "/images/clip/1966.webp", width: 1000, height: 563, thumb: "/images/clip/1966-640.webp" }
 legacy:
   prev: dieter-rams-ten-principles-for-good-design-by-shuffle-readymag
   next: air-france-music

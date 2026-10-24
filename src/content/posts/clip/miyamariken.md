@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://miyamariken.co.jp/
+image: { src: "/images/clip/2087.webp", width: 1000, height: 563, thumb: "/images/clip/2087-640.webp" }
+fullImage: { src: "/images/clip/2087-full.webp", width: 1000, height: 2443 }
 legacy:
   prev: aoki-jimusho
   next: kamayaki_pasco

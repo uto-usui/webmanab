@@ -11,6 +11,7 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: http://www.wacoal.jp/yourbeauty/
+image: { src: "/images/clip/1250.webp", width: 1200, height: 649, thumb: "/images/clip/1250-640.webp" }
 legacy:
   prev: head-country-front-page
   next: gig-inc

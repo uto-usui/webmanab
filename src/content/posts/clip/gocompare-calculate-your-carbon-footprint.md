@@ -13,6 +13,7 @@ terms:
   - { id: 61, name: "illustration", slug: "illustration" }
   - { id: 92, name: "service", slug: "service" }
 clipUrl: http://www.gocompare.com/gas-and-electricity/carbon-footprint/
+image: { src: "/images/clip/1504.webp", width: 1000, height: 563, thumb: "/images/clip/1504-640.webp" }
 legacy:
   prev: zero-_-starting-ideas
   next: the-feebles-design-happiness

@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.castelfalfi.com/
+image: { src: "/images/clip/351.webp", width: 1000, height: 563, thumb: "/images/clip/351-640.webp" }
+fullImage: { src: "/images/clip/351-full.webp", width: 1000, height: 4293 }
 legacy:
   prev: prototype-fund
   next: field-notes

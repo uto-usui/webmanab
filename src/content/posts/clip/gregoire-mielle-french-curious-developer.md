@@ -13,6 +13,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://greeeg.com/
+image: { src: "/images/clip/2607.webp", width: 1200, height: 675, thumb: "/images/clip/2607-640.webp" }
 legacy:
   prev: awwwards-conference
   next: hinderer-and-wolff

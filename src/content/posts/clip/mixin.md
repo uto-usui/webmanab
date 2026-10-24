@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 131, name: "vivid", slug: "vivid" }
 clipUrl: http://mixinconf.com/
+image: { src: "/images/clip/481.webp", width: 1280, height: 720, thumb: "/images/clip/481-640.webp" }
+fullImage: { src: "/images/clip/481-full.webp", width: 1000, height: 7581 }
 legacy:
   prev: made-by-few-the-conference-for-makers-of-the-web
   next: jsconf-eu-2015

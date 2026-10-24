@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.kikk.be/
+image: { src: "/images/clip/1544.webp", width: 1000, height: 444, thumb: "/images/clip/1544-640.webp" }
 legacy:
   prev: connection-of-the-children
   next: fotonaut-the-most-entertaining-photobooth-in-outer-space

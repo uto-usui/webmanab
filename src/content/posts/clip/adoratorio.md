@@ -23,6 +23,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://adoratorio.studio/
+image: { src: "/images/clip/1984.webp", width: 1000, height: 529, thumb: "/images/clip/1984-640.webp" }
 legacy:
   prev: famiglia-cecchi-official-site
   next: bizzgrid

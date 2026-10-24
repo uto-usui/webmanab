@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://sodaterutowel.com/
+image: { src: "/images/clip/744.webp", width: 1280, height: 720, thumb: "/images/clip/744-640.webp" }
+fullImage: { src: "/images/clip/744-full.webp", width: 1000, height: 2578 }
 legacy:
   prev: manneknepis
   next: benoit-challand

@@ -22,6 +22,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://taskchairs.vitra.com/
+image: { src: "/images/clip/1522.webp", width: 1000, height: 563, thumb: "/images/clip/1522-640.webp" }
 legacy:
   prev: aid-dcc-inc
   next: baus

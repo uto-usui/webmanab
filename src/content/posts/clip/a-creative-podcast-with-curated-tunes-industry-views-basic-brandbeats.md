@@ -19,6 +19,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://brandbeats.basicagency.com/
+image: { src: "/images/clip/1556.webp", width: 1000, height: 563, thumb: "/images/clip/1556-640.webp" }
+fullImage: { src: "/images/clip/1556-full.webp", width: 1000, height: 1989 }
 legacy:
   prev: la-peau-de-lours
   next: daoust-lestage

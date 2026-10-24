@@ -13,6 +13,7 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.daijima.jp/
+image: { src: "/images/clip/1964.webp", width: 1000, height: 563, thumb: "/images/clip/1964-640.webp" }
 legacy:
   prev: massimiliano-pegorini
   next: jettys-rented-out

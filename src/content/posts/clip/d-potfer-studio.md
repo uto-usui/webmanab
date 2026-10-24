@@ -22,6 +22,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://dpotferstudio.com/
+image: { src: "/images/clip/2716.webp", width: 1200, height: 675, thumb: "/images/clip/2716-640.webp" }
+fullImage: { src: "/images/clip/2716-full.webp", width: 1000, height: 563 }
 legacy:
   prev: bruno-arizio-interactive-designer
   next: born-bred-san-francisco-brand-creative-design-agency-born-and-bred

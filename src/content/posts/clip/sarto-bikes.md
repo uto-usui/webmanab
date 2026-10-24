@@ -17,6 +17,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 70, name: "sports", slug: "sports" }
 clipUrl: http://www.sartobikes.com/it/
+image: { src: "/images/clip/2403.webp", width: 1200, height: 675, thumb: "/images/clip/2403-640.webp" }
 legacy:
   prev: sage-culture
   next: save-the-air

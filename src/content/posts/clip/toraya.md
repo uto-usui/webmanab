@@ -15,6 +15,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.toraya-group.co.jp/
+image: { src: "/images/clip/331.webp", width: 1000, height: 563, thumb: "/images/clip/331-640.webp" }
+fullImage: { src: "/images/clip/331-full.webp", width: 1000, height: 2519 }
 legacy:
   prev: mr-milu
   next: blackline-partners-customer-focused-logistics

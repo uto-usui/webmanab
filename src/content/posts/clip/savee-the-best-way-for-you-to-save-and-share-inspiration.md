@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://savee.it/
+image: { src: "/images/clip/1514.webp", width: 1000, height: 563, thumb: "/images/clip/1514-640.webp" }
+fullImage: { src: "/images/clip/1514-full.webp", width: 1000, height: 5480 }
 legacy:
   prev: digital-smile-academy
   next: coraline-colasse-art-director-designer-from-paris

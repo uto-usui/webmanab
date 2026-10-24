@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://hannahpurmort.com/
+image: { src: "/images/clip/664.webp", width: 1280, height: 720, thumb: "/images/clip/664-640.webp" }
+fullImage: { src: "/images/clip/664-full.webp", width: 1000, height: 563 }
 legacy:
   prev: idaho-whitewater-rafting-trips-and-family-vacations
   next: circles-conference-a-creative-design-conference-by-circles-co

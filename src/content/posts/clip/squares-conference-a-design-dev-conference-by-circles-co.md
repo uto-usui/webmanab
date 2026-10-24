@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://squaresconference.com/
+image: { src: "/images/clip/366.webp", width: 1000, height: 563, thumb: "/images/clip/366-640.webp" }
+fullImage: { src: "/images/clip/366-full.webp", width: 1000, height: 4607 }
 legacy:
   prev: teletype
   next: locomotive-montreal-web-agency

@@ -18,6 +18,7 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.ibuongiorno.com/en/
+image: { src: "/images/clip/1266.webp", width: 1200, height: 671, thumb: "/images/clip/1266-640.webp" }
 legacy:
   prev: kvell
   next: casamance-editeur-de-tissus-papier-peint-et-revetement-mural-contemporain

@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 92, name: "service", slug: "service" }
 clipUrl: https://www.signupanywhere.com/
+image: { src: "/images/clip/337.webp", width: 1000, height: 563, thumb: "/images/clip/337-640.webp" }
+fullImage: { src: "/images/clip/337-full.webp", width: 1000, height: 3839 }
 legacy:
   prev: blackline-partners-customer-focused-logistics
   next: stuurmen

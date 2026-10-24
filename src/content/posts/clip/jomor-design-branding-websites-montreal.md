@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.jomor.design/
+image: { src: "/images/clip/2634.webp", width: 1200, height: 675, thumb: "/images/clip/2634-640.webp" }
+fullImage: { src: "/images/clip/2634-full.webp", width: 1000, height: 4613 }
 legacy:
   prev: prmo-inc
   next: fabio-fantolino

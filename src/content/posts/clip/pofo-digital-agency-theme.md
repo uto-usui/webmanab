@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://wpdemos.themezaa.com/pofo/home-classic-digital-agency/
+image: { src: "/images/clip/2115.webp", width: 1000, height: 563, thumb: "/images/clip/2115-640.webp" }
+fullImage: { src: "/images/clip/2115-full.webp", width: 1000, height: 6703 }
 legacy:
   prev: orenda-security
   next: rescam

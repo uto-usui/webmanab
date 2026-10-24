@@ -18,6 +18,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 131, name: "vivid", slug: "vivid" }
 clipUrl: http://www.north2.net/
+image: { src: "/images/clip/982.webp", width: 1200, height: 700, thumb: "/images/clip/982-640.webp" }
 legacy:
   prev: invisible-designs-lab
   next: famiglia-cecchi-official-site

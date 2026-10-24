@@ -22,6 +22,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.wokine.com/
+image: { src: "/images/clip/1134.webp", width: 1056, height: 594, thumb: "/images/clip/1134-640.webp" }
+fullImage: { src: "/images/clip/1134-full.webp", width: 1000, height: 4202 }
 legacy:
   prev: upperdog-web-design-digital-marketing-agency
   next: orsolina28

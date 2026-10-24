@@ -14,6 +14,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://readysetfreddy.com/
+image: { src: "/images/clip/346.webp", width: 1000, height: 563, thumb: "/images/clip/346-640.webp" }
+fullImage: { src: "/images/clip/346-full.webp", width: 1000, height: 1758 }
 legacy:
   prev: another-land-florian-charnace
   next: form-function-class-7-web-design-conference-in-asia-22-23-october-2016

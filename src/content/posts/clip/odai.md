@@ -14,6 +14,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: http://odai.studio/
+image: { src: "/images/clip/2094.webp", width: 1000, height: 563, thumb: "/images/clip/2094-640.webp" }
+fullImage: { src: "/images/clip/2094-full.webp", width: 1000, height: 4780 }
 legacy:
   prev: nippon-design-center-inc
   next: one-media

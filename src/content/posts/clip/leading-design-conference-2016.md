@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 122, name: "timeline", slug: "timeline" }
 clipUrl: http://leadingdesignconf.com/
+image: { src: "/images/clip/344.webp", width: 1000, height: 563, thumb: "/images/clip/344-640.webp" }
+fullImage: { src: "/images/clip/344-full.webp", width: 1000, height: 3914 }
 legacy:
   prev: contrast
   next: another-land-florian-charnace

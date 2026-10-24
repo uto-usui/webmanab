@@ -18,6 +18,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://towadaartcenter.com/
+image: { src: "/images/clip/869.webp", width: 1200, height: 675, thumb: "/images/clip/869-640.webp" }
+fullImage: { src: "/images/clip/869-full.webp", width: 1000, height: 3036 }
 legacy:
   prev: vallier-bistro
   next: cineca

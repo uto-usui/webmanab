@@ -17,6 +17,7 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://creationolivierlapidus.paris/en/
+image: { src: "/images/clip/1595.webp", width: 1000, height: 563, thumb: "/images/clip/1595-640.webp" }
 legacy:
   prev: intelligent-home-iot
   next: piero-milano

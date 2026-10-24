@@ -14,6 +14,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://florianmonfrini.com/
+image: { src: "/images/clip/645.webp", width: 1280, height: 720, thumb: "/images/clip/645-640.webp" }
+fullImage: { src: "/images/clip/645-full.webp", width: 1000, height: 5784 }
 legacy:
   prev: kanji-museum
   next: mt-cuba-center-gardening-on-a-higher-level

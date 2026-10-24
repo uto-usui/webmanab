@@ -16,6 +16,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.joaodealmeida.pt/
+image: { src: "/images/clip/1521.webp", width: 1000, height: 619, thumb: "/images/clip/1521-640.webp" }
 legacy:
   prev: jordan-sowers
   next: aid-dcc-inc

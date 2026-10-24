@@ -13,6 +13,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.curatemag.co/
+image: { src: "/images/clip/297.webp", width: 1000, height: 562, thumb: "/images/clip/297-640.webp" }
+fullImage: { src: "/images/clip/297-full.webp", width: 874, height: 9999 }
 legacy:
   prev: true-digital-award-winning-full-service-digital-marketing-agency-bristol
   next: ayanomimi

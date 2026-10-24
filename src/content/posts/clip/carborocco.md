@@ -14,6 +14,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://carborocco.com/
+image: { src: "/images/clip/726.webp", width: 1200, height: 675, thumb: "/images/clip/726-640.webp" }
+fullImage: { src: "/images/clip/726-full.webp", width: 1000, height: 2978 }
 legacy:
   prev: maxim-gorki-theater-startseite
   next: anonymous-hamburger-society

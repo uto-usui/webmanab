@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://dolox.com/
+image: { src: "/images/clip/268.webp", width: 1000, height: 562, thumb: "/images/clip/268-640.webp" }
+fullImage: { src: "/images/clip/268-full.webp", width: 1000, height: 4868 }
 legacy:
   prev: uiux-design-agency-mobile-app-developers-sf-nyc
   next: sway-water

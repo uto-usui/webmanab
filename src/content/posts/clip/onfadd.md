@@ -20,6 +20,8 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://onfadd.com/
+image: { src: "/images/clip/2328.webp", width: 1200, height: 625, thumb: "/images/clip/2328-640.webp" }
+fullImage: { src: "/images/clip/2328-full.webp", width: 1000, height: 2510 }
 legacy:
   prev: m3
   next: rare-syd-a-four-day-masterclass-for-80-unusual-minds

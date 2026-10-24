@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://yard.agency/
+image: { src: "/images/clip/2442.webp", width: 1200, height: 675, thumb: "/images/clip/2442-640.webp" }
 legacy:
   prev: uber-2018-rebrand-case-study
   next: cedric-diradourian

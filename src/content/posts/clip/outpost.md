@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://discoveroutpost.com/
+image: { src: "/images/clip/470.webp", width: 1280, height: 720, thumb: "/images/clip/470-640.webp" }
+fullImage: { src: "/images/clip/470-full.webp", width: 1000, height: 582 }
 legacy:
   prev: 2016-jsconf-is
   next: nordic-js-2016

@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://frontenddesignconference.com/
+image: { src: "/images/clip/494.webp", width: 1280, height: 720, thumb: "/images/clip/494-640.webp" }
+fullImage: { src: "/images/clip/494-full.webp", width: 1000, height: 2991 }
 legacy:
   prev: the-design-conference
   next: you-gotta-love-frontend-conference-june-27-28-2016-tel-aviv-israel

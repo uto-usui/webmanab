@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.cedricpereira.com/
+image: { src: "/images/clip/1252.webp", width: 1200, height: 675, thumb: "/images/clip/1252-640.webp" }
 legacy:
   prev: freighter-studio-belgian-tech-and-design-studio
   next: head-country-front-page

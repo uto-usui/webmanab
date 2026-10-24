@@ -14,6 +14,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://sewagefreeseas.org/
+image: { src: "/images/clip/357.webp", width: 1000, height: 563, thumb: "/images/clip/357-640.webp" }
+fullImage: { src: "/images/clip/357-full.webp", width: 1000, height: 563 }
 legacy:
   prev: locus-solus
   next: heyblend-film-photo-production-company

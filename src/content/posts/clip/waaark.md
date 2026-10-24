@@ -15,6 +15,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://waaark.com/
+image: { src: "/images/clip/61.webp", width: 1280, height: 782, thumb: "/images/clip/61-640.webp" }
 legacy:
   prev: women-trip-collection
   next: relations-inc-recruit-internship

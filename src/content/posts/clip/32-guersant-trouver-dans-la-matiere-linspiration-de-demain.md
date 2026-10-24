@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://32guersant.fr/
+image: { src: "/images/clip/1246.webp", width: 1200, height: 675, thumb: "/images/clip/1246-640.webp" }
+fullImage: { src: "/images/clip/1246-full.webp", width: 1000, height: 2610 }
 legacy:
   prev: vectorstroyfinance
   next: amelias-portfolio

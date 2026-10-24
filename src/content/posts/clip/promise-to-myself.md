@@ -13,6 +13,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://promises.kommigraphics.com/
+image: { src: "/images/clip/1989.webp", width: 1000, height: 563, thumb: "/images/clip/1989-640.webp" }
 legacy:
   prev: present-art-direction-design
   next: promoflex

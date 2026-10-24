@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://happy-photo-studio.jp/
+image: { src: "/images/clip/882.webp", width: 1200, height: 675, thumb: "/images/clip/882-640.webp" }
+fullImage: { src: "/images/clip/882-full.webp", width: 1000, height: 6310 }
 legacy:
   prev: toshin-sekai
   next: private-photo-studio-home

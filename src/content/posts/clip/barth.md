@@ -11,6 +11,7 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://barth.jp/
+image: { src: "/images/clip/1140.webp", width: 1200, height: 675, thumb: "/images/clip/1140-640.webp" }
 legacy:
   prev: basic-year-in-review
   next: upperdog-web-design-digital-marketing-agency

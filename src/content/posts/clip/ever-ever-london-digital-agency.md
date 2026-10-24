@@ -20,6 +20,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.everandever.co/
+image: { src: "/images/clip/1788.webp", width: 1000, height: 563, thumb: "/images/clip/1788-640.webp" }
 legacy:
   prev: epok-design-studio-de-graphisme-a-paris
   next: fashion-sport-socks-by-pacific-and-co-made-in-barcelona

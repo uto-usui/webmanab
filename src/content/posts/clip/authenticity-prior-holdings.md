@@ -17,6 +17,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://prior.co.jp/discover/en
+image: { src: "/images/clip/2680.webp", width: 1200, height: 675, thumb: "/images/clip/2680-640.webp" }
 legacy:
   prev: enso-tyres
   next: akufen-studio-in-montreal-strategy-branding-web-interactive

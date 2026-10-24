@@ -18,6 +18,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://tochioto.com/
+image: { src: "/images/clip/168.webp", width: 1000, height: 563, thumb: "/images/clip/168-640.webp" }
+fullImage: { src: "/images/clip/168-full.webp", width: 1000, height: 2389 }
 legacy:
   prev: wed-camp
   next: lo-flo-records

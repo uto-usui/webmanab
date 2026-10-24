@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://nisekohakuunso.com/ja/
+image: { src: "/images/clip/865.webp", width: 1200, height: 675, thumb: "/images/clip/865-640.webp" }
+fullImage: { src: "/images/clip/865-full.webp", width: 1000, height: 2194 }
 legacy:
   prev: form
   next: wilson-sporting-good

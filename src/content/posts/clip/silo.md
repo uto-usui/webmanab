@@ -16,6 +16,8 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://s-i-l-o.fr/
+image: { src: "/images/clip/2592.webp", width: 1200, height: 675, thumb: "/images/clip/2592-640.webp" }
+fullImage: { src: "/images/clip/2592-full.webp", width: 1000, height: 563 }
 legacy:
   prev: olivier-ouendeno-portfolio
   next: stock-dutch-design

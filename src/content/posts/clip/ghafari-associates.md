@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.ghafari.com/
+image: { src: "/images/clip/1239.webp", width: 1200, height: 675, thumb: "/images/clip/1239-640.webp" }
+fullImage: { src: "/images/clip/1239-full.webp", width: 1000, height: 6075 }
 legacy:
   prev: drap-agency
   next: psikontacto

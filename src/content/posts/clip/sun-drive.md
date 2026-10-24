@@ -13,6 +13,8 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.ultimate-sun-drive.com/en/
+image: { src: "/images/clip/1833.webp", width: 1000, height: 563, thumb: "/images/clip/1833-640.webp" }
+fullImage: { src: "/images/clip/1833-full.webp", width: 1000, height: 5208 }
 legacy:
   prev: shop-simply-chocolate-simply-chocolate
   next: super-crowds-inc

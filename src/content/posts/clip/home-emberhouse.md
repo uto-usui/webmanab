@@ -14,6 +14,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://emberhouse.com/
+image: { src: "/images/clip/1489.webp", width: 1000, height: 563, thumb: "/images/clip/1489-640.webp" }
 legacy:
   prev: war-against-lies-rtve-es-lab-webdoc-and-en-portada
   next: essential-products-my-phone-is-essential

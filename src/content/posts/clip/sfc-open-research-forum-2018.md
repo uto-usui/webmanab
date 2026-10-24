@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 122, name: "timeline", slug: "timeline" }
 clipUrl: https://orf.sfc.keio.ac.jp/2018/
+image: { src: "/images/clip/2348.webp", width: 1200, height: 625, thumb: "/images/clip/2348-640.webp" }
+fullImage: { src: "/images/clip/2348-full.webp", width: 1000, height: 4135 }
 legacy:
   prev: prince-discography
   next: buildinamsterdam

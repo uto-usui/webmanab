@@ -14,6 +14,8 @@ terms:
   - { id: 61, name: "illustration", slug: "illustration" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.fishfinger.me/
+image: { src: "/images/clip/2398.webp", width: 1200, height: 675, thumb: "/images/clip/2398-640.webp" }
+fullImage: { src: "/images/clip/2398-full.webp", width: 1000, height: 1858 }
 legacy:
   prev: existing-while-black
   next: ha

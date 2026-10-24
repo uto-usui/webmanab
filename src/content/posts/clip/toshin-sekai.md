@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://toshin-sekai.com/
+image: { src: "/images/clip/884.webp", width: 1200, height: 675, thumb: "/images/clip/884-640.webp" }
+fullImage: { src: "/images/clip/884-full.webp", width: 1000, height: 5658 }
 legacy:
   prev: trail-heads
   next: happy-photo-studio

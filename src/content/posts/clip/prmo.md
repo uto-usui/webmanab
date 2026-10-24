@@ -14,6 +14,7 @@ terms:
   - { id: 108, name: "wordpress", slug: "wordpress" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://prm.ooo/
+image: { src: "/images/clip/1396.webp", width: 1200, height: 676, thumb: "/images/clip/1396-640.webp" }
 legacy:
   prev: gift
   next: creative-wallonia-nos-actions

@@ -22,6 +22,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://matterinteriors.com/
+image: { src: "/images/clip/2101.webp", width: 1000, height: 563, thumb: "/images/clip/2101-640.webp" }
+fullImage: { src: "/images/clip/2101-full.webp", width: 1000, height: 2815 }
 legacy:
   prev: mast
   next: monumento

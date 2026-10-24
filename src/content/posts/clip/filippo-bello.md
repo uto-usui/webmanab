@@ -19,6 +19,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.filippobello.com/
+image: { src: "/images/clip/505.webp", width: 1280, height: 720, thumb: "/images/clip/505-640.webp" }
+fullImage: { src: "/images/clip/505-full.webp", width: 1000, height: 583 }
 legacy:
   prev: aerolab-design-and-development-for-startups-and-leading-brands
   next: ijc-matsuri-is-japan-cool

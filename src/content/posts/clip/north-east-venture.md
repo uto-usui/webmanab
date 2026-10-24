@@ -10,6 +10,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://north-east-venture.com/
+image: { src: "/images/clip/1820.webp", width: 1000, height: 563, thumb: "/images/clip/1820-640.webp" }
 legacy:
   prev: logo-wt-en
   next: nubikk-officiele-webshop-nubikk-official-webshop

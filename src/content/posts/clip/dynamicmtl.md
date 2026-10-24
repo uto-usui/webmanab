@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.dynamicmtl.com/
+image: { src: "/images/clip/688.webp", width: 1200, height: 675, thumb: "/images/clip/688-640.webp" }
+fullImage: { src: "/images/clip/688-full.webp", width: 1000, height: 8839 }
 legacy:
   prev: state-interactive
   next: tobi-afran-graphic-design

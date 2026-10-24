@@ -17,6 +17,7 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.leoville-barton.com/
+image: { src: "/images/clip/1505.webp", width: 1000, height: 563, thumb: "/images/clip/1505-640.webp" }
 legacy:
   prev: panike
   next: la-grosse-lanterne-la-grosse-lanterne

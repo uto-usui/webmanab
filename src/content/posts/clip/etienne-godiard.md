@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.etiennegodiard.com/
+image: { src: "/images/clip/1475.webp", width: 1000, height: 563, thumb: "/images/clip/1475-640.webp" }
 legacy:
   prev: exclusieve-woningen-hondersalting-makelaars
   next: intelligent-home-iot

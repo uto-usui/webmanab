@@ -13,6 +13,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://megafoon.co.jp/
+image: { src: "/images/clip/226.webp", width: 1000, height: 562, thumb: "/images/clip/226-640.webp" }
+fullImage: { src: "/images/clip/226-full.webp", width: 1000, height: 1257 }
 legacy:
   prev: cera-fabricant-machines-decoupe-et-soudure-ultrasons
   next: orangina

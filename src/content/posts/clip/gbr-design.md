@@ -20,6 +20,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.gbrdesign.com/
+image: { src: "/images/clip/1085.webp", width: 1200, height: 675, thumb: "/images/clip/1085-640.webp" }
+fullImage: { src: "/images/clip/1085-full.webp", width: 1000, height: 3162 }
 legacy:
   prev: pixelpink-design-studio-berlin
   next: margo-weathers-director-photographer-fashion-beauty-portraits

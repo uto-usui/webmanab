@@ -15,6 +15,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://homeofclassics.sneakerdistrict.com/
+image: { src: "/images/clip/2671.webp", width: 1200, height: 735, thumb: "/images/clip/2671-640.webp" }
 legacy:
   prev: durischnolli
   next: ma-true-cannabis-cbd-inflorescence-pre-rolled-joints

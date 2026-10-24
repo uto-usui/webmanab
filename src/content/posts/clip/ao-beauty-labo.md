@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://ao-beauty-labo.com/
+image: { src: "/images/clip/1540.webp", width: 1000, height: 563, thumb: "/images/clip/1540-640.webp" }
+fullImage: { src: "/images/clip/1540-full.webp", width: 1000, height: 7447 }
 legacy:
   prev: daoust-lestage
   next: home-mirpuri-foundation

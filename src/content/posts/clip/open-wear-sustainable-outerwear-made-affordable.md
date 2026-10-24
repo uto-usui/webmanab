@@ -15,6 +15,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.open-wear.com/
+image: { src: "/images/clip/1847.webp", width: 1000, height: 563, thumb: "/images/clip/1847-640.webp" }
 legacy:
   prev: onesharedhouse2030
   next: peter-van-alphen

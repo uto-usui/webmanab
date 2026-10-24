@@ -17,6 +17,8 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.anaktae.com/
+image: { src: "/images/clip/2524.webp", width: 1200, height: 675, thumb: "/images/clip/2524-640.webp" }
+fullImage: { src: "/images/clip/2524-full.webp", width: 1000, height: 2320 }
 legacy:
   prev: blab
   next: bar-hotel

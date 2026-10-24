@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 131, name: "vivid", slug: "vivid" }
 clipUrl: http://2015.jsconf.eu/
+image: { src: "/images/clip/482.webp", width: 1280, height: 720, thumb: "/images/clip/482-640.webp" }
+fullImage: { src: "/images/clip/482-full.webp", width: 1000, height: 3413 }
 legacy:
   prev: mixin
   next: ito-farm

@@ -19,6 +19,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://brandstudio.ru
+image: { src: "/images/clip/2450.webp", width: 1200, height: 675, thumb: "/images/clip/2450-640.webp" }
 legacy:
   prev: bishop-design
   next: bulgari-tribute-to-femininity

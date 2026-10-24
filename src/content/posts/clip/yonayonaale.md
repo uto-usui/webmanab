@@ -13,6 +13,8 @@ terms:
   - { id: 121, name: "drink", slug: "drink" }
   - { id: 62, name: "japan", slug: "japan" }
 clipUrl: http://yonayonaale.com/
+image: { src: "/images/clip/1587.webp", width: 1000, height: 563, thumb: "/images/clip/1587-640.webp" }
+fullImage: { src: "/images/clip/1587-full.webp", width: 1000, height: 8563 }
 legacy:
   prev: monopo-tokyo-based-creative-agency-branding-design-digital-experience-video-production-adverstising
   next: heros-sportsmanship-for-the-future

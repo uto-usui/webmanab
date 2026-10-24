@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://adot.tokyo/
+image: { src: "/images/clip/642.webp", width: 1280, height: 720, thumb: "/images/clip/642-640.webp" }
+fullImage: { src: "/images/clip/642-full.webp", width: 1000, height: 6371 }
 legacy:
   prev: cssconf-us-2016
   next: kanji-museum

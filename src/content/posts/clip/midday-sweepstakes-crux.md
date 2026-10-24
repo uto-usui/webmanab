@@ -16,6 +16,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://lookbook.cruxkitchen.com/
+image: { src: "/images/clip/1775.webp", width: 1000, height: 563, thumb: "/images/clip/1775-640.webp" }
 legacy:
   prev: love-for-iceland
   next: youre-awesome

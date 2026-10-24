@@ -15,6 +15,8 @@ terms:
   - { id: 108, name: "wordpress", slug: "wordpress" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://forward-festival.com/en/zurich/
+image: { src: "/images/clip/746.webp", width: 1200, height: 675, thumb: "/images/clip/746-640.webp" }
+fullImage: { src: "/images/clip/746-full.webp", width: 1000, height: 6643 }
 legacy:
   prev: kyotojinjakon
   next: manneknepis

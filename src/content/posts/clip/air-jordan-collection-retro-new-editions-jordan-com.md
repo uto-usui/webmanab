@@ -18,6 +18,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.jordan.com/collection/
+image: { src: "/images/clip/2210.webp", width: 1000, height: 563, thumb: "/images/clip/2210-640.webp" }
+fullImage: { src: "/images/clip/2210-full.webp", width: 1000, height: 3096 }
 legacy:
   prev: adova-group-bien-dormir-pour-mieux-vivre
   next: anne-thai-portfolio

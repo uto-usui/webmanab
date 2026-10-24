@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 46, name: "trip", slug: "trip" }
 clipUrl: http://alittlebitofrough.co.uk/
+image: { src: "/images/clip/361.webp", width: 1000, height: 563, thumb: "/images/clip/361-640.webp" }
+fullImage: { src: "/images/clip/361-full.webp", width: 1000, height: 2729 }
 legacy:
   prev: seedlip
   next: blacklivesmatter

@@ -16,6 +16,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.decathlon-united.com
+image: { src: "/images/clip/2438.webp", width: 1200, height: 675, thumb: "/images/clip/2438-640.webp" }
 legacy:
   prev: dean-bradshaw
   next: denys-loveiko-portfolio-2018

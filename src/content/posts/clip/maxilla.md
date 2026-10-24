@@ -20,6 +20,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://maxilla.jp/
+image: { src: "/images/clip/2776.webp", width: 1200, height: 675, thumb: "/images/clip/2776-640.webp" }
 legacy:
   prev: taitau
   next: taroyoshimura

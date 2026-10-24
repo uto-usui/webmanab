@@ -15,6 +15,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://norgram.co/
+image: { src: "/images/clip/958.webp", width: 1200, height: 675, thumb: "/images/clip/958-640.webp" }
+fullImage: { src: "/images/clip/958-full.webp", width: 1000, height: 1557 }
 legacy:
   prev: bizzgrid
   next: boffi-official-website

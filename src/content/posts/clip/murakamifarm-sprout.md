@@ -14,6 +14,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.murakamifarm.com/sprout/
+image: { src: "/images/clip/876.webp", width: 1200, height: 675, thumb: "/images/clip/876-640.webp" }
+fullImage: { src: "/images/clip/876-full.webp", width: 1000, height: 4500 }
 legacy:
   prev: market
   next: brs-nihon-u

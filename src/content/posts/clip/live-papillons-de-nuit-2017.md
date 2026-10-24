@@ -18,6 +18,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://live.papillonsdenuit.com/
+image: { src: "/images/clip/1546.webp", width: 1000, height: 563, thumb: "/images/clip/1546-640.webp" }
+fullImage: { src: "/images/clip/1546-full.webp", width: 544, height: 9999 }
 legacy:
   prev: ufomammoot-website-2017
   next: jaune-de-chrome-createur-dart

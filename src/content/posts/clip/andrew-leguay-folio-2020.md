@@ -20,6 +20,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.andrewleguay.com/
+image: { src: "/images/clip/2812.webp", width: 1200, height: 675, thumb: "/images/clip/2812-640.webp" }
+fullImage: { src: "/images/clip/2812-full.webp", width: 1000, height: 6979 }
 legacy:
   prev: bepatrickdavid
   next: innovation-lab

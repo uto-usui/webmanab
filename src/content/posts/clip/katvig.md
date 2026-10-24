@@ -14,6 +14,8 @@ terms:
   - { id: 47, name: "kids", slug: "kids" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://katvig.dk/en
+image: { src: "/images/clip/36.webp", width: 1280, height: 720, thumb: "/images/clip/36-640.webp" }
+fullImage: { src: "/images/clip/36-full.webp", width: 1000, height: 902 }
 legacy:
   prev: jour-couture
   next: rebecca-thompson

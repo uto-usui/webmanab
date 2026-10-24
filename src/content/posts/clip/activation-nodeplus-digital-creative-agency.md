@@ -21,6 +21,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.activation-nodeplus.com/
+image: { src: "/images/clip/501.webp", width: 1280, height: 720, thumb: "/images/clip/501-640.webp" }
+fullImage: { src: "/images/clip/501-full.webp", width: 1000, height: 3873 }
 legacy:
   prev: acme-experience
   next: admir-hadzic-art-director-developer

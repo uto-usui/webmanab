@@ -13,6 +13,8 @@ terms:
   - { id: 113, name: "sea", slug: "sea" }
   - { id: 46, name: "trip", slug: "trip" }
 clipUrl: http://awaywego.carnival.com/360vacation/
+image: { src: "/images/clip/175.webp", width: 1000, height: 562, thumb: "/images/clip/175-640.webp" }
+fullImage: { src: "/images/clip/175-full.webp", width: 1000, height: 588 }
 legacy:
   prev: mono-air
   next: david-magere

@@ -17,6 +17,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 70, name: "sports", slug: "sports" }
 clipUrl: https://nourisheats.co/
+image: { src: "/images/clip/2646.webp", width: 1200, height: 675, thumb: "/images/clip/2646-640.webp" }
 legacy:
   prev: crafted
   next: hochburg-designagentur-stuttgart

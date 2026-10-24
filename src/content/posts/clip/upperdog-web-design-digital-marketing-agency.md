@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://upperdog.co.uk/
+image: { src: "/images/clip/1199.webp", width: 1200, height: 675, thumb: "/images/clip/1199-640.webp" }
+fullImage: { src: "/images/clip/1199-full.webp", width: 1000, height: 3742 }
 legacy:
   prev: barth
   next: wokine-agence-digitale-startup-studio-basee-a-lille-depuis-2004

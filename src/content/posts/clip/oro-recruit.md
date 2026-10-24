@@ -13,6 +13,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.oro.com/recruit/
+image: { src: "/images/clip/1598.webp", width: 1000, height: 563, thumb: "/images/clip/1598-640.webp" }
 legacy:
   prev: retrouvez-toute-lactualite-des-fusees-ariane-5-et-ariane-6-ariane-group
   next: prored-p

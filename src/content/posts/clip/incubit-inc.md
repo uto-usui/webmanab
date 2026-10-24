@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://incubit.co.jp/
+image: { src: "/images/clip/1531.webp", width: 1000, height: 563, thumb: "/images/clip/1531-640.webp" }
+fullImage: { src: "/images/clip/1531-full.webp", width: 1000, height: 6438 }
 legacy:
   prev: forside-g-uld
   next: careers-amt

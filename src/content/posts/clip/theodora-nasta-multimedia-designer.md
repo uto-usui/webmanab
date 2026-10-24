@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.theodora.work
+image: { src: "/images/clip/349.webp", width: 1000, height: 563, thumb: "/images/clip/349-640.webp" }
+fullImage: { src: "/images/clip/349-full.webp", width: 1000, height: 2375 }
 legacy:
   prev: form-function-class-7-web-design-conference-in-asia-22-23-october-2016
   next: locus-solus

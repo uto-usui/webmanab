@@ -18,6 +18,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.margoweathers.com/
+image: { src: "/images/clip/1086.webp", width: 1200, height: 675, thumb: "/images/clip/1086-640.webp" }
+fullImage: { src: "/images/clip/1086-full.webp", width: 1000, height: 1953 }
 legacy:
   prev: gbr-design
   next: "913"

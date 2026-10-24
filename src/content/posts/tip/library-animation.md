@@ -23,6 +23,8 @@ legacy:
 
 ### Tuesday
 
+![tuesday](/images/uploads/2017/01/tuesday.png)
+
 0.3秒くらいの短時間で終了するように作られた要素の表示／非表示に使える、シンプルなCSSアニメーションライブラリ。用意された`class`属性を付与するだけで簡単にアニメーションが実装できます。ソースはLessで記述されています。
 
 - [Tuesday](http://shakrmedia.github.io/tuesday/)
@@ -34,6 +36,8 @@ legacy:
 ```
 
 ### csshake
+
+![csshake](/images/uploads/2017/01/csshake.png)
 
 ガクガクブルブル震わせるCSSライブラリ。派手楽しいですが、とてもおしゃれ。用意されている`class`属性を付与します。SCSSで記述されていて、カスタマイズ用の`mixin`が用意されています。
 
@@ -51,6 +55,8 @@ legacy:
 
 ### animate.css
 
+![animate-css](/images/uploads/2017/01/animate-css.png)
+
 `class`属性を付与して様々なアニメーションを実装します。とても有名で人気のあるCSSアニメーションライブラリ。
 
 - [animate.css](https://daneden.github.io/animate.css/)
@@ -67,11 +73,15 @@ SCSSでMixinが用意されている「animate.scss」もあります。実務�
 
 ### animatable
 
+![animatable](/images/uploads/2017/01/animatable.png)
+
 CSSのプロパティ別にアニメーションを実装した例のまとめ。オブジェクトをクリックするとプロパティを変化させている値の幅を見ることができます。
 
 - [animatable](http://leaverou.github.io/animatable/)
 
 ### motion UI
+
+![zurb-playground-motion](/images/uploads/2017/01/zurb-playground-motion.png)
 
 豊富なアニメーションがSassで用意されています。Mixinでいろいろな拡張ができるようになっていて、もともと用意されているアニメーションをミックスしたり、アニメーションに順序を与えることが簡単にできます。JavaScriptで制御することができるようになっています。ドキュメントはちょっと難しめ。
 
@@ -79,6 +89,8 @@ CSSのプロパティ別にアニメーションを実装した例のまとめ�
 - [motion-ui github](https://github.com/zurb/motion-ui)
 
 ### Magic Animations CSS3
+
+![magic_animations](/images/uploads/2017/01/magic_animations.png)
 
 クラスを付与することで、可愛い動きを実装できます。ユーザーがクリックした時など、UIのアクションに向いています。
 
@@ -108,6 +120,8 @@ $('.animate').on('click', function() {
 ## アニメーションを実装するためのライブラリまとめ 《JavaScript》
 
 ### bouncejs
+
+![bouncejs](/images/uploads/2017/01/bouncejs.png)
 
 少し激しめでトリッキーな動きが用意されています。デモページではプリセットされたアニメーションを直感的にエディット／プレビューしてカスタマイズできます。CSSのコードがエクスポートできるようになっていて、出力された`transform: matrix3d()`を利用した `@keyframes`アニメーションをコピペすることができます。
 
@@ -150,6 +164,8 @@ bounce
 
 ### voxel.css
 
+![voxelcss](/images/uploads/2017/01/voxelcss.png)
+
 JavaScriptで四角い立方体を並べて、3D空間をCSSのプロパティで実現するライブラリ。光源の概念があるのがすごい。マウスイベントが簡単に実装できて箱の増減や回転のインタラクションをつけることができる。
 
 - [voxel.css](http://www.voxelcss.com/)
@@ -180,6 +196,8 @@ init(document.body);
 ```
 
 ### aos
+
+![aos](/images/uploads/2017/01/aos.jpg)
 
 スクロールをトリガーに発生するアニメーション。`data-*`属性を使ってパラメータを渡します。豊富なイージングが用意されています。どれくらい可視範囲に入ってきてからどれくらいの時間で、というように細かい内容を直感的に記述できるところが魅力です。
 
@@ -214,12 +232,16 @@ AOS.init({
 
 ### animsition
 
+![animsition](/images/uploads/2017/01/animsition.png)
+
 画面遷移にアニメーションを与えることができます。オプションやコールバックが豊富なので、画面遷移をなめらかに表現して体感速度を高めたり、リッチな表現に向いています。
 
 - [animsition](http://git.blivesta.com/animsition/)
 - [animsition github](https://github.com/blivesta/animsition)
 
 ### Morf.js
+
+![joelambert](/images/uploads/2017/01/joelambert.png)
 
 豊富に用意されたイージングを探索できます。
 
@@ -278,6 +300,8 @@ TweenMax.to('.animate_', // セレクタ
 - [TweenMaxの使い方メモ](http://qiita.com/ANTON072/items/a1302f4761bf0ffcf525)
 
 ### anime.js
+
+![anime-js](/images/uploads/2017/01/anime-js.png)
 
 「anime.js」にはランダム関数が用意されていたり、`svg`のパス上でのアニメーションや、オブジェクトの値を変化させることもできる表現力の高いライブラリ。オプションやイベントが豊富で人気があります。
 
@@ -358,6 +382,8 @@ Velocity(element,
 ## アニメーションを作成するためのツール
 
 ### cssanimate
+
+![cssanimate](/images/uploads/2017/01/cssanimate.png)
 
 キーフレームをタイムラインで調整しながら、オブジェクトをドラッグしたり変形させたりして、プロパティの値を直感的に触りながらプレビューできます。
 

@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://chackathon.com/
+image: { src: "/images/clip/1394.webp", width: 1200, height: 676, thumb: "/images/clip/1394-640.webp" }
 legacy:
   prev: creative-wallonia-nos-actions
   next: creative-wallonia-nos-actions-2

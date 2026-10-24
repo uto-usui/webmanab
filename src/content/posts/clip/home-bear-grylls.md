@@ -18,6 +18,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 122, name: "timeline", slug: "timeline" }
 clipUrl: http://www.beargrylls.com/
+image: { src: "/images/clip/1777.webp", width: 1000, height: 563, thumb: "/images/clip/1777-640.webp" }
+fullImage: { src: "/images/clip/1777-full.webp", width: 1000, height: 2888 }
 legacy:
   prev: home-a-friend-of-mine
   next: lady-bird

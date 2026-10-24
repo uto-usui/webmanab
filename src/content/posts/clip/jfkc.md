@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.kennedy-center.org/jfkc
+image: { src: "/images/clip/796.webp", width: 1200, height: 675, thumb: "/images/clip/796-640.webp" }
+fullImage: { src: "/images/clip/796-full.webp", width: 1000, height: 4959 }
 legacy:
   prev: anonymous-hamburger-society
   next: reputation-squad-the-augmented-influence-agency

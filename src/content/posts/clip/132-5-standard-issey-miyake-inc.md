@@ -13,6 +13,7 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: https://www.isseymiyake.com/1325/standard/
+image: { src: "/images/clip/2009.webp", width: 1000, height: 563, thumb: "/images/clip/2009-640.webp" }
 legacy:
   prev: lyuba-nova-just-another-developer
   next: abel

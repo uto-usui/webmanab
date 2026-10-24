@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.seedlipdrinks.com/
+image: { src: "/images/clip/355.webp", width: 1000, height: 563, thumb: "/images/clip/355-640.webp" }
+fullImage: { src: "/images/clip/355-full.webp", width: 1000, height: 4505 }
 legacy:
   prev: tio-luchin-cocina-en-vivo
   next: a-little-bit-of-rough-posh-camping-in-rural-rutland-england

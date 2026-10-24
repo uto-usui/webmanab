@@ -18,6 +18,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.anakin.co/
+image: { src: "/images/clip/1770.webp", width: 1000, height: 563, thumb: "/images/clip/1770-640.webp" }
+fullImage: { src: "/images/clip/1770-full.webp", width: 1000, height: 4183 }
 legacy:
   prev: a-lheure-du-lait-homepage
   next: andre-felipe-ribeiro

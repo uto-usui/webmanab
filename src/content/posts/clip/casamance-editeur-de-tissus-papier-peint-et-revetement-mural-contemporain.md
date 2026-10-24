@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.bigmammagroup.com/fr/accueil
+image: { src: "/images/clip/1265.webp", width: 1200, height: 675, thumb: "/images/clip/1265-640.webp" }
+fullImage: { src: "/images/clip/1265-full.webp", width: 1000, height: 4004 }
 legacy:
   prev: i-buongiorno-wines-from-salento
   next: victoire-douy-ui-ux-designer

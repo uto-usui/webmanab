@@ -13,6 +13,8 @@ terms:
   - { id: 47, name: "kids", slug: "kids" }
   - { id: 150, name: "tool", slug: "tool" }
 clipUrl: http://friendlyprojects.com
+image: { src: "/images/clip/317.webp", width: 1000, height: 562, thumb: "/images/clip/317-640.webp" }
+fullImage: { src: "/images/clip/317-full.webp", width: 1000, height: 562 }
 legacy:
   prev: vr-sessions
   next: toraya

@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 168, name: "retro", slug: "retro" }
 clipUrl: https://teletype.online/
+image: { src: "/images/clip/367.webp", width: 1000, height: 563, thumb: "/images/clip/367-640.webp" }
+fullImage: { src: "/images/clip/367-full.webp", width: 1000, height: 563 }
 legacy:
   prev: worlds-apart
   next: squares-conference-a-design-dev-conference-by-circles-co

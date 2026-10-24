@@ -18,6 +18,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.ducasse-paris.com/
+image: { src: "/images/clip/1970.webp", width: 1000, height: 563, thumb: "/images/clip/1970-640.webp" }
+fullImage: { src: "/images/clip/1970-full.webp", width: 1000, height: 6495 }
 legacy:
   prev: dinner-for-five
   next: fanny-myard-stylist

@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://ici.radio-canada.ca/gentriville/accueil/
+image: { src: "/images/clip/1517.webp", width: 1000, height: 555, thumb: "/images/clip/1517-640.webp" }
 legacy:
   prev: sky-tv-series
   next: jordan-sowers

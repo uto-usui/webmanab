@@ -14,6 +14,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.giampierocruceli.com/
+image: { src: "/images/clip/1390.webp", width: 1200, height: 676, thumb: "/images/clip/1390-640.webp" }
+fullImage: { src: "/images/clip/1390-full.webp", width: 1000, height: 5309 }
 legacy:
   prev: homepage-ryan-brant
   next: herman-scheer-we-help-brands-make-love

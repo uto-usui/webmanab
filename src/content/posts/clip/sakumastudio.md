@@ -14,6 +14,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://sakumastudio.com/
+image: { src: "/images/clip/1602.webp", width: 1000, height: 563, thumb: "/images/clip/1602-640.webp" }
+fullImage: { src: "/images/clip/1602-full.webp", width: 1000, height: 4334 }
 legacy:
   prev: kindai
   next: studio-venezia

@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://naotaro.com/
+image: { src: "/images/clip/245.webp", width: 1000, height: 562, thumb: "/images/clip/245-640.webp" }
+fullImage: { src: "/images/clip/245-full.webp", width: 1000, height: 4876 }
 legacy:
   prev: kenosha-yonezu-reissue-records
   next: beatbox-academy

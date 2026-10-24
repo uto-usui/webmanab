@@ -16,6 +16,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://htarchitecte.com/
+image: { src: "/images/clip/1259.webp", width: 1200, height: 675, thumb: "/images/clip/1259-640.webp" }
+fullImage: { src: "/images/clip/1259-full.webp", width: 1000, height: 2010 }
 legacy:
   prev: rff-reykjavik-fashion-festival
   next: bo-play-springsummer-2017

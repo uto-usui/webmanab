@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://reissuerecords.net/
+image: { src: "/images/clip/242.webp", width: 1000, height: 562, thumb: "/images/clip/242-640.webp" }
+fullImage: { src: "/images/clip/242-full.webp", width: 1000, height: 1265 }
 legacy:
   prev: cuberto
   next: naotaro

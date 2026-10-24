@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://usamaru-cafe.jp/
+image: { src: "/images/clip/1180.webp", width: 1200, height: 675, thumb: "/images/clip/1180-640.webp" }
+fullImage: { src: "/images/clip/1180-full.webp", width: 1000, height: 2968 }
 legacy:
   prev: igk-hair-home
   next: american-football

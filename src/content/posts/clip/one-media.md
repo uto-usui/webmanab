@@ -15,6 +15,8 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://onemedia.jp/
+image: { src: "/images/clip/2078.webp", width: 1000, height: 563, thumb: "/images/clip/2078-640.webp" }
+fullImage: { src: "/images/clip/2078-full.webp", width: 1000, height: 3238 }
 legacy:
   prev: odai
   next: orenda-security

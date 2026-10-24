@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://depart-inc.com/
+image: { src: "/images/clip/872.webp", width: 1200, height: 675, thumb: "/images/clip/872-640.webp" }
+fullImage: { src: "/images/clip/872-full.webp", width: 1000, height: 3868 }
 legacy:
   prev: acsl
   next: vallier-bistro

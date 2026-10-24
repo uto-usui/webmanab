@@ -15,6 +15,7 @@ terms:
   - { id: 195, name: "orange", slug: "orange" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://dschool.stanford.edu/
+image: { src: "/images/clip/2081.webp", width: 1000, height: 562, thumb: "/images/clip/2081-640.webp" }
 legacy:
   prev: she-is
   next: stef-marie

@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://ville.valdor.qc.ca/
+image: { src: "/images/clip/1409.webp", width: 1200, height: 675, thumb: "/images/clip/1409-640.webp" }
+fullImage: { src: "/images/clip/1409-full.webp", width: 1000, height: 2390 }
 legacy:
   prev: 500-colored-pencils-tokyo-seeds-felissimo
   next: hios

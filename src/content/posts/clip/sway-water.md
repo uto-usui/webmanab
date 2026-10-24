@@ -17,6 +17,8 @@ terms:
   - { id: 74, name: "soft", slug: "soft" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://swaywater.com/
+image: { src: "/images/clip/267.webp", width: 1000, height: 562, thumb: "/images/clip/267-640.webp" }
+fullImage: { src: "/images/clip/267-full.webp", width: 1000, height: 9111 }
 legacy:
   prev: dolox-inc
   next: newdealdesign

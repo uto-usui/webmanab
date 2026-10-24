@@ -15,6 +15,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://emmitfenn.com/
+image: { src: "/images/clip/1771.webp", width: 1000, height: 563, thumb: "/images/clip/1771-640.webp" }
 legacy:
   prev: do-things-that-matter-kbs-canada
   next: envoy-homepage

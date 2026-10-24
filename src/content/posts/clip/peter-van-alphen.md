@@ -15,6 +15,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.petervanalphen.com/
+image: { src: "/images/clip/1817.webp", width: 1000, height: 563, thumb: "/images/clip/1817-640.webp" }
+fullImage: { src: "/images/clip/1817-full.webp", width: 1000, height: 4656 }
 legacy:
   prev: open-wear-sustainable-outerwear-made-affordable
   next: red-collar-digital-agency

@@ -19,6 +19,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://moves.basicagency.com
+image: { src: "/images/clip/2593.webp", width: 1200, height: 675, thumb: "/images/clip/2593-640.webp" }
 legacy:
   prev: juste-debout-2020-the-greatest-hip-hop-dances-event-worldwide
   next: wolf-whale

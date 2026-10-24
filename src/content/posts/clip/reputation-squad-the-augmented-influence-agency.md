@@ -14,6 +14,8 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.reputationsquad.com
+image: { src: "/images/clip/797.webp", width: 1200, height: 675, thumb: "/images/clip/797-640.webp" }
+fullImage: { src: "/images/clip/797-full.webp", width: 1000, height: 563 }
 legacy:
   prev: jfkc
   next: plant-your-flag-hurtigruten

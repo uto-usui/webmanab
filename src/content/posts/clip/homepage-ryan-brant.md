@@ -17,6 +17,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://ryanjbrant.com/
+image: { src: "/images/clip/1392.webp", width: 1200, height: 675, thumb: "/images/clip/1392-640.webp" }
+fullImage: { src: "/images/clip/1392-full.webp", width: 1000, height: 2974 }
 legacy:
   prev: riangle
   next: giampiero-cruceli-art-director-designer

@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.disasterartist.movie/home
+image: { src: "/images/clip/1845.webp", width: 1000, height: 563, thumb: "/images/clip/1845-640.webp" }
 legacy:
   prev: the-gigi
   next: tender-to-art-tender-to-art-tender-capital

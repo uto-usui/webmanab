@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.beatboxacademy.ca/
+image: { src: "/images/clip/246.webp", width: 1000, height: 563, thumb: "/images/clip/246-640.webp" }
+fullImage: { src: "/images/clip/246-full.webp", width: 1000, height: 3569 }
 legacy:
   prev: naotaro
   next: salyu

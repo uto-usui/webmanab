@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://dearmayuko.co.jp/
+image: { src: "/images/clip/871.webp", width: 1200, height: 675, thumb: "/images/clip/871-640.webp" }
+fullImage: { src: "/images/clip/871-full.webp", width: 1000, height: 2987 }
 legacy:
   prev: toshio-bando
   next: books-about-nothing

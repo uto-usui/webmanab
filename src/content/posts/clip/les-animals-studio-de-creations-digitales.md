@@ -14,6 +14,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://lesanimals.digital/
+image: { src: "/images/clip/1600.webp", width: 1000, height: 563, thumb: "/images/clip/1600-640.webp" }
 legacy:
   prev: studio-venezia
   next: retrouvez-toute-lactualite-des-fusees-ariane-5-et-ariane-6-ariane-group

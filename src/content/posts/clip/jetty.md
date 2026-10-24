@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 92, name: "service", slug: "service" }
 clipUrl: https://www.jetty.com/
+image: { src: "/images/clip/1232.webp", width: 1200, height: 675, thumb: "/images/clip/1232-640.webp" }
+fullImage: { src: "/images/clip/1232-full.webp", width: 1000, height: 8221 }
 legacy:
   prev: shochikugeino
   next: uuuuu-work

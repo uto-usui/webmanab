@@ -13,6 +13,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.wrangler.co.uk
+image: { src: "/images/clip/474.webp", width: 1280, height: 720, thumb: "/images/clip/474-640.webp" }
+fullImage: { src: "/images/clip/474-full.webp", width: 1000, height: 3019 }
 legacy:
   prev: the-wing
   next: offf-italia

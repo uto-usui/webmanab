@@ -16,6 +16,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.voellerei.at/en/
+image: { src: "/images/clip/1844.webp", width: 1000, height: 563, thumb: "/images/clip/1844-640.webp" }
+fullImage: { src: "/images/clip/1844-full.webp", width: 1000, height: 7431 }
 legacy:
   prev: vr-arles-festival-du-3-juillet-au-31-aout-2017
   next: volcan-de-mi-tierra

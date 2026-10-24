@@ -14,6 +14,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://ufomammoot.de/en/
+image: { src: "/images/clip/1510.webp", width: 1000, height: 563, thumb: "/images/clip/1510-640.webp" }
 legacy:
   prev: maquillage
   next: live-papillons-de-nuit-2017

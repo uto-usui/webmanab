@@ -12,6 +12,7 @@ terms:
   - { id: 205, name: "education", slug: "education" }
   - { id: 350, name: "VR", slug: "vr" }
 clipUrl: https://moment-zero.com
+image: { src: "/images/clip/2423.webp", width: 1200, height: 675, thumb: "/images/clip/2423-640.webp" }
 legacy:
   prev: mistretta-coiffure
   next: mowellens

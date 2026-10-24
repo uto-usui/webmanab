@@ -21,6 +21,7 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.igoodi.eu
+image: { src: "/images/clip/2425.webp", width: 1200, height: 675, thumb: "/images/clip/2425-640.webp" }
 legacy:
   prev: ha
   next: jin-okuma_

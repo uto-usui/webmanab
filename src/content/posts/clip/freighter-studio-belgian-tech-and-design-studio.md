@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://freighter.studio/
+image: { src: "/images/clip/1253.webp", width: 1200, height: 675, thumb: "/images/clip/1253-640.webp" }
+fullImage: { src: "/images/clip/1253-full.webp", width: 1000, height: 4076 }
 legacy:
   prev: off-box-architecture
   next: cedric-pereira-interactive-designer

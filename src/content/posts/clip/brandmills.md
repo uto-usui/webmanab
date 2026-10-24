@@ -14,6 +14,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 131, name: "vivid", slug: "vivid" }
 clipUrl: http://www.brandmills.in/index.php
+image: { src: "/images/clip/296.webp", width: 1280, height: 720, thumb: "/images/clip/296-640.webp" }
 legacy:
   prev: superior-lighting-design-and-sustainability-zumtobel
   next: mespotes

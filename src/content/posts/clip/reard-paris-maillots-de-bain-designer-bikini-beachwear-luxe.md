@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: https://www.reard.com/fr-fr
+image: { src: "/images/clip/1773.webp", width: 1000, height: 563, thumb: "/images/clip/1773-640.webp" }
 legacy:
   prev: ken-arai-product-designer-from-tokyo
   next: artefice

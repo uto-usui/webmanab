@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://heartbeat.ua/
+image: { src: "/images/clip/1782.webp", width: 1000, height: 563, thumb: "/images/clip/1782-640.webp" }
 legacy:
   prev: gwbi-great-wisdom-buddhist-institute
   next: icrc-dont-be-numb

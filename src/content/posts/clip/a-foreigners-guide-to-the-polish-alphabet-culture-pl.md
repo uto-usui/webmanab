@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://culture.pl/multimediaguides/alphabet
+image: { src: "/images/clip/1838.webp", width: 1000, height: 573, thumb: "/images/clip/1838-640.webp" }
 legacy:
   prev: sweet-studio
   next: letsmuseeum-stell-dir-vor-du-scrollst-durch-ein-museum-in-echt

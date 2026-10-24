@@ -18,6 +18,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.thefeebles.com/
+image: { src: "/images/clip/1496.webp", width: 1000, height: 563, thumb: "/images/clip/1496-640.webp" }
 legacy:
   prev: gocompare-calculate-your-carbon-footprint
   next: homepage-mathematic

@@ -13,6 +13,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 75, name: "product", slug: "product" }
 clipUrl: http://www.defoncechocolatier.com/
+image: { src: "/images/clip/207.webp", width: 1000, height: 563, thumb: "/images/clip/207-640.webp" }
+fullImage: { src: "/images/clip/207-full.webp", width: 1000, height: 3623 }
 legacy:
   prev: ring-education
   next: uiux-conf-china

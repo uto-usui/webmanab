@@ -23,6 +23,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://newhattan.jp/
+image: { src: "/images/clip/2323.webp", width: 1200, height: 675, thumb: "/images/clip/2323-640.webp" }
 legacy:
   prev: humbert-poyet
   next: porto-business-school

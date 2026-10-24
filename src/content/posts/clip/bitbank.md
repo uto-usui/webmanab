@@ -14,6 +14,7 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://bitcoinbank.co.jp/
+image: { src: "/images/clip/128.webp", width: 1000, height: 562, thumb: "/images/clip/128-640.webp" }
 legacy:
   prev: anex
   next: ringo

@@ -12,6 +12,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://immersive-g.com/wishes-2017/
+image: { src: "/images/clip/1074.webp", width: 1200, height: 675, thumb: "/images/clip/1074-640.webp" }
 legacy:
   prev: 2017-make-me-pulse
   next: beoplay-h4-are-wireless-headphones-crafted-by-pure-materials-pure-sound-pure-materials-pure-expression

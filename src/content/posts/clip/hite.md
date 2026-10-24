@@ -16,6 +16,7 @@ terms:
   - { id: 198, name: "science", slug: "science" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://ristex.jst.go.jp/hite/
+image: { src: "/images/clip/1528.webp", width: 1000, height: 563, thumb: "/images/clip/1528-640.webp" }
 legacy:
   prev: asoview
   next: forside-g-uld

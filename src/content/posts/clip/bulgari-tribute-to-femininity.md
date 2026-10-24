@@ -16,6 +16,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://tributetofemininity.bulgari.com/en-US
+image: { src: "/images/clip/2420.webp", width: 1200, height: 675, thumb: "/images/clip/2420-640.webp" }
 legacy:
   prev: brandstudio
   next: cargo-the-film

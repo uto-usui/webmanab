@@ -21,6 +21,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://schl.co.jp/
+image: { src: "/images/clip/1226.webp", width: 1200, height: 675, thumb: "/images/clip/1226-640.webp" }
+fullImage: { src: "/images/clip/1226-full.webp", width: 1000, height: 2362 }
 legacy:
   prev: uuuuu-work
   next: shimatorie-mirai-studio

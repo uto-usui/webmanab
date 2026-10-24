@@ -18,6 +18,7 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://tbilisigardens.ge/en
+image: { src: "/images/clip/1512.webp", width: 1000, height: 563, thumb: "/images/clip/1512-640.webp" }
 legacy:
   prev: welcome-to-hogwarts-pottermore
   next: lyuba-nova-just-another-developer

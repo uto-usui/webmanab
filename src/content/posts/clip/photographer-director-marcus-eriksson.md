@@ -16,6 +16,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://themarcus.com/
+image: { src: "/images/clip/1790.webp", width: 1000, height: 563, thumb: "/images/clip/1790-640.webp" }
+fullImage: { src: "/images/clip/1790-full.webp", width: 766, height: 9999 }
 legacy:
   prev: apps-webdesign-e-commerce-e-marketing-tentwenty-dubai-uae
   next: marc-goncalves-digital-designer

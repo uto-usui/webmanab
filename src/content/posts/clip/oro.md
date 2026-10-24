@@ -14,6 +14,8 @@ terms:
   - { id: 56, name: "recruit", slug: "recruit" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.oro.com/ja/
+image: { src: "/images/clip/1404.webp", width: 1200, height: 675, thumb: "/images/clip/1404-640.webp" }
+fullImage: { src: "/images/clip/1404-full.webp", width: 1000, height: 2552 }
 legacy:
   prev: the-ringo-nishiazabu-welcome-to-the-ringo
   next: yasutaka-nakata

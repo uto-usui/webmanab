@@ -14,6 +14,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://pharrellwilliams.com/
+image: { src: "/images/clip/359.webp", width: 1000, height: 563, thumb: "/images/clip/359-640.webp" }
+fullImage: { src: "/images/clip/359-full.webp", width: 1000, height: 9478 }
 legacy:
   prev: heyblend-film-photo-production-company
   next: tio-luchin-cocina-en-vivo

@@ -15,6 +15,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://vcfellows.co/
+image: { src: "/images/clip/2834.webp", width: 1200, height: 675, thumb: "/images/clip/2834-640.webp" }
+fullImage: { src: "/images/clip/2834-full.webp", width: 1000, height: 4995 }
 legacy:
   prev: obys
   next: vladimir-gruev-uiux-designer

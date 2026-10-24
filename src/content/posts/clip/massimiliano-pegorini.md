@@ -19,6 +19,8 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.massimilianopegorini.com/
+image: { src: "/images/clip/1976.webp", width: 1000, height: 563, thumb: "/images/clip/1976-640.webp" }
+fullImage: { src: "/images/clip/1976-full.webp", width: 1000, height: 3593 }
 legacy:
   prev: maria-callas-official-website
   next: masayuki-daijima-programmer

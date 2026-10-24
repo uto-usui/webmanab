@@ -15,6 +15,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://ongakutokurashi.tumblr.com/
+image: { src: "/images/clip/874.webp", width: 1200, height: 675, thumb: "/images/clip/874-640.webp" }
+fullImage: { src: "/images/clip/874-full.webp", width: 1000, height: 5771 }
 legacy:
   prev: brs-nihon-u
   next: acsl

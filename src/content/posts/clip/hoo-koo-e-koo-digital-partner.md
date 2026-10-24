@@ -12,6 +12,8 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://hookooekoo.co/
+image: { src: "/images/clip/89.webp", width: 1127, height: 634, thumb: "/images/clip/89-640.webp" }
+fullImage: { src: "/images/clip/89-full.webp", width: 1000, height: 4828 }
 legacy:
   prev: tokyo-art-flow
   next: hp-magic-words

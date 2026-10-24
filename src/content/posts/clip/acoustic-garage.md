@@ -16,6 +16,7 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://acoustics.autoneum.com/
+image: { src: "/images/clip/2816.webp", width: 1200, height: 675, thumb: "/images/clip/2816-640.webp" }
 legacy:
   prev: born-bred-san-francisco-brand-creative-design-agency-born-and-bred
   next: jesper-landberg

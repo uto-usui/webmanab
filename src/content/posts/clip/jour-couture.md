@@ -12,6 +12,8 @@ terms:
   - { id: 13, name: "gallery", slug: "gallery" }
   - { id: 25, name: "pink", slug: "pink" }
 clipUrl: http://jour-couture.jp/
+image: { src: "/images/clip/33.webp", width: 1280, height: 720, thumb: "/images/clip/33-640.webp" }
+fullImage: { src: "/images/clip/33-full.webp", width: 1000, height: 10068 }
 legacy:
   prev: mario-bruschi
   next: katvig

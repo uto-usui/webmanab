@@ -13,6 +13,8 @@ terms:
   - { id: 142, name: "magazine", slug: "magazine" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: https://sheishere.jp/
+image: { src: "/images/clip/2096.webp", width: 1000, height: 563, thumb: "/images/clip/2096-640.webp" }
+fullImage: { src: "/images/clip/2096-full.webp", width: 1000, height: 5197 }
 legacy:
   prev: sasha-lucca
   next: stanford-d-school

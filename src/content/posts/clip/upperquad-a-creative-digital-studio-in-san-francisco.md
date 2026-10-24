@@ -17,6 +17,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://upperquad.com/
+image: { src: "/images/clip/1787.webp", width: 1000, height: 563, thumb: "/images/clip/1787-640.webp" }
+fullImage: { src: "/images/clip/1787-full.webp", width: 895, height: 9999 }
 legacy:
   prev: vide-infra-high-class-design-and-technology-solutions-for-web-and-beyond
   next: the-great-agency

@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.ursamajorsupercluster.com/
+image: { src: "/images/clip/1814.webp", width: 1000, height: 555, thumb: "/images/clip/1814-640.webp" }
 legacy:
   prev: josephmark
   next: love-for-iceland

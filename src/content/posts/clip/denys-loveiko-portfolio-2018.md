@@ -18,6 +18,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://loveiko.com/
+image: { src: "/images/clip/2418.webp", width: 1200, height: 675, thumb: "/images/clip/2418-640.webp" }
 legacy:
   prev: decathlon-united
   next: end-family-fire

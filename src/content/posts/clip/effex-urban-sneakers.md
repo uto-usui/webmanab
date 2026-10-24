@@ -20,6 +20,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.effexbrand.com/
+image: { src: "/images/clip/1471.webp", width: 1000, height: 563, thumb: "/images/clip/1471-640.webp" }
+fullImage: { src: "/images/clip/1471-full.webp", width: 1000, height: 2117 }
 legacy:
   prev: all-boats-rise-a-creative-agency
   next: r-magazine

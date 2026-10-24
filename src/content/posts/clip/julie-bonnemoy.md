@@ -22,6 +22,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://juliebonnemoy.com/
+image: { src: "/images/clip/1998.webp", width: 1000, height: 563, thumb: "/images/clip/1998-640.webp" }
 legacy:
   prev: intentionallies
   next: keeping

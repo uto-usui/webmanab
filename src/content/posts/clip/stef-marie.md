@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://stefetmarie.com/en/
+image: { src: "/images/clip/2119.webp", width: 1000, height: 563, thumb: "/images/clip/2119-640.webp" }
+fullImage: { src: "/images/clip/2119-full.webp", width: 1000, height: 4482 }
 legacy:
   prev: stanford-d-school
   next: unitbase-inc

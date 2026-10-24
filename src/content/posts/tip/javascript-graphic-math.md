@@ -59,6 +59,8 @@ tan(α+β) = (tanα + tanβ) / (1 - tanαtanβ)
 
 ## 余弦定理 Law of cosines
 
+![figure Law of cosines](/images/uploads/2020/01/law-of-cosines.png)
+
 ```bath
 
 a2 = b2 + c2 - 2bc * cosA

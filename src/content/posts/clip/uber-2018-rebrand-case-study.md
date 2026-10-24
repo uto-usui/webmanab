@@ -18,6 +18,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 347, name: "UI", slug: "ui" }
 clipUrl: https://www.uber.design/case-studies/rebrand-2018
+image: { src: "/images/clip/2421.webp", width: 1200, height: 675, thumb: "/images/clip/2421-640.webp" }
+fullImage: { src: "/images/clip/2421-full.webp", width: 1000, height: 12500 }
 legacy:
   prev: studio-regale
   next: yard

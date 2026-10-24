@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://minna.kahoku.co.jp/
+image: { src: "/images/clip/1081.webp", width: 1200, height: 675, thumb: "/images/clip/1081-640.webp" }
+fullImage: { src: "/images/clip/1081-full.webp", width: 1000, height: 4676 }
 legacy:
   prev: balmuda
   next: izumi-akita

@@ -13,6 +13,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.rezo-zero.com
+image: { src: "/images/clip/210.webp", width: 1000, height: 562, thumb: "/images/clip/210-640.webp" }
+fullImage: { src: "/images/clip/210-full.webp", width: 1000, height: 5025 }
 legacy:
   prev: tokyo-music-odyssey-2016
   next: vincent

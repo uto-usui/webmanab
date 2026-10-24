@@ -17,6 +17,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://swro.fcinq.com/
+image: { src: "/images/clip/1070.webp", width: 1200, height: 675, thumb: "/images/clip/1070-640.webp" }
 legacy:
   prev: nj-and-ny-event-producer-and-caterer-crystal-plazacrystal-plaza
   next: are-you-sneaky-like-pete

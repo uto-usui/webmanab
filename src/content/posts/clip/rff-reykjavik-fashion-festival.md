@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://2017.rff.is/
+image: { src: "/images/clip/1261.webp", width: 1200, height: 675, thumb: "/images/clip/1261-640.webp" }
+fullImage: { src: "/images/clip/1261-full.webp", width: 1000, height: 7918 }
 legacy:
   prev: victoire-douy-ui-ux-designer
   next: heloise-thibodeau-architecte

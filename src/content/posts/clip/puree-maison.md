@@ -19,6 +19,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://pureemaison.com/
+image: { src: "/images/clip/2405.webp", width: 1200, height: 675, thumb: "/images/clip/2405-640.webp" }
+fullImage: { src: "/images/clip/2405-full.webp", width: 1000, height: 5470 }
 legacy:
   prev: paradoxes-conseil
   next: rubxkub-portfolio

@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.famigliacecchi.it/en
+image: { src: "/images/clip/954.webp", width: 1222, height: 687, thumb: "/images/clip/954-640.webp" }
+fullImage: { src: "/images/clip/954-full.webp", width: 1000, height: 3376 }
 legacy:
   prev: north2-creative-digital-studio
   next: adoratorio

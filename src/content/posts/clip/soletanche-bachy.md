@@ -20,6 +20,8 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://experience.soletanche-bachy.com/
+image: { src: "/images/clip/2781.webp", width: 1200, height: 675, thumb: "/images/clip/2781-640.webp" }
+fullImage: { src: "/images/clip/2781-full.webp", width: 1000, height: 7075 }
 legacy:
   prev: red-company
   next: ultraviolet-way

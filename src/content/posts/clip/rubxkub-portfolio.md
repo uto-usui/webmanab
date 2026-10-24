@@ -19,6 +19,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://rubxkub.com/
+image: { src: "/images/clip/2410.webp", width: 1200, height: 675, thumb: "/images/clip/2410-640.webp" }
 legacy:
   prev: puree-maison
   next: sage-culture

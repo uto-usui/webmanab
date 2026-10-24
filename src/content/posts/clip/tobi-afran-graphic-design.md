@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://tobiafran.com/
+image: { src: "/images/clip/690.webp", width: 1200, height: 675, thumb: "/images/clip/690-640.webp" }
+fullImage: { src: "/images/clip/690-full.webp", width: 1000, height: 4500 }
 legacy:
   prev: dynamicmtl
   next: hollow

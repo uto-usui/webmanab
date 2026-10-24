@@ -21,6 +21,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.couleecreative.com/
+image: { src: "/images/clip/1603.webp", width: 1000, height: 563, thumb: "/images/clip/1603-640.webp" }
 legacy:
   prev: in-my-world
   next: all-boats-rise-a-creative-agency

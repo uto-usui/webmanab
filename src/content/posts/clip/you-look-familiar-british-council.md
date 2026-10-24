@@ -12,6 +12,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 12, name: "parallax", slug: "parallax" }
 clipUrl: https://exhibitions.britishcouncil.org.tr/youlookfamiliar/EN/
+image: { src: "/images/clip/2114.webp", width: 1000, height: 563, thumb: "/images/clip/2114-640.webp" }
 legacy:
   prev: wedge
   next: hokuto-ninjin

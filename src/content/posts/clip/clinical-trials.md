@@ -14,6 +14,8 @@ terms:
   - { id: 208, name: "hospital", slug: "hospital" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://patients.debiopharm.com/
+image: { src: "/images/clip/1983.webp", width: 1000, height: 563, thumb: "/images/clip/1983-640.webp" }
+fullImage: { src: "/images/clip/1983-full.webp", width: 1000, height: 668 }
 legacy:
   prev: charly-zenger
   next: crazy-wedding

@@ -14,6 +14,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://lusion.co/
+image: { src: "/images/clip/2637.webp", width: 1200, height: 675, thumb: "/images/clip/2637-640.webp" }
 legacy:
   prev: first-frame
   next: the-o-by-nars

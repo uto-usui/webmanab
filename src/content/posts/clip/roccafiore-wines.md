@@ -19,6 +19,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.roccafiorewines.com/en/
+image: { src: "/images/clip/1991.webp", width: 1000, height: 563, thumb: "/images/clip/1991-640.webp" }
+fullImage: { src: "/images/clip/1991-full.webp", width: 1000, height: 563 }
 legacy:
   prev: red-collars-team
   next: socialclub

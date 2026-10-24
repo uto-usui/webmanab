@@ -21,6 +21,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.digitalasset.com/
+image: { src: "/images/clip/1781.webp", width: 1000, height: 563, thumb: "/images/clip/1781-640.webp" }
+fullImage: { src: "/images/clip/1781-full.webp", width: 1000, height: 4431 }
 legacy:
   prev: contemple-digital-studio
   next: do-things-that-matter-kbs-canada

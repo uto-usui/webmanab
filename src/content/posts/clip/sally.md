@@ -14,6 +14,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://new.drivesally.com/
+image: { src: "/images/clip/2674.webp", width: 1200, height: 675, thumb: "/images/clip/2674-640.webp" }
 legacy:
   prev: safari-riot-home
   next: spatzek-studio

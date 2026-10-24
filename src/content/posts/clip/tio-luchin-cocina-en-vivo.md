@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.tioluchin.com/
+image: { src: "/images/clip/360.webp", width: 1000, height: 563, thumb: "/images/clip/360-640.webp" }
+fullImage: { src: "/images/clip/360-full.webp", width: 1000, height: 5412 }
 legacy:
   prev: pharrellwilliams
   next: seedlip

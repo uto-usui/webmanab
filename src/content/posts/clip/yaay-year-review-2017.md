@@ -11,6 +11,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://yaay.ch/review/2017
+image: { src: "/images/clip/2278.webp", width: 1200, height: 675, thumb: "/images/clip/2278-640.webp" }
 legacy:
   prev: the-gerald
   next: 60fps

@@ -19,6 +19,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://maquillage.shiseido.co.jp/
+image: { src: "/images/clip/1585.webp", width: 1000, height: 563, thumb: "/images/clip/1585-640.webp" }
+fullImage: { src: "/images/clip/1585-full.webp", width: 1000, height: 4075 }
 legacy:
   prev: heros-sportsmanship-for-the-future
   next: ufomammoot-website-2017

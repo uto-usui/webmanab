@@ -17,6 +17,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 279, name: "sound", slug: "sound" }
 clipUrl: http://kolor.jp/
+image: { src: "/images/clip/1220.webp", width: 1200, height: 675, thumb: "/images/clip/1220-640.webp" }
+fullImage: { src: "/images/clip/1220-full.webp", width: 1000, height: 563 }
 legacy:
   prev: big-omaha-2017
   next: agence-digitale-belle-epoque-creation-de-site-web-a-paris

@@ -20,6 +20,8 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://mistretta.ch/
+image: { src: "/images/clip/2412.webp", width: 1200, height: 675, thumb: "/images/clip/2412-640.webp" }
+fullImage: { src: "/images/clip/2412-full.webp", width: 1000, height: 2876 }
 legacy:
   prev: micai
   next: moment-zero

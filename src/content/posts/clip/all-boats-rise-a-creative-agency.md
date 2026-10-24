@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://allboatsrise.com/
+image: { src: "/images/clip/1469.webp", width: 1000, height: 563, thumb: "/images/clip/1469-640.webp" }
+fullImage: { src: "/images/clip/1469-full.webp", width: 1000, height: 1126 }
 legacy:
   prev: coulee-creative-creative-web-design-development
   next: effex-urban-sneakers

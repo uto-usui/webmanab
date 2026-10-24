@@ -12,6 +12,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://hikarina.co.jp/
+image: { src: "/images/clip/2097.webp", width: 1000, height: 563, thumb: "/images/clip/2097-640.webp" }
+fullImage: { src: "/images/clip/2097-full.webp", width: 1000, height: 2753 }
 legacy:
   prev: gekkan-caffe-latte-inc
   next: humana

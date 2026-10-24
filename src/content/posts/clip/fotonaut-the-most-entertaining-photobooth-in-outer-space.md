@@ -19,6 +19,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://fotonaut.cz/en/
+image: { src: "/images/clip/1547.webp", width: 1000, height: 563, thumb: "/images/clip/1547-640.webp" }
 legacy:
   prev: kikk-festival-invisible-naratives
   next: gedeon-broadcast-design-company

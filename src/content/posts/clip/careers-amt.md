@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://careers.amt-law.com/
+image: { src: "/images/clip/1532.webp", width: 1000, height: 563, thumb: "/images/clip/1532-640.webp" }
+fullImage: { src: "/images/clip/1532-full.webp", width: 1000, height: 3721 }
 legacy:
   prev: incubit-inc
   next: bake-cheese-tart

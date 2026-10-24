@@ -14,6 +14,7 @@ terms:
   - { id: 106, name: "purple", slug: "purple" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://www.wed-camp.com/
+image: { src: "/images/clip/1605.webp", width: 1000, height: 563, thumb: "/images/clip/1605-640.webp" }
 legacy:
   prev: ode-goods
   next: in-my-world

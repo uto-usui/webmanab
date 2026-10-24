@@ -13,6 +13,8 @@ terms:
   - { id: 93, name: "fullscreen", slug: "fullscreen" }
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 164, name: "navigation", slug: "navigation" }
+image: { src: "/images/clip/864.webp", width: 1200, height: 675, thumb: "/images/clip/864-640.webp" }
+fullImage: { src: "/images/clip/864-full.webp", width: 1000, height: 563 }
 legacy:
   prev: edogawa-juukou
   next: httpsnisekohakuunso

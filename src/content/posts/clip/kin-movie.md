@@ -15,6 +15,7 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://kin.movie
+image: { src: "/images/clip/2430.webp", width: 1200, height: 675, thumb: "/images/clip/2430-640.webp" }
 legacy:
   prev: kikk-festival-2018-8th-edition-kikk-2018
   next: makereign

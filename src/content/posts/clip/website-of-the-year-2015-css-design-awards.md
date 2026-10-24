@@ -17,6 +17,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.cssdesignawards.com/woty/
+image: { src: "/images/clip/497.webp", width: 1280, height: 720, thumb: "/images/clip/497-640.webp" }
+fullImage: { src: "/images/clip/497-full.webp", width: 1000, height: 5234 }
 legacy:
   prev: jsconf-uruguay-2016-montevideo-april-15th-16th
   next: uncle-grey

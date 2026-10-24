@@ -15,6 +15,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.point.studio/
+image: { src: "/images/clip/471.webp", width: 1280, height: 736, thumb: "/images/clip/471-640.webp" }
+fullImage: { src: "/images/clip/471-full.webp", width: 1000, height: 8718 }
 legacy:
   prev: du-haihang-interactive-designerdeveloper
   next: stripe-radar

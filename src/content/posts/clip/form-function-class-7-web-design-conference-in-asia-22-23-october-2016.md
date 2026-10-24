@@ -11,6 +11,8 @@ terms:
   - { id: 27, name: "flat", slug: "flat" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://formfunctionclass.com/
+image: { src: "/images/clip/348.webp", width: 1000, height: 563, thumb: "/images/clip/348-640.webp" }
+fullImage: { src: "/images/clip/348-full.webp", width: 1000, height: 3976 }
 legacy:
   prev: freddy-castro
   next: theodora-nasta-multimedia-designer

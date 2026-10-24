@@ -21,6 +21,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://wearebishopdesign.com/
+image: { src: "/images/clip/2397.webp", width: 1200, height: 675, thumb: "/images/clip/2397-640.webp" }
 legacy:
   prev: bersi-serlini-festival-2018
   next: brandstudio

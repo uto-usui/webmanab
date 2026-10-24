@@ -17,6 +17,7 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.abelodor.com/
+image: { src: "/images/clip/1990.webp", width: 1000, height: 563, thumb: "/images/clip/1990-640.webp" }
 legacy:
   prev: 132-5-standard-issey-miyake-inc
   next: amaio

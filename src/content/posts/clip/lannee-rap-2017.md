@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.abcdrduson.com/annee-rap-2017/
+image: { src: "/images/clip/1980.webp", width: 1000, height: 563, thumb: "/images/clip/1980-640.webp" }
+fullImage: { src: "/images/clip/1980-full.webp", width: 1000, height: 8957 }
 legacy:
   prev: icrc-dont-be-numb
   next: maria-callas-official-website

@@ -13,6 +13,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.weareuprising.com/
+image: { src: "/images/clip/801.webp", width: 1200, height: 675, thumb: "/images/clip/801-640.webp" }
+fullImage: { src: "/images/clip/801-full.webp", width: 1000, height: 563 }
 legacy:
   prev: villes-paysages-agence-durbanistes-et-darchitectes-paysagistes
   next: valaire

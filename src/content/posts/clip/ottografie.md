@@ -20,6 +20,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.ottografie.nl/
+image: { src: "/images/clip/2429.webp", width: 1200, height: 675, thumb: "/images/clip/2429-640.webp" }
 legacy:
   prev: orano-innovations
   next: paradoxes-conseil

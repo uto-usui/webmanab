@@ -14,6 +14,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://team.redcollar.digital/
+image: { src: "/images/clip/1992.webp", width: 1000, height: 563, thumb: "/images/clip/1992-640.webp" }
 legacy:
   prev: promoflex
   next: roccafiore-wines

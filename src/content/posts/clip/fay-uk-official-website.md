@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.fay.com/
+image: { src: "/images/clip/318.webp", width: 1000, height: 563, thumb: "/images/clip/318-640.webp" }
+fullImage: { src: "/images/clip/318-full.webp", width: 1000, height: 3050 }
 legacy:
   prev: rakusyo
   next: vr-sessions

@@ -21,6 +21,8 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 324, name: "vue", slug: "vue" }
 clipUrl: https://spatzek.studio/
+image: { src: "/images/clip/2679.webp", width: 1200, height: 675, thumb: "/images/clip/2679-640.webp" }
+fullImage: { src: "/images/clip/2679-full.webp", width: 1000, height: 2697 }
 legacy:
   prev: sally
   next: waka-waka

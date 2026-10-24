@@ -18,6 +18,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://off-box.com/en/
+image: { src: "/images/clip/1254.webp", width: 1200, height: 674, thumb: "/images/clip/1254-640.webp" }
 legacy:
   prev: wine-art
   next: freighter-studio-belgian-tech-and-design-studio

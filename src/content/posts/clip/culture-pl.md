@@ -14,6 +14,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://culture.pl/multimediaguides/
+image: { src: "/images/clip/333.webp", width: 1000, height: 563, thumb: "/images/clip/333-640.webp" }
+fullImage: { src: "/images/clip/333-full.webp", width: 1000, height: 563 }
 legacy:
   prev: tokyo-cat-specialists
   next: prototype-fund

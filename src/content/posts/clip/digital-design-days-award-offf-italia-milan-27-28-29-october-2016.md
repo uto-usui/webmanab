@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.ddd.it/en
+image: { src: "/images/clip/477.webp", width: 1280, height: 720, thumb: "/images/clip/477-640.webp" }
+fullImage: { src: "/images/clip/477-full.webp", width: 1000, height: 9354 }
 legacy:
   prev: kikk-festival
   next: projections-design-conference-poznan-poland

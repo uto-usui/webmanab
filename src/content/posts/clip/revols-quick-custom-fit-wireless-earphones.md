@@ -14,6 +14,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.revols.com/
+image: { src: "/images/clip/750.webp", width: 1200, height: 675, thumb: "/images/clip/750-640.webp" }
+fullImage: { src: "/images/clip/750-full.webp", width: 1000, height: 9117 }
 legacy:
   prev: coup-de-coeur-francophone-festival-de-chansons
   next: phil-casabon

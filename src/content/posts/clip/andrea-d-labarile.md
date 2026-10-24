@@ -17,6 +17,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.andreadlabarile.it/
+image: { src: "/images/clip/2110.webp", width: 1000, height: 563, thumb: "/images/clip/2110-640.webp" }
 legacy:
   prev: 2018-developer-skill-report
   next: dogtrot

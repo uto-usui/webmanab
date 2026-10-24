@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://sfcd.com/
+image: { src: "/images/clip/265.webp", width: 1000, height: 563, thumb: "/images/clip/265-640.webp" }
+fullImage: { src: "/images/clip/265-full.webp", width: 877, height: 9999 }
 legacy:
   prev: primer-marketing-lessons-from-google
   next: dolox-inc

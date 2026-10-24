@@ -17,6 +17,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://www.thimus.com/
+image: { src: "/images/clip/1078.webp", width: 1200, height: 675, thumb: "/images/clip/1078-640.webp" }
+fullImage: { src: "/images/clip/1078-full.webp", width: 1000, height: 3654 }
 legacy:
   prev: original-fischer-beer
   next: pixelpink-design-studio-berlin

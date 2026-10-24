@@ -12,6 +12,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.a-net.com/
+image: { src: "/images/clip/507.webp", width: 1280, height: 720, thumb: "/images/clip/507-640.webp" }
+fullImage: { src: "/images/clip/507-full.webp", width: 1000, height: 2817 }
 legacy:
   prev: pierre-nguyen-freelance-digital-ad-ux-designer
   next: jal

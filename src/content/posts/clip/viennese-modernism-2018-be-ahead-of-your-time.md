@@ -20,6 +20,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 327, name: "whtie", slug: "whtie" }
 clipUrl: https://viennesemodernism2018.info/en/
+image: { src: "/images/clip/2209.webp", width: 1000, height: 563, thumb: "/images/clip/2209-640.webp" }
+fullImage: { src: "/images/clip/2209-full.webp", width: 1000, height: 1983 }
 legacy:
   prev: real-estate-chicago-berdan-real-estate
   next: yamazaki-moments

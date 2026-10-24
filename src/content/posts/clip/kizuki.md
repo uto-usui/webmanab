@@ -16,6 +16,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://kizuki.style
+image: { src: "/images/clip/695.webp", width: 1200, height: 675, thumb: "/images/clip/695-640.webp" }
+fullImage: { src: "/images/clip/695-full.webp", width: 1000, height: 2246 }
 legacy:
   prev: circles-conference-a-creative-design-conference-by-circles-co
   next: talking-ultrasuede

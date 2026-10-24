@@ -16,6 +16,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.creatures.co.jp/
+image: { src: "/images/clip/1534.webp", width: 1000, height: 563, thumb: "/images/clip/1534-640.webp" }
 legacy:
   prev: bake-cheese-tart
   next: metaps

@@ -19,6 +19,8 @@ terms:
   - { id: 122, name: "timeline", slug: "timeline" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://cuberto.com/
+image: { src: "/images/clip/229.webp", width: 1000, height: 565, thumb: "/images/clip/229-640.webp" }
+fullImage: { src: "/images/clip/229-full.webp", width: 1000, height: 7931 }
 legacy:
   prev: cogy
   next: kenosha-yonezu-reissue-records

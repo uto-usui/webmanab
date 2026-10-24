@@ -14,6 +14,8 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://mypro.co.jp/
+image: { src: "/images/clip/1525.webp", width: 1000, height: 563, thumb: "/images/clip/1525-640.webp" }
+fullImage: { src: "/images/clip/1525-full.webp", width: 1000, height: 2039 }
 legacy:
   prev: baus
   next: fil

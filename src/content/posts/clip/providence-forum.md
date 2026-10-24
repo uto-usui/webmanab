@@ -14,6 +14,8 @@ terms:
   - { id: 71, name: "hover", slug: "hover" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: https://providenceforum.org/
+image: { src: "/images/clip/2277.webp", width: 1200, height: 625, thumb: "/images/clip/2277-640.webp" }
+fullImage: { src: "/images/clip/2277-full.webp", width: 1000, height: 7852 }
 legacy:
   prev: modern-cat-tree-neko
   next: ruya-web-design-web-development

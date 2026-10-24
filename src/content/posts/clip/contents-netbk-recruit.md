@@ -18,6 +18,8 @@ terms:
   - { id: 56, name: "recruit", slug: "recruit" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://contents.netbk.co.jp/pc/recruit/
+image: { src: "/images/clip/2083.webp", width: 1000, height: 563, thumb: "/images/clip/2083-640.webp" }
+fullImage: { src: "/images/clip/2083-full.webp", width: 1000, height: 4514 }
 legacy:
   prev: hokuto-ninjin
   next: i-studio

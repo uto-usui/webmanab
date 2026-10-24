@@ -16,6 +16,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://festival.bersiserlini.it/en
+image: { src: "/images/clip/2433.webp", width: 1200, height: 675, thumb: "/images/clip/2433-640.webp" }
 legacy:
   prev: benmingo
   next: bishop-design

@@ -14,6 +14,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.pellmell.fr/
+image: { src: "/images/clip/799.webp", width: 1200, height: 675, thumb: "/images/clip/799-640.webp" }
+fullImage: { src: "/images/clip/799-full.webp", width: 1000, height: 2799 }
 legacy:
   prev: plant-your-flag-hurtigruten
   next: kuronekoyamato-customer

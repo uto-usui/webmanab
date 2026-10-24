@@ -16,6 +16,7 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.benmingo.com/
+image: { src: "/images/clip/1850.webp", width: 1000, height: 563, thumb: "/images/clip/1850-640.webp" }
 legacy:
   prev: aristide-benoist-creative-developer
   next: canvas-united-a-new-york-city-digital-agency

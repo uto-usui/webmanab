@@ -150,3 +150,21 @@ describe('iframe', () => {
 test('引用符・-- ・... を変えない（smartPunctuation を切っている）', () => {
   expect(render('"SSR" -- や...')).toBe('<p>"SSR" -- や...</p>\n')
 })
+
+describe('画像', () => {
+  test('public/images/ の画像に、ファイルから読んだ width と height と lazy を付ける', () => {
+    expect(
+      render(
+        '![Vuex のデータフローの公式図解](/images/uploads/2018/02/vuex.png)',
+      ),
+    ).toBe(
+      '<p><img src="/images/uploads/2018/02/vuex.png" alt="Vuex のデータフローの公式図解" width="701" height="551" loading="lazy" decoding="async"></p>\n',
+    )
+  })
+
+  test('それ以外の画像には何も足さない', () => {
+    expect(render('![](/eyecatch/tip/828.svg)')).toBe(
+      '<p><img src="/eyecatch/tip/828.svg" alt=""></p>\n',
+    )
+  })
+})

@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://circlesconference.com/
+image: { src: "/images/clip/687.webp", width: 1200, height: 675, thumb: "/images/clip/687-640.webp" }
+fullImage: { src: "/images/clip/687-full.webp", width: 1000, height: 13346 }
 legacy:
   prev: hannah-purmort
   next: kizuki

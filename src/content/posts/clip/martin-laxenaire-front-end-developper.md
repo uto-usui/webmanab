@@ -11,6 +11,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.martin-laxenaire.fr/
+image: { src: "/images/clip/1388.webp", width: 1200, height: 675, thumb: "/images/clip/1388-640.webp" }
+fullImage: { src: "/images/clip/1388-full.webp", width: 1000, height: 3861 }
 legacy:
   prev: specter-wireless-premium-wireless-headphones-speakers
   next: northeastjp

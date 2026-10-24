@@ -12,6 +12,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 298, name: "spa", slug: "spa" }
 clipUrl: https://www.pieromilano.it/
+image: { src: "/images/clip/1594.webp", width: 1000, height: 562, thumb: "/images/clip/1594-640.webp" }
 legacy:
   prev: home-olivier-lapidus
   next: kindai

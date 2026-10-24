@@ -20,6 +20,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.lapeaudelours.net/fr/
+image: { src: "/images/clip/1554.webp", width: 1000, height: 563, thumb: "/images/clip/1554-640.webp" }
+fullImage: { src: "/images/clip/1554-full.webp", width: 1000, height: 4238 }
 legacy:
   prev: homepage-global-connectivity-specialist
   next: a-creative-podcast-with-curated-tunes-industry-views-basic-brandbeats

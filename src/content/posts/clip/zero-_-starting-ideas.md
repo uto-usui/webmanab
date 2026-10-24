@@ -19,6 +19,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://zerostartingideas.com/en/
+image: { src: "/images/clip/1497.webp", width: 1000, height: 563, thumb: "/images/clip/1497-640.webp" }
 legacy:
   prev: intours-dmc
   next: gocompare-calculate-your-carbon-footprint

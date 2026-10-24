@@ -18,6 +18,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://runtomorrow.jp/
+image: { src: "/images/clip/1208.webp", width: 1196, height: 671, thumb: "/images/clip/1208-640.webp" }
 legacy:
   prev: american-football
   next: firsttouch-inc

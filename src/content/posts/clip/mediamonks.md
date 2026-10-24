@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.mediamonks.com/
+image: { src: "/images/clip/499.webp", width: 1280, height: 720, thumb: "/images/clip/499-640.webp" }
+fullImage: { src: "/images/clip/499-full.webp", width: 1000, height: 1704 }
 legacy:
   prev: uncle-grey
   next: acme-experience

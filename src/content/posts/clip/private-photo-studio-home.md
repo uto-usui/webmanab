@@ -20,6 +20,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://studio-home.jp/
+image: { src: "/images/clip/881.webp", width: 1200, height: 675, thumb: "/images/clip/881-640.webp" }
+fullImage: { src: "/images/clip/881-full.webp", width: 1000, height: 4701 }
 legacy:
   prev: happy-photo-studio
   next: ja-nagano-iijan

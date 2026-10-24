@@ -18,6 +18,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://daoustlestage.com/en/
+image: { src: "/images/clip/1549.webp", width: 1000, height: 563, thumb: "/images/clip/1549-640.webp" }
 legacy:
   prev: a-creative-podcast-with-curated-tunes-industry-views-basic-brandbeats
   next: ao-beauty-labo

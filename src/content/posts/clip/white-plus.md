@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.wh-plus.com/
+image: { src: "/images/clip/1209.webp", width: 1200, height: 675, thumb: "/images/clip/1209-640.webp" }
 legacy:
   prev: firsttouch-inc
   next: radioaktivefilm-radioaktive-film

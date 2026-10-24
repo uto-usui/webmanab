@@ -14,6 +14,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://nspc.co.jp/
+image: { src: "/images/clip/2536.webp", width: 1200, height: 675, thumb: "/images/clip/2536-640.webp" }
+fullImage: { src: "/images/clip/2536-full.webp", width: 1000, height: 5123 }
 legacy:
   prev: non-grid-inc
   next: payme

@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://voice-odai.jp/
+image: { src: "/images/clip/1539.webp", width: 1000, height: 563, thumb: "/images/clip/1539-640.webp" }
+fullImage: { src: "/images/clip/1539-full.webp", width: 1000, height: 3260 }
 legacy:
   prev: medycoat
   next: glass-art-design-architecture

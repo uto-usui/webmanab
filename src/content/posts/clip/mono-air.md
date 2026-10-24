@@ -17,6 +17,8 @@ terms:
   - { id: 110, name: "stationery", slug: "stationery" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.tombow.com/sp/monoair/
+image: { src: "/images/clip/174.webp", width: 1000, height: 562, thumb: "/images/clip/174-640.webp" }
+fullImage: { src: "/images/clip/174-full.webp", width: 1000, height: 588 }
 legacy:
   prev: suliya
   next: caribbean-vacation-in-full-360o

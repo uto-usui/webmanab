@@ -14,6 +14,7 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 17, name: "red", slug: "red" }
 clipUrl: http://jp.hondamotoglobal.com
+image: { src: "/images/clip/506.webp", width: 1280, height: 719, thumb: "/images/clip/506-640.webp" }
 legacy:
   prev: ijc-matsuri-is-japan-cool
   next: ecodom

@@ -16,6 +16,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://designcanada.com/
+image: { src: "/images/clip/2627.webp", width: 1200, height: 675, thumb: "/images/clip/2627-640.webp" }
+fullImage: { src: "/images/clip/2627-full.webp", width: 1000, height: 563 }
 legacy:
   prev: superrb
   next: 100-years-of-georgias-first-democratic-republic100

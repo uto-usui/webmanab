@@ -25,3 +25,5 @@ GitHub には、ポリゴンを生成するためのPhotoshop用のスクリプ�
 - [GitHub – aryamansharda/LowPolygonArt](https://github.com/aryamansharda/LowPolygonArt)
 
 おわります。
+
+![Low Polygon Art のグラデーション一覧の画面](/images/uploads/2018/02/lowpolygonart.jpg)

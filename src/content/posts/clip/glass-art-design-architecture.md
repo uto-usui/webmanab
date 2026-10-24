@@ -15,6 +15,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://glass-exhibition.jamfactory.com.au/
+image: { src: "/images/clip/1541.webp", width: 1000, height: 563, thumb: "/images/clip/1541-640.webp" }
 legacy:
   prev: odai-voice-of-odai-mie-japan
   next: connection-of-the-children

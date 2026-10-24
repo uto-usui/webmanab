@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
   - { id: 45, name: "women", slug: "women" }
+image: { src: "/images/clip/473.webp", width: 1280, height: 720, thumb: "/images/clip/473-640.webp" }
+fullImage: { src: "/images/clip/473-full.webp", width: 1000, height: 2404 }
 legacy:
   prev: stripe-radar
   next: wrangler-wild-way-home

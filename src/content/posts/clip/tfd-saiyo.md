@@ -14,6 +14,8 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://tfd-saiyo.jp/
+image: { src: "/images/clip/867.webp", width: 1233, height: 694, thumb: "/images/clip/867-640.webp" }
+fullImage: { src: "/images/clip/867-full.webp", width: 1000, height: 1828 }
 legacy:
   prev: wilson-sporting-good
   next: udatsu

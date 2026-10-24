@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://nordicjs.com/
+image: { src: "/images/clip/485.webp", width: 1239, height: 697, thumb: "/images/clip/485-640.webp" }
+fullImage: { src: "/images/clip/485-full.webp", width: 1000, height: 8070 }
 legacy:
   prev: outpost
   next: aerolab-design-and-development-for-startups-and-leading-brands

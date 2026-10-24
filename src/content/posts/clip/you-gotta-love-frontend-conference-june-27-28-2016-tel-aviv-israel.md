@@ -17,6 +17,8 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://yougottalovefrontend.com/
+image: { src: "/images/clip/495.webp", width: 1280, height: 720, thumb: "/images/clip/495-640.webp" }
+fullImage: { src: "/images/clip/495-full.webp", width: 1000, height: 2424 }
 legacy:
   prev: front-end-design-conference
   next: jsconf-uruguay-2016-montevideo-april-15th-16th

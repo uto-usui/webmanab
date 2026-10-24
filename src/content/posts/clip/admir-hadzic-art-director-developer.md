@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://admirhadzic.com/
+image: { src: "/images/clip/502.webp", width: 1280, height: 720, thumb: "/images/clip/502-640.webp" }
+fullImage: { src: "/images/clip/502-full.webp", width: 1000, height: 583 }
 legacy:
   prev: activation-nodeplus-digital-creative-agency
   next: pierre-nguyen-freelance-digital-ad-ux-designer

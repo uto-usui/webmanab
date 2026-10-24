@@ -13,6 +13,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://snp.agency/de
+image: { src: "/images/clip/2312.webp", width: 1200, height: 625, thumb: "/images/clip/2312-640.webp" }
+fullImage: { src: "/images/clip/2312-full.webp", width: 1000, height: 10855 }
 legacy:
   prev: lotus-beauty-spa
   next: home-frans-hals-museum

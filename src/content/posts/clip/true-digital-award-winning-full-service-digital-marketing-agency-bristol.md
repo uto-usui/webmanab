@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.truedigital.co.uk/
+image: { src: "/images/clip/270.webp", width: 1000, height: 562, thumb: "/images/clip/270-640.webp" }
+fullImage: { src: "/images/clip/270-full.webp", width: 1000, height: 3172 }
 legacy:
   prev: newdealdesign
   next: curatemag

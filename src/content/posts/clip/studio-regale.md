@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 347, name: "UI", slug: "ui" }
 clipUrl: http://www.studioregale.com
+image: { src: "/images/clip/2446.webp", width: 1200, height: 675, thumb: "/images/clip/2446-640.webp" }
 legacy:
   prev: sobieski
   next: uber-2018-rebrand-case-study

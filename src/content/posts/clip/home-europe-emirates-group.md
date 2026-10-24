@@ -17,6 +17,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://uae-eu.com/
+image: { src: "/images/clip/1477.webp", width: 1000, height: 563, thumb: "/images/clip/1477-640.webp" }
+fullImage: { src: "/images/clip/1477-full.webp", width: 1000, height: 3978 }
 legacy:
   prev: fashion-and-luxury-academy-in-milan
   next: productions-leloi

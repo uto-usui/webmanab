@@ -14,6 +14,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.nodai.ac.jp/
+image: { src: "/images/clip/888.webp", width: 1200, height: 675, thumb: "/images/clip/888-640.webp" }
+fullImage: { src: "/images/clip/888-full.webp", width: 1000, height: 3553 }
 legacy:
   prev: udatsu
   next: bound-baw

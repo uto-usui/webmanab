@@ -14,6 +14,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://blackline-partners.com/
+image: { src: "/images/clip/334.webp", width: 1000, height: 562, thumb: "/images/clip/334-640.webp" }
+fullImage: { src: "/images/clip/334-full.webp", width: 1000, height: 4428 }
 legacy:
   prev: toraya
   next: signupanywhere

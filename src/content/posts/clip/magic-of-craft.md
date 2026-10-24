@@ -12,6 +12,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 58, name: "movie", slug: "movie" }
 clipUrl: http://montblanc.avocada.de/
+image: { src: "/images/clip/1236.webp", width: 1200, height: 675, thumb: "/images/clip/1236-640.webp" }
 legacy:
   prev: psikontacto
   next: european-music-incubator

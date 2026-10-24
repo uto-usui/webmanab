@@ -14,6 +14,8 @@ terms:
   - { id: 25, name: "pink", slug: "pink" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://tokyoartflow.jp/
+image: { src: "/images/clip/91.webp", width: 1000, height: 563, thumb: "/images/clip/91-640.webp" }
+fullImage: { src: "/images/clip/91-full.webp", width: 1000, height: 4242 }
 legacy:
   prev: budi-dio-koji-nedostaje
   next: hoo-koo-e-koo-digital-partner

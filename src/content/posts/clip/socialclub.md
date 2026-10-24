@@ -20,6 +20,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://socialclubparis.com/
+image: { src: "/images/clip/1981.webp", width: 1000, height: 3346, thumb: "/images/clip/1981-640.webp" }
+fullImage: { src: "/images/clip/1981-full.webp", width: 1000, height: 3346 }
 legacy:
   prev: roccafiore-wines
   next: soundworlds-of-steve-roach

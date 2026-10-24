@@ -20,6 +20,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: https://www.villesetpaysages.fr/
+image: { src: "/images/clip/800.webp", width: 1200, height: 675, thumb: "/images/clip/800-640.webp" }
+fullImage: { src: "/images/clip/800-full.webp", width: 1000, height: 3544 }
 legacy:
   prev: kuronekoyamato-customer
   next: uprising-digital-creative-production-company

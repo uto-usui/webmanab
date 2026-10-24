@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://taotajima.jp/
+image: { src: "/images/clip/1846.webp", width: 1000, height: 725, thumb: "/images/clip/1846-640.webp" }
 legacy:
   prev: tender-to-art-tender-to-art-tender-capital
   next: apps-webdesign-e-commerce-e-marketing-tentwenty-dubai-uae

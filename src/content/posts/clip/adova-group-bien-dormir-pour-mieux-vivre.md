@@ -14,6 +14,8 @@ terms:
   - { id: 22, name: "gradation", slug: "gradation" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://adova-group.com/fr
+image: { src: "/images/clip/2218.webp", width: 1000, height: 563, thumb: "/images/clip/2218-640.webp" }
+fullImage: { src: "/images/clip/2218-full.webp", width: 1000, height: 8193 }
 legacy:
   prev: gusto-play
   next: air-jordan-collection-retro-new-editions-jordan-com

@@ -16,6 +16,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 17, name: "red", slug: "red" }
 clipUrl: http://www.cera-groupecera.com/fr/
+image: { src: "/images/clip/213.webp", width: 1000, height: 562, thumb: "/images/clip/213-640.webp" }
+fullImage: { src: "/images/clip/213-full.webp", width: 1000, height: 1773 }
 legacy:
   prev: vincent
   next: megafoon-inc

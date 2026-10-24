@@ -18,6 +18,8 @@ terms:
   - { id: 210, name: "UX", slug: "ux" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://mackayriver.com/
+image: { src: "/images/clip/660.webp", width: 1280, height: 720, thumb: "/images/clip/660-640.webp" }
+fullImage: { src: "/images/clip/660-full.webp", width: 1000, height: 4507 }
 legacy:
   prev: kaeru78
   next: hannah-purmort

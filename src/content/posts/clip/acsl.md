@@ -19,6 +19,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 250, name: "technology", slug: "technology" }
 clipUrl: http://www.acsl.co.jp/
+image: { src: "/images/clip/873.webp", width: 1200, height: 675, thumb: "/images/clip/873-640.webp" }
+fullImage: { src: "/images/clip/873-full.webp", width: 1000, height: 4513 }
 legacy:
   prev: ongakutokurashi
   next: depart-inc

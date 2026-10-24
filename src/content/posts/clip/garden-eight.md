@@ -21,6 +21,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://garden-eight.com/
+image: { src: "/images/clip/713.webp", width: 1200, height: 675, thumb: "/images/clip/713-640.webp" }
+fullImage: { src: "/images/clip/713-full.webp", width: 1000, height: 4694 }
 legacy:
   prev: hollow
   next: the-art-of-ping-pong

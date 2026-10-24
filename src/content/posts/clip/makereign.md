@@ -22,6 +22,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.makereign.com/
+image: { src: "/images/clip/2413.webp", width: 1200, height: 675, thumb: "/images/clip/2413-640.webp" }
 legacy:
   prev: kin-movie
   next: mathieu-levesque

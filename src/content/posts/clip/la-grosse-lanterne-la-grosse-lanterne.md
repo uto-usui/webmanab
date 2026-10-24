@@ -17,6 +17,8 @@ terms:
   - { id: 108, name: "wordpress", slug: "wordpress" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://www.grosselanterne.com/en/
+image: { src: "/images/clip/1542.webp", width: 1000, height: 563, thumb: "/images/clip/1542-640.webp" }
+fullImage: { src: "/images/clip/1542-full.webp", width: 1000, height: 8172 }
 legacy:
   prev: chateau-leoville-barton-saint-julien-grand-cru-classe-1855
   next: tim-roussilhe-interactive-developer

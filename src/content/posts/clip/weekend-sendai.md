@@ -12,6 +12,8 @@ terms:
   - { id: 42, name: "local", slug: "local" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://weekend-sendai.com/
+image: { src: "/images/clip/54.webp", width: 1280, height: 720, thumb: "/images/clip/54-640.webp" }
+fullImage: { src: "/images/clip/54-full.webp", width: 1000, height: 5390 }
 legacy:
   prev: margaret-howell
   next: women-trip-collection

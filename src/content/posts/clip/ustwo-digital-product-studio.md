@@ -20,6 +20,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://ustwo.com/
+image: { src: "/images/clip/1383.webp", width: 1200, height: 675, thumb: "/images/clip/1383-640.webp" }
+fullImage: { src: "/images/clip/1383-full.webp", width: 1000, height: 6254 }
 legacy:
   prev: oxford-properties-group-oxford-properties-group
   next: eagle-films

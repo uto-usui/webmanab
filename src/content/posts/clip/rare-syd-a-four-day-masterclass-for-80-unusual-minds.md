@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://rare-syd.com/
+image: { src: "/images/clip/2332.webp", width: 1200, height: 625, thumb: "/images/clip/2332-640.webp" }
+fullImage: { src: "/images/clip/2332-full.webp", width: 1000, height: 3795 }
 legacy:
   prev: onfadd
   next: tha-ltd

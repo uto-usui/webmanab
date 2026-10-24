@@ -14,6 +14,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.paradiso.nl/
+image: { src: "/images/clip/1965.webp", width: 1000, height: 563, thumb: "/images/clip/1965-640.webp" }
+fullImage: { src: "/images/clip/1965-full.webp", width: 1000, height: 4018 }
 legacy:
   prev: one-last-beat
   next: website-of-the-year-2017-css-design-awards

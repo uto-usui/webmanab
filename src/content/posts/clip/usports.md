@@ -15,6 +15,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://usports.ca/en
+image: { src: "/images/clip/1590.webp", width: 1000, height: 563, thumb: "/images/clip/1590-640.webp" }
+fullImage: { src: "/images/clip/1590-full.webp", width: 1000, height: 7310 }
 legacy:
   prev: onfadd-mobile-lifestyle-inspired-by-japanese-culture
   next: monopo-tokyo-based-creative-agency-branding-design-digital-experience-video-production-adverstising

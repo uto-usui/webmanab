@@ -21,6 +21,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://www.bigmammagroup.com/fr/
+image: { src: "/images/clip/1264.webp", width: 1200, height: 675, thumb: "/images/clip/1264-640.webp" }
 legacy:
   prev: basic-digital-web-design-branding-agency
   next: big-omaha-2017

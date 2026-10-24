@@ -17,6 +17,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://peterlindbergh.obys.agency/
+image: { src: "/images/clip/2851.webp", width: 1200, height: 675, thumb: "/images/clip/2851-640.webp" }
 legacy:
   prev: ね - nt
   next: esperanto

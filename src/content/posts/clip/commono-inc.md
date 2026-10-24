@@ -17,6 +17,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://commono.jp/
+image: { src: "/images/clip/953.webp", width: 1200, height: 675, thumb: "/images/clip/953-640.webp" }
+fullImage: { src: "/images/clip/953-full.webp", width: 1000, height: 908 }
 legacy:
   prev: muro
   next: the-circular-design-guide

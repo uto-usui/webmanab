@@ -14,6 +14,8 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://payme.tokyo/
+image: { src: "/images/clip/2531.webp", width: 1200, height: 675, thumb: "/images/clip/2531-640.webp" }
+fullImage: { src: "/images/clip/2531-full.webp", width: 1000, height: 8588 }
 legacy:
   prev: nspc
   next: port

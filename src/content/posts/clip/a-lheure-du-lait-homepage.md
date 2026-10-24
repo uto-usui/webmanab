@@ -17,6 +17,7 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 279, name: "sound", slug: "sound" }
 clipUrl: https://www.ferme-laitiere-france.com/en/homepage/
+image: { src: "/images/clip/1829.webp", width: 1000, height: 563, thumb: "/images/clip/1829-640.webp" }
 legacy:
   prev: 201d
   next: anakin

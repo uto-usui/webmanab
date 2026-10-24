@@ -22,6 +22,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://theunitldn.com/
+image: { src: "/images/clip/2445.webp", width: 1200, height: 675, thumb: "/images/clip/2445-640.webp" }
 legacy:
   prev: robin-mastromarino-interactive-designer
   next: blab

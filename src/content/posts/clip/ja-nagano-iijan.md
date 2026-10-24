@@ -16,6 +16,8 @@ terms:
   - { id: 245, name: "public", slug: "public" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.ja-nagano.iijan.or.jp/
+image: { src: "/images/clip/879.webp", width: 1200, height: 675, thumb: "/images/clip/879-640.webp" }
+fullImage: { src: "/images/clip/879-full.webp", width: 1000, height: 2365 }
 legacy:
   prev: private-photo-studio-home
   next: market

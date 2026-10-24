@@ -14,6 +14,8 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 158, name: "media", slug: "media" }
 clipUrl: https://serietv.sky.it/en
+image: { src: "/images/clip/1516.webp", width: 1000, height: 563, thumb: "/images/clip/1516-640.webp" }
+fullImage: { src: "/images/clip/1516-full.webp", width: 1000, height: 4943 }
 legacy:
   prev: coraline-colasse-art-director-designer-from-paris
   next: gentriville

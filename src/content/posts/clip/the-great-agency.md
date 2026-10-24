@@ -15,6 +15,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.thegreat.agency/
+image: { src: "/images/clip/1826.webp", width: 1000, height: 563, thumb: "/images/clip/1826-640.webp" }
 legacy:
   prev: upperquad-a-creative-digital-studio-in-san-francisco
   next: the-gigi

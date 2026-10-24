@@ -12,6 +12,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://myv382tokyo.com/
+image: { src: "/images/clip/339.webp", width: 1000, height: 563, thumb: "/images/clip/339-640.webp" }
+fullImage: { src: "/images/clip/339-full.webp", width: 1000, height: 563 }
 legacy:
   prev: field-notes
   next: aiga-design-conference

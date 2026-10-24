@@ -17,6 +17,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: http://www.sanyocoat.jp/
+image: { src: "/images/clip/2092.webp", width: 1000, height: 563, thumb: "/images/clip/2092-640.webp" }
+fullImage: { src: "/images/clip/2092-full.webp", width: 1000, height: 8449 }
 legacy:
   prev: rescam
   next: sasha-lucca

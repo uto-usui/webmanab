@@ -15,6 +15,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 106, name: "purple", slug: "purple" }
 clipUrl: http://www.wed-camp.com/
+image: { src: "/images/clip/166.webp", width: 1000, height: 563, thumb: "/images/clip/166-640.webp" }
+fullImage: { src: "/images/clip/166-full.webp", width: 1000, height: 4196 }
 legacy:
   prev: lemonsha
   next: tochioto

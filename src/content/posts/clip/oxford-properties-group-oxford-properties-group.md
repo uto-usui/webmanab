@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://www.oxfordproperties.com/corp/en/
+image: { src: "/images/clip/1382.webp", width: 1200, height: 675, thumb: "/images/clip/1382-640.webp" }
+fullImage: { src: "/images/clip/1382-full.webp", width: 1000, height: 3268 }
 legacy:
   prev: agence-digitale-belle-epoque-creation-de-site-web-a-paris
   next: ustwo-digital-product-studio

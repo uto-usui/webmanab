@@ -18,6 +18,7 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.coralinecolasse.fr/
+image: { src: "/images/clip/1515.webp", width: 1000, height: 567, thumb: "/images/clip/1515-640.webp" }
 legacy:
   prev: savee-the-best-way-for-you-to-save-and-share-inspiration
   next: sky-tv-series

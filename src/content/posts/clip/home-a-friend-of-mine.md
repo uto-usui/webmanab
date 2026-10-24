@@ -17,6 +17,8 @@ terms:
   - { id: 210, name: "UX", slug: "ux" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://afriendofmine.nl/
+image: { src: "/images/clip/1821.webp", width: 1000, height: 563, thumb: "/images/clip/1821-640.webp" }
+fullImage: { src: "/images/clip/1821-full.webp", width: 1000, height: 2599 }
 legacy:
   prev: fashion-sport-socks-by-pacific-and-co-made-in-barcelona
   next: home-bear-grylls

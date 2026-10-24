@@ -14,6 +14,8 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.jacquemus.com/
+image: { src: "/images/clip/2538.webp", width: 1200, height: 675, thumb: "/images/clip/2538-640.webp" }
+fullImage: { src: "/images/clip/2538-full.webp", width: 1000, height: 3889 }
 legacy:
   prev: elias-akentour-portfolio
   next: jafen-art-studio

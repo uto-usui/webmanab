@@ -21,6 +21,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://adrienlaurent.fr/
+image: { src: "/images/clip/2449.webp", width: 1200, height: 675, thumb: "/images/clip/2449-640.webp" }
 legacy:
   prev: 60fps
   next: aristide-swiss-portfolio

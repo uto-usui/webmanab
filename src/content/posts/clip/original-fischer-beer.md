@@ -19,6 +19,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://www.fischerbeer.gr/
+image: { src: "/images/clip/1077.webp", width: 1200, height: 675, thumb: "/images/clip/1077-640.webp" }
 legacy:
   prev: dreamscapes-lufthansa-dreamscapes
   next: thimus-improve-business-using-neuroscience-consumers-biometrics

@@ -18,6 +18,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://web.tuat.ac.jp/~sugiura/
+image: { src: "/images/clip/1399.webp", width: 1200, height: 675, thumb: "/images/clip/1399-640.webp" }
+fullImage: { src: "/images/clip/1399-full.webp", width: 1000, height: 3333 }
 legacy:
   prev: voicecream
   next: ode-goods

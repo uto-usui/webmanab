@@ -15,6 +15,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://onelastbeat.com/
+image: { src: "/images/clip/1999.webp", width: 1000, height: 563, thumb: "/images/clip/1999-640.webp" }
 legacy:
   prev: nove-public-affairs-and-communication-nove
   next: paradiso

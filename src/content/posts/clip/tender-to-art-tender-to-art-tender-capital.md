@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.tendertoart.com/en/
+image: { src: "/images/clip/1791.webp", width: 1000, height: 563, thumb: "/images/clip/1791-640.webp" }
 legacy:
   prev: the-disaster-artist-official-movie-site
   next: tao-tajima-filmmaker

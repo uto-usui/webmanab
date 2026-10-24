@@ -16,6 +16,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://demo.marpi.pl/
+image: { src: "/images/clip/1472.webp", width: 1000, height: 563, thumb: "/images/clip/1472-640.webp" }
+fullImage: { src: "/images/clip/1472-full.webp", width: 1000, height: 2401 }
 legacy:
   prev: r-magazine
   next: lateral-view-mobile-design-innovation-studio-ios-android-web

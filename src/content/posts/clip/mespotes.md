@@ -14,6 +14,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://mespotes.jp/
+image: { src: "/images/clip/301.webp", width: 1000, height: 562, thumb: "/images/clip/301-640.webp" }
+fullImage: { src: "/images/clip/301-full.webp", width: 1000, height: 2355 }
 legacy:
   prev: brandmills
   next: rakusyo

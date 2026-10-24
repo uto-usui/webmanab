@@ -19,6 +19,7 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://l-mg.jp/
+image: { src: "/images/clip/2528.webp", width: 1200, height: 675, thumb: "/images/clip/2528-640.webp" }
 legacy:
   prev: web-graphics-experiments
   next: all-in

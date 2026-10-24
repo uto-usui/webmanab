@@ -15,6 +15,8 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 17, name: "red", slug: "red" }
 clipUrl: http://ringo-applepie.com/
+image: { src: "/images/clip/130.webp", width: 1000, height: 563, thumb: "/images/clip/130-640.webp" }
+fullImage: { src: "/images/clip/130-full.webp", width: 1000, height: 2442 }
 legacy:
   prev: bitbank
   next: gree-secondary-project

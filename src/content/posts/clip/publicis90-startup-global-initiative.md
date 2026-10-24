@@ -15,6 +15,7 @@ terms:
   - { id: 74, name: "soft", slug: "soft" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.publicis90.com/
+image: { src: "/images/clip/269.webp", width: 1000, height: 594, thumb: "/images/clip/269-640.webp" }
 legacy:
   prev: el-burro
   next: primer-marketing-lessons-from-google

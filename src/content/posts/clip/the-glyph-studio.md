@@ -13,6 +13,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.theglyph.studio/
+image: { src: "/images/clip/1988.webp", width: 1000, height: 563, thumb: "/images/clip/1988-640.webp" }
 legacy:
   prev: tabo-tabo-films
   next: uix

@@ -18,6 +18,7 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://matruecannabis.com
+image: { src: "/images/clip/2670.webp", width: 1200, height: 706, thumb: "/images/clip/2670-640.webp" }
 legacy:
   prev: home-of-classics-sneaker-district
   next: once-upon-a-time-in-hollywood

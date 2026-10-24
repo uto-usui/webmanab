@@ -12,6 +12,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.nubikk.nl/
+image: { src: "/images/clip/1822.webp", width: 1000, height: 563, thumb: "/images/clip/1822-640.webp" }
 legacy:
   prev: north-east-venture
   next: onesharedhouse2030

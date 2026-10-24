@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://agence-belle-epoque.fr/
+image: { src: "/images/clip/1381.webp", width: 1200, height: 675, thumb: "/images/clip/1381-640.webp" }
+fullImage: { src: "/images/clip/1381-full.webp", width: 1000, height: 2108 }
 legacy:
   prev: kolor
   next: oxford-properties-group-oxford-properties-group

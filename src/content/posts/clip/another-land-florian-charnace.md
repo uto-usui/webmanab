@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 46, name: "trip", slug: "trip" }
 clipUrl: http://another.land/
+image: { src: "/images/clip/345.webp", width: 1000, height: 563, thumb: "/images/clip/345-640.webp" }
+fullImage: { src: "/images/clip/345-full.webp", width: 1000, height: 4478 }
 legacy:
   prev: leading-design-conference-2016
   next: freddy-castro

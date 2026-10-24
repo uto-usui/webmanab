@@ -19,6 +19,8 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.kikk.be/2018/en/home
+image: { src: "/images/clip/2424.webp", width: 1200, height: 675, thumb: "/images/clip/2424-640.webp" }
+fullImage: { src: "/images/clip/2424-full.webp", width: 1000, height: 5497 }
 legacy:
   prev: jin-okuma_
   next: kin-movie

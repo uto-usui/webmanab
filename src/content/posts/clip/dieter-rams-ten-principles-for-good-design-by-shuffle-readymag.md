@@ -11,6 +11,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 12, name: "parallax", slug: "parallax" }
 clipUrl: https://readymag.com/shuffle/dieter-rams/
+image: { src: "/images/clip/2004.webp", width: 1000, height: 563, thumb: "/images/clip/2004-640.webp" }
+fullImage: { src: "/images/clip/2004-full.webp", width: 676, height: 9999 }
 legacy:
   prev: walk-the-90s
   next: analytica-projects

@@ -14,6 +14,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://walkingmen.com/
+image: { src: "/images/clip/1851.webp", width: 1000, height: 563, thumb: "/images/clip/1851-640.webp" }
 legacy:
   prev: youre-awesome
   next: vr-arles-festival-du-3-juillet-au-31-aout-2017

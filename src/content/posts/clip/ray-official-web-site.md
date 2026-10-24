@@ -16,6 +16,8 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://singer-ray.com/
+image: { src: "/images/clip/1016.webp", width: 1200, height: 675, thumb: "/images/clip/1016-640.webp" }
+fullImage: { src: "/images/clip/1016-full.webp", width: 1000, height: 2797 }
 legacy:
   prev: yatzer-design-is-to-share
   next: hassyadai-inc

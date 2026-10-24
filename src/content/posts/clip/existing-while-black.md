@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.huffingtonpost.com/interactives/existing-while-black
+image: { src: "/images/clip/2396.webp", width: 1200, height: 675, thumb: "/images/clip/2396-640.webp" }
 legacy:
   prev: espn-nbas-signature-moves
   next: fishfinger-creative-agency

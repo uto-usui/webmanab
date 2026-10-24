@@ -20,6 +20,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://bornandbredbrand.com
+image: { src: "/images/clip/2715.webp", width: 1200, height: 675, thumb: "/images/clip/2715-640.webp" }
 legacy:
   prev: d-potfer-studio
   next: acoustic-garage

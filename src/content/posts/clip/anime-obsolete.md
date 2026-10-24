@@ -17,6 +17,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://project-obsolete.com
+image: { src: "/images/clip/2847.webp", width: 1200, height: 675, thumb: "/images/clip/2847-640.webp" }
+fullImage: { src: "/images/clip/2847-full.webp", width: 1000, height: 2752 }
 legacy:
   prev: akaru
   next: aroma-diffuser-week-end

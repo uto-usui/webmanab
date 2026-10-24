@@ -16,6 +16,7 @@ terms:
   - { id: 73, name: "green", slug: "green" }
   - { id: 61, name: "illustration", slug: "illustration" }
 clipUrl: https://www.jetty.com/rented-out/
+image: { src: "/images/clip/1978.webp", width: 1000, height: 563, thumb: "/images/clip/1978-640.webp" }
 legacy:
   prev: masayuki-daijima-programmer
   next: nove-public-affairs-and-communication-nove

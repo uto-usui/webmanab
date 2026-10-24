@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 209, name: "shop", slug: "shop" }
 clipUrl: http://kaeru78.com/
+image: { src: "/images/clip/662.webp", width: 1280, height: 720, thumb: "/images/clip/662-640.webp" }
+fullImage: { src: "/images/clip/662-full.webp", width: 1000, height: 2456 }
 legacy:
   prev: ichimiya-clinic
   next: idaho-whitewater-rafting-trips-and-family-vacations

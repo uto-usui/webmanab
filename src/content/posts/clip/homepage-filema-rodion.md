@@ -19,6 +19,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.filemarodion.gr/en
+image: { src: "/images/clip/1495.webp", width: 1000, height: 563, thumb: "/images/clip/1495-640.webp" }
+fullImage: { src: "/images/clip/1495-full.webp", width: 1000, height: 3864 }
 legacy:
   prev: jaune-de-chrome-createur-dart
   next: fashion-and-luxury-academy-in-milan

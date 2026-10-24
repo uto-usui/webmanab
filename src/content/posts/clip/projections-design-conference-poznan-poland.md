@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://projections.pl/
+image: { src: "/images/clip/478.webp", width: 1280, height: 736, thumb: "/images/clip/478-640.webp" }
 legacy:
   prev: digital-design-days-award-offf-italia-milan-27-28-29-october-2016
   next: made-by-few-the-conference-for-makers-of-the-web

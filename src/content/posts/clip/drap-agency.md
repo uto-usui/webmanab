@@ -24,6 +24,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.drap.agency/
+image: { src: "/images/clip/1240.webp", width: 1200, height: 675, thumb: "/images/clip/1240-640.webp" }
+fullImage: { src: "/images/clip/1240-full.webp", width: 1000, height: 5333 }
 legacy:
   prev: herokid-studio-creative-services-for-brands-and-agencies
   next: ghafari-associates

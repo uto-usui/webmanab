@@ -20,6 +20,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://fannymyard-design.com/
+image: { src: "/images/clip/1816.webp", width: 1000, height: 563, thumb: "/images/clip/1816-640.webp" }
 legacy:
   prev: ducasse-paris
   next: folk

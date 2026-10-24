@@ -16,6 +16,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.worldsapartfilm.com/
+image: { src: "/images/clip/368.webp", width: 1000, height: 563, thumb: "/images/clip/368-640.webp" }
 legacy:
   prev: blacklivesmatter
   next: teletype

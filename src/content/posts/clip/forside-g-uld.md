@@ -19,6 +19,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.g-uld.dk/
+image: { src: "/images/clip/1530.webp", width: 1000, height: 563, thumb: "/images/clip/1530-640.webp" }
+fullImage: { src: "/images/clip/1530-full.webp", width: 1000, height: 3072 }
 legacy:
   prev: hite
   next: incubit-inc

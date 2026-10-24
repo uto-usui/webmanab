@@ -19,6 +19,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.flambette.com/en/
+image: { src: "/images/clip/1500.webp", width: 1000, height: 563, thumb: "/images/clip/1500-640.webp" }
+fullImage: { src: "/images/clip/1500-full.webp", width: 1000, height: 2864 }
 legacy:
   prev: intelligo-group
   next: very-berry

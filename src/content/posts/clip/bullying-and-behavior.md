@@ -22,6 +22,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://bullyingandbehavior.com/
+image: { src: "/images/clip/1997.webp", width: 1000, height: 563, thumb: "/images/clip/1997-640.webp" }
 legacy:
   prev: audi-strelkas-legacy
   next: charly-zenger

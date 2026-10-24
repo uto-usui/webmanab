@@ -18,6 +18,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://newday.agency/
+image: { src: "/images/clip/2644.webp", width: 1200, height: 675, thumb: "/images/clip/2644-640.webp" }
 legacy:
   prev: hochburg-designagentur-stuttgart
   next: yuen-ye-run-free-in-the-wilderness

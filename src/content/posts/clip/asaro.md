@@ -18,6 +18,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://asaro.co.uk/
+image: { src: "/images/clip/2406.webp", width: 1200, height: 675, thumb: "/images/clip/2406-640.webp" }
 legacy:
   prev: artistsweb
   next: benmingo

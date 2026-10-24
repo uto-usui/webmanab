@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.esperanto.design/
+image: { src: "/images/clip/2843.webp", width: 1200, height: 675, thumb: "/images/clip/2843-640.webp" }
 legacy:
   prev: peter-lindbergh
   next: null

@@ -12,6 +12,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://booksaboutnothing.com/
+image: { src: "/images/clip/347.webp", width: 1000, height: 563, thumb: "/images/clip/347-640.webp" }
+fullImage: { src: "/images/clip/347-full.webp", width: 1000, height: 1711 }
 legacy:
   prev: dear-mayuko
   next: custodi-della-memoria

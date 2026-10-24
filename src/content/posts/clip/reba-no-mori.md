@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://neba-no-mori.jp/
+image: { src: "/images/clip/2207.webp", width: 1000, height: 563, thumb: "/images/clip/2207-640.webp" }
+fullImage: { src: "/images/clip/2207-full.webp", width: 1000, height: 1527 }
 legacy:
   prev: yamazaki-moments
   next: ji-partners

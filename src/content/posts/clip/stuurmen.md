@@ -15,6 +15,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://stuur.men/
+image: { src: "/images/clip/338.webp", width: 1000, height: 563, thumb: "/images/clip/338-640.webp" }
 legacy:
   prev: signupanywhere
   next: tokyo-cat-specialists

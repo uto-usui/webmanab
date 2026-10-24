@@ -13,6 +13,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 75, name: "product", slug: "product" }
 clipUrl: http://yayaproducts.com/su-5/
+image: { src: "/images/clip/107.webp", width: 1000, height: 562, thumb: "/images/clip/107-640.webp" }
+fullImage: { src: "/images/clip/107-full.webp", width: 1000, height: 5063 }
 legacy:
   prev: biofermin
   next: newacton

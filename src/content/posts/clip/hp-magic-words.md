@@ -12,6 +12,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.hpmagicwords.com.br
+image: { src: "/images/clip/88.webp", width: 1000, height: 562, thumb: "/images/clip/88-640.webp" }
 legacy:
   prev: hoo-koo-e-koo-digital-partner
   next: biofermin

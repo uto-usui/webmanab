@@ -16,6 +16,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://dogtrot.it/en
+image: { src: "/images/clip/2120.webp", width: 1000, height: 563, thumb: "/images/clip/2120-640.webp" }
+fullImage: { src: "/images/clip/2120-full.webp", width: 1000, height: 6285 }
 legacy:
   prev: andrea-d-labarile
   next: duroc

@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.hochburg.design/
+image: { src: "/images/clip/2645.webp", width: 1200, height: 675, thumb: "/images/clip/2645-640.webp" }
+fullImage: { src: "/images/clip/2645-full.webp", width: 1000, height: 2589 }
 legacy:
   prev: nourisheats-nourisheats-by-joanna-l
   next: newday-agency

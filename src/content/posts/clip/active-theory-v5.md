@@ -21,6 +21,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://activetheory.net/
+image: { src: "/images/clip/2852.webp", width: 1200, height: 675, thumb: "/images/clip/2852-640.webp" }
 legacy:
   prev: truetopia
   next: adventure-awaits

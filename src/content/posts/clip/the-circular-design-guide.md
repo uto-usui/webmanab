@@ -14,6 +14,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://circulardesignguide.com/
+image: { src: "/images/clip/971.webp", width: 1200, height: 675, thumb: "/images/clip/971-640.webp" }
+fullImage: { src: "/images/clip/971-full.webp", width: 1000, height: 5521 }
 legacy:
   prev: commono-inc
   next: poissons-exotiques-deau-douce-maison-haegel

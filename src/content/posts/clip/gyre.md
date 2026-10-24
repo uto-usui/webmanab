@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://gyre-omotesando.com/
+image: { src: "/images/clip/2330.webp", width: 1200, height: 625, thumb: "/images/clip/2330-640.webp" }
 legacy:
   prev: vienna-forward-festival-vienna-munich-zurich
   next: m3

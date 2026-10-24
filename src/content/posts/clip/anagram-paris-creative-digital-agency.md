@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://anagram.paris/
+image: { src: "/images/clip/1137.webp", width: 1200, height: 675, thumb: "/images/clip/1137-640.webp" }
 legacy:
   prev: izumi-akita
   next: a-is-for-albert

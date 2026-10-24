@@ -17,6 +17,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.balsan.fr/
+image: { src: "/images/clip/1136.webp", width: 1200, height: 675, thumb: "/images/clip/1136-640.webp" }
+fullImage: { src: "/images/clip/1136-full.webp", width: 1000, height: 5162 }
 legacy:
   prev: a-is-for-albert
   next: rains-rainwear-bags-accessories-rains-defying-danish-weather-since-2012

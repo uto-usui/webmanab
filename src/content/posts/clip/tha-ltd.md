@@ -17,6 +17,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://tha.jp/
+image: { src: "/images/clip/2329.webp", width: 1200, height: 625, thumb: "/images/clip/2329-640.webp" }
 legacy:
   prev: rare-syd-a-four-day-masterclass-for-80-unusual-minds
   next: antoni

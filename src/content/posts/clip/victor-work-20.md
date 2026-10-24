@@ -21,6 +21,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://victor.work/
+image: { src: "/images/clip/2774.webp", width: 1200, height: 675, thumb: "/images/clip/2774-640.webp" }
 legacy:
   prev: taroyoshimura
   next: the-fragrance-conservatory

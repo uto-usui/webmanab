@@ -16,6 +16,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.marcgoncalves.com/
+image: { src: "/images/clip/1825.webp", width: 1000, height: 563, thumb: "/images/clip/1825-640.webp" }
 legacy:
   prev: photographer-director-marcus-eriksson
   next: ken-arai-product-designer-from-tokyo

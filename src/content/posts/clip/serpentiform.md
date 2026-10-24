@@ -17,6 +17,7 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.serpentiform.bulgari.com/ja/home/
+image: { src: "/images/clip/2215.webp", width: 1000, height: 563, thumb: "/images/clip/2215-640.webp" }
 legacy:
   prev: ji-partners
   next: litpla

@@ -16,6 +16,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.reed.be/
+image: { src: "/images/clip/1763.webp", width: 1000, height: 563, thumb: "/images/clip/1763-640.webp" }
 legacy:
   prev: red-collar-digital-agency
   next: rottefella-introducing-workout-apparel

@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://cogycogy.com/
+image: { src: "/images/clip/228.webp", width: 1000, height: 562, thumb: "/images/clip/228-640.webp" }
+fullImage: { src: "/images/clip/228-full.webp", width: 1000, height: 4686 }
 legacy:
   prev: orangina
   next: cuberto

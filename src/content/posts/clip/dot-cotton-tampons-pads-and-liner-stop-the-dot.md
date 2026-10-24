@@ -16,6 +16,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://stopthedot.com/en/
+image: { src: "/images/clip/1198.webp", width: 1200, height: 675, thumb: "/images/clip/1198-640.webp" }
+fullImage: { src: "/images/clip/1198-full.webp", width: 1000, height: 563 }
 legacy:
   prev: sense-of-wonder-inden-ya
   next: basic-digital-web-design-branding-agency

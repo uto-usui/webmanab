@@ -13,6 +13,8 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 164, name: "navigation", slug: "navigation" }
 clipUrl: http://www.thefourthphase.com/
+image: { src: "/images/clip/517.webp", width: 1280, height: 720, thumb: "/images/clip/517-640.webp" }
+fullImage: { src: "/images/clip/517-full.webp", width: 1000, height: 6121 }
 legacy:
   prev: luminaire-deco-scandinave-lampes-design-lampadaires-meubles-aix-en-provence
   next: non-angel-kirin

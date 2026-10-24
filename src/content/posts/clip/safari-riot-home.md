@@ -15,6 +15,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://noise.safaririot.com/
+image: { src: "/images/clip/2667.webp", width: 1200, height: 675, thumb: "/images/clip/2667-640.webp" }
 legacy:
   prev: pontus-rudolfson-photographer
   next: sally

@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.kikk.be/2016/en/home
+image: { src: "/images/clip/476.webp", width: 1280, height: 720, thumb: "/images/clip/476-640.webp" }
+fullImage: { src: "/images/clip/476-full.webp", width: 1000, height: 7319 }
 legacy:
   prev: offf-italia
   next: digital-design-days-award-offf-italia-milan-27-28-29-october-2016

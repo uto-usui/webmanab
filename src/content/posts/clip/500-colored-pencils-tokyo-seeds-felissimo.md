@@ -15,6 +15,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.felissimo.co.jp/500/500j/index.cfm
+image: { src: "/images/clip/1402.webp", width: 1200, height: 675, thumb: "/images/clip/1402-640.webp" }
+fullImage: { src: "/images/clip/1402-full.webp", width: 1000, height: 5410 }
 legacy:
   prev: kaiyukan
   next: accueil-ville-de-val-dor

@@ -16,6 +16,8 @@ terms:
   - { id: 16, name: "grid", slug: "grid" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://letsmuseeum.com/
+image: { src: "/images/clip/2090.webp", width: 1000, height: 562, thumb: "/images/clip/2090-640.webp" }
+fullImage: { src: "/images/clip/2090-full.webp", width: 1000, height: 2172 }
 legacy:
   prev: a-foreigners-guide-to-the-polish-alphabet-culture-pl
   next: 2018-developer-skill-report

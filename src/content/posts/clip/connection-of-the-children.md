@@ -14,6 +14,7 @@ terms:
   - { id: 61, name: "illustration", slug: "illustration" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.coc-i.org/
+image: { src: "/images/clip/1543.webp", width: 1000, height: 563, thumb: "/images/clip/1543-640.webp" }
 legacy:
   prev: glass-art-design-architecture
   next: kikk-festival-invisible-naratives

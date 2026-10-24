@@ -16,6 +16,8 @@ terms:
   - { id: 159, name: "photo", slug: "photo" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://vsco.co/
+image: { src: "/images/clip/748.webp", width: 1200, height: 675, thumb: "/images/clip/748-640.webp" }
+fullImage: { src: "/images/clip/748-full.webp", width: 1000, height: 3543 }
 legacy:
   prev: phil-casabon
   next: kyotojinjakon

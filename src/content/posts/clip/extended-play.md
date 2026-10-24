@@ -15,6 +15,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.extendedplay.nyc/
+image: { src: "/images/clip/2089.webp", width: 1000, height: 563, thumb: "/images/clip/2089-640.webp" }
+fullImage: { src: "/images/clip/2089-full.webp", width: 1000, height: 1426 }
 legacy:
   prev: einr-as
   next: gekkan-caffe-latte-inc

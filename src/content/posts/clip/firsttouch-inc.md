@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://1st-touch.jp/
+image: { src: "/images/clip/1207.webp", width: 1200, height: 675, thumb: "/images/clip/1207-640.webp" }
 legacy:
   prev: run-tomorrow
   next: white-plus

@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://convergese.com/
+image: { src: "/images/clip/492.webp", width: 1280, height: 720, thumb: "/images/clip/492-640.webp" }
+fullImage: { src: "/images/clip/492-full.webp", width: 1000, height: 3144 }
 legacy:
   prev: jsconf-colombia-2016-medellin-october-7-8th-2016
   next: the-design-conference

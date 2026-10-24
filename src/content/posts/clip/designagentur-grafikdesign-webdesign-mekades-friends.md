@@ -21,6 +21,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://mnf.at/
+image: { src: "/images/clip/1242.webp", width: 1200, height: 675, thumb: "/images/clip/1242-640.webp" }
+fullImage: { src: "/images/clip/1242-full.webp", width: 1000, height: 6557 }
 legacy:
   prev: pediatric-dentists-association
   next: herokid-studio-creative-services-for-brands-and-agencies

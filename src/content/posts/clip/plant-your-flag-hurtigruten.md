@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: https://www.plantflags.com/en/
+image: { src: "/images/clip/798.webp", width: 1200, height: 675, thumb: "/images/clip/798-640.webp" }
+fullImage: { src: "/images/clip/798-full.webp", width: 1000, height: 4246 }
 legacy:
   prev: reputation-squad-the-augmented-influence-agency
   next: pell-mell-agency

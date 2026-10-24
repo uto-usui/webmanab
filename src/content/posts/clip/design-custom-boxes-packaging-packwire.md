@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.packwire.com/
+image: { src: "/images/clip/1503.webp", width: 1000, height: 563, thumb: "/images/clip/1503-640.webp" }
+fullImage: { src: "/images/clip/1503-full.webp", width: 1000, height: 4730 }
 legacy:
   prev: lepa-vida-boutique-winery-vipava-valley-slovenia
   next: digital-smile-academy

@@ -20,6 +20,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://specterwireless.com/
+image: { src: "/images/clip/1387.webp", width: 1200, height: 675, thumb: "/images/clip/1387-640.webp" }
 legacy:
   prev: newbalance
   next: martin-laxenaire-front-end-developper

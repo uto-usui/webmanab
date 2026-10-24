@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://hollow.org.uk
+image: { src: "/images/clip/689.webp", width: 1200, height: 675, thumb: "/images/clip/689-640.webp" }
+fullImage: { src: "/images/clip/689-full.webp", width: 1000, height: 563 }
 legacy:
   prev: tobi-afran-graphic-design
   next: garden-eight

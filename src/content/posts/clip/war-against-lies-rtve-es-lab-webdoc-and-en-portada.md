@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://lab.rtve.es/webdocs/guerra-mentira/en/
+image: { src: "/images/clip/1487.webp", width: 1000, height: 563, thumb: "/images/clip/1487-640.webp" }
 legacy:
   prev: moments-of-happiness
   next: home-emberhouse

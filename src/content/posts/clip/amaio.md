@@ -19,6 +19,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: http://as.ouiwill.com/
+image: { src: "/images/clip/1963.webp", width: 1000, height: 563, thumb: "/images/clip/1963-640.webp" }
+fullImage: { src: "/images/clip/1963-full.webp", width: 1000, height: 6471 }
 legacy:
   prev: abel
   next: audi-strelkas-legacy

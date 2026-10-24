@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.kyotojinjakon.jp/
+image: { src: "/images/clip/747.webp", width: 1280, height: 720, thumb: "/images/clip/747-640.webp" }
+fullImage: { src: "/images/clip/747-full.webp", width: 1000, height: 3753 }
 legacy:
   prev: vsco-create-discover-and-connect
   next: forward-festival-zurich

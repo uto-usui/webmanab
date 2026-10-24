@@ -16,6 +16,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://artisantalent.com/
+image: { src: "/images/clip/2203.webp", width: 1000, height: 563, thumb: "/images/clip/2203-640.webp" }
+fullImage: { src: "/images/clip/2203-full.webp", width: 1000, height: 2292 }
 legacy:
   prev: anne-thai-portfolio
   next: botanist

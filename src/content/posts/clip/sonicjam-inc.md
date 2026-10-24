@@ -21,6 +21,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 324, name: "vue", slug: "vue" }
 clipUrl: https://www.sonicjam.co.jp
+image: { src: "/images/clip/2358.webp", width: 1200, height: 625, thumb: "/images/clip/2358-640.webp" }
+fullImage: { src: "/images/clip/2358-full.webp", width: 1000, height: 3388 }
 legacy:
   prev: top-sunny
   next: vienna-forward-festival-vienna-munich-zurich

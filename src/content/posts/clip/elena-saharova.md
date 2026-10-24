@@ -15,6 +15,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: http://eessoo.co/
+image: { src: "/images/clip/1480.webp", width: 1000, height: 563, thumb: "/images/clip/1480-640.webp" }
 legacy:
   prev: productions-leloi
   next: moments-of-happiness

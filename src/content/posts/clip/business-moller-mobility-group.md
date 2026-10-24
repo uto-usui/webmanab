@@ -15,6 +15,7 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://moller.no/en/business
+image: { src: "/images/clip/2317.webp", width: 1200, height: 675, thumb: "/images/clip/2317-640.webp" }
 legacy:
   prev: wedze-lookbook-winter-2017-2018
   next: modern-cat-tree-neko

@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://studioouam.com/en/
+image: { src: "/images/clip/2000.webp", width: 1000, height: 563, thumb: "/images/clip/2000-640.webp" }
+fullImage: { src: "/images/clip/2000-full.webp", width: 1000, height: 2812 }
 legacy:
   prev: soundworlds-of-steve-roach
   next: tabo-tabo-films

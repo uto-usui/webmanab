@@ -17,6 +17,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: https://www.rebeccathompson.com.au/
+image: { src: "/images/clip/46.webp", width: 1280, height: 720, thumb: "/images/clip/46-640.webp" }
+fullImage: { src: "/images/clip/46-full.webp", width: 1000, height: 2038 }
 legacy:
   prev: katvig
   next: margaret-howell

@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.ayanomimi.com/
+image: { src: "/images/clip/298.webp", width: 1000, height: 563, thumb: "/images/clip/298-640.webp" }
+fullImage: { src: "/images/clip/298-full.webp", width: 1000, height: 3973 }
 legacy:
   prev: curatemag
   next: superior-lighting-design-and-sustainability-zumtobel

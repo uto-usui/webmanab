@@ -12,6 +12,8 @@ terms:
   - { id: 228, name: "line", slug: "line" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://mathematic.tv/
+image: { src: "/images/clip/1811.webp", width: 1000, height: 563, thumb: "/images/clip/1811-640.webp" }
+fullImage: { src: "/images/clip/1811-full.webp", width: 1000, height: 3729 }
 legacy:
   prev: the-feebles-design-happiness
   next: 201d

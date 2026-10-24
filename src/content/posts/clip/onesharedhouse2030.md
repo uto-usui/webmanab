@@ -16,6 +16,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://onesharedhouse2030.com/
+image: { src: "/images/clip/1836.webp", width: 1000, height: 563, thumb: "/images/clip/1836-640.webp" }
 legacy:
   prev: nubikk-officiele-webshop-nubikk-official-webshop
   next: open-wear-sustainable-outerwear-made-affordable

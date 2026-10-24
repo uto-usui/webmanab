@@ -20,6 +20,8 @@ terms:
   - { id: 160, name: "map", slug: "map" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.gsij.co.jp/
+image: { src: "/images/clip/2212.webp", width: 1000, height: 563, thumb: "/images/clip/2212-640.webp" }
+fullImage: { src: "/images/clip/2212-full.webp", width: 1000, height: 3959 }
 legacy:
   prev: estyleinc
   next: real-estate-chicago-berdan-real-estate

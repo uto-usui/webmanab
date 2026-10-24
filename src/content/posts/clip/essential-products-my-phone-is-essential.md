@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.essential.com/
+image: { src: "/images/clip/1491.webp", width: 1000, height: 563, thumb: "/images/clip/1491-640.webp" }
+fullImage: { src: "/images/clip/1491-full.webp", width: 821, height: 9999 }
 legacy:
   prev: home-emberhouse
   next: intelligo-group

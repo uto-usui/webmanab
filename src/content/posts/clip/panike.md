@@ -25,6 +25,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://panike.pt/en/
+image: { src: "/images/clip/1506.webp", width: 1000, height: 563, thumb: "/images/clip/1506-640.webp" }
 legacy:
   prev: dock-by-crestyl
   next: chateau-leoville-barton-saint-julien-grand-cru-classe-1855

@@ -16,6 +16,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 324, name: "vue", slug: "vue" }
 clipUrl: http://macaulaysinclair.com/
+image: { src: "/images/clip/2118.webp", width: 1000, height: 563, thumb: "/images/clip/2118-640.webp" }
 legacy:
   prev: leviev-group
   next: mast

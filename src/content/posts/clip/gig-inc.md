@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://giginc.co.jp/
+image: { src: "/images/clip/1249.webp", width: 1200, height: 675, thumb: "/images/clip/1249-640.webp" }
+fullImage: { src: "/images/clip/1249-full.webp", width: 1000, height: 1871 }
 legacy:
   prev: what-is-your-beauty
   next: p22

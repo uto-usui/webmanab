@@ -13,6 +13,8 @@ terms:
   - { id: 41, name: "gray", slug: "gray" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: https://www.margarethowell.jp/
+image: { src: "/images/clip/51.webp", width: 1280, height: 720, thumb: "/images/clip/51-640.webp" }
+fullImage: { src: "/images/clip/51-full.webp", width: 1000, height: 2570 }
 legacy:
   prev: rebecca-thompson
   next: weekend-sendai

@@ -11,6 +11,7 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://presnt.jp/
+image: { src: "/images/clip/2008.webp", width: 1000, height: 563, thumb: "/images/clip/2008-640.webp" }
 legacy:
   prev: plus-d-inc
   next: promise-to-myself

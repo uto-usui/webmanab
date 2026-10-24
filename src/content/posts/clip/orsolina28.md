@@ -21,6 +21,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://orsolina28.it/
+image: { src: "/images/clip/1132.webp", width: 1056, height: 594, thumb: "/images/clip/1132-640.webp" }
+fullImage: { src: "/images/clip/1132-full.webp", width: 1000, height: 3991 }
 legacy:
   prev: wokine-agence-digitale-startup-studio-basee-a-lille-depuis-2004
   next: kirin-ryotei

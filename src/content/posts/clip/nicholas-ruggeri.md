@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.ruggeri.io/
+image: { src: "/images/clip/956.webp", width: 1200, height: 675, thumb: "/images/clip/956-640.webp" }
+fullImage: { src: "/images/clip/956-full.webp", width: 1000, height: 3140 }
 legacy:
   prev: branding-web-design-boutik-studio-branding-tailors
   next: toshio-bando

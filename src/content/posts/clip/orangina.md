@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://orangina.jp/
+image: { src: "/images/clip/227.webp", width: 1000, height: 562, thumb: "/images/clip/227-640.webp" }
+fullImage: { src: "/images/clip/227-full.webp", width: 1000, height: 4733 }
 legacy:
   prev: megafoon-inc
   next: cogy

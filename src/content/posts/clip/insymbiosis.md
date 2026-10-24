@@ -22,6 +22,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.insymbiosis.com/
+image: { src: "/images/clip/1227.webp", width: 1200, height: 675, thumb: "/images/clip/1227-640.webp" }
+fullImage: { src: "/images/clip/1227-full.webp", width: 1000, height: 1829 }
 legacy:
   prev: kin-kos-cosmesi-capelli-srl-homepage
   next: sense-of-wonder-inden-ya

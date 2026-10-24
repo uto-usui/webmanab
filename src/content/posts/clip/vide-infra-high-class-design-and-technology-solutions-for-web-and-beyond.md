@@ -12,6 +12,7 @@ terms:
   - { id: 13, name: "gallery", slug: "gallery" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.videinfra.com/
+image: { src: "/images/clip/1831.webp", width: 1000, height: 193, thumb: "/images/clip/1831-640.webp" }
 legacy:
   prev: volcan-de-mi-tierra
   next: upperquad-a-creative-digital-studio-in-san-francisco

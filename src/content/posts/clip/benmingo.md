@@ -19,6 +19,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.benmingo.com/
+image: { src: "/images/clip/2408.webp", width: 1200, height: 676, thumb: "/images/clip/2408-640.webp" }
 legacy:
   prev: asaro
   next: bersi-serlini-festival-2018

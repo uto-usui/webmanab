@@ -13,6 +13,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://lateralview.co/
+image: { src: "/images/clip/1473.webp", width: 1000, height: 563, thumb: "/images/clip/1473-640.webp" }
+fullImage: { src: "/images/clip/1473-full.webp", width: 1000, height: 4378 }
 legacy:
   prev: marpi-demos
   next: exclusieve-woningen-hondersalting-makelaars

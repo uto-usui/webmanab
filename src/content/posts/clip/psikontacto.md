@@ -17,6 +17,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://psikontacto.com/
+image: { src: "/images/clip/1238.webp", width: 1200, height: 675, thumb: "/images/clip/1238-640.webp" }
+fullImage: { src: "/images/clip/1238-full.webp", width: 1000, height: 4343 }
 legacy:
   prev: ghafari-associates
   next: magic-of-craft

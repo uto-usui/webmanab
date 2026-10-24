@@ -13,6 +13,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 12, name: "parallax", slug: "parallax" }
 clipUrl: http://loflorecords.com/
+image: { src: "/images/clip/169.webp", width: 997, height: 585, thumb: "/images/clip/169-640.webp" }
+fullImage: { src: "/images/clip/169-full.webp", width: 1000, height: 588 }
 legacy:
   prev: tochioto
   next: 16soap

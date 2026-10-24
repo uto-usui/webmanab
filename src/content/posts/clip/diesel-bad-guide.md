@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://bad.diesel.com/
+image: { src: "/images/clip/737.webp", width: 1200, height: 675, thumb: "/images/clip/737-640.webp" }
+fullImage: { src: "/images/clip/737-full.webp", width: 1000, height: 563 }
 legacy:
   prev: metail
   next: maxim-gorki-theater-startseite

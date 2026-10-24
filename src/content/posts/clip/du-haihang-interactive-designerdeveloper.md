@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.duhaihang.com/
+image: { src: "/images/clip/469.webp", width: 1280, height: 720, thumb: "/images/clip/469-640.webp" }
+fullImage: { src: "/images/clip/469-full.webp", width: 1000, height: 582 }
 legacy:
   prev: oakv-kenchiku
   next: point

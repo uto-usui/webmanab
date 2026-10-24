@@ -22,6 +22,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://udatsu.co.jp/
+image: { src: "/images/clip/880.webp", width: 1200, height: 675, thumb: "/images/clip/880-640.webp" }
+fullImage: { src: "/images/clip/880-full.webp", width: 1000, height: 563 }
 legacy:
   prev: tfd-saiyo
   next: nod

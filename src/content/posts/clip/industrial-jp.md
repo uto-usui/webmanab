@@ -13,6 +13,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://idstr.jp/jp/
+image: { src: "/images/clip/740.webp", width: 1200, height: 675, thumb: "/images/clip/740-640.webp" }
+fullImage: { src: "/images/clip/740-full.webp", width: 1000, height: 3568 }
 legacy:
   prev: benoit-challand
   next: hello-cycling

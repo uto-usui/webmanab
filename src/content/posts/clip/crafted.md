@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://experiencecrafted.com/
+image: { src: "/images/clip/2642.webp", width: 1200, height: 675, thumb: "/images/clip/2642-640.webp" }
+fullImage: { src: "/images/clip/2642-full.webp", width: 1000, height: 2740 }
 legacy:
   prev: save-whales
   next: nourisheats-nourisheats-by-joanna-l

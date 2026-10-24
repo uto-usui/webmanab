@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://anexbaby.com/
+image: { src: "/images/clip/110.webp", width: 1000, height: 562, thumb: "/images/clip/110-640.webp" }
+fullImage: { src: "/images/clip/110-full.webp", width: 1000, height: 1149 }
 legacy:
   prev: newacton
   next: bitbank

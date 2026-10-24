@@ -18,6 +18,8 @@ terms:
   - { id: 122, name: "timeline", slug: "timeline" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://bigomaha.co/
+image: { src: "/images/clip/1245.webp", width: 1200, height: 675, thumb: "/images/clip/1245-640.webp" }
+fullImage: { src: "/images/clip/1245-full.webp", width: 1000, height: 4183 }
 legacy:
   prev: big-mamma-trattoria-popolare
   next: kolor

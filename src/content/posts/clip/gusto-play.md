@@ -17,6 +17,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://play.studiogusto.com/
+image: { src: "/images/clip/1967.webp", width: 1000, height: 563, thumb: "/images/clip/1967-640.webp" }
 legacy:
   prev: kamayaki_pasco
   next: adova-group-bien-dormir-pour-mieux-vivre

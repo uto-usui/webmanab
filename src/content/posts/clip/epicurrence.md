@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.epicurrence.com/
+image: { src: "/images/clip/362.webp", width: 1000, height: 562, thumb: "/images/clip/362-640.webp" }
+fullImage: { src: "/images/clip/362-full.webp", width: 1000, height: 1479 }
 legacy:
   prev: locomotive-montreal-web-agency
   next: oakv-kenchiku

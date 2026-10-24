@@ -14,6 +14,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://2016.cssconf.com/
+image: { src: "/images/clip/490.webp", width: 1280, height: 720, thumb: "/images/clip/490-640.webp" }
+fullImage: { src: "/images/clip/490-full.webp", width: 888, height: 9999 }
 legacy:
   prev: non-angel-kirin
   next: adot-music-solutions

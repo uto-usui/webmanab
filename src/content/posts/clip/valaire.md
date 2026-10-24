@@ -21,6 +21,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://valaire.mu/
+image: { src: "/images/clip/802.webp", width: 1200, height: 675, thumb: "/images/clip/802-640.webp" }
+fullImage: { src: "/images/clip/802-full.webp", width: 1000, height: 11687 }
 legacy:
   prev: uprising-digital-creative-production-company
   next: edogawa-juukou

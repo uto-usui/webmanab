@@ -19,6 +19,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://hainteractive.com/
+image: { src: "/images/clip/2440.webp", width: 1200, height: 675, thumb: "/images/clip/2440-640.webp" }
 legacy:
   prev: fishfinger-creative-agency
   next: igoodi

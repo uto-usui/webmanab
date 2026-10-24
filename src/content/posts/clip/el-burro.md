@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://elburro.no/
+image: { src: "/images/clip/264.webp", width: 1000, height: 563, thumb: "/images/clip/264-640.webp" }
+fullImage: { src: "/images/clip/264-full.webp", width: 1000, height: 3464 }
 legacy:
   prev: salyu
   next: publicis90-startup-global-initiative

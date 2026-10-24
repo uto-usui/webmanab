@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://conference.awwwards.com/
+image: { src: "/images/clip/2594.webp", width: 1200, height: 675, thumb: "/images/clip/2594-640.webp" }
 legacy:
   prev: everest-digital-agency-design-development-branding
   next: gregoire-mielle-french-curious-developer

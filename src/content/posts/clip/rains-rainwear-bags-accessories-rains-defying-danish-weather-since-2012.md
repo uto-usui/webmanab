@@ -15,6 +15,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.rains.dk/
+image: { src: "/images/clip/1063.webp", width: 1056, height: 594, thumb: "/images/clip/1063-640.webp" }
+fullImage: { src: "/images/clip/1063-full.webp", width: 1000, height: 5974 }
 legacy:
   prev: balsan-la-griffe-de-luniforme
   next: basic-year-in-review

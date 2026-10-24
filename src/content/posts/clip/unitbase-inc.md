@@ -12,6 +12,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://unit-base.com/
+image: { src: "/images/clip/2079.webp", width: 1000, height: 563, thumb: "/images/clip/2079-640.webp" }
+fullImage: { src: "/images/clip/2079-full.webp", width: 1000, height: 3849 }
 legacy:
   prev: stef-marie
   next: ureshinochadoki

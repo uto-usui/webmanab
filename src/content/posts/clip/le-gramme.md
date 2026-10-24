@@ -17,6 +17,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: https://legramme.com/
+image: { src: "/images/clip/2082.webp", width: 1000, height: 563, thumb: "/images/clip/2082-640.webp" }
+fullImage: { src: "/images/clip/2082-full.webp", width: 1000, height: 5423 }
 legacy:
   prev: keeping
   next: leviev-group

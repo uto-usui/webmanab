@@ -14,6 +14,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://zumtobel.us/
+image: { src: "/images/clip/300.webp", width: 1280, height: 720, thumb: "/images/clip/300-640.webp" }
+fullImage: { src: "/images/clip/300-full.webp", width: 1000, height: 3695 }
 legacy:
   prev: ayanomimi
   next: brandmills

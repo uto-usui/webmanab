@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://lookbook.wedze.com/winter-2017-2018/en
+image: { src: "/images/clip/2276.webp", width: 1200, height: 675, thumb: "/images/clip/2276-640.webp" }
 legacy:
   prev: classic-luxury-bathrooms-from-drummonds-cast-iron-baths-and-more
   next: business-moller-mobility-group

@@ -14,6 +14,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://aerolab.co/
+image: { src: "/images/clip/503.webp", width: 1280, height: 746, thumb: "/images/clip/503-640.webp" }
+fullImage: { src: "/images/clip/503-full.webp", width: 1000, height: 563 }
 legacy:
   prev: nordic-js-2016
   next: filippo-bello

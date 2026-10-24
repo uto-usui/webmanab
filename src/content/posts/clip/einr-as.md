@@ -14,6 +14,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://einr.no/
+image: { src: "/images/clip/2121.webp", width: 1000, height: 563, thumb: "/images/clip/2121-640.webp" }
+fullImage: { src: "/images/clip/2121-full.webp", width: 1000, height: 3643 }
 legacy:
   prev: duroc
   next: extended-play

@@ -20,6 +20,8 @@ terms:
   - { id: 70, name: "sports", slug: "sports" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://parall.ax/viva-le-velo
+image: { src: "/images/clip/1508.webp", width: 1000, height: 563, thumb: "/images/clip/1508-640.webp" }
+fullImage: { src: "/images/clip/1508-full.webp", width: 1000, height: 1125 }
 legacy:
   prev: home-mirpuri-foundation
   next: dock-by-crestyl

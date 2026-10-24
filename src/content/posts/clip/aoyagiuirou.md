@@ -15,6 +15,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.aoyagiuirou.co.jp/
+image: { src: "/images/clip/2525.webp", width: 1200, height: 675, thumb: "/images/clip/2525-640.webp" }
+fullImage: { src: "/images/clip/2525-full.webp", width: 1000, height: 5225 }
 legacy:
   prev: all-in
   next: murmure-french-creative-agency-located-in-caen-and-paris

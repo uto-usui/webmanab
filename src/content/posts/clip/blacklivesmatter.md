@@ -12,6 +12,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: http://series.hashtagsunplugged.com/blacklivesmatter
+image: { src: "/images/clip/365.webp", width: 1000, height: 562, thumb: "/images/clip/365-640.webp" }
+fullImage: { src: "/images/clip/365-full.webp", width: 873, height: 9999 }
 legacy:
   prev: a-little-bit-of-rough-posh-camping-in-rural-rutland-england
   next: worlds-apart

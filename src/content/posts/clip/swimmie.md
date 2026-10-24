@@ -12,6 +12,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://swimmie.me/
+image: { src: "/images/clip/22.webp", width: 1280, height: 720, thumb: "/images/clip/22-640.webp" }
 legacy:
   prev: country-mam
   next: melanie-f-slippers-for-children

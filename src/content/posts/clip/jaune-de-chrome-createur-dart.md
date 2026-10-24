@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.jaunedechrome.com/
+image: { src: "/images/clip/1494.webp", width: 1000, height: 563, thumb: "/images/clip/1494-640.webp" }
+fullImage: { src: "/images/clip/1494-full.webp", width: 1000, height: 2798 }
 legacy:
   prev: live-papillons-de-nuit-2017
   next: homepage-filema-rodion

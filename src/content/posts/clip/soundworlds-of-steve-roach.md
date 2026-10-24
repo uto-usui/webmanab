@@ -17,6 +17,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://steveroach.life/
+image: { src: "/images/clip/1985.webp", width: 1000, height: 563, thumb: "/images/clip/1985-640.webp" }
 legacy:
   prev: socialclub
   next: studio-ouam

@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://vsfinance.ru/
+image: { src: "/images/clip/1247.webp", width: 1200, height: 675, thumb: "/images/clip/1247-640.webp" }
 legacy:
   prev: p22
   next: 32-guersant-trouver-dans-la-matiere-linspiration-de-demain

@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://philcasabon.com/
+image: { src: "/images/clip/749.webp", width: 1200, height: 675, thumb: "/images/clip/749-640.webp" }
+fullImage: { src: "/images/clip/749-full.webp", width: 1000, height: 3519 }
 legacy:
   prev: revols-quick-custom-fit-wireless-earphones
   next: vsco-create-discover-and-connect

@@ -13,6 +13,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://intelligo-group.com/
+image: { src: "/images/clip/1492.webp", width: 1000, height: 563, thumb: "/images/clip/1492-640.webp" }
 legacy:
   prev: essential-products-my-phone-is-essential
   next: homepage-flambette

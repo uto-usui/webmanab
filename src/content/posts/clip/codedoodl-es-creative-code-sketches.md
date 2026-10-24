@@ -16,6 +16,7 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://codedoodl.es/
+image: { src: "/images/clip/1785.webp", width: 1000, height: 574, thumb: "/images/clip/1785-640.webp" }
 legacy:
   prev: artefice
   next: welcome-to-hogwarts-pottermore

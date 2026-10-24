@@ -12,6 +12,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.kanjimuseum.kyoto/
+image: { src: "/images/clip/643.webp", width: 1280, height: 720, thumb: "/images/clip/643-640.webp" }
+fullImage: { src: "/images/clip/643-full.webp", width: 1000, height: 2556 }
 legacy:
   prev: adot-music-solutions
   next: florian-monfrini-french-painter-artist

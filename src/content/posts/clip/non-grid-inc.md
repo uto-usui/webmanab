@@ -14,6 +14,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://non-grid.com/
+image: { src: "/images/clip/2527.webp", width: 1200, height: 675, thumb: "/images/clip/2527-640.webp" }
 legacy:
   prev: linica
   next: nspc

@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://weekend.jp/aroma-diffuser/
+image: { src: "/images/clip/2835.webp", width: 1200, height: 675, thumb: "/images/clip/2835-640.webp" }
+fullImage: { src: "/images/clip/2835-full.webp", width: 1000, height: 7374 }
 legacy:
   prev: anime-obsolete
   next: about-rogue-studio-experience-the-difference-in-your-design

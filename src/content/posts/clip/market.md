@@ -16,6 +16,8 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.market.co.jp/
+image: { src: "/images/clip/877.webp", width: 1200, height: 675, thumb: "/images/clip/877-640.webp" }
+fullImage: { src: "/images/clip/877-full.webp", width: 1000, height: 3483 }
 legacy:
   prev: ja-nagano-iijan
   next: murakamifarm-sprout

@@ -11,6 +11,7 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 164, name: "navigation", slug: "navigation" }
 clipUrl: http://www.maria-callas.com/en/
+image: { src: "/images/clip/1994.webp", width: 1000, height: 563, thumb: "/images/clip/1994-640.webp" }
 legacy:
   prev: lannee-rap-2017
   next: massimiliano-pegorini

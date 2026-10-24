@@ -20,6 +20,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.60fps.fr/en
+image: { src: "/images/clip/2441.webp", width: 1200, height: 675, thumb: "/images/clip/2441-640.webp" }
 legacy:
   prev: yaay-year-review-2017
   next: adrien-laurent-portfolio

@@ -21,6 +21,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://www.basicagency.com/
+image: { src: "/images/clip/1087.webp", width: 1200, height: 675, thumb: "/images/clip/1087-640.webp" }
 legacy:
   prev: rains-rainwear-bags-accessories-rains-defying-danish-weather-since-2012
   next: barth

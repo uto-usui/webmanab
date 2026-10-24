@@ -21,6 +21,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://locomotive.ca
+image: { src: "/images/clip/2601.webp", width: 1200, height: 675, thumb: "/images/clip/2601-640.webp" }
+fullImage: { src: "/images/clip/2601-full.webp", width: 1000, height: 2184 }
 legacy:
   prev: hinderer-and-wolff
   next: lyon-urban-trail

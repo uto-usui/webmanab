@@ -16,6 +16,7 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.epok-design.fr/
+image: { src: "/images/clip/1786.webp", width: 1000, height: 563, thumb: "/images/clip/1786-640.webp" }
 legacy:
   prev: epicurrence-no-6
   next: ever-ever-london-digital-agency

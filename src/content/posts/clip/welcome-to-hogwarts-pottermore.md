@@ -10,6 +10,7 @@ primaryTag: "movie"
 terms:
   - { id: 58, name: "movie", slug: "movie" }
 clipUrl: https://my.pottermore.com/hogwarts
+image: { src: "/images/clip/1810.webp", width: 1000, height: 563, thumb: "/images/clip/1810-640.webp" }
 legacy:
   prev: codedoodl-es-creative-code-sketches
   next: tbilisi-gardens-designer-apartments-in-the-middle-of-a-park

@@ -17,6 +17,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.wolfwhale.com/
+image: { src: "/images/clip/2786.webp", width: 1200, height: 675, thumb: "/images/clip/2786-640.webp" }
+fullImage: { src: "/images/clip/2786-full.webp", width: 1000, height: 6252 }
 legacy:
   prev: basic-moves
   next: nightingale

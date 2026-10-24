@@ -21,6 +21,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://cineca.si/works/
+image: { src: "/images/clip/863.webp", width: 1200, height: 675, thumb: "/images/clip/863-640.webp" }
+fullImage: { src: "/images/clip/863-full.webp", width: 1000, height: 2108 }
 legacy:
   prev: towada-art-center
   next: muro

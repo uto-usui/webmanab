@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 92, name: "service", slug: "service" }
 clipUrl: http://secondary.gree.net/
+image: { src: "/images/clip/134.webp", width: 1000, height: 563, thumb: "/images/clip/134-640.webp" }
+fullImage: { src: "/images/clip/134-full.webp", width: 407, height: 1172 }
 legacy:
   prev: ringo
   next: lemonsha

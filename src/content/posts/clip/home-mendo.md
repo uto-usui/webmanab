@@ -15,6 +15,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.mendo.nl/
+image: { src: "/images/clip/1257.webp", width: 1200, height: 675, thumb: "/images/clip/1257-640.webp" }
+fullImage: { src: "/images/clip/1257-full.webp", width: 1000, height: 5933 }
 legacy:
   prev: 7h34
   next: nahel-moussi

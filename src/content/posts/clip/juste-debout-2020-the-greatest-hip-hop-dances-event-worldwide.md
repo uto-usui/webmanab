@@ -20,6 +20,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.juste-debout.com/
+image: { src: "/images/clip/2686.webp", width: 1200, height: 675, thumb: "/images/clip/2686-640.webp" }
 legacy:
   prev: 15-years-solar-weekend
   next: basic-moves

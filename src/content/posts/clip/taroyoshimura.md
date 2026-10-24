@@ -15,6 +15,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://taroyoshimura.dev/
+image: { src: "/images/clip/2777.webp", width: 1200, height: 675, thumb: "/images/clip/2777-640.webp" }
 legacy:
   prev: maxilla
   next: victor-work-20

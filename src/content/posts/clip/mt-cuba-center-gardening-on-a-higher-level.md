@@ -19,6 +19,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://mtcubacenter.org/
+image: { src: "/images/clip/646.webp", width: 1280, height: 720, thumb: "/images/clip/646-640.webp" }
+fullImage: { src: "/images/clip/646-full.webp", width: 1000, height: 3125 }
 legacy:
   prev: florian-monfrini-french-painter-artist
   next: startuplab

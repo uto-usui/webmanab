@@ -14,6 +14,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 279, name: "sound", slug: "sound" }
 clipUrl: https://www.defeatboco.com/
+image: { src: "/images/clip/2836.webp", width: 1200, height: 675, thumb: "/images/clip/2836-640.webp" }
 legacy:
   prev: active-theory-v5
   next: akaru

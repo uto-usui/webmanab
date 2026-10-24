@@ -14,6 +14,8 @@ terms:
   - { id: 27, name: "flat", slug: "flat" }
   - { id: 61, name: "illustration", slug: "illustration" }
 clipUrl: http://2016.uiuxconf.com/
+image: { src: "/images/clip/208.webp", width: 1000, height: 562, thumb: "/images/clip/208-640.webp" }
+fullImage: { src: "/images/clip/208-full.webp", width: 1000, height: 4103 }
 legacy:
   prev: defonce-chocolatier
   next: tokyo-music-odyssey-2016

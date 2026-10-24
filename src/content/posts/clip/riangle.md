@@ -17,6 +17,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.riangle.com/
+image: { src: "/images/clip/1391.webp", width: 1200, height: 675, thumb: "/images/clip/1391-640.webp" }
+fullImage: { src: "/images/clip/1391-full.webp", width: 1000, height: 8043 }
 legacy:
   prev: creative-wallonia-nos-actions-2
   next: homepage-ryan-brant

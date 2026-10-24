@@ -17,6 +17,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.epicurrence.com/
+image: { src: "/images/clip/2443.webp", width: 1200, height: 675, thumb: "/images/clip/2443-640.webp" }
 legacy:
   prev: end-family-fire
   next: espn-nbas-signature-moves

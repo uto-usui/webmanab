@@ -19,6 +19,8 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.designerfund.com/business-impact
+image: { src: "/images/clip/2678.webp", width: 1200, height: 675, thumb: "/images/clip/2678-640.webp" }
+fullImage: { src: "/images/clip/2678-full.webp", width: 1000, height: 8018 }
 legacy:
   prev: cobo-plastic-injection-moulding-for-footwear
   next: digital-and-creative-agency-in-paris-sweet-punk

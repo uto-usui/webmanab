@@ -15,6 +15,7 @@ terms:
   - { id: 108, name: "wordpress", slug: "wordpress" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://prm.ooo/
+image: { src: "/images/clip/2629.webp", width: 1200, height: 675, thumb: "/images/clip/2629-640.webp" }
 legacy:
   prev: 100-years-of-georgias-first-democratic-republic100
   next: jomor-design-branding-websites-montreal

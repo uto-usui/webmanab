@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://cssconfbp.rocks/
+image: { src: "/images/clip/484.webp", width: 1280, height: 720, thumb: "/images/clip/484-640.webp" }
+fullImage: { src: "/images/clip/484-full.webp", width: 1000, height: 8687 }
 legacy:
   prev: mirror-conf
   next: jsconf-colombia-2016-medellin-october-7-8th-2016

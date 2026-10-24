@@ -21,6 +21,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.melville-design.com/
+image: { src: "/images/clip/518.webp", width: 1280, height: 720, thumb: "/images/clip/518-640.webp" }
+fullImage: { src: "/images/clip/518-full.webp", width: 1000, height: 4643 }
 legacy:
   prev: accueil-la-sainte-paix
   next: the-fourth-phase

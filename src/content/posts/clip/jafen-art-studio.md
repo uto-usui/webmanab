@@ -18,6 +18,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://bahaasamir.me/jafenart
+image: { src: "/images/clip/2539.webp", width: 1200, height: 675, thumb: "/images/clip/2539-640.webp" }
 legacy:
   prev: jacquemus
   next: linica

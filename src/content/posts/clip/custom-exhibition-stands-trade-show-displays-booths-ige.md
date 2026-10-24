@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.igegroup.com/
+image: { src: "/images/clip/1066.webp", width: 1200, height: 675, thumb: "/images/clip/1066-640.webp" }
+fullImage: { src: "/images/clip/1066-full.webp", width: 1000, height: 563 }
 legacy:
   prev: custodi-della-memoria
   next: nj-and-ny-event-producer-and-caterer-crystal-plazacrystal-plaza

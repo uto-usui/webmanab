@@ -18,6 +18,8 @@ terms:
   - { id: 228, name: "line", slug: "line" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: https://www.sashaandlucca.com/
+image: { src: "/images/clip/2085.webp", width: 1000, height: 563, thumb: "/images/clip/2085-640.webp" }
+fullImage: { src: "/images/clip/2085-full.webp", width: 1000, height: 3133 }
 legacy:
   prev: sanyo-coat
   next: she-is

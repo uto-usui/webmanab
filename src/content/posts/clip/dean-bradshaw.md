@@ -16,6 +16,8 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://deanbradshaw.com/
+image: { src: "/images/clip/2409.webp", width: 1200, height: 675, thumb: "/images/clip/2409-640.webp" }
+fullImage: { src: "/images/clip/2409-full.webp", width: 1000, height: 7618 }
 legacy:
   prev: de-buris-amarone-riserva-taste-the-time
   next: decathlon-united

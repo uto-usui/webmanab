@@ -13,6 +13,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.studio-venezia.com/
+image: { src: "/images/clip/1601.webp", width: 1000, height: 563, thumb: "/images/clip/1601-640.webp" }
 legacy:
   prev: sakumastudio
   next: les-animals-studio-de-creations-digitales

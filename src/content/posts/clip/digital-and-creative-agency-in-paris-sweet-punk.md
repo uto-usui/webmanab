@@ -14,6 +14,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.sweetpunk.com/
+image: { src: "/images/clip/2685.webp", width: 1200, height: 675, thumb: "/images/clip/2685-640.webp" }
+fullImage: { src: "/images/clip/2685-full.webp", width: 1000, height: 5562 }
 legacy:
   prev: design-for-business-impact-designer-fund
   next: dnlsptzk

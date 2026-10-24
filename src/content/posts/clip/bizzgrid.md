@@ -13,6 +13,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: http://bizzgrid.com/
+image: { src: "/images/clip/959.webp", width: 1200, height: 675, thumb: "/images/clip/959-640.webp" }
+fullImage: { src: "/images/clip/959-full.webp", width: 1000, height: 1558 }
 legacy:
   prev: adoratorio
   next: bamboo-photographers-agency

@@ -20,6 +20,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.intelligent-home.jp/
+image: { src: "/images/clip/1596.webp", width: 1000, height: 563, thumb: "/images/clip/1596-640.webp" }
+fullImage: { src: "/images/clip/1596-full.webp", width: 1000, height: 6744 }
 legacy:
   prev: etienne-godiard
   next: home-olivier-lapidus

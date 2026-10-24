@@ -12,6 +12,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.rainbow.co.jp/
+image: { src: "/images/clip/2093.webp", width: 1000, height: 563, thumb: "/images/clip/2093-640.webp" }
+fullImage: { src: "/images/clip/2093-full.webp", width: 1000, height: 5403 }
 legacy:
   prev: atago-kdg
   next: lotus-beauty-spa

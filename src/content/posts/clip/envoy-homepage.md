@@ -12,6 +12,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: https://www.weareenvoy.com/
+image: { src: "/images/clip/1809.webp", width: 1000, height: 563, thumb: "/images/clip/1809-640.webp" }
+fullImage: { src: "/images/clip/1809-full.webp", width: 1000, height: 9183 }
 legacy:
   prev: emmit-fenn
   next: epicurrence-no-6

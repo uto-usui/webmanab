@@ -21,6 +21,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.kinkos.it/it/
+image: { src: "/images/clip/1237.webp", width: 1200, height: 675, thumb: "/images/clip/1237-640.webp" }
 legacy:
   prev: ride-mediadesign
   next: insymbiosis

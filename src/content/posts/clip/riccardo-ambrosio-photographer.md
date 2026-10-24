@@ -16,6 +16,7 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://riccardoambrosio.com/
+image: { src: "/images/clip/973.webp", width: 1200, height: 675, thumb: "/images/clip/973-640.webp" }
 legacy:
   prev: angstrom-latest-works
   next: the-nature-conservancy-california

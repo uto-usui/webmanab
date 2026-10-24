@@ -17,6 +17,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 70, name: "sports", slug: "sports" }
 clipUrl: http://www.wilson.co.jp/
+image: { src: "/images/clip/866.webp", width: 1200, height: 675, thumb: "/images/clip/866-640.webp" }
+fullImage: { src: "/images/clip/866-full.webp", width: 1000, height: 1713 }
 legacy:
   prev: httpsnisekohakuunso
   next: tfd-saiyo

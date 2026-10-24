@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 122, name: "timeline", slug: "timeline" }
 clipUrl: https://music-incubator.eu/
+image: { src: "/images/clip/1235.webp", width: 1200, height: 675, thumb: "/images/clip/1235-640.webp" }
+fullImage: { src: "/images/clip/1235-full.webp", width: 1000, height: 3375 }
 legacy:
   prev: magic-of-craft
   next: mainworks

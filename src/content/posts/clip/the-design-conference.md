@@ -17,6 +17,8 @@ terms:
   - { id: 25, name: "pink", slug: "pink" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.thedesignconference.com.au/
+image: { src: "/images/clip/493.webp", width: 1280, height: 720, thumb: "/images/clip/493-640.webp" }
+fullImage: { src: "/images/clip/493-full.webp", width: 888, height: 9999 }
 legacy:
   prev: convergese-2016-columbia-sc-april-13-15-2016
   next: front-end-design-conference

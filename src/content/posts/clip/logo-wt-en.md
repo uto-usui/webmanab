@@ -15,6 +15,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 279, name: "sound", slug: "sound" }
 clipUrl: https://viennesemodernism2018.info/en/
+image: { src: "/images/clip/1830.webp", width: 1000, height: 563, thumb: "/images/clip/1830-640.webp" }
+fullImage: { src: "/images/clip/1830-full.webp", width: 1000, height: 1983 }
 legacy:
   prev: lady-bird
   next: north-east-venture

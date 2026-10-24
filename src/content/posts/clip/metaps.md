@@ -18,6 +18,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://metaps.com/ja/
+image: { src: "/images/clip/1535.webp", width: 1000, height: 563, thumb: "/images/clip/1535-640.webp" }
 legacy:
   prev: creatures
   next: takagirl

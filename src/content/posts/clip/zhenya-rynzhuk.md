@@ -23,6 +23,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://zhenyary.com/
+image: { src: "/images/clip/2827.webp", width: 1200, height: 675, thumb: "/images/clip/2827-640.webp" }
+fullImage: { src: "/images/clip/2827-full.webp", width: 1000, height: 3375 }
 legacy:
   prev: yuto-takahashi
   next: ね - nt

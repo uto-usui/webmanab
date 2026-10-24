@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.askul.co.jp/kaisya/saiyo/new/index.html
+image: { src: "/images/clip/1215.webp", width: 1200, height: 675, thumb: "/images/clip/1215-640.webp" }
+fullImage: { src: "/images/clip/1215-full.webp", width: 1000, height: 5005 }
 legacy:
   prev: mary-al-terna
   next: ride-mediadesign

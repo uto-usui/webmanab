@@ -17,6 +17,8 @@ terms:
   - { id: 25, name: "pink", slug: "pink" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://veryberry.com.ua/
+image: { src: "/images/clip/1545.webp", width: 1000, height: 563, thumb: "/images/clip/1545-640.webp" }
+fullImage: { src: "/images/clip/1545-full.webp", width: 1000, height: 1772 }
 legacy:
   prev: homepage-flambette
   next: lepa-vida-boutique-winery-vipava-valley-slovenia

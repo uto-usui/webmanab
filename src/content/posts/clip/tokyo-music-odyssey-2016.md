@@ -15,6 +15,8 @@ terms:
   - { id: 107, name: "music", slug: "music" }
   - { id: 12, name: "parallax", slug: "parallax" }
 clipUrl: http://tokyomusicodyssey.jp/
+image: { src: "/images/clip/209.webp", width: 1000, height: 562, thumb: "/images/clip/209-640.webp" }
+fullImage: { src: "/images/clip/209-full.webp", width: 1000, height: 3079 }
 legacy:
   prev: uiux-conf-china
   next: rezo-zero-digital-creative-studio

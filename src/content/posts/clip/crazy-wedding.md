@@ -17,6 +17,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 45, name: "women", slug: "women" }
 clipUrl: https://www.crazywedding.jp/
+image: { src: "/images/clip/1973.webp", width: 1000, height: 563, thumb: "/images/clip/1973-640.webp" }
 legacy:
   prev: clinical-trials
   next: dinner-for-five

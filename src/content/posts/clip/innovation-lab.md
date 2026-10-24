@@ -17,6 +17,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://innovation-lab.it
+image: { src: "/images/clip/2811.webp", width: 1200, height: 675, thumb: "/images/clip/2811-640.webp" }
 legacy:
   prev: andrew-leguay-folio-2020
   next: instabar

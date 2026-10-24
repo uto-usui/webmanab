@@ -16,6 +16,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://shimatorie.jp/
+image: { src: "/images/clip/1221.webp", width: 1200, height: 675, thumb: "/images/clip/1221-640.webp" }
+fullImage: { src: "/images/clip/1221-full.webp", width: 1000, height: 6653 }
 legacy:
   prev: school-visual-interactive-production
   next: mary-al-terna

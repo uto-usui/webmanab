@@ -15,6 +15,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 70, name: "sports", slug: "sports" }
 clipUrl: http://performance.pacificandco.com/
+image: { src: "/images/clip/1760.webp", width: 1000, height: 563, thumb: "/images/clip/1760-640.webp" }
 legacy:
   prev: ever-ever-london-digital-agency
   next: home-a-friend-of-mine

@@ -19,6 +19,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://gwbi.org/
+image: { src: "/images/clip/1839.webp", width: 1000, height: 563, thumb: "/images/clip/1839-640.webp" }
+fullImage: { src: "/images/clip/1839-full.webp", width: 1000, height: 7063 }
 legacy:
   prev: get-obachan
   next: heartbeat-agency-apps-websites-interface-design-and-consulting

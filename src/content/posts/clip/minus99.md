@@ -19,6 +19,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.minus99.com/
+image: { src: "/images/clip/1273.webp", width: 1200, height: 675, thumb: "/images/clip/1273-640.webp" }
+fullImage: { src: "/images/clip/1273-full.webp", width: 1000, height: 5205 }
 legacy:
   prev: ueno-planet
   next: adidas-nmd-trainer-adidas-uk

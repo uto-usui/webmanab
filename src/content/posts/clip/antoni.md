@@ -18,6 +18,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.antoni.de/
+image: { src: "/images/clip/2280.webp", width: 1200, height: 675, thumb: "/images/clip/2280-640.webp" }
 legacy:
   prev: tha-ltd
   next: classic-luxury-bathrooms-from-drummonds-cast-iron-baths-and-more

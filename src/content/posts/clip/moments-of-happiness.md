@@ -12,6 +12,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://moments.epic.net/
+image: { src: "/images/clip/1481.webp", width: 1000, height: 563, thumb: "/images/clip/1481-640.webp" }
 legacy:
   prev: elena-saharova
   next: war-against-lies-rtve-es-lab-webdoc-and-en-portada

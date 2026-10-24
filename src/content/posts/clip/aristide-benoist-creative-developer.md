@@ -20,6 +20,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.aristidebenoist.com/
+image: { src: "/images/clip/1818.webp", width: 1000, height: 563, thumb: "/images/clip/1818-640.webp" }
 legacy:
   prev: ankoku-toshi-jutsu
   next: ben-mingo-interactive-graphic-designer

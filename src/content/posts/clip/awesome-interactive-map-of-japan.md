@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 42, name: "local", slug: "local" }
 clipUrl: https://www.insideasiatours.com/step-inside/japan
+image: { src: "/images/clip/76.webp", width: 1280, height: 720, thumb: "/images/clip/76-640.webp" }
+fullImage: { src: "/images/clip/76-full.webp", width: 1000, height: 558 }
 legacy:
   prev: relations-inc-recruit-internship
   next: a24

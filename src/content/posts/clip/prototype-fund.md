@@ -13,6 +13,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://prototypefund.de/
+image: { src: "/images/clip/350.webp", width: 1000, height: 563, thumb: "/images/clip/350-640.webp" }
 legacy:
   prev: culture-pl
   next: luxury-resort-in-tuscany-toscana-resort-castelfalfi

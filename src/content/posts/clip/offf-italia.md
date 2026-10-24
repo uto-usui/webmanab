@@ -14,6 +14,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://www.offfitalia.com/
+image: { src: "/images/clip/475.webp", width: 1280, height: 692, thumb: "/images/clip/475-640.webp" }
 legacy:
   prev: wrangler-wild-way-home
   next: kikk-festival

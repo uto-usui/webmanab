@@ -13,6 +13,8 @@ terms:
   - { id: 148, name: "navy", slug: "navy" }
   - { id: 75, name: "product", slug: "product" }
 clipUrl: https://www.rakusyo.jp/
+image: { src: "/images/clip/299.webp", width: 1000, height: 563, thumb: "/images/clip/299-640.webp" }
+fullImage: { src: "/images/clip/299-full.webp", width: 1000, height: 3110 }
 legacy:
   prev: mespotes
   next: fay-uk-official-website

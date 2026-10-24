@@ -16,6 +16,8 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.cssdesignawards.com/woty2017/
+image: { src: "/images/clip/1584.webp", width: 1000, height: 563, thumb: "/images/clip/1584-640.webp" }
+fullImage: { src: "/images/clip/1584-full.webp", width: 1000, height: 7980 }
 legacy:
   prev: paradiso
   next: paris-american-academy

@@ -26,12 +26,16 @@ legacy:
 
 ### Card Expansion Effect with SVG clipPath
 
+![CardExpansion](/images/uploads/2016/07/CardExpansion.jpg)
+
 画像をクリックすると、アニメーションが発火して、画像に紐付いたコンテンツが展開して表示されます。\
 デモは４つ用意されていますが、どれもモーションが美しくなめらかです。
 
 - [Card Expansion Effect with SVG clipPath](http://tympanus.net/Development/CardExpansion/)
 
 ### Animated Grid Layout
+
+![GridItemAnimation](/images/uploads/2016/07/GridItemAnimation.jpg)
 
 サムネイルをクリックすると、それに紐疼いたコンテンツが読み込まれ、アニメーションを伴って表示されます。
 
@@ -46,6 +50,8 @@ legacy:
 - [image hover 63 effects](http://codepen.io/maheshambure21/pen/kXwgyJ)
 
 ### Image Tilt Effect
+
+![ImageTiltEffect](/images/uploads/2016/07/ImageTiltEffect.jpg)
 
 ホバーするとチルトエフェクト(マウスの位置に応じて画像に傾きを与える)を発生させます。\
 オプションが豊富で、デモで違いをグリグリ動かして試してみることができます。

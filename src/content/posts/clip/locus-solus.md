@@ -21,6 +21,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.locus-solus.it/en/
+image: { src: "/images/clip/356.webp", width: 1000, height: 563, thumb: "/images/clip/356-640.webp" }
+fullImage: { src: "/images/clip/356-full.webp", width: 1000, height: 563 }
 legacy:
   prev: theodora-nasta-multimedia-designer
   next: sewage-free-seas

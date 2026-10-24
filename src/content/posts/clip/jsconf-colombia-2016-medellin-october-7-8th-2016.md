@@ -17,6 +17,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://jsconf.co/
+image: { src: "/images/clip/491.webp", width: 1280, height: 720, thumb: "/images/clip/491-640.webp" }
+fullImage: { src: "/images/clip/491-full.webp", width: 1000, height: 8367 }
 legacy:
   prev: cssconf-budapest-2016
   next: convergese-2016-columbia-sc-april-13-15-2016

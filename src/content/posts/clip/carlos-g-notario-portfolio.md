@@ -18,6 +18,7 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://carlosgnotario.com/
+image: { src: "/images/clip/2426.webp", width: 1200, height: 675, thumb: "/images/clip/2426-640.webp" }
 legacy:
   prev: cargo-the-film
   next: de-buris-amarone-riserva-taste-the-time

@@ -14,6 +14,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: https://stripe.com/radar
+image: { src: "/images/clip/472.webp", width: 1280, height: 720, thumb: "/images/clip/472-640.webp" }
+fullImage: { src: "/images/clip/472-full.webp", width: 1000, height: 3565 }
 legacy:
   prev: point
   next: the-wing

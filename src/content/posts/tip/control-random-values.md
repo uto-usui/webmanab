@@ -53,6 +53,8 @@ const randBasic = (max) => Math.floor(Math.random() * max);
 
 ```
 
+![basic](/images/uploads/2017/03/basic.png)
+
 ### 中央に分布する
 
 `Math.random()`を足して`2`で割ることで中央値に偏らせることができます。エリア中央から拡散するように描画されます。
@@ -64,6 +66,8 @@ const randSum = (max) => Math.floor((Math.random() + Math.random()) / 2 * max);
 
 ```
 
+![sum](/images/uploads/2017/03/sum.png)
+
 ### 最小値に分布する
 
 `Math.random()`と`Math.random()`を乗算することで最小値に偏らせることができます。エリア左上から拡散するように描画されます。
@@ -74,6 +78,8 @@ const randTime = (max) => Math.floor(Math.random() * Math.random() * max);
 
 
 ```
+
+![times](/images/uploads/2017/03/times.png)
 
 ### より最小値に分布する
 
@@ -89,6 +95,8 @@ const randSquare = (max) => {
 
 ```
 
+![square](/images/uploads/2017/03/square.png)
+
 ### 最大値から比例的に拡散
 
 `Math.random()`の平方根をもとめることで、最大値から均等に拡散するような分布になります。
@@ -99,6 +107,8 @@ const randRoot = (max) => Math.floor(Math.sqrt(Math.random()) * max);
 
 
 ```
+
+![root](/images/uploads/2017/03/root.png)
 
 ## ランダム値の分布を反転させる
 
@@ -115,6 +125,8 @@ const randTimeReverse = (max) => Math.floor( (1 - Math.random() * Math.random())
 
 ```
 
+![times_reverse](/images/uploads/2017/03/times_reverse.png)
+
 ### より最大値に分布する
 
 より最大値に偏らせることができます。エリア右下から拡散するように、最大値に近い値がたくさん描画されます。
@@ -129,6 +141,8 @@ const randSquareReverse = (max) => {
 
 ```
 
+![square_reverse](/images/uploads/2017/03/square_reverse.png)
+
 ### 最小値から比例的に拡散
 
 最小値から均等に拡散するような分布になります。
@@ -139,6 +153,8 @@ const randRootReverse = (max) => Math.floor((1 - Math.sqrt(Math.random())) * max
 
 
 ```
+
+![root_reverse](/images/uploads/2017/03/root_reverse.png)
 
 ### demo
 

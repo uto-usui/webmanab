@@ -16,6 +16,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.parisamericanacademy.fr/
+image: { src: "/images/clip/1987.webp", width: 1000, height: 563, thumb: "/images/clip/1987-640.webp" }
+fullImage: { src: "/images/clip/1987-full.webp", width: 1000, height: 6112 }
 legacy:
   prev: website-of-the-year-2017-css-design-awards
   next: pierre-georges-portfolio

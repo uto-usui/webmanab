@@ -20,6 +20,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.nightingale.world/
+image: { src: "/images/clip/2784.webp", width: 1200, height: 675, thumb: "/images/clip/2784-640.webp" }
 legacy:
   prev: wolf-whale
   next: taitau

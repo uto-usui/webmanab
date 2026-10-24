@@ -16,6 +16,7 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 279, name: "sound", slug: "sound" }
 clipUrl: http://www.onedayinmyworld.com/
+image: { src: "/images/clip/1604.webp", width: 1000, height: 565, thumb: "/images/clip/1604-640.webp" }
 legacy:
   prev: camp-official-site
   next: coulee-creative-creative-web-design-development

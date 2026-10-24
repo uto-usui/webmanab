@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 347, name: "UI", slug: "ui" }
 clipUrl: https://thenorthernblock.co.uk/
+image: { src: "/images/clip/2521.webp", width: 1200, height: 675, thumb: "/images/clip/2521-640.webp" }
+fullImage: { src: "/images/clip/2521-full.webp", width: 1000, height: 5042 }
 legacy:
   prev: the-five-seasons-alessi-home-fragrance
   next: the-parfait-stand

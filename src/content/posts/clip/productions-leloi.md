@@ -18,6 +18,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://leloi.ca/en/
+image: { src: "/images/clip/1478.webp", width: 1000, height: 563, thumb: "/images/clip/1478-640.webp" }
+fullImage: { src: "/images/clip/1478-full.webp", width: 1000, height: 6311 }
 legacy:
   prev: home-europe-emirates-group
   next: elena-saharova

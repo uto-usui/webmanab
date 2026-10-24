@@ -15,6 +15,8 @@ terms:
   - { id: 183, name: "space", slug: "space" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://2016.fromthefront.it/
+image: { src: "/images/clip/486.webp", width: 1280, height: 720, thumb: "/images/clip/486-640.webp" }
+fullImage: { src: "/images/clip/486-full.webp", width: 1000, height: 5919 }
 legacy:
   prev: ito-farm
   next: forge-conference-2016-philadelphias-premier-ux-product-design-conference

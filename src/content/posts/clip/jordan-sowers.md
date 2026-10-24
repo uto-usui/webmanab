@@ -15,6 +15,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://jordansowers.com/
+image: { src: "/images/clip/1519.webp", width: 1000, height: 563, thumb: "/images/clip/1519-640.webp" }
+fullImage: { src: "/images/clip/1519-full.webp", width: 1000, height: 5573 }
 legacy:
   prev: gentriville
   next: joao-de-almeida

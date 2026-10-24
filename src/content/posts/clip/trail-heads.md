@@ -13,6 +13,8 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://trailheads.jp/
+image: { src: "/images/clip/885.webp", width: 1200, height: 675, thumb: "/images/clip/885-640.webp" }
+fullImage: { src: "/images/clip/885-full.webp", width: 1000, height: 1668 }
 legacy:
   prev: orca-inc
   next: toshin-sekai

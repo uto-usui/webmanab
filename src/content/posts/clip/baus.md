@@ -14,6 +14,8 @@ terms:
   - { id: 56, name: "recruit", slug: "recruit" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://bau-s.jp/
+image: { src: "/images/clip/1524.webp", width: 1000, height: 563, thumb: "/images/clip/1524-640.webp" }
+fullImage: { src: "/images/clip/1524-full.webp", width: 1000, height: 3746 }
 legacy:
   prev: task-chairs-by-vitra
   next: my-pro

@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 74, name: "soft", slug: "soft" }
 clipUrl: http://www.biofermin.co.jp/
+image: { src: "/images/clip/104.webp", width: 1000, height: 562, thumb: "/images/clip/104-640.webp" }
+fullImage: { src: "/images/clip/104-full.webp", width: 1000, height: 2444 }
 legacy:
   prev: hp-magic-words
   next: su5

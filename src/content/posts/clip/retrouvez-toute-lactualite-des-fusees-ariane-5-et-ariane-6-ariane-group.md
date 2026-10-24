@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 250, name: "technology", slug: "technology" }
 clipUrl: https://www.ariane.group/
+image: { src: "/images/clip/1599.webp", width: 1000, height: 563, thumb: "/images/clip/1599-640.webp" }
+fullImage: { src: "/images/clip/1599-full.webp", width: 1000, height: 3464 }
 legacy:
   prev: les-animals-studio-de-creations-digitales
   next: oro-recruit

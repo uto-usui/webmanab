@@ -9,6 +9,7 @@ excerpt: "スクロールのイージングが気持ちいい ミニマルデザ
 primaryTag: "minimal"
 terms: []
 clipUrl: http://www.thegigi.it/en
+image: { src: "/images/clip/1808.webp", width: 1000, height: 563, thumb: "/images/clip/1808-640.webp" }
 legacy:
   prev: the-great-agency
   next: the-disaster-artist-official-movie-site

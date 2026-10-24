@@ -17,6 +17,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://www.greeventures.com/
+image: { src: "/images/clip/510.webp", width: 1280, height: 719, thumb: "/images/clip/510-640.webp" }
 legacy:
   prev: milk-japon-web
   next: 2016-jsconf-is

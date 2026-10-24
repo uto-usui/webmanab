@@ -16,6 +16,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 288, name: "photograph", slug: "photograph" }
 clipUrl: https://www.boffi.com/
+image: { src: "/images/clip/2098.webp", width: 1000, height: 563, thumb: "/images/clip/2098-640.webp" }
+fullImage: { src: "/images/clip/2098-full.webp", width: 1000, height: 4555 }
 legacy:
   prev: bamboo-photographers-agency
   next: branding-web-design-boutik-studio-branding-tailors

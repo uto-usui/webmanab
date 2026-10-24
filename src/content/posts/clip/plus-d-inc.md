@@ -15,6 +15,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://plus-d.co.jp/
+image: { src: "/images/clip/2007.webp", width: 1000, height: 563, thumb: "/images/clip/2007-640.webp" }
 legacy:
   prev: pierre-georges-portfolio
   next: present-art-direction-design

@@ -14,6 +14,8 @@ terms:
   - { id: 73, name: "green", slug: "green" }
   - { id: 24, name: "minimal", slug: "minimal" }
 clipUrl: https://research.hackerrank.com/developer-skills/2018/
+image: { src: "/images/clip/2117.webp", width: 1000, height: 563, thumb: "/images/clip/2117-640.webp" }
+fullImage: { src: "/images/clip/2117-full.jpg", width: 1000, height: 19040 }
 legacy:
   prev: letsmuseeum-stell-dir-vor-du-scrollst-durch-ein-museum-in-echt
   next: andrea-d-labarile

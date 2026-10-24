@@ -17,6 +17,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://www.mu-ro.jp/
+image: { src: "/images/clip/862.webp", width: 1200, height: 675, thumb: "/images/clip/862-640.webp" }
+fullImage: { src: "/images/clip/862-full.webp", width: 1000, height: 3850 }
 legacy:
   prev: cineca
   next: commono-inc

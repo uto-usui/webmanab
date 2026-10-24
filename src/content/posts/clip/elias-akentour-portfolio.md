@@ -17,6 +17,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://eliasakentour.com
+image: { src: "/images/clip/2540.webp", width: 1200, height: 675, thumb: "/images/clip/2540-640.webp" }
 legacy:
   prev: bar-hotel
   next: jacquemus

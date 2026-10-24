@@ -13,6 +13,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://co-d.jp/
+image: { src: "/images/clip/1548.webp", width: 1000, height: 563, thumb: "/images/clip/1548-640.webp" }
+fullImage: { src: "/images/clip/1548-full.webp", width: 1000, height: 3128 }
 legacy:
   prev: gedeon-broadcast-design-company
   next: crazy-inc

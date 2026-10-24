@@ -15,6 +15,8 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 107, name: "music", slug: "music" }
 clipUrl: http://www.americanfootballmusic.com/
+image: { src: "/images/clip/1183.webp", width: 1200, height: 675, thumb: "/images/clip/1183-640.webp" }
+fullImage: { src: "/images/clip/1183-full.webp", width: 1000, height: 2891 }
 legacy:
   prev: usamaru-cafe
   next: run-tomorrow

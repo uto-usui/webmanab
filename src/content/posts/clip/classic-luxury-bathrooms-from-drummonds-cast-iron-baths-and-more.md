@@ -14,6 +14,8 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://drummonds-uk.com/
+image: { src: "/images/clip/2311.webp", width: 1200, height: 625, thumb: "/images/clip/2311-640.webp" }
+fullImage: { src: "/images/clip/2311-full.webp", width: 1000, height: 4292 }
 legacy:
   prev: antoni
   next: wedze-lookbook-winter-2017-2018

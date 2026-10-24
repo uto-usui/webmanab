@@ -22,6 +22,8 @@ terms:
   - { id: 44, name: "white", slug: "white" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.crazy.co.jp/
+image: { src: "/images/clip/1529.webp", width: 1000, height: 563, thumb: "/images/clip/1529-640.webp" }
+fullImage: { src: "/images/clip/1529-full.webp", width: 1000, height: 2878 }
 legacy:
   prev: co
   next: lonsdale

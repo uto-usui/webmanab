@@ -21,6 +21,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://www.wearewanaka.com/
+image: { src: "/images/clip/1139.webp", width: 1200, height: 675, thumb: "/images/clip/1139-640.webp" }
+fullImage: { src: "/images/clip/1139-full.webp", width: 1000, height: 3897 }
 legacy:
   prev: "913"
   next: opsundbay

@@ -16,6 +16,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.yatzer.com/
+image: { src: "/images/clip/960.webp", width: 1200, height: 675, thumb: "/images/clip/960-640.webp" }
+fullImage: { src: "/images/clip/960-full.webp", width: 1000, height: 2921 }
 legacy:
   prev: we3
   next: ray-official-web-site

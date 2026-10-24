@@ -14,6 +14,8 @@ terms:
   - { id: 164, name: "navigation", slug: "navigation" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://orcainc.co.jp/
+image: { src: "/images/clip/886.webp", width: 1200, height: 675, thumb: "/images/clip/886-640.webp" }
+fullImage: { src: "/images/clip/886-full.webp", width: 1000, height: 4658 }
 legacy:
   prev: bound-baw
   next: trail-heads

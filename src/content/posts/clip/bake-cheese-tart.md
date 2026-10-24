@@ -18,6 +18,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://cheesetart.com/
+image: { src: "/images/clip/1533.webp", width: 1000, height: 563, thumb: "/images/clip/1533-640.webp" }
 legacy:
   prev: careers-amt
   next: creatures

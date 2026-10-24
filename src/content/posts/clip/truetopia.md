@@ -28,6 +28,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.truetopia.it
+image: { src: "/images/clip/2809.webp", width: 1200, height: 675, thumb: "/images/clip/2809-640.webp" }
 legacy:
   prev: instabar
   next: active-theory-v5

@@ -19,6 +19,7 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://ameliarthompson.com/
+image: { src: "/images/clip/1244.webp", width: 1200, height: 675, thumb: "/images/clip/1244-640.webp" }
 legacy:
   prev: 32-guersant-trouver-dans-la-matiere-linspiration-de-demain
   next: pediatric-dentists-association

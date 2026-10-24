@@ -17,6 +17,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://uv-way.com/
+image: { src: "/images/clip/2780.webp", width: 1200, height: 675, thumb: "/images/clip/2780-640.webp" }
 legacy:
   prev: soletanche-bachy
   next: martell-cognac-the-oldest-of-the-great-cognac-houses

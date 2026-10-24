@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.vrarlesfestival.com
+image: { src: "/images/clip/1765.webp", width: 1000, height: 563, thumb: "/images/clip/1765-640.webp" }
+fullImage: { src: "/images/clip/1765-full.webp", width: 1000, height: 3293 }
 legacy:
   prev: walking-men
   next: vollerei-restaurant-bar-in-saalfelden-homepage

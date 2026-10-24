@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://loopconf.com/
+image: { src: "/images/clip/488.webp", width: 1280, height: 720, thumb: "/images/clip/488-640.webp" }
+fullImage: { src: "/images/clip/488-full.webp", width: 1000, height: 4451 }
 legacy:
   prev: forge-conference-2016-philadelphias-premier-ux-product-design-conference
   next: mirror-conf

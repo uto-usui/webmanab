@@ -18,6 +18,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://hios.com/
+image: { src: "/images/clip/1407.webp", width: 1200, height: 675, thumb: "/images/clip/1407-640.webp" }
+fullImage: { src: "/images/clip/1407-full.webp", width: 1000, height: 1289 }
 legacy:
   prev: accueil-ville-de-val-dor
   next: creamu-inc-design-consulting-firm

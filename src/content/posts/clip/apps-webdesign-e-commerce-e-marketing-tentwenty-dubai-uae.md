@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 210, name: "UX", slug: "ux" }
 clipUrl: https://www.tentwenty.me/
+image: { src: "/images/clip/1832.webp", width: 1000, height: 563, thumb: "/images/clip/1832-640.webp" }
 legacy:
   prev: tao-tajima-filmmaker
   next: photographer-director-marcus-eriksson

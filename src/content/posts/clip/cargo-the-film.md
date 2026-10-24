@@ -16,6 +16,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://cargothefilm2017.com/
+image: { src: "/images/clip/2428.webp", width: 1200, height: 675, thumb: "/images/clip/2428-640.webp" }
 legacy:
   prev: bulgari-tribute-to-femininity
   next: carlos-g-notario-portfolio

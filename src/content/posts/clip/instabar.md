@@ -18,6 +18,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://instabar.eu/
+image: { src: "/images/clip/2810.webp", width: 1200, height: 675, thumb: "/images/clip/2810-640.webp" }
+fullImage: { src: "/images/clip/2810-full.webp", width: 1000, height: 5041 }
 legacy:
   prev: innovation-lab
   next: truetopia

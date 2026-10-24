@@ -12,6 +12,8 @@ terms:
   - { id: 224, name: "form", slug: "form" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: https://www.headcountry.com/
+image: { src: "/images/clip/1251.webp", width: 1200, height: 675, thumb: "/images/clip/1251-640.webp" }
+fullImage: { src: "/images/clip/1251-full.webp", width: 1000, height: 2052 }
 legacy:
   prev: cedric-pereira-interactive-designer
   next: what-is-your-beauty

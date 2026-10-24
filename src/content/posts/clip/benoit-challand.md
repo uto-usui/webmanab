@@ -13,6 +13,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.benoitchalland.com/
+image: { src: "/images/clip/741.webp", width: 1200, height: 675, thumb: "/images/clip/741-640.webp" }
+fullImage: { src: "/images/clip/741-full.webp", width: 1000, height: 3093 }
 legacy:
   prev: sodaterutowel
   next: industrial-jp

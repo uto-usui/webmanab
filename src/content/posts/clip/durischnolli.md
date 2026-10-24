@@ -17,6 +17,7 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.durischnolli.ch/
+image: { src: "/images/clip/2684.webp", width: 1200, height: 675, thumb: "/images/clip/2684-640.webp" }
 legacy:
   prev: dnlsptzk
   next: home-of-classics-sneaker-district

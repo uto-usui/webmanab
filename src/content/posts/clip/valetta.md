@@ -12,6 +12,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://valetta.jp/
+image: { src: "/images/clip/1956.webp", width: 1000, height: 563, thumb: "/images/clip/1956-640.webp" }
 legacy:
   prev: uix
   next: walk-the-90s

@@ -21,6 +21,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.herman-scheer.com/
+image: { src: "/images/clip/1389.webp", width: 1200, height: 675, thumb: "/images/clip/1389-640.webp" }
+fullImage: { src: "/images/clip/1389-full.webp", width: 1000, height: 4521 }
 legacy:
   prev: giampiero-cruceli-art-director-designer
   next: ardesign-inc

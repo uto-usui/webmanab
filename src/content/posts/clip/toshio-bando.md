@@ -16,6 +16,8 @@ terms:
   - { id: 144, name: "loading", slug: "loading" }
   - { id: 164, name: "navigation", slug: "navigation" }
 clipUrl: http://toshio-bando.fr/
+image: { src: "/images/clip/955.webp", width: 1200, height: 681, thumb: "/images/clip/955-640.webp" }
+fullImage: { src: "/images/clip/955-full.webp", width: 1000, height: 3128 }
 legacy:
   prev: nicholas-ruggeri
   next: dear-mayuko

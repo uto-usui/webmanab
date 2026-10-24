@@ -18,6 +18,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://ccccontemple.com/
+image: { src: "/images/clip/1843.webp", width: 1000, height: 563, thumb: "/images/clip/1843-640.webp" }
 legacy:
   prev: canvas-united-a-new-york-city-digital-agency
   next: digital-asset

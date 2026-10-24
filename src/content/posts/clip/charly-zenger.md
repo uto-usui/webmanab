@@ -16,6 +16,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.charlyzenger.ch/
+image: { src: "/images/clip/1986.webp", width: 1000, height: 471, thumb: "/images/clip/1986-640.webp" }
 legacy:
   prev: bullying-and-behavior
   next: clinical-trials

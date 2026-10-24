@@ -15,6 +15,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://startuplab.no/
+image: { src: "/images/clip/647.webp", width: 1280, height: 720, thumb: "/images/clip/647-640.webp" }
+fullImage: { src: "/images/clip/647-full.webp", width: 1000, height: 2538 }
 legacy:
   prev: mt-cuba-center-gardening-on-a-higher-level
   next: gina

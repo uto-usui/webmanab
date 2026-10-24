@@ -15,6 +15,7 @@ terms:
   - { id: 46, name: "trip", slug: "trip" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.lufthansa-dreamscapes.com/en
+image: { src: "/images/clip/1076.webp", width: 1200, height: 675, thumb: "/images/clip/1076-640.webp" }
 legacy:
   prev: beoplay-h4-are-wireless-headphones-crafted-by-pure-materials-pure-sound-pure-materials-pure-expression
   next: original-fischer-beer

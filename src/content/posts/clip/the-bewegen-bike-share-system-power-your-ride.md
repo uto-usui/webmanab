@@ -20,6 +20,7 @@ terms:
   - { id: 298, name: "spa", slug: "spa" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://bewegen.com
+image: { src: "/images/clip/2535.webp", width: 1200, height: 675, thumb: "/images/clip/2535-640.webp" }
 legacy:
   prev: takatsugu-shimazaki-photography
   next: the-five-seasons-alessi-home-fragrance

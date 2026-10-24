@@ -18,6 +18,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.northeastjp.jp/
+image: { src: "/images/clip/1398.webp", width: 1200, height: 675, thumb: "/images/clip/1398-640.webp" }
+fullImage: { src: "/images/clip/1398-full.webp", width: 1000, height: 2953 }
 legacy:
   prev: martin-laxenaire-front-end-developper
   next: gift

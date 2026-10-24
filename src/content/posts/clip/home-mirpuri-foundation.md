@@ -18,6 +18,8 @@ terms:
   - { id: 33, name: "responsive", slug: "responsive" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://mirpurifoundation.org/
+image: { src: "/images/clip/1518.webp", width: 1000, height: 563, thumb: "/images/clip/1518-640.webp" }
+fullImage: { src: "/images/clip/1518-full.webp", width: 1000, height: 5523 }
 legacy:
   prev: ao-beauty-labo
   next: viva-le-velo

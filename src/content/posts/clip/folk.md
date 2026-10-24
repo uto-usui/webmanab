@@ -18,6 +18,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://folkstrategies.com/en
+image: { src: "/images/clip/2006.webp", width: 1000, height: 563, thumb: "/images/clip/2006-640.webp" }
 legacy:
   prev: fanny-myard-stylist
   next: get-obachan

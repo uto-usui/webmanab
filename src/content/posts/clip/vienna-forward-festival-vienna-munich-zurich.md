@@ -20,6 +20,8 @@ terms:
   - { id: 302, name: "react", slug: "react" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://forward-festival.com/vienna/overview
+image: { src: "/images/clip/2333.webp", width: 1200, height: 625, thumb: "/images/clip/2333-640.webp" }
+fullImage: { src: "/images/clip/2333-full.webp", width: 1000, height: 5217 }
 legacy:
   prev: sonicjam-inc
   next: gyre

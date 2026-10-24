@@ -18,6 +18,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.everest.agency/
+image: { src: "/images/clip/2573.webp", width: 1200, height: 675, thumb: "/images/clip/2573-640.webp" }
 legacy:
   prev: murmure-french-creative-agency-located-in-caen-and-paris
   next: awwwards-conference

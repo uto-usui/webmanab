@@ -17,6 +17,7 @@ terms:
   - { id: 155, name: "pjax", slug: "pjax" }
   - { id: 33, name: "responsive", slug: "responsive" }
 clipUrl: http://voicecream.jp/
+image: { src: "/images/clip/1400.webp", width: 1200, height: 675, thumb: "/images/clip/1400-640.webp" }
 legacy:
   prev: creamu-inc-design-consulting-firm
   next: sugiura-lab

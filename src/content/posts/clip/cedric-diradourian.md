@@ -15,6 +15,7 @@ terms:
   - { id: 12, name: "parallax", slug: "parallax" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: http://cedricdiradourian.com/
+image: { src: "/images/clip/2111.webp", width: 1200, height: 675, thumb: "/images/clip/2111-640.webp" }
 legacy:
   prev: yard
   next: humbert-poyet

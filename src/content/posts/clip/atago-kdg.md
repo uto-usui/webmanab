@@ -16,6 +16,8 @@ terms:
   - { id: 61, name: "illustration", slug: "illustration" }
   - { id: 62, name: "japan", slug: "japan" }
 clipUrl: http://atago-kdg.com/
+image: { src: "/images/clip/2213.webp", width: 1000, height: 563, thumb: "/images/clip/2213-640.webp" }
+fullImage: { src: "/images/clip/2213-full.webp", width: 1000, height: 2949 }
 legacy:
   prev: litpla
   next: rainbow-co-jp

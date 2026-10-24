@@ -26,3 +26,5 @@ legacy:
 - [Flat UI Colors 2 – 14 Color Palettes, 280 colors 🎨](http://flatuicolors.com/)
 
 おわります。
+
+![Flat UI Colors 2 のパレット一覧の画面](/images/uploads/2018/02/flatuicolors.jpg)

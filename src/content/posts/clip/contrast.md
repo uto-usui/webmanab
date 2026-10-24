@@ -13,6 +13,8 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://con-trast.jp/
+image: { src: "/images/clip/343.webp", width: 1000, height: 563, thumb: "/images/clip/343-640.webp" }
+fullImage: { src: "/images/clip/343-full.webp", width: 1000, height: 1927 }
 legacy:
   prev: qetic
   next: leading-design-conference-2016

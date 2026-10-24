@@ -19,6 +19,7 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.onceuponatimemag.com
+image: { src: "/images/clip/2669.webp", width: 1200, height: 675, thumb: "/images/clip/2669-640.webp" }
 legacy:
   prev: ma-true-cannabis-cbd-inflorescence-pre-rolled-joints
   next: pontus-rudolfson-photographer

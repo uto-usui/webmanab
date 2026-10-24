@@ -18,6 +18,8 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 59, name: "studio", slug: "studio" }
 clipUrl: http://www.studiomast.co/
+image: { src: "/images/clip/2088.webp", width: 1000, height: 563, thumb: "/images/clip/2088-640.webp" }
+fullImage: { src: "/images/clip/2088-full.webp", width: 1000, height: 1484 }
 legacy:
   prev: macaulay-sinclair
   next: matterinteriors

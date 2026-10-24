@@ -18,6 +18,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://www.pierregeorges.ch/
+image: { src: "/images/clip/1982.webp", width: 1000, height: 563, thumb: "/images/clip/1982-640.webp" }
+fullImage: { src: "/images/clip/1982-full.webp", width: 1000, height: 2530 }
 legacy:
   prev: paris-american-academy
   next: plus-d-inc

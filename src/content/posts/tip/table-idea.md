@@ -24,6 +24,8 @@ legacy:
 
 ### Products Comparison Table
 
+![table-idea01](/images/uploads/2016/07/table-idea01-600x338.png)
+
 特定の列と行が固定される使用になっており、なめらかにスクロールします。\
 ヘッダ部分は収縮しコンパクトになり、必要なものや比較したい対象のみを表示させるソート機能を実装しています。
 
@@ -34,6 +36,8 @@ legacy:
 カード型などプライスリスト(料金表)のデザイン・レイアウトテクニックも多様化してきました。
 
 ### Pricing Tables Inspiration
+
+![PricingTablesInspiration](/images/uploads/2016/07/PricingTablesInspiration.png)
 
 ミニマルなインタラクションとデザインで可読性にがいいインスピレーション集。
 

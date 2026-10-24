@@ -18,6 +18,7 @@ terms:
   - { id: 324, name: "vue", slug: "vue" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://www.gk-cflt.com/
+image: { src: "/images/clip/2099.webp", width: 1000, height: 563, thumb: "/images/clip/2099-640.webp" }
 legacy:
   prev: extended-play
   next: hikarina

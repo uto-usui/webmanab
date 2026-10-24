@@ -20,6 +20,8 @@ terms:
   - { id: 113, name: "sea", slug: "sea" }
   - { id: 74, name: "soft", slug: "soft" }
 clipUrl: http://www.kaiyukan.com/
+image: { src: "/images/clip/1410.webp", width: 1200, height: 675, thumb: "/images/clip/1410-640.webp" }
+fullImage: { src: "/images/clip/1410-full.webp", width: 1000, height: 3994 }
 legacy:
   prev: mausoleum-of-augustus
   next: 500-colored-pencils-tokyo-seeds-felissimo

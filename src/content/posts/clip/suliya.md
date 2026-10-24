@@ -14,6 +14,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: http://sbottles.com/
+image: { src: "/images/clip/173.webp", width: 1000, height: 563, thumb: "/images/clip/173-640.webp" }
+fullImage: { src: "/images/clip/173-full.webp", width: 1000, height: 3749 }
 legacy:
   prev: 16soap
   next: mono-air

@@ -16,6 +16,7 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.ana-cooljapan.com/contents/matsuri
+image: { src: "/images/clip/514.webp", width: 1280, height: 720, thumb: "/images/clip/514-640.webp" }
 legacy:
   prev: filippo-bello
   next: honda-moto-2017

@@ -19,6 +19,8 @@ terms:
   - { id: 193, name: "slider", slug: "slider" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://litpla.com/
+image: { src: "/images/clip/2208.webp", width: 1000, height: 563, thumb: "/images/clip/2208-640.webp" }
+fullImage: { src: "/images/clip/2208-full.webp", width: 1000, height: 9852 }
 legacy:
   prev: serpentiform
   next: atago-kdg

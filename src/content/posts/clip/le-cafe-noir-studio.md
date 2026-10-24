@@ -18,6 +18,8 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://lecafenoirstudio.com
+image: { src: "/images/clip/1269.webp", width: 1200, height: 675, thumb: "/images/clip/1269-640.webp" }
+fullImage: { src: "/images/clip/1269-full.webp", width: 1000, height: 4053 }
 legacy:
   prev: konterball
   next: kvell

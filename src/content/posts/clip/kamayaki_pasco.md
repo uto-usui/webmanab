@@ -11,6 +11,8 @@ terms:
   - { id: 15, name: "food", slug: "food" }
   - { id: 62, name: "japan", slug: "japan" }
 clipUrl: https://www.pasconet.co.jp/kamayaki_pasco/
+image: { src: "/images/clip/2084.webp", width: 1000, height: 563, thumb: "/images/clip/2084-640.webp" }
+fullImage: { src: "/images/clip/2084-full.webp", width: 1000, height: 3145 }
 legacy:
   prev: miyamariken
   next: gusto-play

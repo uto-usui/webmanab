@@ -19,6 +19,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://solarweekend.com/15-years/
+image: { src: "/images/clip/2673.webp", width: 1200, height: 675, thumb: "/images/clip/2673-640.webp" }
+fullImage: { src: "/images/clip/2673-full.webp", width: 1000, height: 5723 }
 legacy:
   prev: waka-waka
   next: juste-debout-2020-the-greatest-hip-hop-dances-event-worldwide

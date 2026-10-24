@@ -13,6 +13,8 @@ terms:
   - { id: 15, name: "food", slug: "food" }
   - { id: 195, name: "orange", slug: "orange" }
 clipUrl: http://ito-eggfarm.com/
+image: { src: "/images/clip/519.webp", width: 1280, height: 720, thumb: "/images/clip/519-640.webp" }
+fullImage: { src: "/images/clip/519-full.webp", width: 1000, height: 2551 }
 legacy:
   prev: jsconf-eu-2015
   next: the-frontend-guide-to-life-universe-and-everything

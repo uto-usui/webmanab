@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://tokyocatspecialists.jp/
+image: { src: "/images/clip/332.webp", width: 1000, height: 563, thumb: "/images/clip/332-640.webp" }
+fullImage: { src: "/images/clip/332-full.webp", width: 1000, height: 563 }
 legacy:
   prev: stuurmen
   next: culture-pl

@@ -12,6 +12,8 @@ terms:
   - { id: 73, name: "green", slug: "green" }
   - { id: 107, name: "music", slug: "music" }
 clipUrl: http://www.salyu.jp/
+image: { src: "/images/clip/247.webp", width: 1000, height: 563, thumb: "/images/clip/247-640.webp" }
+fullImage: { src: "/images/clip/247-full.webp", width: 1000, height: 974 }
 legacy:
   prev: beatbox-academy
   next: el-burro

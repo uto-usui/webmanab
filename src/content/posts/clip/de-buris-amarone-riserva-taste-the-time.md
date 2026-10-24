@@ -16,6 +16,7 @@ terms:
   - { id: 315, name: "video", slug: "video" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.deburis.it/
+image: { src: "/images/clip/2400.webp", width: 1200, height: 675, thumb: "/images/clip/2400-640.webp" }
 legacy:
   prev: carlos-g-notario-portfolio
   next: dean-bradshaw

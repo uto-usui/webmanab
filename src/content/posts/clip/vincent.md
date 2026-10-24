@@ -15,6 +15,8 @@ terms:
   - { id: 75, name: "product", slug: "product" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://iam-vincent.com/
+image: { src: "/images/clip/212.webp", width: 1000, height: 562, thumb: "/images/clip/212-640.webp" }
+fullImage: { src: "/images/clip/212-full.webp", width: 1000, height: 3195 }
 legacy:
   prev: rezo-zero-digital-creative-studio
   next: cera-fabricant-machines-decoupe-et-soudure-ultrasons

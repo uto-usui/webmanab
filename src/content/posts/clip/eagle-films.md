@@ -15,6 +15,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://eaglefilmsme.com/en/
+image: { src: "/images/clip/1385.webp", width: 1200, height: 675, thumb: "/images/clip/1385-640.webp" }
 legacy:
   prev: ustwo-digital-product-studio
   next: newbalance

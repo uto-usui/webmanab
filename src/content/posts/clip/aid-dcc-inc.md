@@ -19,6 +19,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.aid-dcc.com/
+image: { src: "/images/clip/1523.webp", width: 1000, height: 563, thumb: "/images/clip/1523-640.webp" }
+fullImage: { src: "/images/clip/1523-full.webp", width: 1000, height: 3605 }
 legacy:
   prev: joao-de-almeida
   next: task-chairs-by-vitra

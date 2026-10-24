@@ -31,7 +31,8 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
     )
     const links = articles.flatMap(({ name, body }) =>
       [
-        ...body.matchAll(/\]\(\s*<?(\/[^)\s>]*)/g),
+        // 画像（![alt](src)）は下のテストで見る
+        ...body.matchAll(/(?<!!\[[^\]]*)\]\(\s*<?(\/[^)\s>]*)/g),
         ...body.matchAll(/<a\s[^>]*?href="(\/[^"]*)"/gi),
       ].map(([, href]) => ({ name, href })),
     )
@@ -41,6 +42,26 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
       ({ href }) => !pages.has(decodeURIComponent(href.replace(/#.*$/, ''))),
     )
     expect(broken).toEqual([])
+  })
+
+  test('本文の画像と clip のスクショが、public/images/ のファイルを指す', () => {
+    const srcs = articles.flatMap(({ name, frontmatter, body }) =>
+      [
+        ...[...body.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)].map(([, s]) => s),
+        frontmatter.image?.src,
+        frontmatter.image?.thumb,
+        frontmatter.fullImage?.src,
+      ]
+        .filter((src): src is string => !!src)
+        .map((src) => ({ name, src })),
+    )
+    // 本文 38 枚と、clip 816 件の 2 枚ずつと、ページ全体の 512 枚
+    expect(srcs.length).toBe(38 + 816 * 2 + 512)
+    expect(
+      srcs.filter(
+        ({ src }) => !src.startsWith('/images/') || !existsSync(`public${src}`),
+      ),
+    ).toEqual([])
   })
 
   test('旧ドメインへのリンクが、本文のリンク先と clipUrl / demoUrl にない', () => {

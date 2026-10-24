@@ -13,7 +13,8 @@
       "code-raw-element": 1,
       "comment-restored": 1,
       "dead-link-unwrapped": 3,
-      "img-dropped": 38,
+      "img-alt-added": 3,
+      "img-restored": 38,
       "internal-link-rewritten": 14,
       "raw-p": 62,
       "style-unwrapped": 2,
@@ -610,44 +611,44 @@
           "from": "https://webmanab-html.com/reference/shape/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "basic",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/basic.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/basic.png",
+          "to": "/images/uploads/2017/03/basic.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "sum",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/sum.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/sum.png",
+          "to": "/images/uploads/2017/03/sum.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "times",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/times.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/times.png",
+          "to": "/images/uploads/2017/03/times.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "square",
-          "src": "https://wp.ebmanab-html.com/wp-content/uploads/2017/03/square.png"
+          "kind": "img-restored",
+          "from": "https://wp.ebmanab-html.com/wp-content/uploads/2017/03/square.png",
+          "to": "/images/uploads/2017/03/square.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "root",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/root.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/root.png",
+          "to": "/images/uploads/2017/03/root.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "times_reverse",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/times_reverse.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/times_reverse.png",
+          "to": "/images/uploads/2017/03/times_reverse.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "square_reverse",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/square_reverse.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/square_reverse.png",
+          "to": "/images/uploads/2017/03/square_reverse.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "root_reverse",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/root_reverse.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/03/root_reverse.png",
+          "to": "/images/uploads/2017/03/root_reverse.png"
         },
         {
           "kind": "raw-p",
@@ -728,9 +729,14 @@
       "file": "src/content/posts/tip/flat-ui-colors-2.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "",
-          "src": "https://webmanab-html.com/wp-content/uploads/2018/02/flatuicolors.jpg"
+          "kind": "img-alt-added",
+          "src": "/images/uploads/2018/02/flatuicolors.jpg",
+          "alt": "Flat UI Colors 2 のパレット一覧の画面"
+        },
+        {
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2018/02/flatuicolors.jpg",
+          "to": "/images/uploads/2018/02/flatuicolors.jpg"
         }
       ]
     },
@@ -934,19 +940,19 @@
       "file": "src/content/posts/tip/image-hover-effect.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "CardExpansion",
-          "src": "https://webmanab-html.com/wp-content/uploads/2016/07/CardExpansion.jpg"
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2016/07/CardExpansion.jpg",
+          "to": "/images/uploads/2016/07/CardExpansion.jpg"
         },
         {
-          "kind": "img-dropped",
-          "alt": "GridItemAnimation",
-          "src": "https://webmanab-html.com/wp-content/uploads/2016/07/GridItemAnimation.jpg"
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2016/07/GridItemAnimation.jpg",
+          "to": "/images/uploads/2016/07/GridItemAnimation.jpg"
         },
         {
-          "kind": "img-dropped",
-          "alt": "ImageTiltEffect",
-          "src": "https://webmanab-html.com/wp-content/uploads/2016/07/ImageTiltEffect.jpg"
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2016/07/ImageTiltEffect.jpg",
+          "to": "/images/uploads/2016/07/ImageTiltEffect.jpg"
         }
       ]
     },
@@ -1014,9 +1020,9 @@
       "file": "src/content/posts/tip/javascript-graphic-math.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "figure Law of cosines",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2020/01/law-of-cosines.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2020/01/law-of-cosines.png",
+          "to": "/images/uploads/2020/01/law-of-cosines.png"
         }
       ]
     },
@@ -1057,69 +1063,69 @@
       "file": "src/content/posts/tip/library-animation.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "tuesday",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/tuesday.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/tuesday.png",
+          "to": "/images/uploads/2017/01/tuesday.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "csshake",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/csshake.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/csshake.png",
+          "to": "/images/uploads/2017/01/csshake.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "animate-css",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animate-css.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animate-css.png",
+          "to": "/images/uploads/2017/01/animate-css.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "animatable",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animatable.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animatable.png",
+          "to": "/images/uploads/2017/01/animatable.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "zurb-playground-motion",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/zurb-playground-motion.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/zurb-playground-motion.png",
+          "to": "/images/uploads/2017/01/zurb-playground-motion.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "magic_animations",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/magic_animations.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/magic_animations.png",
+          "to": "/images/uploads/2017/01/magic_animations.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "bouncejs",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/bouncejs.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/bouncejs.png",
+          "to": "/images/uploads/2017/01/bouncejs.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "voxelcss",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/voxelcss.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/voxelcss.png",
+          "to": "/images/uploads/2017/01/voxelcss.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "aos",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/aos.jpg"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/aos.jpg",
+          "to": "/images/uploads/2017/01/aos.jpg"
         },
         {
-          "kind": "img-dropped",
-          "alt": "animsition",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animsition.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/animsition.png",
+          "to": "/images/uploads/2017/01/animsition.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "joelambert",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/joelambert.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/joelambert.png",
+          "to": "/images/uploads/2017/01/joelambert.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "anime-js",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/anime-js.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/anime-js.png",
+          "to": "/images/uploads/2017/01/anime-js.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "cssanimate",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/cssanimate.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2017/01/cssanimate.png",
+          "to": "/images/uploads/2017/01/cssanimate.png"
         },
         {
           "kind": "internal-link-rewritten",
@@ -1151,9 +1157,14 @@
       "file": "src/content/posts/tip/low-polygon-art.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "",
-          "src": "https://webmanab-html.com/wp-content/uploads/2018/02/lowpolygonart.jpg"
+          "kind": "img-alt-added",
+          "src": "/images/uploads/2018/02/lowpolygonart.jpg",
+          "alt": "Low Polygon Art のグラデーション一覧の画面"
+        },
+        {
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2018/02/lowpolygonart.jpg",
+          "to": "/images/uploads/2018/02/lowpolygonart.jpg"
         }
       ]
     },
@@ -1222,59 +1233,59 @@
       "file": "src/content/posts/tip/navigation-hover-effect.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "LineMenuStyles",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/LineMenuStyles.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/LineMenuStyles.png",
+          "to": "/images/uploads/2016/07/LineMenuStyles.png"
         },
         {
           "kind": "target-dropped",
           "href": "http://tympanus.net/Development/LineMenuStyles/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "CreativeLinkEffects1",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/CreativeLinkEffects1.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/CreativeLinkEffects1.png",
+          "to": "/images/uploads/2016/07/CreativeLinkEffects1.png"
         },
         {
           "kind": "target-dropped",
           "href": "http://tympanus.net/Development/CreativeLinkEffects/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "sidebartransitions",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/sidebartransitions.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/sidebartransitions.png",
+          "to": "/images/uploads/2016/07/sidebartransitions.png"
         },
         {
           "kind": "target-dropped",
           "href": "http://tympanus.net/Development/SidebarTransitions/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "HeaderEffects",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/HeaderEffects.jpg"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/HeaderEffects.jpg",
+          "to": "/images/uploads/2016/07/HeaderEffects.jpg"
         },
         {
           "kind": "target-dropped",
           "href": "http://tympanus.net/Development/HeaderEffects/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "ArrowNavigationEffects",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/ArrowNavigationEffects.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/ArrowNavigationEffects.png",
+          "to": "/images/uploads/2016/07/ArrowNavigationEffects.png"
         },
         {
           "kind": "target-dropped",
           "href": "http://tympanus.net/Development/ArrowNavigationStyles/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "DotNavigationStyles",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/DotNavigationStyles.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/DotNavigationStyles.png",
+          "to": "/images/uploads/2016/07/DotNavigationStyles.png"
         },
         {
-          "kind": "img-dropped",
-          "alt": "bullet-navigation",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/bullet-navigation-600x307.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/bullet-navigation-600x307.png",
+          "to": "/images/uploads/2016/07/bullet-navigation-600x307.png"
         },
         {
           "kind": "target-dropped",
@@ -1410,9 +1421,14 @@
       "file": "src/content/posts/tip/static-random-gradation-color-for-updating-random-values-at-compile-time.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": null,
-          "src": "https://lh3.googleusercontent.com/iwfhMiPniSkp6l8uEzbYS6RZ9_KZof1tlpXYQiQDeRcjbH1UCQ8kac-dveMSHE0YphUSPoMopE2s_ofdccj_VQvxE8of4FElTBo6Qv9fHYKk_wuwZwHluy3sxS5hPWJUUCwDWibp5nBm3xJzz9pDxkaB0ND1EoyjTUHRZ0Zugk5CInzqQyR23AccXX7fwvit907C3aHNedBkbnG5vEbqqkmCN1U82Kt0jP7kLcVtEoFLFfmFITrCnnPnAK5S7w6oiStLbGwc5WQZjbNAJLSrX4rumeaK6HK1Pa6j0vQZVVrXU_4hRoV_6k8NYDL3v5nF6Ma4LBL6noHZIxPF3yr2waK3xTFpR2OTlv0YnVLiYwyPspTRDCavFdx86VEggHv5cGeLGKB2u1w_MZ_bpo1_5BfhNHMDDRGgEYIGLEZjlWxpdATTT09-oyxNr2AOuvRmYXIw6Dx-Z8tyzB6Q8lw-rmNTEgsTjrlGHV713KevXqlRUeJ6bKEB8Ir_noj_cQ_ate79uiVyHc4_0W_wQ0-EGTFJAZDtngBz-n7fjQJ07-QJf5Xrf4m6TnYKRIOM8j36lKMVKfuhO_M5vBtuprDv_YC70TmqwM02jJ4nkxWaVsnfPgp0YG13HKMliNgsyS1rZqOP2USZLDogn_4yZ8p4oWqRWXOnQ6AyDpdcNdQsAok=s649-no"
+          "kind": "img-alt-added",
+          "src": "/images/uploads/2017/02/hue-circle.jpg",
+          "alt": "色相環"
+        },
+        {
+          "kind": "img-restored",
+          "from": "https://lh3.googleusercontent.com/iwfhMiPniSkp6l8uEzbYS6RZ9_KZof1tlpXYQiQDeRcjbH1UCQ8kac-dveMSHE0YphUSPoMopE2s_ofdccj_VQvxE8of4FElTBo6Qv9fHYKk_wuwZwHluy3sxS5hPWJUUCwDWibp5nBm3xJzz9pDxkaB0ND1EoyjTUHRZ0Zugk5CInzqQyR23AccXX7fwvit907C3aHNedBkbnG5vEbqqkmCN1U82Kt0jP7kLcVtEoFLFfmFITrCnnPnAK5S7w6oiStLbGwc5WQZjbNAJLSrX4rumeaK6HK1Pa6j0vQZVVrXU_4hRoV_6k8NYDL3v5nF6Ma4LBL6noHZIxPF3yr2waK3xTFpR2OTlv0YnVLiYwyPspTRDCavFdx86VEggHv5cGeLGKB2u1w_MZ_bpo1_5BfhNHMDDRGgEYIGLEZjlWxpdATTT09-oyxNr2AOuvRmYXIw6Dx-Z8tyzB6Q8lw-rmNTEgsTjrlGHV713KevXqlRUeJ6bKEB8Ir_noj_cQ_ate79uiVyHc4_0W_wQ0-EGTFJAZDtngBz-n7fjQJ07-QJf5Xrf4m6TnYKRIOM8j36lKMVKfuhO_M5vBtuprDv_YC70TmqwM02jJ4nkxWaVsnfPgp0YG13HKMliNgsyS1rZqOP2USZLDogn_4yZ8p4oWqRWXOnQ6AyDpdcNdQsAok=s649-no",
+          "to": "/images/uploads/2017/02/hue-circle.jpg"
         }
       ]
     },
@@ -1436,18 +1452,18 @@
       "file": "src/content/posts/tip/table-idea.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "table-idea01",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/table-idea01-600x338.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/table-idea01-600x338.png",
+          "to": "/images/uploads/2016/07/table-idea01-600x338.png"
         },
         {
           "kind": "target-dropped",
           "href": "https://codyhouse.co/gem/products-comparison-table/"
         },
         {
-          "kind": "img-dropped",
-          "alt": "PricingTablesInspiration",
-          "src": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/PricingTablesInspiration.png"
+          "kind": "img-restored",
+          "from": "https://wp.webmanab-html.com/wp-content/uploads/2016/07/PricingTablesInspiration.png",
+          "to": "/images/uploads/2016/07/PricingTablesInspiration.png"
         },
         {
           "kind": "target-dropped",
@@ -1512,9 +1528,9 @@
       "file": "src/content/posts/tip/vue-vuex.md",
       "notes": [
         {
-          "kind": "img-dropped",
-          "alt": "Vuex のデータフローの公式図解",
-          "src": "https://webmanab-html.com/wp-content/uploads/2018/02/vuex.png"
+          "kind": "img-restored",
+          "from": "https://webmanab-html.com/wp-content/uploads/2018/02/vuex.png",
+          "to": "/images/uploads/2018/02/vuex.png"
         }
       ]
     },

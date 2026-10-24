@@ -21,6 +21,8 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 104, name: "yellow", slug: "yellow" }
 clipUrl: https://fragranceconservatory.com/
+image: { src: "/images/clip/2775.webp", width: 1200, height: 675, thumb: "/images/clip/2775-640.webp" }
+fullImage: { src: "/images/clip/2775-full.webp", width: 1000, height: 3613 }
 legacy:
   prev: victor-work-20
   next: green-chameleon-bristol-based-design-agency

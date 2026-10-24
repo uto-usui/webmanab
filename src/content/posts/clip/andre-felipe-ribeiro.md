@@ -13,6 +13,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: https://andreribeiro.co/
+image: { src: "/images/clip/1828.webp", width: 1000, height: 563, thumb: "/images/clip/1828-640.webp" }
+fullImage: { src: "/images/clip/1828-full.webp", width: 1000, height: 9999 }
 legacy:
   prev: anakin
   next: andy-wei-narrator-artist

@@ -18,6 +18,7 @@ terms:
   - { id: 347, name: "UI", slug: "ui" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://www.espn.com/espn/feature/story/_/id/24504198/the-nba-best-signature-moves-michael-jordan-fad
+image: { src: "/images/clip/2401.webp", width: 1200, height: 675, thumb: "/images/clip/2401-640.webp" }
 legacy:
   prev: epicurrence-no-8
   next: existing-while-black

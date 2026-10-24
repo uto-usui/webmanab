@@ -18,6 +18,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://andyweiart.com/
+image: { src: "/images/clip/1841.webp", width: 1000, height: 563, thumb: "/images/clip/1841-640.webp" }
+fullImage: { src: "/images/clip/1841-full.webp", width: 1000, height: 4333 }
 legacy:
   prev: andre-felipe-ribeiro
   next: ankoku-toshi-jutsu

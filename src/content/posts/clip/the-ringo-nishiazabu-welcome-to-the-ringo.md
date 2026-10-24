@@ -18,6 +18,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://the-ringo.jp/
+image: { src: "/images/clip/1405.webp", width: 1200, height: 675, thumb: "/images/clip/1405-640.webp" }
+fullImage: { src: "/images/clip/1405-full.webp", width: 1000, height: 3229 }
 legacy:
   prev: ardesign-inc
   next: oro

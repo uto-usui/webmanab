@@ -15,6 +15,7 @@ terms:
   - { id: 36, name: "svg", slug: "svg" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.ensotyres.com/
+image: { src: "/images/clip/2639.webp", width: 1200, height: 675, thumb: "/images/clip/2639-640.webp" }
 legacy:
   prev: yuen-ye-run-free-in-the-wilderness
   next: authenticity-prior-holdings

@@ -12,6 +12,7 @@ terms:
   - { id: 17, name: "red", slug: "red" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: http://www.legadodestrelka.es/en/
+image: { src: "/images/clip/1972.webp", width: 1000, height: 563, thumb: "/images/clip/1972-640.webp" }
 legacy:
   prev: amaio
   next: bullying-and-behavior

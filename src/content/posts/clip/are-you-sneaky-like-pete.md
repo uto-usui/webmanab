@@ -12,6 +12,7 @@ terms:
   - { id: 58, name: "movie", slug: "movie" }
   - { id: 36, name: "svg", slug: "svg" }
 clipUrl: https://www.sneakylikepete.com/
+image: { src: "/images/clip/1071.webp", width: 1200, height: 675, thumb: "/images/clip/1071-640.webp" }
 legacy:
   prev: rogue-one-a-star-wars-story
   next: nobody-studios-digitally-driven-design-and-branding

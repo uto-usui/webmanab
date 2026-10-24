@@ -11,6 +11,7 @@ terms:
   - { id: 156, name: "app", slug: "app" }
   - { id: 49, name: "interaction", slug: "interaction" }
 clipUrl: https://www.rescam.org/
+image: { src: "/images/clip/2011.webp", width: 1000, height: 563, thumb: "/images/clip/2011-640.webp" }
 legacy:
   prev: pofo-digital-agency-theme
   next: sanyo-coat

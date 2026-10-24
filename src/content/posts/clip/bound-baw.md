@@ -14,6 +14,8 @@ terms:
   - { id: 142, name: "magazine", slug: "magazine" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://boundbaw.com/
+image: { src: "/images/clip/887.webp", width: 1200, height: 675, thumb: "/images/clip/887-640.webp" }
+fullImage: { src: "/images/clip/887-full.webp", width: 1000, height: 1863 }
 legacy:
   prev: nod
   next: orca-inc

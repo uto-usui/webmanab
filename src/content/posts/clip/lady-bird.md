@@ -12,6 +12,7 @@ terms:
   - { id: 49, name: "interaction", slug: "interaction" }
   - { id: 58, name: "movie", slug: "movie" }
 clipUrl: http://ladybird.movie/
+image: { src: "/images/clip/1761.webp", width: 1000, height: 563, thumb: "/images/clip/1761-640.webp" }
 legacy:
   prev: home-bear-grylls
   next: logo-wt-en

@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: http://weareangstrom.com/en/
+image: { src: "/images/clip/974.webp", width: 1200, height: 675, thumb: "/images/clip/974-640.webp" }
+fullImage: { src: "/images/clip/974-full.webp", width: 1000, height: 8228 }
 legacy:
   prev: mirage-festival-5-edition
   next: riccardo-ambrosio-photographer

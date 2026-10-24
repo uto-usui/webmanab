@@ -21,6 +21,7 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://kbsagency.ca/
+image: { src: "/images/clip/1827.webp", width: 1000, height: 563, thumb: "/images/clip/1827-640.webp" }
 legacy:
   prev: digital-asset
   next: emmit-fenn

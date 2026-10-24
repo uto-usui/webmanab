@@ -19,6 +19,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: https://www.yaroflasher.com/
+image: { src: "/images/clip/2845.webp", width: 1200, height: 675, thumb: "/images/clip/2845-640.webp" }
 legacy:
   prev: vladimir-gruev-uiux-designer
   next: yuto-takahashi

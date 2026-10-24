@@ -15,6 +15,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://atarashiku.hyoketsu.com/nonangel/
+image: { src: "/images/clip/515.webp", width: 1280, height: 720, thumb: "/images/clip/515-640.webp" }
+fullImage: { src: "/images/clip/515-full.webp", width: 1000, height: 2611 }
 legacy:
   prev: the-fourth-phase
   next: cssconf-us-2016

@@ -15,6 +15,8 @@ terms:
   - { id: 114, name: "portfolio", slug: "portfolio" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: https://www.danielspatzek.com
+image: { src: "/images/clip/2682.webp", width: 1200, height: 675, thumb: "/images/clip/2682-640.webp" }
+fullImage: { src: "/images/clip/2682-full.webp", width: 1000, height: 8177 }
 legacy:
   prev: digital-and-creative-agency-in-paris-sweet-punk
   next: durischnolli

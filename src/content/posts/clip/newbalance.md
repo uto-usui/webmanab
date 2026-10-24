@@ -16,6 +16,7 @@ terms:
   - { id: 62, name: "japan", slug: "japan" }
   - { id: 193, name: "slider", slug: "slider" }
 clipUrl: http://mybeta.newbalance.co.jp/
+image: { src: "/images/clip/1386.webp", width: 1200, height: 675, thumb: "/images/clip/1386-640.webp" }
 legacy:
   prev: eagle-films
   next: specter-wireless-premium-wireless-headphones-speakers

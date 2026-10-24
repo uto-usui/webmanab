@@ -18,6 +18,8 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 44, name: "white", slug: "white" }
 clipUrl: https://www.ndc.co.jp/
+image: { src: "/images/clip/2102.webp", width: 1000, height: 563, thumb: "/images/clip/2102-640.webp" }
+fullImage: { src: "/images/clip/2102-full.webp", width: 1000, height: 9525 }
 legacy:
   prev: monumento
   next: odai

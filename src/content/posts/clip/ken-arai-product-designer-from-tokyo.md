@@ -17,6 +17,7 @@ terms:
   - { id: 24, name: "minimal", slug: "minimal" }
   - { id: 114, name: "portfolio", slug: "portfolio" }
 clipUrl: http://kenarai.github.io/#/home
+image: { src: "/images/clip/1823.webp", width: 1000, height: 561, thumb: "/images/clip/1823-640.webp" }
 legacy:
   prev: marc-goncalves-digital-designer
   next: reard-paris-maillots-de-bain-designer-bikini-beachwear-luxe

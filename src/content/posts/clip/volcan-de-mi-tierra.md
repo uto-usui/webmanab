@@ -23,6 +23,7 @@ terms:
   - { id: 279, name: "sound", slug: "sound" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://www.volcan.com/en
+image: { src: "/images/clip/1780.webp", width: 1000, height: 563, thumb: "/images/clip/1780-640.webp" }
 legacy:
   prev: vollerei-restaurant-bar-in-saalfelden-homepage
   next: vide-infra-high-class-design-and-technology-solutions-for-web-and-beyond

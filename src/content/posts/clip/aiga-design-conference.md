@@ -16,6 +16,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: http://designconference.aiga.org/#!/
+image: { src: "/images/clip/340.webp", width: 1000, height: 563, thumb: "/images/clip/340-640.webp" }
+fullImage: { src: "/images/clip/340-full.webp", width: 1000, height: 3664 }
 legacy:
   prev: myv382tokyo-com
   next: qetic

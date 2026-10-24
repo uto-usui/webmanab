@@ -19,6 +19,7 @@ terms:
   - { id: 57, name: "webGL", slug: "webgl" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://yuenye.com/
+image: { src: "/images/clip/2647.webp", width: 1200, height: 675, thumb: "/images/clip/2647-640.webp" }
 legacy:
   prev: newday-agency
   next: enso-tyres

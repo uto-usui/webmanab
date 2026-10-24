@@ -16,6 +16,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 315, name: "video", slug: "video" }
 clipUrl: http://botanistofficial.com/
+image: { src: "/images/clip/2211.webp", width: 1000, height: 563, thumb: "/images/clip/2211-640.webp" }
+fullImage: { src: "/images/clip/2211-full.webp", width: 1000, height: 4107 }
 legacy:
   prev: artisan-talent
   next: depth-interactive

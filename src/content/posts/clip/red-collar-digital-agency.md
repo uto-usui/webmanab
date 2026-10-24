@@ -20,6 +20,8 @@ terms:
   - { id: 77, name: "scroll", slug: "scroll" }
   - { id: 20, name: "typography", slug: "typography" }
 clipUrl: http://redcollar.digital/
+image: { src: "/images/clip/1824.webp", width: 1000, height: 563, thumb: "/images/clip/1824-640.webp" }
+fullImage: { src: "/images/clip/1824-full.webp", width: 1000, height: 9000 }
 legacy:
   prev: peter-van-alphen
   next: riftworld-reed

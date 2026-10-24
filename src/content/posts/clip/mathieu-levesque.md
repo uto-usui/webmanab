@@ -15,6 +15,7 @@ terms:
   - { id: 288, name: "photograph", slug: "photograph" }
   - { id: 77, name: "scroll", slug: "scroll" }
 clipUrl: https://mathieulevesque.com
+image: { src: "/images/clip/2402.webp", width: 1200, height: 675, thumb: "/images/clip/2402-640.webp" }
 legacy:
   prev: makereign
   next: micai

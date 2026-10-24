@@ -17,6 +17,8 @@ terms:
   - { id: 20, name: "typography", slug: "typography" }
   - { id: 108, name: "wordpress", slug: "wordpress" }
 clipUrl: https://www.shochikugeino.co.jp/
+image: { src: "/images/clip/1229.webp", width: 1200, height: 675, thumb: "/images/clip/1229-640.webp" }
+fullImage: { src: "/images/clip/1229-full.webp", width: 1000, height: 3935 }
 legacy:
   prev: tanakacho
   next: jetty

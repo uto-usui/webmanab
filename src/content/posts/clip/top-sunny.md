@@ -16,6 +16,7 @@ terms:
   - { id: 59, name: "studio", slug: "studio" }
   - { id: 57, name: "webGL", slug: "webgl" }
 clipUrl: https://sunnny.jp/
+image: { src: "/images/clip/2338.webp", width: 1200, height: 625, thumb: "/images/clip/2338-640.webp" }
 legacy:
   prev: home-etq-amsterdam
   next: sonicjam-inc
