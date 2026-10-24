@@ -1,6 +1,7 @@
 // 記事 1 件の frontmatter とファイル名（04-markdown-exporter.md の 5. と 6.）
 import { decodeHTML } from 'entities'
 import { Document, isMap, isScalar, isSeq } from 'yaml'
+import type { ImageManifest } from './image-manifest.ts'
 import type { PostType, SnapshotPost } from './snapshot.ts'
 import { collapseWhitespace, trimWhitespace } from './whitespace.ts'
 
@@ -22,6 +23,8 @@ export interface Frontmatter {
   terms: Term[]
   clipUrl?: string
   demoUrl?: string
+  image?: ImageManifest['clips'][string]['image']
+  fullImage?: ImageManifest['clips'][string]['fullImage']
   legacy?: { prev: string | null; next: string | null }
 }
 
@@ -51,7 +54,11 @@ const navSlug = (n: unknown) =>
     ? decodeURIComponent(String(n.slug))
     : null
 
-export function frontmatter(p: SnapshotPost): Frontmatter {
+export function frontmatter(
+  p: SnapshotPost,
+  images: ImageManifest['clips'] = {},
+): Frontmatter {
+  const { image, fullImage } = images[p.id] ?? {}
   const f = p.fields ?? {}
   // 単一ページの生データにしかないので、一覧からしか取れなかった 2 件にはない
   const { modified } = wpRaw(p)
@@ -84,6 +91,8 @@ export function frontmatter(p: SnapshotPost): Frontmatter {
     // clip/the-wing の clip-url は「v」の 1 文字で入力ミス
     ...(/^https?:\/\//.test(clipUrl) ? { clipUrl } : {}),
     ...(demoUrl ? { demoUrl } : {}),
+    ...(image ? { image } : {}),
+    ...(fullImage ? { fullImage } : {}),
     // 記事ページがなかった 2 件は旧サイトの前後記事を確かめられないので出さない
     ...(p.source === 'single'
       ? { legacy: { prev: navSlug(p.prev), next: navSlug(p.next) } }
@@ -101,6 +110,14 @@ export function toYaml(fm: Frontmatter): string {
     scalar(doc.get(k, true), 'QUOTE_DOUBLE')
   // 日付は YAML のタイムスタンプとして書く
   for (const k of ['date', 'modified']) scalar(doc.get(k, true), 'PLAIN')
+  for (const k of ['image', 'fullImage']) {
+    const node = doc.get(k, true)
+    if (!isMap(node)) continue
+    node.flow = true
+    for (const item of node.items)
+      if (isScalar(item.value) && typeof item.value.value === 'string')
+        item.value.type = 'QUOTE_DOUBLE'
+  }
   const terms = doc.get('terms', true)
   if (isSeq(terms)) {
     for (const item of terms.items) {

@@ -17,6 +17,8 @@ import { isBlank } from './whitespace.ts'
 // 変換で落としたもの・書き方を変えたもの・意図して直したものの記録
 export type Note =
   | { kind: 'img-dropped'; alt: string | null; src: string }
+  | { kind: 'img-restored'; from: string; to: string }
+  | { kind: 'img-alt-added'; src: string; alt: string }
   | { kind: 'target-dropped'; href: string }
   | { kind: 'raw-p'; tags: string }
   | { kind: 'attention-as-html'; tag: 'strong' | 'em' }
@@ -33,11 +35,21 @@ export interface ConvertOptions {
   knownPaths?: ReadonlySet<string>
   // false にすると 4. の「意図して直すもの」を全部止める。往復検証の対照実験用
   fixes?: boolean
+  // 本文の img の元の src → サイトの URL（images.ts が作る images.json の body）。ない画像は落とす
+  images?: Readonly<Record<string, string>>
 }
 
 // Markdown で書けるインライン要素。これ以外を含む段落は段落ごと HTML で残す
-const PHRASING = new Set(['a', 'code', 'strong', 'em', 'b', 'i', 'br'])
+const PHRASING = new Set(['a', 'code', 'strong', 'em', 'b', 'i', 'br', 'img'])
 const OLD_HOST = /^https?:\/\/(?:www\.)?webmanab-html\.com\//
+// alt が空かなかった画像に、記事の文脈から付ける
+const IMAGE_ALT: Record<string, string> = {
+  '/images/uploads/2018/02/flatuicolors.jpg':
+    'Flat UI Colors 2 のパレット一覧の画面',
+  '/images/uploads/2018/02/lowpolygonart.jpg':
+    'Low Polygon Art のグラデーション一覧の画面',
+  '/images/uploads/2017/02/hue-circle.jpg': '色相環',
+}
 const OLD_POST =
   /^https?:\/\/(?:www\.)?webmanab-html\.com(\/(?:tip|clip|lab)\/[^/?#]+)\/?$/
 
@@ -107,7 +119,7 @@ export function linkBareUrls(node: Element, notes: Note[]): void {
 // hast の段階で、Markdown に移す前の手直しをする
 function prepare(
   notes: Note[],
-  { knownPaths = new Set(), fixes = true }: ConvertOptions,
+  { knownPaths = new Set(), fixes = true, images = {} }: ConvertOptions,
 ) {
   return (tree: HastRoot) => {
     visit(tree, (node, index, parent) => {
@@ -125,6 +137,19 @@ function prepare(
       if (node.type !== 'element') return
       if (node.tagName === 'pre') return SKIP
       if (node.tagName === 'img') {
+        const from = str(node.properties.src)
+        const to = images[from]
+        if (to) {
+          let alt = str(node.properties.alt)
+          if (fixes && !alt && IMAGE_ALT[to]) {
+            alt = IMAGE_ALT[to]
+            notes.push({ kind: 'img-alt-added', src: to, alt })
+          }
+          // srcset、class、width などは WordPress のもの。大きさは描画側で付ける
+          node.properties = { src: to, alt }
+          notes.push({ kind: 'img-restored', from, to })
+          return
+        }
         notes.push({
           kind: 'img-dropped',
           alt: node.properties.alt == null ? null : str(node.properties.alt),

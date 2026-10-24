@@ -19,9 +19,10 @@ const HTML = [
   '<p><iframe src="https://example.com/embed"></iframe></p>',
 ].join('\n')
 
+// 対応表を渡さずに変換するので、画像は落ちる
 const roundtrip = (md: string) =>
   compare(
-    metrics(parseHtml(HTML), 'original'),
+    metrics(parseHtml(HTML), 'original', true),
     metrics(renderMarkdown(md), 'rendered'),
   )
 
@@ -66,6 +67,17 @@ describe('往復検証', () => {
     expect(
       compare(a, metrics(renderMarkdown('上品な ホバー\n'), 'rendered')),
     ).toContain('text')
+  })
+
+  it('残した画像は alt まで比べる', () => {
+    const html = '<p>a</p>\n<p><img src="x.png" alt="図" /></p>'
+    const images = { 'x.png': '/images/uploads/x.png' }
+    const a = metrics(parseHtml(html), 'original')
+    const render = (md: string) =>
+      compare(a, metrics(renderMarkdown(md), 'rendered'))
+    expect(render(htmlToMarkdown(html, { images }).md)).toEqual([])
+    expect(render('a\n\n![別](/images/uploads/x.png)\n')).toContain('dom')
+    expect(render('a\n')).toContain('count-p')
   })
 
   it('意図して直したものだけを、記録の種類で説明できる差として扱う', () => {

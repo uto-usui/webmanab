@@ -25,11 +25,36 @@ export interface WpPost {
   images?: { alt?: unknown }
   terms?: Record<string, WpTerm[] | false | undefined>
   fields?: Record<string, unknown>
+  // clip のページ全体のスクショ（WordPress の uploads の URL）。ないときは空文字
+  clipImage?: string
 }
 
 export interface SnapshotPost extends WpPost {
   // single: 記事ページの state、list: 一覧ページの state（記事ページがない 2 件だけ）
   source: 'single' | 'list'
+  // アイキャッチ画像の元の URL。記事ページの images は壊れているので、一覧と前後記事のデータから拾う
+  featuredImage?: string
+}
+
+const isRecord = (v: unknown): v is Record<string, unknown> =>
+  typeof v === 'object' && v !== null && !Array.isArray(v)
+
+// 一覧ページの images は [{ url }] の形で正しく入っている
+function listImage(p: WpPost): string | undefined {
+  const first: unknown = Array.isArray(p.images) ? p.images[0] : undefined
+  return isRecord(first) && first.url ? String(first.url) : undefined
+}
+
+// 前後記事の img は縮小版（-600x338 など）なので、元の大きさのファイル名に戻す
+function navImages(p: WpPost): [string, string][] {
+  const out: [string, string][] = []
+  for (const n of [p.prev, p.next])
+    if (isRecord(n) && n.slug && n.img)
+      out.push([
+        `${p.type}/${String(n.slug)}`,
+        String(n.img).replace(/-\d+x\d+(\.\w+)$/, '$1'),
+      ])
+  return out
 }
 
 interface NuxtState {
@@ -60,6 +85,8 @@ export function readNuxtState(html: string): NuxtState | null {
 export function loadSnapshot(htmlDir: string): SnapshotPost[] {
   const single = new Map<string, WpPost>()
   const listed = new Map<string, WpPost>()
+  const fromList = new Map<string, string>()
+  const fromNav = new Map<string, string>()
   for (const file of walk(htmlDir)) {
     const nuxt = readNuxtState(fs.readFileSync(file, 'utf8'))
     if (!nuxt) continue
@@ -71,6 +98,9 @@ export function loadSnapshot(htmlDir: string): SnapshotPost[] {
       for (const p of Object.values(nuxt.state[store]?.cachePosts ?? {})) {
         if (!p?.slug) continue
         const key = `${p.type}/${p.slug}`
+        const img = listImage(p)
+        if (img) fromList.set(key, img)
+        for (const [k, v] of navImages(p)) fromNav.set(k, v)
         if (page === key || page === `${p.type}/${decodeURIComponent(p.slug)}`)
           single.set(key, p)
         else if (!listed.has(key)) listed.set(key, p)
@@ -80,10 +110,12 @@ export function loadSnapshot(htmlDir: string): SnapshotPost[] {
   const keys = [...new Set([...single.keys(), ...listed.keys()])].sort()
   return keys.map((k) => {
     const s = single.get(k)
+    const featuredImage = fromList.get(k) ?? fromNav.get(k)
     // vm のコンテキストで作られたオブジェクトなので、structuredClone でこちらの realm に移す
-    return s
+    const post: SnapshotPost = s
       ? { ...structuredClone(s), source: 'single' }
       : { ...structuredClone(listed.get(k)!), source: 'list' }
+    return featuredImage ? { ...post, featuredImage } : post
   })
 }
 

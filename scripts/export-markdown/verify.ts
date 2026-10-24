@@ -14,6 +14,7 @@ import {
   wpRaw,
   type Frontmatter,
 } from './frontmatter.ts'
+import { readImageManifest } from './image-manifest.ts'
 import { postsDir, repoRoot, snapshotHtmlDir, termsDir } from './paths.ts'
 import {
   compare,
@@ -45,6 +46,7 @@ const htmlDir = snapshotHtmlDir(args.snapshot)
 const posts = loadSnapshot(htmlDir)
 const knownPaths = new Set(posts.map(postPath))
 const fromFiles = !args['from-html']
+const images = readImageManifest(repoRoot)
 const key = (p: SnapshotPost) => `${p.type}/${decodeURIComponent(p.slug)}`
 
 function readPost(p: SnapshotPost): { fm: Frontmatter; md: string } {
@@ -106,7 +108,7 @@ const instant = (v: unknown) =>
   v instanceof Date ? v.getTime() : Date.parse(String(v))
 function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
   const fails: string[] = []
-  const exp = frontmatter(p)
+  const exp = frontmatter(p, images.clips)
   const raw = wpRaw(p)
   if (instant(fm.date) !== Date.parse(exp.date)) fails.push('date')
   // 独立した照合として、WP の date_gmt / modified_gmt と同じ瞬間かも確かめる
@@ -125,6 +127,9 @@ function checkFrontmatter(p: SnapshotPost, fm: Frontmatter): string[] {
     } else if (JSON.stringify(fm[k]) !== JSON.stringify(exp[k])) fails.push(k)
   }
   // 上の照合は同じ frontmatter() との比較なので、旧データからの独立した照合も足す
+  for (const src of [fm.image?.src, fm.image?.thumb, fm.fullImage?.src])
+    if (src && !fs.existsSync(path.join(root, 'public', src)))
+      fails.push('image-file')
   const title = legacyTitle(p)
   if (title !== null && fm.title !== title) fails.push('title-h1')
   for (const nav of legacyNavTitles.get(postPath(p)) ?? []) {
@@ -169,6 +174,7 @@ for (const p of posts) {
   const { md: converted, notes } = htmlToMarkdown(html, {
     knownPaths,
     fixes: !args['no-fixes'],
+    images: images.body,
   })
   let md = converted
   if (fromFiles) {
@@ -197,7 +203,9 @@ for (const p of posts) {
       })
     continue
   }
-  const a = metrics(parseHtml(html), 'original')
+  // 対応表にない画像は落としているので、元の側でも画像だけの段落を数えない
+  const dropImages = notes.some((n) => n.kind === 'img-dropped')
+  const a = metrics(parseHtml(html), 'original', dropImages)
   const b = metrics(renderMarkdown(md), 'rendered')
   const fails = compare(a, b)
   a.codeBlocks.forEach((c, i) => {
@@ -232,7 +240,7 @@ if (fromFiles) {
 const termFails: string[] = []
 if (fromFiles) {
   for (const [tax, list] of Object.entries(
-    buildTerms(posts.map((p) => frontmatter(p))),
+    buildTerms(posts.map((p) => frontmatter(p, images.clips))),
   )) {
     const file = JSON.parse(
       fs.readFileSync(path.join(termsDir(root), `${tax}.json`), 'utf8'),

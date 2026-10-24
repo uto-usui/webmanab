@@ -82,7 +82,39 @@ describe('段落とインライン', () => {
     expect(md('<p>a<br />\nb</p>')).toBe('a\\\nb\n')
   })
 
-  it('画像だけの段落は消し、alt を記録に残す', () => {
+  it('対応表にある画像は Markdown の画像にし、src をサイトの URL にする', () => {
+    const { md: out, notes } = htmlToMarkdown(
+      '<p><img class="alignnone" src="https://wp.example.com/wp-content/uploads/2017/01/x.png" alt="図" srcset="a 600w" /></p>',
+      {
+        images: {
+          'https://wp.example.com/wp-content/uploads/2017/01/x.png':
+            '/images/uploads/2017/01/x.png',
+        },
+      },
+    )
+    expect(out).toBe('![図](/images/uploads/2017/01/x.png)\n')
+    expect(notes).toEqual([
+      {
+        kind: 'img-restored',
+        from: 'https://wp.example.com/wp-content/uploads/2017/01/x.png',
+        to: '/images/uploads/2017/01/x.png',
+      },
+    ])
+  })
+
+  it('alt が空の画像には、決めておいた alt を付ける', () => {
+    const src = 'https://wp.example.com/wp-content/uploads/2018/02/vuex.png'
+    const images = { [src]: '/images/uploads/2018/02/flatuicolors.jpg' }
+    const html = `<p><img src="${src}" alt="" /></p>`
+    expect(htmlToMarkdown(html, { images }).md).toBe(
+      '![Flat UI Colors 2 のパレット一覧の画面](/images/uploads/2018/02/flatuicolors.jpg)\n',
+    )
+    expect(htmlToMarkdown(html, { images, fixes: false }).md).toBe(
+      '![](/images/uploads/2018/02/flatuicolors.jpg)\n',
+    )
+  })
+
+  it('対応表にない画像は段落ごと消し、alt を記録に残す', () => {
     const { md: out, notes } = htmlToMarkdown(
       '<p>a</p>\n<p><img src="x.png" alt="図" /></p>\n<p>b</p>',
     )

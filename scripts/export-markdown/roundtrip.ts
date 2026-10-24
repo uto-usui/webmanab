@@ -100,9 +100,10 @@ export interface Metrics {
   canon: string
 }
 
-export function metrics(tree: Root, side: Side): Metrics {
+export function metrics(tree: Root, side: Side, dropImages = false): Metrics {
   const original = side === 'original'
-  // 画像だけの段落は変換で落とすと決めたので、元の側では数えない
+  // 画像を落とした記事では、元の側の画像だけの段落を数えない
+  const skipP = (n: Nodes) => original && dropImages && isImageOnlyP(n)
   const m: Metrics = {
     headings: [],
     codeBlocks: [],
@@ -114,11 +115,11 @@ export function metrics(tree: Root, side: Side): Metrics {
     brOutsidePre: 0,
     counts: {},
     blocks: tree.children
-      .filter((n) => isElement(n) && !(original && isImageOnlyP(n)))
+      .filter((n) => isElement(n) && !skipP(n))
       .map((n) => (n as Element).tagName),
     textStrict: '',
     textLoose: '',
-    canon: canon(tree, side),
+    canon: canon(tree, side, dropImages),
   }
   // 元の側の href は CommonMark と同じ方法でエンコードしてから比べる
   const href = (n: Element) =>
@@ -140,7 +141,7 @@ export function metrics(tree: Root, side: Side): Metrics {
     if (t === 'iframe') m.iframes.push(String(n.properties.src))
     if (t === 'strong' || t === 'b') m.strong.push(norm(toText(n)))
     if (t === 'em' || t === 'i') m.em.push(norm(toText(n)))
-    if (COUNTED.includes(t) && !inPre && !(original && isImageOnlyP(n)))
+    if (COUNTED.includes(t) && !inPre && !skipP(n))
       m.counts[t] = (m.counts[t] ?? 0) + 1
     for (const c of n.children) walk(c, inPre || t === 'pre')
   }
@@ -165,7 +166,7 @@ export function metrics(tree: Root, side: Side): Metrics {
 
 // 構造ごと比べるための正規形。タグ名・href・src・class と、空白を詰めたテキストだけを残す。
 // 入れ子や強調の位置のずれもここで分かる
-function canon(tree: Root, side: Side): string {
+function canon(tree: Root, side: Side, dropImages: boolean): string {
   const original = side === 'original'
   const out: string[] = []
   const walk = (n: Nodes) => {
@@ -176,7 +177,11 @@ function canon(tree: Root, side: Side): string {
       return
     }
     const t = n.tagName
-    if (t === 'img') return
+    // src は images.json で付け替えるので、alt だけを比べる
+    if (t === 'img')
+      return void (
+        dropImages || out.push(`<img alt=${n.properties.alt ?? ''}>`)
+      )
     if (t === 'span' && !Object.keys(n.properties).length)
       return n.children.forEach(walk)
     if (t === 'pre') {
@@ -258,6 +263,7 @@ const INTENDED: Partial<Record<Note['kind'], string[]>> = {
   'code-emoji-restored': ['code-value', 'dom'],
   'comment-restored': ['text', 'dom'],
   'style-unwrapped': ['count-p', 'blocks', 'dom'],
+  'img-alt-added': ['dom'],
 }
 
 export const intendedKinds = (notes: Note[]) => [

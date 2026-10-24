@@ -21,3 +21,5 @@ export const postsDir = (root: string) => path.join(root, 'src/content/posts')
 export const termsDir = (root: string) => path.join(root, 'src/content/terms')
 export const reportFile = (root: string) =>
   path.join(root, 'scripts/export-markdown/report.json')
+export const imagesFile = (root: string) =>
+  path.join(root, 'scripts/export-markdown/images.json')
