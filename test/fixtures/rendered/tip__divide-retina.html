@@ -1,0 +1,18 @@
+   <h2 id="a0">ディスプレイの解像度で条件分岐</h2>
+
+<p>Retinaディスプレイなどの高解像度のディスプレイに対して、jQuery（JavaScript）を使って判別する方法です。<br>
+高解像度用に画像を用意して、切り替えることなどに利用できます。<br>
+webkit系ブラウザのみで有効です。</p>
+
+<h4 id="javascript">javascript</h4>
+
+<pre class="hljs javascript"><code class="js">
+<span class="hljs-keyword">var</span> retina = <span class="hljs-built_in">window</span>.devicePixelRatio;
+<span class="hljs-keyword">if</span>(retina &#x3C; <span class="hljs-number">2</span>) {
+  $(<span class="hljs-string">'#ex'</span>).html(<span class="hljs-string">'Retinaディスプレイとかの高解像度ではないんです。'</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(retina >= <span class="hljs-number">2</span>) {
+  $(<span class="hljs-string">'ex'</span>).html(<span class="hljs-string">'Retinaディスプレイとかの高解像度です！'</span>);
+}
+</code></pre>
+
+  

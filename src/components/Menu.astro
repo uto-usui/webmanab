@@ -1,0 +1,151 @@
+---
+import MenuList, { type MenuTerm } from './MenuList.astro'
+
+interface Props {
+  tips?: MenuTerm[]
+  clips?: MenuTerm[]
+  labs?: MenuTerm[]
+}
+
+const { tips = [], clips = [], labs = [] } = Astro.props
+---
+
+<div class="menu__wrapper">
+  <nav class="menu">
+    <button
+      type="button"
+      class="menu__btn"
+      aria-expanded="false"
+      aria-controls="menu-inner"
+    >
+      menu
+    </button>
+    {/* 閉じている間は約 290 本のリンクに Tab が止まらないようにする（08 の A-1） */}
+    <div class="menu__inner" id="menu-inner" inert>
+      <MenuList title="tip" taxonomy="tips" terms={tips} />
+      <MenuList title="clip" taxonomy="clips" terms={clips} />
+      <MenuList title="lab" taxonomy="labs" terms={labs} />
+    </div>
+  </nav>
+  <div class="menu__overlay"></div>
+</div>
+
+<script>
+  import '../scripts/menu'
+</script>
+
+<style lang="scss" is:global>
+  .menu__wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    perspective: 800px;
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    margin: space-scalar(4);
+    transform: translateX(100%);
+    perspective: 800px;
+    transition: transform 0.85s $easeInOutQuint;
+    will-change: transform;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    @include tablet {
+      margin: space-scalar(8);
+    }
+
+    @include desktop {
+      margin: space-scalar(10);
+    }
+  }
+
+  .menu__btn {
+    position: relative;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: space-scalar(16);
+    height: space-scalar(16);
+    font-style: italic;
+    font-weight: 600;
+    color: $secondary-color;
+    text-transform: uppercase;
+
+    // 旧サイトの a は body の字間を継いでいた。button は UA の normal になるので継がせる
+    letter-spacing: inherit;
+    pointer-events: auto;
+    background-color: $glay;
+    transform: translateX(-#{space-scalar(16)});
+    transition: transform 0.45s $easeOutSine;
+    transition-delay: 0.35s;
+    will-change: transform;
+
+    @include sizes(-2);
+
+    // reset の outline: none で消える枠を、キーボード操作のときだけ戻す（08 の A-5）
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 4px;
+    }
+
+    .menu.is-open & {
+      transform: translateX(0);
+      transition-delay: 0s;
+    }
+  }
+
+  .menu__inner {
+    width: calc(100% - #{space-scalar(16)});
+    height: 100%;
+    padding-top: 2px;
+    overflow-y: auto;
+    background-color: rgba($glay, 0.95);
+    transform: rotateY(5deg);
+    transform-origin: 0% 50%;
+    transition: 0.85s $easeInOutExpo;
+
+    @include desktop {
+      padding-bottom: $space-5;
+    }
+
+    .menu.is-open & {
+      pointer-events: auto;
+      opacity: 1;
+      transform: rotateY(0);
+    }
+  }
+
+  .menu__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    margin: space-scalar(4);
+    background-color: rgba($thirdry-color, 0);
+    transform: rotateY(10deg) translateX(-100%) translateZ(0);
+    transform-origin: 0% 50%;
+    transition: 0.4s $easeInOutExpo;
+
+    @include tablet {
+      margin: space-scalar(8);
+    }
+
+    @include desktop {
+      margin: space-scalar(10);
+    }
+
+    // overlay は .menu の直後の兄弟である必要がある
+    .menu.is-open + & {
+      background-color: rgba($thirdry-color, 0.85);
+      transform: rotateY(0) translateX(0) translateZ(0);
+    }
+  }
+</style>

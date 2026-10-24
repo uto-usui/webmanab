@@ -1,0 +1,28 @@
+---
+// buildHead() の結果をタグにする。<title> は Default.astro が出すので、ここでは出さない
+import { PUBLIC_GA4_ID } from 'astro:env/client'
+import { gtagTags, type HeadData } from '../lib/head'
+
+interface Props {
+  head: HeadData
+  /** テスト用。省略すると PUBLIC_GA4_ID を使う */
+  ga4Id?: string
+}
+
+const { head, ga4Id = PUBLIC_GA4_ID } = Astro.props
+const gtag = gtagTags(ga4Id)
+---
+
+<link rel="canonical" href={head.canonical} />
+{head.meta.map((tag) => (
+  <meta {...tag} />
+))}
+{head.jsonLd && (
+  <script is:inline type="application/ld+json" set:html={head.jsonLd} />
+)}
+{gtag && (
+  <>
+    <script is:inline async src={gtag.src} />
+    <script is:inline set:html={gtag.inline} />
+  </>
+)}

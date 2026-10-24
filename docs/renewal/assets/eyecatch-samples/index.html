@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eyecatch Samples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root { --primary: #f50057; --secondary: #ffd740; --third: #2a8379; --white: #eeeeee; --black: #222831; --gray: #393E46; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--white); color: var(--black); font-family: 'Open Sans', sans-serif; line-height: 1.75; }
+  .wrap { margin: 40px; border: 2px solid var(--black); padding: 24px 0 60px; }
+  @media (max-width: 767px) { .wrap { margin: 12px; } }
+  header { padding: 0 24px; }
+  h1 { font-style: italic; font-weight: 700; font-size: 2.4rem; margin: 0; }
+  header p { margin: .4em 0 0; font-size: .9rem; }
+  h2 { font-style: italic; text-transform: uppercase; font-size: 1.1rem; margin: 48px 24px 8px; display: inline-block; border-bottom: 2px solid currentColor; padding: 0 12px 2px 0; }
+  .note { margin: 0 24px; font-size: .85rem; }
+  .group { margin-top: 28px; }
+  .group__head { margin: 0 24px 6px; font-size: .85rem; }
+  .group__head b { font-style: italic; font-size: 1rem; margin-right: .6em; }
+  .list { display: flex; flex-wrap: wrap; }
+  .card { width: 100%; margin-bottom: 30px; }
+  @media (min-width: 768px) { .card { width: 50%; border-left: 2px solid currentColor; } }
+  @media (min-width: 1080px) { .card { width: 33.333%; } }
+  .card__tag { display: inline-block; min-width: 100px; padding: 0 4px 4px 1.2rem; font-style: italic; color: var(--gray); border-bottom: 2px solid currentColor; font-size: .8rem; }
+  .card__tag::first-letter { padding-right: 6px; font-weight: bold; color: var(--white); font-size: 2rem; text-transform: capitalize;
+    text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 2px 3px 0 var(--black); }
+  .card__img-wrap { display: block; width: calc(100% - 1.2rem * 2); margin: 1.2rem auto; transition: .25s cubic-bezier(.165,.84,.44,1); }
+  .card__img-wrap:hover { box-shadow: -10px 10px 0 var(--secondary); transform: translate(10px, -10px); }
+  .card__img { display: block; position: relative; padding-top: 56.25%; overflow: hidden; background: var(--gray); }
+  .card__img img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .card__title { margin: -6px 1.2rem 1.2rem; font-size: 1rem; font-weight: 400; line-height: 2; }
+  .card__target { padding: .2em .1em; color: var(--white); background: var(--gray); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .card__meta { display: flex; justify-content: space-between; margin: 0 1.2rem; font-size: .75rem; font-style: italic; }
+  .card__meta time { border-bottom: 2px solid currentColor; padding: 0 0 2px 4px; }
+  .nav { display: flex; flex-wrap: wrap; margin: 12px 24px 0; gap: 0; }
+  .nav__item { position: relative; width: 50%; height: max(180px, 17.5vw); overflow: hidden; display: flex; align-items: center; padding: 0 24px; }
+  @media (max-width: 767px) { .nav__item { width: 100%; height: 120px; } }
+  .nav__item--next { justify-content: flex-end; text-align: right; }
+  .nav__bg { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+  .nav__bg::after { content: ''; position: absolute; inset: 0; background: rgba(57, 62, 70, .7); }
+  .nav__item { z-index: 0; }
+  .nav__text { margin: 0; color: var(--white); font-style: italic; font-size: 1.6rem; line-height: 1.3; }
+  .nav__title { display: inline; color: var(--black); background: var(--white); font-size: 1rem; }
+  .ogp { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 20px; margin: 12px 24px 0; }
+  .ogp figure { margin: 0; }
+  .ogp img { width: 100%; height: auto; display: block; outline: 2px solid var(--black); }
+  .ogp figcaption { font-size: .75rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Eyecatch Samples</h1>
+    <p>カテゴリ 23 種（代表 20 + type ごとの汎用 3）× 3 枚 = 69 枚。同じカテゴリでも記事 id を種にして配置が少しずつ変わります。画像をクリックすると SVG 単体を開きます。</p>
+  </header>
+
+  <h2>実際の並び</h2>
+  <p class="note">本番の一覧と同じく、type ごとに新しい順で 12 件ずつ並べたものです。</p>
+  <section class="group">
+    <p class="group__head"><b>/clip/</b>新しい順 12 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">blog</strong>
+        <a class="card__img-wrap" href="svg/layout--clip-2843.svg"><span class="card__img"><img src="svg/layout--clip-2843.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Esperanto</span></h3>
+        <p class="card__meta"><span>clip / id 2843 / 2.7 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">portfolio</strong>
+        <a class="card__img-wrap" href="svg/portfolio--clip-2851.svg"><span class="card__img"><img src="svg/portfolio--clip-2851.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Peter Lindbergh</span></h3>
+        <p class="card__meta"><span>clip / id 2851 / 1.3 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">canvas</strong>
+        <a class="card__img-wrap" href="svg/canvas--clip-2831.svg"><span class="card__img"><img src="svg/canvas--clip-2831.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ね — NT</span></h3>
+        <p class="card__meta"><span>clip / id 2831 / 4.1 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">portfolio</strong>
+        <a class="card__img-wrap" href="svg/portfolio--clip-2827.svg"><span class="card__img"><img src="svg/portfolio--clip-2827.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Zhenya Rynzhuk</span></h3>
+        <p class="card__meta"><span>clip / id 2827 / 1.6 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">scroll</strong>
+        <a class="card__img-wrap" href="svg/scroll--clip-2842.svg"><span class="card__img"><img src="svg/scroll--clip-2842.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Yuto Takahashi</span></h3>
+        <p class="card__meta"><span>clip / id 2842 / 1.5 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">studio</strong>
+        <a class="card__img-wrap" href="svg/studio--clip-2845.svg"><span class="card__img"><img src="svg/studio--clip-2845.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">yaroflasher</span></h3>
+        <p class="card__meta"><span>clip / id 2845 / 1.0 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">flat</strong>
+        <a class="card__img-wrap" href="svg/minimal--clip-2849.svg"><span class="card__img"><img src="svg/minimal--clip-2849.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Vladimir Gruev – UI/UX Designer</span></h3>
+        <p class="card__meta"><span>clip / id 2849 / 0.9 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">minimal</strong>
+        <a class="card__img-wrap" href="svg/minimal--clip-2834.svg"><span class="card__img"><img src="svg/minimal--clip-2834.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Venture Capital Fellows Program</span></h3>
+        <p class="card__meta"><span>clip / id 2834 / 0.9 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">studio</strong>
+        <a class="card__img-wrap" href="svg/studio--clip-2837.svg"><span class="card__img"><img src="svg/studio--clip-2837.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Obys</span></h3>
+        <p class="card__meta"><span>clip / id 2837 / 1.0 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">fashion</strong>
+        <a class="card__img-wrap" href="svg/fashion--clip-2848.svg"><span class="card__img"><img src="svg/fashion--clip-2848.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Marie Weber</span></h3>
+        <p class="card__meta"><span>clip / id 2848 / 1.6 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">food</strong>
+        <a class="card__img-wrap" href="svg/food--clip-2839.svg"><span class="card__img"><img src="svg/food--clip-2839.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">koox</span></h3>
+        <p class="card__meta"><span>clip / id 2839 / 1.5 KB</span><time>2020-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">studio</strong>
+        <a class="card__img-wrap" href="svg/studio--clip-2850.svg"><span class="card__img"><img src="svg/studio--clip-2850.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Chipsa Design</span></h3>
+        <p class="card__meta"><span>clip / id 2850 / 1.0 KB</span><time>2020-02-25</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>/tip/</b>新しい順 12 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">Nuxt</strong>
+        <a class="card__img-wrap" href="svg/vue--tip-2883.svg"><span class="card__img"><img src="svg/vue--tip-2883.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Nuxt.js でアトミックデザインの静的サイトを作るまでの Tips 集 -『Nuxt』</span></h3>
+        <p class="card__meta"><span>tip / id 2883 / 1.9 KB</span><time>2020-03-22</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">Sass</strong>
+        <a class="card__img-wrap" href="svg/sass--tip-2881.svg"><span class="card__img"><img src="svg/sass--tip-2881.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Dart Sass を Nuxt に導入する -『Sass』</span></h3>
+        <p class="card__meta"><span>tip / id 2881 / 1.4 KB</span><time>2020-03-21</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">typescript</strong>
+        <a class="card__img-wrap" href="svg/typescript--tip-2880.svg"><span class="card__img"><img src="svg/typescript--tip-2880.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">TypeScript を使いこなして手に入れる型安全 -『TypeScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2880 / 1.4 KB</span><time>2020-03-16</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">typescript</strong>
+        <a class="card__img-wrap" href="svg/typescript--tip-2828.svg"><span class="card__img"><img src="svg/typescript--tip-2828.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">TypeScript の基本文法 -『TypeScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2828 / 1.4 KB</span><time>2020-02-21</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">JavaScript</strong>
+        <a class="card__img-wrap" href="svg/javascript--tip-2740.svg"><span class="card__img"><img src="svg/javascript--tip-2740.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">グラフィックプログラミングの公式とか概念について -『JavaScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2740 / 1.8 KB</span><time>2020-01-22</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">performance</strong>
+        <a class="card__img-wrap" href="svg/css--tip-2727.svg"><span class="card__img"><img src="svg/css--tip-2727.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ピクセルパイプラインのCSSレンダリングパフォーマンスを考える -『CSS』</span></h3>
+        <p class="card__meta"><span>tip / id 2727 / 1.6 KB</span><time>2019-11-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">design</strong>
+        <a class="card__img-wrap" href="svg/studio--tip-2725.svg"><span class="card__img"><img src="svg/studio--tip-2725.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Git Sketch Plugin を使ってデザインをバージョン管理する -『Sketch』</span></h3>
+        <p class="card__meta"><span>tip / id 2725 / 1.0 KB</span><time>2019-11-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">javascript</strong>
+        <a class="card__img-wrap" href="svg/javascript--tip-2722.svg"><span class="card__img"><img src="svg/javascript--tip-2722.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">さまざまな配列の処理をまとめる -『JavaScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2722 / 1.8 KB</span><time>2019-11-14</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">grid</strong>
+        <a class="card__img-wrap" href="svg/css--tip-2721.svg"><span class="card__img"><img src="svg/css--tip-2721.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">CSS Grid で使える minmax() 関数を理解する -『CSS』</span></h3>
+        <p class="card__meta"><span>tip / id 2721 / 1.8 KB</span><time>2019-11-13</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">CSS</strong>
+        <a class="card__img-wrap" href="svg/css--tip-2718.svg"><span class="card__img"><img src="svg/css--tip-2718.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Autoprefixer を使って CSS Grid の IE 対応をやっていく -『CSS』</span></h3>
+        <p class="card__meta"><span>tip / id 2718 / 1.6 KB</span><time>2019-11-12</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">tool</strong>
+        <a class="card__img-wrap" href="svg/tooling--tip-2600.svg"><span class="card__img"><img src="svg/tooling--tip-2600.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">VS code で最強の Markdown 環境をつくる方法 -『tool』</span></h3>
+        <p class="card__meta"><span>tip / id 2600 / 1.6 KB</span><time>2019-03-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">tool</strong>
+        <a class="card__img-wrap" href="svg/tooling--tip-2597.svg"><span class="card__img"><img src="svg/tooling--tip-2597.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Redmine のコメント上で画像をきれいに見せる方法 -『tool』</span></h3>
+        <p class="card__meta"><span>tip / id 2597 / 1.6 KB</span><time>2019-03-01</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>/lab/</b>新しい順 12 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">WebGL</strong>
+        <a class="card__img-wrap" href="svg/webgl--lab-2324.svg"><span class="card__img"><img src="svg/webgl--lab-2324.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ボケた柔らかそうな物体を回転させ明滅させる -『GLSL』</span></h3>
+        <p class="card__meta"><span>lab / id 2324 / 7.6 KB</span><time>2018-08-08</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">video</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2269.svg"><span class="card__img"><img src="svg/animation--lab-2269.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">youtubeの動画にエフェクトをかける -『video』</span></h3>
+        <p class="card__meta"><span>lab / id 2269 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2268.svg"><span class="card__img"><img src="svg/animation--lab-2268.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">マウススクロールのイージングをカスタマイズする -『Scroll』</span></h3>
+        <p class="card__meta"><span>lab / id 2268 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">CreateJs</strong>
+        <a class="card__img-wrap" href="svg/canvas--lab-2267.svg"><span class="card__img"><img src="svg/canvas--lab-2267.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">バネ性(引力)を持ったノードを動かす-『CreateJS』</span></h3>
+        <p class="card__meta"><span>lab / id 2267 / 4.1 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2266.svg"><span class="card__img"><img src="svg/animation--lab-2266.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">マウスに追従して歪めるパララックス演出 -『parallax』</span></h3>
+        <p class="card__meta"><span>lab / id 2266 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2265.svg"><span class="card__img"><img src="svg/animation--lab-2265.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">分割した背景をマウスに追従してずらすパララックス演出 -『parallax』</span></h3>
+        <p class="card__meta"><span>lab / id 2265 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">hover</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2263.svg"><span class="card__img"><img src="svg/animation--lab-2263.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">要素をトグル表示するシンプルなホバーエフェクト -『animation』</span></h3>
+        <p class="card__meta"><span>lab / id 2263 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">noise</strong>
+        <a class="card__img-wrap" href="svg/canvas--lab-2262.svg"><span class="card__img"><img src="svg/canvas--lab-2262.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">かたかた震えるグリッヂエフェクト -『noise』</span></h3>
+        <p class="card__meta"><span>lab / id 2262 / 4.3 KB</span><time>2018-02-03</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-1947.svg"><span class="card__img"><img src="svg/animation--lab-1947.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">可視範囲を判定してアニメーションを実行するクラス – 『TweenMax』</span></h3>
+        <p class="card__meta"><span>lab / id 1947 / 2.5 KB</span><time>2018-01-11</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-1946.svg"><span class="card__img"><img src="svg/animation--lab-1946.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">スクロールのイージングとパララックス効果 – 『TweenMax』</span></h3>
+        <p class="card__meta"><span>lab / id 1946 / 2.5 KB</span><time>2018-01-11</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-1801.svg"><span class="card__img"><img src="svg/animation--lab-1801.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">円周上に並べた要素を回転させる -『TweenMax』</span></h3>
+        <p class="card__meta"><span>lab / id 1801 / 2.5 KB</span><time>2017-12-12</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">animation</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-1798.svg"><span class="card__img"><img src="svg/animation--lab-1798.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">スピードと角度を別々のランダムなsin波で与える -『TweenMax』</span></h3>
+        <p class="card__meta"><span>lab / id 1798 / 2.5 KB</span><time>2017-12-12</time></p>
+      </article>
+    </div>
+  </section>
+
+  <h2>カテゴリごとのサンプル</h2>
+  <p class="note">旧サイトの一覧カード（components/Article.vue）の寸法と装飾に寄せています。タグ名は記事の primaryTag をそのまま出しています。件数はそのカテゴリに入る記事の数です。</p>
+  <section class="group">
+    <p class="group__head"><b>JavaScript</b>javascript / 53 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">JavaScript</strong>
+        <a class="card__img-wrap" href="svg/javascript--tip-2740.svg"><span class="card__img"><img src="svg/javascript--tip-2740.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">グラフィックプログラミングの公式とか概念について -『JavaScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2740 / 1.8 KB</span><time>2020-01-22</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">javascript</strong>
+        <a class="card__img-wrap" href="svg/javascript--lab-978.svg"><span class="card__img"><img src="svg/javascript--lab-978.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">テキストエリアの文字数をカウントする -『javascript』</span></h3>
+        <p class="card__meta"><span>lab / id 978 / 1.8 KB</span><time>2017-01-31</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">javascript</strong>
+        <a class="card__img-wrap" href="svg/javascript--tip-2722.svg"><span class="card__img"><img src="svg/javascript--tip-2722.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">さまざまな配列の処理をまとめる -『JavaScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2722 / 1.8 KB</span><time>2019-11-14</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>CSS</b>css / 26 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">performance</strong>
+        <a class="card__img-wrap" href="svg/css--tip-2727.svg"><span class="card__img"><img src="svg/css--tip-2727.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ピクセルパイプラインのCSSレンダリングパフォーマンスを考える -『CSS』</span></h3>
+        <p class="card__meta"><span>tip / id 2727 / 1.6 KB</span><time>2019-11-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">CSS</strong>
+        <a class="card__img-wrap" href="svg/css--lab-1044.svg"><span class="card__img"><img src="svg/css--lab-1044.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">任意のテキストで画像をクリップしてくり抜く -『CSS』</span></h3>
+        <p class="card__meta"><span>lab / id 1044 / 1.7 KB</span><time>2017-02-05</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">grid</strong>
+        <a class="card__img-wrap" href="svg/css--tip-2721.svg"><span class="card__img"><img src="svg/css--tip-2721.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">CSS Grid で使える minmax() 関数を理解する -『CSS』</span></h3>
+        <p class="card__meta"><span>tip / id 2721 / 1.8 KB</span><time>2019-11-13</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Sass</b>sass / 6 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">Sass</strong>
+        <a class="card__img-wrap" href="svg/sass--tip-2881.svg"><span class="card__img"><img src="svg/sass--tip-2881.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Dart Sass を Nuxt に導入する -『Sass』</span></h3>
+        <p class="card__meta"><span>tip / id 2881 / 1.4 KB</span><time>2020-03-21</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">sass</strong>
+        <a class="card__img-wrap" href="svg/sass--tip-1170.svg"><span class="card__img"><img src="svg/sass--tip-1170.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">コンパイル時にランダム値を更新する、静的なランダムなグラデーションカラーを生成する。 -『Sass/SCSS』</span></h3>
+        <p class="card__meta"><span>tip / id 1170 / 1.4 KB</span><time>2017-02-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">sass</strong>
+        <a class="card__img-wrap" href="svg/sass--tip-119.svg"><span class="card__img"><img src="svg/sass--tip-119.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">オンラインツールでcssをscss/sassに変換するcss2sass – 『Sass』</span></h3>
+        <p class="card__meta"><span>tip / id 119 / 1.4 KB</span><time>2016-06-27</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>HTML</b>html / 8 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">seo</strong>
+        <a class="card__img-wrap" href="svg/html--tip-158.svg"><span class="card__img"><img src="svg/html--tip-158.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">wwwの有無を統一してurlの正規化を実現する流れをまとめる – 「SEO」</span></h3>
+        <p class="card__meta"><span>tip / id 158 / 1.4 KB</span><time>2016-07-11</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">responsive</strong>
+        <a class="card__img-wrap" href="svg/html--lab-977.svg"><span class="card__img"><img src="svg/html--lab-977.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">flexレイアウトを使ってレスポンシブテーブルをつくる -『responsive』</span></h3>
+        <p class="card__meta"><span>lab / id 977 / 1.4 KB</span><time>2017-01-31</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">responsive</strong>
+        <a class="card__img-wrap" href="svg/html--tip-845.svg"><span class="card__img"><img src="svg/html--tip-845.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">簡単だった。HTML5.1にときめきつつ、そろそろレスポンシブイメージしたいからsrcset属性やpicture要素たちを知る -『HTML5』</span></h3>
+        <p class="card__meta"><span>tip / id 845 / 1.4 KB</span><time>2016-12-27</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Vue</b>vue / 8 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">Nuxt</strong>
+        <a class="card__img-wrap" href="svg/vue--tip-2883.svg"><span class="card__img"><img src="svg/vue--tip-2883.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Nuxt.js でアトミックデザインの静的サイトを作るまでの Tips 集 -『Nuxt』</span></h3>
+        <p class="card__meta"><span>tip / id 2883 / 1.9 KB</span><time>2020-03-22</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">nuxt</strong>
+        <a class="card__img-wrap" href="svg/vue--clip-2672.svg"><span class="card__img"><img src="svg/vue--clip-2672.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Pontus Rudolfson – Photographer</span></h3>
+        <p class="card__meta"><span>clip / id 2672 / 1.9 KB</span><time>2019-11-08</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">Vue.js</strong>
+        <a class="card__img-wrap" href="svg/vue--lab-1565.svg"><span class="card__img"><img src="svg/vue--lab-1565.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">簡単なTODOアプリケーション -『Vue.js』</span></h3>
+        <p class="card__meta"><span>lab / id 1565 / 1.7 KB</span><time>2017-09-29</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>TypeScript</b>typescript / 2 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">typescript</strong>
+        <a class="card__img-wrap" href="svg/typescript--tip-2880.svg"><span class="card__img"><img src="svg/typescript--tip-2880.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">TypeScript を使いこなして手に入れる型安全 -『TypeScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2880 / 1.4 KB</span><time>2020-03-16</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">typescript</strong>
+        <a class="card__img-wrap" href="svg/typescript--tip-2828.svg"><span class="card__img"><img src="svg/typescript--tip-2828.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">TypeScript の基本文法 -『TypeScript』</span></h3>
+        <p class="card__meta"><span>tip / id 2828 / 1.4 KB</span><time>2020-02-21</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">TypeScript</strong>
+        <a class="card__img-wrap" href="svg/typescript--sample-90003.svg"><span class="card__img"><img src="svg/typescript--sample-90003.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>tip / id 90003 / 1.4 KB</span></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>WordPress</b>wordpress / 18 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">wordpress</strong>
+        <a class="card__img-wrap" href="svg/wordpress--tip-1210.svg"><span class="card__img"><img src="svg/wordpress--tip-1210.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Ajaxでfunction.phpに記述した関数を動かして何かするときに必要なこと -『WordPress』</span></h3>
+        <p class="card__meta"><span>tip / id 1210 / 1.4 KB</span><time>2017-03-16</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">wordpress</strong>
+        <a class="card__img-wrap" href="svg/wordpress--tip-942.svg"><span class="card__img"><img src="svg/wordpress--tip-942.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">キャッシュ管理プラグイン「WP Super Cache」のアンインストール手順 -『wordpress』</span></h3>
+        <p class="card__meta"><span>tip / id 942 / 1.4 KB</span><time>2017-01-22</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">wordpress</strong>
+        <a class="card__img-wrap" href="svg/wordpress--tip-685.svg"><span class="card__img"><img src="svg/wordpress--tip-685.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">WordPressの抜粋文の末尾の[…]を変更する -『wordpress』</span></h3>
+        <p class="card__meta"><span>tip / id 685 / 1.4 KB</span><time>2016-11-11</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Front-end Tools</b>tooling / 42 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">webstorm</strong>
+        <a class="card__img-wrap" href="svg/tooling--tip-2281.svg"><span class="card__img"><img src="svg/tooling--tip-2281.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">いろいろな爆速検索の仕方。 -『WebStorm』</span></h3>
+        <p class="card__meta"><span>tip / id 2281 / 1.6 KB</span><time>2018-02-10</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">tool</strong>
+        <a class="card__img-wrap" href="svg/tooling--tip-1950.svg"><span class="card__img"><img src="svg/tooling--tip-1950.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">youtube-dlでコマンドラインから動画をダウンロードする方法。 -『tool』</span></h3>
+        <p class="card__meta"><span>tip / id 1950 / 1.6 KB</span><time>2018-01-14</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">tool</strong>
+        <a class="card__img-wrap" href="svg/tooling--tip-1957.svg"><span class="card__img"><img src="svg/tooling--tip-1957.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Mr. Data Converter でエクセルデータをJSONに変換する-『tool』</span></h3>
+        <p class="card__meta"><span>tip / id 1957 / 1.5 KB</span><time>2018-01-20</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Creative Coding</b>canvas / 31 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">createJS</strong>
+        <a class="card__img-wrap" href="svg/canvas--tip-437.svg"><span class="card__img"><img src="svg/canvas--tip-437.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">いろいろな形のシェイプをCreateJSで描画するまで -『CreateJS基礎』</span></h3>
+        <p class="card__meta"><span>tip / id 437 / 4.0 KB</span><time>2016-08-23</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">geometric</strong>
+        <a class="card__img-wrap" href="svg/canvas--clip-1829.svg"><span class="card__img"><img src="svg/canvas--clip-1829.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">À l’heure du lait — Homepage</span></h3>
+        <p class="card__meta"><span>clip / id 1829 / 4.1 KB</span><time>2017-09-10</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">CreateJs</strong>
+        <a class="card__img-wrap" href="svg/canvas--lab-2267.svg"><span class="card__img"><img src="svg/canvas--lab-2267.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">バネ性(引力)を持ったノードを動かす-『CreateJS』</span></h3>
+        <p class="card__meta"><span>lab / id 2267 / 4.1 KB</span><time>2018-02-03</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>WebGL</b>webgl / 48 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">webGL</strong>
+        <a class="card__img-wrap" href="svg/webgl--tip-261.svg"><span class="card__img"><img src="svg/webgl--tip-261.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">素敵な表現を試したい。水彩のエフェクトを実装するスクリプト「Aquarelle」 -『plug-in』</span></h3>
+        <p class="card__meta"><span>tip / id 261 / 7.6 KB</span><time>2016-07-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">webGL</strong>
+        <a class="card__img-wrap" href="svg/webgl--clip-2629.svg"><span class="card__img"><img src="svg/webgl--clip-2629.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">PRMO Inc.</span></h3>
+        <p class="card__meta"><span>clip / id 2629 / 7.5 KB</span><time>2019-07-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">WebGL</strong>
+        <a class="card__img-wrap" href="svg/webgl--lab-2324.svg"><span class="card__img"><img src="svg/webgl--lab-2324.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ボケた柔らかそうな物体を回転させ明滅させる -『GLSL』</span></h3>
+        <p class="card__meta"><span>lab / id 2324 / 7.6 KB</span><time>2018-08-08</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Animation</b>animation / 67 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">aniamtion</strong>
+        <a class="card__img-wrap" href="svg/animation--tip-2298.svg"><span class="card__img"><img src="svg/animation--tip-2298.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">アニメーショントレーニング 三角関数でなめらかな反復 -『Animation』</span></h3>
+        <p class="card__meta"><span>tip / id 2298 / 2.5 KB</span><time>2018-03-01</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">slider</strong>
+        <a class="card__img-wrap" href="svg/animation--clip-2627.svg"><span class="card__img"><img src="svg/animation--clip-2627.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Design Documentary — Design Canada</span></h3>
+        <p class="card__meta"><span>clip / id 2627 / 2.5 KB</span><time>2019-07-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">video</strong>
+        <a class="card__img-wrap" href="svg/animation--lab-2269.svg"><span class="card__img"><img src="svg/animation--lab-2269.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">youtubeの動画にエフェクトをかける -『video』</span></h3>
+        <p class="card__meta"><span>lab / id 2269 / 2.5 KB</span><time>2018-02-03</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Scroll</b>scroll / 52 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">scroll</strong>
+        <a class="card__img-wrap" href="svg/scroll--clip-2673.svg"><span class="card__img"><img src="svg/scroll--clip-2673.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">15 years — Solar Weekend</span></h3>
+        <p class="card__meta"><span>clip / id 2673 / 1.5 KB</span><time>2019-11-08</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">parallax</strong>
+        <a class="card__img-wrap" href="svg/scroll--clip-169.svg"><span class="card__img"><img src="svg/scroll--clip-169.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Lo-Flo Records</span></h3>
+        <p class="card__meta"><span>clip / id 169 / 1.5 KB</span><time>2016-06-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">parallax</strong>
+        <a class="card__img-wrap" href="svg/scroll--clip-173.svg"><span class="card__img"><img src="svg/scroll--clip-173.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">SULIYA – an innovative stainless steel bottle by S’Bottle Company.</span></h3>
+        <p class="card__meta"><span>clip / id 173 / 1.5 KB</span><time>2016-06-30</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Studio</b>studio / 132 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">design</strong>
+        <a class="card__img-wrap" href="svg/studio--tip-2725.svg"><span class="card__img"><img src="svg/studio--tip-2725.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Git Sketch Plugin を使ってデザインをバージョン管理する -『Sketch』</span></h3>
+        <p class="card__meta"><span>tip / id 2725 / 1.0 KB</span><time>2019-11-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">branding</strong>
+        <a class="card__img-wrap" href="svg/studio--clip-510.svg"><span class="card__img"><img src="svg/studio--clip-510.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">GREE Ventures</span></h3>
+        <p class="card__meta"><span>clip / id 510 / 1.0 KB</span><time>2016-10-15</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">design</strong>
+        <a class="card__img-wrap" href="svg/studio--tip-2296.svg"><span class="card__img"><img src="svg/studio--tip-2296.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">ポートフォリオやそれにまつわるリソースをまとめた bestfolios -『Design』</span></h3>
+        <p class="card__meta"><span>tip / id 2296 / 1.0 KB</span><time>2018-02-28</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Portfolio</b>portfolio / 80 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">portfolio</strong>
+        <a class="card__img-wrap" href="svg/portfolio--clip-1783.svg"><span class="card__img"><img src="svg/portfolio--clip-1783.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Lyuba Nova – Just another Developer</span></h3>
+        <p class="card__meta"><span>clip / id 1783 / 1.3 KB</span><time>2017-11-06</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">portfolio</strong>
+        <a class="card__img-wrap" href="svg/portfolio--clip-2110.svg"><span class="card__img"><img src="svg/portfolio--clip-2110.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Andrea D. Labarile</span></h3>
+        <p class="card__meta"><span>clip / id 2110 / 1.5 KB</span><time>2017-12-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">portfolio</strong>
+        <a class="card__img-wrap" href="svg/portfolio--clip-1244.svg"><span class="card__img"><img src="svg/portfolio--clip-1244.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Amelia’s Portfolio</span></h3>
+        <p class="card__meta"><span>clip / id 1244 / 1.5 KB</span><time>2017-04-06</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Fashion</b>fashion / 51 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">fashion</strong>
+        <a class="card__img-wrap" href="svg/fashion--clip-2009.svg"><span class="card__img"><img src="svg/fashion--clip-2009.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">132 5. STANDARD | ISSEY MIYAKE INC.</span></h3>
+        <p class="card__meta"><span>clip / id 2009 / 1.6 KB</span><time>2017-11-07</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">fashion</strong>
+        <a class="card__img-wrap" href="svg/fashion--clip-1136.svg"><span class="card__img"><img src="svg/fashion--clip-1136.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Balsan, la Griffe de l’uniforme</span></h3>
+        <p class="card__meta"><span>clip / id 1136 / 1.6 KB</span><time>2017-02-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">fashion</strong>
+        <a class="card__img-wrap" href="svg/fashion--clip-507.svg"><span class="card__img"><img src="svg/fashion--clip-507.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">A-net Inc.［株式会社エイ・ネット］</span></h3>
+        <p class="card__meta"><span>clip / id 507 / 1.6 KB</span><time>2016-10-12</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Minimal</b>minimal / 58 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">minimal</strong>
+        <a class="card__img-wrap" href="svg/minimal--clip-1556.svg"><span class="card__img"><img src="svg/minimal--clip-1556.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">A Creative Podcast with Curated Tunes &amp; Industry Views | BASIC™ | Brandbeats</span></h3>
+        <p class="card__meta"><span>clip / id 1556 / 0.9 KB</span><time>2017-08-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">minimal</strong>
+        <a class="card__img-wrap" href="svg/minimal--clip-1549.svg"><span class="card__img"><img src="svg/minimal--clip-1549.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Daoust Lestage</span></h3>
+        <p class="card__meta"><span>clip / id 1549 / 0.9 KB</span><time>2017-08-25</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">minimal</strong>
+        <a class="card__img-wrap" href="svg/minimal--clip-355.svg"><span class="card__img"><img src="svg/minimal--clip-355.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Seedlip</span></h3>
+        <p class="card__meta"><span>clip / id 355 / 0.9 KB</span><time>2016-09-01</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Layout</b>layout / 66 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">UI</strong>
+        <a class="card__img-wrap" href="svg/layout--tip-1954.svg"><span class="card__img"><img src="svg/layout--tip-1954.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">「Adele」デザインガイドラインのプラットフォーム-『Design』</span></h3>
+        <p class="card__meta"><span>tip / id 1954 / 2.7 KB</span><time>2018-01-20</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">UI</strong>
+        <a class="card__img-wrap" href="svg/layout--clip-2628.svg"><span class="card__img"><img src="svg/layout--clip-2628.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">100 Years of  Georgia’s First  Democratic Republic100</span></h3>
+        <p class="card__meta"><span>clip / id 2628 / 2.7 KB</span><time>2019-07-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">typography</strong>
+        <a class="card__img-wrap" href="svg/layout--clip-2686.svg"><span class="card__img"><img src="svg/layout--clip-2686.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Juste Debout 2020 – The greatest hip hop dances event worldwide</span></h3>
+        <p class="card__meta"><span>clip / id 2686 / 2.6 KB</span><time>2019-11-08</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Food</b>food / 36 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">food</strong>
+        <a class="card__img-wrap" href="svg/food--clip-1142.svg"><span class="card__img"><img src="svg/food--clip-1142.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">913 | ヌフアントロワ オフィシャル</span></h3>
+        <p class="card__meta"><span>clip / id 1142 / 1.5 KB</span><time>2017-02-17</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">food</strong>
+        <a class="card__img-wrap" href="svg/food--clip-954.svg"><span class="card__img"><img src="svg/food--clip-954.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Famiglia Cecchi | Official site</span></h3>
+        <p class="card__meta"><span>clip / id 954 / 1.5 KB</span><time>2017-01-24</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">food</strong>
+        <a class="card__img-wrap" href="svg/food--clip-726.svg"><span class="card__img"><img src="svg/food--clip-726.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">carborocco</span></h3>
+        <p class="card__meta"><span>clip / id 726 / 1.5 KB</span><time>2016-12-06</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Culture</b>culture / 126 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">art</strong>
+        <a class="card__img-wrap" href="svg/culture--clip-2090.svg"><span class="card__img"><img src="svg/culture--clip-2090.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">#letsmuseeum: Stell dir vor, du scrollst durch ein Museum – in echt.</span></h3>
+        <p class="card__meta"><span>clip / id 2090 / 1.8 KB</span><time>2017-12-23</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">leisure</strong>
+        <a class="card__img-wrap" href="svg/culture--clip-1410.svg"><span class="card__img"><img src="svg/culture--clip-1410.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">世界最大級の水族館 海遊館</span></h3>
+        <p class="card__meta"><span>clip / id 1410 / 1.8 KB</span><time>2017-05-28</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">music</strong>
+        <a class="card__img-wrap" href="svg/culture--clip-1260.svg"><span class="card__img"><img src="svg/culture--clip-1260.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">B&amp;O PLAY Spring/Summer 2017</span></h3>
+        <p class="card__meta"><span>clip / id 1260 / 1.7 KB</span><time>2017-03-24</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Color</b>color / 40 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">gradation</strong>
+        <a class="card__img-wrap" href="svg/color--clip-171.svg"><span class="card__img"><img src="svg/color--clip-171.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">16SOAP｜大阪のハンドメイド石けん教室</span></h3>
+        <p class="card__meta"><span>clip / id 171 / 1.3 KB</span><time>2016-06-29</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">yellow</strong>
+        <a class="card__img-wrap" href="svg/color--clip-483.svg"><span class="card__img"><img src="svg/color--clip-483.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">2016.jsconf.is</span></h3>
+        <p class="card__meta"><span>clip / id 483 / 1.3 KB</span><time>2016-10-16</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">dark</strong>
+        <a class="card__img-wrap" href="svg/color--clip-1072.svg"><span class="card__img"><img src="svg/color--clip-1072.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Nobody Studios – Digitally Driven Design and Branding</span></h3>
+        <p class="card__meta"><span>clip / id 1072 / 1.3 KB</span><time>2017-02-07</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Tip</b>generic-tip / 0 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-tip--sample-90001.svg"><span class="card__img"><img src="svg/generic-tip--sample-90001.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>tip / id 90001 / 1.3 KB</span></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-tip--sample-90002.svg"><span class="card__img"><img src="svg/generic-tip--sample-90002.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>tip / id 90002 / 1.3 KB</span></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-tip--sample-90003.svg"><span class="card__img"><img src="svg/generic-tip--sample-90003.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>tip / id 90003 / 1.3 KB</span></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Clip</b>generic-clip / 80 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">ec</strong>
+        <a class="card__img-wrap" href="svg/generic-clip--clip-1990.svg"><span class="card__img"><img src="svg/generic-clip--clip-1990.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Abel</span></h3>
+        <p class="card__meta"><span>clip / id 1990 / 1.6 KB</span><time>2017-11-08</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">faniture</strong>
+        <a class="card__img-wrap" href="svg/generic-clip--clip-2676.svg"><span class="card__img"><img src="svg/generic-clip--clip-2676.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">Waka Waka</span></h3>
+        <p class="card__meta"><span>clip / id 2676 / 1.6 KB</span><time>2019-11-08</time></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">community</strong>
+        <a class="card__img-wrap" href="svg/generic-clip--clip-2117.svg"><span class="card__img"><img src="svg/generic-clip--clip-2117.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">2018 Developer Skill Report</span></h3>
+        <p class="card__meta"><span>clip / id 2117 / 1.6 KB</span><time>2017-12-24</time></p>
+      </article>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group__head"><b>Lab</b>generic-lab / 0 件</p>
+    <div class="list">
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-lab--sample-90001.svg"><span class="card__img"><img src="svg/generic-lab--sample-90001.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>lab / id 90001 / 1.1 KB</span></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-lab--sample-90002.svg"><span class="card__img"><img src="svg/generic-lab--sample-90002.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>lab / id 90002 / 1.1 KB</span></p>
+      </article>
+      <article class="card">
+        <strong class="card__tag">(空)</strong>
+        <a class="card__img-wrap" href="svg/generic-lab--sample-90003.svg"><span class="card__img"><img src="svg/generic-lab--sample-90003.svg" alt="" width="640" height="360" loading="lazy"></span></a>
+        <h3 class="card__title"><span class="card__target">（架空の記事）</span></h3>
+        <p class="card__meta"><span>lab / id 90003 / 1.1 KB</span></p>
+      </article>
+    </div>
+  </section>
+
+  <h2>前後記事ナビの背景</h2>
+  <p class="note">旧サイトの EntryNav と同じく、background-size: cover で中央を切り抜き、70% のグレーを被せています。</p>
+  <div class="nav">
+    <div class="nav__item"><div><p class="nav__text">previous<br>ー</p><h3 class="nav__title">グラフィックプログラミングの公式とか概念について -『JavaScript』</h3></div><div class="nav__bg" style="background-image:url(svg/javascript--tip-2740.svg)"></div></div>
+    <div class="nav__item nav__item--next"><div><p class="nav__text">next<br>ー</p><h3 class="nav__title">GREE Ventures</h3></div><div class="nav__bg" style="background-image:url(svg/studio--clip-510.svg)"></div></div>
+  </div>
+  <div class="nav">
+    <div class="nav__item"><div><p class="nav__text">previous<br>ー</p><h3 class="nav__title">素敵な表現を試したい。水彩のエフェクトを実装するスクリプト「Aquarelle」 -『plug-in』</h3></div><div class="nav__bg" style="background-image:url(svg/webgl--tip-261.svg)"></div></div>
+    <div class="nav__item nav__item--next"><div><p class="nav__text">next<br>ー</p><h3 class="nav__title">Famiglia Cecchi | Official site</h3></div><div class="nav__bg" style="background-image:url(svg/food--clip-954.svg)"></div></div>
+  </div>
+  <div class="nav">
+    <div class="nav__item"><div><p class="nav__text">previous<br>ー</p><h3 class="nav__title">#letsmuseeum: Stell dir vor, du scrollst durch ein Museum – in echt.</h3></div><div class="nav__bg" style="background-image:url(svg/culture--clip-2090.svg)"></div></div>
+    <div class="nav__item nav__item--next"><div><p class="nav__text">next<br>ー</p><h3 class="nav__title">Waka Waka</h3></div><div class="nav__bg" style="background-image:url(svg/generic-clip--clip-2676.svg)"></div></div>
+  </div>
+
+  <h2>OGP（1200 x 630）</h2>
+  <p class="note">カテゴリごとに 1 枚。文字は Open Sans Bold Italic の形をパスにして埋め込んでいるので、フォントがない環境でも同じ見た目になります。本番ではこの SVG を resvg で PNG にします。</p>
+  <div class="ogp">
+    <figure><img src="ogp/javascript.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>javascript</figcaption></figure>
+    <figure><img src="ogp/css.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>css</figcaption></figure>
+    <figure><img src="ogp/sass.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>sass</figcaption></figure>
+    <figure><img src="ogp/html.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>html</figcaption></figure>
+    <figure><img src="ogp/vue.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>vue</figcaption></figure>
+    <figure><img src="ogp/typescript.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>typescript</figcaption></figure>
+    <figure><img src="ogp/wordpress.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>wordpress</figcaption></figure>
+    <figure><img src="ogp/tooling.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>tooling</figcaption></figure>
+    <figure><img src="ogp/canvas.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>canvas</figcaption></figure>
+    <figure><img src="ogp/webgl.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>webgl</figcaption></figure>
+    <figure><img src="ogp/animation.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>animation</figcaption></figure>
+    <figure><img src="ogp/scroll.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>scroll</figcaption></figure>
+    <figure><img src="ogp/studio.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>studio</figcaption></figure>
+    <figure><img src="ogp/portfolio.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>portfolio</figcaption></figure>
+    <figure><img src="ogp/fashion.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>fashion</figcaption></figure>
+    <figure><img src="ogp/minimal.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>minimal</figcaption></figure>
+    <figure><img src="ogp/layout.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>layout</figcaption></figure>
+    <figure><img src="ogp/food.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>food</figcaption></figure>
+    <figure><img src="ogp/culture.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>culture</figcaption></figure>
+    <figure><img src="ogp/color.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>color</figcaption></figure>
+    <figure><img src="ogp/generic-tip.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>generic-tip</figcaption></figure>
+    <figure><img src="ogp/generic-clip.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>generic-clip</figcaption></figure>
+    <figure><img src="ogp/generic-lab.svg" alt="" width="1200" height="630" loading="lazy"><figcaption>generic-lab</figcaption></figure>
+  </div>
+</div>
+</body>
+</html>

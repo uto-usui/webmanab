@@ -1,0 +1,99 @@
+---
+interface Props {
+  // clipUrl のない 2 件（form、the-wing）は画像だけを出す
+  href?: string
+  title: string
+  image: { src: string; width: number; height: number }
+}
+
+const { href, title, image } = Astro.props
+const Tag = href ? 'a' : 'div'
+---
+
+<Tag
+  class="entry-clip__img"
+  href={href}
+  target={href ? '_blank' : undefined}
+  rel={href ? 'noopener' : undefined}
+>
+  {/* alt がこのリンクの名前になる（08 の A-4）。文言は旧サイトと同じ */}
+  <img
+    src={image.src}
+    width={image.width}
+    height={image.height}
+    alt={`${title}のアイキャッチ画像`}
+  />
+</Tag>
+
+<style lang="scss">
+  .entry-clip__img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 4px,
+      $black 0,
+      $black 5px
+    );
+    background-color: transparent;
+    clip-path: polygon(
+      0 50%,
+      0 0,
+      99% 0,
+      100% 66%,
+      100% 100%,
+      50% 100%,
+      0 100%
+    );
+    transition: 1s;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      font-size: 5rem;
+      font-weight: bold;
+      color: $white;
+      text-transform: uppercase;
+      content: 'visit to';
+      transform: translate(-50%, -50%) scale(0.1);
+      transition: 1s;
+    }
+
+    > img {
+      position: relative;
+      z-index: 2;
+
+      // スクショも SVG のアイキャッチも、枠の幅いっぱいに出す（02 の 9.2）
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
+      backface-visibility: hidden;
+      transition: 1s;
+    }
+
+    &[href]:hover {
+      clip-path: polygon(
+        0 0,
+        100% 0%,
+        100% 80%,
+        75% 80%,
+        75% 100%,
+        50% 80%,
+        0 80%
+      );
+
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      > img {
+        opacity: 0.05;
+      }
+    }
+  }
+</style>

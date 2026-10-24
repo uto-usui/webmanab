@@ -1,0 +1,179 @@
+---
+import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
+import type { ListItem } from '../lib/list-json'
+import { titleLink } from './article-item'
+
+interface Props {
+  item: ListItem
+}
+
+const { item } = Astro.props
+const link = titleLink(item)
+---
+
+<article class="article-item">
+  <div class="article-item__inner">
+    <strong class="article-item__tag">{item.primaryTag}</strong>
+    <a class="article-item__img-wrap" href={item.path}>
+      <div class="article-item__img">
+        <img
+          src={item.eyecatch}
+          width={EYECATCH_WIDTH}
+          height={EYECATCH_HEIGHT}
+          alt=""
+          loading="lazy"
+          data-lazy="loading"
+        />
+      </div>
+    </a>
+    <h3 class="article-item__title">
+      <a
+        class="article-item__target"
+        href={link.href}
+        target={link.external ? '_blank' : undefined}
+        rel={link.external ? 'noopener' : undefined}
+      >
+        {item.title}
+      </a>
+    </h3>
+    <p class="u-text-right">
+      <time class="article-item__time" datetime={item.dateLabel}>
+        {item.dateLabel}
+      </time>
+    </p>
+  </div>
+</article>
+
+<style lang="scss">
+  .article-item {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include tablet {
+      width: 50%;
+      border-left: 2px solid currentcolor;
+    }
+
+    @include desktop {
+      // 旧 33.3333333%。CSS の圧縮で 33.3333% に丸められると、箱の幅が 3 の倍数のとき 1/64px 狭くなる。
+      // カスタムプロパティの中の calc は丸められず、Chromium で旧値と同じ幅になる
+      --article-item-width: calc(100% / 3);
+
+      width: var(--article-item-width);
+    }
+
+    @include widescreen {
+      width: 25%;
+    }
+  }
+
+  .article-item__inner {
+    text-align: justify;
+  }
+
+  .article-item__tag {
+    display: inline-block;
+    min-width: 100px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: $space-2;
+    font-style: italic;
+    color: $glay;
+    border-bottom: 2px solid currentcolor;
+
+    @include sizes(-3);
+
+    // 白抜きの頭文字。primaryTag の先頭に空白や記号が来るとこの効果がずれる
+    &::first-letter {
+      padding-right: 6px;
+      font-weight: bold;
+      color: $white;
+      text-transform: capitalize;
+      text-shadow:
+        -1px -1px 0 $text-color,
+        1px -1px 0 $text-color,
+        -1px 1px 0 $text-color,
+        2px 3px 0 $text-color;
+
+      @include sizes(5);
+    }
+  }
+
+  .article-item__title {
+    margin: -6px $space-2 $space-2;
+    text-align: justify;
+
+    @include sizes(0, 1);
+  }
+
+  .article-item__img-wrap {
+    display: block;
+    width: calc(100% - #{$space-2} * 2);
+    margin: $space-2 auto;
+    vertical-align: bottom;
+    transition: 0.25s $easeOutQuart;
+
+    &:hover {
+      text-decoration: none;
+      box-shadow: -10px 10px 0 $secondary-color;
+      transform: translate(10px, -10px);
+    }
+  }
+
+  .article-item__img {
+    position: relative;
+    padding-top: calc(9 / 16 * 100%);
+    overflow: hidden;
+    background-color: $glay;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+
+      // height 属性がそのまま効いて縦に伸びないように
+      height: auto;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      will-change: opacity;
+
+      &[data-lazy='loading'] {
+        opacity: 0;
+      }
+
+      &[data-lazy='loaded'] {
+        opacity: 1;
+        transition: opacity 0.25s;
+      }
+    }
+  }
+
+  .article-item__target {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0.2em 0.1em;
+    color: $white;
+    background-color: $glay;
+    transition: 0.25s $easeOutQuart;
+
+    &:hover {
+      top: -5px;
+      left: 5px;
+      text-decoration: none;
+      box-shadow: -5px 5px 0 $primary-color;
+    }
+  }
+
+  .article-item__time {
+    display: inline-block;
+    padding-right: $space-2;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    font-style: italic;
+    border-bottom: 2px solid currentcolor;
+
+    @include sizes(-2);
+  }
+</style>

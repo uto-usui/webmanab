@@ -1,0 +1,63 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    env:
+      SITE_URL: https://webmanab.netlify.app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm format:check
+      - run: pnpm check
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm test:dist
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      # axe は報告だけ。増えたら警告と Job Summary に出し、マージは止めない（08 の 2.6）
+      - run: pnpm test:a11y
+        continue-on-error: true
+      - run: pnpm audit --audit-level high
+
+  # 部品のカタログ（07 の 13.1）。止めるのはビルドと操作のテストだけ。
+  # スクリーンショットは macOS の基準しかないので、ここでは比べない
+  catalog:
+    runs-on: ubuntu-24.04
+    env:
+      SITE_URL: https://webmanab.netlify.app
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:catalog
+      - run: pnpm exec playwright install --with-deps chromium
+      # a11y-report.json と .md は globalTeardown で書かれる
+      - run: pnpm test:catalog --ignore-snapshots
+      # axe は報告だけ。増えたら警告と Job Summary に出し、マージは止めない（08 の 2.7）
+      - if: always() && hashFiles('a11y-report.json') != ''
+        run: |
+          node scripts/a11y-compare.ts --baseline test/a11y/baseline-catalog.json --report a11y-report.json
+          { echo; cat a11y-report.md; } >> "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: a11y-report-catalog
+          path: |
+            a11y-report.json
+            a11y-report.md
+          if-no-files-found: ignore

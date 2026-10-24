@@ -1,0 +1,27 @@
+---
+import ArticleList from '../components/ArticleList.astro'
+import SectionList from '../components/SectionList.astro'
+import Title1 from '../components/Title1.astro'
+import Wrapper from '../components/Wrapper.astro'
+import Default from '../layouts/Default.astro'
+import { buildHead } from '../lib/head'
+import { getPosts } from '../lib/posts'
+import { POST_TYPES } from '../lib/site'
+
+// トップは type ごとに新しい 8 件だけ。無限スクロールはない（旧サイトと同じ）
+const sections = await Promise.all(
+  POST_TYPES.map(async (type) => ({ type, posts: await getPosts(type) })),
+)
+const head = buildHead({ kind: 'top' }, Astro.site!)
+---
+
+<Default title={head.title} head={head} routeName="index">
+  <Wrapper>
+    {sections.map(({ type, posts }) => (
+      <SectionList>
+        <Title1 text={type} />
+        <ArticleList posts={posts} />
+      </SectionList>
+    ))}
+  </Wrapper>
+</Default>

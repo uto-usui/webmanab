@@ -1,0 +1,114 @@
+   <p>HTMLをさわるようになって、技術書などで１番はじめにさらっと読み飛ばしていそうな「基礎の基礎な」ところを振り返ってみたら、きっちりと細かいところまで理解や解釈がおよんでいない箇所が多々ありました。<br>
+HTML5の基本的な書式について、自分なりにまとめておきたいなとおもいます。</p>
+
+<h2 id="a0">基本の書式と名称</h2>
+
+<p>HTMLはテキストのコンテンツをタグで囲って、その部分が文書の構成要素として「なに」を表すかを示す言語です。文書の構成要素を要素(element)と呼び、要素の前に開始タグ「&#x3C;ex>」、要素の後には終了タグ「&#x3C;/ex>」を置きます。</p>
+
+<h4 id="html">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">html</span>></span>lorem<span class="hljs-tag">&#x3C;/<span class="hljs-name">html</span>></span>
+
+</code></pre>
+
+<h3 id="a00">タグの省略</h3>
+
+<p>HTML5の要素には終了タグのみ、または開始タグ終了タグの両方を省略できるものがあります。<br>
+ただし省略可能の要素には条件がある場合もあります。</p>
+
+<h3 id="a01">空要素</h3>
+
+<p>要素にはタグで囲うコンテンツがなく、その存在を開始タグだけで示す「空要素」があります。<br>
+空要素には終了タグを指定できません。<br>
+またHTML5では、空要素タグ内部の末尾に「/」を入れることができます。</p>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">img</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">br</span> /></span>
+
+</code></pre>
+
+<h3 id="a02">属性</h3>
+
+<p>要素の開始タグの要素名の後、空白文字で区切って属性(attribute)を記述できます。<br>
+順不同で複数指定することができ、属性名(name)と属性値(value)を指定します。<br>
+仕様書で定義されている場合を除き、値の文字に制限はなく、空にすることもできます。</p>
+
+<h4 id="html-1">html</h4>
+
+<pre class="hljs bash"><code class="html">
+&#x3C;ex name=\"value\">
+&#x3C;img src=\"zoro.jpg\" alt=\"サンジといつもどうりもめているゾロ\">
+
+</code></pre>
+
+<p>#### memo</p>
+
+<p>「＝」の前後には空白文字を挿入できます。<br>
+属性値を囲う「\’ \’」「\” \”」はその属性値に「=」「\”」「\’」「&#x3C;」「>」を含んでいない場合、または属性値が空でない場合は省略できます。</p>
+
+<h4 id="html-2">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-tag">&#x3C;<span class="hljs-name">ex</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"value"</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">ex</span> <span class="hljs-attr">name</span>=<span class="hljs-string">value</span>></span>
+<span class="hljs-tag">&#x3C;<span class="hljs-name">ex</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"value"</span>></span>
+
+</code></pre>
+
+<h2 id="a1">DOCTYPE宣言</h2>
+
+<p>HTML文書の先頭には、DOCTYPE宣言(文書型宣言)を配置します。<br>
+実際は不要ですが、ブラウザの表示モードを「標準モード」にするために記述します。</p>
+
+<h4 id="html-3">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-meta">&#x3C;!DOCTYPE <span class="hljs-meta-keyword">html</span>></span>
+
+</code></pre>
+
+<h3 id="a10">標準モード</h3>
+
+<p>ブラウザは昔々のテーブルレイアウトのページを表示させるための「後方互換モード」と、標準仕様に準拠したページを表示させる「標準モード」という表示モードをもっています。<br>
+「後方互換モード」では昔のブラウザの独自の仕様に合わせた表示を行うので、HTML5で書かれた文書を正しく表示できません。</p>
+
+<p>その２つのモードを切り替えるために「DOCTYPE宣言」を記述しています。<br>
+「DOCTYPE宣言」がないと、無条件に「後方互換モード」と認識してしまいます。<br>
+それを防ぐために、最低限の短い「DOCTYPE宣言」を行っています。</p>
+
+<h4 id="memo">memo</h4>
+
+<p>「DOCTYPE宣言」は大文字小文字を問いません。また、「html」の前後に空白を入れることができます。<br>
+ただし、「&#x3C;!DOCTYPE」までは、続けて記述する必要があります。</p>
+
+<h4 id="html-4">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-meta">&#x3C;!DOCTYPE <span class="hljs-meta-keyword">HTML</span>></span>
+<span class="hljs-meta">&#x3C;!DOCTYPE <span class="hljs-meta-keyword">html</span> ></span>
+<span class="hljs-meta">&#x3C;!doctype   <span class="hljs-meta-keyword">HTML</span>></span>
+
+</code></pre>
+
+<h2 id="a2">コメント</h2>
+
+<p>ソースコードの中に書き込んでおくことのできるメモとして「コメント」を記述します。<br>
+「&#x3C;!--」 と「-->」で囲んだ範囲がHTMLのコメントになります。</p>
+
+<h4 id="html-5">html</h4>
+
+<pre class="hljs xml"><code class="html">
+<span class="hljs-comment">&#x3C;!-- ここにコメント --></span>
+
+</code></pre>
+
+<h4 id="memo-1">memo</h4>
+
+<p>コメントの内部には連続した「–」ハイフンを入れることができません。<br>
+コメントのテキストは「>」「->」で開始することはできず、「-」で終わることができません。</p>
+
+<p>おわります。</p>
+
+  

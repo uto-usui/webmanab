@@ -1,0 +1,20 @@
+---
+import ArticleList from '../../components/ArticleList.astro'
+import Title1 from '../../components/Title1.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import Default from '../../layouts/Default.astro'
+import { buildHead } from '../../lib/head'
+import { typeDataEndpoint } from '../../lib/list-json'
+import { getPosts } from '../../lib/posts'
+
+const type = 'clip'
+const posts = await getPosts(type)
+const head = buildHead({ kind: 'type', type }, Astro.site!)
+---
+
+<Default title={head.title} head={head} routeName={type}>
+  <Wrapper>
+    <Title1 text={type} />
+    <ArticleList posts={posts} endpoint={typeDataEndpoint(type)} />
+  </Wrapper>
+</Default>

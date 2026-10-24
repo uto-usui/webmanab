@@ -1,0 +1,71 @@
+---
+import MenuTitle from './MenuTitle.astro'
+
+export interface MenuTerm {
+  id: number
+  name: string
+}
+
+interface Props {
+  title: string
+  taxonomy: 'tips' | 'clips' | 'labs'
+  terms?: MenuTerm[]
+}
+
+const { title, taxonomy, terms = [] } = Astro.props
+---
+
+<div class="menu-list__wrapper">
+  <MenuTitle text={title} />
+  {/* 空でも ul を出す。padding と margin が見出しどうしの間隔になっている */}
+  <ul class="menu-list">
+    {terms.map(({ id, name }) => (
+      <li class="menu-list__item">
+        <a class="menu-list__target" href={`/${taxonomy}/${id}/`}>
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style lang="scss" is:global>
+  .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: space-scalar(4);
+    padding-left: space-scalar(4);
+    margin-bottom: space-scalar(4);
+    margin-left: -5px;
+
+    @include mobile {
+      max-height: space-scalar(90);
+      overflow: auto;
+    }
+
+    @include desktop {
+      padding-right: space-scalar(8);
+      padding-left: space-scalar(8);
+    }
+  }
+
+  .menu-list__target {
+    display: inline-block;
+    padding: 0.6em 0.8em;
+    color: $white;
+    text-transform: uppercase;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(-2);
+
+    @include desktop {
+      @include sizes(-1);
+    }
+
+    &:hover {
+      background-color: $black;
+      box-shadow: -5px 5px 0 $primary-color;
+      transform: translate(5px, -5px);
+    }
+  }
+</style>

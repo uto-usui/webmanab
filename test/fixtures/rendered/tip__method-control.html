@@ -1,0 +1,347 @@
+   <h2 id="a0">ラップ集合のサイズを判定する</h2>
+
+<p>ラップ集合は、配列に似た方法で扱えます。ラップされた要素の数をふくむ<code>length</code>プロパティは、JavaScriptの配列と同様に扱うことができます。</p>
+
+<p>プロパティでなくjQueryのメソッドを使いたいとき、<strong>size()メソッド</strong>を利用します。これは<code>length</code>プロパティと同じ情報を返します。</p>
+
+<pre class="hljs javascript"><code>
+$(<span class="hljs-string">'#mugiwara-team'</span>).html(<span class="hljs-string">'They are'</span> + $(<span class="hljs-string">'.mugiwara-member'</span>).size());
+
+</code></pre>
+
+<p>すべての<code>.mugiwara-member</code>にマッチして、その要素の数を返しています。</p>
+
+<h4 id="sizeメソッド">「sizeメソッド」</h4>
+
+<dl><dt>size()</dt>
+<dd>ラップ集合の中にある要素の数を返す</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>要素の数</dd>
+</dl>
+
+<h2 id="a1">ラップ集合内の要素の取得</h2>
+
+<p>要素を直接参照して、生のJavaScriptの操作を実行するときのメソッドやその他の方法があります。</p>
+
+<h3 id="a10">インデックスを使った要素の取得</h3>
+
+<p>jQueryではラップ集合をJavaScriptの配列と同様に扱えるので、単純に配列のインデックスを使って位置を指定することで要素を取得できます。</p>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> nami = $(<span class="hljs-string">'.mugiwara-member'</span>)[<span class="hljs-number">2</span>];
+
+</code></pre>
+
+<p>配列のインデックスではなくjQueryのメソッドを使いたい場合は、<strong>get()メソッド</strong>を利用します。</p>
+
+<h4 id="getメソッド">「getメソッド」</h4>
+
+<dl><dt>get(index)</dt>
+<dd>ラップ集合のうちマッチした要素の１つまたはすべてを取得する。indexが空の場合は、ラップ集合のすべての要素がJavaScript配列として返される。indexが指定されていると、そのインデックスの要素を返す。</dd>
+<dt>パラメータ index</dt>
+<dd>(Number) 返したい要素のインデックス。</dd>
+<dt>戻り値</dt>
+<dd>１つのDOM要素か、DOM要素の配列。</dd>
+</dl>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> zoro = $(<span class="hljs-string">'.mugiwara-member'</span>).get(<span class="hljs-number">1</span>);
+
+</code></pre>
+
+<p><code>get()</code>はパラメータに負のインデックスを指定できます。その場合はラップ集合の末尾からの相対位置になります。</p>
+
+<p>get()メソッドは１つのDOM要素を返しますが、場合によっては要素そのものではなくjQueryらしく、特定の要素１つをふくむラップ集合を用意したいときがあります。それはセレクタフィルタに似た<strong>eq()メソッド</strong>を利用します。</p>
+
+<h4 id="eqメソッド">「eqメソッド」</h4>
+
+<dl><dt>eq(index)</dt>
+<dd>ラップ集合の中でインデックスされた要素を取得し、その要素だけをふくむ新しいラップ集合を返す。</dd>
+<dt>パラメータ index</dt>
+<dd>(Number) 返したい１つの要素のインデックス。getと同じく負のインデックスを指定すると末尾からの順となる。</dd>
+<dt>戻り値</dt>
+<dd>1個または、0個の要素をふくむラップ集合</dd>
+</dl>
+
+<p>ラップ集合にある最初と最後の要素取得するのには、簡単におこなえるように<strong>first()メソッド</strong>と<strong>last()メソッド</strong>が用意されています。</p>
+
+<h4 id="firstメソッド">「firstメソッド」</h4>
+
+<dl><dt>first()</dt>
+<dd>ラップ集合の中で最初の要素を取得し、その要素だけをふくむ新しいラップ集合を返す。元の集合が空の場合は、返す集合も空。</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>1個または、0個の要素をふくむラップ集合</dd>
+</dl>
+
+<h4 id="lastメソッド">「lastメソッド」</h4>
+
+<dl><dt>last()</dt>
+<dd>ラップ集合の中で最後の要素を取得し、その要素だけをふくむ新しいラップ集合を返す。元の集合が空の場合は、返す集合も空。</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>1個または、0個の要素をふくむラップ集合</dd>
+</dl>
+
+<h3 id="a11">配列の要素の全取得</h3>
+
+<p>ラップ集合の全ての要素をDOM要素のJavaScript配列として取得したい場合は、<strong>toArray()</strong>メソッドを使います。</p>
+
+<h4 id="toarrayメソッド">「toArrayメソッド」</h4>
+
+<dl><dt>toArray()</dt>
+<dd>ラップ集合をDOM要素の配列として返す</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>ラップ集合内のDOM要素をJavaScript配列にしたもの</dd>
+</dl>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> mugiwaraTeam = $(<span class="hljs-string">'.mugiwara-member'</span>).toArray();
+<span class="hljs-keyword">var</span> zoro = mugiwaraTeam[<span class="hljs-number">1</span>];
+
+</code></pre>
+
+<h3 id="a12">要素のインデックス判定</h3>
+
+<p>インデックスの要素を返す<code>get()</code>メソッドの反対の動きとして、<strong>index()メソッド</strong>はラップ集合の中で要素のインデックスを判定するのに使えます。</p>
+
+<h4 id="indexメソッド">「indexメソッド」</h4>
+
+<dl><dt>index(element)</dt>
+<dd>ラップ集合の中で、指定した要素の集合におけるインデックスを返す。なければ「-１」を返す。</dd>
+<dt>パラメータ</dt>
+<dd>(Element / Selector) インデックスを知りたい要素への参照か、その要素を識別するためのセレクタ。諸略されると、ラップ集合の最初の要素をその兄弟の中から探す。</dd>
+<dt>戻り値</dt>
+<dd>渡された要素が、ラップ集合の中で見つかった位置のインデックス。見つからない場合は「-1」。</dd>
+</dl>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> zoro = $(<span class="hljs-string">'#mugiwara-team'</span>).index(<span class="hljs-string">'#zoro'</span>);
+<span class="hljs-keyword">var</span> nami = $(<span class="hljs-string">'#nami'</span>).index();
+<span class="hljs-comment">// zoro = 1</span>
+<span class="hljs-comment">// nami = 2</span>
+
+</code></pre>
+
+<p>パラメータに指定した要素の、ラップ集合でのインデックスを知ることができ、<code>index()</code>のパラメータを省略することで、自分自身のインデックスを知ることができるので同じ値を取得するのに２通りの方法があります。</p>
+
+<h2 id="a2">ラップされた要素の管理</h2>
+
+<p>jQueryにはラップした要素集合を追加したり、フィルタをかけて集合を縮小したい場合の、ラップ集合の管理を実現するメソッドがあります。</p>
+
+<h3 id="a20">ラップ集合への要素の追加</h3>
+
+<p>既存のラップ集合に対して、要素を追加したい場合、例えば元の集合に対して何らかのメソッドを適用してから、要素を追加して処理を実行したいときに使えるのが、<strong>add()メソッド</strong>です。<code>add()</code>はセレクタをチェインすることで和集合をつくっていきます。<code>add()</code>の特性として重要なことは、<strong>元のラップ集合に単純に追加するのではなく新しくラップした集合を作る</strong>ことです。元の集合を破壊せずにメソッドをチェインさせるので、後で戻るためのバックアップが生まれているというところがとても有能です。</p>
+
+<h4 id="addメソッド">「addメソッド」</h4>
+
+<dl><dt>add(expression, context)</dt>
+<dd>ラップ集合のコピーを作り、expressionとcontextで指定した要素を新しい集合に追加する。セレクタ／HTML／DOM／DOM配列を渡すことができる。</dd>
+<dt>パラメータ expression</dt>
+<dd>(Selector / Element / Array) マッチした集合に何を追加するかを指定する。jQueryセレクタの場合はマッチした要素が集合に追加される。HTMLの場合は要素が作成され集合に追加される。DOM要素かDOM要素の配列の場合は、そのまま配列に追加される。</dd>
+<dt>パラメータ context</dt>
+<dd>(Selector / Elemnt / Array / jQuery) expressionでマッチさせる要素に範囲を与えるためのコンテクストを指定する。<code>$()</code>関数に渡せるものと同じもの。</dd>
+<dt>戻り値</dt>
+<dd>元のラップ集合をコピーして、指定した要素を追加した集合を返す。</dd>
+</dl>
+
+<h3 id="a21">ラップ集合からの要素の削除</h3>
+
+<p>ラップ集合への追加は<code>add()</code>メソッドでしたが、反対に要素を削除する場合は<strong>not()メソッド</strong>を使います。</p>
+
+<h4 id="notメソッド">「notメソッド」</h4>
+
+<dl><dt>add(expression)</dt>
+<dd>ラップ集合のコピーを作り、expressionで指定した要素を削除する。</dd>
+<dt>パラメータ expression</dt>
+<dd>(Selector / Element / Array / Function) マッチした集合から何を削除するかを指定する。jQueryセレクタの場合はマッチした要素が集合から削除される。要素の参照か要素の配列の場合は、それらが削除される。関数の場合は、ラップ集合のそれぞれの要素を<code>this</code>として関数を処理し、呼び出しの結果<code>ture</code>が返された要素をラップ集合から削除する。</dd>
+<dt>戻り値</dt>
+<dd>元のラップ集合をコピーして、指定した要素を削除した集合を返す。</dd>
+</dl>
+
+<p>この<code>not()</code>を使うことで、マッチした要素を除外することができますが、マッチした要素以外を削除したい場合は、<strong>filter()</strong>メソッドを使います。</p>
+
+<h4 id="filterメソッド">「filterメソッド」</h4>
+
+<dl><dt>filter(expression)</dt>
+<dd>ラップ集合のコピーを作り、expressionで指定した要素以外を削除する。</dd>
+<dt>パラメータ expression</dt>
+<dd>(Selector / Element / Array / Function) マッチした集合から何を削除するかを指定する。jQueryセレクタの場合はマッチした要素以外が集合から削除される。要素の参照か要素の配列の場合は、それら以外が削除される。関数の場合は、ラップ集合のそれぞれの要素を<code>this</code>として関数を処理し、呼び出しの結果<code>false</code>が返された要素をラップ集合から削除する。</dd>
+<dt>戻り値</dt>
+<dd>元のラップ集合をコピーして、指定した要素以外を削除した集合を返す。</dd>
+</dl>
+
+<h3 id="a22">ラップ集合のサブセット化</h3>
+
+<p>ラップ集合から、集合内の要素の位置によって切り取ったサブセットを取得したい時、<strong>slice()メソッド</strong>を使います。</p>
+
+<h4 id="sliceメソッド">「sliceメソッド」</h4>
+
+<dl><dt>slice(begin, end)</dt>
+<dd>マッチした集合内の部分を含む、新しいラップ集合をつくって返す。</dd>
+<dt>パラメータ begin</dt>
+<dd>(Number) 戻り値となるスライスに含めたい最初の要素の、0を奇数とする位置。</dd>
+<dt>パラメータ end</dt>
+<dd>(Number) 戻り値となるスライスに含めたくない最初の要素の、0を奇数とする位置。省略したらスライスは元の集合の最後まで含むラップ集合を返す。</dd>
+<dt>戻り値</dt>
+<dd>新しく一部を切り取り作成したラップ集合。</dd>
+</dl>
+
+<pre class="hljs javascript"><code>$(<span class="hljs-string">'#mugiwara-team'</span>).slice(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>); <span class="hljs-comment">// ２番目から5番目まで</span>
+$(<span class="hljs-string">'#mugiwara-team'</span>).slice(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// ２番目のみ</span>
+$(<span class="hljs-string">'#mugiwara-team'</span>).slice(<span class="hljs-number">5</span>); <span class="hljs-comment">// 6以降全部</span>
+
+</code></pre>
+
+<p>サブセットの取得には<code>:has</code>フィルタと同じように働く、<strong>has()メソッド</strong>が用意されています。</p>
+
+<h4 id="hasメソッド">「hasメソッド」</h4>
+
+<dl><dt>has(test)</dt>
+<dd>渡されたtestにマッチする子孫を持っている要素だけを門徒のラップ集合から抜き出して、新しいラップ集合をつくって返す。</dd>
+<dt>パラメータ test</dt>
+<dd>(Selector / Element) ラップ集合のすべての子孫に適用するセレクタ。セレクタにマッチした要素が戻り値のラップ集合に返される。</dd>
+<dt>戻り値</dt>
+<dd>結果のラップ集合。</dd>
+</dl>
+
+<h3 id="a23">ラップ集合の要素の変換</h3>
+
+<p>ラップ集合の要素に対して値を文字列として取得したりするのに変換を実行したいとき、<strong>map()メソッド</strong>を使います。ラップ集合から新しい配列を関数によって作成するイメージです。</p>
+
+<h4 id="mapメソッド">「mapメソッド」</h4>
+
+<dl><dt>map(callback)</dt>
+<dd>ラップ集合の各要素に、コールバック関数を呼び出して戻り値を集めて、jQueryオブジェクトのインスタンスをつくる。</dd>
+<dt>パラメータ callback</dt>
+<dd>(Function) ラップ集合の各要素に呼び出すコールバック関数。この関数には２つのパラメータを渡す。<code>function(index,element)</code>集合における要素の０を基数とするインデックスと、関数のコンテクスト<code>this</code>が渡される。</dd>
+<dt>戻り値</dt>
+<dd>変換した値をラップした集合</dd>
+</dl>
+
+<p>戻り値はjQueryオブジェクトなので(配列ではないので)、<code>get()</code>で<strong>JavaScript配列に変換して出力</strong>します。</p>
+
+<pre class="hljs javascript"><code>
+<span class="hljs-keyword">var</span> mugiwaraTeam  = $(<span class="hljs-string">'#mugiwara-team'</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">index</span>)</span>{ <span class="hljs-keyword">return</span> $(<span class="hljs-built_in">this</span>).text(); }).get();
+alert(mugiwaraTeam);
+
+</code></pre>
+
+<h3 id="a24">ラップ集合の要素の走査</h3>
+
+<p>ラップ集合の要素を反復処理してフィルタリングして値を集めたり要素を変換するのに<code>map()</code>を使いましたが、単純に反復の処理をしたいときには<strong>eace()メソッド</strong>を使います。</p>
+
+<h4 id="eachメソッド">「eachメソッド」</h4>
+
+<dl><dt>each(iterator)</dt>
+<dd>マッチした集合の全部の要素を走査し、それぞれの要素に対して渡された反復処理するための関数<code>iterator</code>を呼び出す。</dd>
+<dt>パラメータ iterator</dt>
+<dd>(Function) マッチした要素の各要素について呼び出される関数。この関数には２つのパラメータを渡す。<code>function(index,element)</code>集合における要素の０を基数とするインデックスと、関数のコンテクスト<code>this</code>が渡される。</dd>
+<dt>戻り値</dt>
+<dd>ラップ集合</dd>
+</dl>
+
+<pre class="hljs javascript"><code>
+$(<span class="hljs-string">'.mugiwara-member'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">this</span>.title = <span class="hljs-string">'I am'</span> + <span class="hljs-built_in">this</span>.id;
+});
+
+</code></pre>
+
+<h2 id="a3">DOM要素の関係を元にしたラップ集合の取得</h2>
+
+<p>jQueryでは、既存のラップ集合から新しいラップ集合を取得するのに、ラップされた要素とDOMの他の要素との階層的な関係を利用することができます。</p>
+
+<h3 id="a30">DOM要素の関係を利用して新しいラップ集合を取得するメソッドまとめ</h3>
+
+<p>結果のフィルタリングに<code>selector</code>にパラメータとして渡すことができます。</p>
+
+<dl><dt>children(selector)</dt>
+<dd>子要素をすべて集めたラップ集合を返す。</dd>
+<dt>closest(selector)</dt>
+<dd>もっとも近い先祖で式にマッチするものをだけを含むラップ集合を返す。</dd>
+<dt>next(selector)</dt>
+<dd>次の兄弟要素をすべて集めたラップ集合を返す。</dd>
+<dt>nextAll(selector)</dt>
+<dd>次以降にある兄弟要素をすべて集めたラップ集合を返す。</dd>
+<dt>nextUntil(selector)</dt>
+<dd>次以降にある兄弟要素で、指定したセレクターや条件に一致する要素が出てくるまでをすべて集めたラップ集合を返す。セレクタが見つからない場合は次以降にある兄弟要素すべてを返す。</dd>
+<dt>prev(selector)</dt>
+<dd>直前の兄弟要素をすべて集めたラップ集合を返す。</dd>
+<dt>prevAll(selector)</dt>
+<dd>以前にある兄弟要素をすべて集めたラップ集合を返す。</dd>
+<dt>prevUntil(selector)</dt>
+<dd>以前にある兄弟要素で、指定したセレクターや条件に一致する要素が出てくるまでをすべて集めたラップ集合を返す。セレクタが見つからない場合は以前にある兄弟要素すべてを返す。</dd>
+<dt>parent(selector)</dt>
+<dd>直接の親をすべて集めたラップ集合を返す。</dd>
+<dt>parents(selector)</dt>
+<dd>すべての先祖を直接の親からルートに至るまでをすべて集めたラップ集合を返す。</dd>
+<dt>parentsUntil(selector)</dt>
+<dd>すべての先祖を指定したセレクターや条件に一致する要素が出てくるまでをすべて集めたラップ集合を返す。すべての先祖を直接の親からルートに至るまですべてを返す。</dd>
+<dt>siblings(selector)</dt>
+<dd>兄弟要素すべてを集めたラップ集合を返す。</dd>
+<dt>contents()</dt>
+<dd>ラップ集合の中にある要素の内容(テキスト)のラップ集合を返す。<code>&#x3C;iframe></code>とか取得するのに使う。</dd>
+<dt>offsetParent()</dt>
+<dd>ラップ集合の最初の要素に対して、相対か絶対値でもっとも近い親を含むラップ集合を返す。</dd>
+</dl>
+
+<h2 id="a4">ラップ集合に使える便利なメソッド</h2>
+
+<p>ラップ集合に使えるメソッドの中で便利で有能なものが<code>find()メソッド</code>です。</p>
+
+<h4 id="findメソッド">「findメソッド」</h4>
+
+<dl><dt>find(selector)</dt>
+<dd>ラップ集合の要素の子孫で、渡された式にマッチするすべての要素を含むラップ集合を返す。</dd>
+<dt>パラメータ selector</dt>
+<dd>(String) このjQueryセレクタにマッチする要素だけが、戻り値の集合にはいる。</dd>
+<dt>戻り値</dt>
+<dd>新しく作られたラップ集合</dd>
+</dl>
+
+<p>ラップ集合の子孫要素を簡単に検索するのに<code>find()</code>を利用しますが、与えられたセレクタにマッチする要素がラップ集合にあるかどうか、その有無を調べるのに<strong>is()メソッド</strong>を使います。真偽値を返し、あれば<code>true</code>なければ<code>false</code>を返します。</p>
+
+<h4 id="isメソッド">「isメソッド」</h4>
+
+<dl><dt>is(selector)</dt>
+<dd>ラップ集合の要素のどれかが、渡されたセレクタにマッチするかどうかを判定する。</dd>
+<dt>パラメータ selector</dt>
+<dd>(String) ラップ集合の要素をテストするセレクタ。</dd>
+<dt>戻り値</dt>
+<dd>1つ以上の要素が渡されたセレクタにマッチすれば<code>true</code>なければ<code>false</code>を返す。</dd>
+</dl>
+
+<h2 id="a5">jQueryチェインの管理</h2>
+
+<p>jQueryのメソッドをチェインで繋げて処理をまとめることで、処理の連鎖を簡潔に表現でき、効率よく実行することができる。その際にラップ集合を操作して、新しいラップ集合を作成して処理を進めていくことがありますが、元のラップ集合に戻りたい時に<strong>end()メソッド</strong>を利用します。<code>end()</code>は１つ前のラップ集合をメソッドの値として返してくれるので、元の集合を再度処理したい時に有用です。</p>
+
+<h4 id="endメソッド">「endメソッド」</h4>
+
+<dl><dt>end()</dt>
+<dd>jQueryメソッドチェインの中で、現在のラップ集合をバックアップして、１つ前に返されたラップ集合に戻す。</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>一つ前ラップ集合</dd>
+</dl>
+
+<p>jQueyのメソッドチェインの中で生成されたラップ集合は<strong>スタックに積まれている</strong>とイメージします。<code>end()</code>を呼び出すと、最後に積んだ１番上のラップ集合を受け取って以降のメソッドの対象となっていきます。ラップ集合の今のスタックと前のスタックをマージするのに<strong>andSelf()</strong>メソッドを利用します。</p>
+
+<h4 id="andselfメソッド">「andSelfメソッド」</h4>
+
+<dl><dt>andSelf()</dt>
+<dd>メソッドチェインで、それ以前にラップされた２つの集合をマージする。</dd>
+<dt>パラメータ</dt>
+<dd>なし</dd>
+<dt>戻り値</dt>
+<dd>マージされたラップ集合。</dd>
+</dl>
+
+  

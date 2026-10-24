@@ -1,0 +1,104 @@
+---
+// story の一覧。項目の「4 幅」を押すと、上に 4 つの幅の iframe を並べる（07 の 9 章）
+import { stories } from './stories'
+import { WIDTHS } from './types'
+
+const groups = Map.groupBy(stories, (s) => s.entry.component)
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>catalog</title>
+  </head>
+  <body class="catalog-index">
+    <section class="catalog-index__viewer" hidden>
+      <p class="catalog-index__current"></p>
+      <div class="catalog-index__frames">
+        {WIDTHS.map((width) => (
+          <iframe
+            class="catalog-index__frame"
+            width={width}
+            height="900"
+            title={`${width}px`}
+          />
+        ))}
+      </div>
+    </section>
+    <h1 class="catalog-index__title">catalog（{stories.length} stories）</h1>
+    {[...groups].map(([component, list]) => (
+      <section class="catalog-index__group">
+        <h2 class="catalog-index__heading">{component}</h2>
+        <ul>
+          {list.map(({ entry }) => (
+            <li class="catalog-index__item">
+              <a href={`/catalog/${entry.id}/`}>{entry.name}</a>
+              <a href={`#${entry.id}`}>4 幅</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </body>
+</html>
+
+<script>
+  const viewer = document.querySelector<HTMLElement>('.catalog-index__viewer')!
+  const current = viewer.querySelector<HTMLElement>('.catalog-index__current')!
+  const frames = viewer.querySelectorAll('iframe')
+
+  function show() {
+    const id = decodeURIComponent(location.hash.slice(1))
+    viewer.hidden = !id
+    if (!id) return
+    current.textContent = id
+    for (const frame of frames) frame.src = `/catalog/${id}/`
+  }
+
+  addEventListener('hashchange', show)
+  show()
+</script>
+
+<style>
+  .catalog-index {
+    padding: 16px;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+
+    a {
+      color: #2a8379;
+      text-decoration: underline;
+    }
+  }
+
+  .catalog-index__title {
+    margin: 16px 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .catalog-index__heading {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+
+  .catalog-index__item {
+    display: flex;
+    gap: 16px;
+  }
+
+  .catalog-index__frames {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+  }
+
+  .catalog-index__frame {
+    flex: none;
+    border: 1px solid #ccc;
+  }
+</style>

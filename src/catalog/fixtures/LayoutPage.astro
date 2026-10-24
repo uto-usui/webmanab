@@ -1,0 +1,10 @@
+---
+// layouts/Default.astro をそのまま描く
+import Default from '../../layouts/Default.astro'
+import WrapperPage from './WrapperPage.astro'
+---
+
+<Default title="catalog: layout">
+  <meta name="robots" content="noindex" slot="head" />
+  <WrapperPage />
+</Default>

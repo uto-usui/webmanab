@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string
+  image: { src: string; width: number; height: number }
+}
+
+const { title, image } = Astro.props
+---
+
+<img
+  class="entry__img-full"
+  src={image.src}
+  width={image.width}
+  height={image.height}
+  alt={`${title} overview image`}
+  loading="lazy"
+  decoding="async"
+/>
+
+<style lang="scss">
+  .entry__img-full {
+    // 旧サイトと同じく元の幅で出し、本文より広いときだけ base の max-width: 100% で縮める
+    height: auto;
+    margin-top: 120px;
+  }
+</style>

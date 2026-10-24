@@ -1,0 +1,49 @@
+---
+import '../styles/global.scss'
+import Bar from '../components/Bar.astro'
+import Header from '../components/Header.astro'
+import Menu from '../components/Menu.astro'
+import Head from '../components/Head.astro'
+import AdScript from '../components/AdScript.astro'
+import type { HeadData } from '../lib/head'
+import { menuTerms } from '../lib/terms'
+
+interface Props {
+  title: string
+  // カタログでは head なしで描くので省略できる。サイトのページは必ず渡す
+  head?: HeadData
+  // 旧サイトの route 名（index、tip-id など）。CSS では使わず、旧サイトとの computed style の比較でキーをそろえるためのもの
+  routeName?: string
+}
+
+const { title, head, routeName } = Astro.props
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {head && <Head head={head} />}
+    <AdScript />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class:list={['default-layout', routeName]}>
+      {/* Bar は .bar:nth-of-type で上下左右を決めるので、この div の最初の 4 つの div にする */}
+      <Bar />
+      <Bar />
+      <Bar />
+      <Bar />
+      <Header />
+      <slot />
+      <Menu
+        tips={menuTerms('tips')}
+        clips={menuTerms('clips')}
+        labs={menuTerms('labs')}
+      />
+    </div>
+  </body>
+</html>

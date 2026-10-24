@@ -1,0 +1,37 @@
+---
+// 部品 1 つを描くページの枠。head は layouts/Default.astro に合わせる
+import '../styles/global.scss'
+
+interface Props {
+  title: string
+  story: string
+  minHeight?: number
+  padding?: number
+}
+
+const { title, story, minHeight, padding } = Astro.props
+const style = [
+  minHeight && `min-height: ${minHeight}px`,
+  padding && `padding: ${padding}px`,
+]
+  .filter(Boolean)
+  .join('; ')
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div
+      class="default-layout catalog"
+      data-story={story}
+      style={style || undefined}
+    >
+      <slot />
+    </div>
+  </body>
+</html>

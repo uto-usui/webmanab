@@ -1,0 +1,194 @@
+{
+  "axeCore": "4.13.0",
+  "measuredAt": "2026-10-23",
+  "source": "https://webmanab.netlify.app",
+  "pages": {
+    "home@1080": {
+      "image-alt": 16,
+      "landmark-unique": 1,
+      "link-name": 24
+    },
+    "list@1080": {
+      "image-alt": 8,
+      "landmark-unique": 1,
+      "link-name": 8
+    },
+    "term@1080": {
+      "image-alt": 8,
+      "landmark-unique": 1,
+      "link-name": 8
+    },
+    "tip-a@1080": {
+      "color-contrast": 6,
+      "heading-order": 3,
+      "image-alt": 1,
+      "landmark-unique": 1,
+      "link-name": 1,
+      "scrollable-region-focusable": 2
+    },
+    "tip-b@1080": {
+      "color-contrast": 100,
+      "frame-title": 1,
+      "image-alt": 1,
+      "landmark-unique": 1,
+      "link-name": 1
+    },
+    "clip@1080": {
+      "color-contrast": 1,
+      "heading-order": 1,
+      "landmark-unique": 1
+    },
+    "lab@1080": {
+      "color-contrast": 8,
+      "frame-title": 1,
+      "heading-order": 1,
+      "landmark-unique": 1,
+      "scrollable-region-focusable": 1
+    },
+    "menu@1080": {
+      "image-alt": 16,
+      "landmark-unique": 1,
+      "link-name": 24
+    },
+    "toc@1080": {
+      "color-contrast": 6,
+      "heading-order": 3,
+      "image-alt": 1,
+      "landmark-unique": 1,
+      "link-name": 1,
+      "scrollable-region-focusable": 2
+    },
+    "tip-c@1080": {
+      "color-contrast": 1,
+      "image-alt": 1,
+      "landmark-unique": 1,
+      "link-in-text-block": 4,
+      "link-name": 1
+    },
+    "home@375": {
+      "image-alt": 16,
+      "landmark-unique": 1,
+      "link-name": 24
+    },
+    "list@375": {
+      "image-alt": 8,
+      "landmark-unique": 1,
+      "link-name": 8
+    },
+    "term@375": {
+      "image-alt": 8,
+      "landmark-unique": 1,
+      "link-name": 8
+    },
+    "tip-a@375": {
+      "color-contrast": 6,
+      "heading-order": 3,
+      "landmark-unique": 1,
+      "scrollable-region-focusable": 7
+    },
+    "tip-b@375": {
+      "color-contrast": 100,
+      "frame-title": 1,
+      "landmark-unique": 1,
+      "scrollable-region-focusable": 7
+    },
+    "clip@375": {
+      "color-contrast": 1,
+      "heading-order": 1,
+      "landmark-unique": 1,
+      "target-size": 4
+    },
+    "lab@375": {
+      "color-contrast": 8,
+      "frame-title": 1,
+      "heading-order": 1,
+      "landmark-unique": 1,
+      "scrollable-region-focusable": 1
+    },
+    "menu@375": {
+      "image-alt": 16,
+      "landmark-unique": 1,
+      "link-name": 24
+    },
+    "toc@375": {
+      "color-contrast": 6,
+      "heading-order": 3,
+      "landmark-unique": 1,
+      "scrollable-region-focusable": 7
+    },
+    "tip-c@375": {
+      "color-contrast": 1,
+      "landmark-unique": 1,
+      "link-in-text-block": 4,
+      "target-size": 2
+    }
+  },
+  "metrics": {
+    "h1": {
+      "home": 1,
+      "list": 1,
+      "term": 1,
+      "tip-a": 2,
+      "tip-b": 2,
+      "clip": 2,
+      "lab": 2,
+      "menu": 1,
+      "toc": 2,
+      "tip-c": 2
+    },
+    "hashLinks": {
+      "home": 1,
+      "list": 1,
+      "term": 1,
+      "tip-a": 2,
+      "tip-b": 2,
+      "clip": 1,
+      "lab": 1,
+      "menu": 1,
+      "toc": 17,
+      "tip-c": 2
+    },
+    "focusableInClosedMenu": {
+      "home": 0,
+      "list": 0,
+      "term": 0,
+      "tip-a": 0,
+      "tip-b": 0,
+      "clip": 0,
+      "lab": 0,
+      "toc": 0,
+      "tip-c": 0
+    },
+    "focusRules": {
+      "home": 0,
+      "list": 0,
+      "term": 0,
+      "tip-a": 0,
+      "tip-b": 0,
+      "clip": 0,
+      "lab": 0,
+      "menu": 0,
+      "toc": 0,
+      "tip-c": 0
+    },
+    "reducedMotionRules": {
+      "home": 0,
+      "list": 0,
+      "term": 0,
+      "tip-a": 0,
+      "tip-b": 0,
+      "clip": 0,
+      "lab": 0,
+      "menu": 0,
+      "toc": 0,
+      "tip-c": 0
+    }
+  },
+  "changes": [
+    {
+      "date": "2026-10-23",
+      "what": "tip-c（/tip/genymotion/）を 1080px と 375px で足した。旧サイトを同じ条件（axe-core 4.13.0、同じタグ、外部の通信と SW を止める）で測った値",
+      "why": "旧サイトの 9 ページの本文には段落の中のリンクがなく、link-in-text-block（A11Y-22）を見張れなかったため"
+    }
+  ]
+}

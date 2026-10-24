@@ -1,0 +1,79 @@
+html {
+  width: 100%;
+  height: 100%;
+  font-size: $base-fontsize;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-sans-serif;
+  font-weight: $base-fontweight;
+
+  // 旧サイトの "palt" は壊れた値として捨てられ、kern だけが効いていた。palt にすると和文の字間が詰まる
+  font-feature-settings: 'kern';
+  font-variant-ligatures: none;
+  color: $text-color;
+  letter-spacing: 0.01em;
+  overflow-wrap: break-word;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-black;
+}
+
+img,
+svg {
+  vertical-align: bottom;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid rgba($text-color, 1);
+}
+
+br {
+  line-height: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  padding: 0;
+  margin: 0;
+  color: $color-black;
+  appearance: none;
+  outline: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+::selection {
+  color: $color-black;
+  background: $color-gray-level4;
+}
+
+img[data-lazy='loading'] {
+  opacity: 0;
+}
+
+img[data-lazy='error'] {
+  opacity: 1;
+}
+
+img[data-lazy='loaded'] {
+  opacity: 1;
+  transition: 0.8s;
+}
