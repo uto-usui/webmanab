@@ -104,9 +104,10 @@ Google は、同じ内容のページが複数あると、ドメインが違っ�
 - 記事は同じなので、新しいドメインが巡回されて評価が積み上がれば、少しずつ戻る。期間は数週間から数か月の単位。
 - 一番効くのは、自分で直せる被リンクを早めに新しいドメインへ向けること。
 
-## 5. 決めてほしいこと
+## 5. 決めたこと
 
-- 新しいドメインの名前と、どこで取るか。2026-10-22 に RDAP で見た範囲では、`webmanab.com` / `webmanab.net` / `webmanab-html.net` / `webmanab.dev` / `webmanab.app` / `webmanab.jp` が空いていた（購入の画面で最終確認すること）。
+- 新しいドメインは `webmanab.com`。2026-10-25 に Cloudflare Registrar で取得した（年 $10.46、自動更新あり、WHOIS は伏せ字）。旧ドメインと同じく失効で失わないよう、自動更新は切らない。
+- DNS は Cloudflare に置き、apex と `www` を `webmanab.netlify.app` への CNAME にした。Netlify が証明書を発行できるよう、プロキシは使わない（DNS only）。
 
 [^dup]: [Demystifying the "duplicate content penalty"（Google Search Central Blog）](https://developers.google.com/search/blog/2008/09/demystifying-duplicate-content-penalty)
 [^spam]: [Spam policies for Google web search - Expired domain abuse](https://developers.google.com/search/docs/essentials/spam-policies)

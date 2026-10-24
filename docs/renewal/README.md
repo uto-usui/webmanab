@@ -179,8 +179,8 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | 手順 | 中身 | 誰が |
 | --- | --- | --- |
 | 13 | PR #35（下書き）を作った。CI と Deploy Preview の確認は済み。残りは実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、ほかは Claude |
-| 14 | 新しいドメインの取得と DNS | ユーザー |
-| 14 | Netlify にドメインを付けて `SITE_URL` を切り替える | Claude |
+| 14 | `webmanab.com` を Cloudflare Registrar で取得し、DNS（apex と `www` を `webmanab.netlify.app` への CNAME、プロキシなし）を作った。`SITE_URL` も切り替えた（済み） | Claude |
+| 14 | Netlify にドメインを付け、証明書の発行を確かめてから、netlify.app から webmanab.com への 301 を `netlify.toml` に足す。本番の master はまだ旧 Nuxt のビルドなので、付けるのはマージの直前にする | Claude |
 | 15、16 | マージ、本番の確認、公開後の検索対策 | Claude（Search Console などのアカウント操作はユーザー） |
 
 ## 8. 次のセッションの始め方
@@ -219,7 +219,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 ## 9. ユーザーにお願いすること・確認すること
 
-1. ドメイン: `webmanab-html.com` は第三者が持っていて、詐欺ページへの転送に使われているので、取り戻さない前提にしました（06）。新しいドメインの取得と DNS の設定をお願いします。Netlify にドメインを付けて `SITE_URL` を切り替えるのは Claude がやります。
+1. ドメイン: `webmanab-html.com` は取り戻さない前提にし（06）、新しいドメインは `webmanab.com` にしました（2026-10-25 に Cloudflare Registrar で取得、自動更新あり）。Netlify に付けるのはマージの直前です。
 2. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
 3. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
 4. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。

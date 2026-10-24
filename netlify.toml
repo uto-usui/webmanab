@@ -4,7 +4,7 @@
 
 [build.environment]
   # canonical / OGP / sitemap / RSS / robots.txt の絶対 URL のもと。プレビューでも本番の URL を使う
-  SITE_URL = "https://webmanab.netlify.app"
+  SITE_URL = "https://webmanab.com"
 
 # 広告と GA4 は本番だけ。値がないとタグを出さない作りにしてある
 [context.production.environment]
