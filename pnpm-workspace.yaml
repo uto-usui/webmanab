@@ -1,7 +1,7 @@
 # 公開から 14 日たっていない版は入れない（分単位）
 minimumReleaseAge: 20160
 minimumReleaseAgeExclude:
-  # Astro 7.4 系とその推移的な依存。7.4.0 が 14 日を過ぎる 10/29 以降、PR の前に外す
+  # Astro 7.4.2 とその推移的な依存。いちばん新しいものが 10/21 公開なので、14 日を過ぎる 11/4 以降、マージの前に外す
   - astro
   - '@astrojs/*'
   - vite
