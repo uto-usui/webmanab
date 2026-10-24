@@ -32,7 +32,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | フレームワーク | Astro 7.4 系、静的出力、Vue なし | 試作でビルドとテストが通った（03） |
 | Node | 26 系（`.nvmrc` に `26`） | ユーザーの指定。10/28 に LTS になる。今の `.nvmrc`（v12）は Netlify で最優先になるので、書き換えは必須（01） |
 | pnpm | 10.34.6（`packageManager` で固定） | Netlify で Node 26 と pnpm 11 以上の組み合わせが落ちる報告がある。Dependabot が pnpm 10 までしか対応していない（01） |
-| 依存の版 | 公開から 14 日未満の版は入れない（`minimumReleaseAge`） | 公開直後の版に紛れ込む悪意のあるコードを避けるため（01 の案。ユーザー確認済み）。Astro 7.4.2 とその依存（vite、rolldown など。10/21 公開）は 11/4 まで例外にして、マージの前に外す |
+| 依存の版 | Dependabot の更新の PR は、公開から 14 日たった版だけにする（`cooldown`）。手で入れる版は待たない | 公開直後の版に紛れ込む悪意のあるコードを、自動の更新で取り込まないため。人が選んで入れる版は、その場で判断できる（ユーザーの判断） |
 | TypeScript | 6.0.3 | `astro check` と typescript-eslint が TS 7 に対応していない（01） |
 | 記事 | `src/content/posts/{tip,clip,lab}/*.md` | エクスポーターで生成。生成後は Markdown を正本にする（04） |
 | Markdown の描画 | Astro 既定の Sätteri（`rawHtml: true`、smartPunctuation は無効） | 往復検証で本文のある 861 本中 841 本が完全に一致し、残り 20 本も意図して直した差だけ。説明のつかない差は 0（04） |
@@ -175,7 +175,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 2. 各担当は git worktree で自分のブランチを持ち、5 章の表の「触る場所」だけを変える。リーダーがそれを `renewal/astro` に順に取り込む。PR は `renewal/astro` から 1 本だけ作る。
 3. 最初に土台（5 章の手順 1）をインフラ担当とリーダーで作る。ほかの担当はその上から始める。
 4. 試作のコードは `.snapshot/prototypes/` から移して整える。そのまま貼らない（試作用の書き捨ての処理が混ざっている）。
-5. 依存の版は 14 日ルールに従う。Astro 7.4.2 とその依存は 11/4 までは例外の設定が要る。Playwright は 1.64.1 に固定する（基準スクリーンショットと同じ Chromium で比べるため）。
+5. Playwright は 1.64.1 に固定する（基準スクリーンショットと同じ Chromium で比べるため）。
 
 ## 9. ユーザーにお願いすること・確認すること
 
