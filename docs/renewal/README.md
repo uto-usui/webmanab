@@ -177,7 +177,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 | 手順 | 中身 | 誰が |
 | --- | --- | --- |
-| 13 | PR と Deploy Preview の確認（確認リストは `.snapshot/pr/checklist.md`） | Claude |
+| 13 | PR #35（下書き）を作った。CI と Deploy Preview の確認は済み。残りは実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、ほかは Claude |
 | 14 | 新しいドメインの取得と DNS | ユーザー |
 | 14 | Netlify にドメインを付けて `SITE_URL` を切り替える | Claude |
 | 15、16 | マージ、本番の確認、公開後の検索対策 | Claude（Search Console などのアカウント操作はユーザー） |
@@ -207,7 +207,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `.snapshot/prototypes/art-direction/compare/` | 旧サイトとの比較の道具（`README.md` に使い方。依存は `pnpm install --ignore-workspace` で入れる） |
 | `.snapshot/prototypes/qa/lh-astro/` | 新サイトの Lighthouse の結果 |
 | `.snapshot/pr/checklist.md` | PR に貼る確認リスト |
-| `.snapshot/review/` | レビュー用のページ（新旧のスクリーンショットを並べたもの） |
+| `.snapshot/review/` | レビュー用のページ（新旧のスクリーンショットを並べたもの。`python3 build.py` で作り直す） |
 | `../webmanab-wt/<担当>` | 担当ごとの worktree（`renewal/<担当>` ブランチ）。どれも `renewal/astro` に取り込み済みなので、PR のあとで消してよい |
 
 進め方の注意:
