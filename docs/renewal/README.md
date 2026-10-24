@@ -45,6 +45,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | 計測と広告 | GA4 は環境変数があるときだけ。AdSense は本番だけ | ID はあとで用意する |
 | 旧 PWA | 自分を解除してキャッシュを消す `sw.js` を同じパスに置く | 01 の 3 章 |
 | 開発ツール | ESLint（flat config）、Prettier、Stylelint、Vitest、Playwright 1.64.1、`@axe-core/playwright` 4.13.0 | 01 の 5 章、07、08 |
+| Netlify のビルド | master への push の本番だけ。PR の Deploy Preview は止めている（Netlify の設定 `skip_prs`。リポジトリの外にある設定） | Netlify の無料枠に収めるため（ユーザーの判断）。PR と Dependabot の確認は GitHub Actions の CI でやる。PR #35 の Deploy Preview（`deploy-preview-35--webmanab.netlify.app`）は止める前に作ったもので、確かめ終わっている |
 | 部品のカタログ | Storybook は使わない。`CATALOG=1` のときだけ `/catalog/` を足す自前の Astro integration。見本は Storybook の CSF3 に近い形で `src/catalog/stories/` に書く | Storybook には Astro の公式対応がなく、コミュニティ製の `@storybook-astro/framework` は scoped の SCSS を描画できず `storybook build` も失敗した。自前のカタログなら本番と同じ CSS と script で動くことを試作で確かめた（07） |
 | テスト | 単体・コンテンツ・描画の指紋・ビルド出力・E2E を CI で必須にする。a11y は報告だけ。見た目の回帰はローカルの macOS | 層ごとの一覧は 08 の 0 章 |
 | a11y | WCAG 2.2 AA を目安にする。このリニューアルでは直し切らず、問題を一覧にして方針を決めるところまで。守るのは「今より悪くしない」だけ | ユーザーの指示。旧サイトの監査結果と直す順番は 08 の 2 章 |
@@ -161,7 +162,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | テスト | `pnpm verify` 一式（lint、format、check、test 408、build、test:dist 16220、test:e2e 65）、`pnpm audit --audit-level high`、カタログ 313 が通る |
 | a11y | 旧サイトの基準から増えていない。カタログで見つかった本文のリンクの色の問題は、旧サイトから引き継ぐもの（A11Y-22）として 08 の 2.5 に足した |
 | 性能 | Lighthouse（mobile、広告なし）: 4 ページとも性能 100、LCP 0.9〜1.7 秒、CLS 0 |
-| Netlify | custom_domain（`webmanab-html.com`）を外した。netlify.app の応答から旧ドメインを指す canonical のヘッダーが消えたことを確かめた。応答ヘッダーは `netlify.toml` に入れた |
+| Netlify | PR の Deploy Preview を止め、ビルドは master の本番だけにした。custom_domain（`webmanab-html.com`）を外した。netlify.app の応答から旧ドメインを指す canonical のヘッダーが消えたことを確かめた。応答ヘッダーは `netlify.toml` に入れた |
 | GitHub | Dependabot の security updates を有効にした（一時停止も解けた） |
 
 実装の途中で決めたこと（4 章と 2 章に反映済み）:
