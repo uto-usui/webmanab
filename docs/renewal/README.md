@@ -15,6 +15,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | [06-domain-and-search.md](./06-domain-and-search.md) | 旧ドメインを失ったことの Google 検索への影響と、新しいドメインへ移るときにやること |
 | [07-storybook.md](./07-storybook.md) | 部品のカタログ（Storybook の代わり）と、部品単位の表示・操作・a11y・見た目のテスト |
 | [08-quality.md](./08-quality.md) | テスト方針（層ごとの道具・タイミング・合格の条件・CI で止めるか）、a11y 方針と旧サイトの監査結果、性能、SEO、セキュリティ、公開前後のチェック |
+| [09-visual-diff.md](./09-visual-diff.md) | 旧サイトとの見た目の比較の結果（手順 12）と、変わってよい場所の一覧 |
 | [assets/eyecatch-samples/index.html](./assets/eyecatch-samples/index.html) | アイキャッチのサンプル |
 
 ## 1. 前提になった事実
@@ -118,22 +119,23 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 順番（コミットの単位。詳しくは 03 の 11 章）:
 
-1. 土台: 旧ツールを削除し、Astro、Node 26、pnpm 10、TS 6、lint 類、`netlify.toml` を入れる
-2. スタイルの移植（SCSS の書き換え）
-3. レイアウトと共通部品（Bar / Header / Menu / Wrapper / Title）
-4. コンテンツの受け口（スキーマ、ターム、前後記事、日付）とテスト
-5. Markdown の描画（highlight.js、見出しの id、外部リンク）とテスト
-6. エクスポーターの実装と、記事の Markdown・ターム JSON の生成（量が多いので単独のコミット）
-7. 記事ページ（目次、関連記事、前後記事、シェア）
-8. 一覧ページと無限スクロール
-9. head まわり（OGP、canonical、構造化データ `BlogPosting`（元の公開日・更新日・著者）、RSS `/feed.xml`、sitemap `/sitemap.xml`、robots.txt）
-10. アイキャッチと OGP 画像
-11. GA4、AdSense、旧 Service Worker の撤去
-12. 旧サイトとの見た目比較（64 枚の基準と computed style）、URL の一致テスト、コードブロックの高さの確認
+1. 土台: 旧ツールを削除し、Astro、Node 26、pnpm 10、TS 6、lint 類、`netlify.toml` を入れる（済み）
+2. スタイルの移植（SCSS の書き換え）（済み）
+3. レイアウトと共通部品（Bar / Header / Menu / Wrapper / Title）（済み）
+4. コンテンツの受け口（スキーマ、ターム、前後記事、日付）とテスト（済み）
+5. Markdown の描画（highlight.js、見出しの id、外部リンク）とテスト（済み）
+6. エクスポーターの実装と、記事の Markdown・ターム JSON の生成（量が多いので単独のコミット）（済み）
+7. 記事ページ（目次、関連記事、前後記事、シェア）（済み）
+8. 一覧ページと無限スクロール（済み）
+9. head まわり（OGP、canonical、構造化データ `BlogPosting`（元の公開日・更新日・著者）、RSS `/feed.xml`、sitemap `/sitemap.xml`、robots.txt）（済み）
+10. アイキャッチと OGP 画像（済み）
+11. GA4、AdSense、旧 Service Worker の撤去（済み）
+12. 旧サイトとの見た目比較（64 枚の基準と computed style）、URL の一致テスト、コードブロックの高さの確認（済み）
 13. PR を作り、Deploy Preview で Node 26 と pnpm、resvg、日本語 slug のパスが動くことを確かめる
 14. 新しいドメインを Netlify のプライマリドメインにし、`SITE_URL` を切り替える
 15. マージと本番の確認（01 の 10 章）
 16. 公開後の検索対策（06 の 2.5 と 3 章）: Search Console と Bing への登録、sitemap の送信、主な記事のインデックス登録のリクエスト、「Google が選択した正規 URL」の確認、旧 URL の「古いコンテンツの削除」申請、Safe Browsing への報告、自分で直せる被リンクの書き換え、AdSense の再審査
+
 
 ## 6. 完了の条件
 
@@ -147,11 +149,39 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - Deploy Preview のビルドが通り、表示も確認できる。
 - 全ページで、canonical が新しいドメインの自分自身を指し、構造化データに元の公開日が入っている。本文とテンプレートに旧ドメインへのリンクが残っていない。
 
-## 7. 実装を始めるときに拾うこと
+## 7. 進捗（2026-10-24）
 
-- `.snapshot/`（旧 HTML と基準スクリーンショット）は今 `.git/info/exclude` だけで除外している。新しい `.gitignore` にも入れる。
-- `assets/eyecatch-samples/src/`（試作のソース）は、本実装が `src/lib/eyecatch/` に入ったので消した。`glyphs.json` を作り直す道具は `scripts/eyecatch/build-glyphs.mjs`（`pnpm build:glyphs`）。試作のソースは `.snapshot/prototypes/eyecatch/samples-src/` にも写してある。
-- 02 の 9.2 にあったアイキャッチの URL の例（`{slug}`）は `{id}` に、大きさは 640×360 に直した。
+手順 1〜12 は `renewal/astro` に入っています。手順 13 以降が残りです。
+
+| 項目 | 状態 |
+| --- | --- |
+| URL | 旧 sitemap の 1323 件と一致（`test:dist`） |
+| 見た目 | 基準 64 枚のうち範囲外 0（404 の 4 枚は Deploy Preview で見る）。computed style も範囲外 0。結果は [09-visual-diff.md](./09-visual-diff.md) |
+| コードブロックの高さ | 6 章の例外以外は一致 |
+| テスト | `pnpm verify` 一式（lint、format、check、test 408、build、test:dist 16220、test:e2e 65）、`pnpm audit --audit-level high`、カタログ 313 が通る |
+| a11y | 旧サイトの基準から増えていない。カタログで見つかった本文のリンクの色の問題は、旧サイトから引き継ぐもの（A11Y-22）として 08 の 2.5 に足した |
+| 性能 | Lighthouse（mobile、広告なし）: 4 ページとも性能 100、LCP 0.9〜1.7 秒、CLS 0 |
+| Netlify | custom_domain（`webmanab-html.com`）を外した。netlify.app の応答から旧ドメインを指す canonical のヘッダーが消えたことを確かめた。応答ヘッダーは `netlify.toml` に入れた |
+| GitHub | Dependabot の security updates を有効にした（一時停止も解けた） |
+
+実装の途中で決めたこと（4 章と 2 章に反映済み）:
+
+- Google Fonts をやめ、OS の標準フォントにした（ユーザーの判断）。
+- 前後記事ナビのタイトルは記事の見出しにそろえる。旧ナビの文字を別に持たない。
+- 375px でコードブロック 113 個が 1px 高くなるのは受け入れる。
+- 依存の 14 日の待ちは Dependabot の更新だけにかける。手で入れる版は待たない（ユーザーの判断）。
+- 前後記事ナビのアイキャッチは `{id}-nav.svg`、`<img>` の大きさは 640×360。
+- 無限スクロールは `<template>` を使わず、ページの 1 件目のカードを複製する。
+
+残っている作業:
+
+| 手順 | 中身 | 誰が |
+| --- | --- | --- |
+| 13 | PR と Deploy Preview の確認（確認リストは `.snapshot/pr/checklist.md`） | Claude |
+| 14 | 新しいドメインの取得と DNS | ユーザー |
+| 14 | Netlify にドメインを付けて `SITE_URL` を切り替える | Claude |
+| 15、16 | マージ、本番の確認、公開後の検索対策 | Claude（Search Console などのアカウント操作はユーザー） |
+| - | GitHub の secret `MOSHI_TOKEN` | ユーザー |
 
 ## 8. 次のセッションの始め方
 
@@ -169,20 +199,31 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `.snapshot/prototypes/qa/` | 旧サイトの a11y 監査のスクリプト（`audit.mjs`）と結果（`results-413.json` が axe-core 4.13.0 の結果）、Lighthouse の結果（`lh/`） |
 | `https://5eeb72325bef250008f5cbfd--webmanab.netlify.app` | 旧サイトの最後のデプロイ（2020-06-18）の固定 URL。本番を差し替えたあとも残るはずなので、`.snapshot/` を失ったときの予備の取得元にする（差し替え後に残るかは未確認） |
 
-進め方:
+実装のときに足した置き場所:
 
-1. リーダーはまずこの README を読み、5 章の担当の分け方で 7 つのエージェントを立てる。各エージェントには、この README と自分の担当の計画書（01〜08）、`00-brief.md` のルールを読ませる。
-2. 各担当は git worktree で自分のブランチを持ち、5 章の表の「触る場所」だけを変える。リーダーがそれを `renewal/astro` に順に取り込む。PR は `renewal/astro` から 1 本だけ作る。
-3. 最初に土台（5 章の手順 1）をインフラ担当とリーダーで作る。ほかの担当はその上から始める。
-4. 試作のコードは `.snapshot/prototypes/` から移して整える。そのまま貼らない（試作用の書き捨ての処理が混ざっている）。
-5. Playwright は 1.64.1 に固定する（基準スクリーンショットと同じ Chromium で比べるため）。
+| 置き場所 | 中身 |
+| --- | --- |
+| `.snapshot/baseline-astro/` | 新サイトを基準と同じ条件で撮ったもの |
+| `.snapshot/prototypes/art-direction/compare/` | 旧サイトとの比較の道具（`README.md` に使い方。依存は `pnpm install --ignore-workspace` で入れる） |
+| `.snapshot/prototypes/qa/lh-astro/` | 新サイトの Lighthouse の結果 |
+| `.snapshot/pr/checklist.md` | PR に貼る確認リスト |
+| `.snapshot/review/` | レビュー用のページ（新旧のスクリーンショットを並べたもの） |
+| `../webmanab-wt/<担当>` | 担当ごとの worktree（`renewal/<担当>` ブランチ）。どれも `renewal/astro` に取り込み済みなので、PR のあとで消してよい |
+
+進め方の注意:
+
+1. ブランチは `renewal/astro`。PR はここから 1 本だけ作る。
+2. Astro 7.4 はエージェントの環境だと `astro preview` / `astro dev` を裏に回してすぐ終わる。`--ignore-lock` を付けると前面のまま動く。E2E は `E2E_PORT` でポートを変えられる。
+3. `.snapshot/` の下で依存を入れるときは `pnpm install --ignore-workspace` にする（付けないと本体の `pnpm-lock.yaml` が書き換わる）。
+4. Playwright は 1.64.1 に固定する（基準スクリーンショットと同じ Chromium で比べるため）。
 
 ## 9. ユーザーにお願いすること・確認すること
 
-1. ドメイン: `webmanab-html.com` は第三者が持っていて、詐欺ページへの転送に使われているので、取り戻さない前提にしました（06）。新しいドメインを公開の前に取って、リニューアルは最初からそのドメインで公開します。開発中は `SITE_URL` を `https://webmanab.netlify.app` にしておき、マージの前に新しいドメインに変えます。
-2. Netlify の custom_domain: 今も `webmanab-html.com` が設定されていて、netlify.app の全応答に、詐欺ページへ飛ぶドメインを指す canonical のヘッダーが付いています。すぐに外してください（操作はお願いします）。
-3. アイキャッチの絵柄: サンプル（`assets/eyecatch-samples/index.html`）を見て、直したいカテゴリがあれば教えてください。
-4. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。
-5. マージ後に Dependabot の PR #29 #30 をクローズします。そのときに改めて確認します。
-6. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ）は、直すかどうかを決めてもらいます。コードの色は「旧サイトのまま」の決定と食い違うので、それまでは旧サイトの色のままにします。
-7. お願いしたい操作: CI の通知用に `MOSHI_TOKEN` を GitHub の secret に入れる。Netlify でデプロイ失敗のメール通知を設定する。GitHub で Dependabot の security updates を有効にする。
+1. ドメイン: `webmanab-html.com` は第三者が持っていて、詐欺ページへの転送に使われているので、取り戻さない前提にしました（06）。新しいドメインの取得と DNS の設定をお願いします。Netlify にドメインを付けて `SITE_URL` を切り替えるのは Claude がやります。
+2. GitHub の secret `MOSHI_TOKEN`（CI と定期実行の通知用）を入れてください。`gh secret set MOSHI_TOKEN` で値を聞かれます。
+3. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
+4. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
+5. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。
+6. マージ後に Dependabot の PR #29 #30 をクローズします。そのときに改めて確認します。
+
+済んだもの: Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の security updates の有効化（同）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
