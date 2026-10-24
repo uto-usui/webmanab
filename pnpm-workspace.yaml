@@ -8,3 +8,6 @@ auditConfig:
   ignoreGhsas:
     # stylelint > micromatch > braces。修正版がまだなく、lint でしか使わない
     - GHSA-vfj7-8cjw-p6xm
+    # highlight.js 10.1.1 は旧サイトと同じ色の付き方にするため固定している。ビルドのときだけ使い、ブラウザには届かない（08 の 5.4）
+    - GHSA-7wwv-vh3v-89cq
+    - GHSA-vfrc-7r7c-w9mx
