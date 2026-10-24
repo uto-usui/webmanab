@@ -1,5 +1,5 @@
 import EntryClipLink from '../../components/EntryClipLink.astro'
-import { eyecatchFor } from '../../lib/eyecatch'
+import { entryImageFor } from '../../lib/post-image'
 import { posts } from '../fixtures/posts'
 import type { Meta, Story } from '../types'
 
@@ -10,7 +10,7 @@ export default {
   args: {
     href: post.clipUrl!,
     title: post.title,
-    src: eyecatchFor(post).svg,
+    image: entryImageFor(post),
   },
 } satisfies Meta<typeof EntryClipLink>
 

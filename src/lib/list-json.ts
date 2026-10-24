@@ -1,7 +1,7 @@
 // 無限スクロールが読む静的 JSON（03 の 4.2）。1 件の表示に要るものだけを入れる
 import { formatDate, toIsoJst } from './date'
-import { eyecatchFor } from './eyecatch/index.ts'
 import { entryPath, paginate, postsInTerm, sortByDateDesc } from './posts'
+import { thumbnailFor } from './post-image'
 import type { PostData } from './schema'
 import { POST_TYPES, TAXONOMIES, type PostType, type Taxonomy } from './site'
 
@@ -16,6 +16,7 @@ type Entry = {
     | 'primaryTag'
     | 'terms'
     | 'clipUrl'
+    | 'image'
   >
 }
 
@@ -30,7 +31,7 @@ export type ListItem = {
   dateLabel: string
   primaryTag: string
   clipUrl?: string
-  /** アイキャッチ SVG の URL */
+  /** サムネイルの URL（clip のスクショか、アイキャッチ SVG） */
   eyecatch: string
 }
 
@@ -50,7 +51,7 @@ export const listItem = ({ data }: Entry): ListItem => ({
   dateLabel: formatDate(data.date),
   primaryTag: data.primaryTag,
   ...(data.clipUrl === undefined ? {} : { clipUrl: data.clipUrl }),
-  eyecatch: eyecatchFor(data).svg,
+  eyecatch: thumbnailFor(data),
 })
 
 /** 新しい順に 8 件ずつ。0 件でも 1 ページ目（items が空）を出す */

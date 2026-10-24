@@ -10,6 +10,13 @@ export const termRefSchema = z
   })
   .strict()
 
+// public/images/ に置いた画像。scripts/export-markdown/images.ts が作る
+const imageRefSchema = z.object({
+  src: z.string().startsWith('/images/'),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+})
+
 export const postSchema = z
   .object({
     id: z.number().int().positive(),
@@ -25,6 +32,13 @@ export const postSchema = z
     terms: z.array(termRefSchema),
     clipUrl: z.url().optional(),
     demoUrl: z.url().optional(),
+    // clip の見出しのスクショ。thumb は一覧と前後記事ナビ用の 640px 版
+    image: imageRefSchema
+      .extend({ thumb: z.string().startsWith('/images/') })
+      .strict()
+      .optional(),
+    // clip のページ全体のスクショ
+    fullImage: imageRefSchema.strict().optional(),
     // 前後記事のテストにだけ使う。旧ページがなかった日本語 slug の 2 件にはない
     legacy: z
       .object({
@@ -43,6 +57,11 @@ export const postSchema = z
     message: 'demoUrl は tip と lab だけ',
     path: ['demoUrl'],
   })
+  .refine(
+    (d) =>
+      d.type === 'clip' || (d.image === undefined && d.fullImage === undefined),
+    { message: 'image と fullImage は clip だけ', path: ['image'] },
+  )
 
 export type PostData = z.infer<typeof postSchema>
 

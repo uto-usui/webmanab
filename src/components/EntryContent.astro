@@ -124,6 +124,8 @@
     }
 
     img {
+      // 描画で width / height を付けるので、max-width で縮んだときに縦横比を保つ
+      height: auto;
       margin: $space-3 calc(100% / 12 * 1 * -1) $space-2 0;
     }
 

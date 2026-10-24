@@ -1,5 +1,5 @@
 ---
-import { eyecatchFor } from '../lib/eyecatch'
+import { navImageFor } from '../lib/post-image'
 import { entryPath, type PostEntry } from '../lib/posts'
 
 interface Props {
@@ -27,7 +27,7 @@ const items = [
       </a>
       <div
         class="entry-nav__bg"
-        style={`background-image:url(${eyecatchFor(post.data).nav})`}
+        style={`background-image:url(${navImageFor(post.data)})`}
       />
     </li>
   ))}

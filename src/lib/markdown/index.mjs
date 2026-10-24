@@ -3,6 +3,7 @@ import { externalLinksPlugin } from './external-links.mjs'
 import { headingIdsPlugin } from './heading-ids.mjs'
 import { hljsPlugin } from './hljs.mjs'
 import { iframeTitlePlugin } from './iframe-title.mjs'
+import { imageSizePlugin } from './image-size.mjs'
 
 export const markdownFeatures = {
   // 生 HTML（dl、iframe を包んだ p など）を要素として解析し直し、下のプラグインから見えるようにする
@@ -16,4 +17,5 @@ export const hastPlugins = [
   headingIdsPlugin,
   externalLinksPlugin,
   iframeTitlePlugin,
+  imageSizePlugin,
 ]

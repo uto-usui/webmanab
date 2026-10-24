@@ -8,11 +8,12 @@ import EntryHead from '../../components/EntryHead.astro'
 import EntryAd from '../../components/EntryAd.astro'
 import EntryContent from '../../components/EntryContent.astro'
 import EntryClipLink from '../../components/EntryClipLink.astro'
+import EntryClipFullImage from '../../components/EntryClipFullImage.astro'
 import EntryShare from '../../components/EntryShare.astro'
 import EntryTag from '../../components/EntryTag.astro'
 import EntryRelated from '../../components/EntryRelated.astro'
 import EntryNav from '../../components/EntryNav.astro'
-import { eyecatchFor } from '../../lib/eyecatch'
+import { entryImageFor } from '../../lib/post-image'
 import {
   entryPath,
   getPosts,
@@ -44,11 +45,17 @@ const head = buildHead({ kind: 'post', entry }, Astro.site!)
       <EntryContent>
         <Content />
       </EntryContent>
-      {entry.data.clipUrl && (
+      {(entry.data.clipUrl || entry.data.image) && (
         <EntryClipLink
           href={entry.data.clipUrl}
           title={entry.data.title}
-          src={eyecatchFor(entry.data).svg}
+          image={entryImageFor(entry.data)}
+        />
+      )}
+      {entry.data.fullImage && (
+        <EntryClipFullImage
+          title={entry.data.title}
+          image={entry.data.fullImage}
         />
       )}
       <EntryAd adSlot="1102437429" />

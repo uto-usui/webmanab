@@ -108,6 +108,12 @@ export const posts = {
       { id: 315, name: 'video', slug: 'video' },
     ],
     clipUrl: 'https://www.truetopia.it',
+    image: {
+      src: '/images/clip/2809.webp',
+      width: 1200,
+      height: 675,
+      thumb: '/images/clip/2809-640.webp',
+    },
   }),
   // lab/processing-js-line-and-point: demoUrl あり、primaryTag に記号
   lab: post({

@@ -1,24 +1,29 @@
 ---
-import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
-
 interface Props {
-  href: string
+  // clipUrl のない 2 件（form、the-wing）は画像だけを出す
+  href?: string
   title: string
-  src: string
+  image: { src: string; width: number; height: number }
 }
 
-const { href, title, src } = Astro.props
+const { href, title, image } = Astro.props
+const Tag = href ? 'a' : 'div'
 ---
 
-<a class="entry-clip__img" href={href} target="_blank" rel="noopener">
+<Tag
+  class="entry-clip__img"
+  href={href}
+  target={href ? '_blank' : undefined}
+  rel={href ? 'noopener' : undefined}
+>
   {/* alt がこのリンクの名前になる（08 の A-4）。文言は旧サイトと同じ */}
   <img
-    src={src}
-    width={EYECATCH_WIDTH}
-    height={EYECATCH_HEIGHT}
+    src={image.src}
+    width={image.width}
+    height={image.height}
     alt={`${title}のアイキャッチ画像`}
   />
-</a>
+</Tag>
 
 <style lang="scss">
   .entry-clip__img {
@@ -63,7 +68,7 @@ const { href, title, src } = Astro.props
       position: relative;
       z-index: 2;
 
-      // 旧画像は失われたので、16:9 のアイキャッチを枠の幅いっぱいに出す（02 の 9.2）
+      // スクショも SVG のアイキャッチも、枠の幅いっぱいに出す（02 の 9.2）
       width: 100%;
       height: auto;
       vertical-align: bottom;
@@ -71,7 +76,7 @@ const { href, title, src } = Astro.props
       transition: 1s;
     }
 
-    &:hover {
+    &[href]:hover {
       clip-path: polygon(
         0 0,
         100% 0%,
