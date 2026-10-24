@@ -687,7 +687,7 @@ Markdown エクスポーター担当とアーキテクチャ担当へ。本文�
 
 | # | バグ | 今の見た目 | 提案 |
 | --- | --- | --- | --- |
-| 1 | 記事ページのアイキャッチ。単一記事の `images` が壊れていて src がない | tip: 1×1px の透明画像（`.entry-content` の直後）。clip: 16px のストライプの帯と、121px の空き | 直す。9.2 の置き場所で SVG を出す。clip の `.entry__img-full` は画像を復元しないので要素ごと消す |
+| 1 | 記事ページのアイキャッチ。単一記事の `images` が壊れていて src がない | tip: 1×1px の透明画像（`.entry-content` の直後）。clip: 16px のストライプの帯と、121px の空き | 直す。9.2 の置き場所で SVG を出す。clip の `.entry__img-full` は画像を復元しないので要素ごと消す（2026-10-25 に変更: clip は旧 WordPress のスクショを戻し、`.entry__img-full` もページ全体のスクショで戻した。README 4 章） |
 | 2 | og タグの多くが `name="og:*"` だけで出ている（`property` がない。`og:type` と `og:site_name` だけは PWA モジュールが `property` 付きで別に出している）。コードにある `og:url` は出力されていない。`og:image` は `https://webmanab-html.com/ogp.png` 固定。トップの `og:description` は package.json の説明「webmanab.html projexct」になっている | 見た目には出ない | 直す（アーキテクチャ担当）。`property="og:*"` にし、URL は `SITE_URL` から作る |
 | 3 | EntryNav の next の条件が `article.prev && …` | 前の記事がないとき `prev` は `[]`（真）なので、見た目には出ていない | 直す（条件を `article.next` に） |
 | 4 | 前後記事が片方だけのとき、768px〜 で next が左半分に寄る（flex の 1 個だけ。`/tip/mixin-family-scss/` で x=40px、幅 500px を確認） | next が左側に出る（tip 1 本、clip 1 本、lab 1 本） | 直す。`.entry-nav__item--next { margin-left: auto }` |
@@ -814,7 +814,7 @@ CSS（SCSS。今の EntrySns の値を引き継ぐ）:
 (b) 記事ページ
 
 - tip: 旧実装の位置（`.entry-content` の直後、2 つ目の EntryAd の前）に、`article.entry` の幅いっぱい（1080px 時 920px、16:9 で約 518px）で出す。今は 1px で見えていないので、ここが見た目の一番大きな変更になる。
-- clip: `a.entry-clip__img` の中の `img` を SVG にする。ストライプの背景、clip-path、ホバーで画像が `opacity: .05` になって「visit to」が出る効果が、16px の帯ではなく本来の大きさで動くようになる。SVG に透明の部分を作らない（ストライプが透けて見えてしまう）。
+- clip: `a.entry-clip__img` の中の `img` を SVG にする（2026-10-25 に変更: 旧 WordPress のスクショがある clip はスクショを出し、SVG はスクショのない `clip/port` だけ。一覧のサムネイルと前後記事ナビの背景も同じ）。ストライプの背景、clip-path、ホバーで画像が `opacity: .05` になって「visit to」が出る効果が、16px の帯ではなく本来の大きさで動くようになる。SVG に透明の部分を作らない（ストライプが透けて見えてしまう）。
 - lab: 今はアイキャッチの要素がないので、出さない。
 - 記事ページでは lazy にしない（`loading="eager"`、`lazy` 属性なし）。
 

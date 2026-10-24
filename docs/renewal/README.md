@@ -85,7 +85,9 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 | 変わるところ | 理由 |
 | --- | --- |
-| 一覧・記事ページ・前後記事ナビにアイキャッチ（SVG）が出る | 旧画像は失われた。旧サイトでも記事ページのアイキャッチは変換のバグで 1px の透明画像になっていた |
+| tip と lab の一覧・記事ページ・前後記事ナビにアイキャッチ（SVG）が出る | 旧サイトの tip のアイキャッチは変換のバグで 1px の透明画像になっていて、見出し画像は今のままでよいとユーザーが決めた |
+| clip の一覧・記事ページ（「visit to」の枠）・前後記事ナビに、旧 WordPress のスクショが戻る。ページ全体のスクショ（512 件）も記事ページの下に戻る | clip はスクショそのものが中身（ユーザーの判断）。旧サイトは画像の配信元（wp.webmanab-html.com）が止まって表示されていなかった。スクショのない `clip/port` だけ SVG のアイキャッチ |
+| tip の本文に画像が 38 枚戻る（10 記事） | 書き出しのときは画像を落としていたが、旧 WordPress の uploads が見つかったので戻す。`control-random-values` の `square.png` は旧サイトでは URL の打ち間違いで出ていなかったが、新サイトでは出る |
 | シェアボタンが 5 つから、Web Share API のボタン 1 つになる | Google+ と Pocket はサービス終了。Facebook はリンクが壊れていた |
 | メニューのターム一覧と関連記事に中身が入る | 旧サイトはブラウザから WP API を呼んでいたので、今は空になっている |
 | 一覧ページが正しく表示される | 旧サイトは読み込み後に「Network Error」になる |
@@ -159,7 +161,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | URL | 旧 sitemap の 1323 件と一致（`test:dist`） |
 | 見た目 | 基準 64 枚のうち範囲外 0（404 の 4 枚は Deploy Preview で見る）。computed style も範囲外 0。結果は [09-visual-diff.md](./09-visual-diff.md) |
 | コードブロックの高さ | 6 章の例外以外は一致 |
-| テスト | `pnpm verify` 一式（lint、format、check、test 408、build、test:dist 16220、test:e2e 65）、`pnpm audit --audit-level high`、カタログ 313 が通る |
+| テスト | `pnpm verify` 一式（lint、format、check、test 414、build、test:dist 16220、test:e2e 65）、`pnpm audit --audit-level high`、カタログ 313、`pnpm verify:md`（説明できない差 0）が通る |
 | a11y | 旧サイトの基準から増えていない。カタログで見つかった本文のリンクの色の問題は、旧サイトから引き継ぐもの（A11Y-22）として 08 の 2.5 に足した |
 | 性能 | Lighthouse（mobile、広告なし）: 4 ページとも性能 100、LCP 0.9〜1.7 秒、CLS 0 |
 | Netlify | PR の Deploy Preview を止め、ビルドは master の本番だけにした。custom_domain（`webmanab-html.com`）を外した。netlify.app の応答から旧ドメインを指す canonical のヘッダーが消えたことを確かめた。応答ヘッダーは `netlify.toml` に入れた |
@@ -173,6 +175,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - 依存の 14 日の待ちは Dependabot の更新だけにかける。手で入れる版は待たない（ユーザーの判断）。
 - 前後記事ナビのアイキャッチは `{id}-nav.svg`、`<img>` の大きさは 640×360。
 - 無限スクロールは `<template>` を使わず、ページの 1 件目のカードを複製する。
+- clip のスクショ（816 件）とページ全体のスクショ（512 件）、tip の本文の画像（38 枚）を、旧 WordPress の uploads から戻した（ユーザーの判断。04 の 3 章の「画像」）。WebP にして `public/images/` に置き、合わせて 124MB。
 
 残っている作業:
 
@@ -208,6 +211,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 | `.snapshot/prototypes/qa/lh-astro/` | 新サイトの Lighthouse の結果 |
 | `.snapshot/pr/checklist.md` | PR に貼る確認リスト |
 | `.snapshot/review/` | レビュー用のページ（新旧のスクリーンショットを並べたもの。`python3 build.py` で作り直す） |
+| 手元の `uploads/`、`.snapshot/uploads-server/`、`.snapshot/uploads-extra/` | 画像の元（`scripts/export-markdown/images.ts` の `--uploads` に、この順で渡す）。1 つ目はユーザーが見つけた旧 `webmanab-html.com/wp-content/uploads` の写し（2019 年 2 月まで）。2 つ目は XServer の `webmanab-html.com/public_html/wp/wp-content/uploads`（2020 年まである完全な WordPress）から足りない 113 枚だけを取ったもの。3 つ目は Wayback Machine と Google の画像サーバーから取った 3 枚 |
 | `../webmanab-wt/<担当>` | 担当ごとの worktree（`renewal/<担当>` ブランチ）。どれも `renewal/astro` に取り込み済みなので、PR のあとで消してよい |
 
 進め方の注意:

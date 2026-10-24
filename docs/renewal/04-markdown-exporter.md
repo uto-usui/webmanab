@@ -47,7 +47,7 @@
 ### 使わないデータ
 
 - `writer` タクソノミー: 全記事が `uto usui` 1 人（clip 27 件は `false`）なので出しません。
-- `images`、`clipImage`、`prev.img` などの画像: 画像は復元しない決定なので出しません。
+- `images`、`clipImage`、`prev.img` などの画像: 最初は復元しない決定で出していませんでしたが、旧 WordPress の uploads が見つかったので、clip の画像だけを `image` / `fullImage` として出すようにしました（3. の「画像」、5.）。tip のアイキャッチ画像は使いません（SVG のアイキャッチのまま）。
 
 ## 2. 変換ライブラリの選定
 
@@ -84,7 +84,7 @@ unified を採用します。同じ前処理と同じ往復検証で比べた結
 | a | 303 | `[text](href)`。`target` と `rel` は落とす。class が要るもの 1 件は HTML のまま。旧ドメインの記事へのリンク 14 件はルート相対にする（4.） |
 | strong / em | 133 / 8 | `**` / `*`。和文で区切り記号が成立しない 13 か所はインラインの `<strong>` / `<em>` |
 | iframe | 60 | すべて `<p>` の中。`<p><iframe …></iframe></p>` を HTML のまま残す |
-| img | 38 | 落とす。alt は書き出しの記録に残す |
+| img | 38 | `![alt](/images/uploads/…)`。対応表にない画像は落とす（3. の「画像」） |
 | input | 3 | `tip/html5-global` の tabindex のデモ。段落ごと HTML のまま |
 | style | 2 | `tip/html5-global` と `tip/transition` のデモ用 CSS。`<p>` を外して `<style>` ブロックとして残す |
 | figure / div | 1 / 1 | `tip/transition` のデモ（`<figure><div class="ex"></div></figure>`）。HTML のまま |
@@ -177,12 +177,18 @@ Markdown に対応する書き方がない要素と、デモとして動いて�
 
 ### 画像（img）
 
-38 個すべて落とします。画像だけの段落は段落ごと消します。
+最初は 38 個すべてを落としていました。そのあと旧 WordPress の uploads が見つかったので（README 8 章の置き場所）、戻しています。
 
-alt の文字は書き出しの記録（`export-report.json`）に残します。ほとんどはファイル名と同じ英単語（`basic` `sum` `CardExpansion` など）で、文章として意味があるのは次の 2 つです。
+- `scripts/export-markdown/images.ts` が、uploads から画像を `public/images/` に書き出し、元の URL との対応表 `scripts/export-markdown/images.json` を作ります。エクスポーターはこの対応表を読みます。対応表がないときは、前と同じく画像を落として書き出します。
+- 本文の画像は 38 枚とも、それぞれ 1 つだけの段落に入っていました。`![alt](/images/uploads/2017/01/tuesday.png)` の形で書きます。ファイルは元のまま（PNG / JPEG）で、パスは uploads の年月のフォルダをそのまま使います。class、srcset、width などの WordPress の属性は落とします。
+- `width` と `height` は Markdown に書けないので、描画のときにファイルから読んで付けます（`src/lib/markdown/image-size.mjs`）。`loading="lazy"` もここで付けます。
+- alt は旧サイトの値をそのまま使います。ほとんどはファイル名と同じ英単語（`basic` `sum` `CardExpansion` など）です。alt が空かなかった 3 枚には、記事の文脈から付けます（4. の手当て）。
+  - `tip/flat-ui-colors-2`: 「Flat UI Colors 2 のパレット一覧の画面」
+  - `tip/low-polygon-art`: 「Low Polygon Art のグラデーション一覧の画面」
+  - `tip/static-random-gradation-…`: 「色相環」。この 1 枚は Google の画像サーバー（lh3.googleusercontent.com）を指していたので、写しを `2017/02/hue-circle.jpg` として置きました。
+- `tip/control-random-values` の `square.png` は、元の URL のホスト名が `wp.ebmanab-html.com`（w が抜けている）で、旧サイトでも表示されていませんでした。ファイル名は uploads のパスで引くので、新サイトでは表示されます。
 
-- `tip/vue-vuex`: 「Vuex のデータフローの公式図解」
-- `tip/javascript-graphic-math`: 「figure Law of cosines」
+clip の画像（見出しのスクショとページ全体のスクショ）は本文ではなく frontmatter に出します（5.）。
 
 ### WordPress 特有の記号
 
@@ -242,9 +248,9 @@ CommonMark では、`**` の外側が和字で内側が約物（`処理すると
 | `a@href` | webmanab-html.com | `https://…/tip/<slug>/`（記事あり） | 8 | ルート相対に書き換える |
 | `a@href` | webmanab-html.com | `http://…/tip/<slug>/`（記事あり） | 6 | 同上 |
 | `a@href` | webmanab-html.com | `http(s)://…/reference/shape/`（今回のデータにないページ） | 3 | リンクを外して文字だけ残す |
-| `img@src` | wp.webmanab-html.com | `https://…/wp-content/uploads/…` | 30 | 画像ごと落とす |
-| `img@src` | webmanab-html.com | `https://…/wp-content/uploads/…` | 6 | 画像ごと落とす |
-| `img@srcset` | wp.webmanab-html.com | `https://…/wp-content/uploads/…` | 6 | 画像ごと落とす |
+| `img@src` | wp.webmanab-html.com | `https://…/wp-content/uploads/…` | 30 | `/images/uploads/…` に書き換える（3. の「画像」） |
+| `img@src` | webmanab-html.com | `https://…/wp-content/uploads/…` | 6 | 同上 |
+| `img@srcset` | wp.webmanab-html.com | `https://…/wp-content/uploads/…` | 6 | srcset ごと落とす |
 | インラインコードの文字列 | webmanab-html.com | `https://webmanab-html.com/?group=favorite&id=section3` | 1 | 説明用の例なのでそのまま |
 
 Markdown に残るのは a の 17 か所（15 記事）です。
@@ -298,6 +304,8 @@ legacy:
 | `terms` | その type のタクソノミー（tips / clips / labs）の `{ id, name, slug }`。name はデコード。1 項目 1 行。タームなし（tip 3 件、clip 2 件）は空配列 |
 | `clipUrl` | clip のみ。4. の手当てのとおり。ないときはキーごと出さない（`clip/form` は URL なし、`clip/the-wing` は入力ミスの 2 件） |
 | `demoUrl` | tip と lab で `demo-true` が true のとき（tip 17 件、lab 41 件）。tip で URL だけ入っていて `demo-true` が false のもの 9 件（多くは `http://re-vite.com/test/demo/` の仮の値）は出さない |
+| `image` | clip のみ。見出しのスクショ `{ src, width, height, thumb }`。`src` は 1280px まで、`thumb` は一覧と前後記事ナビ用の 640px で、どちらも WebP。元の画像は、一覧ページの `images[0].url` か、前後の記事のデータにある `img`（縮小版の名前から `-600x338` を外したもの）から取る。WordPress でも画像がなかった `clip/port` には出さない（816 件に出す） |
+| `fullImage` | clip のみ。ページ全体のスクショ（WP の `clipImage`）`{ src, width, height }`。1000px までの WebP。高さが WebP の上限（16383px）を超える 2 枚は JPEG（512 件に出す） |
 | `legacy` | 任意。`prev` / `next` に旧サイトの前後記事の slug（デコード済み）、なければ `null`。単一ページが取れなかった 2 件（日本語 slug）は出さない。出した 1028 件の参照はすべて実在の記事を指している |
 
 値に手当てが要る記事は次のとおりです。
@@ -432,7 +440,8 @@ devDependencies に入れるもの: `unified` `rehype-parse` `rehype-remark` `re
 - 既にある出力ファイル（記事の `.md` とターム一覧の `.json`）は上書きせず、飛ばした数を出す。新しく出すファイルだけ書く。
 - `--force` を付けたときだけ、既にあるファイルも上書きする。
 - `--out <dir>` で別の場所に書き出せるようにし、手直し済みのファイルと新しい変換結果を diff で見比べられるようにする。
-- 書き出しの記録 `scripts/export-markdown.report.json` に、落とした画像の alt（38 件）、落とした target（74 件）、意図して直したもの（4.）、`<strong>` / `<em>` にした強調（13 か所）を残す。PR でレビューできるようにコミットする。
+- 画像を作り直すときは、先に `node scripts/export-markdown/images.ts --uploads <dir> …` を走らせてから `--force` で書き出す。
+- 書き出しの記録 `scripts/export-markdown.report.json` に、戻した画像（`img-restored`、38 件）、落とした target（74 件）、意図して直したもの（4.）、`<strong>` / `<em>` にした強調（13 か所）を残す。PR でレビューできるようにコミットする。
 
 試作で、既存ファイルを手で書き換えてから再実行すると 1033 ファイル（記事 1030、ターム 3）がすべて飛ばされて手直しが残り、`--force` で上書きされることを確かめました。
 
