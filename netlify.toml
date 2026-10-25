@@ -29,3 +29,10 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# netlify.app で覚えられた URL を webmanab.com にまとめる（06 の 3 章）。www と http は Netlify が 301 で apex に寄せる
+[[redirects]]
+  from = "https://webmanab.netlify.app/*"
+  to = "https://webmanab.com/:splat"
+  status = 301
+  force = true
