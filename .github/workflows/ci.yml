@@ -1,8 +1,21 @@
 name: CI
 on:
+  # docs、README、別の workflow だけの変更では走らせない。master は保護していないので、check がない PR もマージできる
   pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - '.claude/**'
+      - '.github/workflows/monitor.yml'
+      - '.github/workflows/check-links.yml'
   push:
     branches: [master]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - '.claude/**'
+      - '.github/workflows/monitor.yml'
+      - '.github/workflows/check-links.yml'
 
 jobs:
   check:

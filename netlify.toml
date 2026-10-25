@@ -1,6 +1,8 @@
 [build]
   command = "pnpm build"
   publish = "dist"
+  # 本番に使わないファイル（docs、テスト、カタログ、道具）だけの変更ではビルドしない。対象は scripts/netlify-ignore.sh
+  ignore = "sh scripts/netlify-ignore.sh"
 
 [build.environment]
   # canonical / OGP / sitemap / RSS / robots.txt の絶対 URL のもと。プレビューでも本番の URL を使う
