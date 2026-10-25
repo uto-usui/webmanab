@@ -185,14 +185,23 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - netlify.app から webmanab.com への 301 を `netlify.toml` に足した（PR #36）。証明書の発行のあとに入れる順番どおり。
 - 旧 Nuxt 向けの Dependabot の PR（#29、#30。#31〜#34 は先に閉じていた）を閉じた。alerts はマージで 113 件から 4 件になり、残りの highlight.js 10.1.1 の 4 件は固定の理由を書いて「受け入れたリスク」で閉じた。
 - 週 1 回の見張り（`monitor.yml`）を手で走らせ、本番の死活と `pnpm audit` が通り、Moshi に通知が届くことを確かめた。
-- Netlify のビルドで使われた Node と pnpm の版は、API ではビルドログが取れず、まだ確かめていない（管理画面の Deploy log で見られる）。
+- Netlify のビルドは Node v26.12.1（`.nvmrc` の 26）、pnpm 10.34.6（`packageManager`）で動いている。API ではビルドログが取れないので、Chrome で管理画面の Deploy log を開いて確かめた。
+
+検索対策でやったこと（2026-10-25、06 の 3 章。Google のアカウントは個人のもの）:
+
+- Search Console に `webmanab.com` をドメインプロパティとして登録した。確認用の TXT レコードは Cloudflare に入れてある（消すと確認が外れる）。`/sitemap.xml` を送り、1323 件で読み込みが成功した。
+- URL 検査で、トップと、`site:webmanab-html.com` で上位に出ていた 10 本（`clip/orsolina28`、`tip/shape`、`clip/duroc`、`clip/kamayaki_pasco`、`tip/aquarelle`、`tip/license`、`clip/kamioto`、`clip/naotaro`、`tip/mulch-border`、`tip/retina-mixin`）のインデックス登録をリクエストした。
+- Bing Webmaster Tools に `https://webmanab.com/` を足した。Search Console からの取り込みは、Bing にほかのプロパティまで読ませることになるので使わず、Cloudflare の CNAME で確認した。sitemap も送った。
+- AdSense に `webmanab.com` を足し、広告タグで所有を確かめて審査をリクエストした（「準備中・審査待ち」）。`ads.txt` は本番に出ている。
+- 旧ドメインを Google Safe Browsing に「なりすましサポート詐欺」として報告した。
+- GitHub のリポジトリの About に `https://webmanab.com` を入れた。
 
 残っている作業:
 
 | 手順 | 中身 | 誰が |
 | --- | --- | --- |
 | 13 | 実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、a11y は Claude |
-| 16 | 公開後の検索対策（06 の 3 章「公開の直後」）。Search Console と Bing への登録と sitemap の送信、AdSense へのサイトの追加、旧ドメインの詐欺ページの報告、自分で直せる被リンクの書き換え | アカウントの操作はユーザー、DNS の TXT レコードなど CLI でできることは Claude |
+| 16 | 公開後の検索対策の残り。数日後に URL 検査で「Google が選択した正規 URL」が webmanab.com になっているかを見る（06 の 2.5 章）。Search Console と AdSense に残っている旧ドメインのエントリーを消すか決める。ほかの場所のリンクの書き換え（下の 9 章） | 確かめるのは Claude、消すかどうかと X などの書き換えはユーザー |
 
 ## 8. 次のセッションの始め方
 
@@ -231,9 +240,9 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 ## 9. ユーザーにお願いすること・確認すること
 
-1. 公開後の検索対策（06 の 3 章）のうち、Google と Bing、AdSense のアカウントの操作をお願いします。Search Console のドメインプロパティの確認に使う DNS の TXT レコードは、値をもらえれば Claude が Cloudflare に入れます。
+1. 旧ドメインへのリンクの書き換え。X のプロフィールと、ポートフォリオ（uto-usui.com、リポジトリ `uto-usui/uto-usui`、XServer で公開）。GitHub のコード検索では、ほかに `webmanab-html`、`canvas-lab`、`frame-fav`、`googlemaps`、`skill_sheet` の各リポジトリに旧ドメインが残っている。
 2. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
 3. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
 4. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。
 
-済んだもの: 新しいドメイン `webmanab.com` の取得と公開（2026-10-25）、旧 Nuxt 向けの Dependabot の PR を閉じる、Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の PR を止めて alerts だけにする（同）、GitHub の secret `MOSHI_TOKEN`（2026-10-25 に登録、テスト通知が届くことを確認）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
+済んだもの: 新しいドメイン `webmanab.com` の取得と公開（2026-10-25）、Search Console・Bing・AdSense への登録と Safe Browsing への報告（同日、Claude が Chrome で実施）、旧 Nuxt 向けの Dependabot の PR を閉じる、Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の PR を止めて alerts だけにする（同）、GitHub の secret `MOSHI_TOKEN`（2026-10-25 に登録、テスト通知が届くことを確認）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
