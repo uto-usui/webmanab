@@ -196,6 +196,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - 旧ドメインを Google Safe Browsing に「なりすましサポート詐欺」として報告した。
 - GitHub のリポジトリの About に `https://webmanab.com` を入れた。
 - Search Console の旧ドメインのプロパティ（確認切れ）と、AdSense の旧ドメインのサイトを消した（ユーザーの判断）。
+- 本番に使わないファイルだけの変更では、ビルドを走らせないようにした（PR #41）。Netlify は `scripts/netlify-ignore.sh` で判定し、docs、テスト、e2e、カタログ、道具のスクリプトだけなら止める。GitHub の CI は docs、README、`.claude/`、ほかの 2 つの workflow だけなら走らない。除外を足すときは、本番のビルドが読むファイル（`src/` のカタログ以外、`public/`、`scripts/build-og.mjs`、設定）を外さない。
 
 残っている作業:
 
