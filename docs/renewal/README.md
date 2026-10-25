@@ -195,13 +195,14 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - AdSense に `webmanab.com` を足し、広告タグで所有を確かめて審査をリクエストした（「準備中・審査待ち」）。`ads.txt` は本番に出ている。
 - 旧ドメインを Google Safe Browsing に「なりすましサポート詐欺」として報告した。
 - GitHub のリポジトリの About に `https://webmanab.com` を入れた。
+- Search Console の旧ドメインのプロパティ（確認切れ）と、AdSense の旧ドメインのサイトを消した（ユーザーの判断）。
 
 残っている作業:
 
 | 手順 | 中身 | 誰が |
 | --- | --- | --- |
 | 13 | 実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、a11y は Claude |
-| 16 | 公開後の検索対策の残り。数日後に URL 検査で「Google が選択した正規 URL」が webmanab.com になっているかを見る（06 の 2.5 章）。Search Console と AdSense に残っている旧ドメインのエントリーを消すか決める。ほかの場所のリンクの書き換え（下の 9 章） | 確かめるのは Claude、消すかどうかと X などの書き換えはユーザー |
+| 16 | 公開後の検索対策の残り。数日後に URL 検査で「Google が選択した正規 URL」が webmanab.com になっているかを見る（06 の 2.5 章）。ほかの場所のリンクの書き換え（下の 9 章。uto-usui.com はポートフォリオのリニューアルで直す） | 確かめるのは Claude、X の書き換えはユーザー |
 
 ## 8. 次のセッションの始め方
 
