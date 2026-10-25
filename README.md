@@ -15,4 +15,4 @@ pnpm dev
 
 `pnpm verify` で lint、型、テスト、ビルド、E2E をまとめて回します。
 
-リニューアルの計画は [docs/renewal/README.md](docs/renewal/README.md) にあります。
+運用の進め方と決めたことは [docs/operations/README.md](docs/operations/README.md) にあります。2026-10-25 に終えたリニューアルの記録は [docs/renewal/README.md](docs/renewal/README.md) です。
