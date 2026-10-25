@@ -152,9 +152,9 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - Deploy Preview のビルドが通り、表示も確認できる。
 - 全ページで、canonical が新しいドメインの自分自身を指し、構造化データに元の公開日が入っている。本文とテンプレートに旧ドメインへのリンクが残っていない。
 
-## 7. 進捗（2026-10-24）
+## 7. 進捗（2026-10-25）
 
-手順 1〜12 は `renewal/astro` に入っています。手順 13 以降が残りです。
+手順 1〜15 は済みました。PR #35 をマージし（`5ba50b2`）、2026-10-25 に `https://webmanab.com` で公開しています。残りは手順 16 の公開後の検索対策と、実機での確認です。
 
 | 項目 | 状態 |
 | --- | --- |
@@ -177,14 +177,22 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 - 無限スクロールは `<template>` を使わず、ページの 1 件目のカードを複製する。
 - clip のスクショ（816 件）とページ全体のスクショ（512 件）、tip の本文の画像（38 枚）を、旧 WordPress の uploads から戻した（ユーザーの判断。04 の 3 章の「画像」）。WebP にして `public/images/` に置き、合わせて 124MB。
 
+公開のときにやったこと（2026-10-25）:
+
+- Netlify に `webmanab.com`（プライマリ）と `www.webmanab.com` を付けた。Let's Encrypt の証明書は自動で発行された（2027-01-22 まで、自動更新）。www と http は Netlify が apex に 301 する。
+- PR #35 をマージコミットで入れた（159 コミットの本文を残すため）。本番のビルドは 1 分ほどで ready になった。
+- 本番で確かめたこと: トップ・一覧・記事・画像・sitemap（1323 件、すべて webmanab.com）・RSS・robots・OGP が 200、`/tip` が 301、存在しないパスが 404、canonical と og:url が webmanab.com、CSP と HSTS のヘッダー。
+- netlify.app から webmanab.com への 301 を `netlify.toml` に足した（PR #36）。証明書の発行のあとに入れる順番どおり。
+- 旧 Nuxt 向けの Dependabot の PR（#29、#30。#31〜#34 は先に閉じていた）を閉じた。alerts はマージで 113 件から 4 件になり、残りの highlight.js 10.1.1 の 4 件は固定の理由を書いて「受け入れたリスク」で閉じた。
+- 週 1 回の見張り（`monitor.yml`）を手で走らせ、本番の死活と `pnpm audit` が通り、Moshi に通知が届くことを確かめた。
+- Netlify のビルドで使われた Node と pnpm の版は、API ではビルドログが取れず、まだ確かめていない（管理画面の Deploy log で見られる）。
+
 残っている作業:
 
 | 手順 | 中身 | 誰が |
 | --- | --- | --- |
-| 13 | PR #35（下書き）を作った。CI と Deploy Preview の確認は済み。残りは実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、ほかは Claude |
-| 14 | `webmanab.com` を Cloudflare Registrar で取得し、DNS（apex と `www` を `webmanab.netlify.app` への CNAME、プロキシなし）を作った。`SITE_URL` も切り替えた（済み） | Claude |
-| 14 | Netlify にドメインを付け、証明書の発行を確かめてから、netlify.app から webmanab.com への 301 を `netlify.toml` に足す。本番の master はまだ旧 Nuxt のビルドなので、付けるのはマージの直前にする | Claude |
-| 15、16 | マージ、本番の確認、公開後の検索対策 | Claude（Search Console などのアカウント操作はユーザー） |
+| 13 | 実機（iPhone、Android）での操作と、手作業の a11y | 実機の確認はユーザー、a11y は Claude |
+| 16 | 公開後の検索対策（06 の 3 章「公開の直後」）。Search Console と Bing への登録と sitemap の送信、AdSense へのサイトの追加、旧ドメインの詐欺ページの報告、自分で直せる被リンクの書き換え | アカウントの操作はユーザー、DNS の TXT レコードなど CLI でできることは Claude |
 
 ## 8. 次のセッションの始め方
 
@@ -223,10 +231,9 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 ## 9. ユーザーにお願いすること・確認すること
 
-1. ドメイン: `webmanab-html.com` は取り戻さない前提にし（06）、新しいドメインは `webmanab.com` にしました（2026-10-25 に Cloudflare Registrar で取得、自動更新あり）。Netlify に付けるのはマージの直前です。
+1. 公開後の検索対策（06 の 3 章）のうち、Google と Bing、AdSense のアカウントの操作をお願いします。Search Console のドメインプロパティの確認に使う DNS の TXT レコードは、値をもらえれば Claude が Cloudflare に入れます。
 2. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
 3. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
 4. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。
-5. マージのときに、旧 Nuxt の構成に向けた Dependabot の PR（#29〜#34）を閉じます。
 
-済んだもの: Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の PR を止めて alerts だけにする（同）、GitHub の secret `MOSHI_TOKEN`（2026-10-25 に登録、テスト通知が届くことを確認）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
+済んだもの: 新しいドメイン `webmanab.com` の取得と公開（2026-10-25）、旧 Nuxt 向けの Dependabot の PR を閉じる、Netlify の custom_domain を外す（Claude が CLI で実施）、Dependabot の PR を止めて alerts だけにする（同）、GitHub の secret `MOSHI_TOKEN`（2026-10-25 に登録、テスト通知が届くことを確認）。デプロイ失敗の通知は、Netlify から Slack への通知がもうあるのでメールは足さない。
