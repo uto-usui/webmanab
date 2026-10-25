@@ -240,7 +240,7 @@ Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイト�
 
 ## 9. ユーザーにお願いすること・確認すること
 
-1. 旧ドメインへのリンクの書き換え。X のプロフィールと、ポートフォリオ（uto-usui.com、リポジトリ `uto-usui/uto-usui`、XServer で公開）。GitHub のコード検索では、ほかに `webmanab-html`、`canvas-lab`、`frame-fav`、`googlemaps`、`skill_sheet` の各リポジトリに旧ドメインが残っている。
+1. 旧ドメインへのリンクの書き換えのうち、X のプロフィールと、公開中のポートフォリオ（uto-usui.com、XServer）。リポジトリ側（`uto-usui`、`webmanab-html`、`canvas-lab`、`frame-fav`、`googlemaps`、`skill_sheet`）は 2026-10-25 に Claude が書き換えて push した。
 2. 「4. 旧サイトから見た目が変わるところ」の内容でよいか。レビュー用のページで新旧を並べて見られます。
 3. アイキャッチの絵柄（`assets/eyecatch-samples/index.html`）で、直したいカテゴリがあれば教えてください。
 4. a11y の直す順番（08 の 2.5）: 公開後に、見た目が変わらない直しから始めます。キーボード操作のときだけ見える直し（フォーカスの枠、スキップリンクなど）は、見え方を見てもらってから入れます。誰にでも見た目が変わる直し（コードの 2 色のコントラスト、記事の上のタグの大きさ、本文のリンクの下線＝A11Y-22）は、直すかどうかを決めてもらいます。
