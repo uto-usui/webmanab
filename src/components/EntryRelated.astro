@@ -67,7 +67,8 @@ const { posts } = Astro.props
       @include sizes(0, 1);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       top: -5px;
       left: 5px;
       box-shadow: -5px 5px 0 $primary-color;

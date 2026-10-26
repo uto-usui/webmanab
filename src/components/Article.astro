@@ -116,7 +116,8 @@ const thumb = thumbLink(item)
     vertical-align: bottom;
     transition: 0.25s $easeOutQuart;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: none;
       box-shadow: -10px 10px 0 $secondary-color;
       transform: translate(10px, -10px);
@@ -161,7 +162,8 @@ const thumb = thumbLink(item)
     background-color: $glay;
     transition: 0.25s $easeOutQuart;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       top: -5px;
       left: 5px;
       text-decoration: none;

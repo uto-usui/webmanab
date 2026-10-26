@@ -66,3 +66,26 @@ test('A11Y-19: 新しいタブで開くリンクは、そのことを aria-descr
     page.locator('.article-item__target[target="_blank"]').first(),
   ).toHaveAccessibleDescription('新しいタブで開きます')
 })
+
+test('A11Y-16: Tab で来たリンクに枠が出て、ホバーでずらす部品は同じだけずれる', async ({
+  page,
+}) => {
+  await page.goto('/tip/method-control/')
+  const tag = page.locator('.entry-tag__target').first()
+  const look = () =>
+    tag.evaluate((el) => {
+      const style = getComputedStyle(el)
+      return { outline: style.outlineStyle, shadow: style.boxShadow }
+    })
+  expect((await look()).outline).toBe('none')
+
+  // 1 つ前の要素から Tab で移る
+  await tag.evaluate((el) => {
+    const all = [...document.querySelectorAll<HTMLElement>('a[href], button')]
+    all[all.indexOf(el as HTMLElement) - 1]?.focus()
+  })
+  await page.keyboard.press('Tab')
+  await expect(tag).toBeFocused()
+  await expect.poll(async () => (await look()).outline).toBe('solid')
+  expect((await look()).shadow).toContain('5px 5px 0px')
+})

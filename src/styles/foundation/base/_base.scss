@@ -25,6 +25,16 @@ a {
   color: $color-black;
 }
 
+// キーボードで来たときの枠。メニューとシェアのボタン（08 の A-5）と同じ。マウスでは出ない（A11Y-16）
+a,
+button,
+[tabindex] {
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 4px;
+  }
+}
+
 img,
 svg {
   vertical-align: bottom;
