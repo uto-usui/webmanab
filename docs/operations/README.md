@@ -43,6 +43,7 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 ## 5. 変更するときの確認
 
 - コードを変えたら `pnpm verify` を通す
+- master に push するたびに Netlify の本番ビルドが動く（docs だけの変更でも、止めるための起動が 1 回走る）。PR は細かく分けず、関係する変更を 1 本にまとめる。docs だけの直しは、次のコードの PR に入れる
 - 見た目が変わる変更は、`pnpm test:catalog` で差分を見る。意図どおりなら、同じコミットで基準のスクショを撮り直す。`pnpm test:visual` は `e2e/visual/` がまだなく、テストが 0 件なので、ページ単位の見た目のテストを作るまでは差を見られない
 - 依存の更新はスキル `deps-update` を使う。alerts のメールが来たとき、`monitor.yml` の audit が落ちたときと、四半期に 1 回のふだんの版上げ
 - 版を固定しているものには理由がある。highlight.js 10.1.1 は旧サイトと同じ色にするため、TypeScript 6 は `astro check` が 7 に対応していないため、Playwright 1.64.1 は基準のスクショと同じ Chromium で比べるため。四半期の版上げのときに、理由がまだ当てはまるかを確かめる
