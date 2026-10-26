@@ -34,3 +34,18 @@ test('A11Y-02: clip のサムネイルは記事ページへの唯一のリンク
     `${lastTitle} の記事`,
   )
 })
+
+test('A11Y-18: 無限スクロールで読み込んだ件数を role="status" で伝える', async ({
+  page,
+}) => {
+  // 足したあとも読み込み口が画面内に残ると 3 ページ目も読みにいくので止めておく
+  await page.route('**/data/tip/3.json', (route) =>
+    route.fulfill({ status: 500, body: '' }),
+  )
+  await page.goto('/tip/')
+  const status = page.locator('[data-infinite-status]')
+  await expect(status).toHaveAttribute('role', 'status')
+  await expect(status).toHaveText('')
+  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight))
+  await expect(status).toHaveText('8 件読み込みました')
+})
