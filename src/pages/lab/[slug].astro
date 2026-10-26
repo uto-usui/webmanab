@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content'
 import Default from '../../layouts/Default.astro'
+import SearchMeta from '../../components/SearchMeta.astro'
 import { buildHead } from '../../lib/head'
 import Wrapper from '../../components/Wrapper.astro'
 import SectionEntry from '../../components/SectionEntry.astro'
@@ -36,6 +37,7 @@ const head = buildHead({ kind: 'post', entry }, Astro.site!)
 
 {/* lab には旧サイトと同じくアイキャッチを出さない（02 の 9.2） */}
 <Default title={head.title} head={head} routeName="lab-id">
+  <SearchMeta slot="head" entry={entry} />
   <Wrapper>
     <SectionEntry>
       <EntryHead entry={entry} />

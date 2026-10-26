@@ -3,18 +3,22 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
 import { EYECATCH_KEYS } from '../../src/lib/primary-tag'
+import { TAXONOMIES } from '../../src/lib/site'
 import { load, valid } from '../content/load'
 import { DIST, distFiles, readDist } from './dist.ts'
 
-const entries = valid(load('src/content').posts)
+const { posts, terms } = load('src/content')
+const entries = valid(posts)
+const termCount = TAXONOMIES.reduce((sum, tax) => sum + terms[tax].length, 0)
 
 describe('無限スクロールの JSON', () => {
   const lists = Map.groupBy(distFiles('data/**/*.json'), (file) =>
     file.replace(/\/\d+\.json$/, ''),
   )
 
-  test('type 3 つとターム 289 個（tips 107、clips 156、labs 26）の一覧がある', () => {
-    expect(lists.size).toBe(3 + 107 + 156 + 26)
+  // 旧サイトのタームは 289 個（tips 107、clips 156、labs 26）
+  test('type 3 つと、ターム JSON のターム全部の一覧がある', () => {
+    expect(lists.size).toBe(3 + termCount)
   })
 
   describe.each([...lists])('%s', (list, files) => {

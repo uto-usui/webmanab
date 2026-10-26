@@ -4,9 +4,11 @@ import { toIsoJst } from '../../src/lib/date'
 import { lastModified } from '../../src/lib/feeds'
 import { entryPath } from '../../src/lib/posts'
 import { load, valid } from '../content/load'
+import { allowedPaths } from '../content/pages'
 import { legacyPaths, readDist, SITE_URL } from './dist.ts'
 
-const entries = valid(load('src/content').posts)
+const { posts, terms } = load('src/content')
+const entries = valid(posts)
 
 // 正規表現で取り出す。XML の妥当性は Search Console への送信で見る
 const tagValues = (xml: string, tag: string) =>
@@ -26,18 +28,19 @@ describe('sitemap.xml', () => {
     expect(xml.trim()).toMatch(/<\/urlset>$/)
   })
 
-  test('URL は SITE_URL の絶対 URL で末尾がスラッシュ、旧サイトの 1323 件と一致する', () => {
-    expect(urls).toHaveLength(1323)
+  test('URL は SITE_URL の絶対 URL で末尾がスラッシュ、旧サイトの 1323 件がすべてあり、ほかは許したページだけ', () => {
     expect(
       urls.filter(
         ({ loc }) => !loc.startsWith(`${SITE_URL}/`) || !loc.endsWith('/'),
       ),
     ).toEqual([])
-    expect(
-      new Set(
-        urls.map(({ loc }) => decodeURIComponent(loc.slice(SITE_URL.length))),
-      ),
-    ).toEqual(legacyPaths)
+    const paths = new Set(
+      urls.map(({ loc }) => decodeURIComponent(loc.slice(SITE_URL.length))),
+    )
+    expect(paths.size).toBe(urls.length)
+    expect([...legacyPaths].filter((path) => !paths.has(path))).toEqual([])
+    const allowed = allowedPaths(entries, terms)
+    expect([...paths].filter((path) => !allowed.has(path))).toEqual([])
   })
 
   test('lastmod は投稿 0 件のターム（/labs/332/、/labs/333/）以外のすべてにあり、+09:00 で書く', () => {

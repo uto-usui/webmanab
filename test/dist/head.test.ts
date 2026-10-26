@@ -6,6 +6,7 @@ import { toIsoJst } from '../../src/lib/date'
 import { lastModified } from '../../src/lib/feeds'
 import { SITE_DESCRIPTION } from '../../src/lib/site'
 import { load, valid } from '../content/load'
+import { isLegacy } from '../content/pages'
 import {
   DIST,
   distFiles,
@@ -23,32 +24,35 @@ const decode = (value: string) =>
     .replace(/&gt;/g, '>')
     .replace(/&amp;/g, '&')
 
-const pages = distFiles('**/*.html').map((file) => {
-  const html = readDist(file)
-  const tags = startTags(html.slice(0, html.indexOf('</head>')))
-  const attr = (tag: string, name: string) => {
-    const value = tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1]
-    return value === undefined ? undefined : decode(value)
-  }
-  const meta = (key: 'name' | 'property', value: string) =>
-    tags
-      .filter((tag) => tag.startsWith('<meta') && attr(tag, key) === value)
-      .map((tag) => attr(tag, 'content') ?? '')
-  return {
-    file,
-    path: pagePath(file),
-    canonicals: tags
-      .filter((tag) => /^<link\s[^>]*rel="canonical"/.test(tag))
-      .map((tag) => attr(tag, 'href') ?? ''),
-    meta,
-    nameOg: tags.filter((tag) => /^<meta\s[^>]*name="og:/.test(tag)),
-    jsonLd: [
-      ...html.matchAll(
-        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
-      ),
-    ].map((m) => m[1]),
-  }
-})
+// 404.html はどの URL にも同じ中身を返すので、canonical と OGP を持たない（#47）
+const pages = distFiles('**/*.html')
+  .filter((file) => file !== '404.html')
+  .map((file) => {
+    const html = readDist(file)
+    const tags = startTags(html.slice(0, html.indexOf('</head>')))
+    const attr = (tag: string, name: string) => {
+      const value = tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1]
+      return value === undefined ? undefined : decode(value)
+    }
+    const meta = (key: 'name' | 'property', value: string) =>
+      tags
+        .filter((tag) => tag.startsWith('<meta') && attr(tag, key) === value)
+        .map((tag) => attr(tag, 'content') ?? '')
+    return {
+      file,
+      path: pagePath(file),
+      canonicals: tags
+        .filter((tag) => /^<link\s[^>]*rel="canonical"/.test(tag))
+        .map((tag) => attr(tag, 'href') ?? ''),
+      meta,
+      nameOg: tags.filter((tag) => /^<meta\s[^>]*name="og:/.test(tag)),
+      jsonLd: [
+        ...html.matchAll(
+          /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+        ),
+      ].map((m) => m[1]),
+    }
+  })
 
 // canonical はエンコード済みのパス。dist/ のディレクトリ名はデコードした文字
 const canonicalOf = ({ path }: { path: string }) =>
@@ -166,6 +170,6 @@ test('記事の BlogPosting は frontmatter と canonical に合う（06 の 2.5
     ].filter(Boolean)
     return problems.length ? [`${page.file}: ${problems.join(', ')}`] : []
   })
-  expect(entries.size).toBe(1030)
+  expect([...entries.values()].filter(isLegacy)).toHaveLength(1030)
   expect(found).toEqual([])
 })

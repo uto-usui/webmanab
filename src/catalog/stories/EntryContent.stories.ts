@@ -14,6 +14,12 @@ export const Code: Story<typeof EntryContentSample> = {
   args: { sample: 'code' },
 }
 
+// コードのコピーのボタンは、ブロックにマウスを載せたときだけ出る（#49）
+export const CodeHover: Story<typeof EntryContentSample> = {
+  args: { sample: 'code' },
+  parameters: { catalog: { steps: [{ hover: '.code-copy-wrap' }] } },
+}
+
 // dl、style、input、figure、p > iframe
 export const RawHtml: Story<typeof EntryContentSample> = {
   args: { sample: 'raw-html' },

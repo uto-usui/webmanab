@@ -1,0 +1,150 @@
+---
+// 検索の入力欄。/search/ と 404 に置く（#46、#47）。JS がなくても GET で /search/ に送れる
+const TYPES = [
+  { value: '', label: 'all' },
+  { value: 'tip', label: 'tip' },
+  { value: 'clip', label: 'clip' },
+  { value: 'lab', label: 'lab' },
+]
+---
+
+<form
+  class="search-form"
+  role="search"
+  method="get"
+  action="/search/"
+  data-search-form
+>
+  <label class="search-form__label" for="search-q">
+    keyword
+  </label>
+  <div class="search-form__row">
+    <input
+      id="search-q"
+      class="search-form__input"
+      type="search"
+      name="q"
+      required
+      data-search-input
+    />
+    <button class="search-form__button" type="submit">
+      search
+    </button>
+  </div>
+  <fieldset class="search-form__types">
+    <legend class="search-form__label">type</legend>
+    {TYPES.map(({ value, label }) => (
+      <label class="search-form__type">
+        <input type="radio" name="type" value={value} checked={value === ''} />
+        <span>{label}</span>
+      </label>
+    ))}
+  </fieldset>
+</form>
+
+<style lang="scss">
+  .search-form {
+    max-width: space-scalar(160);
+    margin-top: get-line-height(7, -2, 1);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+
+    @include desktop {
+      margin-top: get-line-height(7, 0, 1);
+    }
+  }
+
+  .search-form__label {
+    display: block;
+    padding: 0;
+    margin-bottom: $space-1;
+    font-style: italic;
+
+    @include sizes(-2);
+  }
+
+  .search-form__row {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .search-form__input {
+    flex: 1;
+    min-width: 0;
+    padding: $space-1 $space-2;
+    color: $text-color;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid currentcolor;
+    border-radius: 0;
+
+    @include sizes(1);
+  }
+
+  .search-form__button {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: $space-1 $space-3;
+    margin-left: $space-2;
+    font-style: italic;
+    color: $white;
+    cursor: pointer;
+    background-color: $glay;
+    border: 0;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(0);
+
+    &:hover {
+      top: -5px;
+      left: 5px;
+      box-shadow: -5px 5px 0 $primary-color;
+    }
+  }
+
+  .search-form__types {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    padding: 0;
+    margin: $space-4 0 0;
+    border: 0;
+
+    > legend {
+      float: left;
+      margin-right: $space-3;
+      margin-bottom: 0;
+    }
+  }
+
+  .search-form__type {
+    margin-right: $space-2;
+    cursor: pointer;
+
+    > input {
+      @include sr-only;
+    }
+
+    > span {
+      display: inline-block;
+      padding: 0.1em 0.5em;
+      color: $glay;
+      text-transform: uppercase;
+      border: 2px solid $glay;
+
+      @include sizes(-1);
+    }
+
+    > input:checked + span {
+      color: $white;
+      background-color: $glay;
+    }
+
+    > input:focus-visible + span {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
+</style>

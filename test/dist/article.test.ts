@@ -1,6 +1,9 @@
-// 記事ページの出力（08 の 1.5、2.4 の A-4、A-6〜A-8、A-10、3.3）。1030 ページをまとめて見て、外れたページを出す
+// 記事ページの出力（08 の 1.5、2.4 の A-4、A-6〜A-8、A-10、3.3）。全記事のページをまとめて見て、外れたページを出す
 import { expect, test } from 'vitest'
+import { load, valid } from '../content/load'
 import { distFiles, readDist, startTags } from './dist.ts'
+
+const entries = valid(load('src/content').posts)
 
 const articles = distFiles('{tip,clip,lab}/*/index.html').map((file) => ({
   file,
@@ -13,8 +16,8 @@ const failing = (check: (html: string, type: string) => boolean) =>
     .filter(({ html, type }) => !check(html, type))
     .map(({ file }) => file)
 
-test('記事ページが 1030 ある', () => {
-  expect(articles).toHaveLength(1030)
+test('記事ページが src/content の記事と同じ数ある', () => {
+  expect(articles).toHaveLength(entries.length)
 })
 
 test('外部リンクは新しいタブで開き、rel に noopener がある（README 3 章の 5）', () => {
@@ -36,8 +39,10 @@ test('clip の「visit to」のリンクに名前がある（A-4）', () => {
       (link) => ({ file, link }),
     ),
   )
-  // clipUrl のある clip の数（08 の 1.3）
-  expect(visits).toHaveLength(815)
+  // clipUrl のある clip の数。旧記事では 815（08 の 1.3）
+  expect(visits).toHaveLength(
+    entries.filter(({ data }) => data.type === 'clip' && data.clipUrl).length,
+  )
   expect(
     visits
       .filter(

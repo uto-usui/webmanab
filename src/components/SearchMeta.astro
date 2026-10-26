@@ -1,0 +1,23 @@
+---
+// 検索の索引に、一覧と同じカードを組み立てる値（ListItem）と、type の絞り込みを持たせる（#46）。
+// Default.astro の head の slot に入れる。本文の範囲は EntryHead と EntryContent の data-pagefind-body
+import { listItem } from '../lib/list-json'
+import type { PostEntry } from '../lib/posts'
+
+interface Props {
+  entry: PostEntry
+}
+
+const { entry } = Astro.props
+---
+
+<meta
+  name="webmanab:search-item"
+  content={JSON.stringify(listItem(entry))}
+  data-pagefind-meta="item[content]"
+/>
+<meta
+  name="webmanab:search-type"
+  content={entry.data.type}
+  data-pagefind-filter="type[content]"
+/>

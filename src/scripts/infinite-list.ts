@@ -1,36 +1,5 @@
-import { titleLink } from '../components/article-item'
-import type { ListItem, ListPage } from '../lib/list-json'
-
-// 1 件目のカードを複製して中身を差し替える。マークアップを Article.astro の 1 か所に保つため
-function fill(card: Element, item: ListItem) {
-  const find = <T extends Element>(selector: string) => {
-    const el = card.querySelector<T>(selector)
-    if (!el) throw new Error(`カードに ${selector} がない`)
-    return el
-  }
-  find('.article-item__tag').textContent = item.primaryTag
-  find<HTMLAnchorElement>('.article-item__img-wrap').href = item.path
-
-  const img = find<HTMLImageElement>('.article-item__img > img')
-  img.dataset.lazy = 'loading'
-  img.src = item.eyecatch
-
-  const target = find<HTMLAnchorElement>('.article-item__target')
-  const link = titleLink(item)
-  target.href = link.href
-  if (link.external) {
-    target.target = '_blank'
-    target.rel = 'noopener'
-  } else {
-    target.removeAttribute('target')
-    target.removeAttribute('rel')
-  }
-  target.textContent = item.title
-
-  const time = find<HTMLTimeElement>('.article-item__time')
-  time.dateTime = item.dateLabel
-  time.textContent = item.dateLabel
-}
+import type { ListPage } from '../lib/list-json'
+import { fill } from './fill-card'
 
 function setup(list: HTMLElement) {
   const { endpoint } = list.dataset

@@ -6,6 +6,7 @@ import { neighbors } from '../../src/lib/posts'
 import { termListSchema, type PostData } from '../../src/lib/schema'
 import { TAXONOMIES, TAXONOMY_OF } from '../../src/lib/site'
 import { load, valid } from './load'
+import { isLegacy, LEGACY_TERM_MAX_ID } from './pages'
 
 const describeContent = (name: string, root: string) =>
   describe(name, () => {
@@ -85,14 +86,22 @@ describe.skipIf(!hasContent)('src/content', () => {
   describeContent('スキーマと形', 'src/content')
 
   const { posts, terms } = load('src/content')
-  const entries = valid(posts)
+  // 公開後に足した記事（id 3000 から）は数えない
+  const entries = valid(posts).filter(isLegacy)
 
-  test('件数が旧データと同じ', () => {
+  test('旧記事とタームの件数が旧データと同じ', () => {
     const count = (type: string) =>
       entries.filter(({ data }) => data.type === type).length
-    expect(posts.length).toBe(1030)
+    expect(entries.length).toBe(1030)
     expect([count('tip'), count('clip'), count('lab')]).toEqual([165, 817, 48])
-    expect(TAXONOMIES.map((tax) => terms[tax]?.length)).toEqual([107, 156, 26])
+    expect(
+      TAXONOMIES.map(
+        (tax) =>
+          (terms[tax] as { id: number }[] | undefined)?.filter(
+            ({ id }) => id <= LEGACY_TERM_MAX_ID,
+          ).length,
+      ),
+    ).toEqual([107, 156, 26])
   })
 
   test('legacy を持つ記事は、計算した前後記事が旧サイトと一致する', () => {

@@ -1,37 +1,37 @@
 // 実際の記事から作るもの（ページの一覧、カテゴリ、アイキャッチ）を全件で確かめる（03 の 10 章、08 の 1.2）。
 // 関数ごとの細かい分岐は test/unit が見本の入力で見る
 import { createHash } from 'node:crypto'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { describe, expect, test } from 'vitest'
 import { eyecatchKey, renderEyecatch } from '../../src/lib/eyecatch'
 import { sitePaths } from '../../src/lib/posts'
 import { EYECATCH_KEYS, primaryTagKey } from '../../src/lib/primary-tag'
 import { termListSchema } from '../../src/lib/schema'
 import { load, valid } from './load'
+import { allowedPaths, isLegacy, legacyPaths } from './pages'
 
 describe.skipIf(!existsSync('src/content/posts'))(
   'src/content から作るもの',
   () => {
     const { posts, terms } = load('src/content')
-    const entries = valid(posts).map(({ data }) => ({ data }))
+    const all = valid(posts).map(({ data }) => ({ data }))
+    // 件数と指紋は旧記事だけで固定する。新しい記事を足すたびに値を変えなくて済むように
+    const entries = all.filter(isLegacy)
     const name = ({ data }: (typeof entries)[number]) =>
       `${data.type}/${data.slug}`
 
-    test('ページの一覧が旧サイトの URL 1323 件と一致する', () => {
-      const paths = sitePaths(entries, {
+    test('ページの一覧に旧サイトの URL 1323 件がすべてあり、ほかは許したページだけ', () => {
+      const paths = sitePaths(all, {
         tips: termListSchema.parse(terms.tips),
         clips: termListSchema.parse(terms.clips),
         labs: termListSchema.parse(terms.labs),
       })
       // 旧一覧は小文字の %e3…、postPath() は大文字の %E3… なので、デコードしてから比べる
-      const legacy = readFileSync('test/fixtures/legacy-urls.txt', 'utf8')
-        .split('\n')
-        .filter(Boolean)
-        .map((url) => decodeURIComponent(url))
-      expect(paths).toHaveLength(1323)
-      expect(new Set(paths.map((path) => decodeURIComponent(path)))).toEqual(
-        new Set(legacy),
-      )
+      const decoded = new Set(paths.map((path) => decodeURIComponent(path)))
+      expect(decoded.size).toBe(paths.length)
+      expect([...legacyPaths].filter((path) => !decoded.has(path))).toEqual([])
+      const allowed = allowedPaths(all, terms)
+      expect([...decoded].filter((path) => !allowed.has(path))).toEqual([])
     })
 
     test('primaryTag の種類の数（空文字を含む）', () => {
@@ -68,8 +68,16 @@ describe.skipIf(!existsSync('src/content/posts'))(
           renderEyecatch(data, { variant: 'nav' }),
         ])
 
-      test('1030 件の通常とナビ用がすべて違う絵', () => {
+      test('旧記事 1030 件の通常とナビ用がすべて違う絵', () => {
         expect(new Set(svgs).size).toBe(2060)
+      })
+
+      test('新しい記事を含めても、すべて違う絵', () => {
+        const every = all.flatMap(({ data }) => [
+          renderEyecatch(data),
+          renderEyecatch(data, { variant: 'nav' }),
+        ])
+        expect(new Set(every).size).toBe(all.length * 2)
       })
 
       test('1 枚 8KB 以内', () => {

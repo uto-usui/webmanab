@@ -37,12 +37,14 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | `monitor.yml` | 週 1 回 | 本番の死活と `pnpm audit` | Moshi |
 | `check-links.yml` | 毎月 1 日 | 記事の外部リンクの死活 | Moshi |
 | Netlify | master への push | 本番のビルド。使わないファイルだけの変更では `scripts/netlify-ignore.sh` が止める | Slack |
+| `deploy-check.yml` | master への push | Netlify の本番デプロイの結果を API で見る。Netlify と Slack は ignore で止めたビルドも「失敗」と出すので、本当に落ちたかはこちらで見る | 落ちたときだけ Moshi |
 
 外部リンクの確認は、2026-10-25 に手で 1 回動かしました（[実行結果](https://github.com/uto-usui/webmanab/actions/runs/40188317535)）。1182 件のうち、切れているものが 186 件（clip の紹介先 155、tip の本文 31）、別のドメインへの転送が 82 件、確かめられないものが 254 件でした。jsfiddle は自動の確認に 403 を返すので、lab のデモが動くかどうかはこの仕組みでは数えられません。
 
 ## 5. 変更するときの確認
 
 - コードを変えたら `pnpm verify` を通す
+- master に push するたびに Netlify の本番ビルドが動く（docs だけの変更でも、止めるための起動が 1 回走る）。PR は細かく分けず、関係する変更を 1 本にまとめる。docs だけの直しは、次のコードの PR に入れる
 - 見た目が変わる変更は、`pnpm test:catalog` で差分を見る。意図どおりなら、同じコミットで基準のスクショを撮り直す。`pnpm test:visual` は `e2e/visual/` がまだなく、テストが 0 件なので、ページ単位の見た目のテストを作るまでは差を見られない
 - 依存の更新はスキル `deps-update` を使う。alerts のメールが来たとき、`monitor.yml` の audit が落ちたときと、四半期に 1 回のふだんの版上げ
 - 版を固定しているものには理由がある。highlight.js 10.1.1 は旧サイトと同じ色にするため、TypeScript 6 は `astro check` が 7 に対応していないため、Playwright 1.64.1 は基準のスクショと同じ Chromium で比べるため。四半期の版上げのときに、理由がまだ当てはまるかを確かめる
