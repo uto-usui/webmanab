@@ -21,7 +21,7 @@ const Title = /^\/(tip|clip|lab)\/[^/]+\/$/.test(Astro.url.pathname)
         webmanab.html
       </a>
     </Title>
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="サイト">
       <ul class="header__nav-list">
         {links.map(({ label, href }) => (
           <li class="header__nav-item">
