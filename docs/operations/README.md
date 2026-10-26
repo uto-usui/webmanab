@@ -43,20 +43,25 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 ## 5. 変更するときの確認
 
 - コードを変えたら `pnpm verify` を通す
-- 見た目が変わる変更は、`pnpm test:catalog` で差分を見る。意図どおりなら、同じコミットで基準のスクショを撮り直す。`pnpm test:visual` は `e2e/visual/` がまだなく、テストが 0 件なので、ページ単位の見た目のテストを作るまでは差を見られない（[plans/ui-features.md](plans/ui-features.md) の 1.2）
+- 見た目が変わる変更は、`pnpm test:catalog` で差分を見る。意図どおりなら、同じコミットで基準のスクショを撮り直す。`pnpm test:visual` は `e2e/visual/` がまだなく、テストが 0 件なので、ページ単位の見た目のテストを作るまでは差を見られない
 - 依存の更新はスキル `deps-update` を使う。alerts のメールが来たとき、`monitor.yml` の audit が落ちたときと、四半期に 1 回のふだんの版上げ
 - 版を固定しているものには理由がある。highlight.js 10.1.1 は旧サイトと同じ色にするため、TypeScript 6 は `astro check` が 7 に対応していないため、Playwright 1.64.1 は基準のスクショと同じ Chromium で比べるため。四半期の版上げのときに、理由がまだ当てはまるかを確かめる
 
 ## 6. 機能の計画
 
-機能ごとの計画は [plans/](plans/) にあります。
+機能ごとの計画と、作者に確かめたいことは GitHub の issue で扱います。作る・あとで・作らないが決まったら issue に書き、作り終えたら PR から閉じます。
 
-| 計画 | 中身 |
+| issue | 中身 |
 | --- | --- |
-| [clip-pipeline.md](plans/clip-pipeline.md) | clip の自動化。アワードやギャラリーから候補を集め、Claude Code がサイトを見て感想とタグを書き、PR にする |
-| [ui-features.md](plans/ui-features.md) | 読者向けの機能（検索、404、更新日、コピーボタン、タグの組み合わせ） |
-| [vault-and-new-post.md](plans/vault-and-new-post.md) | 記事を vault に移す手順と、新しい記事の雛形（F1） |
-| [laboobal.md](plans/laboobal.md) | laboobal のドキュメントを lab に移し、labobal.dev を作り直す |
+| [#45](https://github.com/uto-usui/webmanab/issues/45) | 新しいページと記事で落ちるテストを直す。F4、F1、clip の自動化の前にやる |
+| [#46](https://github.com/uto-usui/webmanab/issues/46) | F4 サイト内検索 |
+| [#47](https://github.com/uto-usui/webmanab/issues/47) | 独自の 404 ページ |
+| [#48](https://github.com/uto-usui/webmanab/issues/48) | F2 書き直した記事に更新日を出す |
+| [#49](https://github.com/uto-usui/webmanab/issues/49) | コードブロックのコピーボタン |
+| [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む（あとで） |
+| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 |
+| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 |
+| [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる |
 
 ## 7. 公開後に残っている作業
 
@@ -68,4 +73,4 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | X のプロフィールのリンクを `webmanab.com` にする | Claude（Chrome で） |
 | uto-usui.com（XServer）に、旧ドメインを書き換えた版を出す。リポジトリ側は書き換え済み | 未定 |
 | Zenn の自己紹介に webmanab と note を足す。上限の 160 字に達しているので、削るところを作者が決める | 作者が決めてから Claude |
-| laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す | 案の段階 |
+| laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す（[#53](https://github.com/uto-usui/webmanab/issues/53)） | 案の段階 |
