@@ -17,11 +17,6 @@ const validator = new HtmlValidate({
 
 // テンプレートから来るが、旧サイトと同じ構造なので残すもの。a11y の追跡一覧（08 の 2.5）で追う
 const FROM_TEMPLATE: ((m: Message) => boolean)[] = [
-  // A11Y-12: 記事ページはヘッダーのサイト名と記事タイトルの 2 つが h1。基準の h1 の指標でも追う
-  (m) =>
-    m.ruleId === 'heading-level' &&
-    m.message.startsWith('Multiple <h1>') &&
-    /> article > header > h1$/.test(m.selector ?? ''),
   // A11Y-10: 記事タイトル（h1）の次が「share」などの h3
   (m) =>
     m.ruleId === 'heading-level' &&

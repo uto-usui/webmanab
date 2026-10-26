@@ -8,15 +8,19 @@ const links = [
 ]
 const current = (href: string) =>
   Astro.url.pathname === href ? 'page' : undefined
+// 記事ページの h1 は記事のタイトルだけにする（A11Y-12）
+const Title = /^\/(tip|clip|lab)\/[^/]+\/$/.test(Astro.url.pathname)
+  ? 'p'
+  : 'h1'
 ---
 
 <header class="header">
   <div class="header__inner">
-    <h1 class="header__title">
+    <Title class="header__title">
       <a href="/" aria-current={current('/')}>
         webmanab.html
       </a>
-    </h1>
+    </Title>
     <nav class="header__nav">
       <ul class="header__nav-list">
         {links.map(({ label, href }) => (
