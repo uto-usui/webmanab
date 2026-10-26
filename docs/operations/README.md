@@ -7,7 +7,7 @@
 | 項目 | 決めたこと |
 | --- | --- |
 | 書く頻度 | 週 5 本ほど。clip を週 3〜4 本、tip を週 1〜2 本。tip の題材は、ドメインの移管やリニューアルのような普段の作業から取る |
-| 機能の順番 | F1（新しい記事の雛形とスクショの撮影）と F7（clip の候補集め）を最初に作る。読者向けは F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンの順。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
+| 機能の順番 | 読者向けの F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンは 2026-10-26 に公開した。次は F1（新しい記事の雛形と vault への移行）、その上に F7（clip の自動化）を作る。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
 | 新しい記事の id | 3000 から順に振る。旧 WordPress の id（最大 2883）と区別するため |
 | a11y | 今やる。運用とは別の作業として進める。見た目が変わらない段階 1・2 から始め、見た目が変わる段階 3 はスクショを作者に見てもらってから入れる（[08-quality.md](../renewal/08-quality.md) の 2.5） |
 | 旧記事 | 一括で書き直さない。手を入れるのは、よく読まれている記事と、リンク切れなどで壊れている記事だけ |
@@ -53,17 +53,13 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 
 機能ごとの計画と、作者に確かめたいことは GitHub の issue で扱います。作る・あとで・作らないが決まったら issue に書き、作り終えたら PR から閉じます。
 
-| issue | 中身 |
-| --- | --- |
-| [#45](https://github.com/uto-usui/webmanab/issues/45) | 新しいページと記事で落ちるテストを直す。F4、F1、clip の自動化の前にやる |
-| [#46](https://github.com/uto-usui/webmanab/issues/46) | F4 サイト内検索 |
-| [#47](https://github.com/uto-usui/webmanab/issues/47) | 独自の 404 ページ |
-| [#48](https://github.com/uto-usui/webmanab/issues/48) | F2 書き直した記事に更新日を出す |
-| [#49](https://github.com/uto-usui/webmanab/issues/49) | コードブロックのコピーボタン |
-| [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む（あとで） |
-| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 |
-| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 |
-| [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる |
+| issue | 中身 | 状態 |
+| --- | --- | --- |
+| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 次にやる。作者に確かめたいことが 5 つ |
+| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | #51 のあと。作者に確かめたいことが 5 つ |
+| [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 作者に確かめたいことが 11 個 |
+| [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む | あとで |
+| [#45](https://github.com/uto-usui/webmanab/issues/45)〜[#49](https://github.com/uto-usui/webmanab/issues/49) | テストの直し、F4 検索、404、F2 更新日、コピーボタン | 2026-10-26 に公開（#56） |
 
 ## 7. 公開後に残っている作業
 
@@ -71,8 +67,7 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | --- | --- |
 | 実機（iPhone、Android）でメニュー、目次、無限スクロール、シェアを触る | 作者 |
 | Search Console の URL 検査で、上位 10 本の「Google が選択した正規 URL」が `webmanab.com` になったかを見る（10/28 ごろと、その 2 週間後） | Claude |
-| GA4 のプロパティを作り、`netlify.toml` の `PUBLIC_GA4_ID` を有効にする | Claude（Chrome で） |
-| X のプロフィールのリンクを `webmanab.com` にする | Claude（Chrome で） |
+| X のプロフィールのリンクを `webmanab.com` にする。この Chrome では X にログインしていない | 作者（ログインしてもらえれば Claude） |
 | uto-usui.com（XServer）に、旧ドメインを書き換えた版を出す。リポジトリ側は書き換え済み | 未定 |
 | Zenn の自己紹介に webmanab と note を足す。上限の 160 字に達しているので、削るところを作者が決める | 作者が決めてから Claude |
 | laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す（[#53](https://github.com/uto-usui/webmanab/issues/53)） | 案の段階 |
