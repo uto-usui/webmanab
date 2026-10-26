@@ -138,9 +138,20 @@
       );
     }
 
+    // コピーのボタンを足すときは、pre を .code-copy-wrap で包んで外側に余白を移す（scripts/code-copy.ts）
+    pre,
+    .code-copy-wrap {
+      margin: $space-2 -2rem $space-2 -2rem;
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: $space-3;
+        margin-left: calc(100% / 12 * 4);
+      }
+    }
+
     pre {
       padding: 1px 2rem;
-      margin: $space-2 -2rem $space-2 -2rem;
       text-align: left;
       letter-spacing: normal;
 
@@ -148,11 +159,17 @@
 
       @include tablet {
         padding: 0 2em;
-        margin-right: 0;
-        margin-bottom: $space-3;
-        margin-left: calc(100% / 12 * 4);
 
         @include sizes(0, 0);
+      }
+    }
+
+    // pre は横にスクロールするので、ボタンは pre の外（包みの右上）に置く
+    .code-copy-wrap {
+      position: relative;
+
+      > pre {
+        margin: 0;
       }
     }
 
@@ -376,6 +393,7 @@
       }
 
       + pre,
+      + .code-copy-wrap,
       + ol,
       + ul,
       + dl {
@@ -401,4 +419,35 @@
       }
     }
   }
+
+  // コードのコピーのボタン。右端にあるので、ホバーは左上にずらして影を右下に出す
+  .code-copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px $space-2 4px;
+    font-family: inherit;
+    font-style: italic;
+    color: $white;
+    cursor: pointer;
+    background-color: $glay;
+    border: 0;
+    transition: 0.25s $easeOutQuart;
+
+    @include sizes(-2, 1);
+
+    &:hover {
+      box-shadow: 5px 5px 0 $primary-color;
+      transform: translate(-5px, -5px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
 </style>
+
+<script>
+  import '../scripts/code-copy'
+</script>
