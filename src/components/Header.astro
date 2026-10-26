@@ -4,6 +4,7 @@ const links = [
   { label: 'clip', href: '/clip/' },
   { label: 'lab', href: '/lab/' },
   { label: 'about', href: '/' },
+  { label: 'search', href: '/search/' },
 ]
 const current = (href: string) =>
   Astro.url.pathname === href ? 'page' : undefined
@@ -121,6 +122,15 @@ const current = (href: string) =>
 
       @include desktop {
         margin-left: space-scalar(12);
+      }
+
+      // 5 項目にしたので、スマホの幅では間隔を詰めて枠の線にかからないようにする（#46）
+      @include mobile {
+        margin-left: space-scalar(6);
+      }
+
+      @media (width <= 374px) {
+        margin-left: space-scalar(4);
       }
     }
   }

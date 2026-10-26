@@ -55,6 +55,13 @@ describe('buildHead', () => {
     expect(term.canonical).toBe('https://webmanab.netlify.app/tips/366/')
   })
 
+  test('検索ページは search の title で、canonical は /search/', () => {
+    const head = buildHead({ kind: 'search' }, site)
+    expect(head.title).toBe(`search | ${SITE}`)
+    expect(head.canonical).toBe('https://webmanab.netlify.app/search/')
+    expect(head.jsonLd).toBeUndefined()
+  })
+
   test('記事は title と抜粋、og:image はカテゴリの OGP 画像', () => {
     const entry = fixture('tip/sass-pickup')
     const head = buildHead({ kind: 'post', entry }, site)

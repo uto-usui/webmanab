@@ -22,6 +22,7 @@ export const DEFAULT_OG_IMAGE = '/ogp.png'
 
 export type HeadInput =
   | { kind: 'top' }
+  | { kind: 'search' }
   | { kind: 'type'; type: PostType }
   | { kind: 'term'; tax: Taxonomy; id: number }
   | {
@@ -62,6 +63,12 @@ const pageOf = (
   switch (input.kind) {
     case 'top':
       return { title: pageTitle(), description: SITE_DESCRIPTION, path: '/' }
+    case 'search':
+      return {
+        title: pageTitle('search'),
+        description: 'search page',
+        path: '/search/',
+      }
     case 'type':
       return {
         title: pageTitle(input.type),

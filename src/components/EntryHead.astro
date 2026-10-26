@@ -11,7 +11,7 @@ interface Props {
 const { type, title, date, terms } = Astro.props.entry.data
 ---
 
-<header class="entry-head">
+<header class="entry-head" data-pagefind-body>
   <time class="entry-head__time" datetime={toIsoJst(date)}>
     {formatDate(date)}
   </time>

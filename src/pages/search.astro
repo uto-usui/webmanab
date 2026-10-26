@@ -1,0 +1,101 @@
+---
+import Article from '../components/Article.astro'
+import Loader from '../components/Loader.astro'
+import SearchForm from '../components/SearchForm.astro'
+import Title1 from '../components/Title1.astro'
+import Wrapper from '../components/Wrapper.astro'
+import Default from '../layouts/Default.astro'
+import { buildHead } from '../lib/head'
+import { listItem } from '../lib/list-json'
+import { getPosts } from '../lib/posts'
+import { POST_TYPES } from '../lib/site'
+
+// 結果のカードは、この 1 枚を複製して中身を差し替える（無限スクロールと同じ）
+const [sample] = await getPosts('tip')
+const head = buildHead({ kind: 'search' }, Astro.site!)
+---
+
+<Default title={head.title} head={head} routeName="search">
+  <Wrapper>
+    <div class="search__title">
+      <Title1 text="search" />
+    </div>
+    <SearchForm />
+    <noscript>
+      <p class="search__note">検索には JavaScript が必要です。</p>
+    </noscript>
+    <p class="search__status" aria-live="polite" data-search-status></p>
+    <div class="search__results" data-search-results></div>
+    <div class="search__empty" data-search-empty hidden>
+      <p>一覧から探す</p>
+      <ul class="search__types">
+        {POST_TYPES.map((type) => (
+          <li>
+            <a href={`/${type}/`}>{type}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div data-search-more></div>
+    <div data-search-loader hidden>
+      <Loader />
+    </div>
+    <template data-search-card>
+      <Article item={listItem(sample)} />
+    </template>
+  </Wrapper>
+</Default>
+
+<script>
+  import '../scripts/image-fade'
+  import '../scripts/search'
+</script>
+
+<style lang="scss">
+  .search__note,
+  .search__status {
+    margin-top: $space-4;
+    font-style: italic;
+
+    @include sizes(-1);
+  }
+
+  .search__status:empty {
+    display: none;
+  }
+
+  .search__results {
+    display: flex;
+    flex-flow: wrap;
+    margin-top: $space-4;
+  }
+
+  .search__empty {
+    margin-top: $space-4;
+  }
+
+  .search__types {
+    display: flex;
+    margin-top: $space-2;
+
+    > li + li {
+      margin-left: space-scalar(10);
+    }
+
+    a {
+      font-style: italic;
+      color: $glay;
+
+      @include sizes(1);
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  // Title1 の中の要素なので global にする。tip、clip、lab より長く、スマホの幅では 1 段小さくして画面に収める
+  .search__title .h1 {
+    @include mobile {
+      @include sizes(6);
+    }
+  }
+</style>
