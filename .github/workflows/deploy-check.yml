@@ -48,7 +48,8 @@ jobs:
         if: always()
         env:
           RESULT: ${{ steps.wait.outputs.result }}
-        run: echo "Netlify: ${RESULT:-取得できなかった}" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Netlify: ${RESULT:-取得できなかった}" >> "$GITHUB_STEP_SUMMARY"
       - name: Notify Moshi
         if: failure()
         shell: bash
