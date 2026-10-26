@@ -79,9 +79,9 @@ test('EntryRelated は 0 件のとき見出しだけ出して ul を出さない
   expect(count(html, /<ul/)).toBe(0)
 })
 
-test('Title2 は scoped の属性を持つ', async () => {
+test('Title2 は scoped の属性を持つ h2（A11Y-10）', async () => {
   const html = await container.renderToString(Title2, {
     slots: { default: 'share <br />ー' },
   })
-  expect(html).toMatch(/<h3 class="title2" data-astro-cid-/)
+  expect(html).toMatch(/<h2 class="title2" data-astro-cid-/)
 })

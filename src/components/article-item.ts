@@ -14,4 +14,4 @@ export const titleLink = (item: Pick<ListItem, 'path' | 'clipUrl'>) =>
 export const thumbLink = (item: Pick<ListItem, 'title' | 'clipUrl'>) =>
   item.clipUrl
     ? { 'aria-label': `${item.title} の記事` }
-    : { tabindex: '-1', 'aria-hidden': 'true' }
+    : ({ tabindex: '-1', 'aria-hidden': 'true' } as const)

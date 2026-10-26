@@ -20,10 +20,10 @@ export const externalLinksPlugin = defineHastPlugin({
       const href = node.properties?.href
       if (typeof href !== 'string' || !EXTERNAL.test(href)) return
       ctx.setProperty(node, 'target', '_blank')
-      ctx.setProperty(node, 'ariaDescribedBy', NEW_TAB_ID)
       const rel = tokens(node.properties.rel)
       if (!rel.includes('noopener'))
         ctx.setProperty(node, 'rel', [...rel, 'noopener'])
+      ctx.setProperty(node, 'ariaDescribedBy', NEW_TAB_ID)
     },
   },
 })
