@@ -11,7 +11,7 @@ export const NEW_POST_ID = 3000
 export const LEGACY_TERM_MAX_ID = 366
 
 /** 公開後に足した、記事でもタームでもないページ。ページを足すときにここへ 1 行書く */
-export const ADDED_PAGES: readonly string[] = ['/search/']
+export const ADDED_PAGES: readonly string[] = ['/search/', '/404.html']
 
 export const isLegacy = ({ data }: { data: { id: number } }) =>
   data.id < NEW_POST_ID

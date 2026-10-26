@@ -1,0 +1,53 @@
+---
+// 見つからないページ（#47）。Netlify が存在しない URL に 404 の状態で返す。
+// どの URL でも同じ中身なので、canonical と OGP は出さない
+import SearchForm from '../components/SearchForm.astro'
+import Title1 from '../components/Title1.astro'
+import Wrapper from '../components/Wrapper.astro'
+import Default from '../layouts/Default.astro'
+import { pageTitle, POST_TYPES } from '../lib/site'
+---
+
+<Default title={pageTitle('404')} routeName="not-found">
+  <Wrapper>
+    <Title1 text="404" href="/" />
+    <p class="not-found__lead">
+      このページは見つかりませんでした。記事を検索するか、一覧から探してください。
+    </p>
+    <SearchForm />
+    <ul class="not-found__types">
+      {POST_TYPES.map((type) => (
+        <li>
+          <a href={`/${type}/`}>{type}</a>
+        </li>
+      ))}
+    </ul>
+  </Wrapper>
+</Default>
+
+<style lang="scss">
+  .not-found__lead {
+    margin-top: get-line-height(7, -2, 1);
+
+    @include desktop {
+      margin-top: get-line-height(7, 0, 1);
+    }
+  }
+
+  .not-found__types {
+    display: flex;
+    justify-content: center;
+    margin-top: get-line-height(7, -2, 1);
+
+    > li + li {
+      margin-left: space-scalar(10);
+    }
+
+    a {
+      font-style: italic;
+      color: $glay;
+
+      @include sizes(1);
+    }
+  }
+</style>

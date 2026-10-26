@@ -47,3 +47,14 @@ test('0 件のときは一覧への入口を出す', async ({ page }) => {
   await expect(page.locator('[data-search-empty]')).toBeVisible()
   await expect(page.locator(cards)).toHaveCount(0)
 })
+
+test('ない URL では 404 を返し、検索の入力欄から /search/ に送れる', async ({
+  page,
+}) => {
+  const response = await page.goto('/no-such-page/')
+  expect(response?.status()).toBe(404)
+  await page.getByRole('searchbox', { name: 'keyword' }).fill('grid')
+  await page.getByRole('button', { name: 'search' }).click()
+  await expect(page).toHaveURL(/\/search\/\?q=grid/)
+  await expect(page.locator(cards)).toHaveCount(8)
+})

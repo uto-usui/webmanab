@@ -22,8 +22,9 @@ test('ads.txt が AdSense の発行者 ID を持つ', () => {
   )
 })
 
-test('404 は Netlify の既定に任せるので、404.html を出さない', () => {
-  expect(existsSync(join(DIST, '404.html'))).toBe(false)
+// Netlify は存在しない URL に dist/404.html を 404 の状態で返す（#47）
+test('404.html がある', () => {
+  expect(existsSync(join(DIST, '404.html'))).toBe(true)
 })
 
 test('CATALOG なしのビルドにカタログが出ていない', () => {
