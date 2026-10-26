@@ -420,21 +420,29 @@
     }
   }
 
-  // コードのコピーのボタン。右端にあるので、ホバーは左上にずらして影を右下に出す
+  // コードのコピーのボタン。コードの 1 行目に重なるので、ブロックにマウスを載せたとき、Tab で来たとき、
+  // タップしたとき（is-active）だけ出す。右端にあるので、ホバーは左上にずらして影を右下に出す
   .code-copy {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2px $space-2 4px;
+    padding: 0 $space-2;
     font-family: inherit;
     font-style: italic;
     color: $white;
     cursor: pointer;
     background-color: $glay;
     border: 0;
+    opacity: 0;
     transition: 0.25s $easeOutQuart;
 
     @include sizes(-2, 1);
+
+    .code-copy-wrap:hover &,
+    .code-copy-wrap.is-active &,
+    &:focus-visible {
+      opacity: 1;
+    }
 
     &:hover {
       box-shadow: 5px 5px 0 $primary-color;

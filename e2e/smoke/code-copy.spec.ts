@@ -24,6 +24,9 @@ test('コードブロックごとに copy があり、押すとそのコード�
   await expect(buttons).toHaveCount(await blocks.count())
 
   const second = buttons.nth(1)
+  await expect(second).toHaveCSS('opacity', '0')
+  await page.locator('.code-copy-wrap').nth(1).hover()
+  await expect(second).toHaveCSS('opacity', '1')
   await second.click()
   expect(
     await page.evaluate(() => (window as unknown as { copied: string }).copied),
@@ -41,4 +44,17 @@ test('クリップボードを使えないときはボタンを出さない', as
   })
   await page.goto(PATH)
   await expect(page.locator('.code-copy')).toHaveCount(0)
+})
+
+test.describe('タッチの端末', () => {
+  test.use({ hasTouch: true })
+
+  test('ブロックをタップするとボタンが出る', async ({ page }) => {
+    await page.goto(PATH)
+    const wrap = page.locator('.code-copy-wrap').first()
+    await expect(wrap.locator('.code-copy')).toHaveCSS('opacity', '0')
+    await wrap.locator('pre').tap()
+    await expect(wrap).toHaveClass(/\bis-active\b/)
+    await expect(wrap.locator('.code-copy')).toHaveCSS('opacity', '1')
+  })
 })
