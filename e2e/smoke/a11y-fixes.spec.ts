@@ -136,3 +136,25 @@ test.describe('A11Y-17: 動きを減らす設定', () => {
     expect(running).toBe('1')
   })
 })
+
+test.describe('A11Y-06: 375px', () => {
+  test.use({ viewport: { width: 375, height: 812 } })
+
+  test('はみ出したコードだけ Tab で止まり、はみ出さないコードは止まらない', async ({
+    page,
+  }) => {
+    await page.goto('/tip/method-control/')
+    const result = await page.evaluate(() =>
+      [
+        ...document.querySelectorAll<HTMLElement>(
+          '.entry-content__inner pre > code',
+        ),
+      ].map((el) => ({
+        overflows: el.scrollWidth > el.clientWidth,
+        focusable: el.tabIndex === 0,
+      })),
+    )
+    expect(result.some((r) => r.overflows)).toBe(true)
+    for (const r of result) expect(r.focusable).toBe(r.overflows)
+  })
+})
