@@ -1,0 +1,24 @@
+---
+// Tab の最初の行き先。フォーカスが来たときだけ左上に出す（A11Y-15）
+---
+
+<a class="skip-link" href="#main">
+  本文へ移動
+</a>
+
+<style lang="scss">
+  .skip-link {
+    position: fixed;
+    top: $space-2;
+    left: $space-2;
+    z-index: 100000;
+    padding: $space-1 $space-3;
+    font-style: italic;
+    color: $white;
+    background-color: $glay;
+
+    &:not(:focus) {
+      @include sr-only;
+    }
+  }
+</style>

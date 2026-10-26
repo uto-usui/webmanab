@@ -89,3 +89,22 @@ test('A11Y-16: Tab で来たリンクに枠が出て、ホバーでずらす部�
   await expect.poll(async () => (await look()).outline).toBe('solid')
   expect((await look()).shadow).toContain('5px 5px 0px')
 })
+
+test('A11Y-15: 最初の Tab で「本文へ移動」が左上に出て、押すと本文の最初のリンクへ進む', async ({
+  page,
+}) => {
+  await page.goto('/tip/method-control/')
+  const skip = page.locator('.skip-link')
+  expect(await skip.boundingBox()).toMatchObject({ width: 1, height: 1 })
+  await page.keyboard.press('Tab')
+  await expect(skip).toBeFocused()
+  const box = await skip.boundingBox()
+  expect(box!.width).toBeGreaterThan(1)
+  expect(box!.y).toBeLessThan(20)
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/#main$/)
+  await page.keyboard.press('Tab')
+  expect(
+    await page.evaluate(() => !!document.activeElement?.closest('main#main')),
+  ).toBe(true)
+})
