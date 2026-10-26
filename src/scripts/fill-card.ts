@@ -1,4 +1,4 @@
-import { titleLink } from '../components/article-item'
+import { thumbLink, titleLink } from '../components/article-item'
 import type { ListItem } from '../lib/list-json'
 
 // 複製した Article.astro のカードの中身を差し替える。無限スクロールと検索で使い、マークアップを Article.astro の 1 か所に保つ
@@ -9,7 +9,12 @@ export function fill(card: Element, item: ListItem) {
     return el
   }
   find('.article-item__tag').textContent = item.primaryTag
-  find<HTMLAnchorElement>('.article-item__img-wrap').href = item.path
+  const thumb = find<HTMLAnchorElement>('.article-item__img-wrap')
+  thumb.href = item.path
+  for (const name of ['aria-label', 'tabindex', 'aria-hidden'])
+    thumb.removeAttribute(name)
+  for (const [name, value] of Object.entries(thumbLink(item)))
+    thumb.setAttribute(name, value)
 
   const img = find<HTMLImageElement>('.article-item__img > img')
   img.dataset.lazy = 'loading'

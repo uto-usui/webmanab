@@ -1,7 +1,7 @@
 ---
 import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
 import type { ListItem } from '../lib/list-json'
-import { titleLink } from './article-item'
+import { thumbLink, titleLink } from './article-item'
 
 interface Props {
   item: ListItem
@@ -9,12 +9,13 @@ interface Props {
 
 const { item } = Astro.props
 const link = titleLink(item)
+const thumb = thumbLink(item)
 ---
 
 <article class="article-item">
   <div class="article-item__inner">
     <strong class="article-item__tag">{item.primaryTag}</strong>
-    <a class="article-item__img-wrap" href={item.path}>
+    <a class="article-item__img-wrap" href={item.path} {...thumb}>
       <div class="article-item__img">
         <img
           src={item.eyecatch}
