@@ -1,5 +1,5 @@
 ---
-import { formatDate, toIsoJst } from '../lib/date'
+import { formatDate, shownModified, toIsoJst } from '../lib/date'
 import { termPath } from '../lib/terms'
 import { TAXONOMY_OF } from '../lib/site'
 import type { PostEntry } from '../lib/posts'
@@ -8,13 +8,21 @@ interface Props {
   entry: PostEntry
 }
 
-const { type, title, date, terms } = Astro.props.entry.data
+const { data } = Astro.props.entry
+const { type, title, date, terms } = data
+const updated = shownModified(data)
 ---
 
 <header class="entry-head" data-pagefind-body>
-  <time class="entry-head__time" datetime={toIsoJst(date)}>
-    {formatDate(date)}
-  </time>
+  <p class="entry-head__time">
+    <time datetime={toIsoJst(date)}>{formatDate(date)}</time>
+    {updated && (
+      <>
+        ／ updated{' '}
+        <time datetime={toIsoJst(updated)}>{formatDate(updated)}</time>
+      </>
+    )}
+  </p>
   <h1 class="entry-head__title">{title}</h1>
   <ul class="entry-head__list">
     <li class="entry-head__item">
@@ -86,6 +94,9 @@ const { type, title, date, terms } = Astro.props.entry.data
     display: inline-block;
     font-style: italic;
     color: $black;
+
+    // 更新日があると、狭い幅では帯の半分に収まらず折り返すので 1 行に保つ
+    white-space: nowrap;
     transform: translateX(50%);
 
     @include sizes(-2);
