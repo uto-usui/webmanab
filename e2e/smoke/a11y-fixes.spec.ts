@@ -1,5 +1,5 @@
 // 公開後の a11y の直し（docs/a11y.md の段階 1・2）
-import { expect, test } from '@playwright/test'
+import { expect, test } from './fixtures'
 
 const thumb = '.article-item__img-wrap'
 
@@ -87,7 +87,7 @@ test('A11Y-16: Tab で来たリンクに枠が出て、ホバーでずらす部�
   await page.keyboard.press('Tab')
   await expect(tag).toBeFocused()
   await expect.poll(async () => (await look()).outline).toBe('solid')
-  expect((await look()).shadow).toContain('5px 5px 0px')
+  await expect.poll(async () => (await look()).shadow).toContain('5px 5px 0px')
 })
 
 test('A11Y-15: 最初の Tab で「本文へ移動」が左上に出て、押すと本文の最初のリンクへ進む', async ({
@@ -146,9 +146,7 @@ test.describe('A11Y-06: 375px', () => {
     await page.goto('/tip/method-control/')
     const result = await page.evaluate(() =>
       [
-        ...document.querySelectorAll<HTMLElement>(
-          '.entry-content__inner pre > code',
-        ),
+        ...document.querySelectorAll<HTMLElement>('.entry-content__inner pre'),
       ].map((el) => ({
         overflows: el.scrollWidth > el.clientWidth,
         focusable: el.tabIndex === 0,

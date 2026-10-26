@@ -71,6 +71,8 @@ test('メニューのボタンは Enter でも Space でも開閉できる', asy
   await button.focus()
   await page.keyboard.press('Enter')
   await expect(button).toHaveAttribute('aria-expanded', 'true')
+  // 開くとフォーカスはメニューの中に移る（A11Y-13）ので、ボタンに戻してから押す
+  await button.focus()
   await page.keyboard.press('Space')
   await expect(button).toHaveAttribute('aria-expanded', 'false')
 })
