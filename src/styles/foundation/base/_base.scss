@@ -87,3 +87,16 @@ img[data-lazy='loaded'] {
   opacity: 1;
   transition: 0.8s;
 }
+
+// 動きを減らす設定のときは、メニューのスライド、目次の開閉、ホバーの動き、ローダーをすぐ終わらせる（A11Y-17）。
+// 0 にすると transitionend が来ない環境があるので 0.01ms にする
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

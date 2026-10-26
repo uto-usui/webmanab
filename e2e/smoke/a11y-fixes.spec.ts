@@ -108,3 +108,31 @@ test('A11Y-15: 最初の Tab で「本文へ移動」が左上に出て、押す
     await page.evaluate(() => !!document.activeElement?.closest('main#main')),
   ).toBe(true)
 })
+
+test.describe('A11Y-17: 動きを減らす設定', () => {
+  test.use({ reducedMotion: 'reduce' })
+
+  test('メニューは待たずに開き終わる', async ({ page }) => {
+    await page.goto('/')
+    await page.click('.menu__btn')
+    // 動きがあると 0.85 秒かかる
+    await expect
+      .poll(
+        () =>
+          page
+            .locator('.menu')
+            .evaluate((el) => getComputedStyle(el).transform),
+        { timeout: 200, intervals: [20] },
+      )
+      .toBe('matrix(1, 0, 0, 1, 0, 0)')
+  })
+
+  test('ローダーのバーは動き続けない', async ({ page }) => {
+    await page.goto('/tip/')
+    const running = await page.evaluate(() => {
+      const bar = document.querySelector('.loader > span')!
+      return getComputedStyle(bar).animationIterationCount
+    })
+    expect(running).toBe('1')
+  })
+})
