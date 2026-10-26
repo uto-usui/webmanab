@@ -33,7 +33,8 @@ jobs:
               ready)
                 echo "result=デプロイした" >> "$GITHUB_OUTPUT"; exit 0 ;;
               error)
-                if [[ "$message" == *"no content change"* ]]; then
+                # API の skipped は ignore で止めたときも空なので、止めたときの文と完全に一致するかで見る
+                if [[ "$message" == "Failed during stage 'checking build content for changes': Canceled build due to no content change" ]]; then
                   echo "result=ビルドに使わないファイルだけの変更なので止めた" >> "$GITHUB_OUTPUT"; exit 0
                 fi
                 echo "result=失敗: ${message}" >> "$GITHUB_OUTPUT"

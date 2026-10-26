@@ -61,11 +61,21 @@ const run = async () => {
   const more = async () => {
     loading = true
     loader.hidden = false
-    const batch = await Promise.all(
-      found
-        .slice(shown, shown + SEARCH_PAGE_SIZE)
-        .map((result) => result.data()),
-    )
+    let batch: { meta: Record<string, string> }[]
+    try {
+      batch = await Promise.all(
+        found
+          .slice(shown, shown + SEARCH_PAGE_SIZE)
+          .map((result) => result.data()),
+      )
+    } catch (error) {
+      // 監視は残す。画面から外れてまた入ったときに読み直す（無限スクロールと同じ）
+      console.warn('検索結果の続きを読み込めませんでした', error)
+      return
+    } finally {
+      loading = false
+      loader.hidden = true
+    }
     for (const { meta } of batch) {
       const item = itemFromMeta(meta)
       if (!item) continue
@@ -74,8 +84,6 @@ const run = async () => {
       results.append(card)
     }
     shown += batch.length
-    loading = false
-    loader.hidden = true
     if (shown >= found.length) {
       observer.disconnect()
     } else {
