@@ -1,6 +1,7 @@
 ---
 import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
 import type { ListItem } from '../lib/list-json'
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
 import { thumbLink, titleLink } from './article-item'
 
 interface Props {
@@ -33,6 +34,7 @@ const thumb = thumbLink(item)
         href={link.href}
         target={link.external ? '_blank' : undefined}
         rel={link.external ? 'noopener' : undefined}
+        aria-describedby={link.external ? NEW_TAB_ID : undefined}
       >
         {item.title}
       </a>

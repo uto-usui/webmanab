@@ -4,6 +4,7 @@ import Bar from '../components/Bar.astro'
 import Header from '../components/Header.astro'
 import Menu from '../components/Menu.astro'
 import Head from '../components/Head.astro'
+import NewTabNote from '../components/NewTabNote.astro'
 import AdScript from '../components/AdScript.astro'
 import type { HeadData } from '../lib/head'
 import { menuTerms } from '../lib/terms'
@@ -45,5 +46,6 @@ const { title, head, routeName } = Astro.props
         labs={menuTerms('labs')}
       />
     </div>
+    <NewTabNote />
   </body>
 </html>

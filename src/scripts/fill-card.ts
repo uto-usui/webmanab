@@ -1,5 +1,6 @@
 import { thumbLink, titleLink } from '../components/article-item'
 import type { ListItem } from '../lib/list-json'
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
 
 // 複製した Article.astro のカードの中身を差し替える。無限スクロールと検索で使い、マークアップを Article.astro の 1 か所に保つ
 export function fill(card: Element, item: ListItem) {
@@ -26,9 +27,11 @@ export function fill(card: Element, item: ListItem) {
   if (link.external) {
     target.target = '_blank'
     target.rel = 'noopener'
+    target.setAttribute('aria-describedby', NEW_TAB_ID)
   } else {
     target.removeAttribute('target')
     target.removeAttribute('rel')
+    target.removeAttribute('aria-describedby')
   }
   target.textContent = item.title
 

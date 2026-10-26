@@ -1,4 +1,6 @@
 ---
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
+
 interface Props {
   // clipUrl のない 2 件（form、the-wing）は画像だけを出す
   href?: string
@@ -15,6 +17,7 @@ const Tag = href ? 'a' : 'div'
   href={href}
   target={href ? '_blank' : undefined}
   rel={href ? 'noopener' : undefined}
+  aria-describedby={href ? NEW_TAB_ID : undefined}
 >
   {/* alt がこのリンクの名前になる（08 の A-4）。文言は旧サイトと同じ */}
   <img

@@ -49,3 +49,20 @@ test('A11Y-18: 無限スクロールで読み込んだ件数を role="status" �
   await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight))
   await expect(status).toHaveText('8 件読み込みました')
 })
+
+test('A11Y-19: 新しいタブで開くリンクは、そのことを aria-describedby で伝える', async ({
+  page,
+}) => {
+  await page.goto('/clip/')
+  const note = page.locator('#new-tab')
+  await expect(note).toHaveText('新しいタブで開きます')
+  await expect(note).toBeHidden()
+  const external = page.locator('a[target="_blank"]')
+  expect(await external.count()).toBeGreaterThan(0)
+  for (const link of await external.all()) {
+    await expect(link).toHaveAttribute('aria-describedby', 'new-tab')
+  }
+  await expect(
+    page.locator('.article-item__target[target="_blank"]').first(),
+  ).toHaveAccessibleDescription('新しいタブで開きます')
+})

@@ -1,0 +1,9 @@
+---
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
+// 新しいタブで開くリンクから aria-describedby で参照する。hidden でも参照された文は読み上げられる。
+// リンクごとに見えない文字を足すと、検索の索引とフィードの本文にも入ってしまう
+---
+
+<span id={NEW_TAB_ID} hidden>
+  新しいタブで開きます
+</span>
