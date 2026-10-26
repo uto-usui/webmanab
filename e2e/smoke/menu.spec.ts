@@ -113,3 +113,32 @@ test('bfcache から戻ったときは閉じている', async ({ page }) => {
     inert: true,
   })
 })
+
+test('開くとメニューの最初のリンクにフォーカスが移り、外は inert になる（A11Y-13）', async ({
+  page,
+}) => {
+  await page.locator('.menu__btn').focus()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('.menu__inner a[href]').first()).toBeFocused()
+  for (const selector of ['.header', 'main']) {
+    expect(
+      await page.locator(selector).evaluate((el) => (el as HTMLElement).inert),
+    ).toBe(true)
+  }
+})
+
+test('Esc で閉じてボタンにフォーカスが戻り、外の inert が外れる（A11Y-13）', async ({
+  page,
+}) => {
+  await page.click('.menu__btn')
+  await page.keyboard.press('Escape')
+  expect(await state(page)).toEqual({
+    open: false,
+    expanded: 'false',
+    inert: true,
+  })
+  await expect(page.locator('.menu__btn')).toBeFocused()
+  expect(
+    await page.locator('main').evaluate((el) => (el as HTMLElement).inert),
+  ).toBe(false)
+})
