@@ -4,6 +4,7 @@ import { describe, expect, test } from 'vitest'
 import { sitePaths } from '../../src/lib/posts'
 import { termListSchema } from '../../src/lib/schema'
 import { load, valid } from './load'
+import { NEW_POST_ID } from './pages'
 
 // フェンスとインラインのコードを除く。コードの中の例はリンクでも生 HTML でもない
 const stripCode = (markdown: string) =>
@@ -19,6 +20,7 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
     name: `${dir}/${file}`,
     frontmatter,
     body: stripCode(body),
+    legacy: Number(frontmatter.id) < NEW_POST_ID,
   }))
 
   test('/ で始まるリンクが、すべて実在のページを指す', () => {
@@ -45,7 +47,7 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
   })
 
   test('本文の画像と clip のスクショが、public/images/ のファイルを指す', () => {
-    const srcs = articles.flatMap(({ name, frontmatter, body }) =>
+    const srcs = articles.flatMap(({ name, frontmatter, body, legacy }) =>
       [
         ...[...body.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)].map(([, s]) => s),
         frontmatter.image?.src,
@@ -53,10 +55,10 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
         frontmatter.fullImage?.src,
       ]
         .filter((src): src is string => !!src)
-        .map((src) => ({ name, src })),
+        .map((src) => ({ name, src, legacy })),
     )
-    // 本文 38 枚と、clip 816 件の 2 枚ずつと、ページ全体の 512 枚
-    expect(srcs.length).toBe(38 + 816 * 2 + 512)
+    // 旧記事は、本文 38 枚と、clip 816 件の 2 枚ずつと、ページ全体の 512 枚
+    expect(srcs.filter(({ legacy }) => legacy).length).toBe(38 + 816 * 2 + 512)
     expect(
       srcs.filter(
         ({ src }) => !src.startsWith('/images/') || !existsSync(`public${src}`),

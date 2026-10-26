@@ -18,12 +18,7 @@ if (!process.env.SITE_URL) throw new Error('SITE_URL が未設定です')
 /** 末尾のスラッシュなし */
 export const SITE_URL = process.env.SITE_URL.replace(/\/$/, '')
 
-export const legacyPaths = new Set(
-  readFileSync(new URL('../fixtures/legacy-urls.txt', import.meta.url), 'utf8')
-    .split('\n')
-    .filter(Boolean)
-    .map((url) => decodeURIComponent(url)),
-)
+export { legacyPaths } from '../content/pages'
 
 /** dist/ からの相対パス（区切りは /） */
 export function distFiles(pattern: string): string[] {

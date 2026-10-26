@@ -6,6 +6,7 @@ import { toIsoJst } from '../../src/lib/date'
 import { lastModified } from '../../src/lib/feeds'
 import { SITE_DESCRIPTION } from '../../src/lib/site'
 import { load, valid } from '../content/load'
+import { isLegacy } from '../content/pages'
 import {
   DIST,
   distFiles,
@@ -166,6 +167,6 @@ test('記事の BlogPosting は frontmatter と canonical に合う（06 の 2.5
     ].filter(Boolean)
     return problems.length ? [`${page.file}: ${problems.join(', ')}`] : []
   })
-  expect(entries.size).toBe(1030)
+  expect([...entries.values()].filter(isLegacy)).toHaveLength(1030)
   expect(found).toEqual([])
 })

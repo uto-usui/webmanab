@@ -2,6 +2,8 @@
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, test } from 'vitest'
+import { load, valid } from '../content/load'
+import { allowedPaths } from '../content/pages'
 import {
   DIST,
   distFiles,
@@ -28,8 +30,10 @@ test('CATALOG なしのビルドにカタログが出ていない', () => {
   expect(existsSync(join(DIST, 'catalog'))).toBe(false)
 })
 
-test('出力したページは、すべて旧サイトの URL にある（余分なページがない）', () => {
-  const extra = htmlFiles.map(pagePath).filter((path) => !legacyPaths.has(path))
+test('出力したページは、旧サイトの URL か許したページ（余分なページがない）', () => {
+  const { posts, terms } = load('src/content')
+  const allowed = allowedPaths(valid(posts), terms)
+  const extra = htmlFiles.map(pagePath).filter((path) => !allowed.has(path))
   expect(extra).toEqual([])
 })
 

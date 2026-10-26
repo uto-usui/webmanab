@@ -7,6 +7,8 @@ import { toHtml } from 'hast-util-to-html'
 import rehypeParse from 'rehype-parse'
 import { unified } from 'unified'
 import { describe, expect, test } from 'vitest'
+import { load, valid } from '../content/load'
+import { isLegacy } from '../content/pages'
 import { distFiles, readDist } from './dist.ts'
 
 const sha1 = (text: string) => createHash('sha1').update(text).digest('hex')
@@ -65,15 +67,24 @@ test('すべての記事に本文の枠がある', () => {
   )
 })
 
-test('全記事の本文とコードブロックの指紋', async () => {
+// 新しい記事を足すたびに -u を求めると描画の回帰を見るものでなくなるので、旧記事だけを指紋にする
+const added = new Set(
+  valid(load('src/content').posts)
+    .filter((entry) => !isLegacy(entry))
+    .map(({ data }) => `${data.type}/${decodeURIComponent(data.slug)}`),
+)
+
+test('旧記事の本文とコードブロックの指紋', async () => {
   const fingerprint = Object.fromEntries(
-    articles.map(({ name, body }) => [
-      name,
-      {
-        body: sha1(canon(body!).replace(/\s*(<[^>]+>)\s*/g, '$1')),
-        code: codeBlocks(body!),
-      },
-    ]),
+    articles
+      .filter(({ name }) => !added.has(name))
+      .map(({ name, body }) => [
+        name,
+        {
+          body: sha1(canon(body!).replace(/\s*(<[^>]+>)\s*/g, '$1')),
+          code: codeBlocks(body!),
+        },
+      ]),
   )
   // 1 記事 1 行にして、PR の差分で変わった記事がそのまま読めるようにする
   const json = `{\n${Object.entries(fingerprint)
