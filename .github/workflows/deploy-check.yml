@@ -1,0 +1,64 @@
+# master への push ごとに、Netlify の本番デプロイが終わるのを待って結果を見る。
+# Netlify は scripts/netlify-ignore.sh で止めたビルドも失敗（error）として数えるので、
+# 止めただけのものは成功として扱い、本当に落ちたときだけ Moshi に知らせてジョブを赤にする
+name: Deploy check
+on:
+  push:
+    branches: [master]
+
+permissions: {}
+
+jobs:
+  netlify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - id: wait
+        name: Wait for the Netlify deploy
+        shell: bash
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE_ID: b434ac22-fe4b-4874-9a05-01c60a105ecf
+          SHA: ${{ github.sha }}
+        run: |
+          # ビルドは 2 分ほど。キューで待つこともあるので 20 分まで見る
+          for _ in $(seq 1 60); do
+            deploy=$(curl -sS --max-time 20 -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+              "https://api.netlify.com/api/v1/sites/$SITE_ID/deploys?per_page=20" |
+              jq -c --arg sha "$SHA" 'map(select(.commit_ref == $sha and .context == "production")) | first // empty' || true)
+            state=$(jq -r '.state // empty' <<<"$deploy")
+            message=$(jq -r '.error_message // empty' <<<"$deploy")
+            echo "state: ${state:-（まだない）} ${message}"
+            case "$state" in
+              ready)
+                echo "result=デプロイした" >> "$GITHUB_OUTPUT"; exit 0 ;;
+              error)
+                if [[ "$message" == *"no content change"* ]]; then
+                  echo "result=ビルドに使わないファイルだけの変更なので止めた" >> "$GITHUB_OUTPUT"; exit 0
+                fi
+                echo "result=失敗: ${message}" >> "$GITHUB_OUTPUT"
+                echo "url=https://app.netlify.com/sites/webmanab/deploys/$(jq -r .id <<<"$deploy")" >> "$GITHUB_OUTPUT"
+                exit 1 ;;
+            esac
+            sleep 20
+          done
+          echo "result=20 分たってもデプロイが終わらない" >> "$GITHUB_OUTPUT"
+          exit 1
+      - name: Summary
+        if: always()
+        env:
+          RESULT: ${{ steps.wait.outputs.result }}
+        run: echo "Netlify: ${RESULT:-取得できなかった}" >> "$GITHUB_STEP_SUMMARY"
+      - name: Notify Moshi
+        if: failure()
+        shell: bash
+        env:
+          MOSHI_TOKEN: ${{ secrets.MOSHI_TOKEN }}
+          RESULT: ${{ steps.wait.outputs.result }}
+          URL: ${{ steps.wait.outputs.url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "$MOSHI_TOKEN" ] || exit 0
+          jq -n --arg token "$MOSHI_TOKEN" --arg message "${RESULT:-取得できなかった} ${URL:-$RUN_URL}" \
+            '{token: $token, title: "webmanab: 本番のデプロイ", message: $message}' |
+            curl -s -X POST https://api.getmoshi.app/api/webhook -H 'Content-Type: application/json' -d @-

@@ -37,6 +37,7 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | `monitor.yml` | 週 1 回 | 本番の死活と `pnpm audit` | Moshi |
 | `check-links.yml` | 毎月 1 日 | 記事の外部リンクの死活 | Moshi |
 | Netlify | master への push | 本番のビルド。使わないファイルだけの変更では `scripts/netlify-ignore.sh` が止める | Slack |
+| `deploy-check.yml` | master への push | Netlify の本番デプロイの結果を API で見る。Netlify と Slack は ignore で止めたビルドも「失敗」と出すので、本当に落ちたかはこちらで見る | 落ちたときだけ Moshi |
 
 外部リンクの確認は、2026-10-25 に手で 1 回動かしました（[実行結果](https://github.com/uto-usui/webmanab/actions/runs/40188317535)）。1182 件のうち、切れているものが 186 件（clip の紹介先 155、tip の本文 31）、別のドメインへの転送が 82 件、確かめられないものが 254 件でした。jsfiddle は自動の確認に 403 を返すので、lab のデモが動くかどうかはこの仕組みでは数えられません。
 
