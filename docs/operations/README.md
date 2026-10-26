@@ -67,8 +67,7 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | --- | --- |
 | 実機（iPhone、Android）でメニュー、目次、無限スクロール、シェアを触る | 作者 |
 | Search Console の URL 検査で、上位 10 本の「Google が選択した正規 URL」が `webmanab.com` になったかを見る（10/28 ごろと、その 2 週間後） | Claude |
-| GA4 のプロパティを作り、`netlify.toml` の `PUBLIC_GA4_ID` を有効にする | Claude（Chrome で） |
-| X のプロフィールのリンクを `webmanab.com` にする | Claude（Chrome で） |
+| X のプロフィールのリンクを `webmanab.com` にする。この Chrome では X にログインしていない | 作者（ログインしてもらえれば Claude） |
 | uto-usui.com（XServer）に、旧ドメインを書き換えた版を出す。リポジトリ側は書き換え済み | 未定 |
 | Zenn の自己紹介に webmanab と note を足す。上限の 160 字に達しているので、削るところを作者が決める | 作者が決めてから Claude |
 | laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す（[#53](https://github.com/uto-usui/webmanab/issues/53)） | 案の段階 |

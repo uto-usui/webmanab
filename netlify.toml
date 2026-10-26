@@ -11,7 +11,8 @@
 # 広告と GA4 は本番だけ。値がないとタグを出さない作りにしてある
 [context.production.environment]
   PUBLIC_ADSENSE_CLIENT = "ca-pub-2691922878827958"
-  # PUBLIC_GA4_ID = "G-XXXXXXXXXX"  # ID を用意したら有効にする
+  # アカウント webmanab のプロパティ webmanab.com。旧ドメインのプロパティ webmanab-html - GA4 とは分けた
+  PUBLIC_GA4_ID = "G-WEEENJ7X4R"
 
 # AdSense に関係しないものだけ。script-src は AdSense が読む先が多いので入れない（08 の 5.1、5.2）
 [[headers]]
