@@ -33,6 +33,7 @@
     "check:links": "node scripts/check-links.ts",
     "export:md": "node scripts/export-markdown/export.ts",
     "verify:md": "node scripts/export-markdown/verify.ts",
+    "sync:vault": "node scripts/sync-vault/sync.ts",
     "build:glyphs": "node scripts/eyecatch/build-glyphs.mjs",
     "verify": "pnpm lint && pnpm format:check && pnpm check && pnpm test && pnpm build && pnpm test:dist && pnpm test:e2e"
   },
