@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b434ac22-fe4b-4874-9a05-01c60a105ecf/deploy-status)](https://app.netlify.com/sites/webmanab/deploys)
 
-Astro で作る静的サイトです。記事は `src/content/posts/` の Markdown です。
+Astro で作る静的サイトです。記事は `src/content/posts/` の Markdown です。書くのは Obsidian の vault で、ここへは `pnpm sync:vault` で写します（[運用の文書](docs/operations/README.md) の 2 章）。
 
 ## 開発
 
