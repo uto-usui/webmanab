@@ -1,7 +1,6 @@
 // vault の Published/webmanab/ から、公開する記事と画像を webmanab に写す（vault から webmanab への一方向）。
 // node scripts/sync-vault/sync.ts [--vault <dir>] [--dry-run] [--allow-delete]
 import fs from 'node:fs'
-import os from 'node:os'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import type { Term } from '../../src/lib/schema.ts'
@@ -17,14 +16,17 @@ const { values: args } = parseArgs({
 })
 
 const repoRoot = path.resolve(import.meta.dirname, '../..')
-const vault = path.resolve(
-  args.vault ??
-    process.env.WEBMANAB_VAULT_DIR ??
-    path.join(
-      os.homedir(),
-      'vault/Published/webmanab',
-    ),
-)
+// 手元のパスを公開リポジトリに残さないよう、vault の場所は gitignore された .env に書く
+const envFile = path.join(repoRoot, '.env')
+if (fs.existsSync(envFile)) process.loadEnvFile(envFile)
+const vaultArg = args.vault ?? process.env.WEBMANAB_VAULT_DIR
+if (!vaultArg) {
+  console.error(
+    'vault の場所を --vault か WEBMANAB_VAULT_DIR（.env に書ける）で渡してください',
+  )
+  process.exit(1)
+}
+const vault = path.resolve(vaultArg)
 const postsDir = path.join(repoRoot, 'src/content/posts')
 const termsDir = path.join(repoRoot, 'src/content/terms')
 const publicImages = path.join(repoRoot, 'public/images')

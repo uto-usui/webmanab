@@ -15,10 +15,10 @@
 
 ## 2. 記事の置き場所
 
-記事は 2026-10-27 から Obsidian の vault の`Published/webmanab/{tip,clip,lab}/` で書きます（[#51](https://github.com/uto-usui/webmanab/issues/51)）。このリポジトリの `src/content/posts` は、vault から写したコピーです。ここでは直しません。PR で記事が変わると、CI の `posts-from-vault` が落ちます。
+記事は 2026-10-27 から Obsidian の vault の `Published/webmanab/{tip,clip,lab}/` で書きます（[#51](https://github.com/uto-usui/webmanab/issues/51)）。このリポジトリの `src/content/posts` は、vault から写したコピーです。ここでは直しません。PR で記事が変わると、CI の `posts-from-vault` が落ちます。
 
 - frontmatter の形は `src/lib/schema.ts` のまま。足したのは `draft` だけで、`draft: true` の記事は写さない（このリポジトリは公開なので、下書きを入れない）
-- 写すのは `pnpm sync:vault`。vault の場所は `WEBMANAB_VAULT_DIR` か `--vault` で変えられる。`--dry-run` で変わる記事の一覧だけを出す
+- 写すのは `pnpm sync:vault`。vault の場所は `WEBMANAB_VAULT_DIR`（手元の `.env` に書ける）か `--vault` で渡す。`--dry-run` で変わる記事の一覧だけを出す
   - 止まるのは、スキーマに合わない、id か `type/slug` の重なり、ファイル名の規則違い、本文の wikilink（`[[`）、新しい記事の `TODO`、画像の置き忘れ、`public/images/` の同じ名前の別の画像、6 本以上の削除（意図したときは `--allow-delete`）
   - ターム JSON の `count` は記事から数え直し、JSON にないタームは足す。新しいタームの id は 367 から
 - 新しい記事の本文の画像は vault の `Published/webmanab/images/posts/<id>/` に置き、本文からは `../images/...` で参照する。sync が `/images/...` に書き換えて `public/images/` に写す。旧記事の画像（124MB）はこのリポジトリに残す
