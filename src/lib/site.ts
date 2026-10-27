@@ -23,7 +23,7 @@ export const POST_TYPE_OF = {
 
 export const PER_PAGE = 8
 
-/** 新しい記事の id はここから振る（docs/operations の 1 章）。旧 WordPress の id は 2883 まで */
+/** 新しい記事の id はここから振る。旧 WordPress の id は 2883 まで */
 export const NEW_POST_ID = 3000
 /** 旧 WordPress のターム id の最大。新しいタームはこれより大きい id にする */
 export const LEGACY_TERM_MAX_ID = 366

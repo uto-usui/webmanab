@@ -2,7 +2,7 @@
 
 Nuxt 2 + headless WordPress の構成を、Astro + Markdown の静的サイトに置き換える計画です。見た目は変えません。ホスティングは Netlify のままです。
 
-リニューアルは 2026-10-25 の公開で終わりました。この文書は当時の記録として残します。公開後の作業と運用の進め方は [docs/operations/README.md](../operations/README.md) に移しました。
+リニューアルは 2026-10-25 の公開で終わりました。この文書は当時の記録として残します。公開後の作業は issue、運用の方針は [#68](https://github.com/uto-usui/webmanab/issues/68) にあります。
 
 この文書が計画の正本です。担当ごとの計画書と食い違うときは、この文書を優先します。
 

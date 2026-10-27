@@ -20,7 +20,7 @@ on:
       - '.github/workflows/deploy-check.yml'
 
 jobs:
-  # 記事は vault で直し、pnpm sync:vault が master に push する（docs/operations の 2 章）。
+  # 記事は vault で直し、pnpm sync:vault が master に push する（README の「記事」）。
   # PR で記事が変わっていたら、それは vault を通っていない変更
   posts-from-vault:
     if: github.event_name == 'pull_request'
