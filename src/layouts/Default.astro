@@ -4,6 +4,8 @@ import Bar from '../components/Bar.astro'
 import Header from '../components/Header.astro'
 import Menu from '../components/Menu.astro'
 import Head from '../components/Head.astro'
+import NewTabNote from '../components/NewTabNote.astro'
+import SkipLink from '../components/SkipLink.astro'
 import AdScript from '../components/AdScript.astro'
 import type { HeadData } from '../lib/head'
 import { menuTerms } from '../lib/terms'
@@ -31,6 +33,7 @@ const { title, head, routeName } = Astro.props
     <slot name="head" />
   </head>
   <body>
+    <SkipLink />
     <div class:list={['default-layout', routeName]}>
       {/* Bar は .bar:nth-of-type で上下左右を決めるので、この div の最初の 4 つの div にする */}
       <Bar />
@@ -45,5 +48,6 @@ const { title, head, routeName } = Astro.props
         labs={menuTerms('labs')}
       />
     </div>
+    <NewTabNote />
   </body>
 </html>

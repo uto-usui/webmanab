@@ -54,10 +54,11 @@ function scrollToElement(target: HTMLElement) {
 
 for (const toc of document.querySelectorAll<HTMLElement>('.entry-toc')) {
   const list = toc.querySelector<HTMLElement>('.entry-toc__list')
-  toc.querySelector('.entry-toc__title')?.addEventListener('click', (event) => {
-    event.preventDefault()
+  const title = toc.querySelector('.entry-toc__title')
+  title?.addEventListener('click', () => {
     const open = toc.classList.toggle('is-open')
     toc.classList.add('has-opened')
+    title.setAttribute('aria-expanded', String(open))
     if (list) list.inert = !open
   })
   list?.addEventListener('click', (event) => {

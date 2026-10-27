@@ -1,124 +1,58 @@
 {
-  "axeCore": "4.13.0",
-  "measuredAt": "2026-10-23",
-  "source": "https://webmanab.netlify.app",
+  "axeCore": "4.14.0",
+  "measuredAt": "2026-10-27",
+  "source": "新サイト（pnpm build のあと astro preview）",
   "pages": {
-    "home@1080": {
-      "image-alt": 16,
-      "landmark-unique": 1,
-      "link-name": 24
-    },
-    "list@1080": {
-      "image-alt": 8,
-      "landmark-unique": 1,
-      "link-name": 8
-    },
-    "term@1080": {
-      "image-alt": 8,
-      "landmark-unique": 1,
-      "link-name": 8
-    },
+    "home@1080": {},
+    "list@1080": {},
+    "term@1080": {},
     "tip-a@1080": {
-      "color-contrast": 6,
-      "heading-order": 3,
-      "image-alt": 1,
-      "landmark-unique": 1,
-      "link-name": 1,
-      "scrollable-region-focusable": 2
+      "color-contrast": 5,
+      "heading-order": 3
     },
     "tip-b@1080": {
-      "color-contrast": 100,
-      "frame-title": 1,
-      "image-alt": 1,
-      "landmark-unique": 1,
-      "link-name": 1
+      "color-contrast": 99
     },
-    "clip@1080": {
-      "color-contrast": 1,
-      "heading-order": 1,
-      "landmark-unique": 1
-    },
+    "clip@1080": {},
     "lab@1080": {
-      "color-contrast": 8,
-      "frame-title": 1,
-      "heading-order": 1,
-      "landmark-unique": 1,
-      "scrollable-region-focusable": 1
+      "color-contrast": 7
     },
     "menu@1080": {
-      "image-alt": 16,
-      "landmark-unique": 1,
-      "link-name": 24
+      "landmark-one-main": 1,
+      "page-has-heading-one": 1
     },
     "toc@1080": {
-      "color-contrast": 6,
-      "heading-order": 3,
-      "image-alt": 1,
-      "landmark-unique": 1,
-      "link-name": 1,
-      "scrollable-region-focusable": 2
+      "color-contrast": 5,
+      "heading-order": 3
     },
     "tip-c@1080": {
-      "color-contrast": 1,
-      "image-alt": 1,
-      "landmark-unique": 1,
-      "link-in-text-block": 4,
-      "link-name": 1
+      "link-in-text-block": 4
     },
-    "home@375": {
-      "image-alt": 16,
-      "landmark-unique": 1,
-      "link-name": 24
-    },
-    "list@375": {
-      "image-alt": 8,
-      "landmark-unique": 1,
-      "link-name": 8
-    },
-    "term@375": {
-      "image-alt": 8,
-      "landmark-unique": 1,
-      "link-name": 8
-    },
+    "home@375": {},
+    "list@375": {},
+    "term@375": {},
     "tip-a@375": {
-      "color-contrast": 6,
-      "heading-order": 3,
-      "landmark-unique": 1,
-      "scrollable-region-focusable": 7
+      "color-contrast": 5,
+      "heading-order": 3
     },
     "tip-b@375": {
-      "color-contrast": 100,
-      "frame-title": 1,
-      "landmark-unique": 1,
-      "scrollable-region-focusable": 7
+      "color-contrast": 99
     },
     "clip@375": {
-      "color-contrast": 1,
-      "heading-order": 1,
-      "landmark-unique": 1,
       "target-size": 4
     },
     "lab@375": {
-      "color-contrast": 8,
-      "frame-title": 1,
-      "heading-order": 1,
-      "landmark-unique": 1,
-      "scrollable-region-focusable": 1
+      "color-contrast": 7
     },
     "menu@375": {
-      "image-alt": 16,
-      "landmark-unique": 1,
-      "link-name": 24
+      "landmark-one-main": 1,
+      "page-has-heading-one": 1
     },
     "toc@375": {
-      "color-contrast": 6,
-      "heading-order": 3,
-      "landmark-unique": 1,
-      "scrollable-region-focusable": 7
+      "color-contrast": 5,
+      "heading-order": 3
     },
     "tip-c@375": {
-      "color-contrast": 1,
-      "landmark-unique": 1,
       "link-in-text-block": 4,
       "target-size": 2
     }
@@ -128,25 +62,25 @@
       "home": 1,
       "list": 1,
       "term": 1,
-      "tip-a": 2,
-      "tip-b": 2,
-      "clip": 2,
-      "lab": 2,
-      "menu": 1,
-      "toc": 2,
-      "tip-c": 2
-    },
-    "hashLinks": {
-      "home": 1,
-      "list": 1,
-      "term": 1,
-      "tip-a": 2,
-      "tip-b": 2,
+      "tip-a": 1,
+      "tip-b": 1,
       "clip": 1,
       "lab": 1,
       "menu": 1,
-      "toc": 17,
-      "tip-c": 2
+      "toc": 1,
+      "tip-c": 1
+    },
+    "hashLinks": {
+      "home": 0,
+      "list": 0,
+      "term": 0,
+      "tip-a": 0,
+      "tip-b": 0,
+      "clip": 0,
+      "lab": 0,
+      "menu": 0,
+      "toc": 0,
+      "tip-c": 0
     },
     "focusableInClosedMenu": {
       "home": 0,
@@ -160,28 +94,28 @@
       "tip-c": 0
     },
     "focusRules": {
-      "home": 0,
-      "list": 0,
-      "term": 0,
-      "tip-a": 0,
-      "tip-b": 0,
-      "clip": 0,
-      "lab": 0,
-      "menu": 0,
-      "toc": 0,
-      "tip-c": 0
+      "home": 6,
+      "list": 6,
+      "term": 6,
+      "tip-a": 12,
+      "tip-b": 12,
+      "clip": 11,
+      "lab": 11,
+      "menu": 6,
+      "toc": 12,
+      "tip-c": 12
     },
     "reducedMotionRules": {
-      "home": 0,
-      "list": 0,
-      "term": 0,
-      "tip-a": 0,
-      "tip-b": 0,
-      "clip": 0,
-      "lab": 0,
-      "menu": 0,
-      "toc": 0,
-      "tip-c": 0
+      "home": 1,
+      "list": 1,
+      "term": 1,
+      "tip-a": 1,
+      "tip-b": 1,
+      "clip": 1,
+      "lab": 1,
+      "menu": 1,
+      "toc": 1,
+      "tip-c": 1
     }
   },
   "changes": [
@@ -189,6 +123,21 @@
       "date": "2026-10-23",
       "what": "tip-c（/tip/genymotion/）を 1080px と 375px で足した。旧サイトを同じ条件（axe-core 4.13.0、同じタグ、外部の通信と SW を止める）で測った値",
       "why": "旧サイトの 9 ページの本文には段落の中のリンクがなく、link-in-text-block（A11Y-22）を見張れなかったため"
+    },
+    {
+      "date": "2026-10-27",
+      "what": "axe-core を 4.13.0 から 4.14.0 に上げたあとの基準に置き直した。上げた版で測った master（67e756d）の値を経て、a11y の段階 1・2（docs/a11y.md）を入れたあとの新サイトの値にした",
+      "why": "旧サイトは公開とともになくなり、4.14.0 で測り直せないため（2.6 の「axe の版を上げたとき」）。4.14.0 では A11Y-05 の区切りのコントラストが出なくなり、tip-a・tip-b・lab の color-contrast が 1 ずつ、clip が 1 減った"
+    },
+    {
+      "date": "2026-10-27",
+      "what": "直して減った。リニューアルで image-alt（A11Y-01）と frame-title（A11Y-07）、段階 1・2 で link-name（A11Y-02、03）、image-alt（A11Y-03）、landmark-unique（A11Y-11）、heading-order の clip と lab（A11Y-10）、scrollable-region-focusable（A11Y-06）。指標は h1 が記事で 2 → 1（A11Y-12）、hashLinks が 1 → 0（A11Y-14）、focusRules と reducedMotionRules が増えた（A11Y-16、17）",
+      "why": "2.6 の「直して減った: 同じコミットで基準を下げる」"
+    },
+    {
+      "date": "2026-10-27",
+      "what": "menu@1080 と menu@375 に landmark-one-main 1 と page-has-heading-one 1 を足した（A11Y-23）",
+      "why": "メニューを開いている間は外の header と main を inert にした（A11Y-13）ので、開いた状態を測る menu では main と h1 が見えなくなる。メニューを開いている間は外を操作させない意図どおりなので直さない"
     }
   ]
 }

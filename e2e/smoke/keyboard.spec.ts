@@ -71,15 +71,25 @@ test('メニューのボタンは Enter でも Space でも開閉できる', asy
   await button.focus()
   await page.keyboard.press('Enter')
   await expect(button).toHaveAttribute('aria-expanded', 'true')
+  // 開くとフォーカスはメニューの中に移る（A11Y-13）ので、ボタンに戻してから押す
+  await button.focus()
   await page.keyboard.press('Space')
   await expect(button).toHaveAttribute('aria-expanded', 'false')
 })
 
-test('目次の見出しは Enter で開ける', async ({ page }) => {
+test('目次の見出しは Enter でも Space でも開閉でき、状態を aria-expanded で伝える（A11Y-14）', async ({
+  page,
+}) => {
   await page.goto('/tip/method-control/')
-  await page.locator('.entry-toc__title').focus()
+  const title = page.locator('.entry-toc__title')
+  await expect(title).toHaveAttribute('aria-expanded', 'false')
+  await title.focus()
   await page.keyboard.press('Enter')
   await expect(page.locator('.entry-toc')).toHaveClass(/is-open/)
+  await expect(title).toHaveAttribute('aria-expanded', 'true')
+  await page.keyboard.press('Space')
+  await expect(page.locator('.entry-toc')).not.toHaveClass(/is-open/)
+  await expect(title).toHaveAttribute('aria-expanded', 'false')
 })
 
 // 1280px を 400% に拡大したときと同じ幅（WCAG 1.4.10）

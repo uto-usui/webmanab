@@ -62,7 +62,8 @@ const { title, taxonomy, terms = [] } = Astro.props
       @include sizes(-1);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: $black;
       box-shadow: -5px 5px 0 $primary-color;
       transform: translate(5px, -5px);

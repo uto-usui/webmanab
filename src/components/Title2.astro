@@ -1,10 +1,11 @@
 ---
-// 中身は「share <br />ー」の形で渡す。line-height が 1 のままなので「ー」が短い横線に見える
+// 中身は「share <br />ー」の形で渡す。line-height が 1 のままなので「ー」が短い横線に見える。
+// 記事タイトル（h1）の次に来るので h2（A11Y-10）
 ---
 
-<h3 class="title2">
+<h2 class="title2">
   <slot />
-</h3>
+</h2>
 
 <style lang="scss">
   .title2 {

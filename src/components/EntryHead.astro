@@ -28,7 +28,10 @@ const updated = shownModified(data)
     <li class="entry-head__item">
       <span class="entry-head__target">uto usui</span>
     </li>
-    <li class="entry-head__item">／／</li>
+    {/* 飾りの区切り（A11Y-05） */}
+    <li class="entry-head__item" aria-hidden="true">
+      ／／
+    </li>
     {terms.map(({ id, name }) => (
       <li class="entry-head__item">
         <a class="entry-head__target" href={termPath(TAXONOMY_OF[type], id)}>
@@ -157,7 +160,8 @@ const updated = shownModified(data)
       @include sizes(-1);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       top: -5px;
       left: 5px;
       box-shadow: -5px 5px 0 $thirdry-color;

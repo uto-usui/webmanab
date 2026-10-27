@@ -93,9 +93,11 @@ describe('外部リンク', () => {
     const html = render(
       '[a](https://example.com/) [b](http://example.com/) <https://example.org/x> www.example.net',
     )
-    expect(html.match(/target="_blank" rel="noopener"/g)).toHaveLength(4)
+    expect(
+      html.match(/target="_blank" rel="noopener" aria-describedby="new-tab"/g),
+    ).toHaveLength(4)
     expect(render('<p><a href="//example.com/">c</a></p>')).toContain(
-      '<a href="//example.com/" target="_blank" rel="noopener">c</a>',
+      '<a href="//example.com/" target="_blank" rel="noopener" aria-describedby="new-tab">c</a>',
     )
   })
 
@@ -112,7 +114,7 @@ describe('外部リンク', () => {
       '<dl>\n<dt>x</dt>\n<dd><a href="https://wordpress.org/" rel="nofollow">wp</a></dd>\n</dl>',
     )
     expect(html).toContain(
-      '<a href="https://wordpress.org/" rel="nofollow noopener" target="_blank">wp</a>',
+      '<a href="https://wordpress.org/" rel="nofollow noopener" target="_blank" aria-describedby="new-tab">wp</a>',
     )
   })
 })

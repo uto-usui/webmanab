@@ -1,5 +1,6 @@
 // 外部リンクは新しいタブで開く（README 3 章の 5）。Markdown には target を書かない決まり
 import { defineHastPlugin } from 'satteri'
+import { NEW_TAB_ID } from '../new-tab.mjs'
 
 // サイト内のリンクはルート相対で書く決まりなので、スキームかホストを持つ http(s) のリンクを外部とみなす
 const EXTERNAL = /^(?:https?:)?\/\//i
@@ -22,6 +23,7 @@ export const externalLinksPlugin = defineHastPlugin({
       const rel = tokens(node.properties.rel)
       if (!rel.includes('noopener'))
         ctx.setProperty(node, 'rel', [...rel, 'noopener'])
+      ctx.setProperty(node, 'ariaDescribedBy', NEW_TAB_ID)
     },
   },
 })

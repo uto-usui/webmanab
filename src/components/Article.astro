@@ -1,7 +1,8 @@
 ---
 import { EYECATCH_HEIGHT, EYECATCH_WIDTH } from '../lib/eyecatch'
 import type { ListItem } from '../lib/list-json'
-import { titleLink } from './article-item'
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
+import { thumbLink, titleLink } from './article-item'
 
 interface Props {
   item: ListItem
@@ -9,12 +10,13 @@ interface Props {
 
 const { item } = Astro.props
 const link = titleLink(item)
+const thumb = thumbLink(item)
 ---
 
 <article class="article-item">
   <div class="article-item__inner">
     <strong class="article-item__tag">{item.primaryTag}</strong>
-    <a class="article-item__img-wrap" href={item.path}>
+    <a class="article-item__img-wrap" href={item.path} {...thumb}>
       <div class="article-item__img">
         <img
           src={item.eyecatch}
@@ -32,6 +34,7 @@ const link = titleLink(item)
         href={link.href}
         target={link.external ? '_blank' : undefined}
         rel={link.external ? 'noopener' : undefined}
+        aria-describedby={link.external ? NEW_TAB_ID : undefined}
       >
         {item.title}
       </a>
@@ -113,7 +116,8 @@ const link = titleLink(item)
     vertical-align: bottom;
     transition: 0.25s $easeOutQuart;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: none;
       box-shadow: -10px 10px 0 $secondary-color;
       transform: translate(10px, -10px);
@@ -158,7 +162,8 @@ const link = titleLink(item)
     background-color: $glay;
     transition: 0.25s $easeOutQuart;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       top: -5px;
       left: 5px;
       text-decoration: none;

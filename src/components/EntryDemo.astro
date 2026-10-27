@@ -1,4 +1,6 @@
 ---
+import { NEW_TAB_ID } from '../lib/new-tab.mjs'
+
 interface Props {
   href: string
 }
@@ -7,7 +9,13 @@ const { href } = Astro.props
 ---
 
 <div>
-  <a class="entry_demo" href={href} target="_blank" rel="noopener">
+  <a
+    class="entry_demo"
+    href={href}
+    target="_blank"
+    rel="noopener"
+    aria-describedby={NEW_TAB_ID}
+  >
     demo
   </a>
 </div>

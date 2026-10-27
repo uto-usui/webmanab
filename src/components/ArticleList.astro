@@ -25,6 +25,8 @@ const infinite = endpoint !== undefined && hasLoader
   data-last-page={infinite ? lastPage : undefined}
   data-end-after-last={infinite ? String(showEndAfterLast) : undefined}
 >
+  {/* 読み込んだことを読み上げで伝える（A11Y-18）。末尾に置くと absolute の分だけページが伸びるので先頭に置く */}
+  {infinite && <p class="is-sr-only" role="status" data-infinite-status />}
   <div class="article-list__inner">
     {items.map((item) => (
       <Article item={item} />

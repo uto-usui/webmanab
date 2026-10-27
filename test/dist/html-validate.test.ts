@@ -1,5 +1,5 @@
 // HTML の妥当性（08 の 1.5.1）。テンプレートの入れ子の誤り、閉じ忘れ、重複した属性などで止める
-import { HtmlValidate, type Message } from 'html-validate'
+import { HtmlValidate } from 'html-validate'
 import { join } from 'node:path'
 import { expect, test } from 'vitest'
 import allowedByPage from './html-validate-allowed.json' with { type: 'json' }
@@ -15,19 +15,6 @@ const validator = new HtmlValidate({
   },
 })
 
-// テンプレートから来るが、旧サイトと同じ構造なので残すもの。a11y の追跡一覧（08 の 2.5）で追う
-const FROM_TEMPLATE: ((m: Message) => boolean)[] = [
-  // A11Y-12: 記事ページはヘッダーのサイト名と記事タイトルの 2 つが h1。基準の h1 の指標でも追う
-  (m) =>
-    m.ruleId === 'heading-level' &&
-    m.message.startsWith('Multiple <h1>') &&
-    /> article > header > h1$/.test(m.selector ?? ''),
-  // A11Y-10: 記事タイトル（h1）の次が「share」などの h3
-  (m) =>
-    m.ruleId === 'heading-level' &&
-    /> article > section(:nth-child\(\d+\))? > h3$/.test(m.selector ?? ''),
-]
-
 // 本文の生 HTML と Markdown から来る違反の、記事ごと・規則ごとの件数（本文は直さない）。
 // 見出しの飛び（A11Y-09）、jsfiddle の iframe の width="100%" と frameborder、
 // デモの input の label、div の中の style（tip/html5-global、tip/transition）。
@@ -39,7 +26,6 @@ test.each(distFiles('**/*.html'))('%s', async (file) => {
   const counts: Record<string, number> = {}
   const errors: string[] = []
   for (const m of report.results.flatMap((result) => result.messages)) {
-    if (FROM_TEMPLATE.some((match) => match(m))) continue
     counts[m.ruleId] = (counts[m.ruleId] ?? 0) + 1
     errors.push(`${m.ruleId} ${m.selector ?? ''} ${m.message}`)
   }
