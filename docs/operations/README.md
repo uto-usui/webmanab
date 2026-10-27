@@ -7,7 +7,7 @@
 | 項目 | 決めたこと |
 | --- | --- |
 | 書く頻度 | 週 5 本ほど。clip を週 3〜4 本、tip を週 1〜2 本。tip の題材は、ドメインの移管やリニューアルのような普段の作業から取る |
-| 機能の順番 | 読者向けの F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンは 2026-10-26 に公開した。次は F1（新しい記事の雛形と vault への移行）、その上に F7（clip の自動化）を作る。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
+| 機能の順番 | 読者向けの F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンは 2026-10-26 に公開した。vault への移行は 2026-10-27 に済んだ。次は F1（新しい記事の雛形）、その上に F7（clip の自動化）を作る。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
 | 新しい記事の id | 3000 から順に振る。旧 WordPress の id（最大 2883）と区別するため |
 | a11y | 運用とは別の作業として進める。見た目が変わらない段階 1・2 は #58 で入れた。見た目が変わる段階 3（A11Y-04、08、22）は、スクショを作者に見てもらってから入れる。違反の一覧と状態は [docs/a11y.md](../a11y.md) |
 | 旧記事 | 一括で書き直さない。手を入れるのは、よく読まれている記事と、リンク切れなどで壊れている記事だけ |
@@ -15,13 +15,15 @@
 
 ## 2. 記事の置き場所
 
-今は `src/content/posts/{tip,clip,lab}/<slug>.md` を直接書き換えます。frontmatter の形は `src/lib/schema.ts` にあります。
+記事は 2026-10-27 から Obsidian の vault の`Published/webmanab/{tip,clip,lab}/` で書きます（[#51](https://github.com/uto-usui/webmanab/issues/51)）。このリポジトリの `src/content/posts` は、vault から写したコピーです。ここでは直しません。PR で記事が変わると、CI の `posts-from-vault` が落ちます。
 
-Obsidian の vault の`Published/webmanab/` に移す予定です。移したあとは vault の記事を書き換え、このリポジトリの `src/content/posts` は vault から作るコピーになります。進め方は案の段階で、作者の確認を待っています。
-
-- 書き直すのは vault だけにする。移す日を決めて一度に移し、その日からはこのリポジトリで記事を直さない
-- 新しい記事の画像は vault に置く。旧記事の画像（`public/images/`、124MB）は書き換えないので、このリポジトリに残す
-- 反映は、最初は手元で動かすコマンドにし、流れが固まったら GitHub Actions に移す
+- frontmatter の形は `src/lib/schema.ts` のまま。足したのは `draft` だけで、`draft: true` の記事は写さない（このリポジトリは公開なので、下書きを入れない）
+- 写すのは `pnpm sync:vault`。vault の場所は `WEBMANAB_VAULT_DIR` か `--vault` で変えられる。`--dry-run` で変わる記事の一覧だけを出す
+  - 止まるのは、スキーマに合わない、id か `type/slug` の重なり、ファイル名の規則違い、本文の wikilink（`[[`）、新しい記事の `TODO`、画像の置き忘れ、`public/images/` の同じ名前の別の画像、6 本以上の削除（意図したときは `--allow-delete`）
+  - ターム JSON の `count` は記事から数え直し、JSON にないタームは足す。新しいタームの id は 367 から
+- 新しい記事の本文の画像は vault の `Published/webmanab/images/posts/<id>/` に置き、本文からは `../images/...` で参照する。sync が `/images/...` に書き換えて `public/images/` に写す。旧記事の画像（124MB）はこのリポジトリに残す
+- 書いたら、このリポジトリで `pnpm sync:vault` を動かし、`pnpm test` を通してから、このリポジトリでコミットして master に push する。GitHub Actions に移すのは、F1 と clip の自動化ができてから（vault 側の workflow、webmanab だけに書ける deploy key）
+- やめたいときは sync を止めるだけでよい。`src/content/posts` はコミットしたまま残っているので、このリポジトリで直接直す運用に戻れる
 
 ## 3. 文章の校正
 
@@ -55,7 +57,7 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 
 | issue | 中身 | 状態 |
 | --- | --- | --- |
-| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 次にやる。2026-10-27 に方針が決まった |
+| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | vault への移行は 2026-10-27 に済んだ。次は F1 |
 | [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | #51 のあと。2026-10-27 に方針が決まった。選び方と感想の書き方は skill にする |
 | [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 2026-10-27 に方針が決まった。labobal.dev の中身はそちらのエージェントが決める |
 | [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む | あとで |

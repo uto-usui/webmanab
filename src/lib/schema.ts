@@ -1,6 +1,6 @@
 // content.config.ts とテストの両方から使う。テストは astro:content を通さずに frontmatter を検証する
 import { z } from 'astro/zod'
-import { POST_TYPES } from './site'
+import { POST_TYPES } from './site.ts'
 
 export const termRefSchema = z
   .object({
@@ -47,6 +47,8 @@ export const postSchema = z
       })
       .strict()
       .optional(),
+    // vault で書きかけの記事。pnpm sync:vault が true を写さないので、ここには false か無しだけが来る
+    draft: z.boolean().optional(),
   })
   .strict()
   .refine((d) => d.type === 'clip' || d.clipUrl === undefined, {
