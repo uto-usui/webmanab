@@ -55,9 +55,9 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 
 | issue | 中身 | 状態 |
 | --- | --- | --- |
-| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 次にやる。作者に確かめたいことが 5 つ |
-| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | #51 のあと。作者に確かめたいことが 5 つ |
-| [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 作者に確かめたいことが 11 個 |
+| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 次にやる。2026-10-27 に方針が決まった |
+| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | #51 のあと。2026-10-27 に方針が決まった。選び方と感想の書き方は skill にする |
+| [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 2026-10-27 に方針が決まった。labobal.dev の中身はそちらのエージェントが決める |
 | [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む | あとで |
 | [#45](https://github.com/uto-usui/webmanab/issues/45)〜[#49](https://github.com/uto-usui/webmanab/issues/49) | テストの直し、F4 検索、404、F2 更新日、コピーボタン | 2026-10-26 に公開（#56） |
 
@@ -70,4 +70,4 @@ Obsidian の vault の`Published/webmanab/` に移す予定です。移したあ
 | X のプロフィールのリンクを `webmanab.com` にする。この Chrome では X にログインしていない | 作者（ログインしてもらえれば Claude） |
 | uto-usui.com（XServer）に、旧ドメインを書き換えた版を出す。リポジトリ側は書き換え済み | 未定 |
 | Zenn の自己紹介に webmanab と note を足す。上限の 160 字に達しているので、削るところを作者が決める | 作者が決めてから Claude |
-| laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す（[#53](https://github.com/uto-usui/webmanab/issues/53)） | 案の段階 |
+| laboobal のドキュメントを webmanab の lab に移し、デモは labobal.dev に置く。laboobal-dev（Nuxt 2）は作り直す（[#53](https://github.com/uto-usui/webmanab/issues/53)） | 方針は決まった。着手は未定 |
