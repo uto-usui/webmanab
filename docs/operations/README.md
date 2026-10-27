@@ -7,7 +7,7 @@
 | 項目 | 決めたこと |
 | --- | --- |
 | 書く頻度 | 週 5 本ほど。clip を週 3〜4 本、tip を週 1〜2 本。tip の題材は、ドメインの移管やリニューアルのような普段の作業から取る |
-| 機能の順番 | 読者向けの F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンは 2026-10-26 に公開した。vault への移行は 2026-10-27 に済んだ。次は F1（新しい記事の雛形）、その上に F7（clip の自動化）を作る。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
+| 機能の順番 | 読者向けの F4（サイト内検索）、独自の 404、F2（更新日の表示）、コードのコピーボタンは 2026-10-26 に公開した。vault への移行と F1（新しい記事の雛形）は 2026-10-27 に済んだ。次はその上に F7（clip の自動化）を作る。F5（タグの組み合わせ）はあとで、F3（公開終了した clip の表示）は作らない |
 | 新しい記事の id | 3000 から順に振る。旧 WordPress の id（最大 2883）と区別するため |
 | a11y | 運用とは別の作業として進める。見た目が変わらない段階 1・2 は #58 で入れた。見た目が変わる段階 3（A11Y-04、08、22）は、スクショを作者に見てもらってから入れる。違反の一覧と状態は [docs/a11y.md](../a11y.md) |
 | 旧記事 | 一括で書き直さない。手を入れるのは、よく読まれている記事と、リンク切れなどで壊れている記事だけ |
@@ -21,6 +21,10 @@
 - 写すのは `pnpm sync:vault`。vault の場所は `WEBMANAB_VAULT_DIR`（手元の `.env` に書ける）か `--vault` で渡す。`--dry-run` で変わる記事の一覧だけを出す
   - 止まるのは、スキーマに合わない、id か `type/slug` の重なり、ファイル名の規則違い、本文の wikilink（`[[`）、新しい記事の `TODO`、画像の置き忘れ、`public/images/` の同じ名前の別の画像、6 本以上の削除（意図したときは `--allow-delete`）
   - ターム JSON の `count` は記事から数え直し、JSON にないタームは足す。新しいタームの id は 367 から
+- 新しい記事は `pnpm new` で vault に下書き（`draft: true`）として作る。id、日付、ターム、clip のスクショ（1280×720、640、ページ全体）を埋め、本文は vault の `templates/<type>.md` を写す。書き先は `WEBMANAB_VAULT_DIR` か `--out`
+  - `pnpm new clip <url> [--tags a,b] [--no-full]`、`pnpm new tip <slug> [--tags a,b]`、`pnpm new lab <slug> [--tags a,b]`
+  - `--tags` はターム JSON と vault の記事から名前か slug で探し、ないものは新しいタームにする。最初のタグが `primaryTag` になる
+  - `pnpm new image <id> <file>` は本文の画像を幅 1600 までの WebP にして `images/posts/<id>/` に置き、貼る Markdown を出す
 - 新しい記事の本文の画像は vault の `Published/webmanab/images/posts/<id>/` に置き、本文からは `../images/...` で参照する。sync が `/images/...` に書き換えて `public/images/` に写す。旧記事の画像（124MB）はこのリポジトリに残す
 - 書いたら、このリポジトリで `pnpm sync:vault` を動かし、`pnpm test` を通してから、このリポジトリでコミットして master に push する。GitHub Actions に移すのは、F1 と clip の自動化ができてから（vault 側の workflow、webmanab だけに書ける deploy key）
 - やめたいときは sync を止めるだけでよい。`src/content/posts` はコミットしたまま残っているので、このリポジトリで直接直す運用に戻れる
@@ -57,8 +61,9 @@
 
 | issue | 中身 | 状態 |
 | --- | --- | --- |
-| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | vault への移行は 2026-10-27 に済んだ。次は F1 |
-| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | #51 のあと。2026-10-27 に方針が決まった。選び方と感想の書き方は skill にする |
+| [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 2026-10-27 に済んだ |
+| [#61](https://github.com/uto-usui/webmanab/issues/61) | vault の push で `pnpm sync:vault` を動かす GitHub Actions | 案はできている。deploy key と secret の登録は作者が認める |
+| [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | `pnpm new clip` の上に作る。2026-10-27 に方針が決まった。選び方と感想の書き方は skill にする |
 | [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 2026-10-27 に方針が決まった。labobal.dev の中身はそちらのエージェントが決める |
 | [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む | あとで |
 | [#45](https://github.com/uto-usui/webmanab/issues/45)〜[#49](https://github.com/uto-usui/webmanab/issues/49) | テストの直し、F4 検索、404、F2 更新日、コピーボタン | 2026-10-26 に公開（#56） |
