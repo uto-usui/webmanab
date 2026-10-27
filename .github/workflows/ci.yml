@@ -20,6 +20,25 @@ on:
       - '.github/workflows/deploy-check.yml'
 
 jobs:
+  # 記事は vault で直し、pnpm sync:vault が master に push する（docs/operations の 2 章）。
+  # PR で記事が変わっていたら、それは vault を通っていない変更
+  posts-from-vault:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          changed=$(git diff --name-only "origin/$BASE...HEAD" -- src/content/posts)
+          if [ -n "$changed" ]; then
+            echo "::error::記事は vault の Published/webmanab/ で直して pnpm sync:vault で写す。この PR で変わった記事:"
+            echo "$changed"
+            exit 1
+          fi
+
   check:
     runs-on: ubuntu-24.04
     env:
