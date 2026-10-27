@@ -26,7 +26,8 @@
   - `--tags` はターム JSON と vault の記事から名前か slug で探し、ないものは新しいタームにする。最初のタグが `primaryTag` になる
   - `pnpm new image <id> <file>` は本文の画像を幅 1600 までの WebP にして `images/posts/<id>/` に置き、貼る Markdown を出す
 - 新しい記事の本文の画像は vault の `Published/webmanab/images/posts/<id>/` に置き、本文からは `../images/...` で参照する。sync が `/images/...` に書き換えて `public/images/` に写す。旧記事の画像（124MB）はこのリポジトリに残す
-- 書いたら、このリポジトリで `pnpm sync:vault` を動かし、`pnpm test` を通してから、このリポジトリでコミットして master に push する。GitHub Actions に移すのは、F1 と clip の自動化ができてから（vault 側の workflow、webmanab だけに書ける deploy key）
+- 書いたら vault を push する。vault 側の workflow が `pnpm sync:vault` と `pnpm test` を動かし、差分があれば webmanab だけに書ける deploy key でこのリポジトリの master に push する（#61、2026-10-27 から）。止まったときは Moshi に知らせが来る
+  - 手元で `pnpm sync:vault` を動かすのは、6 本以上消すとき（`--allow-delete`）と、push の前に差分を見たいとき（`--dry-run`）だけ
 - やめたいときは sync を止めるだけでよい。`src/content/posts` はコミットしたまま残っているので、このリポジトリで直接直す運用に戻れる
 
 ## 3. 文章の校正
@@ -62,7 +63,7 @@
 | issue | 中身 | 状態 |
 | --- | --- | --- |
 | [#51](https://github.com/uto-usui/webmanab/issues/51) | 記事を vault に移す、F1 新しい記事の雛形 | 2026-10-27 に済んだ |
-| [#61](https://github.com/uto-usui/webmanab/issues/61) | vault の push で `pnpm sync:vault` を動かす GitHub Actions | 案はできている。deploy key と secret の登録は作者が認める |
+| [#61](https://github.com/uto-usui/webmanab/issues/61) | vault の push で `pnpm sync:vault` を動かす GitHub Actions | 2026-10-27 に済んだ。記事を変える push でこのリポジトリへ実際に push するのは、まだ確かめていない |
 | [#52](https://github.com/uto-usui/webmanab/issues/52) | clip の自動化 | `pnpm new clip` の上に作る。2026-10-27 に方針が決まった。選び方と感想の書き方は skill にする |
 | [#53](https://github.com/uto-usui/webmanab/issues/53) | laboobal を lab と labobal.dev にまとめる | 2026-10-27 に方針が決まった。labobal.dev の中身はそちらのエージェントが決める |
 | [#50](https://github.com/uto-usui/webmanab/issues/50) | F5 clip をタグの組み合わせで絞り込む | あとで |
