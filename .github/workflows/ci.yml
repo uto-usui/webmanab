@@ -19,6 +19,9 @@ on:
       - '.github/workflows/check-links.yml'
       - '.github/workflows/deploy-check.yml'
 
+permissions:
+  contents: read
+
 jobs:
   # 記事は vault で直し、pnpm sync:vault が master に push する（docs/operations の 2 章）。
   # PR で記事が変わっていたら、それは vault を通っていない変更
