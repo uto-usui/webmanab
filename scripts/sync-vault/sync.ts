@@ -4,8 +4,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import type { Term } from '../../src/lib/schema.ts'
-import { POST_TYPES, TAXONOMIES, type Taxonomy } from '../../src/lib/site.ts'
-import { planSync, type VaultFile } from './plan.ts'
+import { TAXONOMIES, type Taxonomy } from '../../src/lib/site.ts'
+import { planSync } from './plan.ts'
+import { readPosts, repoRoot, resolveVaultDir } from './vault.ts'
 
 const { values: args } = parseArgs({
   options: {
@@ -15,41 +16,10 @@ const { values: args } = parseArgs({
   },
 })
 
-const repoRoot = path.resolve(import.meta.dirname, '../..')
-// 手元のパスを公開リポジトリに残さないよう、vault の場所は gitignore された .env に書く
-const envFile = path.join(repoRoot, '.env')
-if (fs.existsSync(envFile)) process.loadEnvFile(envFile)
-const vaultArg = args.vault ?? process.env.WEBMANAB_VAULT_DIR
-if (!vaultArg) {
-  console.error(
-    'vault の場所を --vault か WEBMANAB_VAULT_DIR（.env に書ける）で渡してください',
-  )
-  process.exit(1)
-}
-const vault = path.resolve(vaultArg)
+const vault = resolveVaultDir(args.vault, '--vault')
 const postsDir = path.join(repoRoot, 'src/content/posts')
 const termsDir = path.join(repoRoot, 'src/content/terms')
 const publicImages = path.join(repoRoot, 'public/images')
-
-if (!POST_TYPES.some((type) => fs.existsSync(path.join(vault, type)))) {
-  console.error(
-    `${vault} に ${POST_TYPES.join('/')} がありません。--vault か WEBMANAB_VAULT_DIR で場所を渡してください`,
-  )
-  process.exit(1)
-}
-
-const readPosts = (root: string): VaultFile[] =>
-  POST_TYPES.flatMap((type) => {
-    const dir = path.join(root, type)
-    if (!fs.existsSync(dir)) return []
-    return fs
-      .readdirSync(dir)
-      .filter((file) => file.endsWith('.md'))
-      .map((file) => ({
-        path: `${type}/${file}`,
-        raw: fs.readFileSync(path.join(dir, file), 'utf8'),
-      }))
-  })
 
 const vaultImages = new Map<string, Buffer>()
 const imagesDir = path.join(vault, 'images')

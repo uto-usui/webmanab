@@ -26,6 +26,8 @@ export interface Frontmatter {
   image?: ImageManifest['clips'][string]['image']
   fullImage?: ImageManifest['clips'][string]['fullImage']
   legacy?: { prev: string | null; next: string | null }
+  // pnpm new が付ける。旧記事の書き出しでは使わない
+  draft?: boolean
 }
 
 export const TAXONOMY = { tip: 'tips', clip: 'clips', lab: 'labs' } as const
