@@ -43,7 +43,7 @@ describe('primaryTagKey', () => {
   })
 })
 
-// 05-eyecatch.md 2 章の「代表カテゴリと正規化表」に載っている、旧データの値の振り分け
+// 代表カテゴリの正規化表。旧データの値をどのキーに振り分けるか
 const TABLE: Record<EyecatchKey, Partial<Record<PostType, string[]>>> = {
   javascript: {
     tip: [

@@ -1,4 +1,4 @@
-// ターム一覧 JSON（04-markdown-exporter.md の 7.）
+// ターム一覧 JSON
 import { TAXONOMY, type Frontmatter, type Term } from './frontmatter.ts'
 
 export type Taxonomy = (typeof TAXONOMY)[keyof typeof TAXONOMY]

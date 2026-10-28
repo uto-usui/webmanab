@@ -40,5 +40,3 @@ pnpm dev
 | `check-links.yml`  | 毎月 1 日        | 記事の外部リンクの死活                                                                                                                 | Moshi                |
 | Netlify            | master への push | 本番のビルド。使わないファイルだけの変更では `scripts/netlify-ignore.sh` が止める                                                      | Slack                |
 | `deploy-check.yml` | master への push | Netlify の本番デプロイの結果を API で見る。Netlify と Slack は ignore で止めたビルドも「失敗」と出すので、本当に落ちたかはこちらで見る | 落ちたときだけ Moshi |
-
-2026-10-25 に終えたリニューアルの記録は [docs/renewal/README.md](docs/renewal/README.md) です。
