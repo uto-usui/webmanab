@@ -1,4 +1,4 @@
-// 記事 1 件の frontmatter とファイル名（04-markdown-exporter.md の 5. と 6.）
+// 記事 1 件の frontmatter とファイル名
 import { decodeHTML } from 'entities'
 import { Document, isMap, isScalar, isSeq } from 'yaml'
 import type { ImageManifest } from './image-manifest.ts'

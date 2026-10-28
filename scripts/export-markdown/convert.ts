@@ -1,4 +1,4 @@
-// WordPress の本文 HTML を Markdown にする（04-markdown-exporter.md の 3. と 4.）
+// WordPress の本文 HTML を Markdown にする
 import type { Element, ElementContent, Root as HastRoot } from 'hast'
 import type { Handle } from 'hast-util-to-mdast'
 import type { Nodes as MdastNodes, Root as MdastRoot } from 'mdast'

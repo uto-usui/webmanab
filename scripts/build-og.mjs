@@ -1,5 +1,5 @@
 // prebuild: カテゴリごとの OGP を PNG にして public/og/{key}.png に書く。
-// Netlify で @resvg/resvg-js（ネイティブ）が動かなければ @resvg/resvg-wasm に差し替える（05-eyecatch.md 4 章）
+// Netlify で @resvg/resvg-js（ネイティブ）が動かなければ @resvg/resvg-wasm に差し替える
 import fs from 'node:fs'
 import { Resvg } from '@resvg/resvg-js'
 import { renderOgp } from '../src/lib/eyecatch/index.ts'

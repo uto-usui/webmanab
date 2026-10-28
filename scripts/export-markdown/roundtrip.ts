@@ -1,4 +1,4 @@
-// 往復検証: 元の本文 HTML と、Markdown を HTML に戻したものを比べる（04-markdown-exporter.md の 8.）
+// 往復検証: 元の本文 HTML と、Markdown を HTML に戻したものを比べる
 import type { Element, Nodes, Root } from 'hast'
 import { toText } from 'hast-util-to-text'
 import { normalizeUri } from 'micromark-util-sanitize-uri'
