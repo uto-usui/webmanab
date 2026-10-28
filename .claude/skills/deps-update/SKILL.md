@@ -66,7 +66,7 @@ description: webmanab の依存を手元で更新する。脆弱性の直し（s
 
    ```sh
    gh pr checks --watch
-   gh pr merge --squash --delete-branch
+   gh pr merge --merge --delete-branch
    ```
 
    PR では Netlify はビルドしない（Deploy Preview を止めている）。マージすると本番のビルドが 1 回走る。
