@@ -53,7 +53,11 @@ const fail = (message: string): never => {
 if (!command || !target) fail(USAGE)
 
 const vault = resolveVaultDir(args.out, '--out')
-const posts = readVault(readPosts(vault))
+// --out で vault の外に書くときも、id と slug は vault の記事と重ならないようにする
+const home = process.env.WEBMANAB_VAULT_DIR
+const others =
+  home && path.resolve(home) !== vault ? readPosts(path.resolve(home)) : []
+const posts = readVault([...readPosts(vault), ...others])
 
 const writeNew = (to: string, content: string | Buffer) => {
   if (fs.existsSync(to)) fail(`${to} はもうあります。上書きしません`)

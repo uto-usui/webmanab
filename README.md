@@ -23,7 +23,7 @@ pnpm dev
 
 記事は Obsidian の vault の `Published/webmanab/{tip,clip,lab}/` で書きます。`src/content/posts/` は vault から写したコピーなので、ここでは直しません（PR で記事が変わると CI の `posts-from-vault` が落ちます）。
 
-- 新しい記事は `pnpm new` で vault に下書き（`draft: true`）として作る。id、日付、ターム、clip のスクショを埋め、本文は vault の `templates/<type>.md` を写す。書き先は `WEBMANAB_VAULT_DIR`（`.env`）か `--out`
+- 新しい記事は `pnpm new` で vault に下書き（`draft: true`）として作る。id、日付、ターム、clip のスクショを埋め、本文は vault の `templates/<type>.md` を写す。書き先は `WEBMANAB_VAULT_DIR`（`.env`）か `--out`。`--out` で vault の外に書くときも、id と slug は `WEBMANAB_VAULT_DIR` の記事と重ならないように振る
   - `pnpm new clip <url> [--tags a,b] [--no-full] [--shot <png>]`、`pnpm new tip <slug> [--tags a,b]`、`pnpm new lab <slug> [--tags a,b]`
   - `pnpm new image <id> <file>` は本文の画像を幅 1600 までの WebP にして `images/posts/<id>/` に置き、貼る Markdown を出す
 - 新しい記事の id は 3000 から。旧 WordPress の id（最大 2883）と区別するため
