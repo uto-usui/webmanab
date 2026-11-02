@@ -1,4 +1,9 @@
 ---
+import {
+  DEMO_PREVIEW_HEIGHT,
+  DEMO_PREVIEW_WIDTH,
+  demoPreview,
+} from '../lib/demo-preview'
 import { NEW_TAB_ID } from '../lib/new-tab.mjs'
 
 interface Props {
@@ -6,9 +11,59 @@ interface Props {
 }
 
 const { href } = Astro.props
+const preview = demoPreview(href)
 ---
 
 <div>
+  {preview && (
+    <div class="entry-demo__preview">
+      {/* 行き先は下の demo のリンクと同じなので、読み上げとキーボードからは外す（A11Y-02 と同じ） */}
+      <a
+        class="entry-demo__target"
+        href={href}
+        target="_blank"
+        rel="noopener"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <video
+          class="entry-demo__video"
+          poster={preview.poster}
+          width={DEMO_PREVIEW_WIDTH}
+          height={DEMO_PREVIEW_HEIGHT}
+          muted
+          loop
+          playsinline
+          preload="none"
+        >
+          <source src={preview.video} type="video/webm" />
+        </video>
+      </a>
+      {/* 自動で動き続ける動画を止められるようにする（A11Y-24）。スクリプトが動くまでは押しても何も起きないので隠しておく */}
+      <button
+        class="entry-demo__toggle"
+        type="button"
+        aria-label="動画を再生"
+        hidden
+      >
+        <svg
+          class="entry-demo__icon entry-demo__icon--pause"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <rect x="3" y="2" width="3.5" height="12" />
+          <rect x="9.5" y="2" width="3.5" height="12" />
+        </svg>
+        <svg
+          class="entry-demo__icon entry-demo__icon--play"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <path d="M4 2l10 6-10 6z" />
+        </svg>
+      </button>
+    </div>
+  )}
   <a
     class="entry_demo"
     href={href}
@@ -19,6 +74,70 @@ const { href } = Astro.props
     demo
   </a>
 </div>
+
+<script>
+  import '../scripts/demo-preview'
+</script>
+
+<style lang="scss">
+  .entry-demo__preview {
+    position: relative;
+    max-width: 480px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    border: 2px solid $black;
+  }
+
+  .entry-demo__target {
+    display: block;
+  }
+
+  // ホバーできる環境では、動画に触れたときとキーボードで当てたときだけ出す。触る画面では常に出す
+  .entry-demo__toggle {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: $secondary-color;
+    cursor: pointer;
+    background: $black;
+    border: 0;
+    transition: opacity 0.3s $easeOutQuart;
+
+    &[hidden] {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      opacity: 0;
+
+      .entry-demo__preview:hover &,
+      &:focus-visible {
+        opacity: 1;
+      }
+    }
+  }
+
+  .entry-demo__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+
+  .entry-demo__toggle[data-playing] .entry-demo__icon--play,
+  .entry-demo__toggle:not([data-playing]) .entry-demo__icon--pause {
+    display: none;
+  }
+
+  .entry-demo__video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
 
 <style lang="scss" is:global>
   // 旧サイトの class 名のまま（旧サイトとの比較のキーに使う）

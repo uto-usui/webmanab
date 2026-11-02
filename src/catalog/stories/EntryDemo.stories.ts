@@ -13,3 +13,14 @@ export const Default: Story<typeof EntryDemo> = {}
 export const Hover: Story<typeof EntryDemo> = {
   parameters: { catalog: { steps: [{ hover: '.entry_demo' }] } },
 }
+
+// labobal.dev のデモには動画を添える。テストでは外への通信を止めるので、動画とポスター画像は出ず枠だけになる
+export const Preview: Story<typeof EntryDemo> = {
+  args: { href: 'https://labobal.dev/three-video/' },
+}
+
+// 動画に触れると、右下に一時停止のボタンが出る
+export const PreviewHover: Story<typeof EntryDemo> = {
+  args: { href: 'https://labobal.dev/three-video/' },
+  parameters: { catalog: { steps: [{ hover: '.entry-demo__preview' }] } },
+}
