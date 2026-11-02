@@ -2,6 +2,7 @@
 // experimental_ の名前なので、Astro の更新で変わったらここを直す
 import { experimental_AstroContainer as AstroContainer } from 'astro/container'
 import { beforeAll, describe, expect, test } from 'vitest'
+import EntryDemo from '../../src/components/EntryDemo.astro'
 import EntryNav from '../../src/components/EntryNav.astro'
 import EntryRelated from '../../src/components/EntryRelated.astro'
 import EntryToc from '../../src/components/EntryToc.astro'
@@ -84,4 +85,29 @@ test('Title2 は scoped の属性を持つ h2（A11Y-10）', async () => {
     slots: { default: 'share <br />ー' },
   })
   expect(html).toMatch(/<h2 class="title2" data-astro-cid-/)
+})
+
+describe('EntryDemo', () => {
+  test('labobal.dev のデモには、autoplay を付けない動画とポスター画像を添える', async () => {
+    const html = await container.renderToString(EntryDemo, {
+      props: { href: 'https://labobal.dev/three-video/' },
+    })
+    expect(html).toContain(
+      'src="https://labobal.dev/previews/three-video.webm"',
+    )
+    expect(html).toContain(
+      'poster="https://labobal.dev/previews/three-video.jpg"',
+    )
+    expect(html).toContain('preload="none"')
+    expect(html).not.toContain('autoplay')
+    expect(count(html, /class="entry_demo"/)).toBe(1)
+  })
+
+  test('jsfiddle のデモはリンクだけ', async () => {
+    const html = await container.renderToString(EntryDemo, {
+      props: { href: 'https://jsfiddle.net/yutousui/d2y41xkn/' },
+    })
+    expect(html).not.toContain('<video')
+    expect(count(html, /<a /)).toBe(1)
+  })
 })
