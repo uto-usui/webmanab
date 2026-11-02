@@ -7,6 +7,7 @@ import Wrapper from '../../components/Wrapper.astro'
 import SectionEntry from '../../components/SectionEntry.astro'
 import EntryHead from '../../components/EntryHead.astro'
 import EntryAd from '../../components/EntryAd.astro'
+import EntryDemo from '../../components/EntryDemo.astro'
 import EntryContent from '../../components/EntryContent.astro'
 import EntryShare from '../../components/EntryShare.astro'
 import EntryTag from '../../components/EntryTag.astro'
@@ -42,6 +43,7 @@ const head = buildHead({ kind: 'post', entry }, Astro.site!)
     <SectionEntry>
       <EntryHead entry={entry} />
       <EntryAd adSlot="6597241020" />
+      {entry.data.demoUrl && <EntryDemo href={entry.data.demoUrl} />}
       <EntryContent>
         <Content />
       </EntryContent>
