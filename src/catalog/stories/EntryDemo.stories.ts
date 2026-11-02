@@ -18,3 +18,9 @@ export const Hover: Story<typeof EntryDemo> = {
 export const Preview: Story<typeof EntryDemo> = {
   args: { href: 'https://labobal.dev/three-video/' },
 }
+
+// 動画に触れると、右下に一時停止のボタンが出る
+export const PreviewHover: Story<typeof EntryDemo> = {
+  args: { href: 'https://labobal.dev/three-video/' },
+  parameters: { catalog: { steps: [{ hover: '.entry-demo__preview' }] } },
+}

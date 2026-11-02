@@ -101,6 +101,8 @@ describe('EntryDemo', () => {
     expect(html).toContain('preload="none"')
     expect(html).not.toContain('autoplay')
     expect(count(html, /class="entry_demo"/)).toBe(1)
+    // 一時停止のボタンは、スクリプトが動くまで隠しておく（A11Y-24）
+    expect(html).toMatch(/<button class="entry-demo__toggle"[^>]* hidden/)
   })
 
   test('jsfiddle のデモはリンクだけ', async () => {
@@ -108,6 +110,7 @@ describe('EntryDemo', () => {
       props: { href: 'https://jsfiddle.net/yutousui/d2y41xkn/' },
     })
     expect(html).not.toContain('<video')
+    expect(html).not.toContain('<button')
     expect(count(html, /<a /)).toBe(1)
   })
 })
