@@ -1,3 +1,5 @@
+import { labobalCodeUrl, labobalSlug } from './markdown/labobal-demo-links.mjs'
+
 /** labobal.dev のデモが公開している、動いている様子の短い動画とポスター画像 */
 export interface DemoPreview {
   video: string
@@ -8,25 +10,9 @@ export interface DemoPreview {
 export const DEMO_PREVIEW_WIDTH = 480
 export const DEMO_PREVIEW_HEIGHT = 300
 
-const ORIGIN = 'https://labobal.dev'
-// リポジトリ名は laboobal-dev で、ドメインの labobal と綴りが違う
-const CODE_BASE =
-  'https://github.com/uto-usui/laboobal-dev/tree/master/src/demos'
+export { labobalSlug }
 
-/**
- * `https://labobal.dev/<slug>/` なら slug を返す。それ以外（jsfiddle など）は undefined。
- * 本文の iframe の src はスキームなし（`//…`）のこともあるので https として読む
- */
-export const labobalSlug = (url: string): string | undefined => {
-  let parsed: URL
-  try {
-    parsed = new URL(url, 'https://localhost/')
-  } catch {
-    return undefined
-  }
-  if (parsed.origin !== ORIGIN) return undefined
-  return /^\/([a-z0-9-]+)\/?$/.exec(parsed.pathname)?.[1]
-}
+const ORIGIN = 'https://labobal.dev'
 
 /** `/previews/<slug>.webm` と `.jpg`。labobal.dev のデモでなければ undefined */
 export const demoPreview = (demoUrl: string): DemoPreview | undefined => {
@@ -41,7 +27,7 @@ export const demoPreview = (demoUrl: string): DemoPreview | undefined => {
 /** GitHub のデモのコードのフォルダ。labobal.dev のデモでなければ undefined */
 export const demoCodeUrl = (demoUrl: string): string | undefined => {
   const slug = labobalSlug(demoUrl)
-  return slug && `${CODE_BASE}/${slug}/`
+  return slug && labobalCodeUrl(slug)
 }
 
 /** 本文の Markdown が、demoUrl と同じ labobal.dev のデモを iframe で埋め込んでいるか。コードの中は見ない */
