@@ -176,12 +176,19 @@ const { terms, created } = resolveTerms(tags, type, readTerms(), posts)
 let content: string
 let slug: string
 const written: string[] = []
+// 記事を書く前に落ちたら、書いた画像を消す。残すと次の回が同じ id を選び、画像が「もうあります」で止まる
+let finished = false
+process.on('exit', () => {
+  if (!finished) for (const image of written) fs.rmSync(image, { force: true })
+})
 if (type === 'clip') {
   const url = target
   if (!URL.canParse(url) || !/^https?:/.test(url))
     fail(`${url} は http か https の URL ではありません`)
   if (!args.shot && (args['full-shot'] || args.title))
     fail('--full-shot と --title は --shot と一緒に渡してください')
+  if (args['full-shot'] && !args.full)
+    fail('--full-shot と --no-full は一緒に渡せません')
   if (args.shot) {
     if (!args.title?.trim())
       fail(
@@ -191,6 +198,9 @@ if (type === 'clip') {
     // 見出しとサムネイルは 16:9 で切らずに縮めるだけなので、違う比率は崩れる
     if (width * 9 !== height * 16)
       fail(`--shot は 16:9 の画像にしてください（${width}×${height}）`)
+    // 画像を書き始める前に、ページ全体の画像も読めるかを確かめる
+    if (args['full-shot'])
+      await sharp(path.resolve(args['full-shot'])).metadata()
   }
   const { title, shot, full } = args.shot
     ? {
@@ -259,6 +269,7 @@ if (type === 'clip') {
 
 const postFile = path.join(vault, type, expectedFileName({ slug, id }))
 writeNew(postFile, content)
+finished = true
 for (const term of created)
   console.log(`新しいターム: ${term.name}（id ${term.id}、slug ${term.slug}）`)
 console.log(postFile)
