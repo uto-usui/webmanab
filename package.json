@@ -31,6 +31,7 @@
     "test:catalog": "playwright test -c playwright.catalog.config.ts",
     "a11y:compare": "node scripts/a11y-compare.ts",
     "check:links": "node scripts/check-links.ts",
+    "check:demos": "node scripts/check-demos.ts",
     "export:md": "node scripts/export-markdown/export.ts",
     "verify:md": "node scripts/export-markdown/verify.ts",
     "sync:vault": "node scripts/sync-vault/sync.ts",

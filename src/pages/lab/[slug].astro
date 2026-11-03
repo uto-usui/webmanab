@@ -43,7 +43,9 @@ const head = buildHead({ kind: 'post', entry }, Astro.site!)
     <SectionEntry>
       <EntryHead entry={entry} />
       <EntryAd adSlot="6597241020" />
-      {entry.data.demoUrl && <EntryDemo href={entry.data.demoUrl} />}
+      {entry.data.demoUrl && (
+        <EntryDemo href={entry.data.demoUrl} body={entry.body} />
+      )}
       <EntryContent>
         <Content />
       </EntryContent>

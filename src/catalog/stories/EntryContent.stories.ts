@@ -24,3 +24,8 @@ export const CodeHover: Story<typeof EntryContentSample> = {
 export const RawHtml: Story<typeof EntryContentSample> = {
   args: { sample: 'raw-html' },
 }
+
+// labobal.dev の iframe の下に足すリンク。テストでは外への通信を止めるので、iframe の中は空になる
+export const LabobalDemo: Story<typeof EntryContentSample> = {
+  args: { sample: 'demo' },
+}

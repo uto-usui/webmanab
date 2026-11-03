@@ -304,6 +304,29 @@
       }
     }
 
+    // labobal.dev の iframe の下に描画で足すリンク（lib/markdown/labobal-demo-links.mjs）
+    .entry-content__demo-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.5em;
+      justify-content: flex-end;
+      margin-top: calc(get-line-height(-1, 0, 1) * -0.5);
+
+      @include sizes(-2, 1);
+
+      @include tablet {
+        margin-top: calc(get-line-height(0, 1, 1) * -0.5);
+
+        @include sizes(-1, 0);
+      }
+
+      // 本文のリンクは下線を引かないが、iframe の下の 2 つは添え書きに見えて押せると気づきにくいので引く
+      a {
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+      }
+    }
+
     blockquote {
       padding: space-scalar(4);
       margin: get-line-height(-1, 0, 1) auto;

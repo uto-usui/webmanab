@@ -100,9 +100,30 @@ describe('EntryDemo', () => {
     )
     expect(html).toContain('preload="none"')
     expect(html).not.toContain('autoplay')
-    expect(count(html, /class="entry_demo"/)).toBe(1)
+    expect(count(html, /class="entry_demo"/)).toBe(2)
     // 一時停止のボタンは、スクリプトが動くまで隠しておく（A11Y-24）
     expect(html).toMatch(/<button class="entry-demo__toggle"[^>]* hidden/)
+  })
+
+  test('labobal.dev のデモには、DEMO の横に GitHub のコードへの CODE を出す', async () => {
+    const html = await container.renderToString(EntryDemo, {
+      props: { href: 'https://labobal.dev/three-video/' },
+    })
+    expect(html).toMatch(
+      /<a class="entry_demo" href="https:\/\/github\.com\/uto-usui\/laboobal-dev\/tree\/master\/src\/demos\/three-video\/" target="_blank" rel="noopener" aria-describedby="new-tab"[^>]*>\s*code\s*<\/a>/,
+    )
+  })
+
+  test('本文に同じデモの iframe があれば動画は出さず、DEMO と CODE だけ', async () => {
+    const html = await container.renderToString(EntryDemo, {
+      props: {
+        href: 'https://labobal.dev/three-video/',
+        body: '<p><iframe src="https://labobal.dev/three-video/"></iframe></p>',
+      },
+    })
+    expect(html).not.toContain('<video')
+    expect(html).not.toContain('<button')
+    expect(count(html, /class="entry_demo/)).toBe(2)
   })
 
   test('jsfiddle のデモはリンクだけ', async () => {

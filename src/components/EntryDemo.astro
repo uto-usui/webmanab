@@ -2,16 +2,21 @@
 import {
   DEMO_PREVIEW_HEIGHT,
   DEMO_PREVIEW_WIDTH,
+  demoCodeUrl,
   demoPreview,
+  embedsDemo,
 } from '../lib/demo-preview'
 import { NEW_TAB_ID } from '../lib/new-tab.mjs'
 
 interface Props {
   href: string
+  /** 記事の本文の Markdown。同じデモを iframe で埋め込んでいれば、同じデモが 2 回出ないよう動画は出さない */
+  body?: string
 }
 
-const { href } = Astro.props
-const preview = demoPreview(href)
+const { href, body = '' } = Astro.props
+const preview = embedsDemo(body, href) ? undefined : demoPreview(href)
+const code = demoCodeUrl(href)
 ---
 
 <div>
@@ -73,6 +78,17 @@ const preview = demoPreview(href)
   >
     demo
   </a>
+  {code && (
+    <a
+      class="entry_demo"
+      href={code}
+      target="_blank"
+      rel="noopener"
+      aria-describedby={NEW_TAB_ID}
+    >
+      code
+    </a>
+  )}
 </div>
 
 <script>
@@ -155,6 +171,21 @@ const preview = demoPreview(href)
 
     @include desktop {
       margin-bottom: -2rem;
+    }
+
+    // CODE を並べたとき、狭い画面で 2 行に折り返しても間が空きすぎないようにする
+    &:not(:last-child) {
+      margin-bottom: 0;
+
+      @include desktop {
+        margin-bottom: -2rem;
+      }
+    }
+
+    & + & {
+      @include tablet {
+        margin-left: 2rem;
+      }
     }
 
     &::after {

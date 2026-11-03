@@ -170,3 +170,71 @@ describe('画像', () => {
     )
   })
 })
+
+describe('labobal.dev の iframe', () => {
+  const page = 'https://labobal.dev/drag-pinch-simple/'
+  const code =
+    'https://github.com/uto-usui/laboobal-dev/tree/master/src/demos/drag-pinch-simple/'
+  const links = (html: string) =>
+    [...html.matchAll(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map((m) => [
+      m[1],
+      m[2],
+    ])
+
+  test('段落の後ろに、単体のページと GitHub のコードへのリンクを足す', () => {
+    const html = render(`<p><iframe src="${page}" width="100%"></iframe></p>`)
+    expect(html).toMatch(
+      /<\/iframe><\/p><p class="entry-content__demo-links"><a /,
+    )
+    expect(links(html)).toEqual([
+      [page, '別のタブで開く'],
+      [code, 'GitHub でコードを見る'],
+    ])
+    // 外部リンクと同じく新しいタブで開く
+    expect(html.match(/target="_blank" rel="noopener"/g)).toHaveLength(2)
+  })
+
+  test('loading と title がなければ足し、あれば変えない', () => {
+    expect(
+      render(`<p><iframe src="https://labobal.dev/marquee"></iframe></p>`),
+    ).toContain('loading="lazy" title="labobal.dev のデモ（marquee）"')
+    const html = render(
+      `<p><iframe src="${page}" loading="eager" title="つまんで離す"></iframe></p>`,
+    )
+    expect(html).toContain('loading="eager" title="つまんで離す"')
+  })
+
+  test('直後の「別のタブで開く」の段落が同じデモへのリンクだけなら、その段落は出さない', () => {
+    const html = render(
+      `<p><iframe src="${page}"></iframe></p>\n\n[別のタブで開く](${page})\n\n次の段落`,
+    )
+    expect(links(html)).toEqual([
+      [page, '別のタブで開く'],
+      [code, 'GitHub でコードを見る'],
+    ])
+    expect(html).toContain('<p>次の段落</p>')
+  })
+
+  test('文の中のリンクや、別のデモへのリンクは残す', () => {
+    const html = render(
+      `<p><iframe src="${page}"></iframe></p>\n\nデモは[こちら](${page})\n\n[別のデモ](https://labobal.dev/marquee/)`,
+    )
+    expect(links(html).map(([, text]) => text)).toEqual([
+      '別のタブで開く',
+      'GitHub でコードを見る',
+      'こちら',
+      '別のデモ',
+    ])
+  })
+
+  test('labobal.dev のトップや jsfiddle の iframe には足さない', () => {
+    for (const src of [
+      'https://labobal.dev/',
+      '//jsfiddle.net/yutousui/d8knz11c/embedded/',
+    ]) {
+      const html = render(`<p><iframe src="${src}"></iframe></p>`)
+      expect(html).not.toContain('entry-content__demo-links')
+      expect(html).not.toContain('loading=')
+    }
+  })
+})
