@@ -1,4 +1,5 @@
-# 記事の外部リンクの死活を月 1 回調べ、一覧を Job Summary に出す（08 の 1.3）。一覧を出すだけで何も直さない
+# 記事の外部リンクの死活を月 1 回調べ、一覧を Job Summary に出す（08 の 1.3）。一覧を出すだけで何も直さない。
+# あわせて、記事が埋め込むデモと labobal.dev のデモの一覧の食い違いも出す（scripts/check-demos.ts）
 name: Check links
 on:
   schedule:
@@ -25,6 +26,13 @@ jobs:
         run: |
           pnpm --silent check:links | tee links.log
           echo "summary=$(grep -m1 '件を調べた' links.log)" >> "$GITHUB_OUTPUT"
+      # 外部リンクの結果と分けて知らせる。片方が落ちても、もう片方は動かす
+      - id: demos
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          pnpm --silent check:demos | tee demos.log
+          echo "summary=$(grep -m1 'デモの食い違い' demos.log)" >> "$GITHUB_OUTPUT"
       - name: Notify Moshi
         if: always()
         shell: bash
@@ -32,10 +40,14 @@ jobs:
           MOSHI_TOKEN: ${{ secrets.MOSHI_TOKEN }}
           OUTCOME: ${{ steps.check.outcome }}
           SUMMARY: ${{ steps.check.outputs.summary }}
+          DEMOS_OUTCOME: ${{ steps.demos.outcome }}
+          DEMOS: ${{ steps.demos.outputs.summary }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           [ -n "$MOSHI_TOKEN" ] || exit 0
-          if [ "$OUTCOME" = success ]; then message="${SUMMARY} ${RUN_URL}"; else message="調べる途中で落ちた（${OUTCOME}） ${RUN_URL}"; fi
+          if [ "$OUTCOME" = success ]; then message="${SUMMARY}"; else message="調べる途中で落ちた（${OUTCOME}）"; fi
+          if [ "$DEMOS_OUTCOME" = success ]; then message="${message} / ${DEMOS}"; else message="${message} / デモの突き合わせが落ちた（${DEMOS_OUTCOME}）"; fi
+          message="${message} ${RUN_URL}"
           jq -n --arg token "$MOSHI_TOKEN" --arg message "$message" \
-            '{token: $token, title: "webmanab: 外部リンク", message: $message}' |
+            '{token: $token, title: "webmanab: 外部リンクとデモ", message: $message}' |
             curl -s -X POST https://api.getmoshi.app/api/webhook -H 'Content-Type: application/json' -d @-
