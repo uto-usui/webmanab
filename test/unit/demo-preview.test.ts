@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { demoPreview } from '../../src/lib/demo-preview.ts'
+import {
+  demoCodeUrl,
+  demoPreview,
+  embedsDemo,
+} from '../../src/lib/demo-preview.ts'
 
 describe('demoPreview', () => {
   it('labobal.dev のデモには動画とポスター画像を返す', () => {
@@ -33,5 +37,55 @@ describe('demoPreview', () => {
     'not a url',
   ])('%s には動画がない', (url) => {
     expect(demoPreview(url)).toBeUndefined()
+  })
+})
+
+describe('demoCodeUrl', () => {
+  it('labobal.dev のデモは GitHub のフォルダを返す。リポジトリ名は laboobal-dev', () => {
+    expect(demoCodeUrl('https://labobal.dev/three-video')).toBe(
+      'https://github.com/uto-usui/laboobal-dev/tree/master/src/demos/three-video/',
+    )
+  })
+
+  it('jsfiddle などは undefined', () => {
+    expect(
+      demoCodeUrl('https://jsfiddle.net/yutousui/d2y41xkn/'),
+    ).toBeUndefined()
+  })
+})
+
+describe('embedsDemo', () => {
+  const demoUrl = 'https://labobal.dev/marquee/'
+
+  it('同じデモの iframe があれば true', () => {
+    expect(
+      embedsDemo(
+        '文\n\n<p><iframe src="https://labobal.dev/marquee/" title="x"></iframe></p>',
+        demoUrl,
+      ),
+    ).toBe(true)
+    // src がスキームなしでも、末尾のスラッシュがなくても同じデモ
+    expect(
+      embedsDemo('<iframe width="100%" src="//labobal.dev/marquee">', demoUrl),
+    ).toBe(true)
+  })
+
+  it('別のデモ、リンクだけ、コードの中の iframe は false', () => {
+    for (const markdown of [
+      '<p><iframe src="https://labobal.dev/blob/"></iframe></p>',
+      '[別のタブで開く](https://labobal.dev/marquee/)',
+      '```html\n<iframe src="https://labobal.dev/marquee/"></iframe>\n```',
+    ]) {
+      expect(embedsDemo(markdown, demoUrl)).toBe(false)
+    }
+  })
+
+  it('demoUrl が labobal.dev でなければ false', () => {
+    expect(
+      embedsDemo(
+        '<iframe src="//jsfiddle.net/yutousui/d2y41xkn/embedded/"></iframe>',
+        'https://jsfiddle.net/yutousui/d2y41xkn/',
+      ),
+    ).toBe(false)
   })
 })
