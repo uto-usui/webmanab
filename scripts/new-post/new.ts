@@ -1,5 +1,5 @@
 // vault に新しい記事の下書き（draft: true）を作る（F1）。
-// node scripts/new-post/new.ts clip <url> [--tags a,b] [--no-full] [--shot <png>] [--out <dir>]
+// node scripts/new-post/new.ts clip <url> [--tags a,b] [--no-full] [--shot <png> --title <text> [--full-shot <png>]] [--out <dir>]
 // node scripts/new-post/new.ts tip|lab <slug> [--tags a,b] [--out <dir>]
 // node scripts/new-post/new.ts image <id> <file> [--out <dir>]
 import fs from 'node:fs'
@@ -27,7 +27,8 @@ import {
 } from './plan.ts'
 
 const USAGE = `使い方:
-  pnpm new clip <url> [--tags a,b] [--no-full] [--shot <png>]
+  pnpm new clip <url> [--tags a,b] [--no-full]
+  pnpm new clip <url> --shot <png> --title <text> [--full-shot <png>] [--tags a,b]
   pnpm new tip <slug> [--tags a,b]
   pnpm new lab <slug> [--tags a,b]
   pnpm new image <id> <file>
@@ -40,8 +41,10 @@ const { values: args, positionals } = parseArgs({
     tags: { type: 'string', default: '' },
     // 2026-10-27 に「ページ全体も毎回撮る」と決めた。崩れるサイトだけ --no-full で外す
     full: { type: 'boolean', default: true },
-    // 待っても見せたい画面にならない（クリックで始まる、毎回ちがう）サイトは、撮った 16:9 の画像を渡す
+    // 撮る側（vault の skill）が見せたい画面を確かめて撮った画像を渡す。渡したときはブラウザを開かない
     shot: { type: 'string' },
+    'full-shot': { type: 'string' },
+    title: { type: 'string' },
     out: { type: 'string' },
   },
 })
@@ -177,17 +180,27 @@ if (type === 'clip') {
   const url = target
   if (!URL.canParse(url) || !/^https?:/.test(url))
     fail(`${url} は http か https の URL ではありません`)
+  if (!args.shot && (args['full-shot'] || args.title))
+    fail('--full-shot と --title は --shot と一緒に渡してください')
   if (args.shot) {
+    if (!args.title?.trim())
+      fail(
+        '--shot を渡すときは、slug と title のもとになる --title も渡してください',
+      )
     const { width, height } = await sharp(path.resolve(args.shot)).metadata()
     // 見出しとサムネイルは 16:9 で切らずに縮めるだけなので、違う比率は崩れる
     if (width * 9 !== height * 16)
       fail(`--shot は 16:9 の画像にしてください（${width}×${height}）`)
   }
-  const captured = await capture(url)
-  const { title, full } = captured
-  const shot = args.shot
-    ? fs.readFileSync(path.resolve(args.shot))
-    : captured.shot
+  const { title, shot, full } = args.shot
+    ? {
+        title: args.title!.trim(),
+        shot: fs.readFileSync(path.resolve(args.shot)),
+        full: args['full-shot']
+          ? fs.readFileSync(path.resolve(args['full-shot']))
+          : undefined,
+      }
+    : await capture(url)
   const pageTitle = title || new URL(url).hostname
   slug = clipSlug(pageTitle, url, posts)
   const { file: thumbFile, src: thumb } = await webp(
