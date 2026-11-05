@@ -10,7 +10,7 @@ primaryTag: "Createjs"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 173, name: "CreateJs", slug: "createjs" }
-demoUrl: https://jsfiddle.net/yutousui/74yzsoyj/
+demoUrl: https://labobal.dev/createjs-revolution-trigonometric/
 legacy:
   prev: createjs-beat-motion-trigonometric
   next: createjs-gravity-and-friction
@@ -52,4 +52,6 @@ function init() {
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/74yzsoyj/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/createjs-revolution-trigonometric/" width="100%" height="400" loading="lazy" title="sin と cos で公転する丸（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/createjs-revolution-trigonometric/)

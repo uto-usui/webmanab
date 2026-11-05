@@ -12,7 +12,7 @@ terms:
   - { id: 336, name: "effect", slug: "effect" }
   - { id: 213, name: "hover", slug: "hover" }
   - { id: 335, name: "video", slug: "video" }
-demoUrl: https://jsfiddle.net/yutousui/opfs6phu/embedded/result/dark/
+demoUrl: https://labobal.dev/effects-to-youtube-videos/
 legacy:
   prev: customize-easing-of-mouse-scroll
   next: glsl-color-drops
@@ -22,4 +22,6 @@ jquery.mb.YTPlayer を利用しています。CSSのブレンドモードとフ�
 
 - [jquery.mb.YTPlayer](https://github.com/pupunzi/jquery.mb.YTPlayer)
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/opfs6phu/embedded/js,html,css,result/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/effects-to-youtube-videos/" width="100%" height="400" loading="lazy" title="動画にエフェクトをかける（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/effects-to-youtube-videos/)

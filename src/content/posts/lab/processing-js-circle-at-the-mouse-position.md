@@ -10,7 +10,7 @@ primaryTag: "processing.js"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 259, name: "processing.js", slug: "processing-js" }
-demoUrl: https://jsfiddle.net/yutousui/14w0mxjx/
+demoUrl: https://labobal.dev/processing-js-circle-at-the-mouse-position/
 legacy:
   prev: processing-js-star
   next: processing-js-random-walk
@@ -18,4 +18,6 @@ legacy:
 
 processing.jsでマウスの位置に円を描きます。クリックでリセットします。
 
-<p><iframe width="100%" height="500" src="//jsfiddle.net/yutousui/14w0mxjx/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/processing-js-circle-at-the-mouse-position/" width="100%" height="500" loading="lazy" title="マウスの位置に円を描く（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/processing-js-circle-at-the-mouse-position/)

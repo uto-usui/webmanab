@@ -12,7 +12,7 @@ terms:
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 317, name: "parallax", slug: "parallax" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/j5tp2cw2/
+demoUrl: https://labobal.dev/tweenmax-visual-range-animation-class/
 legacy:
   prev: tweenmax-easing-of-scroll-parallax
   next: noise-glitch
@@ -122,4 +122,6 @@ const box = new scrollPosition('.box', function(el, i) {
 
 ```
 
-<p><iframe width="100%" height="500" src="//jsfiddle.net/yutousui/j5tp2cw2/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/tweenmax-visual-range-animation-class/" width="100%" height="500" loading="lazy" title="見えている間だけスクロールに合わせて動かす（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/tweenmax-visual-range-animation-class/)

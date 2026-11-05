@@ -10,7 +10,7 @@ primaryTag: "Createjs"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 173, name: "CreateJs", slug: "createjs" }
-demoUrl: https://jsfiddle.net/yutousui/4dL339yw/
+demoUrl: https://labobal.dev/createjs-round-motion-trigonometric/
 legacy:
   prev: create-js-line-motion-trigonometric-sin
   next: createjs-beat-motion-trigonometric
@@ -51,4 +51,6 @@ function init() {
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/4dL339yw/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/createjs-round-motion-trigonometric/" width="100%" height="400" loading="lazy" title="sin の波に乗って進む丸（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/createjs-round-motion-trigonometric/)

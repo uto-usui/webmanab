@@ -10,7 +10,7 @@ primaryTag: "Createjs"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 173, name: "CreateJs", slug: "createjs" }
-demoUrl: https://jsfiddle.net/yutousui/grbz1m8q/
+demoUrl: https://labobal.dev/createjs-node-motion/
 legacy:
   prev: createjs-gravity-and-friction
   next: css-embed-images-scroll-the-screen-iphone6-outline-mockup
@@ -124,4 +124,6 @@ function drawLine(stroke, color, beginX, beginY, endX, endY) {
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/grbz1m8q/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/createjs-node-motion/" width="100%" height="400" loading="lazy" title="引き合いながら漂う点と線（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/createjs-node-motion/)

@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/L4806xs6/
+demoUrl: https://labobal.dev/give-speed-and-angle-as-separate-random-values/
 legacy:
   prev: circular-motion-with-depth
   next: rotate-elements-arranged-on-the-circumference
@@ -121,4 +121,6 @@ anim.play();
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/L4806xs6/embedded/js,result/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/give-speed-and-angle-as-separate-random-values/" width="100%" height="400" loading="lazy" title="スピードと角度を別々のランダムな sin 波で与える（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/give-speed-and-angle-as-separate-random-values/)

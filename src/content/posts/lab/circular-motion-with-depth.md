@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/91zjtj4g/
+demoUrl: https://labobal.dev/circular-motion-with-depth/
 legacy:
   prev: smooth-movement-using-sin-wave
   next: give-speed-and-angle-as-separate-random-values
@@ -101,4 +101,6 @@ anim.play();
 
 ```
 
-<p><iframe width="100%" height="300" src="//jsfiddle.net/yutousui/91zjtj4g/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/circular-motion-with-depth/" width="100%" height="300" loading="lazy" title="奥行きのある円運動（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/circular-motion-with-depth/)

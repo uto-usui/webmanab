@@ -10,7 +10,7 @@ primaryTag: "css"
 terms:
   - { id: 211, name: "css", slug: "css" }
   - { id: 275, name: "sass", slug: "sass" }
-demoUrl: https://jsfiddle.net/yutousui/656k72Lf/
+demoUrl: https://labobal.dev/css-embed-images-scroll-the-screen-iphone6-outline-mockup/
 legacy:
   prev: createjs-node-motion
   next: 無限ループするニュースティッカー-『javascript』
@@ -124,4 +124,6 @@ $outline-color: #666;
 
 ```
 
-<p><iframe width="100%" height="600" src="//jsfiddle.net/yutousui/656k72Lf/embedded/result,html,css/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/css-embed-images-scroll-the-screen-iphone6-outline-mockup/" width="100%" height="600" loading="lazy" title="画面をスクロールできる iPhone の線画（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/css-embed-images-scroll-the-screen-iphone6-outline-mockup/)

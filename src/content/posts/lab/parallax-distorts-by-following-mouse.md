@@ -12,7 +12,7 @@ terms:
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 317, name: "parallax", slug: "parallax" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/vxmrkkyd/embedded/result/dark/
+demoUrl: https://labobal.dev/parallax-distorts-by-following-mouse/
 legacy:
   prev: parallax-shifting-divided-background-by-mouse
   next: move-a-node-with-springiness
@@ -20,4 +20,6 @@ legacy:
 
 マウスの座標に応じて、オブジェクトを歪ませることで、3dなパララックスエフェクトを実装しました。
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/vxmrkkyd/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/parallax-distorts-by-following-mouse/" width="100%" height="400" loading="lazy" title="マウスに合わせて傾けるパララックス（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/parallax-distorts-by-following-mouse/)

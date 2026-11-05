@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/74uzrxL6/
+demoUrl: https://labobal.dev/rotate-elements-arranged-on-the-circumference/
 legacy:
   prev: give-speed-and-angle-as-separate-random-values
   next: tweenmax-easing-of-scroll-parallax
@@ -137,4 +137,6 @@ anim.play();
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/74uzrxL6/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/rotate-elements-arranged-on-the-circumference/" width="100%" height="400" loading="lazy" title="円周上に並べた要素を回転させる（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/rotate-elements-arranged-on-the-circumference/)

@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 334, name: "scroll", slug: "scroll" }
-demoUrl: https://jsfiddle.net/yutousui/pkme3arj/embedded/result/dark/
+demoUrl: https://labobal.dev/customize-easing-of-mouse-scroll/
 legacy:
   prev: move-a-node-with-springiness
   next: effects-to-youtube-videos
@@ -19,4 +19,6 @@ legacy:
 
 `requestAnimationFrame()` と CSSの `translateY` でコンテンツを移動させることでスクロールを表現して、その移動量をイージングさせる。
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/pkme3arj/embedded/result,js,css/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/customize-easing-of-mouse-scroll/" width="100%" height="400" loading="lazy" title="マウススクロールのイージングをカスタマイズする（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/customize-easing-of-mouse-scroll/)

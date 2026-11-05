@@ -12,7 +12,7 @@ terms:
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 317, name: "parallax", slug: "parallax" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/ab42k442/
+demoUrl: https://labobal.dev/tweenmax-easing-of-scroll-parallax/
 legacy:
   prev: rotate-elements-arranged-on-the-circumference
   next: tweenmax-visual-range-animation-class
@@ -83,4 +83,6 @@ scrollAnim();
 
 ```
 
-<p><iframe width="100%" height="500" src="//jsfiddle.net/yutousui/ab42k442/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/tweenmax-easing-of-scroll-parallax/" width="100%" height="500" loading="lazy" title="ホイールのスクロールをゆっくりにしてパララックス（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/tweenmax-easing-of-scroll-parallax/)

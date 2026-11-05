@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/skrxqb9j/
+demoUrl: https://labobal.dev/smooth-movement-using-sin-wave/
 legacy:
   prev: move-an-object-while-drawing-a-circle
   next: circular-motion-with-depth
@@ -99,4 +99,6 @@ anim.play();
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/skrxqb9j/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/smooth-movement-using-sin-wave/" width="100%" height="400" loading="lazy" title="サイン波を使ったスムーズな動き（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/smooth-movement-using-sin-wave/)
