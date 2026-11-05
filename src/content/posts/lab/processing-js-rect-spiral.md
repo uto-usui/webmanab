@@ -10,7 +10,7 @@ primaryTag: "processing.js"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 259, name: "processing.js", slug: "processing-js" }
-demoUrl: https://jsfiddle.net/yutousui/3c6v5rn5/
+demoUrl: https://labobal.dev/processing-js-rect-spiral/
 legacy:
   prev: processing-js-rect-in-a-circle
   next: processing-js-draw-countless-circles-draw-function
@@ -18,4 +18,6 @@ legacy:
 
 processing.jsで矩形を渦巻きに並べて描きます。
 
-<p><iframe width="100%" height="500" src="//jsfiddle.net/yutousui/3c6v5rn5/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/processing-js-rect-spiral/" width="100%" height="500" loading="lazy" title="矩形を渦巻き状に描く（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/processing-js-rect-spiral/)

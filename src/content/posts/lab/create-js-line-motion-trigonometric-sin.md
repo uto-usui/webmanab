@@ -10,7 +10,7 @@ primaryTag: "Createjs"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 173, name: "CreateJs", slug: "createjs" }
-demoUrl: https://jsfiddle.net/yutousui/7s1wt0y1/
+demoUrl: https://labobal.dev/create-js-line-motion-trigonometric-sin/
 legacy:
   prev: jqueryui-simple-calender
   next: createjs-round-motion-trigonometric
@@ -51,4 +51,6 @@ function init() {
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/7s1wt0y1/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/create-js-line-motion-trigonometric-sin/" width="100%" height="400" loading="lazy" title="sin で描く波の線（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/create-js-line-motion-trigonometric-sin/)

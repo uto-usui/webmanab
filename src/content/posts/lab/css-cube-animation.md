@@ -12,7 +12,7 @@ terms:
   - { id: 211, name: "css", slug: "css" }
   - { id: 214, name: "geometry", slug: "geometry" }
   - { id: 213, name: "hover", slug: "hover" }
-demoUrl: https://jsfiddle.net/yutousui/gre2a7tm/
+demoUrl: https://labobal.dev/css-cube-animation/
 legacy:
   prev: star-rotate-animation-createjs
   next: styling-input
@@ -116,4 +116,6 @@ CSSの`transform`プロパティをうまく使って立方体を作成し、お
 
 ```
 
-<p><iframe width="100%" height="350" src="//jsfiddle.net/yutousui/gre2a7tm/embedded/result,css,html/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/css-cube-animation/" width="100%" height="350" loading="lazy" title="CSS で立方体をつくって回転のアニメーションをあたえる（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/css-cube-animation/)

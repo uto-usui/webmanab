@@ -11,7 +11,7 @@ terms:
   - { id: 212, name: "animation", slug: "animation" }
   - { id: 176, name: "javascript", slug: "javascript" }
   - { id: 303, name: "TweenMax", slug: "tweenmax" }
-demoUrl: https://jsfiddle.net/yutousui/5n1a0hjy/
+demoUrl: https://labobal.dev/move-an-object-while-drawing-a-circle/
 legacy:
   prev: vue-todo
   next: smooth-movement-using-sin-wave
@@ -100,4 +100,6 @@ anim.play();
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/5n1a0hjy/embedded/result,js/dark/" allowpaymentrequest allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/move-an-object-while-drawing-a-circle/" width="100%" height="400" loading="lazy" title="オブジェクトを円を描きながら動かす（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/move-an-object-while-drawing-a-circle/)

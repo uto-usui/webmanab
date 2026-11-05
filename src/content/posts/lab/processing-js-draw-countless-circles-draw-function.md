@@ -10,7 +10,7 @@ primaryTag: "processing.js"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 259, name: "processing.js", slug: "processing-js" }
-demoUrl: https://jsfiddle.net/yutousui/khdb9r0c/
+demoUrl: https://labobal.dev/processing-js-draw-countless-circles-draw-function/
 legacy:
   prev: processing-js-rect-spiral
   next: processing-js-star
@@ -18,4 +18,6 @@ legacy:
 
 processing.jsでdraw関数を使って無数に円を描きます。
 
-<p><iframe width="100%" height="500" src="//jsfiddle.net/yutousui/khdb9r0c/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/processing-js-draw-countless-circles-draw-function/" width="100%" height="500" loading="lazy" title="draw 関数で円を描き続ける（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/processing-js-draw-countless-circles-draw-function/)

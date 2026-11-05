@@ -10,7 +10,7 @@ primaryTag: "Createjs"
 terms:
   - { id: 174, name: "canvas", slug: "canvas" }
   - { id: 173, name: "CreateJs", slug: "createjs" }
-demoUrl: https://jsfiddle.net/yutousui/swsha6gf/
+demoUrl: https://labobal.dev/createjs-beat-motion-trigonometric/
 legacy:
   prev: createjs-round-motion-trigonometric
   next: createjs-revolution-trigonometric
@@ -48,4 +48,6 @@ function init() {
 
 ```
 
-<p><iframe width="100%" height="400" src="//jsfiddle.net/yutousui/swsha6gf/embedded/result,js/dark/" allowfullscreen frameborder="0"></iframe></p>
+<p><iframe src="https://labobal.dev/createjs-beat-motion-trigonometric/" width="100%" height="400" loading="lazy" title="sin で脈打つ丸（デモ）" allow="fullscreen"></iframe></p>
+
+[別のタブで開く](https://labobal.dev/createjs-beat-motion-trigonometric/)
