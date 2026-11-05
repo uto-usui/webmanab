@@ -1,7 +1,6 @@
 {
   "lab/circular-motion-with-depth/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/count-textarea/index.html": {
     "heading-level": 1,
@@ -9,28 +8,22 @@
     "no-deprecated-attr": 1
   },
   "lab/create-js-line-motion-trigonometric-sin/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/createjs-beat-motion-trigonometric/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/createjs-gravity-and-friction/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/createjs-node-motion/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/createjs-revolution-trigonometric/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/createjs-round-motion-trigonometric/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/css-background-clip-text/index.html": {
     "heading-level": 1,
@@ -38,28 +31,23 @@
     "no-deprecated-attr": 1
   },
   "lab/css-cube-animation/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/css-embed-images-scroll-the-screen-iphone6-outline-mockup/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/customize-easing-of-mouse-scroll/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/effects-to-youtube-videos/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/flex-responsive-table/index.html": {
     "attribute-allowed-values": 1,
     "no-deprecated-attr": 1
   },
   "lab/give-speed-and-angle-as-separate-random-values/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/hover-effect-to-change-the-background-colo/index.html": {
     "heading-level": 1,
@@ -75,28 +63,23 @@
     "no-deprecated-attr": 1
   },
   "lab/move-a-node-with-springiness/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/move-an-object-while-drawing-a-circle/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/noise-glitch/index.html": {
     "attribute-allowed-values": 1,
     "no-deprecated-attr": 1
   },
   "lab/parallax-distorts-by-following-mouse/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/parallax-shifting-divided-background-by-mouse/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-circle-at-the-mouse-position/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-circle/index.html": {
     "heading-level": 1,
@@ -104,8 +87,7 @@
     "no-deprecated-attr": 1
   },
   "lab/processing-js-draw-countless-circles-draw-function/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-gradation-dot/index.html": {
     "attribute-allowed-values": 1,
@@ -117,20 +99,16 @@
     "no-deprecated-attr": 1
   },
   "lab/processing-js-random-square/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-random-walk/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-rect-in-a-circle/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-rect-spiral/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/processing-js-square/index.html": {
     "heading-level": 1,
@@ -157,12 +135,10 @@
     "no-deprecated-attr": 1
   },
   "lab/rotate-elements-arranged-on-the-circumference/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/smooth-movement-using-sin-wave/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/star-random-color-createjs/index.html": {
     "heading-level": 1,
@@ -184,12 +160,10 @@
     "no-deprecated-attr": 1
   },
   "lab/tweenmax-easing-of-scroll-parallax/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/tweenmax-visual-range-animation-class/index.html": {
-    "attribute-allowed-values": 1,
-    "no-deprecated-attr": 1
+    "attribute-allowed-values": 1
   },
   "lab/vue-todo/index.html": {
     "attribute-allowed-values": 1,
