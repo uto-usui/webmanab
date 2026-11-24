@@ -1,0 +1,73 @@
+---
+// サイトと書いている人の紹介（#13）。本文の見た目は記事の本文と同じにし、検索の索引には入れない
+import EntryContent from '../components/EntryContent.astro'
+import Title1 from '../components/Title1.astro'
+import Wrapper from '../components/Wrapper.astro'
+import Default from '../layouts/Default.astro'
+import { PROFILE_LINKS } from '../lib/about'
+import { buildHead } from '../lib/head'
+
+const head = buildHead({ kind: 'about' }, Astro.site!)
+---
+
+<Default title={head.title} head={head} routeName="about">
+  <Wrapper>
+    <Title1 text="about" />
+    <div class="about">
+      <EntryContent searchable={false}>
+        <h2>このサイトについて</h2>
+        <p>
+          webmanab.html（ウェブまなぶ）は、ウェブ制作で学んだことを書き残している個人のサイトです。2016
+          年に始めました。
+        </p>
+        <ul>
+          <li>
+            <a href="/tip/">tip</a>
+            は、制作の途中でつまずいたことと、その解き方のメモです。
+          </li>
+          <li>
+            <a href="/clip/">clip</a>{' '}
+            は、見て気になったウェブサイトのクリップです。
+          </li>
+          <li>
+            <a href="/lab/">lab</a>
+            は、手を動かして試した表現のデモと、その解説です。デモは
+            <a href="https://labobal.dev/">labobal.dev</a> に置いています。
+          </li>
+        </ul>
+        <p>
+          古い記事には、いまのブラウザやライブラリには当てはまらないことも書かれています。書き直した記事には、記事の頭に更新日を出しています。
+        </p>
+
+        <h2>書いている人</h2>
+        <p>
+          utoです。ウェブのエンジニアをしています。音楽大学を出て、ミュージシャンとサウンドエンジニアをしたあと、25歳でウェブ制作の仕事に移りました。
+        </p>
+        <p>
+          デザインシステム開発とウェブアクセシビリティを主に手がけています。
+        </p>
+
+        <h2>リンク</h2>
+        <ul>
+          {PROFILE_LINKS.map(({ label, href }) => (
+            <li>
+              <a href={href} rel="me">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </EntryContent>
+    </div>
+  </Wrapper>
+</Default>
+
+<style lang="scss">
+  .about {
+    margin-top: get-line-height(7, -2, 1);
+
+    @include desktop {
+      margin-top: get-line-height(7, 0, 1);
+    }
+  }
+</style>
