@@ -43,16 +43,41 @@ describe('buildHead', () => {
     expect(head.jsonLd).toBeUndefined()
   })
 
-  test('type の一覧とターム一覧は、どちらも tip の title と description', () => {
-    const type = buildHead({ kind: 'type', type: 'tip' }, site)
-    const term = buildHead({ kind: 'term', tax: 'tips', id: 366 }, site)
-    for (const head of [type, term]) {
-      expect(head.title).toBe(`tip | ${SITE}`)
-      expect(head.description).toBe('tip archive page')
-      expect(head.jsonLd).toBeUndefined()
-    }
-    expect(type.canonical).toBe('https://webmanab.netlify.app/tip/')
-    expect(term.canonical).toBe('https://webmanab.netlify.app/tips/366/')
+  test('type の一覧は種類の title と description', () => {
+    const head = buildHead({ kind: 'type', type: 'tip' }, site)
+    expect(head.title).toBe(`tip | ${SITE}`)
+    expect(head.description).toBe('tip archive page')
+    expect(head.jsonLd).toBeUndefined()
+    expect(head.canonical).toBe('https://webmanab.netlify.app/tip/')
+  })
+
+  test('ターム一覧の title と description にはタグの名前が入る', () => {
+    const head = buildHead({ kind: 'term', tax: 'tips', id: 366 }, site)
+    expect(head.title).toBe(`nuxt - tip | ${SITE}`)
+    expect(head.description).toBe('nuxt のタグが付いた tip の一覧です。')
+    expect(head.jsonLd).toBeUndefined()
+    expect(head.canonical).toBe('https://webmanab.netlify.app/tips/366/')
+  })
+
+  test('ないターム id は種類の title に戻す', () => {
+    const head = buildHead({ kind: 'term', tax: 'tips', id: 99999 }, site)
+    expect(head.title).toBe(`tip | ${SITE}`)
+    expect(head.description).toBe('tip archive page')
+  })
+
+  test('About は ProfilePage の構造化データで、Person の sameAs に公開プロフィールが並ぶ', () => {
+    const head = buildHead({ kind: 'about' }, site)
+    expect(head.title).toBe(`about | ${SITE}`)
+    expect(head.canonical).toBe('https://webmanab.netlify.app/about/')
+    const ld = JSON.parse(head.jsonLd!)
+    expect(ld['@type']).toBe('ProfilePage')
+    expect(ld.mainEntity).toMatchObject({
+      '@type': 'Person',
+      name: 'uto usui',
+      url: 'https://webmanab.netlify.app/about/',
+    })
+    expect(ld.mainEntity.sameAs).toContain('https://x.com/uto_ao')
+    expect(ld.dateModified).toMatch(/\+09:00$/)
   })
 
   test('検索ページは search の title で、canonical は /search/', () => {
@@ -65,7 +90,9 @@ describe('buildHead', () => {
   test('記事は title と抜粋、og:image はカテゴリの OGP 画像', () => {
     const entry = fixture('tip/sass-pickup')
     const head = buildHead({ kind: 'post', entry }, site)
-    expect(head.title).toBe(`${entry.data.title} | ${SITE}`)
+    expect(head.title).toBe(
+      `いまデザイナーが覚えておきたい、Sass(SCSS)の基本と便利な小技集 | ${SITE}`,
+    )
     expect(head.description).toBe(entry.data.excerpt)
     expect(head.canonical).toBe('https://webmanab.netlify.app/tip/sass-pickup/')
     expect(metaOf(head)['og:image']).toBe(
@@ -121,11 +148,16 @@ describe('構造化データ', () => {
     expect(data).toEqual({
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
-      headline: entry.data.title,
+      headline:
+        'いまデザイナーが覚えておきたい、Sass(SCSS)の基本と便利な小技集',
       description: entry.data.excerpt,
       datePublished: '2017-01-11T17:50:24+09:00',
       dateModified: '2017-02-14T01:51:48+09:00',
-      author: { '@type': 'Person', name: 'uto usui' },
+      author: {
+        '@type': 'Person',
+        name: 'uto usui',
+        url: 'https://webmanab.netlify.app/about/',
+      },
       publisher: { '@type': 'Organization', name: SITE },
       mainEntityOfPage: { '@type': 'WebPage', '@id': head.canonical },
       url: head.canonical,

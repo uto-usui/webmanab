@@ -1,4 +1,5 @@
 // sitemap.xml / feed.xml / robots.txt の中身を作る。URL はすべて SITE_URL（Astro.site）から組み立てる
+import { ABOUT_MODIFIED, ABOUT_PATH } from './about'
 import { toIsoJst } from './date'
 import { entryPath, postsInTerm, sitePaths } from './posts'
 import type { PostData } from './schema'
@@ -33,6 +34,7 @@ export const sitemapEntries = (
 ): SitemapEntry[] => {
   const byPath = new Map<string, Date | undefined>([
     ['/', newest(entries)],
+    [ABOUT_PATH, ABOUT_MODIFIED],
     ...POST_TYPES.map(
       (type) =>
         [

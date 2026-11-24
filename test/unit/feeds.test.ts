@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest'
+import { ABOUT_MODIFIED } from '../../src/lib/about'
 import {
   absolutizeLinks,
   feedItems,
@@ -74,6 +75,7 @@ describe('sitemap', () => {
     )
     expect(lastmod).toEqual({
       '/': '2020-04-30T15:00:00.000Z',
+      '/about/': ABOUT_MODIFIED.toISOString(),
       '/tip/': '2020-04-30T15:00:00.000Z',
       '/clip/': '2020-01-31T15:00:00.000Z',
       '/lab/': undefined,
@@ -94,7 +96,7 @@ describe('sitemap', () => {
     expect(xml).toContain(
       '<url><loc>https://webmanab.netlify.app/labs/332/</loc></url>',
     )
-    expect(xml.match(/<url>/g)).toHaveLength(9)
+    expect(xml.match(/<url>/g)).toHaveLength(10)
   })
 })
 

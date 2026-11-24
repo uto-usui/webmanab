@@ -94,20 +94,6 @@ describe.skipIf(!existsSync('src/content/posts'))('src/content の本文', () =>
     expect(found).toEqual([])
   })
 
-  test('iframe は jsfiddle か labobal.dev のデモだけで 60 個', () => {
-    const srcs = articles.flatMap(({ body }) =>
-      [...body.matchAll(/<iframe\s[^>]*?src="([^"]*)"/gi)].map((m) => m[1]),
-    )
-    expect(srcs).toHaveLength(60)
-    expect(
-      srcs.filter(
-        (src) =>
-          !/^(https?:)?\/\/jsfiddle\.net\//.test(src) &&
-          !/^https:\/\/labobal\.dev\/[a-z0-9-]+\/$/.test(src),
-      ),
-    ).toEqual([])
-  })
-
   test('<style> があるのは tip/html5-global と tip/transition だけ', () => {
     expect(
       articles

@@ -8,7 +8,11 @@ import { termPath } from '../../src/lib/terms'
 export { LEGACY_TERM_MAX_ID, NEW_POST_ID } from '../../src/lib/site'
 
 /** 公開後に足した、記事でもタームでもないページ。ページを足すときにここへ 1 行書く */
-export const ADDED_PAGES: readonly string[] = ['/search/', '/404.html']
+export const ADDED_PAGES: readonly string[] = [
+  '/search/',
+  '/404.html',
+  '/about/',
+]
 
 export const isLegacy = ({ data }: { data: { id: number } }) =>
   data.id < NEW_POST_ID
