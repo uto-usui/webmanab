@@ -1,12 +1,15 @@
 // 本文の描画の回帰（08 の 1.4）。全記事は指紋で、代表 12 本は読める HTML で固定する。
-// 本文やプラグインを意図して変えたときは `pnpm test:dist -u` で更新し、PR の差分で変わった記事を確かめる。
+// プラグインや描画を意図して変えたときは `pnpm test:dist -u` で更新し、PR の差分で変わった記事を確かめる。
+// 作者が書き直した旧記事は自動で比べる対象から外れるので、記事を直しただけなら -u は要らない。
 // 指紋は pnpm verify:md が「説明のつかない差 0」を出した状態のビルドから作った
 import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
 import type { Element, Nodes, Root } from 'hast'
 import { toHtml } from 'hast-util-to-html'
 import rehypeParse from 'rehype-parse'
 import { unified } from 'unified'
 import { describe, expect, test } from 'vitest'
+import { shownModified } from '../../src/lib/date'
 import { load, valid } from '../content/load'
 import { isLegacy } from '../content/pages'
 import { distFiles, readDist } from './dist.ts'
@@ -68,11 +71,20 @@ test('すべての記事に本文の枠がある', () => {
 })
 
 // 新しい記事を足すたびに -u を求めると描画の回帰を見るものでなくなるので、旧記事だけを指紋にする
-const added = new Set(
-  valid(load('src/content').posts)
-    .filter((entry) => !isLegacy(entry))
-    .map(({ data }) => `${data.type}/${decodeURIComponent(data.slug)}`),
+const posts = valid(load('src/content').posts)
+const nameOf = ({ data }: (typeof posts)[number]) =>
+  `${data.type}/${decodeURIComponent(data.slug)}`
+const added = new Set(posts.filter((entry) => !isLegacy(entry)).map(nameOf))
+// 公開後に作者が書き直した旧記事（記事に更新日が出るもの）は、本文が変わるのが正しいので比べない。
+// 保存してある値をそのまま使い、書き直すたびに -u をしなくて済むようにする
+const rewritten = new Set(
+  posts
+    .filter((entry) => isLegacy(entry) && shownModified(entry.data))
+    .map(nameOf),
 )
+const saved = JSON.parse(
+  readFileSync('test/fixtures/rendered-fingerprint.json', 'utf8'),
+) as Record<string, unknown>
 
 test('旧記事の本文とコードブロックの指紋', async () => {
   const fingerprint = Object.fromEntries(
@@ -80,10 +92,12 @@ test('旧記事の本文とコードブロックの指紋', async () => {
       .filter(({ name }) => !added.has(name))
       .map(({ name, body }) => [
         name,
-        {
-          body: sha1(canon(body!).replace(/\s*(<[^>]+>)\s*/g, '$1')),
-          code: codeBlocks(body!),
-        },
+        rewritten.has(name) && name in saved
+          ? saved[name]
+          : {
+              body: sha1(canon(body!).replace(/\s*(<[^>]+>)\s*/g, '$1')),
+              code: codeBlocks(body!),
+            },
       ]),
   )
   // 1 記事 1 行にして、PR の差分で変わった記事がそのまま読めるようにする
@@ -112,16 +126,19 @@ const SAMPLES = [
 ]
 
 describe('代表 12 本の本文', () => {
-  test.each(SAMPLES)('%s', async (name) => {
-    const body = articles.find((article) => article.name === name)?.body
-    expect(body).toBeDefined()
-    // 差分が読めるよう、ブロックの終わりで改行する
-    const html = toHtml(body!.children).replace(
-      /(<\/(?:p|h[1-6]|pre|ul|ol|li|dl|dt|dd|div|figure|table|blockquote)>)/g,
-      '$1\n',
-    )
-    await expect(`${html}\n`).toMatchFileSnapshot(
-      `../fixtures/rendered/${name.replace('/', '__')}.html`,
-    )
-  })
+  test.each(SAMPLES.filter((name) => !rewritten.has(name)))(
+    '%s',
+    async (name) => {
+      const body = articles.find((article) => article.name === name)?.body
+      expect(body).toBeDefined()
+      // 差分が読めるよう、ブロックの終わりで改行する
+      const html = toHtml(body!.children).replace(
+        /(<\/(?:p|h[1-6]|pre|ul|ol|li|dl|dt|dd|div|figure|table|blockquote)>)/g,
+        '$1\n',
+      )
+      await expect(`${html}\n`).toMatchFileSnapshot(
+        `../fixtures/rendered/${name.replace('/', '__')}.html`,
+      )
+    },
+  )
 })
