@@ -37,7 +37,7 @@ export const archiveDescription = (type: PostType) => `${type} archive page`
 
 /** ターム一覧の title。種類の一覧と同じ title だと、検索結果でどのタグの一覧か見分けられない */
 export const termTitle = (name: string, type: PostType) =>
-  pageTitle(`${name} の ${type}`)
+  pageTitle(`${name} - ${type}`)
 
 export const termDescription = (name: string, type: PostType) =>
   `${name} のタグが付いた ${type} の一覧です。`

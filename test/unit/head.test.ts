@@ -53,7 +53,7 @@ describe('buildHead', () => {
 
   test('ターム一覧の title と description にはタグの名前が入る', () => {
     const head = buildHead({ kind: 'term', tax: 'tips', id: 366 }, site)
-    expect(head.title).toBe(`nuxt の tip | ${SITE}`)
+    expect(head.title).toBe(`nuxt - tip | ${SITE}`)
     expect(head.description).toBe('nuxt のタグが付いた tip の一覧です。')
     expect(head.jsonLd).toBeUndefined()
     expect(head.canonical).toBe('https://webmanab.netlify.app/tips/366/')
