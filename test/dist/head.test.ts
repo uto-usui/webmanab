@@ -4,7 +4,7 @@ import { join } from 'node:path'
 import { expect, test } from 'vitest'
 import { toIsoJst } from '../../src/lib/date'
 import { lastModified } from '../../src/lib/feeds'
-import { SITE_DESCRIPTION } from '../../src/lib/site'
+import { searchTitle, SITE_DESCRIPTION } from '../../src/lib/site'
 import { load, valid } from '../content/load'
 import { isLegacy } from '../content/pages'
 import {
@@ -160,7 +160,7 @@ test('記事の BlogPosting は frontmatter と canonical に合う（06 の 2.5
     const data = JSON.parse(page.jsonLd[0])
     const problems = [
       data['@type'] !== 'BlogPosting' && '@type',
-      data.headline !== entry.data.title && 'headline',
+      data.headline !== searchTitle(entry.data.title) && 'headline',
       data.datePublished !== toIsoJst(entry.data.date) && 'datePublished',
       data.dateModified !== toIsoJst(lastModified(entry)) && 'dateModified',
       !data.author?.name && 'author.name',

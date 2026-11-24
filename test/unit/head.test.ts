@@ -75,7 +75,9 @@ describe('buildHead', () => {
   test('記事は title と抜粋、og:image はカテゴリの OGP 画像', () => {
     const entry = fixture('tip/sass-pickup')
     const head = buildHead({ kind: 'post', entry }, site)
-    expect(head.title).toBe(`${entry.data.title} | ${SITE}`)
+    expect(head.title).toBe(
+      `いまデザイナーが覚えておきたい、Sass(SCSS)の基本と便利な小技集 | ${SITE}`,
+    )
     expect(head.description).toBe(entry.data.excerpt)
     expect(head.canonical).toBe('https://webmanab.netlify.app/tip/sass-pickup/')
     expect(metaOf(head)['og:image']).toBe(
@@ -131,7 +133,8 @@ describe('構造化データ', () => {
     expect(data).toEqual({
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
-      headline: entry.data.title,
+      headline:
+        'いまデザイナーが覚えておきたい、Sass(SCSS)の基本と便利な小技集',
       description: entry.data.excerpt,
       datePublished: '2017-01-11T17:50:24+09:00',
       dateModified: '2017-02-14T01:51:48+09:00',

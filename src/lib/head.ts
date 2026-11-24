@@ -8,6 +8,7 @@ import type { PostData } from './schema'
 import {
   archiveDescription,
   pageTitle,
+  searchTitle,
   POST_TYPE_OF,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -92,7 +93,7 @@ const pageOf = (
     case 'post': {
       const { data } = input.entry
       return {
-        title: pageTitle(data.title),
+        title: pageTitle(searchTitle(data.title)),
         // excerpt のない記事（clip の多く）はサイトの説明文にする。旧サイトは空の <p> を入れていた
         description: data.excerpt ?? SITE_DESCRIPTION,
         path: entryPath(input.entry),
@@ -112,7 +113,7 @@ export const blogPosting = (
 ) => ({
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: entry.data.title,
+  headline: searchTitle(entry.data.title),
   ...(entry.data.excerpt === undefined
     ? {}
     : { description: entry.data.excerpt }),

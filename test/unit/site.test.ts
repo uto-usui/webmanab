@@ -1,6 +1,7 @@
 import { expect, test } from 'vitest'
 import {
   archiveDescription,
+  searchTitle,
   pageTitle,
   POST_TYPE_OF,
   POST_TYPES,
@@ -17,4 +18,22 @@ test('type とタクソノミーの対応は行きと帰りで一致する', () 
   for (const type of POST_TYPES) {
     expect(POST_TYPE_OF[TAXONOMY_OF[type]]).toBe(type)
   }
+})
+
+test('searchTitle は末尾の「 -『カテゴリ』」だけを外す', () => {
+  expect(searchTitle('flexコンテナの孫要素の高さ -『CSS3』')).toBe(
+    'flexコンテナの孫要素の高さ',
+  )
+  expect(searchTitle('スクロールのイージング – 『TweenMax』')).toBe(
+    'スクロールのイージング',
+  )
+  // 『』が題材そのものの題名は変えない
+  expect(
+    searchTitle(
+      'スタートアップが利用するフォントを集めた 『Fonts That People Actually Use』',
+    ),
+  ).toBe(
+    'スタートアップが利用するフォントを集めた 『Fonts That People Actually Use』',
+  )
+  expect(searchTitle('Opsundbay')).toBe('Opsundbay')
 })
