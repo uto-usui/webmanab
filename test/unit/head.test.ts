@@ -43,16 +43,26 @@ describe('buildHead', () => {
     expect(head.jsonLd).toBeUndefined()
   })
 
-  test('type の一覧とターム一覧は、どちらも tip の title と description', () => {
-    const type = buildHead({ kind: 'type', type: 'tip' }, site)
-    const term = buildHead({ kind: 'term', tax: 'tips', id: 366 }, site)
-    for (const head of [type, term]) {
-      expect(head.title).toBe(`tip | ${SITE}`)
-      expect(head.description).toBe('tip archive page')
-      expect(head.jsonLd).toBeUndefined()
-    }
-    expect(type.canonical).toBe('https://webmanab.netlify.app/tip/')
-    expect(term.canonical).toBe('https://webmanab.netlify.app/tips/366/')
+  test('type の一覧は種類の title と description', () => {
+    const head = buildHead({ kind: 'type', type: 'tip' }, site)
+    expect(head.title).toBe(`tip | ${SITE}`)
+    expect(head.description).toBe('tip archive page')
+    expect(head.jsonLd).toBeUndefined()
+    expect(head.canonical).toBe('https://webmanab.netlify.app/tip/')
+  })
+
+  test('ターム一覧の title と description にはタグの名前が入る', () => {
+    const head = buildHead({ kind: 'term', tax: 'tips', id: 366 }, site)
+    expect(head.title).toBe(`nuxt の tip | ${SITE}`)
+    expect(head.description).toBe('nuxt のタグが付いた tip の一覧です。')
+    expect(head.jsonLd).toBeUndefined()
+    expect(head.canonical).toBe('https://webmanab.netlify.app/tips/366/')
+  })
+
+  test('ないターム id は種類の title に戻す', () => {
+    const head = buildHead({ kind: 'term', tax: 'tips', id: 99999 }, site)
+    expect(head.title).toBe(`tip | ${SITE}`)
+    expect(head.description).toBe('tip archive page')
   })
 
   test('検索ページは search の title で、canonical は /search/', () => {

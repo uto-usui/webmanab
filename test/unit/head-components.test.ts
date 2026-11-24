@@ -21,7 +21,7 @@ describe('Head.astro', () => {
       '<meta property="og:url" content="https://webmanab.netlify.app/labs/332/">',
     )
     expect(html).toContain(
-      '<meta name="description" content="lab archive page">',
+      '<meta name="description" content="interaction のタグが付いた lab の一覧です。">',
     )
     expect(html.match(/<meta /g)).toHaveLength(head.meta.length)
     expect(html).not.toContain('<title')

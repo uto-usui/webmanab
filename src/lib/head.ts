@@ -11,10 +11,12 @@ import {
   POST_TYPE_OF,
   SITE_DESCRIPTION,
   SITE_NAME,
+  termDescription,
+  termTitle,
   type PostType,
   type Taxonomy,
 } from './site'
-import { termPath } from './terms'
+import { getTerms, termPath } from './terms'
 
 export const AUTHOR_NAME = 'uto usui'
 export const TWITTER_SITE = '@uto_ao'
@@ -76,11 +78,14 @@ const pageOf = (
         path: `/${input.type}/`,
       }
     case 'term': {
-      // ターム一覧も title と description は tips ではなく tip（旧サイトと同じ）
       const type = POST_TYPE_OF[input.tax]
+      const name = getTerms(input.tax).find(({ id }) => id === input.id)?.name
       return {
-        title: pageTitle(type),
-        description: archiveDescription(type),
+        title: name === undefined ? pageTitle(type) : termTitle(name, type),
+        description:
+          name === undefined
+            ? archiveDescription(type)
+            : termDescription(name, type),
         path: termPath(input.tax, input.id),
       }
     }
