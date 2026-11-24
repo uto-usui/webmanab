@@ -1,8 +1,14 @@
 ---
 // 本文は Markdown から描画され scoped の属性が付かないので、本文と hljs の CSS は global にする
+interface Props {
+  /** 記事でない本文（About など）は検索の索引に入れない */
+  searchable?: boolean
+}
+
+const { searchable = true } = Astro.props
 ---
 
-<div class="entry-content" data-pagefind-body>
+<div class="entry-content" data-pagefind-body={searchable ? '' : undefined}>
   <slot name="toc" />
   <div class="entry-content__inner">
     <slot />

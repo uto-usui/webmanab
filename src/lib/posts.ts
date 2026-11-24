@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content'
+import { ABOUT_PATH } from './about'
 import { primaryTagKey } from './primary-tag'
 import type { PostData } from './schema'
 import {
@@ -124,6 +125,7 @@ export const sitePaths = (
   terms: Readonly<Record<Taxonomy, readonly { id: number }[]>>,
 ) => [
   '/',
+  ABOUT_PATH,
   ...POST_TYPES.map((type) => `/${type}/`),
   ...sortByDateDesc(entries).map(entryPath),
   ...TAXONOMIES.flatMap((tax) => terms[tax].map(({ id }) => termPath(tax, id))),

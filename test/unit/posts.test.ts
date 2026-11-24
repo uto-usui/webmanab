@@ -206,7 +206,7 @@ describe('静的なパス', () => {
     ])
   })
 
-  test('sitePaths はトップ、type の一覧、記事、ターム一覧を並べる', () => {
+  test('sitePaths はトップ、About、type の一覧、記事、ターム一覧を並べる', () => {
     expect(
       sitePaths(all, {
         tips: [{ id: 1 }],
@@ -215,6 +215,7 @@ describe('静的なパス', () => {
       }),
     ).toEqual([
       '/',
+      '/about/',
       '/tip/',
       '/clip/',
       '/lab/',

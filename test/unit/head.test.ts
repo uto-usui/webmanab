@@ -55,6 +55,21 @@ describe('buildHead', () => {
     expect(term.canonical).toBe('https://webmanab.netlify.app/tips/366/')
   })
 
+  test('About は ProfilePage の構造化データで、Person の sameAs に公開プロフィールが並ぶ', () => {
+    const head = buildHead({ kind: 'about' }, site)
+    expect(head.title).toBe(`about | ${SITE}`)
+    expect(head.canonical).toBe('https://webmanab.netlify.app/about/')
+    const ld = JSON.parse(head.jsonLd!)
+    expect(ld['@type']).toBe('ProfilePage')
+    expect(ld.mainEntity).toMatchObject({
+      '@type': 'Person',
+      name: 'uto usui',
+      url: 'https://webmanab.netlify.app/about/',
+    })
+    expect(ld.mainEntity.sameAs).toContain('https://x.com/uto_ao')
+    expect(ld.dateModified).toMatch(/\+09:00$/)
+  })
+
   test('検索ページは search の title で、canonical は /search/', () => {
     const head = buildHead({ kind: 'search' }, site)
     expect(head.title).toBe(`search | ${SITE}`)
@@ -125,7 +140,11 @@ describe('構造化データ', () => {
       description: entry.data.excerpt,
       datePublished: '2017-01-11T17:50:24+09:00',
       dateModified: '2017-02-14T01:51:48+09:00',
-      author: { '@type': 'Person', name: 'uto usui' },
+      author: {
+        '@type': 'Person',
+        name: 'uto usui',
+        url: 'https://webmanab.netlify.app/about/',
+      },
       publisher: { '@type': 'Organization', name: SITE },
       mainEntityOfPage: { '@type': 'WebPage', '@id': head.canonical },
       url: head.canonical,

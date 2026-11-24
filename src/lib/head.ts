@@ -1,5 +1,11 @@
 // <head> に出す値をページの種類ごとに作る。Head.astro はこの結果をタグにするだけ。
 // 絶対 URL はすべて SITE_URL（Astro.site）から作り、旧ドメインを書き込まない
+import {
+  ABOUT_DESCRIPTION,
+  ABOUT_PATH,
+  AUTHOR_NAME,
+  profilePage,
+} from './about'
 import { toIsoJst } from './date'
 import { eyecatchFor } from './eyecatch/index.ts'
 import { lastModified } from './feeds'
@@ -16,13 +22,14 @@ import {
 } from './site'
 import { termPath } from './terms'
 
-export const AUTHOR_NAME = 'uto usui'
+export { AUTHOR_NAME }
 export const TWITTER_SITE = '@uto_ao'
 export const DEFAULT_OG_IMAGE = '/ogp.png'
 
 export type HeadInput =
   | { kind: 'top' }
   | { kind: 'search' }
+  | { kind: 'about' }
   | { kind: 'type'; type: PostType }
   | { kind: 'term'; tax: Taxonomy; id: number }
   | {
@@ -52,7 +59,7 @@ export type HeadData = {
   description: string
   canonical: string
   meta: MetaTag[]
-  /** 記事ページだけ。<script type="application/ld+json"> の中身（エスケープ済み） */
+  /** 記事と About だけ。<script type="application/ld+json"> の中身（エスケープ済み） */
   jsonLd?: string
 }
 
@@ -63,6 +70,12 @@ const pageOf = (
   switch (input.kind) {
     case 'top':
       return { title: pageTitle(), description: SITE_DESCRIPTION, path: '/' }
+    case 'about':
+      return {
+        title: pageTitle('about'),
+        description: ABOUT_DESCRIPTION,
+        path: ABOUT_PATH,
+      }
     case 'search':
       return {
         title: pageTitle('search'),
@@ -113,7 +126,11 @@ export const blogPosting = (
     : { description: entry.data.excerpt }),
   datePublished: toIsoJst(entry.data.date),
   dateModified: toIsoJst(lastModified(entry)),
-  author: { '@type': 'Person', name: AUTHOR_NAME },
+  author: {
+    '@type': 'Person',
+    name: AUTHOR_NAME,
+    url: new URL(ABOUT_PATH, canonical).href,
+  },
   publisher: { '@type': 'Organization', name: SITE_NAME },
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
   url: canonical,
@@ -151,7 +168,9 @@ export const buildHead = (input: HeadInput, site: URL): HeadData => {
             blogPosting(input.entry, { canonical, image }),
           ),
         }
-      : {}),
+      : input.kind === 'about'
+        ? { jsonLd: serializeJsonLd(profilePage(site)) }
+        : {}),
   }
 }
 
