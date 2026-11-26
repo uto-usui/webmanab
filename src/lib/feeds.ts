@@ -26,7 +26,7 @@ export type SitemapEntry = { path: string; lastmod?: Date }
 
 /**
  * sitemap の URL と lastmod。並びと URL は sitePaths() と同じ。一覧ページの lastmod は
- * 載っている記事のうち最新のもので、投稿 0 件のターム（labs 332 / 333）には付けない
+ * 載っている記事のうち最新のもので、投稿 0 件のタームには付けない
  */
 export const sitemapEntries = (
   entries: readonly Entry[],

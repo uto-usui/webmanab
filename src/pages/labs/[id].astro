@@ -12,7 +12,7 @@ import { getTerms } from '../../lib/terms'
 const tax = 'labs'
 const type = 'lab'
 
-// 投稿 0 件のターム（labs 332 / 333）も旧 URL を残すために出す
+// 投稿 0 件のタームも旧 URL を残すために出す
 export const getStaticPaths = (() =>
   getTerms('labs').map(({ id }) => ({
     params: { id: String(id) },

@@ -40,7 +40,15 @@ test('type で絞り込み、選び直すと検索し直す', async ({ page }) =
 })
 
 test('0 件のときは一覧への入口を出す', async ({ page }) => {
-  await page.goto('/search/?q=qwxzv')
+  // Pagefind は語に当たらないと前の数文字で当てにいき、記事のコードの 1 文字の変数にも当たる。
+  // 当たらない語を探すのでなく、0 件を返すように差し替える
+  await page.route('**/pagefind/pagefind.js', (route) =>
+    route.fulfill({
+      contentType: 'text/javascript',
+      body: 'export const search = async () => ({ results: [] })',
+    }),
+  )
+  await page.goto('/search/?q=grid')
   await expect(page.locator('[data-search-status]')).toHaveText(
     '見つかりませんでした',
   )

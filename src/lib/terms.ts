@@ -32,7 +32,7 @@ export const getAllTerms = (): Record<Taxonomy, Term[]> => ({
   labs: getTerms('labs'),
 })
 
-/** 投稿 0 件のターム（labs 332 / 333）はメニューに出さない（README 3 章の 6） */
+/** 投稿 0 件のタームはメニューに出さない（README 3 章の 6） */
 export const forMenu = <T extends Pick<Term, 'count'>>(terms: readonly T[]) =>
   terms.filter((term) => term.count > 0)
 
