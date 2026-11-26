@@ -2,7 +2,9 @@
 import { describe, expect, test } from 'vitest'
 import { toIsoJst } from '../../src/lib/date'
 import { lastModified } from '../../src/lib/feeds'
-import { entryPath } from '../../src/lib/posts'
+import { entryPath, postsInTerm } from '../../src/lib/posts'
+import { TAXONOMIES } from '../../src/lib/site'
+import { termPath } from '../../src/lib/terms'
 import { load, valid } from '../content/load'
 import { allowedPaths } from '../content/pages'
 import { legacyPaths, readDist, SITE_URL } from './dist.ts'
@@ -43,9 +45,17 @@ describe('sitemap.xml', () => {
     expect([...paths].filter((path) => !allowed.has(path))).toEqual([])
   })
 
-  test('lastmod は投稿 0 件のターム（/labs/332/、/labs/333/）以外のすべてにあり、+09:00 で書く', () => {
+  test('lastmod は投稿 0 件のターム以外のすべてにあり、+09:00 で書く', () => {
+    const empty = TAXONOMIES.flatMap((tax) =>
+      terms[tax]
+        .filter(
+          ({ id }: { id: number }) =>
+            postsInTerm(entries, tax, id).length === 0,
+        )
+        .map(({ id }: { id: number }) => SITE_URL + termPath(tax, id)),
+    )
     const without = urls.filter(({ lastmod }) => !lastmod).map(({ loc }) => loc)
-    expect(without).toEqual([`${SITE_URL}/labs/332/`, `${SITE_URL}/labs/333/`])
+    expect(without.sort()).toEqual(empty.sort())
     expect(
       urls.filter(
         ({ lastmod }) =>
