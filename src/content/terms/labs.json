@@ -3,13 +3,13 @@
     "id": 212,
     "name": "animation",
     "slug": "animation",
-    "count": 16
+    "count": 20
   },
   {
     "id": 174,
     "name": "canvas",
     "slug": "canvas",
-    "count": 23
+    "count": 27
   },
   {
     "id": 173,
@@ -57,13 +57,19 @@
     "id": 332,
     "name": "interaction",
     "slug": "interaction",
-    "count": 0
+    "count": 3
+  },
+  {
+    "id": 367,
+    "name": "interactive",
+    "slug": "interactive",
+    "count": 2
   },
   {
     "id": 176,
     "name": "javascript",
     "slug": "javascript",
-    "count": 21
+    "count": 26
   },
   {
     "id": 274,
@@ -153,6 +159,18 @@
     "id": 340,
     "name": "WebGL",
     "slug": "webgl",
-    "count": 1
+    "count": 5
+  },
+  {
+    "id": 368,
+    "name": "WebGPU",
+    "slug": "webgpu",
+    "count": 7
+  },
+  {
+    "id": 369,
+    "name": "WGSL",
+    "slug": "wgsl",
+    "count": 7
   }
 ]
