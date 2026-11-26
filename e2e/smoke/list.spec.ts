@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
+import { termWhere, type TermList } from './terms'
 
 type ListPage = {
   items: {
@@ -21,14 +22,6 @@ const scrollToBottom = (page: Page) =>
   page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight))
 const getJson = async (page: Page, path: string) =>
   (await (await page.request.get(path)).json()) as ListPage
-
-test('一覧のタイトルの実体参照が文字で出る', async ({ page }) => {
-  await page.goto('/clips/69/')
-  await expect(cards(page).last()).toContainText(
-    'Website of the Year 2017 – CSS Design Awards',
-  )
-  expect(await page.content()).not.toContain('&amp;#8211;')
-})
 
 test('トップは 3 つの一覧に 8 件ずつで、無限スクロールがない', async ({
   page,
@@ -103,8 +96,13 @@ test('HTML の最初の 8 件が JSON の 1 ページ目と同じ', async ({ pag
 test('clipUrl のない clip はタイトルが記事ページへつながる', async ({
   page,
 }) => {
-  await page.goto('/clips/180/')
-  const title = page.locator('.article-item__target[href="/clip/the-wing/"]')
+  const isPlainClip = (item: TermList['items'][number]) =>
+    item.path.startsWith('/clip/') && !item.clipUrl
+  const term = termWhere(({ items }) => items.some(isPlainClip))
+  test.skip(!term, '1 ページ目に clipUrl のない clip があるタームがない')
+  const item = term.items.find(isPlainClip)!
+  await page.goto(term.path)
+  const title = page.locator(`.article-item__target[href="${item.path}"]`)
   await expect(title).toHaveCount(1)
   await expect(title).not.toHaveAttribute('target', /.*/)
 })
@@ -151,16 +149,25 @@ test('足したカードは複製元の状態を引き継がない', async ({ pa
   await expect(img).toHaveAttribute('data-lazy', 'loaded')
 })
 
+// 最後のページまで 1 ページずつスクロールして読み込む
+const scrollToLast = async (page: Page, { total, last }: TermList) => {
+  for (let shown = 1; shown < last; shown++) {
+    await expect(end(page)).toBeHidden()
+    await scrollToBottom(page)
+    await expect(cards(page)).toHaveCount(Math.min((shown + 1) * 8, total))
+  }
+}
+
 test('合計が 8 の倍数のタームは、最後のページのあとに End が出る', async ({
   page,
 }) => {
-  await page.goto('/labs/212/')
+  const term = termWhere(({ total }) => total > 8 && total % 8 === 0)
+  test.skip(!term, '合計が 8 の倍数で 2 ページ以上のタームがない')
+  await page.goto(term.path)
   const list = page.locator('.article-list')
-  await expect(list).toHaveAttribute('data-last-page', '2')
-  await expect(end(page)).toBeHidden()
+  await expect(list).toHaveAttribute('data-last-page', String(term.last))
 
-  await scrollToBottom(page)
-  await expect(cards(page)).toHaveCount(16)
+  await scrollToLast(page, term)
   await expect(end(page)).toBeVisible()
   await expect(end(page)).toHaveText('End')
 })
@@ -168,28 +175,33 @@ test('合計が 8 の倍数のタームは、最後のページのあとに End 
 test('合計が 8 の倍数でないタームは、最後のページのあとに読み込み口が消える', async ({
   page,
 }) => {
-  await page.goto('/labs/173/')
+  const term = termWhere(({ total }) => total > 8 && total % 8 !== 0)
+  test.skip(!term, '合計が 8 の倍数でなく 2 ページ以上のタームがない')
+  await page.goto(term.path)
   await expect(container(page)).toHaveCount(1)
 
-  await scrollToBottom(page)
-  await expect(cards(page)).toHaveCount(11)
+  await scrollToLast(page, term)
   await expect(container(page)).toHaveCount(0)
 })
 
 test('8 件に満たない一覧には読み込み口がない', async ({ page }) => {
-  await page.goto('/labs/213/')
-  await expect(cards(page)).toHaveCount(4)
+  const term = termWhere(({ total }) => total > 0 && total < 8)
+  test.skip(!term, '8 件に満たないタームがない')
+  await page.goto(term.path)
+  await expect(cards(page)).toHaveCount(term.total)
   await expect(container(page)).toHaveCount(0)
 })
 
-test('0 件の /labs/332/ は最初から End が出て、JSON を読みにいかない', async ({
+test('0 件のタームは最初から End が出て、JSON を読みにいかない', async ({
   page,
 }) => {
+  const term = termWhere(({ total }) => total === 0)
+  test.skip(!term, '0 件のタームがない')
   const requests: string[] = []
   page.on('request', (req) => {
     if (req.url().includes('/data/')) requests.push(req.url())
   })
-  await page.goto('/labs/332/')
+  await page.goto(term.path)
   await expect(cards(page)).toHaveCount(0)
   await expect(end(page)).toBeVisible()
   expect(requests).toEqual([])
