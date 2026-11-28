@@ -27,10 +27,22 @@ const { adSlot } = Astro.props
 </div>
 
 <style lang="scss" is:global>
+  $ad-padding: 0.8rem;
+  $ad-border: 6px;
+
   .entry-ad {
-    padding: 0.8rem;
+    // 広告が入ったときに下の要素が押し下げられないよう、AdSense が出す高さを先に取っておく。
+    // 本番で測ると、幅 480px 以下は画面幅の正方形、それより広いと高さ 280px だった
+    --ad-height: 280px;
+
+    min-height: calc(var(--ad-height) + #{$ad-padding * 2} + #{$ad-border * 2});
+    padding: $ad-padding;
     margin-top: $space-4;
     margin-bottom: $space-4;
-    border: 6px double $black;
+    border: $ad-border double $black;
+
+    @media screen and (width <= 480px) {
+      --ad-height: 100vw;
+    }
   }
 </style>
